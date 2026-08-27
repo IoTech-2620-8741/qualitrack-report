@@ -5,6 +5,7 @@
 ### 6.1.3. Source Code Style Guide & Conventions. 
 ### 6.1.4. Software Deployment Configuration. 
 ## 6.2 Landing Page, Services & Applications Implementation. 
+## 6.2.X Sprint x
 ### 6.2.X.1. Sprint Planning n. 
 ### 6.2.X.2. Aspect Leaders and Collaborators. 
 ### 6.2.X.3. Sprint Backlog n. 
