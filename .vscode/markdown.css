@@ -1,0 +1,424 @@
+/* ============================================================
+   markdown.css — Estilo unificado para README + Capítulos
+   Uso:
+     <div class="cover">   → portada
+     <div class="toc">     → tabla de contenidos
+     <div class="chapter"> → capítulos (APA 7)
+   Solo negro y grises — sin colores decorativos
+   ============================================================ */
+
+:root {
+  --text:        #000000;
+  --muted:       #444444;
+  --subtle:      #777777;
+  --border:      #bbbbbb;
+  --border-dark: #888888;
+  --bg-row:      #f7f7f7;
+  --bg-code:     #f5f5f5;
+}
+
+/* ── Reset base ───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family:  'Times New Roman', Times, serif;
+  font-size:    12pt;
+  color:        var(--text);
+  background:   #ffffff;
+  max-width:    816px;
+  margin:       0 auto;
+  padding:      60px 72px 80px;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ══════════════════════════════════════════════════════════
+   PORTADA   <div class="cover"> ... </div>
+   ══════════════════════════════════════════════════════════ */
+.cover {
+  text-align:  center;
+  line-height: 1.7;
+  padding:     30px 0 40px;
+}
+
+/* Logo UPC */
+.cover img {
+  display:      block;
+  margin:       0 auto 20px;
+  max-width:    130px;
+  height:       auto;
+}
+
+/* Todos los headings dentro de la portada */
+.cover h1, .cover h2,
+.cover h3, .cover h4 {
+  font-family:  'Times New Roman', Times, serif;
+  font-size:    12pt;
+  color:        var(--text);
+  text-align:   center;
+  margin:       2px 0;
+  font-style:   normal;
+  line-height:  1.7;
+}
+
+/* Nombre de la universidad */
+.cover h2:first-of-type {
+  font-size:   14pt;
+  font-weight: bold;
+  margin-top:  6px;
+}
+
+/* "Informe de Trabajo Final" */
+.cover h3 {
+  font-size:   13pt;
+  font-weight: bold;
+  margin-top:  16px;
+}
+
+/* "Relación de integrantes" y similares */
+.cover h4 {
+  font-size:   12pt;
+  font-weight: bold;
+  margin-top:  18px;
+}
+
+/* Párrafos y strong de la portada */
+.cover p,
+.cover strong {
+  display:     block;
+  font-size:   12pt;
+  text-indent: 0;
+  text-align:  center;
+  margin:      0;
+}
+
+/* Tabla de integrantes */
+.cover table {
+  margin:          22px auto;
+  width:           auto;
+  min-width:       400px;
+  border-collapse: collapse;
+  font-size:       12pt;
+  text-align:      left;
+  line-height:     1.6;
+}
+
+.cover thead tr {
+  border-top:    2px solid var(--text);
+  border-bottom: 1px solid var(--text);
+}
+
+.cover thead th {
+  padding:     6px 14px;
+  font-weight: bold;
+  background:  transparent;
+}
+
+.cover tbody tr:last-child td {
+  border-bottom: 2px solid var(--text);
+}
+
+.cover td {
+  padding:    5px 14px;
+  border:     none;
+  background: transparent;
+}
+
+.cover tbody tr:nth-child(even) td {
+  background: var(--bg-row);
+}
+
+/* Mes y año al final de portada */
+.cover p:last-of-type {
+  margin-top:  18px;
+  font-weight: bold;
+}
+
+/* ══════════════════════════════════════════════════════════
+   TABLA DE CONTENIDOS   <div class="toc"> ... </div>
+   ══════════════════════════════════════════════════════════ */
+.toc {
+  line-height: 1.7;
+  margin-top:  10px;
+}
+
+/* Título "Tabla de contenidos" */
+.toc h1, .toc h2 {
+  font-family:   'Times New Roman', Times, serif;
+  font-size:     13pt;
+  font-weight:   bold;
+  font-style:    normal;
+  text-align:    left;
+  border-bottom: 1px solid var(--border-dark);
+  padding-bottom: 3px;
+  margin-bottom:  6px;
+  margin-top:    28px;
+}
+
+/* Secciones dentro del TOC (## Capítulo I, etc.) */
+.toc h3 {
+  font-family:  'Times New Roman', Times, serif;
+  font-size:    12pt;
+  font-weight:  bold;
+  font-style:   normal;
+  text-align:   left;
+  margin-top:   16px;
+  margin-bottom: 2px;
+}
+
+/* Listas del índice — sin bullet predeterminado */
+.toc ul, .toc ol {
+  list-style:   none;
+  margin:       0;
+  padding-left: 0;
+  line-height:  1.9;
+}
+
+/* Nivel 1: secciones principales */
+.toc > ul > li,
+.toc ul > li {
+  font-size: 11.5pt;
+  color:     var(--text);
+  padding-left: 0;
+}
+
+/* Nivel 2 */
+.toc ul > li > ul > li {
+  font-size:    11pt;
+  color:        var(--muted);
+  padding-left: 1.2em;
+}
+
+/* Nivel 3 */
+.toc ul > li > ul > li > ul > li {
+  font-size:    10.5pt;
+  color:        var(--subtle);
+  padding-left: 2.2em;
+}
+
+/* Guión como bullet */
+.toc ul > li::before                      { content: "–  "; }
+.toc ul > li > ul > li::before            { content: "–  "; color: var(--muted); }
+.toc ul > li > ul > li > ul > li::before  { content: "–  "; color: var(--subtle); }
+
+/* Secciones pendientes (Registro de Versiones, etc.) */
+.toc h2 + p, .toc h3 + p {
+  font-size:   11pt;
+  color:       var(--subtle);
+  font-style:  italic;
+  text-indent: 0;
+  margin:      2px 0 0 0;
+}
+
+/* ══════════════════════════════════════════════════════════
+   CAPÍTULOS   <div class="chapter"> ... </div>
+   APA 7: doble espacio, sangría 0.5 in, sin colores
+   ══════════════════════════════════════════════════════════ */
+.chapter {
+  line-height: 2;
+  margin-top:  20px;
+}
+
+/* Títulos APA 7 */
+.chapter h1, .chapter h2,
+.chapter h3, .chapter h4,
+.chapter h5, .chapter h6 {
+  font-family:   'Times New Roman', Times, serif;
+  font-size:     12pt;
+  color:         var(--text);
+  line-height:   2;
+  margin-top:    0;
+  margin-bottom: 0;
+  page-break-after: avoid;
+}
+
+/* Nivel 1 — Centrado, negrita */
+.chapter h1 {
+  text-align:  center;
+  font-weight: bold;
+  font-style:  normal;
+}
+
+/* Nivel 2 — Centrado, negrita cursiva */
+.chapter h2 {
+  text-align:  center;
+  font-weight: bold;
+  font-style:  italic;
+}
+
+/* Nivel 3 — Izquierda, negrita */
+.chapter h3 {
+  text-align:  left;
+  font-weight: bold;
+  font-style:  normal;
+}
+
+/* Nivel 4 — Sangría, negrita cursiva */
+.chapter h4 {
+  text-align:   left;
+  font-weight:  bold;
+  font-style:   italic;
+  text-indent:  0.5in;
+}
+
+/* Nivel 5 — Sangría, cursiva */
+.chapter h5 {
+  text-align:   left;
+  font-weight:  normal;
+  font-style:   italic;
+  text-indent:  0.5in;
+}
+
+.chapter h6 {
+  text-align:  left;
+  font-weight: normal;
+  font-style:  normal;
+  text-indent: 0.5in;
+}
+
+/* Párrafos con sangría APA */
+.chapter p {
+  margin:      0;
+  text-indent: 0.5in;
+  text-align:  justify;
+}
+
+.chapter h1 + p, .chapter h2 + p,
+.chapter h3 + p, .chapter h4 + p,
+.chapter h5 + p, .chapter h6 + p {
+  text-indent: 0.5in;
+}
+
+/* Énfasis */
+.chapter strong { font-weight: bold;  color: var(--text); }
+.chapter em     { font-style: italic; color: var(--text); }
+
+/* Blockquotes APA (citas ≥40 palabras) */
+.chapter blockquote {
+  margin:      0.5em 0 0.5em 0.5in;
+  padding:     0;
+  border:      none;
+  font-size:   12pt;
+  line-height: 2;
+  text-indent: 0.5in;
+  text-align:  justify;
+}
+
+.chapter blockquote p { text-indent: 0.5in; margin: 0; }
+
+/* Listas */
+.chapter ul, .chapter ol {
+  margin:       0.3em 0 0.3em 0.5in;
+  padding-left: 0.25in;
+  line-height:  2;
+}
+
+.chapter li { margin-bottom: 0; }
+
+/* Tablas APA: solo líneas horizontales */
+.chapter table {
+  width:           100%;
+  border-collapse: collapse;
+  font-size:       12pt;
+  font-family:     'Times New Roman', Times, serif;
+  margin:          1.2em 0;
+  line-height:     1.5;
+}
+
+.chapter thead tr {
+  border-top:    1.5px solid var(--text);
+  border-bottom: 1px solid var(--text);
+}
+
+.chapter thead th {
+  padding:     5px 8px;
+  font-weight: bold;
+  font-style:  normal;
+  text-align:  left;
+  background:  transparent;
+  color:       var(--text);
+}
+
+.chapter tbody tr:last-child td {
+  border-bottom: 1.5px solid var(--text);
+}
+
+.chapter td {
+  padding:        5px 8px;
+  border:         none;
+  vertical-align: top;
+  background:     transparent;
+}
+
+.chapter tbody tr:nth-child(even) td { background: var(--bg-row); }
+
+/* Código */
+.chapter code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size:   10.5pt;
+  background:  var(--bg-code);
+  border:      1px solid var(--border);
+  padding:     1px 4px;
+  color:       var(--text);
+}
+
+.chapter pre {
+  background:  var(--bg-code);
+  border:      1px solid var(--border);
+  padding:     12px 14px;
+  font-size:   10.5pt;
+  line-height: 1.5;
+  overflow-x:  auto;
+  margin:      0.8em 0;
+}
+
+.chapter pre code { background: transparent; border: none; padding: 0; }
+
+/* Imágenes */
+.chapter img {
+  max-width: 100%;
+  height:    auto;
+  display:   block;
+  margin:    1em auto;
+}
+
+/* ══════════════════════════════════════════════════════════
+   ELEMENTOS GLOBALES (fuera de cualquier div)
+   ══════════════════════════════════════════════════════════ */
+hr {
+  border:     none;
+  border-top: 1.5px solid var(--border-dark);
+  margin:     36px 0;
+}
+
+a { color: var(--text); text-decoration: none; }
+
+/* ══════════════════════════════════════════════════════════
+   PRINT
+   ══════════════════════════════════════════════════════════ */
+@media print {
+  body { padding: 25mm 25mm 30mm; max-width: 100%; }
+
+  /* Salto de página entre secciones principales */
+  .cover  { page-break-after: always; }
+  .toc    { page-break-after: always; }
+
+  .chapter h1, .chapter h2,
+  .chapter h3, .chapter h4  { page-break-after: avoid; }
+
+  table  { page-break-inside: auto; }
+  tr     { page-break-inside: avoid; }
+  thead  { display: table-header-group; }
+  img    { page-break-inside: avoid; }
+
+  .chapter p { orphans: 3; widows: 3; }
+  a::after   { content: ""; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   SALTO DE PÁGINA antes de cada capítulo
+   ══════════════════════════════════════════════════════════ */
+.chapter {
+  page-break-before: always; /* Para navegadores legacy */
+  break-before: page;        /* Estándar moderno */
+}
