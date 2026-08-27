@@ -14,7 +14,9 @@
 ## 5.4. Applications UX/UI Design. 
 ### 5.4.1. Applications Wireframes. 
 ### 5.4.2. Applications Wireflow Diagrams. 
-### 5.4.2. Applications Mock-ups. 
-### 5.4.3. Applications User Flow Diagrams. 
+### 5.4.3. Applications Mock-ups. 
+### 5.4.4. Applications User Flow Diagrams. 
 ## 5.5. Applications Prototyping. 
+### 5.5.1. Desktop Web Browser Prototype
+### 5.5.2. Mobile Web Browser Prototype
 ## 5.6. IoT Device Design. 
