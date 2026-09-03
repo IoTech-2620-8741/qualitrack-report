@@ -59,8 +59,8 @@ Convertirnos en una startup referente en el desarrollo de soluciones IoT aplicad
         <img src="../assets/img/chapter-I/Vitaly.jpeg" alt="Vitaly Baca Photo" width="120">
     </td>
     <td valign="top">
-      <strong>[Nombres y Apellidos] - ([Código UPC])</strong> - Ingeniería de Software<br><br>
-      [Descripción del integrante]
+      <strong>Vitaly Baca Camargo Arturo - (u20231c426)</strong> - Ingeniería de Software<br><br>
+      Tengo 21 años y soy una persona tranquila, colaborativa y adaptable. Me gusta trabajar en equipo, aportar ideas y buscar soluciones eficientes a los problemas que se presentan. Cuento con conocimientos en desarrollo Backend utilizando Java y Node.js, así como en desarrollo móvil con Flutter y Kotlin. También tengo conocimientos en diseño UX/UI y en Domain-Driven Design (DDD), lo que me permite tener una visión más completa del desarrollo de software. Me interesa seguir aprendiendo nuevas tecnologías y aplicar mis conocimientos para desarrollar soluciones eficientes que aporten valor a cada proyecto.
     </td>
   </tr>
 
