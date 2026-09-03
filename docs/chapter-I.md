@@ -138,6 +138,60 @@ Asimismo, en julio de 2026 DIGEMID reunió a representantes de 120 laboratorios 
 
 Dentro de este contexto, una parte importante de las operaciones farmacéuticas requiere supervisar variables y condiciones que deben mantenerse dentro de determinados parámetros. Estas pueden incluir temperatura, humedad, presión u otras variables dependiendo del área, equipo o proceso involucrado. Cuando su supervisión depende de revisiones periódicas, registros manuales o sistemas independientes, pueden producirse retrasos entre la aparición de una desviación, su detección y la ejecución de una acción correctiva.
 
+**2. PROBLEMÁTICA**
+
+La problemática se centra en las dificultades para supervisar continuamente variables críticas, detectar oportunamente condiciones fuera de los parámetros establecidos y actuar ante ellas, además de mantener un registro centralizado y trazable de las mediciones, incidencias y acciones realizadas.
+
+**Riesgo de errores humanos en registros críticos:** Cuando variables como temperatura, humedad, presión o pH son revisadas y posteriormente transcritas de manera manual, existe la posibilidad de errores de registro, omisiones o información ingresada fuera del momento en que ocurrió la actividad. Estas inconsistencias dificultan comprobar posteriormente las condiciones reales bajo las cuales se desarrolló determinado proceso.
+
+**Detección tardía de desviaciones:** Cuando el control depende de revisiones periódicas, una desviación puede producirse entre una verificación y otra sin ser detectada inmediatamente. Esto genera un intervalo durante el cual una condición puede permanecer fuera de los parámetros esperados antes de que el personal tenga conocimiento de ella.
+
+**Dependencia de la intervención humana para responder:** La detección de una desviación tampoco garantiza necesariamente una respuesta inmediata. En procesos donde los equipos de monitoreo y los mecanismos capaces de modificar las condiciones funcionan de manera independiente, una persona debe identificar el problema y posteriormente ejecutar la acción correspondiente. Por ello, la problemática no comprende únicamente la capacidad de supervisar una variable, sino también el tiempo que transcurre entre la detección de una situación anómala y la ejecución de una acción para responder ante ella.
+
+**Trazabilidad fragmentada de la información:** Cuando las mediciones, incidencias y acciones correctivas se registran en diferentes medios, resulta más difícil reconstruir cronológicamente un evento. El personal puede tener que consultar diferentes fuentes para determinar qué variable presentó una desviación, cuándo ocurrió, cuánto tiempo permaneció fuera del rango esperado y qué acciones se realizaron. Esta fragmentación también incrementa el esfuerzo necesario para recuperar y relacionar la información solicitada durante revisiones internas, investigaciones de desviaciones, auditorías o inspecciones regulatorias.
+
+**Análisis 5W + 2H**
+
+**What (¿Qué problema existe?)**
+
+Los laboratorios farmacéuticos presentan dificultades para supervisar continuamente variables críticas  en determinadas áreas, detectar oportunamente condiciones fuera de los parámetros establecidos y ejecutar respuestas ante ellas. Además, las mediciones, incidencias y acciones realizadas pueden quedar distribuidas entre distintos registros, dificultando su trazabilidad.
+
+**Why (¿Por qué es un problema?)**
+
+Porque determinados procesos y productos requieren mantenerse bajo condiciones controladas. Una desviación que no sea detectada o atendida oportunamente puede prolongar la exposición a condiciones inadecuadas y generar posteriormente la necesidad de investigar lo ocurrido y determinar sus posibles consecuencias.
+
+**Who (¿Quiénes se encuentran afectados?)**
+
+El problema afecta directamente a los operarios y técnicos encargados de supervisar equipos y condiciones del entorno; a los analistas de control de calidad, responsables de verificar parámetros y resultados; y al personal de Aseguramiento de la Calidad (Quality Assurance), encargado de revisar desviaciones, verificar el cumplimiento de los procedimientos y mantener la documentación asociada.
+
+También afecta a supervisores, jefes de producción, responsables de almacén y responsables técnicos o directores técnicos, quienes necesitan disponer de información confiable para supervisar las operaciones, investigar incidencias y sustentar el cumplimiento de los procedimientos durante auditorías e inspecciones.
+
+**When (¿Cuándo ocurre?)**
+
+La problemática puede presentarse durante las actividades que requieren mantener variables dentro de determinados parámetros, especialmente en áreas de producción, control de calidad, esterilización y almacenamiento.
+
+El riesgo aumenta entre una revisión manual y la siguiente, cuando una desviación puede producirse sin ser detectada inmediatamente, y también después de una incidencia, cuando es necesario determinar cuándo ocurrió, cuánto tiempo duró y qué medidas fueron tomadas.
+
+**Where (¿Dónde ocurre?)**
+
+Se presenta principalmente en áreas de producción y fabricación, laboratorios de control de calidad, zonas de esterilización, cámaras o ambientes con condiciones controladas y almacenes de materias primas, insumos y productos farmacéuticos.
+
+Estas áreas pueden requerir la supervisión de diferentes variables según las características del proceso, los equipos utilizados o las condiciones necesarias para conservar adecuadamente los productos.
+
+**How (¿Cómo se manifiesta?)**
+
+El problema se manifiesta mediante revisiones periódicas de equipos o instrumentos, transcripción manual de mediciones, registros almacenados en diferentes medios y ausencia de una relación directa entre la detección de una desviación y los mecanismos capaces de responder ante ella.
+
+Como consecuencia, pueden presentarse errores u omisiones en los registros, detecciones tardías, dependencia de la disponibilidad del personal para atender incidencias y dificultades para reconstruir posteriormente lo sucedido.
+
+**How much (¿Cuánto afecta el problema?)**
+
+La magnitud de las dificultades relacionadas con el cumplimiento de las Buenas Prácticas puede observarse en las inspecciones realizadas por DIGEMID: de los 51 laboratorios evaluados entre noviembre de 2025 y mayo de 2026, solo 20 obtuvieron la certificación correspondiente en dicha evaluación **(DIGEMID, 2026)**.
+
+Un caso de mayor impacto sobre el mercado peruano se produjo en 2025, cuando el Ministerio de Salud identificó 239 productos farmacéuticos cuyos laboratorios fabricantes no habían aprobado las inspecciones de Buenas Prácticas de Manufactura realizadas por DIGEMID. Como consecuencia de la revisión, se dispuso inicialmente la suspensión del registro sanitario de 57 productos y se anunció el retiro del registro de un segundo grupo de 50 productos **(Andina, 2025)**.
+
+Si bien estos resultados no significan que los incumplimientos hayan sido causados específicamente por fallas en el monitoreo de temperatura, humedad u otras variables, permiten evidenciar las consecuencias que pueden alcanzar las deficiencias en el cumplimiento de los controles requeridos dentro de la industria farmacéutica.
+
 #### 1.2.2. Lean UX Process
 
 ##### 1.2.2.1. Lean UX Problem Statements
