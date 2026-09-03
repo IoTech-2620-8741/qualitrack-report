@@ -56,7 +56,7 @@ Convertirnos en una startup referente en el desarrollo de soluciones IoT aplicad
 
   <tr>
     <td width="140" height="150" valign="top" align="center">
-      <!-- Foto del integrante -->
+        <img src="../assets/img/chapter-I/Vitaly.jpeg" alt="Vitaly Baca Photo" width="120">
     </td>
     <td valign="top">
       <strong>[Nombres y Apellidos] - ([Código UPC])</strong> - Ingeniería de Software<br><br>
