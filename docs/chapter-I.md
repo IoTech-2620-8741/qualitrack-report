@@ -128,6 +128,16 @@ Ser una startup tecnológica reconocida en Latinoamérica por el desarrollo de s
 
 #### 1.2.1. Antecedentes y problemáticas
 
+**1. ANTECEDENTES**
+
+La industria farmacéutica requiere altos niveles de control y supervisión debido a que cualquier desviación durante la fabricación, análisis o almacenamiento de un producto puede afectar su calidad, seguridad y eficacia. En el Perú, la Dirección General de Medicamentos, Insumos y Drogas (DIGEMID) es la autoridad sanitaria encargada de regular, vigilar y fiscalizar los productos farmacéuticos y los establecimientos involucrados en estos procesos. Como parte de estas exigencias, los establecimientos deben cumplir con las Buenas Prácticas de Manufactura (BPM) y, cuando corresponda, con las Buenas Prácticas de Almacenamiento (BPA), las cuales contemplan aspectos relacionados con el control de procesos, equipos, condiciones ambientales, documentación y trazabilidad.
+
+La relevancia de estos controles puede observarse en las actividades de fiscalización realizadas por DIGEMID. Entre noviembre de 2025 y mayo de 2026 se evaluaron 51 laboratorios farmacéuticos mediante inspecciones internacionales. De estos, 20 obtuvieron la certificación de Buenas Prácticas de Manufactura, mientras que 21 no alcanzaron la certificación, 3 presentaron observaciones parciales y 7 desistieron del proceso. Por lo tanto, el 41,2 % de los laboratorios evaluados no alcanzó la certificación y, considerando también las observaciones parciales y desistimientos, el 60,8 % no culminó dicha evaluación obteniéndola **(DIGEMID, 2026)**.
+
+Asimismo, en julio de 2026 DIGEMID reunió a representantes de 120 laboratorios nacionales, entre ellos 43 fabricantes de productos farmacéuticos, para abordar las principales observaciones y oportunidades de mejora encontradas durante las actividades de inspección, certificación y vigilancia realizadas desde 2025. Entre los aspectos analizados estuvieron el control de calidad, la calificación de equipos y el aseguramiento de la calidad, demostrando que el fortalecimiento de los procesos de control continúa siendo una necesidad vigente en el sector **(DIGEMID, 2026)**.
+
+Dentro de este contexto, una parte importante de las operaciones farmacéuticas requiere supervisar variables y condiciones que deben mantenerse dentro de determinados parámetros. Estas pueden incluir temperatura, humedad, presión u otras variables dependiendo del área, equipo o proceso involucrado. Cuando su supervisión depende de revisiones periódicas, registros manuales o sistemas independientes, pueden producirse retrasos entre la aparición de una desviación, su detección y la ejecución de una acción correctiva.
+
 #### 1.2.2. Lean UX Process
 
 ##### 1.2.2.1. Lean UX Problem Statements
