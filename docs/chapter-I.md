@@ -42,6 +42,90 @@ Convertirnos en una startup referente en el desarrollo de soluciones IoT aplicad
 
 #### 1.1.2. Perfiles de integrantes del equipo
 
+<table border="1" width="100%">
+
+  <tr>
+    <td width="140" valign="top" align="center">
+      <img src="../assets/img/chapter-I/Billy.jpg" alt="Billy Ruiz Photo" width="120" />
+    </td>
+    <td valign="top">
+      <strong>Billy Jake Ruiz Madrid - (U202116401)</strong> - Ingeniería de Software<br><br>
+      Tengo 22 años, soy una persona tranquila, colaborativa y adaptable. Me gusta trabajar en equipo, aportando ideas y soluciones. Cuento con conocimientos en C++, Python y desarrollo de software, y siempre busco formas de hacer las cosas de manera eficiente. Además, me interesa seguir aprendiendo nuevas tecnologías y aplicar mis conocimientos en el desarrollo de soluciones que aporten valor al proyecto.
+    </td>
+  </tr>
+
+  <tr>
+    <td width="140" height="150" valign="top" align="center">
+      <!-- Foto del integrante -->
+    </td>
+    <td valign="top">
+      <strong>[Nombres y Apellidos] - ([Código UPC])</strong> - Ingeniería de Software<br><br>
+      [Descripción del integrante]
+    </td>
+  </tr>
+
+  <tr>
+    <td width="140" height="150" valign="top" align="center">
+      <!-- Foto del integrante -->
+    </td>
+    <td valign="top">
+      <strong>[Nombres y Apellidos] - ([Código UPC])</strong> - Ingeniería de Software<br><br>
+      [Descripción del integrante]
+    </td>
+  </tr>
+
+  <tr>
+    <td width="140" height="150" valign="top" align="center">
+      <!-- Foto del integrante -->
+    </td>
+    <td valign="top">
+      <strong>[Nombres y Apellidos] - ([Código UPC])</strong> - Ingeniería de Software<br><br>
+      [Descripción del integrante]
+    </td>
+  </tr>
+
+  <tr>
+    <td width="140" height="150" valign="top" align="center">
+      <!-- Foto del integrante -->
+    </td>
+    <td valign="top">
+      <strong>[Nombres y Apellidos] - ([Código UPC])</strong> - Ingeniería de Software<br><br>
+      [Descripción del integrante]
+    </td>
+  </tr>
+
+  <tr>
+    <td width="140" height="150" valign="top" align="center">
+      <!-- Foto del integrante -->
+    </td>
+    <td valign="top">
+      <strong>[Nombres y Apellidos] - ([Código UPC])</strong> - Ingeniería de Software<br><br>
+      [Descripción del integrante]
+    </td>
+  </tr>
+
+  <tr>
+    <td width="140" height="150" valign="top" align="center">
+      <!-- Foto del integrante -->
+    </td>
+    <td valign="top">
+      <strong>[Nombres y Apellidos] - ([Código UPC])</strong> - Ingeniería de Software<br><br>
+      [Descripción del integrante]
+    </td>
+  </tr>
+
+  <tr>
+    <td width="140" height="150" valign="top" align="center">
+      <!-- Foto del integrante -->
+    </td>
+    <td valign="top">
+      <strong>[Nombres y Apellidos] - ([Código UPC])</strong> - Ingeniería de Software<br><br>
+      [Descripción del integrante]
+    </td>
+  </tr>
+
+</table>
+
 ### 1.2. Solution Profile
 
 #### 1.2.1. Antecedentes y problemáticas
