@@ -20,25 +20,23 @@ Dentro de este enfoque, la startup desarrolla QualiTrack como una solución diri
 
 #### 1.1.1. Descripción de la Startup
 
-**IoTech** es una startup tecnológica enfocada en el desarrollo de soluciones basadas en Internet de las Cosas (IoT) para apoyar la digitalización y automatización de procesos que requieren supervisión constante.
+**IoTech** es una startup tecnológica dedicada al desarrollo de soluciones basadas en Internet of Things (IoT) para organizaciones de diferentes industrias. Su enfoque se centra en integrar dispositivos inteligentes, sensores, conectividad, software y procesamiento de datos para apoyar la supervisión, control y automatización de procesos que requieren información constante y respuestas oportunas.
 
-La startup busca combinar dispositivos físicos, aplicaciones y servicios digitales para obtener información del entorno en tiempo real y utilizarla para ayudar a las organizaciones a detectar problemas y responder de manera más rápida. Su enfoque se centra especialmente en situaciones donde todavía existe una alta dependencia de controles manuales o donde la información se encuentra distribuida entre diferentes medios.
+La startup desarrolla soluciones capaces de recopilar información del entorno en tiempo real, procesarla y convertirla en datos útiles para las organizaciones. 
 
-En el marco del presente proyecto, IoTech desarrolla **QualiTrack**, una solución orientada al monitoreo y control de condiciones ambientales en laboratorios y almacenes farmacéuticos. El sistema busca supervisar variables como temperatura, humedad y calidad del aire mediante dispositivos instalados en diferentes áreas.
+Además del monitoreo, IoTech busca que sus sistemas puedan responder automáticamente ante determinadas condiciones mediante dispositivos conectados, permitiendo ejecutar acciones previamente definidas y reducir la dependencia de intervenciones exclusivamente manuales.
 
-A diferencia de una solución dedicada únicamente al registro de información, QualiTrack busca que los dispositivos puedan reaccionar cuando detecten una condición fuera de los valores establecidos. Por ejemplo, ante un incremento de temperatura, el dispositivo podría activar un ventilador o abrir una compuerta de ventilación; mientras que ante una situación crítica podría activar una alarma sonora y señales visuales para advertir al personal.
+Sus soluciones integran dispositivos IoT con servicios backend, aplicaciones web y móviles, permitiendo centralizar la información, registrar eventos y acciones ejecutadas, facilitar la trazabilidad de los procesos y apoyar la toma de decisiones. 
 
-Las mediciones realizadas y las acciones ejecutadas por los dispositivos quedarán registradas en QualiTrack, permitiendo consultar posteriormente qué ocurrió, cuándo ocurrió, qué condición fue detectada y qué acción realizó el sistema. De esta manera, se busca mejorar la trazabilidad, facilitar la supervisión de las instalaciones y reducir la dependencia de revisiones exclusivamente manuales.
-
-IoTech plantea que QualiTrack pueda ser utilizado tanto en áreas de laboratorio como en almacenes que contienen materias primas, insumos y productos farmacéuticos, permitiendo administrar diferentes dispositivos y áreas desde una misma plataforma.
+IoTech busca desarrollar tecnologías confiables y adaptables a las necesidades particulares de cada organización, especialmente en procesos donde el monitoreo continuo, la precisión de los datos y la capacidad de respuesta son importantes para mantener la eficiencia y calidad de las operaciones.
 
 ##### Misión
 
-Desarrollar soluciones IoT que permitan a las organizaciones supervisar y controlar de manera más eficiente sus entornos de trabajo, integrando dispositivos físicos y plataformas digitales para automatizar la recolección de información, detectar situaciones de riesgo y generar respuestas oportunas.
+Desarrollar soluciones IoT que ayuden a las organizaciones a monitorear, controlar y automatizar sus procesos mediante la integración de dispositivos conectados, software y datos, facilitando la detección de situaciones relevantes, la ejecución de respuestas oportunas y una mejor toma de decisiones.
 
 ##### Visión
 
-Convertirnos en una startup referente en el desarrollo de soluciones IoT aplicadas al monitoreo y automatización de procesos en Latinoamérica, ofreciendo tecnologías confiables, accesibles y adaptables que contribuyan a mejorar la eficiencia, trazabilidad y toma de decisiones de las organizaciones.
+Ser una startup tecnológica reconocida en Latinoamérica por el desarrollo de soluciones IoT innovadoras, confiables y adaptables que permitan a organizaciones de diferentes industrias mejorar la supervisión, automatización y gestión de sus procesos.
 
 #### 1.1.2. Perfiles de integrantes del equipo
 
