@@ -12,6 +12,12 @@ De esta manera, el proyecto busca evolucionar QualiTrack hacia una solución IoT
 
 ### 1.1. Startup Profile
 
+En esta sección se presenta el perfil de **IoTech**, startup responsable del desarrollo de QualiTrack. Se describen su propósito, enfoque tecnológico, misión y visión, así como los perfiles de los integrantes que participan en el desarrollo del proyecto.
+
+IoTech busca desarrollar soluciones tecnológicas que permitan conectar el mundo físico con plataformas digitales, utilizando dispositivos IoT para obtener información del entorno, procesarla y generar acciones que permitan responder ante diferentes situaciones.
+
+Dentro de este enfoque, la startup desarrolla QualiTrack como una solución dirigida al sector farmacéutico, buscando mejorar la manera en que laboratorios y almacenes supervisan las condiciones de sus instalaciones y mantienen un registro de los eventos que ocurren en ellas.
+
 #### 1.1.1. Descripción de la Startup
 
 #### 1.1.2. Perfiles de integrantes del equipo
