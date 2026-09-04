@@ -133,6 +133,14 @@ A continuación, se presenta una comparación de los principales competidores co
 </tr>
 </table>
 
+A partir del análisis comparativo, se identifican las siguientes diferencias clave:
+
+- Frente a métodos tradicionales, QualiTrack propone la sustitución del registro manual por una plataforma digital que reduce el error humano y mejora la confiabilidad de la información.
+- En comparación con Elemental Machines, QualiTrack evita implementaciones complejas y costosas, ofreciendo un modelo SaaS más accesible y adaptable a laboratorios que no cuentan con infraestructura empresarial avanzada.
+- A diferencia de soluciones LIMS como LabWare, QualiTrack se enfoca específicamente en la gestión del aseguramiento de la calidad y el cumplimiento normativo durante la operación productiva, integrando datos en tiempo real desde los dispositivos IoT.
+
+En conjunto, este análisis permite concluir que QualiTrack no compite directamente como un ERP o un LIMS tradicional, sino que ocupa un espacio diferenciado, orientado a resolver una problemática concreta del sector farmacéutico: la digitalización confiable del control de calidad bajo normativas locales a un costo accesible.
+
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
 ## 2.2. Entrevistas
