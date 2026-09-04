@@ -217,7 +217,76 @@ Nuestro enfoque inicial estará dirigido a responsables de calidad y supervisió
 
 Sabremos que la iniciativa está avanzando satisfactoriamente cuando, durante las pruebas y pilotos, observemos una reducción del tiempo necesario para detectar y responder ante desviaciones ambientales, una disminución de los registros manuales y una mayor disponibilidad de información trazable sobre las mediciones, alertas y acciones realizadas.
 
-##### 1.2.2.2. Lean UX Assumptions
+#### 1.2.2.2. Lean UX Assumptions
+
+Los assumptions representan las creencias que el equipo considera razonables en esta etapa del proyecto, pero que todavía necesitan ser contrastadas mediante investigación, entrevistas, prototipos y pruebas con usuarios.
+
+Para QualiTrack se consideran cinco categorías de assumptions: Business Assumptions, Business Outcome Assumptions, User Assumptions, User Outcome and Benefit Assumptions y Feature Assumptions.
+
+**Business Assumptions**
+
+* Creemos que los laboratorios y almacenes farmacéuticos necesitan mejorar la forma en que supervisan y registran las condiciones ambientales de sus diferentes áreas.
+* Creemos que existe valor en una solución que no solo informe cuando aparece una desviación, sino que también pueda ejecutar una respuesta automática inicial mediante actuadores.
+* Creemos que los responsables de calidad valorarán disponer de información centralizada sobre mediciones, alertas y acciones realizadas por los dispositivos.
+* Creemos que una solución que combine dispositivos IoT con aplicaciones web y móvil puede reducir la dependencia de controles exclusivamente manuales.
+* Creemos que un modelo de servicio escalable permitirá que organizaciones con diferentes cantidades de áreas y dispositivos puedan adoptar QualiTrack progresivamente.
+* Creemos que iniciar la propuesta en el sector farmacéutico peruano permitirá validar la solución antes de considerar su expansión hacia otros mercados de Latinoamérica.
+
+**Business Outcome Assumptions**
+
+* Creemos que QualiTrack puede reducir el tiempo transcurrido entre la aparición de una desviación ambiental y la ejecución de una primera respuesta.
+* Creemos que durante las pruebas del sistema al menos el 80% de las desviaciones correctamente detectadas podrán generar la acción automática configurada y su correspondiente registro.
+* Creemos que la automatización de la captura de datos permitirá reducir progresivamente la cantidad de registros ambientales realizados manualmente en las áreas monitoreadas.
+* Creemos que la centralización de las mediciones y eventos permitirá disminuir el tiempo requerido para reconstruir qué ocurrió durante una desviación.
+* Creemos que los responsables de calidad podrán supervisar más de un área sin necesidad de encontrarse físicamente frente a cada dispositivo.
+* Creemos que la validación del producto con organizaciones del sector permitirá obtener oportunidades para realizar pilotos y posteriormente adoptar el servicio.
+
+**User Assumptions**
+
+* Creemos que los responsables de calidad y supervisión necesitan conocer el estado de diferentes áreas sin realizar verificaciones presenciales constantes.
+* Creemos que los responsables de calidad necesitan consultar información histórica para determinar cuándo ocurrió una desviación y qué acciones fueron realizadas.
+* Creemos que los responsables de calidad necesitan definir los parámetros permitidos de acuerdo con las necesidades de cada área supervisada.
+* Creemos que el personal operativo necesita reconocer rápidamente si las condiciones del área son normales, de advertencia o críticas.
+* Creemos que el personal operativo necesita recibir una alerta local cuando se produzca una situación que requiera atención.
+* Creemos que los usuarios consideran importante que el dispositivo pueda continuar funcionando localmente aunque exista una interrupción temporal de Internet.
+* Creemos que los responsables de calidad valorarán recibir información y alertas desde un dispositivo móvil cuando no se encuentren físicamente en las instalaciones.
+
+**User Outcome and Benefit Assumptions**
+
+* Los responsables de calidad podrán supervisar las condiciones ambientales de varias áreas desde un mismo sistema.
+* Los responsables de calidad podrán identificar con mayor rapidez cuándo y dónde ocurrió una desviación.
+* Los responsables de calidad podrán conocer qué acciones fueron ejecutadas automáticamente por cada dispositivo.
+* Los responsables de calidad podrán consultar mediciones históricas y eventos relacionados con una desviación sin recurrir a múltiples registros independientes.
+* El personal operativo podrá conocer de manera inmediata el estado del ambiente en el que trabaja.
+* El personal operativo podrá recibir una advertencia local cuando una condición requiera su atención.
+* El personal operativo contará con una primera respuesta automática ante determinadas desviaciones, reduciendo el tiempo necesario para iniciar una acción.
+* Los usuarios podrán conservar la continuidad del monitoreo y de las acciones locales aun cuando exista una interrupción temporal de la conexión con la nube.
+
+**Feature Assumptions**
+
+**FA01. Dispositivo IoT de monitoreo ambiental:**  
+Creemos que un dispositivo equipado con sensores para medir temperatura, humedad y otras condiciones ambientales permitirá obtener información continua de las áreas supervisadas y reducir la dependencia de registros manuales.
+
+**FA02. Control automático mediante actuadores:**  
+Creemos que incorporar actuadores como ventiladores, servomotores, indicadores luminosos y alarmas permitirá ejecutar una respuesta inmediata cuando el dispositivo detecte condiciones de advertencia o críticas.
+
+**FA03. Procesamiento local de reglas:**  
+Creemos que permitir que el microcontrolador evalúe localmente las mediciones y las compare con los parámetros configurados permitirá mantener la capacidad de respuesta aun cuando no exista conexión temporal con Internet.
+
+**FA04. Edge Service con almacenamiento temporal:**  
+Creemos que un servicio Edge capaz de recibir y almacenar temporalmente las mediciones permitirá evitar la pérdida de información durante interrupciones de comunicación con la plataforma central.
+
+**FA05. Configuración de parámetros y respuestas automáticas:**  
+Creemos que permitir a los responsables definir rangos ambientales y las acciones asociadas a cada nivel de condición facilitará la adaptación del dispositivo a diferentes áreas de laboratorio o almacén.
+
+**FA06. Monitoreo web con historial y alertas:**  
+Creemos que una aplicación web que centralice mediciones, estados, alertas y acciones realizadas facilitará la supervisión y trazabilidad de las áreas monitoreadas.
+
+**FA07. Aplicación móvil y notificaciones:**  
+Creemos que una aplicación móvil capaz de mostrar el estado de las áreas y recibir alertas permitirá que los responsables se mantengan informados aun cuando no se encuentren físicamente en las instalaciones.
+
+**FA08. Trazabilidad y reportes ambientales:**  
+Creemos que conservar cronológicamente las mediciones, desviaciones, alertas, acciones automáticas y atenciones realizadas facilitará la revisión de incidentes y la elaboración de reportes para procesos internos de calidad.
 
 ##### 1.2.2.3. Lean UX Hypothesis Statements
 
