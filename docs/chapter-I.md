@@ -64,11 +64,11 @@ Ser una startup tecnológica reconocida en Latinoamérica por el desarrollo de s
 
   <tr>
     <td width="140" height="150" valign="top" align="center">
-      <!-- Foto del integrante -->
+      <img src="../assets/img/chapter-I/Fabrizio.png" alt="Fabrizio Cutiri Photo" width="120">
     </td>
     <td valign="top">
-      <strong>[Nombres y Apellidos] - ([Código UPC])</strong> - Ingeniería de Software<br><br>
-      [Descripción del integrante]
+      <strong>Fabrizio Alexander Cutiri Agüero - (U201914181)</strong> - Ingeniería de Software<br><br>
+      Soy estudiante de Ingeniería de Software, responsable, puntual y con facilidad para adaptarme a diferentes situaciones y entornos de trabajo. Me apasiona la tecnología y disfruto diseñar y desarrollar soluciones innovadoras que ayuden a resolver problemas reales. Cuento con conocimientos en arquitectura de software, tanto en monolito como microservicios, aplico el enfoque Domain-Driven Design y desarrollo de aplicaciones web y móviles, abarcando tanto frontend como backend. Me interesa seguir fortaleciendo mis habilidades técnicas, aprender nuevas tecnologías y participar en proyectos donde pueda aplicar buenas prácticas de desarrollo y aportar soluciones de valor para las personas y organizaciones.
     </td>
   </tr>
 
