@@ -324,6 +324,25 @@ Los Hypothesis Statements relacionan los resultados esperados del negocio con lo
 
 **Creemos que** lograremos disminuir el esfuerzo necesario para revisar eventos ambientales **si** los responsables de calidad **alcanzan** una reconstrucción clara de lo sucedido durante una desviación **con** un historial trazable y reportes que relacionen mediciones, alertas, acciones automáticas y atenciones realizadas.
 
-##### 1.2.2.4. Lean UX Canvas
+#### 1.2.2.4. Lean UX Canvas
+
+El Lean UX Canvas permite organizar visualmente el problema de negocio, los resultados esperados, los usuarios, los beneficios que buscan obtener, las soluciones propuestas, las hipótesis y los principales aspectos que deben validarse.
+
+Para QualiTrack, el contenido del Lean UX Canvas se estructura de la siguiente manera:
+
+| Sección | Contenido |
+|---|---|
+| **1. Business Problem** | En laboratorios y almacenes farmacéuticos pueden existir dificultades para monitorear continuamente las condiciones ambientales, detectar desviaciones oportunamente, ejecutar respuestas inmediatas y mantener una trazabilidad centralizada de las mediciones y acciones realizadas. |
+| **2. Business Outcomes** | Reducir el tiempo de respuesta ante desviaciones; disminuir registros manuales; aumentar la cantidad de eventos ambientales registrados de manera trazable; facilitar la supervisión de varias áreas y obtener interés de organizaciones para realizar pilotos de QualiTrack. |
+| **3. Users** | Responsables de calidad y supervisión; personal operativo de laboratorios y almacenes farmacéuticos. |
+| **4. User Outcomes & Benefits** | Supervisar áreas de manera más rápida; conocer el estado actual del ambiente; identificar desviaciones; recibir alertas oportunamente; disponer de una primera respuesta automática; consultar históricos; conocer qué acciones ejecutó el dispositivo y disponer de información trazable. |
+| **5. Solutions** | Dispositivo IoT con sensores; actuadores; procesamiento local en el microcontrolador; Edge Service; configuración de rangos y reglas; aplicación web; aplicación móvil; notificaciones y reportes ambientales. |
+| **6. Hypotheses** | Las ocho hipótesis definidas a partir de los Feature Assumptions FA01 a FA08. |
+| **7. What's the most important thing we need to learn first?** | Determinar si los usuarios consideran útil y confiable que el dispositivo detecte una desviación y ejecute automáticamente una acción física; validar qué variables necesitan monitorear, qué acciones esperan que se ejecuten y qué nivel de control desean conservar sobre dichas acciones. |
+| **8. What's the least amount of work we need to do to learn the next most important thing?** | Realizar entrevistas con los segmentos objetivo y construir un prototipo funcional con un microcontrolador, sensores y actuadores que permita simular condiciones normales, de advertencia y críticas. Complementar la prueba con prototipos de las aplicaciones web y móvil para evaluar la comprensión de mediciones, alertas y acciones ejecutadas. |
+
+**Lean UX Canvas de QualiTrack**
+
+![Lean UX Canvas de QualiTrack](../assets/img/chapter-I/lean-ux-canvas.png)
 
 ### 1.3. Segmentos objetivo
