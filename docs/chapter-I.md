@@ -22,11 +22,11 @@ Dentro de este enfoque, la startup desarrolla QualiTrack como una solución diri
 
 **IoTech** es una startup tecnológica dedicada al desarrollo de soluciones basadas en Internet of Things (IoT) para organizaciones de diferentes industrias. Su enfoque se centra en integrar dispositivos inteligentes, sensores, conectividad, software y procesamiento de datos para apoyar la supervisión, control y automatización de procesos que requieren información constante y respuestas oportunas.
 
-La startup desarrolla soluciones capaces de recopilar información del entorno en tiempo real, procesarla y convertirla en datos útiles para las organizaciones. 
+La startup desarrolla soluciones capaces de recopilar información del entorno en tiempo real, procesarla y convertirla en datos útiles para las organizaciones.
 
 Además del monitoreo, IoTech busca que sus sistemas puedan responder automáticamente ante determinadas condiciones mediante dispositivos conectados, permitiendo ejecutar acciones previamente definidas y reducir la dependencia de intervenciones exclusivamente manuales.
 
-Sus soluciones integran dispositivos IoT con servicios backend, aplicaciones web y móviles, permitiendo centralizar la información, registrar eventos y acciones ejecutadas, facilitar la trazabilidad de los procesos y apoyar la toma de decisiones. 
+Sus soluciones integran dispositivos IoT con servicios backend, aplicaciones web y móviles, permitiendo centralizar la información, registrar eventos y acciones ejecutadas, facilitar la trazabilidad de los procesos y apoyar la toma de decisiones.
 
 IoTech busca desarrollar tecnologías confiables y adaptables a las necesidades particulares de cada organización, especialmente en procesos donde el monitoreo continuo, la precisión de los datos y la capacidad de respuesta son importantes para mantener la eficiencia y calidad de las operaciones.
 
@@ -74,11 +74,11 @@ Ser una startup tecnológica reconocida en Latinoamérica por el desarrollo de s
 
   <tr>
     <td width="140" height="150" valign="top" align="center">
-      <!-- Foto del integrante -->
+      <img src="../assets/img/chapter-I/Dyron.jpg" alt="Dyron Huapaya Photo" width="120">
     </td>
     <td valign="top">
-      <strong>[Nombres y Apellidos] - ([Código UPC])</strong> - Ingeniería de Software<br><br>
-      [Descripción del integrante]
+      <strong>Dyron Huapaya Galindo - (U202322855)</strong> - Ingeniería de Software<br><br>
+      Tengo 20 años. Me considero una persona que le gusta apoyar a su equipo y que apoya al equipo en momentos dificiles. Cuento con conocimientos en C++, C#, Java y Python. También se desarrollar aplicaciones front-end y back-end. Me gusta aprender nuevas tecnologías y temas interesantes, sobre todo, acerca del mundo tecnológico. Espero que mis cualidades aporten al equipo.
     </td>
   </tr>
 
@@ -154,7 +154,7 @@ La problemática se centra en las dificultades para supervisar continuamente var
 
 **What (¿Qué problema existe?)**
 
-Los laboratorios farmacéuticos presentan dificultades para supervisar continuamente variables críticas  en determinadas áreas, detectar oportunamente condiciones fuera de los parámetros establecidos y ejecutar respuestas ante ellas. Además, las mediciones, incidencias y acciones realizadas pueden quedar distribuidas entre distintos registros, dificultando su trazabilidad.
+Los laboratorios farmacéuticos presentan dificultades para supervisar continuamente variables críticas en determinadas áreas, detectar oportunamente condiciones fuera de los parámetros establecidos y ejecutar respuestas ante ellas. Además, las mediciones, incidencias y acciones realizadas pueden quedar distribuidas entre distintos registros, dificultando su trazabilidad.
 
 **Why (¿Por qué es un problema?)**
 
