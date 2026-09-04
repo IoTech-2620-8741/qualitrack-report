@@ -1,10 +1,15 @@
 # Capítulo IV: Solution Software Design 
+Este capitulo describe el diseño de software de la solución para la plataforma QualiTrack, incluyendo los niveles estratégicos y tácticos del diseño impulsado por el dominio **(Domain Driven Design)**. Se detallan los procesos de descubrimiento de contextos, modelado de flujos de mensajes del dominio, mapeo de contextos y la arquitectura del software a diferentes niveles **(C4)**.
+Tambien se incluyen diagramas de arquitectura del software, diagramas de componentes y diagramas de código para cada contexto delimitado identificado en el diseño.
+
 ## 4.1. Strategic-Level Domain-Driven Design. 
+En esta sección se aborda el enfoque de Strategic-Level Domain-Driven Design, 
+el cual permite definir una vision clara del dominio de la plataforma QualiTrack, identificar los contextos delimitados y establecer las relaciones entre ellos. Se incluyen los siguientes subtemas:
 ### 4.1.1. Design-Level EventStorming. 
 #### 4.1.1.1 Candidate Context Discovery. 
 #### 4.1.1.2 Domain Message Flows Modeling. 
 #### 4.1.1.3 Bounded Context Canvases.  
-### 4.1.2. Context Mapping. 
+### 4.1.2. Context Mapping.
 ### 4.1.3. Software Architecture. 
 #### 4.1.3.1. Software Architecture System Landscape Diagram. 
 #### 4.1.3.2. Software Architecture Context Level Diagrams. 
