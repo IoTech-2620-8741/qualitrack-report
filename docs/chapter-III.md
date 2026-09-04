@@ -73,4 +73,72 @@ Los criterios de aceptación han sido planteados mediante escenarios utilizando 
 
 
 ## 3.2. Impact Mapping
+
 ## 3.3. Product Backlog
+
+El Product Backlog de QualiTrack organiza las User Stories y Technical Stories según el valor que aportan al producto y al proceso de validación de la solución.
+
+Se priorizan inicialmente las historias relacionadas con el **Landing Page**, debido a que permiten comunicar y validar tempranamente la propuesta de valor. Posteriormente se incluyen las capacidades necesarias para registrar organizaciones y áreas, configurar dispositivos IoT, recopilar telemetría, ejecutar acciones automáticas, generar alertas y analizar la información.
+
+Las funcionalidades complementarias de reportes, suscripciones e integraciones se incorporan progresivamente a medida que las capacidades principales del producto se encuentran disponibles.
+
+Para la estimación se utiliza la escala de Story Points **1, 2 y 3**.
+
+| # Orden | User Story ID | Título | Descripción | Story Points |
+|---:|---|---|---|---:|
+| 1 | US01 | Conocer la propuesta de valor | Como visitante, quiero conocer qué problema resuelve QualiTrack, para determinar si la solución puede ser útil para mi organización. | 2 |
+| 2 | US02 | Conocer el funcionamiento de la solución IoT | Como visitante, quiero comprender cómo funciona QualiTrack, para conocer de qué manera monitorea y controla las condiciones ambientales. | 2 |
+| 3 | US03 | Conocer los casos de uso | Como visitante, quiero conocer cómo puede utilizarse QualiTrack en laboratorios y almacenes farmacéuticos, para identificar si se adapta a las necesidades de mi organización. | 2 |
+| 4 | US04 | Comparar planes de suscripción | Como visitante, quiero comparar los planes disponibles de QualiTrack, para identificar la alternativa más adecuada para mi organización. | 2 |
+| 5 | US05 | Solicitar información sobre QualiTrack | Como visitante, quiero comunicarme con el equipo de QualiTrack, para solicitar información adicional sobre la solución. | 2 |
+| 6 | US06 | Consultar información en el idioma preferido | Como visitante, quiero consultar el contenido público en español o inglés, para comprender la información en el idioma que prefiera. | 3 |
+| 7 | TS01 | Soporte técnico del Landing Page | Como Developer, quiero implementar internacionalización y accesibilidad en el sitio público, para ofrecer una experiencia consistente a los diferentes visitantes. | 3 |
+| 8 | US07 | Registro inicial de una organización | Como responsable de calidad, quiero registrar mi organización en QualiTrack, para comenzar a gestionar sus instalaciones y dispositivos. | 3 |
+| 9 | US08 | Inicio de sesión | Como usuario registrado, quiero autenticarme en QualiTrack, para acceder a las funcionalidades correspondientes a mis responsabilidades. | 2 |
+| 10 | US09 | Acceso según responsabilidad | Como usuario registrado, quiero acceder únicamente a las funciones correspondientes a mis responsabilidades, para utilizar la información y operaciones que tengo autorizadas. | 3 |
+| 11 | TS02 | Servicio de autenticación y autorización | Como Developer, quiero disponer de servicios seguros de autenticación y autorización, para proteger los recursos de QualiTrack. | 3 |
+| 12 | US10 | Registrar una instalación | Como responsable de calidad, quiero registrar un laboratorio o almacén farmacéutico, para gestionar sus áreas dentro de QualiTrack. | 2 |
+| 13 | US11 | Registrar un área monitoreada | Como responsable de calidad, quiero registrar las áreas que requieren supervisión ambiental, para identificar dónde se obtienen las mediciones y se ejecutan acciones. | 2 |
+| 14 | TS03 | Servicios de instalaciones y áreas | Como Developer, quiero disponer de servicios REST para gestionar instalaciones y áreas, para que las aplicaciones puedan utilizar esta información de forma consistente. | 3 |
+| 15 | US12 | Registrar y asociar un dispositivo IoT | Como responsable de calidad, quiero registrar un dispositivo y asociarlo a un área, para comenzar a supervisar las condiciones de ese espacio. | 3 |
+| 16 | US13 | Configurar rangos ambientales | Como responsable de calidad, quiero establecer rangos aceptables para las variables ambientales de un área, para que el sistema pueda identificar desviaciones. | 3 |
+| 17 | US14 | Configurar respuestas automáticas | Como responsable de calidad, quiero definir qué acciones debe realizar el dispositivo ante una advertencia o condición crítica, para adaptar su respuesta a las necesidades del área. | 3 |
+| 18 | US15 | Consultar el estado de los dispositivos | Como responsable de calidad, quiero conocer el estado operativo de los dispositivos instalados, para identificar equipos que requieren revisión. | 2 |
+| 19 | TS04 | Servicios de dispositivos y configuración | Como Developer, quiero disponer de servicios REST para gestionar dispositivos, rangos y reglas de actuación, para mantener una configuración centralizada. | 3 |
+| 20 | TS05 | Recepción de telemetría en Edge | Como Developer, quiero que el Edge Service reciba y almacene temporalmente la telemetría de los dispositivos, para conservar las mediciones aunque exista una interrupción de Internet. | 3 |
+| 21 | TS07 | Procesamiento embebido y control de actuadores | Como Developer, quiero implementar en el microcontrolador la adquisición de sensores, evaluación de reglas y control de actuadores, para que el dispositivo pueda responder localmente a las condiciones ambientales. | 3 |
+| 22 | US16 | Consultar condiciones ambientales actuales | Como responsable de calidad, quiero consultar las mediciones recientes de cada área, para conocer sus condiciones ambientales actuales. | 3 |
+| 23 | US18 | Conocer el estado ambiental de un área | Como personal operativo, quiero saber si un área se encuentra en condición normal, de advertencia o crítica, para identificar rápidamente cuándo requiere atención. | 2 |
+| 24 | US20 | Conocer localmente el estado del área | Como personal operativo, quiero conocer el estado ambiental desde el propio dispositivo, para identificar una desviación sin depender de la aplicación. | 3 |
+| 25 | US21 | Respuesta automática ante una advertencia | Como personal operativo, quiero que el dispositivo ejecute una acción automática cuando detecte una condición de advertencia, para responder oportunamente antes de que la situación empeore. | 3 |
+| 26 | US22 | Respuesta automática ante una condición crítica | Como personal operativo, quiero que el dispositivo responda automáticamente ante una condición crítica, para advertir sobre el problema y ejecutar las acciones configuradas de manera inmediata. | 3 |
+| 27 | US23 | Mantener la respuesta automática sin Internet | Como personal operativo, quiero que el dispositivo continúe respondiendo a las desviaciones aunque se interrumpa Internet, para mantener el control básico del área. | 3 |
+| 28 | TS08 | Sincronización de configuración con el dispositivo | Como Developer, quiero distribuir los rangos y reglas configurados desde QualiTrack hacia el Edge Service y los dispositivos, para mantener una configuración coherente entre Cloud y el sistema embebido. | 3 |
+| 29 | TS06 | Sincronización de telemetría con Cloud | Como Developer, quiero sincronizar la información almacenada en Edge con la plataforma Cloud, para centralizar las mediciones sin perder datos durante interrupciones temporales. | 3 |
+| 30 | US24 | Consultar las acciones ejecutadas por el dispositivo | Como responsable de calidad, quiero consultar qué acciones automáticas fueron realizadas, para conocer cómo respondió el sistema ante cada desviación. | 3 |
+| 31 | US25 | Reconocer una alarma local | Como personal operativo, quiero reconocer una alarma después de identificar la situación que la produjo, para indicar que la condición ya está siendo atendida sin eliminar el registro del evento. | 2 |
+| 32 | US17 | Consultar historial ambiental | Como responsable de calidad, quiero consultar las mediciones históricas de un área, para revisar cómo han variado sus condiciones con el tiempo. | 3 |
+| 33 | US19 | Analizar la evolución de las mediciones | Como responsable de calidad, quiero analizar la evolución de las variables ambientales, para reconocer cambios y patrones en las condiciones de las áreas. | 3 |
+| 34 | US26 | Recibir una notificación de desviación | Como responsable de calidad, quiero recibir una notificación cuando se detecte una desviación relevante, para conocer la situación aunque no esté supervisando la plataforma en ese momento. | 3 |
+| 35 | US27 | Consultar alertas activas | Como responsable de calidad, quiero consultar las alertas que aún requieren atención, para priorizar las situaciones pendientes. | 2 |
+| 36 | US28 | Consultar el detalle de una alerta | Como responsable de calidad, quiero conocer qué originó una alerta y qué acciones realizó el dispositivo, para evaluar la situación antes de tomar una decisión. | 2 |
+| 37 | US29 | Registrar la atención de una alerta | Como responsable de calidad, quiero registrar la atención y resolución de una alerta, para conservar evidencia de cómo fue tratada la desviación. | 3 |
+| 38 | US30 | Consultar las condiciones desde la aplicación móvil | Como responsable de calidad, quiero consultar desde mi dispositivo móvil el estado de las áreas supervisadas, para mantenerme informado cuando me encuentre fuera de la instalación. | 3 |
+| 39 | TS09 | Servicio de notificaciones push | Como Developer, quiero integrar un servicio externo de notificaciones push, para comunicar alertas relevantes a la aplicación móvil. | 3 |
+| 40 | US31 | Configurar preferencias de notificación | Como responsable de calidad, quiero definir qué niveles de alerta deseo recibir como notificación, para evitar avisos innecesarios y priorizar situaciones relevantes. | 2 |
+| 41 | US32 | Consultar indicadores ambientales | Como responsable de calidad, quiero consultar indicadores calculados a partir de las mediciones, para evaluar el comportamiento ambiental de las áreas supervisadas. | 3 |
+| 42 | US33 | Analizar tendencias de desviaciones | Como responsable de calidad, quiero identificar tendencias en las desviaciones ambientales, para reconocer áreas o variables que presentan problemas recurrentes. | 3 |
+| 43 | US34 | Consultar la trazabilidad de eventos | Como responsable de calidad, quiero consultar el historial de mediciones, alertas, acciones automáticas y atenciones realizadas, para reconstruir lo ocurrido durante una desviación. | 3 |
+| 44 | US35 | Generar un reporte ambiental | Como responsable de calidad, quiero generar un reporte de las condiciones ambientales de un periodo, para disponer de información consolidada para revisión y auditoría. | 3 |
+| 45 | TS10 | Servicios de indicadores y reportes | Como Developer, quiero disponer de servicios para calcular indicadores y generar información consolidada, para que las aplicaciones puedan consultar resultados de manera consistente. | 3 |
+| 46 | US36 | Contratar un plan de QualiTrack | Como responsable de calidad, quiero contratar un plan de suscripción, para habilitar el uso de QualiTrack para mi organización. | 3 |
+| 47 | US37 | Consultar el estado de la suscripción | Como responsable de calidad, quiero consultar el estado y periodo de mi suscripción, para conocer las condiciones vigentes del servicio contratado. | 2 |
+| 48 | TS11 | Integración con servicio de pagos | Como Developer, quiero integrar QualiTrack con un proveedor externo de pagos, para procesar las suscripciones sin administrar directamente información sensible de pago. | 3 |
+
+**Evidencia del Product Backlog:**
+
+![Product Backlog QualiTrack](../assets/img/chapter-III/product-backlog.png)
+
+**Enlace público al Product Backlog:**
+
+> [Agregar URL pública del Product Backlog]
