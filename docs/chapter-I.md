@@ -288,7 +288,41 @@ Creemos que una aplicación móvil capaz de mostrar el estado de las áreas y re
 **FA08. Trazabilidad y reportes ambientales:**  
 Creemos que conservar cronológicamente las mediciones, desviaciones, alertas, acciones automáticas y atenciones realizadas facilitará la revisión de incidentes y la elaboración de reportes para procesos internos de calidad.
 
-##### 1.2.2.3. Lean UX Hypothesis Statements
+#### 1.2.2.3. Lean UX Hypothesis Statements
+
+Los Hypothesis Statements relacionan los resultados esperados del negocio con los usuarios, los beneficios que desean alcanzar y las funcionalidades propuestas. Cada hipótesis parte de uno de los Feature Assumptions definidos anteriormente y deberá ser validada posteriormente mediante investigación y experimentación.
+
+**Hipótesis 1 — Dispositivo IoT de monitoreo ambiental**
+
+**Creemos que** lograremos reducir la dependencia de registros ambientales manuales **si** los responsables de calidad y el personal operativo **alcanzan** acceso continuo a mediciones confiables de las condiciones del área **con** un dispositivo IoT que capture automáticamente las variables ambientales.
+
+**Hipótesis 2 — Control automático mediante actuadores**
+
+**Creemos que** lograremos reducir el tiempo necesario para ejecutar una primera respuesta ante una desviación **si** el personal operativo **alcanza** una respuesta inmediata ante condiciones de advertencia o críticas **con** actuadores controlados automáticamente por el dispositivo IoT.
+
+**Hipótesis 3 — Procesamiento local de reglas**
+
+**Creemos que** lograremos mantener la capacidad básica de respuesta ante interrupciones de conectividad **si** el personal operativo **alcanza** continuidad en la detección y atención inicial de desviaciones **con** reglas almacenadas y procesadas localmente por el microcontrolador.
+
+**Hipótesis 4 — Edge Service con almacenamiento temporal**
+
+**Creemos que** lograremos disminuir la pérdida de registros producida por interrupciones temporales de Internet **si** los responsables de calidad **alcanzan** continuidad en el historial de mediciones **con** un Edge Service que almacene temporalmente la información y la sincronice posteriormente.
+
+**Hipótesis 5 — Configuración de parámetros y respuestas automáticas**
+
+**Creemos que** lograremos adaptar QualiTrack a diferentes áreas de laboratorios y almacenes **si** los responsables de calidad **alcanzan** la capacidad de establecer las condiciones aceptables y las respuestas requeridas para cada área **con** una configuración de rangos y reglas de actuación asociadas a los dispositivos.
+
+**Hipótesis 6 — Monitoreo web con historial y alertas**
+
+**Creemos que** lograremos reducir el tiempo necesario para identificar y reconstruir una desviación **si** los responsables de calidad **alcanzan** acceso centralizado a las condiciones actuales e históricas de las áreas **con** una aplicación web que reúna mediciones, estados, alertas y acciones ejecutadas.
+
+**Hipótesis 7 — Aplicación móvil y notificaciones**
+
+**Creemos que** lograremos mejorar la atención oportuna de las alertas relevantes **si** los responsables de calidad **alcanzan** acceso remoto al estado de las áreas y a los eventos importantes **con** una aplicación móvil que proporcione monitoreo y notificaciones.
+
+**Hipótesis 8 — Trazabilidad y reportes ambientales**
+
+**Creemos que** lograremos disminuir el esfuerzo necesario para revisar eventos ambientales **si** los responsables de calidad **alcanzan** una reconstrucción clara de lo sucedido durante una desviación **con** un historial trazable y reportes que relacionen mediciones, alertas, acciones automáticas y atenciones realizadas.
 
 ##### 1.2.2.4. Lean UX Canvas
 
