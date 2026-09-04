@@ -10,6 +10,17 @@ el cual permite definir una vision clara del dominio de la plataforma QualiTrack
 El EventStorming es una técnica de modelado colaborativa que permite descubrir y comprender el dominio de la plataforma QualiTrack, identificar los eventos del dominio, 
 los comandos, actores, politicas, modelo de lectura, sistemas externos y agregados. Este enfo permite definir los contextos delimitados y establecer las relaciones entre ellos. Se incluyen los siguientes pasos:
 
+**Paso 1: Event**
+
+**Paso 2: Timelines**
+
+**Paso 3: Pivotal Points**
+
+**Paso 4: Commands**
+
+**Paso 5: Policies and Actors**
+
+
 #### 4.1.1.1 Candidate Context Discovery. 
 #### 4.1.1.2 Domain Message Flows Modeling. 
 #### 4.1.1.3 Bounded Context Canvases.  
