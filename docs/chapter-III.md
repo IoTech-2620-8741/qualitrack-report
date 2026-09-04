@@ -71,8 +71,44 @@ Los criterios de aceptación han sido planteados mediante escenarios utilizando 
 | US37 | Consultar el estado de la suscripción | Como responsable de calidad, quiero consultar el estado y periodo de mi suscripción, para conocer las condiciones vigentes del servicio contratado. | **Escenario 1: Suscripción activa**<br>**Dado que** la organización posee una suscripción activa<br>**Cuando** el responsable consulta su información<br>**Entonces** el sistema proporciona el plan, estado y periodo vigente.<br><br>**Escenario 2: Sin suscripción activa**<br>**Dado que** la organización no posee una suscripción vigente<br>**Cuando** se consulta su información<br>**Entonces** el sistema informa que no existe una suscripción activa. | EP09 |
 | TS11 | Integración con servicio de pagos | Como Developer, quiero integrar QualiTrack con un proveedor externo de pagos, para procesar las suscripciones sin administrar directamente información sensible de pago. | **Escenario 1: Sesión de pago válida**<br>**Dado que** el usuario selecciona un plan activo<br>**Cuando** el backend solicita iniciar el proceso al proveedor de pagos<br>**Entonces** recibe la información necesaria para continuar la contratación.<br><br>**Escenario 2: Confirmación válida del proveedor**<br>**Dado que** el proveedor comunica una operación completada y la comunicación es válida<br>**Cuando** el sistema procesa la confirmación<br>**Entonces** actualiza la suscripción correspondiente sin generar registros duplicados. | EP09 |
 
-
 ## 3.2. Impact Mapping
+
+El **Impact Mapping** permite relacionar los objetivos de negocio de QualiTrack con los actores que pueden contribuir a alcanzarlos, los cambios de comportamiento esperados, los entregables necesarios y las User Stories que representan dichos entregables.
+
+Para QualiTrack se consideran principalmente tres actores: los potenciales clientes que conocen la solución mediante el Landing Page, los responsables de calidad y supervisión que administran y analizan las condiciones ambientales, y el personal operativo que trabaja directamente en laboratorios y almacenes.
+
+### Business Goal 1
+
+**Lograr que al menos tres organizaciones del sector farmacéutico participen en pilotos de QualiTrack durante los primeros seis meses posteriores a disponer de una versión funcional del producto.**
+
+| Actor | Impacto esperado | Deliverables | User Stories relacionadas |
+|---|---|---|---|
+| Visitante / potencial cliente | Comprende el problema que resuelve QualiTrack y reconoce su utilidad para laboratorios y almacenes. | Landing Page con propuesta de valor, funcionamiento, casos de uso y planes. | US01, US02, US03, US04, US05 |
+| Responsable de Calidad | Evalúa la solución como una alternativa para automatizar la supervisión ambiental. | Presentación del funcionamiento IoT, monitoreo, control y trazabilidad. | US02, US03, US16, US24, US32 |
+
+### Business Goal 2
+
+**Lograr que durante un piloto de tres meses al menos el 80 % de las desviaciones ambientales detectadas por los dispositivos generen automáticamente la acción configurada y un registro trazable del evento.**
+
+| Actor | Impacto esperado | Deliverables | User Stories relacionadas |
+|---|---|---|---|
+| Personal Operativo | Depende menos de la observación manual para detectar y responder inicialmente ante desviaciones. | Dispositivo con sensores, evaluación local, indicadores, actuadores y alarmas. | US18, US20, US21, US22, US23, US25 |
+| Responsable de Calidad | Puede verificar qué desviación ocurrió y qué acción ejecutó el dispositivo. | Historial de mediciones, acciones, alertas y eventos. | US17, US24, US28, US34 |
+| Responsable de Calidad | Define los rangos y respuestas que deben utilizar los dispositivos. | Configuración de parámetros y reglas de actuación. | US13, US14 |
+
+### Business Goal 3
+
+**Reducir en un 30 % el tiempo promedio necesario para identificar y registrar una desviación ambiental durante las pruebas piloto, comparado con el proceso manual observado en la organización participante.**
+
+| Actor | Impacto esperado | Deliverables | User Stories relacionadas |
+|---|---|---|---|
+| Personal Operativo | Reconoce rápidamente cuándo existe una advertencia o condición crítica. | Estado ambiental local, alarmas y acciones automáticas. | US18, US20, US21, US22 |
+| Responsable de Calidad | Recibe información de una desviación sin necesidad de encontrarse físicamente en el área. | Alertas y notificaciones móviles. | US26, US27, US28, US30 |
+| Responsable de Calidad | Puede analizar posteriormente el comportamiento de las áreas. | Indicadores, tendencias y reportes ambientales. | US32, US33, US35 |
+
+**Evidencia de Impact Mapping:**
+
+![Impact Mapping de QualiTrack](../assets/img/chapter-III/impact-mapping.png)
 
 ## 3.3. Product Backlog
 
