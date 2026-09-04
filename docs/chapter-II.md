@@ -105,7 +105,7 @@ A continuación, se presenta una comparación de los principales competidores co
 </tr>
 <tr>
 <td>Fortalezas</td>
-<td>Integración IoT, trazabilidad en tiempo real, accesibilidad SaaS.</td>
+<td>Integración IoT con respuesta en tiempo real, trazabilidad en tiempo real, accesibilidad SaaS y enfoque en normativas locales.</td>
 <td>Producto IoT validado en el sector, fuerte enfoque en cumplimiento de buenas prácticas.</td>
 <td>Marca global con mas de 30 años en el negocio, producto altamente configurable en varios entornos.</td>
 <td>Ninguna inversión, sin dependencia de proveedores externos.</td>
@@ -142,6 +142,24 @@ A partir del análisis comparativo, se identifican las siguientes diferencias cl
 En conjunto, este análisis permite concluir que QualiTrack no compite directamente como un ERP o un LIMS tradicional, sino que ocupa un espacio diferenciado, orientado a resolver una problemática concreta del sector farmacéutico: la digitalización confiable del control de calidad bajo normativas locales a un costo accesible.
 
 ### 2.1.2. Estrategias y tácticas frente a competidores
+
+Una vez identificados los actores del mercado y las principales diferencias entre las soluciones existentes, resulta necesario definir cómo QualiTrack puede fortalecer su posicionamiento competitivo y enfrentar los desafíos propios de ingresar a un mercado con opciones consolidadas y prácticas tradicionales ampliamente adoptadas.
+
+Con este objetivo, se emplea la Matriz CAME, la cual permite transformar el análisis FODA en estrategias y acciones concretas. A través de esta herramienta, se plantean tácticas orientadas a potenciar las fortalezas diferenciales de QualiTrack, como la integración IoT, la trazabilidad digital y el enfoque en normativas locales, así como a mitigar debilidades propias de una startup en etapa inicial, como la necesidad de adopción progresiva y validación en el sector.
+
+Las estrategias definidas buscan:
+* Aprovechar la creciente necesidad de cumplimiento normativo y digitalización en el sector farmacéutico.
+* Comunicar claramente el valor de la automatización y la integridad de datos frente a soluciones manuales o genéricas.
+* Reducir la resistencia al cambio mediante interfaces simples, capacitación y acompañamiento.
+* Posicionar a QualiTrack como una alternativa especializada y confiable para laboratorios medianos y entidades públicas.
+
+Matriz CAME para el desarrollo de estrategias basadas en el análisis FODA.
+
+| **Análisis FODA cruzado** | **Oportunidades** | **Amenazas** |
+|---------------------------|------------------|--------------|
+| **Fortalezas (F)**<br>1. Integración IoT para captura automática de datos con respuesta ante valores anormales en tiempo real.<br>2. Trazabilidad en tiempo real e inmutable.<br>3. Enfoque en normativas locales (DIGEMID).<br>4. Modelo SaaS accesible y escalable. | **Estrategia (FO) — Estrategias Ofensivas**<br>1. Establecer alianzas con laboratorios e instituciones de salud para implementar pilotos que validen la integración IoT y generen evidencia de reducción de errores.<br>2. Posicionar a QualiTrack como una solución especializada en cumplimiento normativo en LATAM, destacando su adaptación a DIGEMID.<br>3. Aprovechar el modelo SaaS para captar laboratorios medianos mediante planes accesibles y escalables.<br>4. Promover la automatización de procesos como principal ventaja competitiva frente a métodos manuales y sistemas aislados.<br>5. Impulsar campañas de concientización sobre la importancia de la integridad de datos en la industria farmacéutica. | **Estrategia (FA) — Estrategias Defensivas**<br>1. Fortalecer la seguridad e integridad de los datos mediante protocolos alineados a estándares regulatorios.<br>2. Brindar soporte técnico local y capacitación continua para facilitar la adopción del sistema.<br>3. Comunicar claramente el valor del cumplimiento normativo frente a soluciones genéricas o no especializadas.<br>4. Diseñar interfaces intuitivas que reduzcan la resistencia al cambio del personal operativo.<br>5. Difundir resultados de pilotos para generar confianza frente a competidores consolidados. |
+| **Debilidades (D)**<br>1. Producto nuevo en el mercado.<br>2. Dependencia de integración con hardware (IoT).<br>3. Resistencia al cambio por parte de usuarios.<br>4. Limitada presencia inicial en el sector. | **Estrategia (DO) — Reorientación**<br>1. Implementar programas piloto en laboratorios para validar la propuesta de valor y generar casos de éxito.<br>2. Ofrecer capacitaciones y acompañamiento para facilitar la transición de procesos manuales a digitales.<br>3. Desarrollar una arquitectura modular que permita integrar IoT de forma progresiva.<br>4. Aprovechar la tendencia de digitalización del sector salud para impulsar la adopción del sistema.<br>5. Generar contenido técnico (casos de estudio, reportes) que respalde la efectividad de la solución. | **Estrategia (DA) — Supervivencia**<br>1. Reducir barreras de entrada mediante planes de bajo costo inicial y escalabilidad progresiva.<br>2. Simplificar la implementación técnica para minimizar la complejidad en nuevos clientes.<br>3. Enfocarse en nichos específicos como laboratorios medianos y sector público donde la competencia es menor.<br>4. Diferenciarse mediante una experiencia de usuario simple e intuitiva que facilite la adopción.<br>5. Establecer estrategias de crecimiento progresivo para consolidar presencia en el mercado antes de escalar. |
+
 
 ## 2.2. Entrevistas
 
