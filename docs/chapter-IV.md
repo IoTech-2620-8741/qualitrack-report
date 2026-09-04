@@ -5,7 +5,11 @@ Tambien se incluyen diagramas de arquitectura del software, diagramas de compone
 ## 4.1. Strategic-Level Domain-Driven Design. 
 En esta sección se aborda el enfoque de Strategic-Level Domain-Driven Design, 
 el cual permite definir una vision clara del dominio de la plataforma QualiTrack, identificar los contextos delimitados y establecer las relaciones entre ellos. Se incluyen los siguientes subtemas:
-### 4.1.1. Design-Level EventStorming. 
+### 4.1.1. Design-Level EventStorming.
+
+El EventStorming es una técnica de modelado colaborativa que permite descubrir y comprender el dominio de la plataforma QualiTrack, identificar los eventos del dominio, 
+los comandos, actores, politicas, modelo de lectura, sistemas externos y agregados. Este enfo permite definir los contextos delimitados y establecer las relaciones entre ellos. Se incluyen los siguientes pasos:
+
 #### 4.1.1.1 Candidate Context Discovery. 
 #### 4.1.1.2 Domain Message Flows Modeling. 
 #### 4.1.1.3 Bounded Context Canvases.  
