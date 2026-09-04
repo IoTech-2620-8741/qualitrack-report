@@ -29,16 +29,17 @@ Nombre del Producto: **QualiTrack**
     <th style="border: none; text-align: left;">Código</th>
     <th style="border: none; text-align: left;">Apellidos y Nombres</th>
   </tr>
-  <tr><td style="border: none;"></td><td style="border: none;"></td></tr>
-  <tr><td style="border: none;"></td><td style="border: none;"></td></tr>
-  <tr><td style="border: none;"></td><td style="border: none;"></td></tr>
-  <tr><td style="border: none;"></td><td style="border: none;"></td></tr>
-  <tr><td style="border: none;"></td><td style="border: none;"></td></tr>
-  <tr><td style="border: none;"></td><td style="border: none;"></td></tr>
-  <tr><td style="border: none;"></td><td style="border: none;"></td></tr>
+  <tr><td style="border: none;">U20231c426</td><td style="border: none;">Baca Camargo, Vitaly Arturo</td></tr>
+  <tr><td style="border: none;"></td><td style="border: none;">Cutiri Agüero, Fabrizio Alexander</td></tr>
+  <tr><td style="border: none;"></td><td style="border: none;">Guzmán Cabrejos, Yaku Mateo</td></tr>
+  <tr><td style="border: none;"></td><td style="border: none;">Huapaya Galindo, Dyron</td></tr>
+  <tr><td style="border: none;"></td><td style="border: none;">Lopez Roman, Franco Mauricio</td></tr>
+  <tr><td style="border: none;"></td><td style="border: none;">Montes Ramos, Henry Jaredt</td></tr>
+  <tr><td style="border: none;">U202116401</td><td style="border: none;">Ruiz Madrid, Billy Jake</td></tr>
+  <tr><td style="border: none;">U202311601</td><td style="border: none;">Torres Apolinario, Giovany Smith</td></tr>
 </table>
 
-**Período 202610**
+**Período 202620**
 
 **Agosto**
 
