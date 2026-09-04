@@ -192,9 +192,30 @@ Un caso de mayor impacto sobre el mercado peruano se produjo en 2025, cuando el 
 
 Si bien estos resultados no significan que los incumplimientos hayan sido causados específicamente por fallas en el monitoreo de temperatura, humedad u otras variables, permiten evidenciar las consecuencias que pueden alcanzar las deficiencias en el cumplimiento de los controles requeridos dentro de la industria farmacéutica.
 
-#### 1.2.2. Lean UX Process
+### 1.2.2. Lean UX Process
 
-##### 1.2.2.1. Lean UX Problem Statements
+Lean UX es un enfoque que permite desarrollar productos a partir de problemas, necesidades y supuestos que deben ser validados progresivamente con los usuarios. En lugar de considerar desde el inicio que una determinada solución será exitosa, el equipo identifica aquello que cree conocer sobre el negocio, los usuarios y las funcionalidades propuestas, para posteriormente convertir estas creencias en hipótesis que puedan ser evaluadas.
+
+Para el desarrollo de **QualiTrack**, este proceso permite analizar las necesidades existentes en laboratorios y almacenes farmacéuticos relacionadas con la supervisión de las condiciones ambientales, la detección de desviaciones, la respuesta ante situaciones fuera de los parámetros establecidos y la trazabilidad de los eventos ocurridos.
+
+A partir de la problemática identificada, se plantea un Problem Statement para la nueva iniciativa, seguido por los Business Assumptions, Business Outcome Assumptions, User Assumptions, User Outcome and Benefit Assumptions y Feature Assumptions. Finalmente, estos supuestos son relacionados mediante Hypothesis Statements y representados de manera conjunta en el Lean UX Canvas.
+
+
+#### 1.2.2.1. Lean UX Problem Statements
+
+Para definir el problema de negocio de QualiTrack se utiliza el enfoque de **Brand New Initiative**, considerando el estado actual del dominio, los segmentos involucrados, las necesidades que todavía no son atendidas adecuadamente, la estrategia propuesta y los resultados que permitirán evaluar posteriormente el éxito de la iniciativa.
+
+**Problem Statement**
+
+El estado actual del monitoreo y control de condiciones ambientales en laboratorios y almacenes farmacéuticos se encuentra enfocado principalmente en responsables de calidad y supervisión, así como en personal operativo, quienes deben verificar que variables como temperatura, humedad y otras condiciones relevantes se mantengan dentro de los parámetros definidos para cada área. En determinados escenarios, estas actividades pueden depender de revisiones periódicas, registros manuales o sistemas que funcionan de manera independiente.
+
+Las soluciones y métodos existentes no siempre permiten integrar en un mismo proceso el monitoreo continuo de las condiciones ambientales, la detección inmediata de desviaciones, la ejecución automática de una respuesta física y el registro trazable de todo lo ocurrido. Esto puede generar un intervalo entre la aparición de una condición inadecuada, su identificación y la acción realizada para atenderla.
+
+**QualiTrack** busca atender esta brecha mediante una solución IoT que permita monitorear continuamente las condiciones de laboratorios y almacenes farmacéuticos y responder automáticamente ante determinados eventos. Los dispositivos utilizarán sensores para obtener información del ambiente y actuadores para ejecutar acciones previamente configuradas, como activar ventilación, abrir una compuerta o generar una alarma. Las mediciones y acciones serán registradas y posteriormente estarán disponibles para su consulta y análisis desde QualiTrack.
+
+Nuestro enfoque inicial estará dirigido a responsables de calidad y supervisión, así como al personal operativo de laboratorios y almacenes farmacéuticos en el Perú, especialmente en organizaciones que todavía dependen de controles manuales o de sistemas de monitoreo poco integrados.
+
+Sabremos que la iniciativa está avanzando satisfactoriamente cuando, durante las pruebas y pilotos, observemos una reducción del tiempo necesario para detectar y responder ante desviaciones ambientales, una disminución de los registros manuales y una mayor disponibilidad de información trazable sobre las mediciones, alertas y acciones realizadas.
 
 ##### 1.2.2.2. Lean UX Assumptions
 
