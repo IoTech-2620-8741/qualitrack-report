@@ -8,6 +8,12 @@ En esta etapa, se analizan distintos tipos de competidores con el objetivo de en
 
 ### 2.1.1. Análisis competitivo
 
+Para desarrollar una solución realmente útil, es fundamental comprender el entorno competitivo y las alternativas que actualmente utilizan los laboratorios farmacéuticos para la gestión de la calidad. Este análisis permite identificar no solo cómo se gestionan hoy estos procesos, sino también las principales limitaciones de las soluciones existentes.
+
+En esta etapa, se analizan distintos tipos de competidores con el objetivo de entender sus fortalezas, debilidades y enfoques de mercado, y así definir con claridad el posicionamiento de QualiTrack como una solución diferenciada dentro del sector farmacéutico.
+
+A continuación, se presenta una comparación de los principales competidores considerando su propuesta de valor, mercado objetivo y características generales. Este análisis permite evidenciar que, mientras las soluciones existentes se orientan a grandes corporaciones o dependen de procesos manuales, QualiTrack se posiciona como una alternativa especializada, accesible y centrada en la automatización del aseguramiento de la calidad mediante integración IoT y trazabilidad digital, especialmente pensada para laboratorios pequeños, medianos y entidades públicas de la región.
+
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
 ## 2.2. Entrevistas
