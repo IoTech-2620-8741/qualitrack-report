@@ -171,6 +171,7 @@ Teniendo en cuenta la importancia en la información que nos puede proveer los e
 Segmento objetivo 1: Responsables de calidad y supervisión
 
 **Preguntas Personales**
+
 * ¿Cuál es su nombre?
 * ¿Cuál es su edad?
 * ¿Cuál es su cargo actual dentro del laboratorio?
@@ -186,6 +187,30 @@ Segmento objetivo 1: Responsables de calidad y supervisión
 * ¿Cómo te enteras del estado del laboratorio o área de trabajo cuando no estás presente físicamente (fuera de planta, en otra reunión)?
 
 * Para un área específica, ¿cómo deciden cuál es la temperatura, humedad u otra condición 'normal' y cuál ya es 'fuera de rango'? ¿Y cómo le comunicas esas reglas a tu personal operativo?
+
+* Si pudieras cambiar una sola cosa de cómo supervisas hoy la calidad ambiental, ¿qué cambiarías?
+
+Segmento objetivo 2: Personal operativo de laboratorios y almacenes
+
+**Preguntas Personales**
+
+* ¿Cuál es su nombre?
+* ¿Cuál es su edad?
+* ¿Cuál es su cargo actual dentro de su trabajo?
+* ¿En qué distrito vives?
+* ¿Qué dispositivo usas más para mantenerte comunicado o informado del trabajo (celular, WhatsApp, correo)?
+
+**Preguntas Específicas**
+
+* Cuéntame sobre la última vez que notaste algo raro en las condiciones de tu área (temperatura, humedad, ventilación): ¿cómo te diste cuenta y qué hiciste?
+
+* ¿Le pasó alguna vez que tuvo que actuar rápido frente a una condición ambiental fuera de lo normal dentro de laboratorio (abrir una ventana, activar ventilación, avisar a alguien)? ¿qué pasos seguiste?
+
+* ¿Cómo registras hoy las condiciones del área durante tu turno, y cuánto tiempo te toma hacerlo?
+
+* ¿Qué hacen en tu área de trabajo cuando se corta el internet o falla el sistema que usan para registrar información?
+
+* Si pudieras cambiar algo de cómo monitoreas o reportas las condiciones del área, ¿qué cambiarías?
 
 ### 2.2.2. Registro de entrevistas
 
