@@ -168,6 +168,25 @@ Las entrevistas son clave para la metodología de diseño centrado en el usuario
 
 Teniendo en cuenta la importancia en la información que nos puede proveer los entrevistados, se presentan las preguntas clave para cada segmento objetivo. Para eso se considera dos tipos de preguntas: las personales, orientadas a conocer el perfil del entrevistado y las especificas, las cuales estan enfocadas en los procesos actuales, herramientas utilizadas, desafios operativos y expectativas frente a una solución tecnológica como QualiTrack.
 
+Segmento objetivo 1: Responsables de calidad y supervisión
+
+**Preguntas Personales**
+* ¿Cuál es su nombre?
+* ¿Cuál es su edad?
+* ¿Cuál es su cargo actual dentro del laboratorio?
+* ¿En qué distrito vives?
+* ¿Qué dispositivo usas más para mantenerte comunicado o informado del trabajo (celular, WhatsApp, correo)?
+
+**Preguntas Específicas**
+
+* Cuéntame sobre la última vez que una condición ambiental (temperatura, humedad, aire, etc.) salió fuera de rango en tu área: ¿cómo te enteraste y cuánto tiempo pasó hasta que fue atendida?
+
+* Cuando ocurre una desviación, ¿cómo reconstruyes después lo que pasó para armar un reporte o para una auditoría?
+
+* ¿Cómo te enteras del estado del laboratorio o área de trabajo cuando no estás presente físicamente (fuera de planta, en otra reunión)?
+
+* Para un área específica, ¿cómo deciden cuál es la temperatura, humedad u otra condición 'normal' y cuál ya es 'fuera de rango'? ¿Y cómo le comunicas esas reglas a tu personal operativo?
+
 ### 2.2.2. Registro de entrevistas
 
 ### 2.2.3. Análisis de entrevistas
