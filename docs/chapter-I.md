@@ -234,12 +234,12 @@ Para QualiTrack se consideran cinco categorías de assumptions: Business Assumpt
 
 **Business Outcome Assumptions**
 
-* Creemos que QualiTrack puede reducir el tiempo transcurrido entre la aparición de una desviación ambiental y la ejecución de una primera respuesta.
-* Creemos que durante las pruebas del sistema al menos el 80% de las desviaciones correctamente detectadas podrán generar la acción automática configurada y su correspondiente registro.
-* Creemos que la automatización de la captura de datos permitirá reducir progresivamente la cantidad de registros ambientales realizados manualmente en las áreas monitoreadas.
-* Creemos que la centralización de las mediciones y eventos permitirá disminuir el tiempo requerido para reconstruir qué ocurrió durante una desviación.
-* Creemos que los responsables de calidad podrán supervisar más de un área sin necesidad de encontrarse físicamente frente a cada dispositivo.
-* Creemos que la validación del producto con organizaciones del sector permitirá obtener oportunidades para realizar pilotos y posteriormente adoptar el servicio.
+* Creemos que el modelo de suscripción mensual logrará que al menos el 50% de los pilotos se conviertan en clientes pagantes debido a la facilidad de pago.
+* Creemos que podremos mantener el costo de fabricación y despliegue del dispositivo IoT menor o igual a S/. 300, obteniendo una ganancia del 25%.
+* Creemos que podremos conseguir al menos 2 clientes en el sector farmaceutico peruano antes de que aparezca una solución IoT competidora en el país.
+* Creemos que podremos fabricar y entregar al menos 2 dispositivos IoT dentro de un plazo de 8 semanas para los laboratorios pilotos.
+* Creemos que al menos el 50% de los clientes ampliará el número de áreas y dispositivos conectados mediante el servicio escalable en un plazo de 6 meses.
+* Creemos que podremos validar el modelo de negocio en Perú con al menos 8 piltoso exitosos, lo que nos permitirá expandir el negocio hacia otros paises, todo en un plazo de 2 años.
 
 **User Assumptions**
 
