@@ -30,22 +30,22 @@ A continuación, se presenta una comparación de los principales competidores co
 <td style="text-align: center; vertical-align: middle;">
 <b>QualiTrack</b>
 
-<img src="../assets/img/chapter-ii/QualiTrack logo.png" alt="QualiTrack" width="150" height="80"/>
+<img src="../assets/img/chapter-II/QualiTrack logo.png" alt="QualiTrack" width="150" height="80"/>
 </td>
 <td style="text-align: center; vertical-align: middle;">
 <b>Elemental Machines</b>
 
-<img src="../assets/img/chapter-ii/Elemental Machines logo.jpg" alt="Elemental Machines" width="150"/>
+<img src="../assets/img/chapter-II/Elemental Machines logo.jpg" alt="Elemental Machines" width="150"/>
 </td>
 <td style="text-align: center; vertical-align: middle;">
 <b>LabWare (LIMS)</b>
 
-<img src="../assets/img/chapter-ii/LabWare LIMS logo.png" alt="LabWare LIMS" width="150"/>
+<img src="../assets/img/chapter-II/LabWare LIMS logo.png" alt="LabWare LIMS" width="150"/>
 </td>
 <td style="text-align: center; vertical-align: middle;">
 <b>Métodos tradicionales</b>
 
-<img src="../assets/img/chapter-ii/Métodos tradicionales logo.png" alt="Métodos tradicionales" width="150"/>
+<img src="../assets/img/chapter-II/Métodos tradicionales logo.png" alt="Métodos tradicionales" width="150"/>
 </td>
 </tr>
 <tr>
