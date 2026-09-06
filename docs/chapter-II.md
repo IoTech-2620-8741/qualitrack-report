@@ -281,6 +281,63 @@ En esta sección se presentan los resultados de las entrevistas aplicadas a cada
 
 #### **Segmento objetivo 1: Responsables de calidad y supervisión**
 
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #1<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Melsy</td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>Medina Saravia</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>25 años</td>
+        </tr>
+        <tr>
+            <td>Distrito</td>
+            <td>Ate</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td><div align="center"><img src=""></div></td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td>00:00 min</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td>17:00 min</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>
+           Missli Medina Sarabia es supervisora de calidad de productos farmacéuticos en la empresa Hyc Pharma. Su principal responsabilidad está relacionada con asegurar que los procesos de manufactura cumplan con los estándares de calidad establecidos, especialmente respecto a las condiciones ambientales de las diferentes áreas y salas de la empresa.
+<br> <br>
+La empresa cuenta con diferentes áreas y todas requieren control de condiciones ambientales, principalmente de temperatura, humedad y presión diferencial. Los rangos aceptables dependen del medicamento y de los procedimientos estandarizados para cada proceso. Actualmente, el monitoreo se realiza mediante registros manuales, utilizando formatos establecidos para las diferentes salas y áreas. Durante los procesos de manufactura, las mediciones se realizan aproximadamente cada tres horas, mientras que las áreas que no están en uso cuentan con horarios específicos de registro.
+<br> <br>
+Para gestionar la información utilizan principalmente una guía de producción física, que se completa manualmente durante el proceso, además de una guía virtual. También conservan registros históricos de las condiciones ambientales de cada sala, los cuales son utilizados durante auditorías. Sin embargo, uno de los principales problemas identificados es el registro manual, debido a que los operarios no siempre registran las mediciones en el momento correspondiente. En algunos casos, los valores pueden ser registrados posteriormente para completar espacios vacíos, lo que genera dudas sobre si realmente representan la condición que existía en ese momento.
+<br> <br>
+Cuando se presenta una condición fuera de los rangos establecidos, se considera una desviación interna, que puede ser ambiental cuando está relacionada con temperatura, humedad o presión diferencial. La situación debe ser comunicada principalmente a la supervisora de calidad, quien puede detener el proceso y asegurar el medicamento mientras se verifica la causa. En caso de que exista una posible falla del instrumento de medición, interviene el personal de mantenimiento para revisar el equipo. La supervisora de calidad finalmente determina, mediante su visto bueno, que la lectura es correcta y que el proceso puede continuar.
+<br> <br>
+También destaca la importancia de conservar un historial trazable de las mediciones, especialmente para las auditorías, donde pueden solicitar registros específicos de temperatura o humedad de determinadas salas y fechas. Para evaluar el estado de los ambientes se consideran principalmente los rangos establecidos para cada medicamento, la temperatura, humedad y presión diferencial, siendo esta última importante para evitar la contaminación cruzada. Finalmente, señala que una persona nueva debe conocer correctamente los registros, saber cuándo y dónde realizar cada medición y considerar el factor de corrección correspondiente a cada termohigrómetro, debido a su calibración, para registrar la temperatura real correctamente.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
 
 #### **Segmento objetivo 2: Personal operativo de laboratorios y almacenes**
 
