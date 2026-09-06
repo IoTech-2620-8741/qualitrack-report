@@ -168,51 +168,119 @@ Las entrevistas son clave para la metodología de diseño centrado en el usuario
 
 Teniendo en cuenta la importancia en la información que nos puede proveer los entrevistados, se presentan las preguntas clave para cada segmento objetivo. Para eso se considera dos tipos de preguntas: las personales, orientadas a conocer el perfil del entrevistado y las especificas, las cuales estan enfocadas en los procesos actuales, herramientas utilizadas, desafios operativos y expectativas frente a una solución tecnológica como QualiTrack.
 
-Segmento objetivo 1: Responsables de calidad y supervisión
+#### **Preguntas Personales – Ambos Segmentos:**
 
-**Preguntas Personales**
+*1.	¿Cuál es su nombre?* 
 
-* ¿Cuál es su nombre?
-* ¿Cuál es su edad?
-* ¿Cuál es su cargo actual dentro del laboratorio?
-* ¿En qué distrito vives?
-* ¿Qué dispositivo usas más para mantenerte comunicado o informado del trabajo (celular, WhatsApp, correo)?
+*2.	¿Qué edad tiene?* 
 
-**Preguntas Específicas**
+*3.	¿En qué distrito, provincia o ciudad reside actualmente?* 
 
-* Cuéntame sobre la última vez que una condición ambiental (temperatura, humedad, aire, etc.) salió fuera de rango en tu área: ¿cómo te enteraste y cuánto tiempo pasó hasta que fue atendida?
+*4.	¿Cuál es su cargo o función dentro del laboratorio?* 
 
-* Cuando ocurre una desviación, ¿cómo reconstruyes después lo que pasó para armar un reporte o para una auditoría?
+*5.	¿Cuántos años de experiencia tiene trabajando en el sector farmacéutico?* 
 
-* ¿Cómo te enteras del estado del laboratorio o área de trabajo cuando no estás presente físicamente (fuera de planta, en otra reunión)?
+*6.	¿Cuáles son sus principales responsabilidades dentro de su puesto?* 
 
-* Para un área específica, ¿cómo deciden cuál es la temperatura, humedad u otra condición 'normal' y cuál ya es 'fuera de rango'? ¿Y cómo le comunicas esas reglas a tu personal operativo?
+*7.	¿Qué dispositivos utiliza normalmente durante su trabajo, como computadora, celular, tablet u otros?* 
 
-* Si pudieras cambiar una sola cosa de cómo supervisas hoy la calidad ambiental, ¿qué cambiarías?
+*8.	¿En qué situaciones utiliza cada uno de esos dispositivos?* 
 
-Segmento objetivo 2: Personal operativo de laboratorios y almacenes
+*9.	¿Qué canales utiliza normalmente para comunicarse o coordinar con otras personas o áreas?* 
 
-**Preguntas Personales**
+*10.	¿Cuál considera que es su principal objetivo o responsabilidad dentro de su función en el laboratorio?*
 
-* ¿Cuál es su nombre?
-* ¿Cuál es su edad?
-* ¿Cuál es su cargo actual dentro de su trabajo?
-* ¿En qué distrito vives?
-* ¿Qué dispositivo usas más para mantenerte comunicado o informado del trabajo (celular, WhatsApp, correo)?
+*11.	¿Qué situaciones relacionadas con su trabajo suelen generarle mayor dificultad o frustración?*
 
-**Preguntas Específicas**
+#### **Segmento 1: Rensponsables de Calidad y Supervisión**
 
-* Cuéntame sobre la última vez que notaste algo raro en las condiciones de tu área (temperatura, humedad, ventilación): ¿cómo te diste cuenta y qué hiciste?
+*Preguntas Específicas:*
 
-* ¿Le pasó alguna vez que tuvo que actuar rápido frente a una condición ambiental fuera de lo normal dentro de laboratorio (abrir una ventana, activar ventilación, avisar a alguien)? ¿qué pasos seguiste?
+*1.	De manera general, ¿qué áreas, ambientes o espacios requieren control de condiciones dentro del laboratorio y cómo los denominan normalmente?*
 
-* ¿Cómo registras hoy las condiciones del área durante tu turno, y cuánto tiempo te toma hacerlo?
+*2.	¿Qué características o condiciones necesitan monitorear en esos espacios y cómo determinan cuáles son los valores o rangos aceptables?*
 
-* ¿Qué hacen en tu área de trabajo cuando se corta el internet o falla el sistema que usan para registrar información?
+*3.	¿Cómo realizan actualmente el monitoreo de esas condiciones y qué dispositivos, instrumentos o equipos utilizan?* 
 
-* Si pudieras cambiar algo de cómo monitoreas o reportas las condiciones del área, ¿qué cambiarías?
+*4.	¿Cómo registran y almacenan las mediciones obtenidas?*
+
+*5.	¿Qué sistemas, aplicaciones, documentos o registros utilizan actualmente para consultar o gestionar la información relacionada con el control de calidad?* 
+
+*6.	¿Con qué frecuencia necesitan realizar, revisar o consultar las mediciones de los ambientes?*
+
+*7.	Cuénteme qué sucede desde que se detecta una condición fuera de los valores aceptables hasta que la situación se considera resuelta.*
+
+*8.	¿Qué términos utilizan para referirse a estas situaciones y existen diferentes niveles de gravedad o prioridad?* 
+
+*9.	¿Quiénes necesitan ser informados cuando ocurre una situación de este tipo y cómo se realiza actualmente esa comunicación?* 
+
+*10.	¿Existen reglas sobre cuánto tiempo puede permanecer una condición fuera de los valores aceptables antes de que sea necesario tomar alguna acción?* 
+
+*11.	¿Quién determina que una situación puede considerarse solucionada o cerrada y qué información debe conservarse sobre lo ocurrido?* 
+
+*12.	¿Qué información suelen necesitar recuperar cuando realizan auditorías, revisiones o verificaciones relacionadas con las condiciones ambientales? 
+
+*13.	¿Qué indicadores utiliza actualmente para evaluar si las condiciones de los ambientes se están manteniendo dentro de los parámetros establecidos?*
+
+*14.	Si tuviera que revisar rápidamente el estado general de los ambientes en un panel, ¿qué indicadores o datos consideraría más importantes visualizar?*
+
+*15.	¿Qué parte del proceso actual de monitoreo, registro o revisión considera más lenta, complicada o propensa a errores?* 
+
+*16.	Para una persona nueva en el área, ¿qué términos, reglas o situaciones particulares debería conocer para entender correctamente cómo realizan el control de las condiciones ambientales?*
+
+#### **Segmento objetivo 2: Personal operativo de laboratorios y almacenes**
+
+*Segmento 2: Personal operativo de laboratorios y almacenes*
+
+*Preguntas Específicas*
+
+*1.	De manera general, ¿cómo se organiza el proceso desde que reciben las materias primas hasta que obtienen un producto terminado?* 
+
+*2.	¿Qué sistemas, aplicaciones, documentos o registros utilizan actualmente para gestionar materias primas, fabricación y trazabilidad?* 
+
+*3.	Cuando reciben una materia prima, ¿cómo la identifican y qué información necesitan registrar sobre ella?* 
+
+*4.	Cuando reciben nuevamente la misma materia prima, ¿cómo diferencian una recepción de otra y qué término utilizan para referirse a esas recepciones?* 
+
+*5.	¿Cómo registran la cantidad recibida y cómo determinan la unidad de medida que corresponde a cada materia prima?* 
+
+*6.	¿Qué información relacionada con proveedor, fechas y estado necesitan conocer antes de que una materia prima pueda utilizarse?*
+
+*7.	¿Qué ocurre cuando una materia prima deja de poder utilizarse, es rechazada o presenta algún problema?* 
+
+*8.	Cuando van a fabricar nuevamente un producto que ya han elaborado antes, ¿cómo identifican esa nueva fabricación y qué nombre utilizan para referirse a ella?* 
+
+*9.	¿Qué información necesitan registrar cuando comienza una nueva fabricación?* 
+
+*10.	¿Cómo registran qué materias primas fueron utilizadas en una fabricación determinada y, si una misma materia prima fue recibida varias veces, cómo identifican cuál de esas recepciones se utilizó?* 
+
+*11.	Si posteriormente se detectara un problema con una materia prima utilizada, ¿cómo identificarían los productos o fabricaciones relacionados y qué ocurriría con ellos?*
+
+*12.	¿Qué información necesitan conservar sobre las personas que participaron en una fabricación y qué roles suelen intervenir?* 
+
+*13.	¿Qué máquinas, equipos o instrumentos utilizan durante la fabricación y cómo identifican dónde se encuentra cada uno?*
+
+*14.	¿Qué estados manejan para los equipos y qué condiciones debe cumplir un equipo antes de poder utilizarse?* 
+
+*15.	¿Cómo gestionan el mantenimiento de los equipos y qué condiciones deben cumplirse para que puedan volver a utilizarse?* 
+
+*16.	¿Qué información necesitan conservar sobre los equipos utilizados en una fabricación?*
+
+*17.	Si posteriormente se detectara una falla en un equipo, ¿cómo identificarían los productos relacionados con ese equipo?* 
+
+*18.	Cuando termina una fabricación, ¿qué información necesitan conservar sobre el producto obtenido y qué estados puede tener hasta considerarse disponible o terminado?* 
+
+*19.	¿Qué información relacionada con materias primas, productos y equipos necesitan consultar con mayor frecuencia?* 
+
+*20.	Para una persona nueva en el área, ¿qué términos, reglas o situaciones excepcionales debería conocer para entender correctamente cómo funciona el proceso?*
 
 ### 2.2.2. Registro de entrevistas
+
+#### **Segmento objetivo 1: Responsables de calidad y supervisión**
+
+
+#### **Segmento objetivo 2: Personal operativo de laboratorios y almacenes**
+
 
 ### 2.2.3. Análisis de entrevistas
 
