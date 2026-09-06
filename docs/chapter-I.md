@@ -225,10 +225,10 @@ Para QualiTrack se consideran cinco categorías de assumptions: Business Assumpt
 
 **Business Assumptions**
 
-* Creemos que los laboratorios y almacenes farmacéuticos necesitan mejorar la forma en que supervisan y registran las condiciones ambientales de sus diferentes áreas.
-* Creemos que existe valor en una solución que no solo informe cuando aparece una desviación, sino que también pueda ejecutar una respuesta automática inicial mediante actuadores.
-* Creemos que los responsables de calidad valorarán disponer de información centralizada sobre mediciones, alertas y acciones realizadas por los dispositivos.
-* Creemos que una solución que combine dispositivos IoT con aplicaciones web y móvil puede reducir la dependencia de controles exclusivamente manuales.
+* Creemos que un modelo de suscripción mensual nos permitirá generar ingresos predecibles y facilitar la adopción inicial al reducir la inversión de entrada para el laboratorio.
+* Creemos que el costo de fabricación y despliegue del dispositivo IoT por área monitoreada es lo suficientemente bajo frente al valor percibido (reducción de errores, cumplimiento BPM, trazabilidad) como para sostener un margen viable en laboratorios pequeños y medianos.
+* Creemos que la ausencia de una solución IoT especializada y accesible para el sector farmacéutico peruano (frente a sistemas manuales o software existente) nos da una ventana de oportunidad para posicionarnos como referente antes de que aparezca competencia directa.
+* Creemos que contamos con la capacidad de producir y ensamblar los dispositivos IoT en volúmenes suficientes para atender a los primeros laboratorios piloto sin comprometer los tiempos de entrega.
 * Creemos que un modelo de servicio escalable permitirá que organizaciones con diferentes cantidades de áreas y dispositivos puedan adoptar QualiTrack progresivamente.
 * Creemos que iniciar la propuesta en el sector farmacéutico peruano permitirá validar la solución antes de considerar su expansión hacia otros mercados de Latinoamérica.
 
