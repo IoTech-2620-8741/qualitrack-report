@@ -243,13 +243,13 @@ Para QualiTrack se consideran cinco categorías de assumptions: Business Assumpt
 
 **User Assumptions**
 
-* Creemos que los responsables de calidad y supervisión necesitan conocer el estado de diferentes áreas sin realizar verificaciones presenciales constantes.
-* Creemos que los responsables de calidad necesitan consultar información histórica para determinar cuándo ocurrió una desviación y qué acciones fueron realizadas.
-* Creemos que los responsables de calidad necesitan definir los parámetros permitidos de acuerdo con las necesidades de cada área supervisada.
-* Creemos que el personal operativo necesita reconocer rápidamente si las condiciones del área son normales, de advertencia o críticas.
-* Creemos que el personal operativo necesita recibir una alerta local cuando se produzca una situación que requiera atención.
-* Creemos que los usuarios consideran importante que el dispositivo pueda continuar funcionando localmente aunque exista una interrupción temporal de Internet.
-* Creemos que los responsables de calidad valorarán recibir información y alertas desde un dispositivo móvil cuando no se encuentren físicamente en las instalaciones.
+* Creemos que los responsables de calidad y supervisión son quienes conocen el estado de las distintas áreas del laboratorio mediante verificaciones presenciales periódicas.
+* Creemos que los responsables de calidad son quienes revisan registros y bitácoras manuales para determinar cuándo ocurrió una desviación y qué acciones fueron realizadas.
+* Creemos que los responsables de calidad son quienes tienen criterio técnico para definir los parámetros permitidos de las variables de entorno, de acuerdo con las necesidades de cada área.
+* Creemos que el personal operativo es quien identifica visualmente o de forma manual si las condiciones del área son normales, de advertencia o críticas revisando instrumentos físicos en el área.
+* Creemos que el personal operativo es quien está presente fisicamente y es quien responde a las alertas de condiciones del ambiente que están fuera de rango.
+* Creemos que los laboratorios y almacenes donde operan los responsables de calidad y el personal operativo suelen tener una conectividad a Internet baja e inestable.
+* Creemos que los responsables de calidad no permanecen todo el tiempo dentro de todas las instalaciones que supervisan, sino que dividen su tiempo en supervisar varias áreas.
 
 **User Outcome and Benefit Assumptions**
 
