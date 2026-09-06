@@ -276,6 +276,9 @@ Teniendo en cuenta la importancia en la información que nos puede proveer los e
 
 ### 2.2.2. Registro de entrevistas
 
+En esta sección se presentan los resultados de las entrevistas aplicadas a cada segmento objetivo. Para cada sesión, se incluye: datos del entrevistado, un resumen de las respuestas clave, observaciones del equipo y las principales conclusiones. Este registro sirve como evidencia para orientar las decisiones de diseño y funcionalidades de QualiTrack.
+
+
 #### **Segmento objetivo 1: Responsables de calidad y supervisión**
 
 
