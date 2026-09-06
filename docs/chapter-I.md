@@ -253,14 +253,15 @@ Para QualiTrack se consideran cinco categorías de assumptions: Business Assumpt
 
 **User Outcome and Benefit Assumptions**
 
-* Los responsables de calidad podrán supervisar las condiciones ambientales de varias áreas desde un mismo sistema.
-* Los responsables de calidad podrán identificar con mayor rapidez cuándo y dónde ocurrió una desviación.
-* Los responsables de calidad podrán conocer qué acciones fueron ejecutadas automáticamente por cada dispositivo.
-* Los responsables de calidad podrán consultar mediciones históricas y eventos relacionados con una desviación sin recurrir a múltiples registros independientes.
-* El personal operativo podrá conocer de manera inmediata el estado del ambiente en el que trabaja.
-* El personal operativo podrá recibir una advertencia local cuando una condición requiera su atención.
-* El personal operativo contará con una primera respuesta automática ante determinadas desviaciones, reduciendo el tiempo necesario para iniciar una acción.
-* Los usuarios podrán conservar la continuidad del monitoreo y de las acciones locales aun cuando exista una interrupción temporal de la conexión con la nube.
+* Creemos que los responsables de calidad podrán supervisar las condiciones ambientales de varias áreas desde un mismo sistema, y que el beneficio que obtienen es reducir el tiempo dedicado a verificaciones presenciales al dividir su atención entre múltiples áreas.
+* Creemos que los responsables de calidad podrán identificar con mayor rapidez cuándo y dónde ocurrió una desviación, y que el beneficio que obtienen es reducir el tiempo y esfuerzo que hoy invierten revisando registros y bitácoras manuales.
+* Creemos que los responsables de calidad podrán conocer qué acciones fueron ejecutadas automáticamente por cada dispositivo, junto con el resto del historial de una desviación, y que el beneficio que obtienen es contar con evidencia trazable y auditable para sustentar el cumplimiento BPM ante inspecciones.
+* Creemos que los responsables de calidad podrán consultar mediciones históricas y eventos relacionados con una desviación en un solo lugar, y que el beneficio que obtienen es evitar la dispersión de la información que hoy manejan en múltiples registros independientes.
+* Creemos que el personal operativo podrá conocer de manera inmediata el estado del área en el que trabaja, y que el beneficio que obtiene es dejar de depender de la revisión manual para saber si las condiciones son adecuadas.
+* Creemos que el personal operativo podrá recibir una advertencia local cuando una condición requiera su atención, y que el beneficio que obtiene es reaccionar con mayor rapidez frente a una desviación, sin depender de la inspección presencial constante.
+* Creemos que el personal operativo podrá contar con una primera respuesta automática ante determinadas desviaciones, y que el beneficio que obtiene es ganar tiempo de reacción cuando no pueda actuar de inmediato estando presente en el área.
+* Creemos que los responsables de calidad y el personal operativo podrán conservar la continuidad del monitoreo y de las acciones locales aun cuando exista una interrupción temporal de conexión con la nube, y que el beneficio que obtienen es no perder capacidad de reacción ni datos críticos durante una conección a Internet inestable.
+* Creemos que los responsables de calidad podrán configurar y ajustar los parámetros permitidos por cada área desde el sistema, y que el beneficio que obtienen es aplicar su criterio técnico directamente para calibrar los rangos aceptables.
 
 **Feature Assumptions**
 
