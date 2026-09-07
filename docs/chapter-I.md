@@ -74,7 +74,7 @@ Ser una startup tecnológica reconocida en Latinoamérica por el desarrollo de s
 
   <tr>
     <td width="140" height="150" valign="top" align="center">
-      <img src="../assets/img/chapter-I/Dyron.jpg" alt="Dyron Huapaya Photo" width="120">
+      <img src="../assets/img/chapter-I/Giovany.jpg" alt="Giovany Torres Photo" width="120">
     </td>
     <td valign="top">
       <strong>Dyron Huapaya Galindo - (U202322855)</strong> - Ingeniería de Software<br><br>
@@ -104,11 +104,11 @@ Ser una startup tecnológica reconocida en Latinoamérica por el desarrollo de s
 
   <tr>
     <td width="140" height="150" valign="top" align="center">
-      <!-- Foto del integrante -->
+      <img src="../assets/img/chapter-I/Dyron.jpg" alt="Dyron Huapaya Photo" width="120">
     </td>
     <td valign="top">
-      <strong>[Nombres y Apellidos] - ([Código UPC])</strong> - Ingeniería de Software<br><br>
-      [Descripción del integrante]
+      <strong>Giovany Smith Torres Apolinario - (U202311601)</strong> - Ingeniería de Software<br><br>
+      Tengo 20 años y soy estudiante de Ingeniería de Software. Me considero una persona responsable, comprometida, organizada y con muchas ganas de seguir aprendiendo. Tengo conocimientos en programación con tecnologías como Java, Spring Boot, además de experiencia trabajando con bases de datos y Git. Me gusta trabajar en equipo, compartir ideas, escuchar diferentes puntos de vista y apoyar a mis compañeros cuando lo necesitan. Siempre trato de mantener una buena comunicación y aportar con mis conocimientos para que el equipo pueda avanzar y cumplir los objetivos de la mejor manera.
     </td>
   </tr>
 
