@@ -74,7 +74,7 @@ Ser una startup tecnológica reconocida en Latinoamérica por el desarrollo de s
 
   <tr>
     <td width="140" height="150" valign="top" align="center">
-      <img src="../assets/img/chapter-I/Giovany.jpg" alt="Giovany Torres Photo" width="120">
+      <img src="../assets/img/chapter-I/Dyron.jpg" alt="Dyron Huapaya Photo" width="120">
     </td>
     <td valign="top">
       <strong>Dyron Huapaya Galindo - (U202322855)</strong> - Ingeniería de Software<br><br>
@@ -104,7 +104,7 @@ Ser una startup tecnológica reconocida en Latinoamérica por el desarrollo de s
 
   <tr>
     <td width="140" height="150" valign="top" align="center">
-      <img src="../assets/img/chapter-I/Dyron.jpg" alt="Dyron Huapaya Photo" width="120">
+      <img src="../assets/img/chapter-I/Giovany.jpg" alt="Giovany Torres Photo" width="120">
     </td>
     <td valign="top">
       <strong>Giovany Smith Torres Apolinario - (U202311601)</strong> - Ingeniería de Software<br><br>
