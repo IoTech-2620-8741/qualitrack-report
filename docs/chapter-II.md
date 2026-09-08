@@ -339,6 +339,103 @@ También destaca la importancia de conservar un historial trazable de las medici
 </table>
 
 
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #2<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Melsy</td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>Medina Saravia</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>25 años</td>
+        </tr>
+        <tr>
+            <td>Distrito</td>
+            <td>Ate</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td><div align="center"><img src="../assets/img/chapter-II/Mesly-Medina-Saravia.png"></div></td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td>00:00 min</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td>17:00 min</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #3<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Melsy</td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>Medina Saravia</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>25 años</td>
+        </tr>
+        <tr>
+            <td>Distrito</td>
+            <td>Ate</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td><div align="center"><img src="../assets/img/chapter-II/Mesly-Medina-Saravia.png"></div></td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td>00:00 min</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td>17:00 min</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
 #### **Segmento objetivo 2: Personal operativo de laboratorios y almacenes**
 
 
