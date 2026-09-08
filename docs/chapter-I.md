@@ -114,11 +114,11 @@ Ser una startup tecnológica reconocida en Latinoamérica por el desarrollo de s
 
   <tr>
     <td width="140" height="150" valign="top" align="center">
-      <!-- Foto del integrante -->
+      <img src="../assets/img/chapter-I/FrancoLopez.jpg" alt="Franco Lopez Photo"  width="120">
     </td>
     <td valign="top">
-      <strong>[Nombres y Apellidos] - ([Código UPC])</strong> - Ingeniería de Software<br><br>
-      [Descripción del integrante]
+      <strong>Franco Mauricio López Roman - (U202315890)</strong> - Ingeniería de Software<br><br>
+      Soy estudiante de la carrera de Ingeniería de Software dentro de la Universidad Peruana de Ciencias Aplicadas. Tengo experiencia con proyectos que incluyen C++, Python, HTML, CSS, MongoDB; con algunos conocimientos en javascript, typescript y java. Me considero una persona responsable y comprometida, que da su mayor esfuerzo para el proyecto, con una comunicación para el trabajo en equipo.
     </td>
   </tr>
 
