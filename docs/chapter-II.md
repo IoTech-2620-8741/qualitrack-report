@@ -339,6 +339,63 @@ También destaca la importancia de conservar un historial trazable de las medici
 </table>
 
 
+
+
+#### **Segmento objetivo 2: Personal operativo de laboratorios y almacenes**
+ <table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #1<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td> César  </td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>Agüero</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>38 años</td>
+        </tr>
+        <tr>
+            <td>Distrito</td>
+            <td>Cercado de Lima</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td><div align="center"><img src="../assets/img/chapter-II/Mesly-Medina-Saravia.png"></div></td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td>00:00 min</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td>26:03 min</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>
+                César Agüero, de 38 años con 14 años de experiencia en farmacéutica, es Country Manager de Barat Ceronat Vaccines (transnacional de origen indio) con responsabilidad sobre 4 países: Perú, Bolivia, Chile y Honduras. Gestiona aspectos comerciales, operativos, regulatorios, financieros, de marketing, ventas y legales.
+                Utiliza múltiples dispositivos en Microsoft Teams como canal oficial, aunque identifica un problema crítico: falta de seguimiento efectivo de acuerdos de reuniones y pérdida de trazabilidad en responsabilidades.
+                El flujo productivo comienza con recepción de materias primas en almacén especializado bajo condiciones específicas con monitoreo continuo. Opera líneas de sólidos y líquidos estériles, algunas automatizadas y otras semi-automatizadas. Incluye controles de calidad en cada etapa: liberación de tanda, envasado, rotulado y control final. Los sistemas utilizados son: Data Master File que centraliza información de materias primas con certificados y especificaciones en repositorio digital, y Sistema virtual de gestión de producción basado en Buenas Prácticas de Manufactura con integrity, visibilidad 360, trazabilidad total. Completamente digitalizado desde el año anterior, eliminando progresivamente el papel.
+                La compañía no puede cambiar de materia prima ni proveedor: existe un proceso obligatorio previo de selección y calificación que incluye inspección, auditoría y verificación de licencias. Solo trabaja con fabricantes licenciados. Cada materia prima se identifica por lote y código de recepción con unidades de medida estandarizadas. Si hay problema en recepción, se rechaza completamente sin registrar. El sistema rastrea exactamente qué materias primas específicas fueron utilizadas en cada fabricación. Si posteriormente se detecta un problema, es posible identificar todos los productos y fabricaciones afectadas para acciones correctivas precisas.
+                Cada producto se verifica contra especificaciones aprobadas con tests obligatorios según farmacopea o parámetros críticos internos. Se fabrica solo cuando hay pedido y se libera inmediatamente para despacho, sin inventario. La información consultada más frecuentemente es sobre disponibilidad de materias primas, especialmente aquellas de un único fabricante mundial. Para personal nuevo, es absolutamente obligatorio conocer GMP; sin esto, no se ubicará en el contexto. La compañía usa señalización visual explícita porque prefiere comunicación visual clara sobre avisos escritos.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
 <table>
     <colgroup></colgroup>
     <thead>
@@ -349,19 +406,19 @@ También destaca la importancia de conservar un historial trazable de las medici
     <tbody>
         <tr>
             <td>Nombre</td>
-            <td>Melsy</td>
+            <td>Liz</td>
         </tr>
         <tr>
             <td>Apellidos</td>
-            <td>Medina Saravia</td>
+            <td>Aliaga</td>
         </tr>
         <tr>
             <td>Edad</td>
-            <td>25 años</td>
+            <td>45 años</td>
         </tr>
         <tr>
             <td>Distrito</td>
-            <td>Ate</td>
+            <td>Jesús Maria</td>
         </tr>
         <tr>
             <td>Evidencia</td>
@@ -377,67 +434,19 @@ También destaca la importancia de conservar un historial trazable de las medici
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td>17:00 min</td>
+            <td>16:30 min</td>
         </tr>
         <tr>
             <td>Resumen</td>
             <td>
-            </td>
+                Liz Aliaga, de 45 años y 20 años de experiencia en sector farmacéutico, trabaja en un hospital público de Jesús María, Lima, a cargo de 1,900 medicamentos. Sus tres responsabilidades principales son: velar que el paciente reciba medicamentos efectivos y seguros, mantener medicamentos en condiciones adecuadas según normativa regulatoria, garantizar correcta administración como bienes del Estado. A diferencia de laboratorios de producción, no recibe materias primas sino medicamentos terminados con certificado. Los medicamentos llegan por licitación y compras institucionales a través de 26 farmacias del hospital. Utiliza computadoras, tablas de control, termómetros, hidroxicóticos y cadenas de frío. Comunica por correos electrónicos y teléfono (WhatsApp no oficial). Reporta no tener dificultades ni frustraciones.
+                Cada medicamento ingresa con documentación completa: ficha técnica, buenas prácticas de manufactura, certificados del país de origen, registro de Dijaní, y controles de la empresa productora. Liz verifica cumplimiento de todos requisitos según normativa. Para diferenciar recepciones del mismo medicamento, utiliza sistema "FIFO Peso": si recibe lote hoy, es el primero a distribuir; si llega otro mañana, entra en segundo lugar. Información de proveedor, fechas y estado viene determinada por procesos de compra y licitación donde se especifica cuándo ingresa, qué documentación trae y qué requisitos cumple. Todos los productos tienen mismos requisitos estandarizados.
+                Liz realiza checklist riguroso: si encuentra envase dañado, caja humedecida, blisters con comprimidos partidos o con cambio de color, devuelve todo el lote. Para cantidades grandes, utiliza sistemas de muestreo: toma una cajita de cada lado. Si identifica problema, devuelve toda remesa. Medicamentos rechazados se registran en libro con lote, fecha y código. Si proveedor reenvía, debe ser con otro lote diferente, también registrado. Garantiza trazabilidad completa: problema con lote específico nunca vuelve a ser aceptado.
+                Información de medicamentos consultada frecuentemente: estabilidad, protección de luz, cadena de frío. Valida detalles como "si producto es oxidado, solo reconstituyese en cloruro para mantener estabilidad". Como usuario del hospital, no necesita conocer toda cadena de personal de producción. Lo que valida es información en documentos y caja: farmacéutico que produjo y director técnico que aseguró calidad. En plantas de producción: químicos farmacéuticos certifican insumos, producción, control de calidad, más director técnico.
+           </td>
         </tr>
     </tbody>
 </table>
-
-
-<table>
-    <colgroup></colgroup>
-    <thead>
-        <tr>
-            <th colspan="2">Entrevista #3<br></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Nombre</td>
-            <td>Melsy</td>
-        </tr>
-        <tr>
-            <td>Apellidos</td>
-            <td>Medina Saravia</td>
-        </tr>
-        <tr>
-            <td>Edad</td>
-            <td>25 años</td>
-        </tr>
-        <tr>
-            <td>Distrito</td>
-            <td>Ate</td>
-        </tr>
-        <tr>
-            <td>Evidencia</td>
-            <td><div align="center"><img src="../assets/img/chapter-II/Mesly-Medina-Saravia.png"></div></td>
-        </tr>
-        <tr>
-            <td>Link</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Timing donde inicia la entrevista<br></td>
-            <td>00:00 min</td>
-        </tr>
-        <tr>
-            <td>Duración de la entrevista<br></td>
-            <td>17:00 min</td>
-        </tr>
-        <tr>
-            <td>Resumen</td>
-            <td>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-#### **Segmento objetivo 2: Personal operativo de laboratorios y almacenes**
-
 
 ### 2.2.3. Análisis de entrevistas
 
