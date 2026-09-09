@@ -368,7 +368,7 @@ También destaca la importancia de conservar un historial trazable de las medici
         </tr>
         <tr>
             <td>Evidencia</td>
-            <td><div align="center"><img src="../assets/img/chapter-II/Mesly-Medina-Saravia.png"></div></td>
+            <td><div align="center"><img src="../assets/img/chapter-II/Cesar Agüero.png"></div></td>
         </tr>
         <tr>
             <td>Link</td>
@@ -422,7 +422,7 @@ También destaca la importancia de conservar un historial trazable de las medici
         </tr>
         <tr>
             <td>Evidencia</td>
-            <td><div align="center"><img src="../assets/img/chapter-II/Mesly-Medina-Saravia.png"></div></td>
+            <td><div align="center"><img src="../assets/img/chapter-II/Liz Aliaga.png"></div></td>
         </tr>
         <tr>
             <td>Link</td>
