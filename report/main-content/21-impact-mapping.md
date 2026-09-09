@@ -41,4 +41,4 @@ Los actores considerados corresponden a los segmentos objetivo definidos para Qu
 
 **Evidencia del Impact Mapping:**
 
-![Impact Mapping de QualiTrack](../assets/img/chapter-III/impact-mapping.png)
+![Impact Mapping de QualiTrack](../assets/img/chapter-iii/impact-mapping.png)

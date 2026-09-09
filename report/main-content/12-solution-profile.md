@@ -218,4 +218,4 @@ Para QualiTrack, el contenido del Lean UX Canvas se estructura de la siguiente m
 
 **Lean UX Canvas de QualiTrack**
 
-![Lean UX Canvas de QualiTrack](../assets/img/chapter-I/QualiTrack-LeanUx-Canvas.png)
+![Lean UX Canvas de QualiTrack](../assets/img/chapter-i/qualitrack-leanux-canvas.png)

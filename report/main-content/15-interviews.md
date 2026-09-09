@@ -145,7 +145,7 @@ En esta sección se presentan los resultados de las entrevistas aplicadas a cada
         </tr>
         <tr>
             <td>Evidencia</td>
-            <td><div align="center"><img src="../assets/img/chapter-II/Mesly-Medina-Saravia.png"></div></td>
+            <td><div align="center"><img src="../assets/img/chapter-ii/mesly-medina-saravia.png"></div></td>
         </tr>
         <tr>
             <td>Link</td>
@@ -206,7 +206,7 @@ También destaca la importancia de conservar un historial trazable de las medici
         </tr>
         <tr>
             <td>Evidencia</td>
-            <td><div align="center"><img src="../assets/img/chapter-II/Cesar Agüero.png"></div></td>
+            <td><div align="center"><img src="../assets/img/chapter-ii/cesar-aguero.png"></div></td>
         </tr>
         <tr>
             <td>Link</td>
@@ -260,7 +260,7 @@ También destaca la importancia de conservar un historial trazable de las medici
         </tr>
         <tr>
             <td>Evidencia</td>
-            <td><div align="center"><img src="../assets/img/chapter-II/Liz Aliaga.png"></div></td>
+            <td><div align="center"><img src="../assets/img/chapter-ii/liz-aliaga.png"></div></td>
         </tr>
         <tr>
             <td>Link</td>

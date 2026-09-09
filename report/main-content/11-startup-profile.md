@@ -40,7 +40,7 @@ Ser una startup tecnológica reconocida en Latinoamérica por el desarrollo de s
 
   <tr>
     <td width="140" valign="top" align="center">
-      <img src="../assets/img/chapter-I/Billy.jpg" alt="Billy Ruiz Photo" width="120" />
+      <img src="../assets/img/chapter-i/billy.jpg" alt="Billy Ruiz Photo" width="120" />
     </td>
     <td valign="top">
       <strong>Billy Jake Ruiz Madrid - (U202116401)</strong> - Ingeniería de Software<br><br>
@@ -50,7 +50,7 @@ Ser una startup tecnológica reconocida en Latinoamérica por el desarrollo de s
 
   <tr>
     <td width="140" height="150" valign="top" align="center">
-        <img src="../assets/img/chapter-I/Vitaly.jpeg" alt="Vitaly Baca Photo" width="120">
+        <img src="../assets/img/chapter-i/vitaly.jpeg" alt="Vitaly Baca Photo" width="120">
     </td>
     <td valign="top">
       <strong>Vitaly Baca Camargo Arturo - (u20231c426)</strong> - Ingeniería de Software<br><br>
@@ -60,7 +60,7 @@ Ser una startup tecnológica reconocida en Latinoamérica por el desarrollo de s
 
   <tr>
     <td width="140" height="150" valign="top" align="center">
-      <img src="../assets/img/chapter-I/Fabrizio.png" alt="Fabrizio Cutiri Photo" width="120">
+      <img src="../assets/img/chapter-i/fabrizio.png" alt="Fabrizio Cutiri Photo" width="120">
     </td>
     <td valign="top">
       <strong>Fabrizio Alexander Cutiri Agüero - (U201914181)</strong> - Ingeniería de Software<br><br>
@@ -70,7 +70,7 @@ Ser una startup tecnológica reconocida en Latinoamérica por el desarrollo de s
 
   <tr>
     <td width="140" height="150" valign="top" align="center">
-      <img src="../assets/img/chapter-I/Dyron.jpg" alt="Dyron Huapaya Photo" width="120">
+      <img src="../assets/img/chapter-i/dyron.jpg" alt="Dyron Huapaya Photo" width="120">
     </td>
     <td valign="top">
       <strong>Dyron Huapaya Galindo - (U202322855)</strong> - Ingeniería de Software<br><br>
@@ -100,7 +100,7 @@ Ser una startup tecnológica reconocida en Latinoamérica por el desarrollo de s
 
   <tr>
     <td width="140" height="150" valign="top" align="center">
-      <img src="../assets/img/chapter-I/Giovany.jpg" alt="Giovany Torres Photo" width="120">
+      <img src="../assets/img/chapter-i/giovany.jpg" alt="Giovany Torres Photo" width="120">
     </td>
     <td valign="top">
       <strong>Giovany Smith Torres Apolinario - (U202311601)</strong> - Ingeniería de Software<br><br>
@@ -110,7 +110,7 @@ Ser una startup tecnológica reconocida en Latinoamérica por el desarrollo de s
 
   <tr>
     <td width="140" height="150" valign="top" align="center">
-      <img src="../assets/img/chapter-I/FrancoLopez.jpg" alt="Franco Lopez Photo"  width="120">
+      <img src="../assets/img/chapter-i/franco.jpg" alt="Franco Lopez Photo"  width="120">
     </td>
     <td valign="top">
       <strong>Franco Mauricio López Roman - (U202315890)</strong> - Ingeniería de Software<br><br>

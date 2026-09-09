@@ -89,7 +89,7 @@ Para la estimación se utiliza la escala de Story Points **1, 2 y 3**.
 
 **Evidencia del Product Backlog:**
 
-![Product Backlog QualiTrack](../assets/img/chapter-III/product-backlog.png)
+![Product Backlog QualiTrack](../assets/img/chapter-iii/product-backlog.png)
 
 **Enlace público al Product Backlog:**
 
