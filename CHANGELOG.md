@@ -8,3 +8,13 @@ This file contains a curated list of notable changes made to this project. It is
 ### Added
 - Initial documentation refactoring with chapter one, two, three and four project documentation.
 - Essential assets for project documentation.
+
+## [0.1.1] - 2026-09-08
+
+### Added
+- Changed image directory names
+
+## [0.1.2] - 2026-09-08
+
+### Added
+- Changed image names for consistency.
