@@ -353,7 +353,7 @@ Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagno
         </tr>
         <tr>
             <td>Evidencia</td>
-            <td><div align="center"><img src="../assets/img/chapter-ii/liz-aliaga.png"></div></td>
+            <td><div align="center"><img src="../assets/img/chapter-ii/ohmar-chavez.png"></div></td>
         </tr>
         <tr>
             <td>Link</td>
