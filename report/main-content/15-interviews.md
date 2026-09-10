@@ -435,6 +435,18 @@ En esta sección se presenta el análisis detallado de la información recolecta
 
 **Segmento 1: Responsables de calidad y supervisión**
 
+**Análisis de Características Objetivas y Subjetivas:**
+
+El análisis de las entrevistas evidencia que la supervisión de las condiciones ambientales constituye una actividad fundamental en los procesos de calidad farmacéutica. El 100% de los entrevistados controla la temperatura y humedad de las áreas bajo su responsabilidad, mientras que un 67% también considera el control de la presión diferencial, dependiendo de las características y requerimientos de cada área.
+
+Respecto a la gestión de la información, el 100% de los entrevistados utiliza registros manuales o físicos para documentar las mediciones ambientales. Asimismo, un 33% complementa estos registros mediante herramientas como Excel, evidenciando que la información puede encontrarse distribuida entre diferentes medios y formatos.
+
+A nivel subjetivo, el 67% de los entrevistados manifestó dificultades relacionadas con el registro y gestión manual de las mediciones, principalmente por registros realizados posteriormente a la medición y por el esfuerzo requerido para revisar la información. Además, un 67% destacó la importancia de contar con una visualización más organizada y centralizada de las condiciones de las áreas, especialmente para facilitar la supervisión y consulta de información histórica.
+
+En conjunto, se observa que el responsable de calidad busca mantener las condiciones ambientales dentro de los parámetros establecidos, detectar oportunamente las desviaciones y disponer de información confiable para la supervisión y toma de decisiones.
+
+
+
 **Segmento 2: Personal operativo de laboratorios y almacenes**
 
 ##### Análisis Comparativo
