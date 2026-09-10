@@ -194,7 +194,7 @@ En esta sección se presentan los resultados de las entrevistas aplicadas a cada
 </tr>
         <tr>
             <td>Evidencia</td>
-            <td><div align="center"><img src=""></div></td>
+            <td><div align="center"><img src="../assets/img/chapter-ii/mario-baca.png"></div></td>
         </tr>
         <tr>
             <td>Link</td>
