@@ -243,7 +243,7 @@ Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagno
         </tr>
         <tr>
             <td>Evidencia</td>
-            <td><div align="center"><img src="../assets/img/chapter-ii/"></div></td>
+            <td><div align="center"><img src="../assets/img/chapter-ii/ricardo-melendrez.png"></div></td>
         </tr>
         <tr>
             <td>Link</td>
@@ -251,11 +251,11 @@ Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagno
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td>00:00 min</td>
+            <td>33:00 min</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td>17:00 min</td>
+            <td>55:00 min</td>
         </tr>
         <tr>
             <td>Resumen</td>
@@ -358,11 +358,11 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td>00:00 min</td>
+            <td>26:03 min</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td>16:30 min</td>
+            <td>42:33 min</td>
         </tr>
         <tr>
             <td>Resumen</td>
@@ -410,11 +410,11 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td>00:00 min</td>
+            <td>42:33 min</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td>24:47 min</td>
+            <td>1h :06 min: 08 s</td>
         </tr>
         <tr>
             <td>Resumen</td>
