@@ -436,3 +436,15 @@ En esta sección se presenta el análisis detallado de la información recolecta
 **Segmento 1: Responsables de calidad y supervisión**
 
 **Segmento 2: Personal operativo de laboratorios y almacenes**
+
+##### Análisis Comparativo
+
+##### Contrastación de Segmentos:
+
+##### Conclusiones y Definición de Arquetipos
+
+
+
+
+
+
