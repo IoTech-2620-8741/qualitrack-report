@@ -430,3 +430,9 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
 </table>
 
 ### 2.2.3. Análisis de entrevistas
+
+En esta sección se presenta el análisis detallado de la información recolectada de las entrevistas. Para cada segmento, se explican primero los hallazgos estadísticos objetivos y subjetivos, seguidos de la evidencia gráfica correspondiente.
+
+**Segmento 1: Responsables de calidad y supervisión**
+
+**Segmento 2: Personal operativo de laboratorios y almacenes**
