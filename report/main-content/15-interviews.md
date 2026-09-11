@@ -454,6 +454,17 @@ En conjunto, se observa que el responsable de calidad busca mantener las condici
 
 **Segmento 2: Personal operativo de laboratorios y almacenes**
 
+**Análisis de Características Objetivas y Subjetivas:**
+
+El análisis de las entrevistas evidencia que el control de condiciones ambientales constituye una actividad fundamental en los procesos de calidad farmacéutica. El 100% de los entrevistados verifica la temperatura y humedad de las áreas bajo su responsabilidad, mientras que el 100% también implementa sistemas formales de documentación de procesos. Asimismo, todos utilizan registros manuales o físicos para documentar las mediciones ambientales. A nivel objetivo, el 100% implementa también sistemas de identificación de productos y protocolos de rechazo de defectuosos, 
+evidenciando que la información puede encontrarse distribuida entre diferentes medios y formatos. 
+ 
+A nivel subjetivo, el análisis revela dificultades relacionadas con la gestión manual de información y falta de visibilidad centralizada de procesos. El 67% de los entrevistados manifestó dificultades significativas en sus labores, principalmente por documentación posterior y archivado de registros, falta de visualización centralizada de información de lotes y dificultad en acceso a información histórica de recepciones. Un tercio reportó alta satisfacción sin frustración, considerando que cuando se manejan bien los procesos no existen dificultades. Los otros dos tercios identificaron frustraciones específicas: falta de seguimiento efectivo de acuerdos inter-departamentales en laboratorio transnacional, y desacoplamiento entre desarrollo y producción en áreas de I+D donde productos no pueden transferirse a escala comercial. A pesar de estas dificultades, todos reportaron autonomía en decisiones de calidad y reconocimiento del valor de su trabajo en la cadena de valor.
+ 
+En conjunto, se observa que el Personal Operativo busca mantener las condiciones ambientales dentro de los parámetros establecidos para detectar oportunamente las desviaciones y disponer de información confiable para la supervisión y toma de decisiones. Las principales necesidades identificadas son centralización de información técnica y especificaciones, visibilidad de disponibilidad de suministro y gestión de proveedores críticos, además de integración inter-departamental y coordinación de flujos secuenciales. Con el 100% del segmento operando bajo regulación GMP estricta, existe predisposición clara a adoptar herramientas que mejoren cumplimiento, trazabilidad y eficiencia sin comprometer la seguridad del proceso farmacéutico.
+
+
+
 ##### Análisis Comparativo
 
 ##### Contrastación de Segmentos:
