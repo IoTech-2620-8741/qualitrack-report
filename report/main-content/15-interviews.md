@@ -481,7 +481,13 @@ A partir del análisis realizado, se definen los siguientes perfiles de usuario 
 
 **Principal dificultad:** La dependencia de registros manuales y físicos, que puede dificultar el seguimiento oportuno y la revisión de la información.
 
+*Arquetipo: "EL técnico de control de calidad"*
 
+**Característica principal:** Encargado de la supervisión de de las buenas prácticas profesionales durante la elaboración, almacenado y dispensación del producto.
+
+**Necesidad principal:** Mantener una clara trazabilidad de las materias primas, productos y procesos involucrados en el negocio para facilitar su correcto arbitraje según las normas profesionales.
+
+**Principal dificultad:** Ante grandes producciones se dificulta la trazabilidad de cada producto junto a su lote y respectivas características de elaboración.
 
 
 
