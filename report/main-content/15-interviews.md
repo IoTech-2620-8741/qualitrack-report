@@ -469,6 +469,14 @@ En conjunto, se observa que el Personal Operativo busca mantener las condiciones
 
 ##### Contrastación de Segmentos:
 
+El análisis comparativo de ambos segmentos permite identificar que tanto los responsables de calidad y supervisión como el personal operativo de laboratorios y almacenes participan en procesos donde la información debe mantenerse organizada, disponible y alineada con procedimientos y requisitos de calidad. Ambos segmentos requieren conservar información relacionada con los productos farmacéuticos y sus procesos, así como garantizar el cumplimiento de las condiciones y procedimientos establecidos.
+
+Sin embargo, se observan diferencias en el tipo de información que gestionan y en sus principales necesidades. El Segmento 1 se concentra principalmente en la supervisión de las condiciones ambientales, el seguimiento de parámetros como temperatura, humedad y presión diferencial, y la identificación y atención de desviaciones. En cambio, el Segmento 2 participa directamente en diferentes etapas operativas, incluyendo la recepción de materias primas, desarrollo, fabricación, almacenamiento y trazabilidad de productos y lotes.
+
+Respecto a las dificultades, en el Segmento 1 destaca la dependencia de registros manuales y la necesidad de disponer de una visualización centralizada de las condiciones ambientales. En el Segmento 2 las dificultades son más diversas y dependen del contexto de trabajo: se identifican problemas relacionados con el seguimiento de actividades y acuerdos, la trazabilidad de materias primas y lotes, y la transferencia de desarrollos hacia la producción comercial.
+
+En cuanto al uso de tecnología, ambos segmentos presentan una oportunidad de mejora, aunque con diferentes enfoques. Mientras el Segmento 1 requiere principalmente automatizar y centralizar el monitoreo ambiental, el Segmento 2 requiere herramientas que permitan integrar y consultar información relacionada con materias primas, productos, procesos y trazabilidad. Por ello, aunque ambos segmentos necesitan información confiable y accesible, sus necesidades se encuentran diferenciadas por el rol que cumplen dentro del proceso farmacéutico.
+
 ##### Conclusiones y Definición de Arquetipos
 
 A partir del análisis realizado, se definen los siguientes perfiles de usuario (User Personas):
