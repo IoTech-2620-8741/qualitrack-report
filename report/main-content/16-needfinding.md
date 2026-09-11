@@ -18,6 +18,9 @@ Para este segmento se elaboró el User Persona Alberto García, representante de
 
 ### 2.3.2. User Task Matrix
 
+En esta sección se presenta los Task Matrix relacionados a cada User Persona identificado. Estas tablas permiten exponer las tareas, frecuencia y su importancia para cada usuario identificado. Se realizan estos gráficos con el fin de indicar las tareas mas críticas para la experiencia del usuario.
+
+
 ### 2.3.3. User Journey Mapping
 
 ### 2.3.4. Empathy Mapping
