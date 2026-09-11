@@ -463,7 +463,7 @@ A nivel subjetivo, el análisis revela dificultades relacionadas con la gestión
  
 En conjunto, se observa que el Personal Operativo busca mantener las condiciones ambientales dentro de los parámetros establecidos para detectar oportunamente las desviaciones y disponer de información confiable para la supervisión y toma de decisiones. Las principales necesidades identificadas son centralización de información técnica y especificaciones, visibilidad de disponibilidad de suministro y gestión de proveedores críticos, además de integración inter-departamental y coordinación de flujos secuenciales. Con el 100% del segmento operando bajo regulación GMP estricta, existe predisposición clara a adoptar herramientas que mejoren cumplimiento, trazabilidad y eficiencia sin comprometer la seguridad del proceso farmacéutico.
 
-
+<div align="center"><img src="../assets/img/chapter-ii/operative-personel.png" width="900"></div>
 
 ##### Análisis Comparativo
 
