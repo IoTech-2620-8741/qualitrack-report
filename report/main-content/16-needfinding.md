@@ -23,3 +23,7 @@ Para este segmento se elaboró el User Persona Alberto García, representante de
 ### 2.3.4. Empathy Mapping
 
 En esta sección se presentan los Empathy Maps correspondientes a ambos segmentos objetivo de QualiTrack. Estos artefactos permiten profundizar en sus comportamientos, necesidades, percepciones, preocupaciones y expectativas a partir de la información obtenida en las entrevistas y los User Persona definidos. Su elaboración facilita una comprensión más completa del contexto de cada usuario y sirve como base para orientar las funcionalidades de la solución hacia sus necesidades reales.
+
+**Segmento 1: Responsables de calidad y supervisión**
+
+<img src="../assets/img/chapter-ii/empathy-map-segment-1.png" alt="Diego Ramirez - Empathy Map 1" width="auto" height="1900"/>
