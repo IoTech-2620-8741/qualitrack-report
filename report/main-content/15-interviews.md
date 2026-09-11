@@ -460,6 +460,16 @@ En conjunto, se observa que el responsable de calidad busca mantener las condici
 
 ##### Conclusiones y Definición de Arquetipos
 
+A partir del análisis realizado, se definen los siguientes perfiles de usuario (User Personas):
+
+*Arquetipo: “El Supervisor de Calidad”*
+
+**Característica principal:** Responsable de controlar las condiciones ambientales de las áreas y tomar decisiones ante posibles desviaciones.
+
+**Necesidad principal:** Contar con información confiable, organizada y accesible sobre las condiciones ambientales de las áreas para facilitar la supervisión, detectar desviaciones y consultar registros históricos.
+
+**Principal dificultad:** La dependencia de registros manuales y físicos, que puede dificultar el seguimiento oportuno y la revisión de la información.
+
 
 
 
