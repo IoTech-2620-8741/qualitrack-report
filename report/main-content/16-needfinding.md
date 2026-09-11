@@ -8,13 +8,13 @@ En esta sección se presentan los User Personas definidos para QualiTrack a part
 
 Para este segmento se elaboró el User Persona Diego Ramírez, representante de los responsables de calidad y supervisión. Se consideraron factores como su responsabilidad en el control de condiciones ambientales y su participación en la gestión de desviaciones. Sus principales frustraciones están relacionadas con la dependencia de registros manuales, la dispersión de información y la dificultad para verificar que las mediciones se hayan realizado oportunamente. Asimismo, se tomó en cuenta su necesidad de contar con información centralizada, confiable e histórica que facilite la supervisión, la toma de decisiones y la preparación ante auditorías.
 
-
+<img src="../assets/img/chapter-ii/user-person-segment-1.png" alt="Diego Ramirez - User Person 1" width="auto" height="1900"/>
 
 **Segmento 2: Personal operativo de laboratorios y almacenes**
 
 Para este segmento se elaboró el User Persona Alberto García, representante del personal operativo de laboratorios y almacenes. Se consideraron factores como su amplia experiencia en el sector farmacéutico, su conocimiento de Buenas Prácticas de Manufactura y su responsabilidad en la verificación de productos, documentación y procesos de calidad. Sus principales dificultades se relacionan con la información distribuida en múltiples sistemas, el tiempo destinado a registros manuales y la necesidad de acceder rápidamente a especificaciones e información histórica. Asimismo, se tomó en cuenta su motivación por garantizar medicamentos seguros, mantener la trazabilidad y mejorar la eficiencia operativa mediante herramientas que centralicen la información, faciliten la supervisión y apoyen la generación de reportes para auditorías.
 
-
+<img src="../assets/img/chapter-ii/user-person-segment-2.png" alt="Diego Ramirez - User Person 1" width="auto" height="1900"/>
 
 ### 2.3.2. User Task Matrix
 
