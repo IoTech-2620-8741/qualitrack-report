@@ -27,3 +27,7 @@ En esta sección se presentan los Empathy Maps correspondientes a ambos segmento
 **Segmento 1: Responsables de calidad y supervisión**
 
 <img src="../assets/img/chapter-ii/empathy-map-segment-1.png" alt="Diego Ramirez - Empathy Map 1" width="auto" height="1900"/>
+
+**Segmento 2: Personal operativo de laboratorios y almacenes**
+
+<img src="../assets/img/chapter-ii/empathy-map-segment-2.png" alt="Alberto Garcia - Empathy Map 2" width="auto" height="1900"/>
