@@ -162,15 +162,105 @@ En esta sección se presentan los resultados de las entrevistas aplicadas a cada
         <tr>
             <td>Resumen</td>
             <td>
-           Missli Medina Sarabia es supervisora de calidad de productos farmacéuticos en la empresa Hyc Pharma. Su principal responsabilidad está relacionada con asegurar que los procesos de manufactura cumplan con los estándares de calidad establecidos, especialmente respecto a las condiciones ambientales de las diferentes áreas y salas de la empresa.
-<br> <br>
-La empresa cuenta con diferentes áreas y todas requieren control de condiciones ambientales, principalmente de temperatura, humedad y presión diferencial. Los rangos aceptables dependen del medicamento y de los procedimientos estandarizados para cada proceso. Actualmente, el monitoreo se realiza mediante registros manuales, utilizando formatos establecidos para las diferentes salas y áreas. Durante los procesos de manufactura, las mediciones se realizan aproximadamente cada tres horas, mientras que las áreas que no están en uso cuentan con horarios específicos de registro.
-<br> <br>
-Para gestionar la información utilizan principalmente una guía de producción física, que se completa manualmente durante el proceso, además de una guía virtual. También conservan registros históricos de las condiciones ambientales de cada sala, los cuales son utilizados durante auditorías. Sin embargo, uno de los principales problemas identificados es el registro manual, debido a que los operarios no siempre registran las mediciones en el momento correspondiente. En algunos casos, los valores pueden ser registrados posteriormente para completar espacios vacíos, lo que genera dudas sobre si realmente representan la condición que existía en ese momento.
-<br> <br>
-Cuando se presenta una condición fuera de los rangos establecidos, se considera una desviación interna, que puede ser ambiental cuando está relacionada con temperatura, humedad o presión diferencial. La situación debe ser comunicada principalmente a la supervisora de calidad, quien puede detener el proceso y asegurar el medicamento mientras se verifica la causa. En caso de que exista una posible falla del instrumento de medición, interviene el personal de mantenimiento para revisar el equipo. La supervisora de calidad finalmente determina, mediante su visto bueno, que la lectura es correcta y que el proceso puede continuar.
-<br> <br>
-También destaca la importancia de conservar un historial trazable de las mediciones, especialmente para las auditorías, donde pueden solicitar registros específicos de temperatura o humedad de determinadas salas y fechas. Para evaluar el estado de los ambientes se consideran principalmente los rangos establecidos para cada medicamento, la temperatura, humedad y presión diferencial, siendo esta última importante para evitar la contaminación cruzada. Finalmente, señala que una persona nueva debe conocer correctamente los registros, saber cuándo y dónde realizar cada medición y considerar el factor de corrección correspondiente a cada termohigrómetro, debido a su calibración, para registrar la temperatura real correctamente.
+          Missli Medina Sarabia es supervisora de calidad de productos farmacéuticos en Hyc Pharma. Su principal responsabilidad es asegurar que los procesos de manufactura cumplan con los estándares de calidad, especialmente respecto a las condiciones ambientales de las diferentes áreas y salas. La empresa controla principalmente temperatura, humedad y presión diferencial, cuyos rangos dependen del medicamento y de los procedimientos establecidos. Actualmente, el monitoreo se realiza mediante registros manuales y formatos específicos para cada área. Durante la manufactura, las mediciones se realizan aproximadamente cada tres horas, mientras que las áreas que no están en uso cuentan con horarios específicos. También utilizan una guía de producción física y una guía virtual para gestionar la información. Uno de los principales problemas identificados es el registro manual, ya que los operarios pueden completar las mediciones posteriormente, generando dudas sobre la exactitud de los datos. Cuando se presenta una condición fuera de rango, se considera una desviación ambiental y se comunica a la supervisora de calidad, quien puede detener el proceso mientras se verifica la causa y, si es necesario, interviene mantenimiento. Una vez corregida la situación, la supervisora determina si el proceso puede continuar. Finalmente, destaca la importancia de conservar registros históricos para auditorías y de que el personal conozca los horarios de registro, los parámetros establecidos y el factor de corrección de los termohigrómetros.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #2<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Mario</td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>Baca</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>40 años</td>
+        </tr>
+   <tr>
+    <td>Ubicación</td>
+    <td>São Paulo, Brasil</td>
+</tr>
+        <tr>
+            <td>Evidencia</td>
+            <td><div align="center"><img src="../assets/img/chapter-ii/mario-baca.png"></div></td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td>17:00 min</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td>33:00 min</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>
+Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagnostics Center Brazil, São Paulo, Brasil. Sus principales responsabilidades están relacionadas con la supervisión de las condiciones ambientales y el cumplimiento de los parámetros establecidos en las diferentes áreas del laboratorio. Las áreas que requieren mayor control son almacenamiento, producción, acondicionamiento y espacios donde se mantienen productos pendientes de evaluación. Se monitorean principalmente temperatura y humedad, y en determinadas áreas también presión diferencial, utilizando termohigrómetros y equipos de medición. Los valores aceptables dependen de las características del producto y de los procedimientos definidos para cada área. Actualmente, las mediciones se registran mediante formatos de control y archivos Excel, lo que genera una importante carga de trabajo manual y dificulta consultar la información al encontrarse distribuida en diferentes registros. Cuando se detecta una condición fuera de rango, primero se confirma la medición y luego se evalúa su impacto; dependiendo de la situación, se puede detener temporalmente la actividad, investigar la causa y aplicar las medidas correspondientes antes de continuar. Estas situaciones se consideran desviaciones y su prioridad depende del impacto y duración. El responsable de calidad verifica que la condición haya sido corregida y que se conserve información sobre el valor encontrado, rango permitido, fecha, hora, área afectada y acciones realizadas. Para auditorías se consultan principalmente los registros históricos de las áreas y las desviaciones ocurridas. El principal problema identificado es la revisión manual de registros y archivos Excel, además del riesgo de que algunas mediciones sean registradas posteriormente, generando dudas sobre la exactitud de los datos.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #3<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Ricardo</td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>Melendrez</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>44 años</td>
+        </tr>
+        <tr>
+            <td>Distrito</td>
+            <td>Chorrillos</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td><div align="center"><img src="../assets/img/chapter-ii/ricardo-melendrez.png"></div></td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td>33:00 min</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td>55:00 min</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>
+Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, trabaja en el área de estabilidades de un laboratorio. En su trabajo supervisa principalmente las condiciones de temperatura y humedad en áreas como físico-químico, pesaje e instrumentación, donde los valores deben mantenerse dentro de los parámetros establecidos para evitar alteraciones en los análisis. El monitoreo se realiza mediante termohigrómetros calibrados y las mediciones se registran tres veces al día en formatos físicos, los cuales son supervisados y almacenados durante cinco años. Cuando se detecta una condición fuera de rango, se detienen las actividades, se comunica al jefe inmediato y se solicita la intervención de mantenimiento para corregir el problema. Una vez restablecidas las condiciones, se verifica nuevamente el ambiente y se registra la incidencia en el formato correspondiente. Para auditorías se consultan los registros históricos y las observaciones relacionadas con las desviaciones. Como principales indicadores considera la temperatura y humedad de cada área. Señala que un sistema digital permitiría visualizar todas las áreas en un solo panel y reducir el uso de registros físicos.
             </td>
         </tr>
     </tbody>
@@ -268,11 +358,11 @@ También destaca la importancia de conservar un historial trazable de las medici
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td>00:00 min</td>
+            <td>26:03 min</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td>16:30 min</td>
+            <td>42:33 min</td>
         </tr>
         <tr>
             <td>Resumen</td>
@@ -286,4 +376,127 @@ También destaca la importancia de conservar un historial trazable de las medici
     </tbody>
 </table>
 
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #3<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Ohmar</td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>Chavez</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>42 años</td>
+        </tr>
+        <tr>
+            <td>Distrito</td>
+            <td>San Isidro</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td><div align="center"><img src="../assets/img/chapter-ii/ohmar-chavez.png"></div></td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td>42:33 min</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td>1h :06 min: 08 s</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>
+                Omar Chávez, de 42 años y 15 años de experiencia, es formulador de Investigación y Desarrollo en un laboratorio. Su principal responsabilidad es desarrollo de productos nuevos, desde conceptualización hasta viabilidad comercial. Su mayor frustración es cuando un desarrollo no es transferible a lote comercial. Utiliza computadoras, celulares, tablets, radio y RPC para comunicaciones. Utiliza SAP como sistema de gestión. Su trabajo es fundamental en etapa inicial del ciclo de vida del medicamento, validando que productos puedan escalar a producción comercial.
+                El proceso sigue secuencia rigurosa: análisis de formulación estándar, ensayos para verificar estabilidad y características físico-químicas y farmacotécnicas, verificación analítica, estresamiento para garantizar estabilidad en forma y nivel físico-químico, generación de pilotos, estudios de estabilidad acelerada y largo plazo, tras validación, entrada a fabricación comercial. Diseñado para garantizar que solo productos con estabilidad y viabilidad demostradas lleguen a producción. Todo es respaldado en Buenas Prácticas de Manufactura.
+                Materias primas se identifican por codificación interna (know-how confidencial). Unidades de medida varían: kilogramos, gramos, litros, onzas, unidades, frascos según empresa y producto. Antes de usar materia prima: requisito mínimo es certificado de análisis. Dependiendo empresa/insumo, también solicitan: ficha técnica, ficha de seguridad, certificado de metales pesados, ruta de síntesis, MOA, ROT, ruta de análisis. Algunas empresas solo necesitan COA para iniciar desarrollo. Materias primas con problemas entran a "desmedro".
+                Todo equipo debe cumplir calificación: instalación, operación y desempeño. Nomenclatura de equipos es propia de cada empresa. Área de mantenimiento garantiza condiciones óptimas durante tiempo. Información de equipos permite trazabilidad: software logueado en tiempo real, voucher de registro temporal, huella digital. Si equipo falla durante fabricación, proceso se detiene por completo; no puede continuarse sin garantizar 100% óptimo. Falla detectada después de fabricación: no hay remedio posible.
+                Toda etapa de manufactura es documentada: desde dispensación hasta producto final. Se mantiene registro de todo personal participante, obligatorio GMP. Estados de productos varían según empresa. Flujo es secuencial pero simultáneo entre áreas: dispensación, fabricación, control de calidad interactúan en orden lógico sin predominio. Para personal nuevo: GMP es requisito fundamental. Industria es altamente especializada con múltiples subáreas. Químicos farmacéuticos requieren expertise específica en su subárea especializada.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
 ### 2.2.3. Análisis de entrevistas
+
+En esta sección se presenta el análisis detallado de la información recolectada de las entrevistas. Para cada segmento, se explican primero los hallazgos estadísticos objetivos y subjetivos, seguidos de la evidencia gráfica correspondiente.
+
+**Segmento 1: Responsables de calidad y supervisión**
+
+**Análisis de Características Objetivas y Subjetivas:**
+
+El análisis de las entrevistas evidencia que la supervisión de las condiciones ambientales constituye una actividad fundamental en los procesos de calidad farmacéutica. El 100% de los entrevistados controla la temperatura y humedad de las áreas bajo su responsabilidad, mientras que un 67% también considera el control de la presión diferencial, dependiendo de las características y requerimientos de cada área.
+
+Respecto a la gestión de la información, el 100% de los entrevistados utiliza registros manuales o físicos para documentar las mediciones ambientales. Asimismo, un 33% complementa estos registros mediante herramientas como Excel, evidenciando que la información puede encontrarse distribuida entre diferentes medios y formatos.
+
+A nivel subjetivo, el 67% de los entrevistados manifestó dificultades relacionadas con el registro y gestión manual de las mediciones, principalmente por registros realizados posteriormente a la medición y por el esfuerzo requerido para revisar la información. Además, un 67% destacó la importancia de contar con una visualización más organizada y centralizada de las condiciones de las áreas, especialmente para facilitar la supervisión y consulta de información histórica.
+
+En conjunto, se observa que el responsable de calidad busca mantener las condiciones ambientales dentro de los parámetros establecidos, detectar oportunamente las desviaciones y disponer de información confiable para la supervisión y toma de decisiones.
+
+<br>
+
+<div align="center"><img src="../assets/img/chapter-ii/quality-managers-charts-image.png" width="900"></div>
+
+<br>
+
+
+**Segmento 2: Personal operativo de laboratorios y almacenes**
+
+**Análisis de Características Objetivas y Subjetivas:**
+
+El análisis de las entrevistas evidencia que el control de condiciones ambientales constituye una actividad fundamental en los procesos de calidad farmacéutica. El 100% de los entrevistados verifica la temperatura y humedad de las áreas bajo su responsabilidad, mientras que el 100% también implementa sistemas formales de documentación de procesos. Asimismo, todos utilizan registros manuales o físicos para documentar las mediciones ambientales. A nivel objetivo, el 100% implementa también sistemas de identificación de productos y protocolos de rechazo de defectuosos, 
+evidenciando que la información puede encontrarse distribuida entre diferentes medios y formatos. 
+ 
+A nivel subjetivo, el análisis revela dificultades relacionadas con la gestión manual de información y falta de visibilidad centralizada de procesos. El 67% de los entrevistados manifestó dificultades significativas en sus labores, principalmente por documentación posterior y archivado de registros, falta de visualización centralizada de información de lotes y dificultad en acceso a información histórica de recepciones. Un tercio reportó alta satisfacción sin frustración, considerando que cuando se manejan bien los procesos no existen dificultades. Los otros dos tercios identificaron frustraciones específicas: falta de seguimiento efectivo de acuerdos inter-departamentales en laboratorio transnacional, y desacoplamiento entre desarrollo y producción en áreas de I+D donde productos no pueden transferirse a escala comercial. A pesar de estas dificultades, todos reportaron autonomía en decisiones de calidad y reconocimiento del valor de su trabajo en la cadena de valor.
+ 
+En conjunto, se observa que el Personal Operativo busca mantener las condiciones ambientales dentro de los parámetros establecidos para detectar oportunamente las desviaciones y disponer de información confiable para la supervisión y toma de decisiones. Las principales necesidades identificadas son centralización de información técnica y especificaciones, visibilidad de disponibilidad de suministro y gestión de proveedores críticos, además de integración inter-departamental y coordinación de flujos secuenciales. Con el 100% del segmento operando bajo regulación GMP estricta, existe predisposición clara a adoptar herramientas que mejoren cumplimiento, trazabilidad y eficiencia sin comprometer la seguridad del proceso farmacéutico.
+
+<div align="center"><img src="../assets/img/chapter-ii/operative-personel.png" width="900"></div>
+
+##### Análisis Comparativo
+
+##### Contrastación de Segmentos:
+
+El análisis comparativo de ambos segmentos permite identificar que tanto los responsables de calidad y supervisión como el personal operativo de laboratorios y almacenes participan en procesos donde la información debe mantenerse organizada, disponible y alineada con procedimientos y requisitos de calidad. Ambos segmentos requieren conservar información relacionada con los productos farmacéuticos y sus procesos, así como garantizar el cumplimiento de las condiciones y procedimientos establecidos.
+
+Sin embargo, se observan diferencias en el tipo de información que gestionan y en sus principales necesidades. El Segmento 1 se concentra principalmente en la supervisión de las condiciones ambientales, el seguimiento de parámetros como temperatura, humedad y presión diferencial, y la identificación y atención de desviaciones. En cambio, el Segmento 2 participa directamente en diferentes etapas operativas, incluyendo la recepción de materias primas, desarrollo, fabricación, almacenamiento y trazabilidad de productos y lotes.
+
+Respecto a las dificultades, en el Segmento 1 destaca la dependencia de registros manuales y la necesidad de disponer de una visualización centralizada de las condiciones ambientales. En el Segmento 2 las dificultades son más diversas y dependen del contexto de trabajo: se identifican problemas relacionados con el seguimiento de actividades y acuerdos, la trazabilidad de materias primas y lotes, y la transferencia de desarrollos hacia la producción comercial.
+
+En cuanto al uso de tecnología, ambos segmentos presentan una oportunidad de mejora, aunque con diferentes enfoques. Mientras el Segmento 1 requiere principalmente automatizar y centralizar el monitoreo ambiental, el Segmento 2 requiere herramientas que permitan integrar y consultar información relacionada con materias primas, productos, procesos y trazabilidad. Por ello, aunque ambos segmentos necesitan información confiable y accesible, sus necesidades se encuentran diferenciadas por el rol que cumplen dentro del proceso farmacéutico.
+
+##### Conclusiones y Definición de Arquetipos
+
+A partir del análisis realizado, se definen los siguientes perfiles de usuario (User Personas):
+
+*Arquetipo: “El Supervisor de Calidad”*
+
+**Característica principal:** Responsable de controlar las condiciones ambientales de las áreas y tomar decisiones ante posibles desviaciones.
+
+**Necesidad principal:** Contar con información confiable, organizada y accesible sobre las condiciones ambientales de las áreas para facilitar la supervisión, detectar desviaciones y consultar registros históricos.
+
+**Principal dificultad:** La dependencia de registros manuales y físicos, que puede dificultar el seguimiento oportuno y la revisión de la información.
+
+*Arquetipo: "El técnico de control de calidad"*
+
+**Característica principal:** Encargado de la supervisión de de las buenas prácticas profesionales durante la elaboración, almacenado y dispensación del producto.
+
+**Necesidad principal:** Mantener una clara trazabilidad de las materias primas, productos y procesos involucrados en el negocio para facilitar su correcto arbitraje según las normas profesionales.
+
+**Principal dificultad:** Ante grandes producciones se dificulta la trazabilidad de cada producto junto a su lote y respectivas características de elaboración.
+
+
+
+
