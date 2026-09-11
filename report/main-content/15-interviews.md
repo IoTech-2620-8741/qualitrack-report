@@ -445,6 +445,11 @@ A nivel subjetivo, el 67% de los entrevistados manifestó dificultades relaciona
 
 En conjunto, se observa que el responsable de calidad busca mantener las condiciones ambientales dentro de los parámetros establecidos, detectar oportunamente las desviaciones y disponer de información confiable para la supervisión y toma de decisiones.
 
+<br>
+
+<div align="center"><img src="../assets/img/chapter-ii/quality-managers-charts-image.png" width="900"></div>
+
+<br>
 
 
 **Segmento 2: Personal operativo de laboratorios y almacenes**
