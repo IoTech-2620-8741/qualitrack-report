@@ -18,6 +18,102 @@ Para este segmento se elaboró el User Persona Alberto García, representante de
 
 ### 2.3.2. User Task Matrix
 
+En esta sección se presenta el User Task Matrix, que concentra las tareas que los User Persona (Diego Ramírez, representante del Segmento 1: Responsables de calidad y supervisión; y Alberto García, representante del Segmento 2: Personal operativo de laboratorios y almacenes) realizan para cumplir sus objetivos dentro del laboratorio o almacén. El cuadro presenta, para cada User Persona, la frecuencia y la importancia asociadas a cada tarea identificada.
+
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2">Tarea</th>
+      <th colspan="2">Diego Ramírez</th>
+      <th colspan="2">Alberto García</th>
+    </tr>
+    <tr>
+      <th>Frecuencia</th>
+      <th>Importancia</th>
+      <th>Frecuencia</th>
+      <th>Importancia</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Monitorear/verificar las condiciones ambientales del área de trabajo (temperatura, humedad, presión)</td>
+      <td>Casi siempre</td>
+      <td>Alta</td>
+      <td>Siempre</td>
+      <td>Media</td>
+    </tr>
+    <tr>
+      <td>Detectar y responder ante una desviación o alerta ambiental</td>
+      <td>A veces</td>
+      <td>Alta</td>
+      <td>A veces</td>
+      <td>Alta</td>
+    </tr>
+    <tr>
+      <td>Registrar y consultar la información de un lote</td>
+      <td>A veces</td>
+      <td>Alta</td>
+      <td>Siempre</td>
+      <td>Alta</td>
+    </tr>
+    <tr>
+      <td>Definir o actualizar los rangos y parámetros ambientales aceptables por área</td>
+      <td>Ocasionalmente</td>
+      <td>Alta</td>
+      <td>No aplica</td>
+      <td>No aplica</td>
+    </tr>
+    <tr>
+      <td>Consultar el historial de mediciones y desviaciones para auditorías o revisiones</td>
+      <td>A veces</td>
+      <td>Alta</td>
+      <td>No aplica</td>
+      <td>No aplica</td>
+    </tr>
+    <tr>
+      <td>Elaborar reportes o consolidados de información de calidad</td>
+      <td>A veces</td>
+      <td>Alta</td>
+      <td>No aplica</td>
+      <td>No aplica</td>
+    </tr>
+    <tr>
+      <td>Recepcionar y verificar materias primas al ingresar al almacén/laboratorio</td>
+      <td>No aplica</td>
+      <td>No aplica</td>
+      <td>Siempre</td>
+      <td>Alta</td>
+    </tr>
+    <tr>
+      <td>Comunicar o escalar una condición anómala al responsable de calidad</td>
+      <td>No aplica</td>
+      <td>No aplica</td>
+      <td>Ocasionalmente</td>
+      <td>Alta</td>
+    </tr>
+    <tr>
+      <td>Consultar especificaciones técnicas o disponibilidad de materias primas antes de utilizarlas</td>
+      <td>No aplica</td>
+      <td>No aplica</td>
+      <td>Siempre</td>
+      <td>Media</td>
+    </tr>
+  </tbody>
+</table>
+
+Del análisis del cuadro se observa que, para Diego Ramírez, la tarea con mayor frecuencia e importancia combinadas es monitorear las condiciones ambientales de las áreas a su cargo, dado que constituye la base de su rol de supervisión y se repite varias veces al día. Para Alberto García, las tareas con mayor frecuencia e importancia son la recepción y verificación de materias primas, y el registro de la información de las materias primas, pues ambas ocurren de forma constante durante su trabajo y determinan la calidad del producto.
+
+**Coincidencias entre los User Persona:**
+ 
+- Monitoreo y verificación de las condiciones ambientales del área de trabajo.
+- Detección y respuesta ante una desviación o alerta ambiental.
+- Verificación y calificación del estado de un equipo antes de utilizarlo.
+- Registro y consulta de la trazabilidad de una fabricación o lote.
+
+**Diferencias entre los User Persona:**
+- Diego Ramírez se encarga de definir y actualizar los rangos y parámetros aceptables, consultar el historial para auditorías, y elaborar reportes o consolidados de información de calidad, ya que son tareas propias de su rol de supervisión.
+- Alberto García se encarga de recepcionar y verificar materias primas o insumos, comunicar una condición anómala, y consultar especificaciones técnicas de materias primas, ya que el tiene que manipular los insumos y productos.
+
 ### 2.3.3. User Journey Mapping
 
 ### 2.3.4. Empathy Mapping
