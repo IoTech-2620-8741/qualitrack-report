@@ -78,15 +78,29 @@ Ser una startup tecnológica reconocida en Latinoamérica por el desarrollo de s
     </td>
   </tr>
 
-  <tr>
-    <td width="140" height="150" valign="top" align="center">
-      <!-- Foto del integrante -->
-    </td>
-    <td valign="top">
-      <strong>[Nombres y Apellidos] - ([Código UPC])</strong> - Ingeniería de Software<br><br>
-      [Descripción del integrante]
-    </td>
-  </tr>
+<tr>
+  <td width="140" height="150" valign="top" align="center">
+    <img src="../assets/img/chapter-i/henry.png" alt="Henry Jaredt Montes Ramos" width="120">
+  </td>
+
+  <td valign="top">
+    <strong>Henry Jaredt Montes Ramos - (U20231d343)</strong> - Ingeniería de Software<br><br>
+
+    Estudiante de Ingeniería de Software con interés en el desarrollo de soluciones 
+    tecnológicas innovadoras y la construcción de aplicaciones orientadas a resolver 
+    problemas reales. Se caracteriza por su responsabilidad, capacidad de colaboración 
+    y disposición para aportar conocimientos dentro de equipos multidisciplinarios, 
+    buscando siempre contribuir al cumplimiento de los objetivos del proyecto.<br><br>
+
+    Cuenta con experiencia académica en desarrollo de aplicaciones web y móviles, 
+    utilizando lenguajes como C++, Python, JavaScript, HTML y CSS. Ha participado en 
+    proyectos de desarrollo empleando tecnologías y frameworks como Angular, Vue y React, 
+    además de trabajar con bases de datos relacionales y no relacionales como MySQL, 
+    PostgreSQL y MongoDB. Asimismo, posee conocimientos en herramientas de desarrollo, 
+    control de versiones y diseño de soluciones digitales orientadas a mejorar la 
+    experiencia del usuario.
+  </td>
+</tr>
 
   <tr>
     <td width="140" height="150" valign="top" align="center">

@@ -11,7 +11,7 @@ Authors:
 - u20231b173 - Guzmán Cabrejos, Yaku Mateo
 - U202322855 - Huapaya Galindo, Dyron
 - U202315890 - Lopez Roman, Franco Mauricio
-- Montes Ramos, Henry Jaredt
+- U20231D343 - Montes Ramos, Henry Jaredt
 - U202116401 - Ruiz Madrid, Billy Jake
 - U202311601 - Torres Apolinario, Giovany Smith
 
