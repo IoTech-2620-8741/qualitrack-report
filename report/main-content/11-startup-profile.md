@@ -14,6 +14,10 @@ La startup busca aportar valor a las organizaciones mediante soluciones adaptada
 
 Como parte de su enfoque inicial, IoTech se orienta al sector farmacéutico, principalmente a laboratorios y almacenes, donde resulta importante mantener condiciones adecuadas para el desarrollo de las operaciones y la conservación de los productos. A partir de este sector, la startup busca desarrollar experiencia y generar soluciones que puedan adaptarse posteriormente a organizaciones de otros sectores con necesidades similares.
 
+<p align="center">
+  <img src="../assets/img/chapter-i/IoTech.jpg" alt="IoTech Logo" width="200">
+</p>
+
 ##### Misión
 
 Apoyar a las organizaciones en la mejora de sus operaciones mediante soluciones que respondan a sus necesidades y contribuyan a desarrollar actividades más seguras, eficientes y confiables.
