@@ -8,23 +8,19 @@ Dentro de este enfoque, la startup desarrolla QualiTrack como una solución diri
 
 #### 1.1.1. Descripción de la Startup
 
-**IoTech** es una startup tecnológica dedicada al desarrollo de soluciones basadas en Internet of Things (IoT) para organizaciones de diferentes industrias. Su enfoque se centra en integrar dispositivos inteligentes, sensores, conectividad, software y procesamiento de datos para apoyar la supervisión, control y automatización de procesos que requieren información constante y respuestas oportunas.
+**IoTech** es una startup orientada al desarrollo de soluciones que buscan apoyar a las organizaciones en la mejora de sus operaciones. Su enfoque parte de comprender las necesidades y situaciones que pueden afectar el desarrollo de las actividades de una organización, buscando generar alternativas que contribuyan a realizar sus procesos de manera más segura, eficiente y confiable.
 
-La startup desarrolla soluciones capaces de recopilar información del entorno en tiempo real, procesarla y convertirla en datos útiles para las organizaciones.
+La startup busca aportar valor a las organizaciones mediante soluciones adaptadas a sus necesidades y al contexto en el que desarrollan sus actividades. Para ello, considera las dificultades que enfrentan las personas responsables de los procesos y busca contribuir a una mejor gestión de las actividades, facilitando la identificación de situaciones relevantes y la toma de decisiones.
 
-Además del monitoreo, IoTech busca que sus sistemas puedan responder automáticamente ante determinadas condiciones mediante dispositivos conectados, permitiendo ejecutar acciones previamente definidas y reducir la dependencia de intervenciones exclusivamente manuales.
-
-Sus soluciones integran dispositivos IoT con servicios backend, aplicaciones web y móviles, permitiendo centralizar la información, registrar eventos y acciones ejecutadas, facilitar la trazabilidad de los procesos y apoyar la toma de decisiones.
-
-IoTech busca desarrollar tecnologías confiables y adaptables a las necesidades particulares de cada organización, especialmente en procesos donde el monitoreo continuo, la precisión de los datos y la capacidad de respuesta son importantes para mantener la eficiencia y calidad de las operaciones.
+Como parte de su enfoque inicial, IoTech se orienta al sector farmacéutico, principalmente a laboratorios y almacenes, donde resulta importante mantener condiciones adecuadas para el desarrollo de las operaciones y la conservación de los productos. A partir de este sector, la startup busca desarrollar experiencia y generar soluciones que puedan adaptarse posteriormente a organizaciones de otros sectores con necesidades similares.
 
 ##### Misión
 
-Desarrollar soluciones IoT que ayuden a las organizaciones a monitorear, controlar y automatizar sus procesos mediante la integración de dispositivos conectados, software y datos, facilitando la detección de situaciones relevantes, la ejecución de respuestas oportunas y una mejor toma de decisiones.
+Apoyar a las organizaciones en la mejora de sus operaciones mediante soluciones que respondan a sus necesidades y contribuyan a desarrollar actividades más seguras, eficientes y confiables.
 
 ##### Visión
 
-Ser una startup tecnológica reconocida en Latinoamérica por el desarrollo de soluciones IoT innovadoras, confiables y adaptables que permitan a organizaciones de diferentes industrias mejorar la supervisión, automatización y gestión de sus procesos.
+Ser una startup reconocida por comprender las necesidades de las organizaciones y desarrollar soluciones que generen valor y contribuyan a la mejora de sus operaciones en diferentes sectores.
 
 #### 1.1.2. Perfiles de integrantes del equipo
 
