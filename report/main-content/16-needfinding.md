@@ -14,7 +14,7 @@ Para este segmento se elaboró el User Persona Diego Ramírez, representante de 
 
 Para este segmento se elaboró el User Persona Alberto García, representante del personal operativo de laboratorios y almacenes. Se consideraron factores como su amplia experiencia en el sector farmacéutico, su conocimiento de Buenas Prácticas de Manufactura y su responsabilidad en la verificación de productos, documentación y procesos de calidad. Sus principales dificultades se relacionan con la información distribuida en múltiples sistemas, el tiempo destinado a registros manuales y la necesidad de acceder rápidamente a especificaciones e información histórica. Asimismo, se tomó en cuenta su motivación por garantizar medicamentos seguros, mantener la trazabilidad y mejorar la eficiencia operativa mediante herramientas que centralicen la información, faciliten la supervisión y apoyen la generación de reportes para auditorías.
 
-<img src="../assets/img/chapter-ii/user-person-segment-2.png" alt="Diego Ramirez - User Person 1" width="auto" height="1900"/>
+<img src="../assets/img/chapter-ii/user-person-segment-2.png" alt="Alberto García - User Person 2" width="auto" height="1900"/>
 
 ### 2.3.2. User Task Matrix
 
@@ -121,6 +121,10 @@ En esta sección se presentan los User Journey Maps correspondientes a ambos seg
 **Segmento 1: Responsables de calidad y supervisión**
 
 <img src="../assets/img/chapter-ii/diego-ramirez-user-journey-mapping.png" alt="Diego Ramirez - User Journey Mapping" width="1900" height="1900"/>
+
+**Segmento 2: Personal operativo de laboratorios y almacenes**
+
+<img src="../assets/img/chapter-ii/alberto-garcia-user-journey-mapping.png" alt="Alberto García - User Journey Mapping" width="1900" height="1900"/>
 
 ### 2.3.4. Empathy Mapping
 
