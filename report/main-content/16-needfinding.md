@@ -118,6 +118,10 @@ Del análisis del cuadro se observa que, para Diego Ramírez, la tarea con mayor
 
 En esta sección se presentan los User Journey Maps correspondientes a ambos segmentos objetivo, representan el recorrido que actualmente realiza cada usuario para cumplir su objetivo, sin que exista una solución. Permite identificar las etapas, puntos de contacto, dificultades y emociones que atraviesa cada usuario a lo largo de su recorrido.
 
+**Segmento 1: Responsables de calidad y supervisión**
+
+<img src="../assets/img/chapter-ii/diego-ramirez-user-journey-mapping.png" alt="Diego Ramirez - User Journey Mapping" width="1900" height="1900"/>
+
 ### 2.3.4. Empathy Mapping
 
 En esta sección se presentan los Empathy Maps correspondientes a ambos segmentos objetivo de QualiTrack. Estos artefactos permiten profundizar en sus comportamientos, necesidades, percepciones, preocupaciones y expectativas a partir de la información obtenida en las entrevistas y los User Persona definidos. Su elaboración facilita una comprensión más completa del contexto de cada usuario y sirve como base para orientar las funcionalidades de la solución hacia sus necesidades reales.
