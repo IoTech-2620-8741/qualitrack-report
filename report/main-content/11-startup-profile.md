@@ -6,14 +6,6 @@ IoTech busca desarrollar soluciones tecnológicas que permitan conectar el mundo
 
 Dentro de este enfoque, la startup desarrolla QualiTrack como una solución dirigida al sector farmacéutico, buscando mejorar la manera en que laboratorios y almacenes supervisan las condiciones de sus instalaciones y mantienen un registro de los eventos que ocurren en ellas.
 
-### 1.1. Startup Profile
-
-En esta sección se presenta el perfil de **IoTech**, startup responsable del desarrollo de QualiTrack. Se describen su propósito, enfoque tecnológico, misión y visión, así como los perfiles de los integrantes que participan en el desarrollo del proyecto.
-
-IoTech busca desarrollar soluciones tecnológicas que permitan conectar el mundo físico con plataformas digitales, utilizando dispositivos IoT para obtener información del entorno, procesarla y generar acciones que permitan responder ante diferentes situaciones.
-
-Dentro de este enfoque, la startup desarrolla QualiTrack como una solución dirigida al sector farmacéutico, buscando mejorar la manera en que laboratorios y almacenes supervisan las condiciones de sus instalaciones y mantienen un registro de los eventos que ocurren en ellas.
-
 #### 1.1.1. Descripción de la Startup
 
 **IoTech** es una startup tecnológica dedicada al desarrollo de soluciones basadas en Internet of Things (IoT) para organizaciones de diferentes industrias. Su enfoque se centra en integrar dispositivos inteligentes, sensores, conectividad, software y procesamiento de datos para apoyar la supervisión, control y automatización de procesos que requieren información constante y respuestas oportunas.
