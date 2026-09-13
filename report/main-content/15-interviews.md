@@ -311,15 +311,19 @@ Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagno
         </tr>
         <tr>
             <td>Link</td>
-            <td></td>
+            <td>
+                <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+            </a>
+            </td>
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td>00:00 min</td>
+            <td>36:28 min</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td>26:03 min</td>
+            <td>41:25 min</td>
         </tr>
         <tr>
             <td>Resumen</td>
@@ -365,15 +369,19 @@ Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagno
         </tr>
         <tr>
             <td>Link</td>
-            <td></td>
+            <td>
+                <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+            </a>
+            </td>
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td>26:03 min</td>
+            <td>41:25 min</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td>42:33 min</td>
+            <td>45:57 min</td>
         </tr>
         <tr>
             <td>Resumen</td>
@@ -417,15 +425,19 @@ Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagno
         </tr>
         <tr>
             <td>Link</td>
-            <td></td>
+            <td>
+                    <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+            </a>
+            </td>
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td>42:33 min</td>
+            <td>45:57 min</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td>1h :06 min: 08 s</td>
+            <td>51:24 min s</td>
         </tr>
         <tr>
             <td>Resumen</td>
