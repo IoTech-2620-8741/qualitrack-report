@@ -5,7 +5,7 @@ El Big Picture Event Storming nos ayuda a explorar los eventos relacionados con 
 **Step 1 - Free Exploracion**
 
 <div align="center">
-  <img src="" alt ="Big Picture">
+  <img src="../assets/img/chapter-ii/events-as-is.png" alt ="Big Picture" width=700>
 </div>
 
 
