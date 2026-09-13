@@ -101,7 +101,7 @@ El Hot Spot identificado plantea la siguiente incertidumbre:
 
 Este punto es importante porque las entrevistas muestran que existen criterios y verificaciones antes de utilizar una materia prima, pero los criterios específicos pueden depender de los procedimientos y requisitos de cada organización. César, por ejemplo, señala que existe un proceso previo de selección y calificación de proveedores y materias primas, mientras que Ohmar menciona que el certificado de análisis es necesario para respaldar técnicamente el uso de un insumo.
 
-d) **Quality Records and Audits**
+e) **Quality Records and Audits**
 
 
 <div align="center">
@@ -114,3 +114,50 @@ Este flujo representa las actividades relacionadas con la generación, revisión
 
 Cuando se realiza una auditoría, el Auditor solicita la información necesaria y el Quality Supervisor proporciona los registros de calidad requeridos.
 
+f) **Incoming Inspection and Acceptance**
+
+<div align="center">
+<img src="../assets/img/chapter-ii/incoming-inspection-and-acceptance.png" alt ="Incoming Inspection and Acceptance" width=700>
+</div>
+
+<br>
+
+Este flujo representa las actividades de verificación técnica que se realizan sobre un material recibido antes de habilitarlo para su uso. A diferencia del flujo de gestión de materias primas, centrado en la recepción documental e identificación por lote, aquí el material ya identificado es sometido a inspección física y analítica.
+
+El proceso inicia con el Quality Supervisor, quien recibe el envío, verifica la documentación asociada y realiza la inspección visual del empaque, evaluando además las condiciones de almacenamiento con las que el material fue transportado. Posteriormente, el Quality Staff toma la muestra correspondiente, realiza el análisis de laboratorio y evalúa los resultados obtenidos frente a las especificaciones establecidas. A partir de esta evaluación se presenta una decisión sobre el material, pudiendo ser aceptado o rechazado.
+
+Cuando el material es aceptado, el Warehouse Staff asigna la ubicación de almacenamiento, actualiza el inventario y registra la trazabilidad del lote para su posterior consulta.
+
+El Hot Spot se ubica después de Test Results Evaluated porque en ese punto existe una decisión sobre la suficiencia de la evidencia técnica disponible. Esta situación es consistente con las entrevistas, donde se menciona que el uso de un insumo debe estar respaldado por información técnica como el certificado de análisis, y que la consulta de las especificaciones asociadas a un producto puede tomar un tiempo considerable debido a que dicha información se encuentra distribuida en distintos medios y formatos.
+
+g) **Product Development and Viability**
+
+<div align="center">
+<img src="../assets/img/chapter-ii/product-development-and-viability.png" alt ="Product Development and Viability" width=700>
+</div>
+
+<br>
+
+Este flujo representa el proceso que antecede a la fabricación de un lote comercial, desde la solicitud de un nuevo producto hasta la confirmación de que dicho producto puede ser trasladado a producción. Complementa al flujo de Product Development and Production, que se inicia una vez que el producto ya se encuentra habilitado para fabricarse.
+
+El proceso inicia con el R&D Formulator, quien recibe la solicitud del producto, elabora la propuesta de formulación, consulta la disponibilidad de las materias primas necesarias y define las especificaciones técnicas correspondientes. A continuación, el Lab Technician realiza la dispensación del lote piloto, ejecuta los ensayos de laboratorio y las pruebas de estabilidad, y evalúa los resultados obtenidos. En este punto se presenta una decisión sobre la formulación, la cual puede ser aprobada o devuelta para su reformulación.
+
+Una vez aprobada la formulación, el R&D Formulator consulta la capacidad de los equipos de producción y estima el costo del producto a escala comercial, elaborando el análisis de viabilidad y presentando el informe correspondiente. A partir de este informe se presenta una segunda decisión, en la que el producto puede resultar viable o no viable. Cuando el producto resulta viable, el Production Staff inicia la transferencia de tecnología, capacita al personal, fabrica el lote comercial, completa el control de calidad final y libera el producto.
+
+El Hot Spot se ubica después de Viability Report Presented porque es en ese momento donde se concentra la información sobre capacidad de equipos y costos, de la cual depende que el desarrollo pueda continuar o deba reiniciarse. Esta situación es consistente con las entrevistas, donde se señala que una de las principales dificultades del desarrollo de productos es que la formulación obtenida no resulte transferible a un lote comercial, y que las restricciones asociadas a los equipos y al costo se conocen en etapas avanzadas del desarrollo.
+
+h) **Distribution and Supply Monitoring**
+
+<div align="center">
+<img src="../assets/img/chapter-ii/distribution-and-supply-monitoring.png" alt ="Product Development and Viability" width=700>
+</div>
+
+<br>
+
+Este flujo representa las actividades relacionadas con la distribución de los productos liberados y el seguimiento de las condiciones y del suministro asociados a dicha distribución.
+
+El proceso inicia con el Warehouse Manager, quien asigna el stock disponible, elabora el programa de distribución, prepara el envío y despacha el transporte. Durante el traslado, el Logistics Staff realiza el monitoreo de la cadena de frío, confirma la entrega y verifica la documentación de recepción en el destino. Posteriormente, el Quality Staff inicia el monitoreo ambiental del producto recibido; cuando se detecta una desviación de temperatura se genera la alerta correspondiente y se investiga el incidente. A partir de esta investigación se presenta una decisión sobre el lote, el cual puede ser puesto en cuarentena o liberado.
+
+En paralelo, el Country Manager registra los riesgos asociados a proveedores, documenta los acuerdos establecidos en las reuniones de coordinación y revisa el estado del suministro entre los distintos países a su cargo.
+
+El Hot Spot se ubica después de Incident Investigated porque, una vez conocida la magnitud y duración de la desviación, existe una decisión sobre la aptitud del producto para continuar en la cadena de distribución. Esta situación es consistente con las entrevistas, donde se menciona la dificultad de mantener el seguimiento de los acuerdos y de la información entre áreas y países, así como la dependencia de proveedores únicos, condiciones que inciden en la rapidez con la que se puede tomar y comunicar esta decisión.
