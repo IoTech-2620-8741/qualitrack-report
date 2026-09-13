@@ -85,4 +85,4 @@ El Product Backlog organiza las User Stories y Technical Stories según el valor
 
 **Enlace público al Product Backlog:**
 
-> [Agregar URL pública del Product Backlog]
+> [Product Backlog - Jira](https://iotech-2620.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?atlOrigin=eyJpIjoiMzRhZDg1MzEwMzliNGNjYThlNTcyMDMzNWI0MzUyYTciLCJwIjoiaiJ9)
