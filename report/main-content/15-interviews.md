@@ -149,7 +149,11 @@ En esta sección se presentan los resultados de las entrevistas aplicadas a cada
         </tr>
         <tr>
             <td>Link</td>
-            <td></td>
+            <td>
+            <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+            </a>
+        </td>
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
@@ -157,7 +161,7 @@ En esta sección se presentan los resultados de las entrevistas aplicadas a cada
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td>17:00 min</td>
+            <td>11:47 min</td>
         </tr>
         <tr>
             <td>Resumen</td>
@@ -173,55 +177,6 @@ En esta sección se presentan los resultados de las entrevistas aplicadas a cada
     <thead>
         <tr>
             <th colspan="2">Entrevista #2<br></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Nombre</td>
-            <td>Mario</td>
-        </tr>
-        <tr>
-            <td>Apellidos</td>
-            <td>Baca</td>
-        </tr>
-        <tr>
-            <td>Edad</td>
-            <td>40 años</td>
-        </tr>
-   <tr>
-    <td>Ubicación</td>
-    <td>São Paulo, Brasil</td>
-</tr>
-        <tr>
-            <td>Evidencia</td>
-            <td><div align="center"><img src="../assets/img/chapter-ii/mario-baca.png"></div></td>
-        </tr>
-        <tr>
-            <td>Link</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Timing donde inicia la entrevista<br></td>
-            <td>17:00 min</td>
-        </tr>
-        <tr>
-            <td>Duración de la entrevista<br></td>
-            <td>33:00 min</td>
-        </tr>
-        <tr>
-            <td>Resumen</td>
-            <td>
-Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagnostics Center Brazil, São Paulo, Brasil. Sus principales responsabilidades están relacionadas con la supervisión de las condiciones ambientales y el cumplimiento de los parámetros establecidos en las diferentes áreas del laboratorio. Las áreas que requieren mayor control son almacenamiento, producción, acondicionamiento y espacios donde se mantienen productos pendientes de evaluación. Se monitorean principalmente temperatura y humedad, y en determinadas áreas también presión diferencial, utilizando termohigrómetros y equipos de medición. Los valores aceptables dependen de las características del producto y de los procedimientos definidos para cada área. Actualmente, las mediciones se registran mediante formatos de control y archivos Excel, lo que genera una importante carga de trabajo manual y dificulta consultar la información al encontrarse distribuida en diferentes registros. Cuando se detecta una condición fuera de rango, primero se confirma la medición y luego se evalúa su impacto; dependiendo de la situación, se puede detener temporalmente la actividad, investigar la causa y aplicar las medidas correspondientes antes de continuar. Estas situaciones se consideran desviaciones y su prioridad depende del impacto y duración. El responsable de calidad verifica que la condición haya sido corregida y que se conserve información sobre el valor encontrado, rango permitido, fecha, hora, área afectada y acciones realizadas. Para auditorías se consultan principalmente los registros históricos de las áreas y las desviaciones ocurridas. El principal problema identificado es la revisión manual de registros y archivos Excel, además del riesgo de que algunas mediciones sean registradas posteriormente, generando dudas sobre la exactitud de los datos.
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-<table>
-    <colgroup></colgroup>
-    <thead>
-        <tr>
-            <th colspan="2">Entrevista #3<br></th>
         </tr>
     </thead>
     <tbody>
@@ -247,15 +202,19 @@ Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagno
         </tr>
         <tr>
             <td>Link</td>
-            <td></td>
+            <td>
+            <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+            </a>
+            </td>
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td>33:00 min</td>
+            <td>11: 47 min</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td>55:00 min</td>
+            <td>22:36 min</td>
         </tr>
         <tr>
             <td>Resumen</td>
@@ -266,6 +225,58 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
     </tbody>
 </table>
 
+
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #3<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Mario</td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>Baca</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>40 años</td>
+        </tr>
+   <tr>
+    <td>Ubicación</td>
+    <td>São Paulo, Brasil</td>
+</tr>
+        <tr>
+            <td>Evidencia</td>
+            <td><div align="center"><img src="../assets/img/chapter-ii/mario-baca.png"></div></td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td><a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+            </a>
+            </td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td>22:36 min</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td>36:28 min</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>
+Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagnostics Center Brazil, São Paulo, Brasil. Sus principales responsabilidades están relacionadas con la supervisión de las condiciones ambientales y el cumplimiento de los parámetros establecidos en las diferentes áreas del laboratorio. Las áreas que requieren mayor control son almacenamiento, producción, acondicionamiento y espacios donde se mantienen productos pendientes de evaluación. Se monitorean principalmente temperatura y humedad, y en determinadas áreas también presión diferencial, utilizando termohigrómetros y equipos de medición. Los valores aceptables dependen de las características del producto y de los procedimientos definidos para cada área. Actualmente, las mediciones se registran mediante formatos de control y archivos Excel, lo que genera una importante carga de trabajo manual y dificulta consultar la información al encontrarse distribuida en diferentes registros. Cuando se detecta una condición fuera de rango, primero se confirma la medición y luego se evalúa su impacto; dependiendo de la situación, se puede detener temporalmente la actividad, investigar la causa y aplicar las medidas correspondientes antes de continuar. Estas situaciones se consideran desviaciones y su prioridad depende del impacto y duración. El responsable de calidad verifica que la condición haya sido corregida y que se conserve información sobre el valor encontrado, rango permitido, fecha, hora, área afectada y acciones realizadas. Para auditorías se consultan principalmente los registros históricos de las áreas y las desviaciones ocurridas. El principal problema identificado es la revisión manual de registros y archivos Excel, además del riesgo de que algunas mediciones sean registradas posteriormente, generando dudas sobre la exactitud de los datos.
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 
 
@@ -300,15 +311,19 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
         </tr>
         <tr>
             <td>Link</td>
-            <td></td>
+            <td>
+                <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+            </a>
+            </td>
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td>00:00 min</td>
+            <td>36:28 min</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td>26:03 min</td>
+            <td>41:25 min</td>
         </tr>
         <tr>
             <td>Resumen</td>
@@ -354,15 +369,19 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
         </tr>
         <tr>
             <td>Link</td>
-            <td></td>
+            <td>
+                <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+            </a>
+            </td>
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td>26:03 min</td>
+            <td>41:25 min</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td>42:33 min</td>
+            <td>45:57 min</td>
         </tr>
         <tr>
             <td>Resumen</td>
@@ -406,15 +425,19 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
         </tr>
         <tr>
             <td>Link</td>
-            <td></td>
+            <td>
+                    <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+            </a>
+            </td>
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td>42:33 min</td>
+            <td>45:57 min</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td>1h :06 min: 08 s</td>
+            <td>51:24 min s</td>
         </tr>
         <tr>
             <td>Resumen</td>
