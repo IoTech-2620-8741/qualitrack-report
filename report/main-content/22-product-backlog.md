@@ -81,7 +81,7 @@ El Product Backlog organiza las User Stories y Technical Stories según el valor
 
 **Evidencia del Product Backlog:**
 
-![Product Backlog QualiTrack](../assets/img/chapter-iii/product-backlog.png)
+![Product Backlog QualiTrack](../assets/img/chapter-iii/product-backlog-jira.jpg)
 
 **Enlace público al Product Backlog:**
 
