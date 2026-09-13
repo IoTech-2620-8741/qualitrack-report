@@ -1,14 +1,6 @@
 ## 3.3. Product Backlog
 
-El Product Backlog organiza las User Stories y Technical Stories según el valor que aportan al desarrollo y validación de QualiTrack.
-
-Las primeras historias corresponden al **Landing Page**, debido a que permiten presentar y validar la propuesta de valor desde las primeras etapas del proyecto. Posteriormente se prioriza el flujo de registro, suscripción y creación del laboratorio.
-
-A continuación se encuentran las funcionalidades relacionadas con el núcleo IoT de QualiTrack: configuración de ambientes, dispositivos, monitoreo, detección de desviaciones, respuesta automática, Edge, alertas y aplicación móvil.
-
-Las funcionalidades de inventario, lotes de producto, reportes y auditoría complementan la solución y permiten conservar las capacidades de gestión de calidad desarrolladas anteriormente.
-
-Para la estimación se utiliza la escala de Story Points **1, 2 y 3**.
+El Product Backlog organiza las User Stories y Technical Stories según el valor que aportan a QualiTrack. Se priorizan inicialmente las historias del Landing Page por ser el primer entregable del proyecto, seguidas por las funcionalidades asociadas al núcleo del negocio, como trazabilidad, gestión de materias primas, lotes, ambientes, equipos, monitoreo y alertas. Posteriormente se consideran las capacidades de soporte, como reportes, suscripciones, pagos y gestión de acceso. Para la estimación del esfuerzo se utiliza la escala de Story Points basada en Fibonacci: 1, 2, 3, 5 y 8.
 
 | # Orden | User Story ID | Título | Descripción | Story Points |
 |---:|---|---|---|---:|
