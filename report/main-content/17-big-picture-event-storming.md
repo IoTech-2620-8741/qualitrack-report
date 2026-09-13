@@ -8,6 +8,7 @@ El Big Picture Event Storming nos ayuda a explorar los eventos relacionados con 
   <img src="../assets/img/chapter-ii/events-as-is.png" alt ="Big Picture" width=700>
 </div>
 
+<br>
 
 En esta primera etapa, el equipo realizó una exploración libre de los eventos relevantes del dominio. Los eventos fueron identificados sin establecer inicialmente un orden específico, buscando recoger los diferentes acontecimientos que forman parte de las actividades de gestión de calidad de los productos farmacéuticos dentro de los laboratorios.
 
@@ -20,3 +21,21 @@ En la segunda etapa, los eventos identificados fueron organizados cronológicame
 De acuerdo con la guía, los actores se representan mediante tarjetas amarillas y permiten identificar quién desencadena o participa en cada evento, mientras que los Hot Spots se utilizan para señalar preguntas, dudas o situaciones críticas que requieren una posterior profundización.
 
 Como resultado de esta organización, se establecieron los siguientes ocho flujos principales:
+
+a) **Environmental Monitoring and Control**
+
+<div align="center">
+  <img src="" alt ="Flow 1" width=700>
+</div>
+
+<br>
+
+Este flujo representa las actividades relacionadas con el establecimiento y monitoreo de las condiciones ambientales de las áreas. El proceso inicia con la participación del Quality Supervisor, quien identifica el área y establece los requerimientos y parámetros ambientales que deben cumplirse. Posteriormente, Maintenance interviene para realizar la calibración del instrumento de medición.
+
+Luego, el Quality Staff coloca el instrumento y realiza las mediciones ambientales correspondientes, considerando temperatura, humedad y presión diferencial. Una vez obtenidos los valores, el Assigned Personnel registra las mediciones, para que finalmente el Quality Supervisor revise los registros obtenidos.
+
+El Hot Spot identificado plantea la siguiente incertidumbre:
+
+*How do you confirm that an out-of-range condition really corresponds to an environmental deviation?*
+
+Este punto resulta relevante porque, ante una medición que se encuentra fuera de los parámetros establecidos, es necesario confirmar que el valor obtenido corresponde realmente a una desviación y no a un problema relacionado con la medición o el instrumento encargado de medir el ambiente. Esto coincide con lo señalado en las entrevistas, donde se menciona la necesidad de verificar la lectura y el instrumento antes de determinar cómo proceder ante una condición fuera de rango.
