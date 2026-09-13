@@ -68,11 +68,11 @@ Si bien estos resultados no significan que los incumplimientos hayan sido causad
 
 ### 1.2.2. Lean UX Process
 
-Lean UX es un enfoque que permite desarrollar productos a partir de problemas, necesidades y supuestos que deben ser validados progresivamente con los usuarios. En lugar de considerar desde el inicio que una determinada solución será exitosa, el equipo identifica aquello que cree conocer sobre el negocio, los usuarios y las funcionalidades propuestas, para posteriormente convertir estas creencias en hipótesis que puedan ser evaluadas.
+El Lean UX es un enfoque que permite comprender las necesidades de los usuarios y validar progresivamente las propuestas planteadas para atender un problema.
 
-Para el desarrollo de **QualiTrack**, este proceso permite analizar las necesidades existentes en laboratorios y almacenes farmacéuticos relacionadas con la supervisión de las condiciones ambientales, la detección de desviaciones, la respuesta ante situaciones fuera de los parámetros establecidos y la trazabilidad de los eventos ocurridos.
+Para QualiTrack, este proceso permite orientar la propuesta de solución a las necesidades identificadas en laboratorios y almacenes farmacéuticos, considerando las características de los usuarios y del contexto en el que desarrollan sus actividades.
 
-A partir de la problemática identificada, se plantea un Problem Statement para la nueva iniciativa, seguido por los Business Assumptions, Business Outcome Assumptions, User Assumptions, User Outcome and Benefit Assumptions y Feature Assumptions. Finalmente, estos supuestos son relacionados mediante Hypothesis Statements y representados de manera conjunta en el Lean UX Canvas.
+A partir de este enfoque se definen el Problem Statement, los Assumptions, las Hypothesis Statements y el Lean UX Canvas que orientan la propuesta del producto.
 
 
 #### 1.2.2.1. Lean UX Problem Statements
