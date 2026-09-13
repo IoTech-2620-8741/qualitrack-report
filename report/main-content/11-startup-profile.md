@@ -70,29 +70,15 @@ Ser una startup reconocida por comprender las necesidades de las organizaciones 
     </td>
   </tr>
 
-<tr>
-  <td width="140" height="150" valign="top" align="center">
-    <img src="../assets/img/chapter-i/henry.png" alt="Henry Jaredt Montes Ramos" width="120">
-  </td>
-
-  <td valign="top">
-    <strong>Henry Jaredt Montes Ramos - (U20231d343)</strong> - Ingeniería de Software<br><br>
-
-    Estudiante de Ingeniería de Software con interés en el desarrollo de soluciones 
-    tecnológicas innovadoras y la construcción de aplicaciones orientadas a resolver 
-    problemas reales. Se caracteriza por su responsabilidad, capacidad de colaboración 
-    y disposición para aportar conocimientos dentro de equipos multidisciplinarios, 
-    buscando siempre contribuir al cumplimiento de los objetivos del proyecto.<br><br>
-
-    Cuenta con experiencia académica en desarrollo de aplicaciones web y móviles, 
-    utilizando lenguajes como C++, Python, JavaScript, HTML y CSS. Ha participado en 
-    proyectos de desarrollo empleando tecnologías y frameworks como Angular, Vue y React, 
-    además de trabajar con bases de datos relacionales y no relacionales como MySQL, 
-    PostgreSQL y MongoDB. Asimismo, posee conocimientos en herramientas de desarrollo, 
-    control de versiones y diseño de soluciones digitales orientadas a mejorar la 
-    experiencia del usuario.
-  </td>
-</tr>
+  <tr>
+    <td width="140" height="150" valign="top" align="center">
+      <img src="../assets/img/chapter-i/henry.png" alt="Henry Jaredt Montes Ramos Photo" width="120">
+    </td>
+    <td valign="top">
+      <strong>Henry Jaredt Montes Ramos - (U20231d343)</strong> - Ingeniería de Software<br><br>
+      Soy estudiante de Ingeniería de Software. Me considero una persona responsable, comprometida y con disposición para seguir aprendiendo. Tengo conocimientos en desarrollo de software utilizando tecnologías como C++, Python, JavaScript, TypeScript, Kotlin, React, Flutter y .NET, además de experiencia académica trabajando con bases de datos como PostgreSQL, MySQL y SQLite. Me gusta trabajar en equipo, compartir ideas y aportar con mis conocimientos para contribuir al desarrollo de soluciones y al cumplimiento de los objetivos del proyecto.
+    </td>
+  </tr>
 
   <tr>
     <td width="140" height="150" valign="top" align="center">
