@@ -153,7 +153,7 @@ En esta sección se presentan los resultados de las entrevistas aplicadas a cada
             <td>Link</td>
             <td>
             <a href="https://shorturl.at/beplR" target="_blank">
-                Video
+                https://shorturl.at/beplR
             </a>
         </td>
         </tr>
@@ -208,7 +208,7 @@ En esta sección se presentan los resultados de las entrevistas aplicadas a cada
             <td>Link</td>
             <td>
             <a href="https://shorturl.at/beplR" target="_blank">
-                Video
+                https://shorturl.at/beplR
             </a>
             </td>
         </tr>
@@ -263,7 +263,7 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
         <tr>
             <td>Link</td>
             <td><a href="https://shorturl.at/beplR" target="_blank">
-                Video
+                https://shorturl.at/beplR
             </a>
             </td>
         </tr>
