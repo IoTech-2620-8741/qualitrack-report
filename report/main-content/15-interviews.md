@@ -145,13 +145,15 @@ En esta sección se presentan los resultados de las entrevistas aplicadas a cada
         </tr>
         <tr>
             <td>Evidencia</td>
-            <td><div align="center"><img src="../assets/img/chapter-ii/mesly-medina-saravia.png"></div></td>
+            <td style="text-align: left;">
+                <div ><img src="../assets/img/chapter-ii/mesly-medina-saravia.png" width="700"></div>
+            </td>
         </tr>
         <tr>
             <td>Link</td>
             <td>
-            <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
-https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+            <a href="https://shorturl.at/beplR" target="_blank">
+                Video
             </a>
         </td>
         </tr>
@@ -198,13 +200,15 @@ https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAh
         </tr>
         <tr>
             <td>Evidencia</td>
-            <td><div align="center"><img src="../assets/img/chapter-ii/ricardo-melendrez.png"></div></td>
+            <td style="text-align: left;">
+                <div align="center"><img src="../assets/img/chapter-ii/ricardo-melendrez.png" width="700"></div>
+            </td>
         </tr>
         <tr>
             <td>Link</td>
             <td>
-            <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
-https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+            <a href="https://shorturl.at/beplR" target="_blank">
+                Video
             </a>
             </td>
         </tr>
@@ -252,12 +256,14 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
 </tr>
         <tr>
             <td>Evidencia</td>
-            <td><div align="center"><img src="../assets/img/chapter-ii/mario-baca.png"></div></td>
+            <td style="text-align: left;">
+                <div align="center"><img src="../assets/img/chapter-ii/mario-baca.png" width="700"></div>
+            </td>
         </tr>
         <tr>
             <td>Link</td>
-            <td><a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
-https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+            <td><a href="https://shorturl.at/beplR" target="_blank">
+                Video
             </a>
             </td>
         </tr>
@@ -307,13 +313,15 @@ Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagno
         </tr>
         <tr>
             <td>Evidencia</td>
-            <td><div align="center"><img src="../assets/img/chapter-ii/cesar-aguero.png"></div></td>
+            <td style="text-align: left;">
+                <div align="center"><img src="../assets/img/chapter-ii/cesar-aguero.png" width="700"></div>
+            </td>
         </tr>
         <tr>
             <td>Link</td>
             <td>
-                <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
-https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+                <a href="https://shorturl.at/beplR" target="_blank">
+                Video
             </a>
             </td>
         </tr>
@@ -365,13 +373,15 @@ https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAh
         </tr>
         <tr>
             <td>Evidencia</td>
-            <td><div align="center"><img src="../assets/img/chapter-ii/liz-aliaga.png"></div></td>
+            <td style="text-align: left;">
+                <div align="center"><img src="../assets/img/chapter-ii/liz-aliaga.png" width="700"></div>
+            </td>
         </tr>
         <tr>
             <td>Link</td>
             <td>
-                <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
-https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+                <a href="https://shorturl.at/beplR" target="_blank">
+                Video
             </a>
             </td>
         </tr>
@@ -421,13 +431,15 @@ https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAh
         </tr>
         <tr>
             <td>Evidencia</td>
-            <td><div align="center"><img src="../assets/img/chapter-ii/ohmar-chavez.png"></div></td>
+            <td style="text-align: left;">
+                <div align="center"><img src="../assets/img/chapter-ii/ohmar-chavez.png" width="700"></div>
+            </td>
         </tr>
         <tr>
             <td>Link</td>
             <td>
-                    <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
-https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA08UAhrVb4TJ4igBmNY1XnASfs5gGKDaPIvYh_8UQEouk?e=LRa7WQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+                    <a href="https://shorturl.at/beplR target="_blank">
+                Video
             </a>
             </td>
         </tr>
