@@ -55,3 +55,55 @@
 14. **Environmental Deviation** (Desviación Ambiental)
 
     **Definición:** Situación en la que una variable ambiental se encuentra fuera del rango o de los parámetros establecidos para un área determinada.
+
+15. **Deviation Severity** (Severidad de la Desviación)
+
+    **Definición:** Nivel de importancia asignado a una desviación considerando factores como el valor detectado, su duración, el área afectada y el posible impacto sobre el proceso o producto.
+
+16. **Environmental Alert** (Alerta Ambiental)
+
+    **Definición:** Aviso que informa al personal responsable sobre una condición ambiental que requiere atención debido a una variación relevante o una desviación de los parámetros establecidos.
+
+17. **Process Hold** (Detención del Proceso)
+
+    **Definición:** Suspensión temporal de una actividad o proceso cuando se identifica una desviación que podría afectar las condiciones requeridas para continuar de manera adecuada.
+
+18. **Corrective Action** (Acción Correctiva)
+
+    **Definición:** Medida realizada para atender una desviación o problema identificado y contribuir al restablecimiento de las condiciones requeridas.
+
+19. **Deviation Closure** (Cierre de la Desviación)
+
+    **Definición:** Momento en el que el responsable correspondiente verifica que la condición ambiental ha sido corregida, que las acciones realizadas han sido registradas y que la situación puede considerarse resuelta.
+
+20. **Environmental Record** (Registro Ambiental)
+
+    **Definición:** Evidencia documentada de una medición o evento ambiental que permite conservar información como el valor registrado, fecha, hora, área y demás datos requeridos por los procedimientos de control.
+
+21. **Traceability** (Trazabilidad)
+
+    **Definición:** Capacidad de reconstruir el historial de un proceso, producto o evento mediante información que permita determinar qué ocurrió, cuándo ocurrió, dónde ocurrió y qué elementos o acciones estuvieron relacionados.
+
+22. **Quality Supervisor** (Supervisor de Calidad)
+
+    **Definición:** Persona responsable de supervisar el cumplimiento de las condiciones y procedimientos de calidad, revisar desviaciones y determinar las medidas necesarias ante situaciones que puedan afectar un proceso o producto.
+
+23. **Quality Control Analyst** (Analista de Control de Calidad)
+
+    **Definición:** Profesional encargado de realizar o verificar actividades de control de calidad, analizar resultados y comprobar que las condiciones, materiales o productos evaluados cumplan con los criterios establecidos.
+
+24. **Raw Material** (Materia Prima)
+
+    **Definición:** Sustancia o material utilizado como insumo para la elaboración de un producto farmacéutico y que debe cumplir con las especificaciones y requisitos establecidos antes de ser utilizado.
+
+25. **Raw Material Lot** (Lote de Materia Prima)
+
+    **Definición:** Cantidad identificable de una materia prima asociada a una recepción o producción determinada, diferenciada mediante un código o número de lote que permite mantener su trazabilidad.
+
+26. **Manufacturing Batch** (Lote de Fabricación)
+
+    **Definición:** Producción específica de un producto realizada bajo determinadas condiciones y registrada mediante una identificación que permite relacionarla con las materias primas, equipos, personal y controles involucrados en su elaboración.
+
+27. **Good Manufacturing Practices – GMP** (Buenas Prácticas de Manufactura – BPM)
+
+    **Definición:** Conjunto de principios y prácticas que orientan las actividades de fabricación y control de productos farmacéuticos para asegurar que los procesos se desarrollen de manera controlada, documentada y conforme con los requisitos de calidad establecidos.
