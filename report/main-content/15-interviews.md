@@ -321,7 +321,7 @@ Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagno
             <td>Link</td>
             <td>
                 <a href="https://shorturl.at/beplR" target="_blank">
-                Video
+                https://shorturl.at/beplR
             </a>
             </td>
         </tr>
@@ -381,7 +381,7 @@ Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagno
             <td>Link</td>
             <td>
                 <a href="https://shorturl.at/beplR" target="_blank">
-                Video
+                https://shorturl.at/beplR
             </a>
             </td>
         </tr>
@@ -438,8 +438,8 @@ Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagno
         <tr>
             <td>Link</td>
             <td>
-                    <a href="https://shorturl.at/beplR target="_blank">
-                Video
+                <a href="https://shorturl.at/beplR" target="_blank">
+                https://shorturl.at/beplR
             </a>
             </td>
         </tr>
