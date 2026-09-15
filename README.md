@@ -16,8 +16,8 @@ Authors:
 - U202311601 - Torres Apolinario, Giovany Smith
 
 
-Date: September 8th, 2026
-Version: 0.1.0
+Date: September 14th, 2026
+Version: 0.2.0
 
 ## QualiTrack
 
