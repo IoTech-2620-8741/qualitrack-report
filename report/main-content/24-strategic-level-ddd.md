@@ -105,7 +105,15 @@ Este contexto representa el estado físico observado dentro de los ambientes med
 
 ---
 
+##### Inventory Management Context - Canvas
 
+Inventory Management administra las materias primas, `RawMaterialBatch`, cantidades disponibles, stock y estados asociados con los lotes de materia prima.
+
+Este contexto constituye la fuente de verdad respecto a la disponibilidad y estado de los materiales utilizados durante los procesos de fabricación.
+
+![Bounded Context Canvas - Inventory Management](../assets/img/chapter-iv/bc-inventory-management.png)
+
+---
 ### 4.1.3. Software Architecture. 
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram. 
