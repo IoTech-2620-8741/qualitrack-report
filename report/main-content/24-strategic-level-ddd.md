@@ -179,6 +179,27 @@ Por esta razón, la alternativa fue **rechazada** y se decidió mantener Trackin
 
 ---
 
+##### Candidate Context Map 2 — Integration of Inventory Management and Product Batch Management
+
+**Design Question:** ¿Qué ocurriría si Inventory Management y Product Batch Management formaran un único Bounded Context?
+
+Esta alternativa se consideró debido a que los procesos de fabricación necesitan conocer las materias primas y `RawMaterialBatch` disponibles, además de registrar las cantidades utilizadas durante la producción.
+
+![Candidate Context Map 2 - Inventory Management and Product Batch Management](../assets/img/chapter-iv/candidate-context-map-2.png)
+
+La integración permitiría simplificar inicialmente determinadas operaciones relacionadas con el consumo de materias primas, debido a que el inventario y los lotes fabricados formarían parte del mismo modelo.
+
+Sin embargo, ambos dominios poseen responsabilidades diferentes.
+
+Inventory Management administra materias primas, cantidades disponibles y estados del inventario, mientras que Product Batch Management administra la fabricación y trazabilidad de los productos terminados.
+
+Integrarlos dentro de un mismo límite produciría un contexto con demasiadas responsabilidades y aumentaría el acoplamiento entre el ciclo de vida del inventario y el ciclo de vida de los productos fabricados.
+
+Por esta razón, la alternativa fue **rechazada** y ambos dominios se conservaron como Bounded Contexts independientes relacionados mediante un contrato explícito.
+
+---
+
+
 
 ### 4.1.3. Software Architecture. 
 
