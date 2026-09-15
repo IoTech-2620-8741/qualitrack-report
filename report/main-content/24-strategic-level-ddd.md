@@ -199,7 +199,25 @@ Por esta razón, la alternativa fue **rechazada** y ambos dominios se conservaro
 
 ---
 
+##### Candidate Context Map 3 — Distribution of Reporting & Audit Capabilities
 
+**Design Question:** ¿Qué ocurriría si las capabilities de Reporting & Audit fueran distribuidas entre los demás Bounded Contexts en lugar de mantener un contexto independiente?
+
+Esta alternativa plantea que cada dominio sea responsable tanto de sus operaciones principales como de sus propios reportes, indicadores, información histórica y auditoría.
+
+Por ejemplo, Inventory Management podría generar sus propios reportes de inventario, Tracking & Telemetry sus métricas históricas y Equipment Management los reportes relacionados con los equipos.
+
+![Candidate Context Map 3 - Distributed Reporting and Audit](../assets/img/chapter-iv/candidate-context-map-3.png)
+
+La principal ventaja sería reducir la dependencia hacia un contexto especializado en reporting.
+
+Sin embargo, esta alternativa produciría duplicación de responsabilidades relacionadas con auditoría, generación de indicadores, construcción de reportes y almacenamiento de información histórica.
+
+Además, determinados reportes y vistas de trazabilidad requieren información proveniente de múltiples dominios, por lo que una distribución de estas capabilities aumentaría la complejidad necesaria para construir información consolidada.
+
+Por estas razones, la alternativa fue **rechazada** y Reporting & Audit se mantuvo como un Bounded Context independiente.
+
+---
 
 ### 4.1.3. Software Architecture. 
 
