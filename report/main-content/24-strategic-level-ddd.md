@@ -53,6 +53,16 @@ Este artefacto permitió representar el propósito de cada contexto, su clasific
 El análisis individual de los contextos permitió establecer límites claros entre las diferentes responsabilidades del dominio antes de definir sus relaciones dentro del Context Map.
 
 ---
+##### Identity & Access Management (IAM) Context - Canvas
+
+Identity & Access Management administra la identidad utilizada por los diferentes contextos de QualiTrack.
+
+Su principal responsabilidad consiste en mantener separados los conceptos relacionados con identidad y autenticación respecto de los modelos específicos utilizados por los demás dominios.
+
+Otros Bounded Contexts utilizan únicamente referencias como `UserId` para identificar usuarios sin incorporar directamente las entidades internas de IAM.
+
+![Bounded Context Canvas - Identity & Access Management](../assets/img/chapter-iv/bc-iam.png)
+
 
 ### 4.1.3. Software Architecture. 
 
