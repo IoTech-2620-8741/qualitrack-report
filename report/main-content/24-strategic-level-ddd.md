@@ -219,6 +219,20 @@ Por estas razones, la alternativa fue **rechazada** y Reporting & Audit se mantu
 
 ---
 
+#### Comparison of Context Mapping Alternatives
+
+Las alternativas fueron comparadas considerando principalmente la cohesión interna de cada contexto, el nivel de acoplamiento entre los modelos, la autonomía de los dominios y la posible duplicación de responsabilidades.
+
+| Alternative | Main Advantage | Main Disadvantage | Decision |
+|---|---|---|---|
+| Tracking & Telemetry + Compliance & Alerting | Reduce la comunicación necesaria entre detección y administración de alertas. | Mezcla el monitoreo físico con el ciclo de vida de los incidentes. | Rejected |
+| Inventory Management + Product Batch Management | Simplifica algunas operaciones relacionadas con el consumo de materias primas. | Mezcla inventario con fabricación y trazabilidad de productos. | Rejected |
+| Distributed Reporting & Audit | Cada contexto administra directamente su información analítica. | Genera duplicación y dificulta la construcción de información consolidada. | Rejected |
+| Independent Bounded Contexts with explicit relationships | Mantiene responsabilidades claramente delimitadas y modelos independientes. | Requiere contratos explícitos de integración. | **Selected** |
+
+A partir de esta comparación se determinó que mantener los Bounded Contexts independientes y establecer relaciones explícitas entre ellos representa la alternativa que mejor conserva los límites del dominio de QualiTrack.
+
+---
 ### 4.1.3. Software Architecture. 
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram. 
