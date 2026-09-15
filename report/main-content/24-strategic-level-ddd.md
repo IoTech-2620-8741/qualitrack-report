@@ -95,6 +95,16 @@ Otros Bounded Contexts utilizan referencias de los equipos cuando requieren rela
 
 ---
 
+##### Tracking & Telemetry Context - Canvas
+
+Tracking & Telemetry administra las mediciones ambientales, configuraciones de monitoreo, estados interpretados y actuaciones asociadas a los dispositivos IoT.
+
+Este contexto representa el estado físico observado dentro de los ambientes mediante conceptos como `Measurement`, `Environmental Profile`, estados `NORMAL`, `WARNING` o `CRITICAL` y `ActuationEvent`.
+
+![Bounded Context Canvas - Tracking & Telemetry](../assets/img/chapter-iv/bc-tracking-telemetry.png)
+
+---
+
 
 ### 4.1.3. Software Architecture. 
 
