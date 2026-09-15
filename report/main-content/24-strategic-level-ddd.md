@@ -63,7 +63,17 @@ Otros Bounded Contexts utilizan únicamente referencias como `UserId` para ident
 
 ![Bounded Context Canvas - Identity & Access Management](../assets/img/chapter-iv/bc-iam.png)
 
+---
 
+##### Payments & Subscriptions Context - Canvas
+
+Payments & Subscriptions administra los planes, pagos, suscripciones y estados relacionados con la relación comercial entre los usuarios u organizaciones y QualiTrack.
+
+Este contexto mantiene separadas las reglas comerciales de las responsabilidades operativas del laboratorio y actúa como fuente de verdad respecto al estado de las suscripciones.
+
+![Bounded Context Canvas - Payments & Subscriptions](../assets/img/chapter-iv/bc-payments-subscriptions.png)
+
+---
 ### 4.1.3. Software Architecture. 
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram. 
