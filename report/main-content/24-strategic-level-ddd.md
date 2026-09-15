@@ -137,6 +137,16 @@ De esta manera se mantiene separada la detección física de una condición resp
 
 ---
 
+##### Reporting & Audit Context - Canvas
+
+Reporting & Audit administra reportes, indicadores, información histórica, evidencia de auditoría y vistas de trazabilidad.
+
+Consume información proveniente de distintos Bounded Contexts y la transforma en conceptos propios como `Report`, `Audit Record`, `Traceability View`, `KPI` y `Environmental Metrics`, sin convertirse en una segunda fuente de verdad de los datos operativos.
+
+![Bounded Context Canvas - Reporting & Audit](../assets/img/chapter-iv/bc-reporting-audit.png)
+
+---
+
 
 ### 4.1.3. Software Architecture. 
 
