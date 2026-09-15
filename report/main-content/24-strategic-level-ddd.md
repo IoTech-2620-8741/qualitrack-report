@@ -114,6 +114,18 @@ Este contexto constituye la fuente de verdad respecto a la disponibilidad y esta
 ![Bounded Context Canvas - Inventory Management](../assets/img/chapter-iv/bc-inventory-management.png)
 
 ---
+
+##### Product Batch Management Context - Canvas
+
+Product Batch Management administra los productos y lotes fabricados, así como la información necesaria para mantener su trazabilidad.
+
+Cada `ProductBatch` puede relacionarse con las materias primas, equipos, laboratorio y personal involucrado durante el proceso de fabricación, manteniendo separadas las responsabilidades pertenecientes a dichos dominios.
+
+![Bounded Context Canvas - Product Batch Management](../assets/img/chapter-iv/bc-product-batch-management.png)
+
+---
+
+
 ### 4.1.3. Software Architecture. 
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram. 
