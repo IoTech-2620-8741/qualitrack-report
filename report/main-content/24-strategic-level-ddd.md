@@ -74,6 +74,18 @@ Este contexto mantiene separadas las reglas comerciales de las responsabilidades
 ![Bounded Context Canvas - Payments & Subscriptions](../assets/img/chapter-iv/bc-payments-subscriptions.png)
 
 ---
+
+##### Laboratory Management Context - Canvas
+
+Laboratory Management administra los laboratorios, sus ambientes físicos y la relación existente entre los usuarios y la organización mediante conceptos como `Laboratory Membership`.
+
+Este contexto proporciona la estructura organizacional utilizada como referencia por otros dominios sin transferirles la responsabilidad de administrar laboratorios y ambientes.
+
+![Bounded Context Canvas - Laboratory Management](../assets/img/chapter-iv/bc-laboratory-management.png)
+
+---
+
+
 ### 4.1.3. Software Architecture. 
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram. 
