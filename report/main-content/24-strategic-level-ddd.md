@@ -125,6 +125,18 @@ Cada `ProductBatch` puede relacionarse con las materias primas, equipos, laborat
 
 ---
 
+##### Compliance & Alerting Context - Canvas
+
+Compliance & Alerting administra el ciclo de vida de las alertas e incidentes identificados dentro de QualiTrack.
+
+El contexto transforma información proveniente de otros dominios en conceptos propios como `Alert`, `Severity`, `Acknowledgement`, `Resolution` e `Impact Assessment`.
+
+De esta manera se mantiene separada la detección física de una condición respecto de su evaluación, seguimiento y resolución.
+
+![Bounded Context Canvas - Compliance & Alerting](../assets/img/chapter-iv/bc-compliance-alerting.png)
+
+---
+
 
 ### 4.1.3. Software Architecture. 
 
