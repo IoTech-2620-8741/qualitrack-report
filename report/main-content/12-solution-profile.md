@@ -68,11 +68,11 @@ Si bien estos resultados no significan que los incumplimientos hayan sido causad
 
 ### 1.2.2. Lean UX Process
 
-Lean UX es un enfoque que permite desarrollar productos a partir de problemas, necesidades y supuestos que deben ser validados progresivamente con los usuarios. En lugar de considerar desde el inicio que una determinada solución será exitosa, el equipo identifica aquello que cree conocer sobre el negocio, los usuarios y las funcionalidades propuestas, para posteriormente convertir estas creencias en hipótesis que puedan ser evaluadas.
+El Lean UX es un enfoque que permite comprender las necesidades de los usuarios y validar progresivamente las propuestas planteadas para atender un problema.
 
-Para el desarrollo de **QualiTrack**, este proceso permite analizar las necesidades existentes en laboratorios y almacenes farmacéuticos relacionadas con la supervisión de las condiciones ambientales, la detección de desviaciones, la respuesta ante situaciones fuera de los parámetros establecidos y la trazabilidad de los eventos ocurridos.
+Para QualiTrack, este proceso permite orientar la propuesta de solución a las necesidades identificadas en laboratorios y almacenes farmacéuticos, considerando las características de los usuarios y del contexto en el que desarrollan sus actividades.
 
-A partir de la problemática identificada, se plantea un Problem Statement para la nueva iniciativa, seguido por los Business Assumptions, Business Outcome Assumptions, User Assumptions, User Outcome and Benefit Assumptions y Feature Assumptions. Finalmente, estos supuestos son relacionados mediante Hypothesis Statements y representados de manera conjunta en el Lean UX Canvas.
+A partir de este enfoque se definen el Problem Statement, los Assumptions, las Hypothesis Statements y el Lean UX Canvas que orientan la propuesta del producto.
 
 
 #### 1.2.2.1. Lean UX Problem Statements
@@ -85,11 +85,11 @@ El estado actual del monitoreo y control de condiciones ambientales en laborator
 
 Las soluciones y métodos existentes no siempre permiten integrar en un mismo proceso el monitoreo continuo de las condiciones ambientales, la detección inmediata de desviaciones, la ejecución automática de una respuesta física y el registro trazable de todo lo ocurrido. Esto puede generar un intervalo entre la aparición de una condición inadecuada, su identificación y la acción realizada para atenderla.
 
-**QualiTrack** busca atender esta brecha mediante una solución IoT que permita monitorear continuamente las condiciones de laboratorios y almacenes farmacéuticos y responder automáticamente ante determinados eventos. Los dispositivos utilizarán sensores para obtener información del ambiente y actuadores para ejecutar acciones previamente configuradas, como activar ventilación, abrir una compuerta o generar una alarma. Las mediciones y acciones serán registradas y posteriormente estarán disponibles para su consulta y análisis desde QualiTrack.
+**QualiTrack** busca atender esta brecha mediante una solución IoT que integre el monitoreo de las condiciones ambientales, la respuesta automática ante desviaciones y el registro de la información generada. De esta forma, se busca disminuir el tiempo entre la aparición de una condición irregular, su identificación y la acción tomada para atenderla, dejando un registro que pueda ser consultado y analizado posteriormente durante auditorías.
 
 Nuestro enfoque inicial estará dirigido a responsables de calidad y supervisión, así como al personal operativo de laboratorios y almacenes farmacéuticos en el Perú, especialmente en organizaciones que todavía dependen de controles manuales o de sistemas de monitoreo poco integrados.
 
-Sabremos que la iniciativa está avanzando satisfactoriamente cuando, durante las pruebas y pilotos, observemos una reducción del tiempo necesario para detectar y responder ante desviaciones ambientales, una disminución de los registros manuales y una mayor disponibilidad de información trazable sobre las mediciones, alertas y acciones realizadas.
+Sabremos que la iniciativa está avanzando satisfactoriamente cuando, durante las pruebas y pilotos, observemos que las desviaciones ambientales activan una respuesta automática positiva sin intervención manual, que el personal deja de realizar registros manuales en papel u hoja de cálculo y que consulta el historial de mediciones directamente desde QualiTrack.
 
 #### 1.2.2.2. Lean UX Assumptions
 
