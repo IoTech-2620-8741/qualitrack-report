@@ -41,7 +41,7 @@ Nombre del Producto: **QualiTrack**
 
 **Período 202620**
 
-**Agosto**
+**Septiembre**
 
 </div>
 </div>
