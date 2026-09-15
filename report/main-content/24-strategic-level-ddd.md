@@ -85,6 +85,16 @@ Este contexto proporciona la estructura organizacional utilizada como referencia
 
 ---
 
+##### Equipment Management Context - Canvas
+
+Equipment Management administra los equipos, instrumentos y dispositivos IoT registrados dentro de los laboratorios, incluyendo su identidad, ubicación y estado operativo.
+
+Otros Bounded Contexts utilizan referencias de los equipos cuando requieren relacionarlos con procesos de telemetría, fabricación o reporting, sin asumir la responsabilidad de administrar dichos activos.
+
+![Bounded Context Canvas - Equipment Management](../assets/img/chapter-iv/bc-equipment-management.png)
+
+---
+
 
 ### 4.1.3. Software Architecture. 
 
