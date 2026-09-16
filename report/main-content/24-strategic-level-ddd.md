@@ -20,58 +20,67 @@ los comandos, actores, politicas, modelo de lectura, sistemas externos y agregad
 #### 4.1.1.1 Candidate Context Discovery. 
 #### 4.1.1.2 Domain Message Flows Modeling. 
 #### 4.1.1.3 Bounded Context Canvases.  
-### 4.1.2. Context Mapping.
 
-En esta sección se presenta el proceso de elaboración del **Context Map de QualiTrack**, mediante el cual se representan las relaciones estructurales existentes entre los distintos Bounded Contexts identificados en el dominio.
+A partir del análisis estratégico del dominio de QualiTrack, se documentaron los Bounded Contexts identificados mediante **Bounded Context Canvases**. Estos artefactos permiten describir individualmente el propósito de cada contexto, su clasificación estratégica, sus roles dentro del dominio, las comunicaciones entrantes y salientes, su Ubiquitous Language, las principales decisiones de negocio, los supuestos considerados, las métricas de verificación y las preguntas abiertas.
 
-El análisis permite establecer las responsabilidades de cada contexto, las direcciones de dependencia **Upstream/Downstream** y los patrones de relación de **Domain-Driven Design (DDD)** utilizados para mantener la autonomía de sus respectivos modelos.
+Los Bounded Context Canvases se presentan de acuerdo con su prioridad estratégica dentro del dominio. En primer lugar se muestran los contextos que concentran las capacidades principales de QualiTrack, posteriormente aquellos que brindan soporte a dichas capacidades y, finalmente, los contextos correspondientes a capacidades transversales o ampliamente estandarizadas.
 
-El proceso de Context Mapping se desarrolló a partir de la información obtenida durante el análisis estratégico del dominio, considerando las responsabilidades de negocio, el Ubiquitous Language, las principales decisiones del dominio y las necesidades de colaboración identificadas para cada Bounded Context.
+El orden definido es el siguiente:
 
-A partir de esta información se evaluaron diferentes alternativas de organización de las capacidades del negocio. Para cada alternativa se consideró la posibilidad de combinar, separar o distribuir determinadas capabilities, utilizando como criterios principales la cohesión del dominio, el nivel de acoplamiento entre contextos, la autonomía de sus modelos y la posible duplicación de responsabilidades.
+1. Product Batch Management
+2. Tracking & Telemetry
+3. Compliance & Alerting
+4. Inventory Management
+5. Laboratory Management
+6. Equipment Management
+7. Payments & Subscriptions
+8. Reporting & Audit
+9. Identity & Access Management (IAM)
 
-Como resultado del análisis se identificaron los siguientes Bounded Contexts:
+El orden definido responde a la relevancia estratégica de cada Bounded Context para la propuesta de valor de QualiTrack, priorizando las capacidades directamente relacionadas con la trazabilidad, monitoreo, cumplimiento y control de los procesos del laboratorio.
 
-- Identity & Access Management (IAM)
-- Payments & Subscriptions
-- Laboratory Management
-- Equipment Management
-- Tracking & Telemetry
-- Inventory Management
-- Product Batch Management
-- Compliance & Alerting
-- Reporting & Audit
+El orden definido es el siguiente:
+---
+
+##### Product Batch Management Context - Canvas
+
+Product Batch Management administra los productos y lotes fabricados, así como la información necesaria para mantener su trazabilidad.
+
+Cada `ProductBatch` puede relacionarse con las materias primas, equipos, laboratorio y personal involucrado durante el proceso de fabricación, manteniendo separadas las responsabilidades pertenecientes a dichos dominios.
+
+![Bounded Context Canvas - Product Batch Management](../assets/img/chapter-iv/bc-product-batch-management.png)
 
 ---
 
-#### Bounded Context Analysis
+##### Tracking & Telemetry Context - Canvas
 
-Antes de establecer las relaciones del Context Map, cada Bounded Context fue analizado individualmente mediante un **Bounded Context Canvas**.
+Tracking & Telemetry administra las mediciones ambientales, configuraciones de monitoreo, estados interpretados y actuaciones asociadas a los dispositivos IoT.
 
-Este artefacto permitió representar el propósito de cada contexto, su clasificación estratégica, sus roles dentro del dominio, las comunicaciones entrantes y salientes, su Ubiquitous Language, las principales decisiones de negocio, los supuestos considerados, las métricas de verificación y las preguntas abiertas.
+Este contexto representa el estado físico observado dentro de los ambientes mediante conceptos como `Measurement`, `Environmental Profile`, estados `NORMAL`, `WARNING` o `CRITICAL` y `ActuationEvent`.
 
-El análisis individual de los contextos permitió establecer límites claros entre las diferentes responsabilidades del dominio antes de definir sus relaciones dentro del Context Map.
-
----
-##### Identity & Access Management (IAM) Context - Canvas
-
-Identity & Access Management administra la identidad utilizada por los diferentes contextos de QualiTrack.
-
-Su principal responsabilidad consiste en mantener separados los conceptos relacionados con identidad y autenticación respecto de los modelos específicos utilizados por los demás dominios.
-
-Otros Bounded Contexts utilizan únicamente referencias como `UserId` para identificar usuarios sin incorporar directamente las entidades internas de IAM.
-
-![Bounded Context Canvas - Identity & Access Management](../assets/img/chapter-iv/bc-iam.png)
+![Bounded Context Canvas - Tracking & Telemetry](../assets/img/chapter-iv/bc-tracking-telemetry.png)
 
 ---
 
-##### Payments & Subscriptions Context - Canvas
+##### Compliance & Alerting Context - Canvas
 
-Payments & Subscriptions administra los planes, pagos, suscripciones y estados relacionados con la relación comercial entre los usuarios u organizaciones y QualiTrack.
+Compliance & Alerting administra el ciclo de vida de las alertas e incidentes identificados dentro de QualiTrack.
 
-Este contexto mantiene separadas las reglas comerciales de las responsabilidades operativas del laboratorio y actúa como fuente de verdad respecto al estado de las suscripciones.
+El contexto transforma información proveniente de otros dominios en conceptos propios como `Alert`, `Severity`, `Acknowledgement`, `Resolution` e `Impact Assessment`.
 
-![Bounded Context Canvas - Payments & Subscriptions](../assets/img/chapter-iv/bc-payments-subscriptions.png)
+De esta manera se mantiene separada la detección física de una condición respecto de su evaluación, seguimiento y resolución.
+
+![Bounded Context Canvas - Compliance & Alerting](../assets/img/chapter-iv/bc-compliance-alerting.png)
+
+---
+
+##### Inventory Management Context - Canvas
+
+Inventory Management administra las materias primas, `RawMaterialBatch`, cantidades disponibles, stock y estados asociados con los lotes de materia prima.
+
+Este contexto constituye la fuente de verdad respecto a la disponibilidad y estado de los materiales utilizados durante los procesos de fabricación.
+
+![Bounded Context Canvas - Inventory Management](../assets/img/chapter-iv/bc-inventory-management.png)
 
 ---
 
@@ -95,45 +104,13 @@ Otros Bounded Contexts utilizan referencias de los equipos cuando requieren rela
 
 ---
 
-##### Tracking & Telemetry Context - Canvas
+##### Payments & Subscriptions Context - Canvas
 
-Tracking & Telemetry administra las mediciones ambientales, configuraciones de monitoreo, estados interpretados y actuaciones asociadas a los dispositivos IoT.
+Payments & Subscriptions administra los planes, pagos, suscripciones y estados relacionados con la relación comercial entre los usuarios u organizaciones y QualiTrack.
 
-Este contexto representa el estado físico observado dentro de los ambientes mediante conceptos como `Measurement`, `Environmental Profile`, estados `NORMAL`, `WARNING` o `CRITICAL` y `ActuationEvent`.
+Este contexto mantiene separadas las reglas comerciales de las responsabilidades operativas del laboratorio y actúa como fuente de verdad respecto al estado de las suscripciones.
 
-![Bounded Context Canvas - Tracking & Telemetry](../assets/img/chapter-iv/bc-tracking-telemetry.png)
-
----
-
-##### Inventory Management Context - Canvas
-
-Inventory Management administra las materias primas, `RawMaterialBatch`, cantidades disponibles, stock y estados asociados con los lotes de materia prima.
-
-Este contexto constituye la fuente de verdad respecto a la disponibilidad y estado de los materiales utilizados durante los procesos de fabricación.
-
-![Bounded Context Canvas - Inventory Management](../assets/img/chapter-iv/bc-inventory-management.png)
-
----
-
-##### Product Batch Management Context - Canvas
-
-Product Batch Management administra los productos y lotes fabricados, así como la información necesaria para mantener su trazabilidad.
-
-Cada `ProductBatch` puede relacionarse con las materias primas, equipos, laboratorio y personal involucrado durante el proceso de fabricación, manteniendo separadas las responsabilidades pertenecientes a dichos dominios.
-
-![Bounded Context Canvas - Product Batch Management](../assets/img/chapter-iv/bc-product-batch-management.png)
-
----
-
-##### Compliance & Alerting Context - Canvas
-
-Compliance & Alerting administra el ciclo de vida de las alertas e incidentes identificados dentro de QualiTrack.
-
-El contexto transforma información proveniente de otros dominios en conceptos propios como `Alert`, `Severity`, `Acknowledgement`, `Resolution` e `Impact Assessment`.
-
-De esta manera se mantiene separada la detección física de una condición respecto de su evaluación, seguimiento y resolución.
-
-![Bounded Context Canvas - Compliance & Alerting](../assets/img/chapter-iv/bc-compliance-alerting.png)
+![Bounded Context Canvas - Payments & Subscriptions](../assets/img/chapter-iv/bc-payments-subscriptions.png)
 
 ---
 
@@ -144,6 +121,22 @@ Reporting & Audit administra reportes, indicadores, información histórica, evi
 Consume información proveniente de distintos Bounded Contexts y la transforma en conceptos propios como `Report`, `Audit Record`, `Traceability View`, `KPI` y `Environmental Metrics`, sin convertirse en una segunda fuente de verdad de los datos operativos.
 
 ![Bounded Context Canvas - Reporting & Audit](../assets/img/chapter-iv/bc-reporting-audit.png)
+
+---
+
+##### Identity & Access Management (IAM) Context - Canvas
+
+Identity & Access Management administra la identidad utilizada por los diferentes contextos de QualiTrack.
+
+Su principal responsabilidad consiste en mantener separados los conceptos relacionados con identidad y autenticación respecto de los modelos específicos utilizados por los demás dominios.
+
+Otros Bounded Contexts utilizan únicamente referencias como `UserId` para identificar usuarios sin incorporar directamente las entidades internas de IAM.
+
+![Bounded Context Canvas - Identity & Access Management](../assets/img/chapter-iv/bc-iam.png)
+
+---
+
+### 4.1.2. Context Mapping.
 
 ---
 
