@@ -428,6 +428,21 @@ Para cada interacción se establece la dirección Upstream/Downstream y el patr�
 
 ---
 
+##### Product Batch Management → Compliance & Alerting
+
+- **Relationship:** Upstream (Product Batch Management) / Downstream (Compliance & Alerting)
+- **Integration Pattern:** Anti-Corruption Layer (ACL)
+- **Description:** Product Batch Management mantiene la trazabilidad de los lotes fabricados. Compliance & Alerting utiliza esta información para determinar qué `ProductBatch` podrían resultar afectados y transforma dicha trazabilidad hacia su modelo de `Impact Assessment`.
+
+---
+
+##### Product Batch Management → Reporting & Audit
+
+- **Relationship:** Upstream (Product Batch Management) / Downstream (Reporting & Audit)
+- **Integration Pattern:** Anti-Corruption Layer (ACL)
+- **Description:** Product Batch Management mantiene la información de los productos y lotes fabricados. Reporting & Audit transforma esta información hacia conceptos propios como `Report` y `Traceability View`, sin convertirse en una segunda fuente de verdad de la producción.
+
+---
 
 
 ### 4.1.3. Software Architecture. 
