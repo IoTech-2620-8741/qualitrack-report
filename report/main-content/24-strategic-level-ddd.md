@@ -471,6 +471,40 @@ De esta manera se evita que conceptos internos del contexto Upstream se propague
 
 ---
 
+#### Considered Context Mapping Patterns
+
+Durante el proceso de diseño también se consideraron los patrones **Conformist** y **Shared Kernel**, además de los patrones finalmente utilizados.
+
+El patrón **Conformist** no fue seleccionado debido a que implicaría que determinados contextos Downstream adoptaran directamente el modelo definido por su contexto Upstream.
+
+Dado que los Bounded Contexts de QualiTrack mantienen responsabilidades y modelos de dominio independientes, se consideró preferible utilizar Anti-Corruption Layer en aquellas relaciones donde resulta necesaria una transformación entre modelos.
+
+El patrón **Shared Kernel** tampoco fue seleccionado como patrón principal de relación entre los Bounded Contexts de negocio. El módulo shared contiene únicamente abstracciones y value objects transversales de alcance reducido, cuya utilización no implica compartir los modelos principales de los contextos.
+
+La introducción de un Shared Kernel aumentaría el nivel de coordinación requerido entre contextos y podría limitar su capacidad de evolucionar de manera independiente.
+
+Por lo tanto, los patrones que mejor representan las relaciones identificadas en el Context Map seleccionado son **Customer/Supplier** y **Anti-Corruption Layer (ACL)**.
+
+---
+
+#### Final Context Mapping Decision
+
+Después de evaluar las distintas alternativas de Context Mapping, se determinó que mantener los nueve Bounded Contexts como unidades independientes representa la aproximación seleccionada para QualiTrack.
+
+La integración de Tracking & Telemetry con Compliance & Alerting fue descartada debido a que mezclaría la representación del estado físico de los ambientes con la administración del ciclo de vida de alertas e incidentes.
+
+Asimismo, la integración de Inventory Management con Product Batch Management fue descartada porque combinaría la administración de materias primas, disponibilidad y estados del inventario con las responsabilidades propias de fabricación y trazabilidad de productos terminados.
+
+Finalmente, distribuir las capabilities de Reporting & Audit entre los demás Bounded Contexts fue descartado debido a que produciría duplicación de responsabilidades y dificultaría la construcción de indicadores, evidencia histórica y vistas de trazabilidad que requieren información proveniente de diferentes dominios.
+
+La alternativa seleccionada mantiene separados **Identity & Access Management, Payments & Subscriptions, Laboratory Management, Equipment Management, Tracking & Telemetry, Inventory Management, Product Batch Management, Compliance & Alerting y Reporting & Audit**.
+
+Las colaboraciones entre estos contextos se establecen mediante relaciones explícitas utilizando principalmente los patrones **Customer/Supplier** y **Anti-Corruption Layer**.
+
+De esta manera, cada Bounded Context conserva la autoridad sobre su propio modelo de dominio, comparte únicamente la información necesaria mediante contratos claramente definidos y puede evolucionar sin introducir dependencias innecesarias sobre los modelos internos de los demás contextos.
+
+El Context Map resultante mantiene una alta cohesión dentro de cada dominio, reduce el acoplamiento entre contextos y preserva una delimitación clara de las responsabilidades de negocio que conforman QualiTrack.
+
 ### 4.1.3. Software Architecture. 
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram. 
