@@ -138,6 +138,26 @@ Otros Bounded Contexts utilizan únicamente referencias como `UserId` para ident
 
 ### 4.1.2. Context Mapping.
 
+A partir de los Bounded Contexts previamente identificados y documentados en la sección **4.1.1.3. Bounded Context Canvases**, se desarrolló el proceso de **Context Mapping de QualiTrack**, cuyo propósito es representar las relaciones estructurales existentes entre los diferentes contextos del dominio.
+
+El análisis permite establecer las direcciones de dependencia **Upstream/Downstream** y los patrones de relación de **Domain-Driven Design (DDD)** empleados para facilitar la colaboración entre contextos sin comprometer la autonomía de sus respectivos modelos.
+
+El proceso de Context Mapping se desarrolló considerando las responsabilidades de negocio, las capabilities asociadas a cada Bounded Context y las necesidades de colaboración y dependencia identificadas entre los diferentes contextos del dominio.
+
+Antes de definir el Context Map definitivo, se evaluaron diferentes alternativas de organización de las capacidades del negocio. Para ello se analizaron posibles combinaciones, separaciones y redistribuciones de responsabilidades entre Bounded Contexts, considerando principalmente la cohesión del dominio, el nivel de acoplamiento entre contextos, la autonomía de sus modelos y la posible duplicación de capacidades.
+
+Los Bounded Contexts considerados durante este proceso fueron:
+
+- Product Batch Management
+- Tracking & Telemetry
+- Compliance & Alerting
+- Inventory Management
+- Laboratory Management
+- Equipment Management
+- Payments & Subscriptions
+- Reporting & Audit
+- Identity & Access Management (IAM)
+
 ---
 
 #### Context Mapping Design Alternatives
@@ -148,84 +168,8 @@ El análisis consideró diferentes escenarios de reorganización de capabilities
 
 ---
 
-##### Candidate Context Map 1 — Integration of Tracking & Telemetry and Compliance & Alerting
 
-**Design Question:** ¿Qué ocurriría si las capabilities relacionadas con la gestión de alertas fueran incorporadas dentro de Tracking & Telemetry?
 
-Esta alternativa surge debido a la estrecha relación existente entre las mediciones ambientales y la generación de alertas.
-
-Tracking & Telemetry identifica estados y desviaciones a partir de las mediciones recibidas, mientras que Compliance & Alerting utiliza esta información para iniciar y administrar el ciclo de vida de una alerta.
-
-La alternativa plantea integrar ambas responsabilidades dentro de un único Bounded Context.
-
-![Candidate Context Map 1 - Tracking & Telemetry and Compliance & Alerting](../assets/img/chapter-iv/candidate-context-map-1.png)
-
-La principal ventaja de esta alternativa sería reducir las comunicaciones necesarias entre ambos contextos, debido a que la detección de una condición ambiental y la gestión de la alerta asociada podrían realizarse dentro del mismo límite.
-
-Sin embargo, esta organización mezclaría dos responsabilidades conceptualmente diferentes.
-
-Tracking & Telemetry representa principalmente el estado físico observado mediante mediciones, configuraciones y actuaciones, mientras que Compliance & Alerting administra el ciclo de vida de incidentes mediante conceptos como Alert, Severity, Acknowledgement, Resolution e Impact Assessment.
-
-Combinar ambas responsabilidades reduciría la cohesión del modelo y dificultaría que ambos dominios evolucionaran independientemente.
-
-Por esta razón, la alternativa fue **rechazada** y se decidió mantener Tracking & Telemetry y Compliance & Alerting como Bounded Contexts independientes.
-
----
-
-##### Candidate Context Map 2 — Integration of Inventory Management and Product Batch Management
-
-**Design Question:** ¿Qué ocurriría si Inventory Management y Product Batch Management formaran un único Bounded Context?
-
-Esta alternativa se consideró debido a que los procesos de fabricación necesitan conocer las materias primas y `RawMaterialBatch` disponibles, además de registrar las cantidades utilizadas durante la producción.
-
-![Candidate Context Map 2 - Inventory Management and Product Batch Management](../assets/img/chapter-iv/candidate-context-map-2.png)
-
-La integración permitiría simplificar inicialmente determinadas operaciones relacionadas con el consumo de materias primas, debido a que el inventario y los lotes fabricados formarían parte del mismo modelo.
-
-Sin embargo, ambos dominios poseen responsabilidades diferentes.
-
-Inventory Management administra materias primas, cantidades disponibles y estados del inventario, mientras que Product Batch Management administra la fabricación y trazabilidad de los productos terminados.
-
-Integrarlos dentro de un mismo límite produciría un contexto con demasiadas responsabilidades y aumentaría el acoplamiento entre el ciclo de vida del inventario y el ciclo de vida de los productos fabricados.
-
-Por esta razón, la alternativa fue **rechazada** y ambos dominios se conservaron como Bounded Contexts independientes relacionados mediante un contrato explícito.
-
----
-
-##### Candidate Context Map 3 — Distribution of Reporting & Audit Capabilities
-
-**Design Question:** ¿Qué ocurriría si las capabilities de Reporting & Audit fueran distribuidas entre los demás Bounded Contexts en lugar de mantener un contexto independiente?
-
-Esta alternativa plantea que cada dominio sea responsable tanto de sus operaciones principales como de sus propios reportes, indicadores, información histórica y auditoría.
-
-Por ejemplo, Inventory Management podría generar sus propios reportes de inventario, Tracking & Telemetry sus métricas históricas y Equipment Management los reportes relacionados con los equipos.
-
-![Candidate Context Map 3 - Distributed Reporting and Audit](../assets/img/chapter-iv/candidate-context-map-3.png)
-
-La principal ventaja sería reducir la dependencia hacia un contexto especializado en reporting.
-
-Sin embargo, esta alternativa produciría duplicación de responsabilidades relacionadas con auditoría, generación de indicadores, construcción de reportes y almacenamiento de información histórica.
-
-Además, determinados reportes y vistas de trazabilidad requieren información proveniente de múltiples dominios, por lo que una distribución de estas capabilities aumentaría la complejidad necesaria para construir información consolidada.
-
-Por estas razones, la alternativa fue **rechazada** y Reporting & Audit se mantuvo como un Bounded Context independiente.
-
----
-
-#### Comparison of Context Mapping Alternatives
-
-Las alternativas fueron comparadas considerando principalmente la cohesión interna de cada contexto, el nivel de acoplamiento entre los modelos, la autonomía de los dominios y la posible duplicación de responsabilidades.
-
-| Alternative | Main Advantage | Main Disadvantage | Decision |
-|---|---|---|---|
-| Tracking & Telemetry + Compliance & Alerting | Reduce la comunicación necesaria entre detección y administración de alertas. | Mezcla el monitoreo físico con el ciclo de vida de los incidentes. | Rejected |
-| Inventory Management + Product Batch Management | Simplifica algunas operaciones relacionadas con el consumo de materias primas. | Mezcla inventario con fabricación y trazabilidad de productos. | Rejected |
-| Distributed Reporting & Audit | Cada contexto administra directamente su información analítica. | Genera duplicación y dificulta la construcción de información consolidada. | Rejected |
-| Independent Bounded Contexts with explicit relationships | Mantiene responsabilidades claramente delimitadas y modelos independientes. | Requiere contratos explícitos de integración. | **Selected** |
-
-A partir de esta comparación se determinó que mantener los Bounded Contexts independientes y establecer relaciones explícitas entre ellos representa la alternativa que mejor conserva los límites del dominio de QualiTrack.
-
----
 ### 4.1.3. Software Architecture. 
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram. 
