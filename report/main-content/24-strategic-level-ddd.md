@@ -364,6 +364,31 @@ Para cada interacción se establece la dirección Upstream/Downstream y el patr�
 
 ---
 
+##### Inventory Management → Product Batch Management
+
+- **Relationship:** Upstream (Inventory Management) / Downstream (Product Batch Management)
+- **Integration Pattern:** Customer/Supplier
+- **Description:** Inventory Management actúa como fuente de verdad de `RawMaterialBatch`, cantidades disponibles y estados. Product Batch Management utiliza esta información para seleccionar los materiales utilizados durante la fabricación y registrar las cantidades consumidas.
+
+---
+
+##### Inventory Management → Compliance & Alerting
+
+- **Relationship:** Upstream (Inventory Management) / Downstream (Compliance & Alerting)
+- **Integration Pattern:** Customer/Supplier
+- **Description:** Inventory Management comunica cambios relevantes en el estado de un `RawMaterialBatch`, como su observación o rechazo. Compliance & Alerting utiliza esta información para determinar si corresponde iniciar un proceso de evaluación de impacto.
+
+---
+
+##### Inventory Management → Reporting & Audit
+
+- **Relationship:** Upstream (Inventory Management) / Downstream (Reporting & Audit)
+- **Integration Pattern:** Anti-Corruption Layer (ACL)
+- **Description:** Reporting & Audit consume información relacionada con materias primas, stock y cambios de estado y la transforma hacia conceptos propios de reporting, auditoría y trazabilidad.
+
+---
+
+
 
 
 ### 4.1.3. Software Architecture. 
