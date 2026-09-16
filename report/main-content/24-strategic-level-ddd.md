@@ -249,6 +249,41 @@ Esta aproximación permite que cada contexto mantenga autoridad sobre su propio 
 
 ---
 
+#### Selected Context Map
+
+Como resultado del análisis de alternativas se seleccionó una organización basada en nueve Bounded Contexts independientes.
+
+Cada contexto mantiene la autoridad sobre su propio modelo de dominio y comparte únicamente la información necesaria para colaborar con los demás contextos.
+
+Las relaciones se representan mediante las direcciones **Upstream (U)** y **Downstream (D)**, junto con los patrones **Customer/Supplier** y **Anti-Corruption Layer (ACL)**.
+
+![Selected Context Map - QualiTrack](../assets/img/chapter-iv/selected-context-map.png)
+
+El Context Map seleccionado está conformado por:
+
+- Identity & Access Management
+- Payments & Subscriptions
+- Laboratory Management
+- Equipment Management
+- Tracking & Telemetry
+- Inventory Management
+- Product Batch Management
+- Compliance & Alerting
+- Reporting & Audit
+
+**Legend:**
+
+- **U:** Upstream
+- **D:** Downstream
+- **SUP:** Supplier
+- **CUS:** Customer
+- **C/S:** Customer/Supplier
+- **ACL:** Anti-Corruption Layer
+
+La alternativa seleccionada mantiene explícitamente los límites entre los nueve Bounded Contexts y establece las colaboraciones necesarias sin trasladar responsabilidades de dominio entre ellos.
+
+---
+
 
 ### 4.1.3. Software Architecture. 
 
