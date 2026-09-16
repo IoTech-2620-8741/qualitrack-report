@@ -388,6 +388,30 @@ Para cada interacción se establece la dirección Upstream/Downstream y el patr�
 
 ---
 
+##### Equipment Management → Tracking & Telemetry
+
+- **Relationship:** Upstream (Equipment Management) / Downstream (Tracking & Telemetry)
+- **Integration Pattern:** Anti-Corruption Layer (ACL)
+- **Description:** Equipment Management mantiene la identidad y el estado operativo del dispositivo físico. Tracking & Telemetry consume únicamente las referencias requeridas y las adapta a su propio modelo de telemetría.
+
+---
+
+##### Equipment Management → Product Batch Management
+
+- **Relationship:** Upstream (Equipment Management) / Downstream (Product Batch Management)
+- **Integration Pattern:** Customer/Supplier
+- **Description:** Equipment Management proporciona información sobre los equipos registrados y su disponibilidad. Product Batch Management utiliza esta información para asociar los equipos utilizados durante una fabricación y verificar su estado cuando las reglas del dominio así lo requieren.
+
+---
+
+##### Equipment Management → Reporting & Audit
+
+- **Relationship:** Upstream (Equipment Management) / Downstream (Reporting & Audit)
+- **Integration Pattern:** Anti-Corruption Layer (ACL)
+- **Description:** Reporting & Audit transforma información relacionada con disponibilidad, mantenimiento y cambios de estado de los equipos hacia conceptos propios de auditoría y reporting, manteniendo Equipment Management como fuente de verdad de dichos activos.
+
+---
+
 
 
 
