@@ -412,6 +412,21 @@ Para cada interacción se establece la dirección Upstream/Downstream y el patr�
 
 ---
 
+##### Tracking & Telemetry → Compliance & Alerting
+
+- **Relationship:** Upstream (Tracking & Telemetry) / Downstream (Compliance & Alerting)
+- **Integration Pattern:** Anti-Corruption Layer (ACL)
+- **Description:** Tracking & Telemetry identifica estados ambientales como `NORMAL`, `WARNING` o `CRITICAL` y registra `ActuationEvents`. Compliance & Alerting transforma esta información hacia conceptos como `Alert`, `Severity`, `Acknowledgement`, `Resolution` e `Impact Assessment`, evitando que su modelo dependa directamente del modelo utilizado para representar el estado físico del ambiente.
+
+---
+
+##### Tracking & Telemetry → Reporting & Audit
+
+- **Relationship:** Upstream (Tracking & Telemetry) / Downstream (Reporting & Audit)
+- **Integration Pattern:** Anti-Corruption Layer (ACL)
+- **Description:** Tracking & Telemetry proporciona mediciones, estados y actuaciones. Reporting & Audit transforma esta información en `Environmental Metrics`, KPI, reportes y vistas históricas, evitando depender directamente del modelo interno de telemetría.
+
+---
 
 
 
