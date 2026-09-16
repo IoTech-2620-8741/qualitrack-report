@@ -1,5 +1,7 @@
 ## 3.1. User Stories
 
+En esta sección se presentan las historias definidas para QualiTrack, agrupadas de acuerdo con las Épicas (EP) del proyecto. Estas incluyen **User Stories (US)**, orientadas a las necesidades y funcionalidades de los usuarios; **Technical Stories (TS)**, enfocadas en los requerimientos técnicos de la solución; y **Maker Stories (MS)**, relacionadas con la construcción e integración de los componentes IoT. Además, cada historia cuenta con criterios de aceptación que permiten verificar su cumplimiento.
+
 | Epic / Story ID | Título | Descripción | Criterios de Aceptación | Relacionado con (Epic ID) |
 |---|---|---|---|---|
 | **EP01** | Experiencia pública de QualiTrack | Como visitante, quiero conocer qué es QualiTrack, cómo funciona y qué opciones ofrece, para decidir si la solución puede ser útil para mi organización. | - | - |
