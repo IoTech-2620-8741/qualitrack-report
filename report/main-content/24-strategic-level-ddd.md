@@ -332,6 +332,38 @@ Para cada interacción se establece la dirección Upstream/Downstream y el patr�
 
 ---
 
+##### Laboratory Management → Equipment Management
+
+- **Relationship:** Upstream (Laboratory Management) / Downstream (Equipment Management)
+- **Integration Pattern:** Customer/Supplier
+- **Description:** Laboratory Management mantiene la autoridad sobre los ambientes físicos del laboratorio. Equipment Management consume estas referencias para registrar y ubicar equipos, instrumentos y dispositivos IoT.
+
+---
+
+##### Laboratory Management → Tracking & Telemetry
+
+- **Relationship:** Upstream (Laboratory Management) / Downstream (Tracking & Telemetry)
+- **Integration Pattern:** Customer/Supplier
+- **Description:** Laboratory Management proporciona las referencias de los ambientes en los que se realizan las mediciones. Tracking & Telemetry utiliza dichas referencias para contextualizar la telemetría sin asumir la administración de los espacios físicos.
+
+---
+
+##### Laboratory Management → Inventory Management
+
+- **Relationship:** Upstream (Laboratory Management) / Downstream (Inventory Management)
+- **Integration Pattern:** Customer/Supplier
+- **Description:** Laboratory Management proporciona las referencias organizacionales necesarias para identificar el laboratorio al que pertenece el inventario. Inventory Management utiliza esta información sin duplicar la estructura organizacional.
+
+---
+
+##### Laboratory Management → Product Batch Management
+
+- **Relationship:** Upstream (Laboratory Management) / Downstream (Product Batch Management)
+- **Integration Pattern:** Customer/Supplier
+- **Description:** Laboratory Management proporciona las referencias del laboratorio y del personal involucrado. Product Batch Management utiliza esta información para asociar correctamente cada `ProductBatch` con su contexto organizacional.
+
+---
+
 
 
 ### 4.1.3. Software Architecture. 
