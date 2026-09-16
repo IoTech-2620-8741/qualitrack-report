@@ -444,6 +444,13 @@ Para cada interacción se establece la dirección Upstream/Downstream y el patr�
 
 ---
 
+##### Compliance & Alerting → Reporting & Audit
+
+- **Relationship:** Upstream (Compliance & Alerting) / Downstream (Reporting & Audit)
+- **Integration Pattern:** Anti-Corruption Layer (ACL)
+- **Description:** Compliance & Alerting administra el ciclo de vida de las alertas. Reporting & Audit transforma dicha información en evidencia histórica, indicadores y reportes sin asumir la responsabilidad de administrar los incidentes.
+
+---
 
 ### 4.1.3. Software Architecture. 
 
