@@ -316,6 +316,22 @@ Para cada interacción se establece la dirección Upstream/Downstream y el patr�
 
 ---
 
+##### Payments & Subscriptions → Laboratory Management
+
+- **Relationship:** Upstream (Payments & Subscriptions) / Downstream (Laboratory Management)
+- **Integration Pattern:** Customer/Supplier
+- **Description:** Payments & Subscriptions mantiene el estado de las suscripciones. Laboratory Management utiliza esta información para determinar si se cumplen las condiciones comerciales necesarias para continuar con determinadas operaciones relacionadas con el laboratorio.
+
+---
+
+##### Payments & Subscriptions → Reporting & Audit
+
+- **Relationship:** Upstream (Payments & Subscriptions) / Downstream (Reporting & Audit)
+- **Integration Pattern:** Customer/Supplier
+- **Description:** Payments & Subscriptions proporciona información relevante asociada con planes, pagos y suscripciones. Reporting & Audit utiliza esta información para mantener evidencia histórica y trazabilidad de las operaciones comerciales.
+
+---
+
 
 
 ### 4.1.3. Software Architecture. 
