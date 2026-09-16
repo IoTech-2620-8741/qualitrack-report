@@ -168,6 +168,30 @@ El análisis consideró diferentes escenarios de reorganización de capabilities
 
 ---
 
+##### Candidate Context Map 1 — Integration of Tracking & Telemetry and Compliance & Alerting
+
+**Design Question:** ¿Qué ocurriría si las capabilities relacionadas con la gestión de alertas fueran incorporadas dentro de Tracking & Telemetry?
+
+Esta alternativa surge debido a la estrecha relación existente entre las mediciones ambientales y la generación de alertas.
+
+Tracking & Telemetry identifica estados y desviaciones a partir de las mediciones recibidas, mientras que Compliance & Alerting utiliza esta información para iniciar y administrar el ciclo de vida de una alerta.
+
+La alternativa plantea integrar ambas responsabilidades dentro de un único Bounded Context.
+
+![Candidate Context Map 1 - Tracking & Telemetry and Compliance & Alerting](../assets/img/chapter-iv/candidate-context-map-1.png)
+
+La principal ventaja de esta alternativa sería reducir las comunicaciones necesarias entre ambos contextos, debido a que la detección de una condición ambiental y la gestión de la alerta asociada podrían realizarse dentro del mismo límite.
+
+Sin embargo, esta organización mezclaría dos responsabilidades conceptualmente diferentes.
+
+Tracking & Telemetry representa principalmente el estado físico observado mediante mediciones, configuraciones y actuaciones, mientras que Compliance & Alerting administra el ciclo de vida de incidentes mediante conceptos como `Alert`, `Severity`, `Acknowledgement`, `Resolution` e `Impact Assessment`.
+
+Combinar ambas responsabilidades reduciría la cohesión del modelo y dificultaría que ambos dominios evolucionaran de manera independiente.
+
+Por esta razón, la alternativa fue **rechazada** y se decidió mantener Tracking & Telemetry y Compliance & Alerting como Bounded Contexts independientes.
+
+---
+
 
 
 ### 4.1.3. Software Architecture. 
