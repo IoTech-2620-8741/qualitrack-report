@@ -452,6 +452,25 @@ Para cada interacción se establece la dirección Upstream/Downstream y el patr�
 
 ---
 
+#### Summary of Applied Context Mapping Patterns
+
+A partir de las relaciones establecidas se identificaron dos patrones principales de Context Mapping dentro de QualiTrack.
+
+| Pattern | Relationships |
+|---|---|
+| **Anti-Corruption Layer (ACL)** | Identity & Access Management → Payments & Subscriptions; Identity & Access Management → Laboratory Management; Inventory Management → Reporting & Audit; Equipment Management → Tracking & Telemetry; Equipment Management → Reporting & Audit; Tracking & Telemetry → Compliance & Alerting; Tracking & Telemetry → Reporting & Audit; Product Batch Management → Compliance & Alerting; Product Batch Management → Reporting & Audit; Compliance & Alerting → Reporting & Audit |
+| **Customer/Supplier** | Identity & Access Management → Reporting & Audit; Payments & Subscriptions → Laboratory Management; Payments & Subscriptions → Reporting & Audit; Laboratory Management → Equipment Management; Laboratory Management → Tracking & Telemetry; Laboratory Management → Inventory Management; Laboratory Management → Product Batch Management; Inventory Management → Product Batch Management; Inventory Management → Compliance & Alerting; Equipment Management → Product Batch Management |
+
+**Customer/Supplier** se utiliza cuando un contexto Upstream actúa como Supplier de información o capacidades requeridas explícitamente por un contexto Downstream que actúa como Customer.
+
+El Supplier mantiene la autoridad sobre dicha información y expone un contrato que permite satisfacer las necesidades del Customer sin transferirle la responsabilidad sobre su modelo interno.
+
+**Anti-Corruption Layer (ACL)** se utiliza cuando un contexto Downstream necesita consumir información de otro Bounded Context, pero requiere transformarla hacia conceptos pertenecientes a su propio modelo.
+
+De esta manera se evita que conceptos internos del contexto Upstream se propaguen directamente hacia el modelo del Downstream, preservando la autonomía de cada dominio.
+
+---
+
 ### 4.1.3. Software Architecture. 
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram. 
