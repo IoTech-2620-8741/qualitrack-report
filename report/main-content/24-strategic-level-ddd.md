@@ -14,7 +14,33 @@ En este paso, se presentan los eventos de dominio ya identificados en la secció
   <img src="../assets/img/chapter-iv/es-domain-events.png" alt ="Big Picture" width=700>
 </div>
 
-**Paso 2: Timelines**
+Dichos eventos de dominio se separaron en flujos, donde representan el conjunto de eventos de dominio que están enlazados con sus continuaciones en una linea de tiempo cronológica. Por otra parte, también se agregaron actores, quienes serán los que responden o ejecutan los eventos de dominio.
+
+Se identificaron 8 flujos principales:
+- Environmental Monitoring and Control.
+- Raw Material Management.
+- Environmental Deviation Management.
+- Quality Records and Audits.
+- Product Development and Production.
+- Incoming Inspection and Acceptance. 
+- Product Development and Viability.
+- Distribution and Supply Monitoring.
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/es-domain-events-flow-1.png" alt ="Big Picture" width=700>
+</div>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/es-domain-events-flow-2.png" alt ="Big Picture" width=700>
+</div>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/es-domain-events-flow-3.png" alt ="Big Picture" width=700>
+</div>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/es-domain-events-flow-4.png" alt ="Big Picture" width=700>
+</div>
 
 **Paso 3: Pivotal Points**
 
