@@ -284,6 +284,39 @@ La alternativa seleccionada mantiene explícitamente los límites entre los nuev
 
 ---
 
+#### Analysis of Bounded Context Relationships
+
+A partir del Context Map seleccionado se identificaron las principales relaciones de dependencia e integración existentes entre los diferentes dominios de QualiTrack.
+
+Para cada interacción se establece la dirección Upstream/Downstream y el patrón de Context Mapping correspondiente, procurando mantener la autonomía de cada contexto y evitar que sus modelos internos se propaguen innecesariamente hacia otros dominios.
+
+---
+
+##### Identity & Access Management (IAM) → Payments & Subscriptions
+
+- **Relationship:** Upstream (Identity & Access Management) / Downstream (Payments & Subscriptions)
+- **Integration Pattern:** Anti-Corruption Layer (ACL)
+- **Description:** Payments & Subscriptions requiere conocer la identidad del usuario para administrar suscripciones. Sin embargo, el contexto comercial no necesita incorporar el modelo interno utilizado por IAM. Por ello, la información de identidad requerida se adapta a referencias propias de Payments & Subscriptions, manteniendo ambos modelos separados.
+
+---
+
+##### Identity & Access Management (IAM) → Laboratory Management
+
+- **Relationship:** Upstream (Identity & Access Management) / Downstream (Laboratory Management)
+- **Integration Pattern:** Anti-Corruption Layer (ACL)
+- **Description:** Laboratory Management utiliza la identidad proporcionada por IAM para establecer la relación entre un usuario y un laboratorio mediante `Laboratory Membership`. El contexto utiliza únicamente referencias como `UserId`, evitando depender directamente de las entidades internas de IAM.
+
+---
+
+##### Identity & Access Management (IAM) → Reporting & Audit
+
+- **Relationship:** Upstream (Identity & Access Management) / Downstream (Reporting & Audit)
+- **Integration Pattern:** Customer/Supplier
+- **Description:** IAM actúa como Supplier de la información necesaria para identificar al usuario responsable de una operación. Reporting & Audit actúa como Customer de dicha información para generar evidencia de auditoría sin asumir responsabilidades relacionadas con identidad o autenticación.
+
+---
+
+
 
 ### 4.1.3. Software Architecture. 
 
