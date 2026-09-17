@@ -178,62 +178,6 @@ En esta sección se presentan los resultados de las entrevistas aplicadas a cada
     <colgroup></colgroup>
     <thead>
         <tr>
-            <th colspan="2">Entrevista #2<br></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Nombre</td>
-            <td>Ricardo</td>
-        </tr>
-        <tr>
-            <td>Apellidos</td>
-            <td>Melendrez</td>
-        </tr>
-        <tr>
-            <td>Edad</td>
-            <td>44 años</td>
-        </tr>
-        <tr>
-            <td>Distrito</td>
-            <td>Chorrillos</td>
-        </tr>
-        <tr>
-            <td>Evidencia</td>
-            <td style="text-align: left;">
-                <div align="center"><img src="../assets/img/chapter-ii/ricardo-melendrez.png" width="700"></div>
-            </td>
-        </tr>
-        <tr>
-            <td>Link</td>
-            <td>
-            <a href="https://shorturl.at/9TYgY" target="_blank">
-                https://shorturl.at/9TYgY
-            </a>
-            </td>
-        </tr>
-        <tr>
-            <td>Timing donde inicia la entrevista<br></td>
-            <td>5:02 min</td>
-        </tr>
-        <tr>
-            <td>Duración de la entrevista<br></td>
-            <td>9:48 min</td>
-        </tr>
-        <tr>
-            <td>Resumen</td>
-            <td>
-Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, trabaja en el área de estabilidades de un laboratorio. En su trabajo supervisa principalmente las condiciones de temperatura y humedad en áreas como físico-químico, pesaje e instrumentación, donde los valores deben mantenerse dentro de los parámetros establecidos para evitar alteraciones en los análisis. El monitoreo se realiza mediante termohigrómetros calibrados y las mediciones se registran tres veces al día en formatos físicos, los cuales son supervisados y almacenados durante cinco años. Cuando se detecta una condición fuera de rango, se detienen las actividades, se comunica al jefe inmediato y se solicita la intervención de mantenimiento para corregir el problema. Una vez restablecidas las condiciones, se verifica nuevamente el ambiente y se registra la incidencia en el formato correspondiente. Para auditorías se consultan los registros históricos y las observaciones relacionadas con las desviaciones. Como principales indicadores considera la temperatura y humedad de cada área. Señala que un sistema digital permitiría visualizar todas las áreas en un solo panel y reducir el uso de registros físicos.
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-
-<table>
-    <colgroup></colgroup>
-    <thead>
-        <tr>
             <th colspan="2">Entrevista #3<br></th>
         </tr>
     </thead>
@@ -269,11 +213,11 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td>9:50 min</td>
+            <td>5:02 min</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td>14:50 min</td>
+            <td>9:48 min</td>
         </tr>
         <tr>
             <td>Resumen</td>
@@ -283,6 +227,64 @@ Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagno
         </tr>
     </tbody>
 </table>
+
+
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #2<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Ricardo</td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>Melendrez</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>33 años</td>
+        </tr>
+        <tr>
+            <td>Ubicacion</td>
+            <td>Chilca - Cañete</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td style="text-align: left;">
+                <div align="center"><img src="../assets/img/chapter-ii/ricardo-melendrez.png" width="700"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>
+            <a href="https://shorturl.at/9TYgY" target="_blank">
+                https://shorturl.at/9TYgY
+            </a>
+            </td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td>9:50 min</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td>14:50 min</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>
+Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, trabaja en el área de estabilidades de un laboratorio. En su trabajo supervisa principalmente las condiciones de temperatura y humedad en áreas como físico-químico, pesaje e instrumentación, donde los valores deben mantenerse dentro de los parámetros establecidos para evitar alteraciones en los análisis. El monitoreo se realiza mediante termohigrómetros calibrados y las mediciones se registran tres veces al día en formatos físicos, los cuales son supervisados y almacenados durante cinco años. Cuando se detecta una condición fuera de rango, se detienen las actividades, se comunica al jefe inmediato y se solicita la intervención de mantenimiento para corregir el problema. Una vez restablecidas las condiciones, se verifica nuevamente el ambiente y se registra la incidencia en el formato correspondiente. Para auditorías se consultan los registros históricos y las observaciones relacionadas con las desviaciones. Como principales indicadores considera la temperatura y humedad de cada área. Señala que un sistema digital permitiría visualizar todas las áreas en un solo panel y reducir el uso de registros físicos.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
 
 
 
@@ -469,11 +471,12 @@ Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagno
 
 En esta sección se presenta el análisis detallado de la información recolectada de las entrevistas. Para cada segmento, se explican primero los hallazgos estadísticos objetivos y subjetivos, seguidos de la evidencia gráfica correspondiente.
 
+#### Análisis de Características Objetivas y Subjetivas
+
+
 **Segmento 1: Responsables de calidad y supervisión**
 
-**Análisis de Características Objetivas y Subjetivas:**
-
-El análisis de las entrevistas evidencia que la supervisión de las condiciones ambientales constituye una actividad fundamental en los procesos de calidad farmacéutica. El 100% de los entrevistados controla la temperatura y humedad de las áreas bajo su responsabilidad, mientras que un 67% también considera el control de la presión diferencial, dependiendo de las características y requerimientos de cada área.
+El análisis de las entrevistas evidencia que la supervisión de las condiciones ambientales constituye una actividad fundamental en los procesos de calidad farmacéutica. El 100% de los entrevistados controla la temperatura y humedad de las áreas bajo su responsabilidad, mientras que un 67% también considera el control de la presión diferencial, dependiendo de las características y requisitos de cada área.
 
 Respecto a la gestión de la información, el 100% de los entrevistados utiliza registros manuales o físicos para documentar las mediciones ambientales. Asimismo, un 33% complementa estos registros mediante herramientas como Excel, evidenciando que la información puede encontrarse distribuida entre diferentes medios y formatos.
 
@@ -490,8 +493,6 @@ En conjunto, se observa que el responsable de calidad busca mantener las condici
 
 **Segmento 2: Personal operativo de laboratorios y almacenes**
 
-**Análisis de Características Objetivas y Subjetivas:**
-
 El análisis de las entrevistas evidencia que el control de condiciones ambientales constituye una actividad fundamental en los procesos de calidad farmacéutica. El 100% de los entrevistados verifica la temperatura y humedad de las áreas bajo su responsabilidad, mientras que el 100% también implementa sistemas formales de documentación de procesos. Asimismo, todos utilizan registros manuales o físicos para documentar las mediciones ambientales. A nivel objetivo, el 100% implementa también sistemas de identificación de productos y protocolos de rechazo de defectuosos, 
 evidenciando que la información puede encontrarse distribuida entre diferentes medios y formatos. 
  
@@ -499,21 +500,72 @@ A nivel subjetivo, el análisis revela dificultades relacionadas con la gestión
  
 En conjunto, se observa que el Personal Operativo busca mantener las condiciones ambientales dentro de los parámetros establecidos para detectar oportunamente las desviaciones y disponer de información confiable para la supervisión y toma de decisiones. Las principales necesidades identificadas son centralización de información técnica y especificaciones, visibilidad de disponibilidad de suministro y gestión de proveedores críticos, además de integración inter-departamental y coordinación de flujos secuenciales. Con el 100% del segmento operando bajo regulación GMP estricta, existe predisposición clara a adoptar herramientas que mejoren cumplimiento, trazabilidad y eficiencia sin comprometer la seguridad del proceso farmacéutico.
 
-<div align="center"><img src="../assets/img/chapter-ii/operative-personel.png" width="900"></div>
+<div align="center"><img src="../assets/img/chapter-ii/operative-personel.png" width=900></div>
 
-##### Análisis Comparativo
+#### Análisis Comparativo
 
-##### Contrastación de Segmentos:
+Para complementar el análisis de los segmentos, se revisaron específicamente las respuestas relacionadas con dispositivos, sistemas operativos y navegadores utilizados durante las actividades laborales.
 
-El análisis comparativo de ambos segmentos permite identificar que tanto los responsables de calidad y supervisión como el personal operativo de laboratorios y almacenes participan en procesos donde la información debe mantenerse organizada, disponible y alineada con procedimientos y requisitos de calidad. Ambos segmentos requieren conservar información relacionada con los productos farmacéuticos y sus procesos, así como garantizar el cumplimiento de las condiciones y procedimientos establecidos.
+##### **Uso de dispositivos**
 
-Sin embargo, se observan diferencias en el tipo de información que gestionan y en sus principales necesidades. El Segmento 1 se concentra principalmente en la supervisión de las condiciones ambientales, el seguimiento de parámetros como temperatura, humedad y presión diferencial, y la identificación y atención de desviaciones. En cambio, el Segmento 2 participa directamente en diferentes etapas operativas, incluyendo la recepción de materias primas, desarrollo, fabricación, almacenamiento y trazabilidad de productos y lotes.
+<div align="center">
+    <img src="../assets/img/chapter-ii/analis-de-dispositivos.png" width=600>
+</div>
 
-Respecto a las dificultades, en el Segmento 1 destaca la dependencia de registros manuales y la necesidad de disponer de una visualización centralizada de las condiciones ambientales. En el Segmento 2 las dificultades son más diversas y dependen del contexto de trabajo: se identifican problemas relacionados con el seguimiento de actividades y acuerdos, la trazabilidad de materias primas y lotes, y la transferencia de desarrollos hacia la producción comercial.
+<br>
 
-En cuanto al uso de tecnología, ambos segmentos presentan una oportunidad de mejora, aunque con diferentes enfoques. Mientras el Segmento 1 requiere principalmente automatizar y centralizar el monitoreo ambiental, el Segmento 2 requiere herramientas que permitan integrar y consultar información relacionada con materias primas, productos, procesos y trazabilidad. Por ello, aunque ambos segmentos necesitan información confiable y accesible, sus necesidades se encuentran diferenciadas por el rol que cumplen dentro del proceso farmacéutico.
+El gráfico muestra que computadoras/laptops y celulares son los dispositivos con mayor presencia, ambos utilizados por el 83.3% de los entrevistados. Las tablets o PDA alcanzan el 66.7%, mientras que los equipos especializados de medición representan el 50%.
 
-##### Conclusiones y Definición de Arquetipos
+Esto evidencia que los entrevistados desarrollan sus actividades mediante un ecosistema tecnológico mixto, combinando dispositivos informáticos de uso general con dispositivos especializados propios de los procesos farmacéuticos.
+
+Los dispositivos tienen diferentes funciones según el entrevistado. Las computadoras se utilizan principalmente para revisar información, trabajar con Excel, SAP y otros sistemas; los celulares se emplean principalmente para comunicación y coordinación; mientras que tablets o PDA se utilizan para actividades de control y consulta en los laboratorios.
+
+##### **Sistemas operativos utilizados**
+
+Para evitar asumir información que no fue proporcionada, los porcentajes se calculan únicamente sobre los entrevistados que especificaron el sistema operativo.
+
+<div align="center">
+
+**Computadoras**
+
+| Sistema operativo | Entrevistados que lo especificaron | Porcentaje |
+| ----------------- | ---------------------------------: | ---------: |
+| Windows           |                             5 de 5 |   **100%** |
+| Apple/macOS       |                             0 de 5 |     **0%** |
+
+</div>
+
+Los entrevistados que especificaron el sistema operativo de su computadora utilizan Windows. En el caso de César se especificó Windows 11, mientras que Liz y Omar utilizan Windows 10.
+
+
+<div align="center">
+
+**Celulares / tablets**
+    
+| Sistema operativo | Entrevistados que lo especificaron | Porcentaje |
+| ----------------- | ---------------------------------: | ---------: |
+| Android           |                             2 de 3 |  **66.7%** |
+| Apple/iOS         |                             1 de 3 |  **33.3%** |
+
+</div>
+
+
+En los dispositivos móviles donde se especificó el sistema operativo, se identificaron Android y Apple. Mario y Omar utilizan dispositivos Android, mientras que César utiliza dispositivos Apple.
+
+##### Navegadores utilizados
+
+<div align="center">
+    
+| Navegador      | Entrevistados | Porcentaje |
+| -------------- | ------------: | ---------: |
+| Google Chrome  |        3 de 4 |    **75%** |
+| Microsoft Edge |        1 de 4 |    **25%** |
+
+</div>
+
+Entre quienes indicaron explícitamente el navegador utilizado, Google Chrome es el más mencionado, con 75%, mientras que Microsoft Edge representa el 25%. Mario, Liz y Omar utilizan Google Chrome, mientras que César utiliza Microsoft Edge.
+
+#### Conclusiones y Definición de Arquetipos
 
 A partir del análisis realizado, se definen los siguientes perfiles de usuario (User Personas):
 
