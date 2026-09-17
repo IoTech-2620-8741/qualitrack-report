@@ -152,8 +152,8 @@ En esta sección se presentan los resultados de las entrevistas aplicadas a cada
         <tr>
             <td>Link</td>
             <td>
-            <a href="https://shorturl.at/beplR" target="_blank">
-                https://shorturl.at/beplR
+            <a href="https://shorturl.at/9TYgY" target="_blank">
+                https://shorturl.at/9TYgY
             </a>
         </td>
         </tr>
@@ -163,7 +163,7 @@ En esta sección se presentan los resultados de las entrevistas aplicadas a cada
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td>11:47 min</td>
+            <td>5:00 min</td>
         </tr>
         <tr>
             <td>Resumen</td>
@@ -207,18 +207,18 @@ En esta sección se presentan los resultados de las entrevistas aplicadas a cada
         <tr>
             <td>Link</td>
             <td>
-            <a href="https://shorturl.at/beplR" target="_blank">
-                https://shorturl.at/beplR
+            <a href="https://shorturl.at/9TYgY" target="_blank">
+                https://shorturl.at/9TYgY
             </a>
             </td>
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td>11: 47 min</td>
+            <td>5:02 min</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td>22:36 min</td>
+            <td>9:48 min</td>
         </tr>
         <tr>
             <td>Resumen</td>
@@ -262,18 +262,18 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
         </tr>
         <tr>
             <td>Link</td>
-            <td><a href="https://shorturl.at/beplR" target="_blank">
-                https://shorturl.at/beplR
+            <td><a href="https://shorturl.at/9TYgY" target="_blank">
+                https://shorturl.at/9TYgY
             </a>
             </td>
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td>22:36 min</td>
+            <td>9:50 min</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td>36:28 min</td>
+            <td>14:50 min</td>
         </tr>
         <tr>
             <td>Resumen</td>
@@ -287,6 +287,7 @@ Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagno
 
 
 #### **Segmento objetivo 2: Personal operativo de laboratorios y almacenes**
+
  <table>
     <colgroup></colgroup>
     <thead>
@@ -320,18 +321,18 @@ Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagno
         <tr>
             <td>Link</td>
             <td>
-                <a href="https://shorturl.at/beplR" target="_blank">
-                https://shorturl.at/beplR
-            </a>
+                <a href="https://shorturl.at/9TYgY" target="_blank">
+                    https://shorturl.at/9TYgY
+                </a>
             </td>
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td>36:28 min</td>
+            <td>14:52 min</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td>41:25 min</td>
+            <td>19:58 min</td>
         </tr>
         <tr>
             <td>Resumen</td>
@@ -380,18 +381,18 @@ Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagno
         <tr>
             <td>Link</td>
             <td>
-                <a href="https://shorturl.at/beplR" target="_blank">
-                https://shorturl.at/beplR
-            </a>
+                <a href="https://shorturl.at/9TYgY" target="_blank">
+                    https://shorturl.at/9TYgY
+                </a>
             </td>
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td>41:25 min</td>
+            <td>19:59 min</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td>45:57 min</td>
+            <td>24:40 min</td>
         </tr>
         <tr>
             <td>Resumen</td>
@@ -438,18 +439,18 @@ Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagno
         <tr>
             <td>Link</td>
             <td>
-                <a href="https://shorturl.at/beplR" target="_blank">
-                https://shorturl.at/beplR
-            </a>
+                <a href="https://shorturl.at/9TYgY" target="_blank">
+                    https://shorturl.at/9TYgY
+                </a>
             </td>
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td>45:57 min</td>
+            <td>24:43 min</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td>51:24 min s</td>
+            <td>30:20 min s</td>
         </tr>
         <tr>
             <td>Resumen</td>
