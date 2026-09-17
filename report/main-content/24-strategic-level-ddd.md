@@ -6,16 +6,96 @@ el cual permite definir una vision clara del dominio de la plataforma QualiTrack
 El EventStorming es una técnica de modelado colaborativa que permite descubrir y comprender el dominio de la plataforma QualiTrack, identificar los eventos del dominio, 
 los comandos, actores, politicas, modelo de lectura, sistemas externos y agregados. Este enfo permite definir los contextos delimitados y establecer las relaciones entre ellos. Se incluyen los siguientes pasos:
 
-**Paso 1: Event**
+**Paso 1: Domain Events**
 
-**Paso 2: Timelines**
+En este paso, se presentan los eventos de dominio ya identificados en la sección Big Picture Event Storming. Los eventos de dominio son las acciones o sucesos que suceden en el sistema/negocio actual.
 
-**Paso 3: Pivotal Points**
+<div align="center">
+  <img src="../assets/img/chapter-iv/es-domain-events.png" alt ="Big Picture" width=700>
+</div>
 
-**Paso 4: Commands**
+Dichos eventos de dominio se separaron en flujos, donde representan el conjunto de eventos de dominio que están enlazados con sus continuaciones en una linea de tiempo cronológica. Por otra parte, también se agregaron actores, quienes serán los que responden o ejecutan los eventos de dominio.
 
-**Paso 5: Policies and Actors**
+Se identificaron 8 flujos principales:
+- Environmental Monitoring and Control.
+- Raw Material Management.
+- Environmental Deviation Management.
+- Quality Records and Audits.
+- Product Development and Production.
+- Incoming Inspection and Acceptance. 
+- Product Development and Viability.
+- Distribution and Supply Monitoring.
 
+<div align="center">
+  <img src="../assets/img/chapter-iv/es-domain-events-flow-1.png" alt ="Big Picture" width=700>
+</div>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/es-domain-events-flow-2.png" alt ="Big Picture" width=700>
+</div>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/es-domain-events-flow-3.png" alt ="Big Picture" width=700>
+</div>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/es-domain-events-flow-4.png" alt ="Big Picture" width=700>
+</div>
+
+**Paso 2: Commands**
+
+En este paso, se incluyen los comandos, los cuales indican las acciones que se realizarán en el sistema. Dichas acciones son ejecutadas por un actor o por una política (las cuales se incluiran en el siguiente paso).
+
+|Actor|Comandos|
+|-|-|
+|**Lab Technician**|Identify area, define environmental requirements, record measurements, measure environmental information, identify raw material, check raw material availability, evaluate formulation approval.|
+|**Quality Staff**|Review measurement records, check raw material information, evaluate raw material information, check environmental conditions, notify environmental deviation, check environmental conditions records, look up environmental conditions, record environmental deviation, write quality record, review quality records, review historial records, review deviation records, summarize quality information, perform quality control, evaluate batch, analize sample, start environmental monitoring.|
+|**Production Staff**|Identify batch, select raw materials, complete production|
+|**R&D Formulator**|Create product, analize production viability, report production viability, release product|
+|**Warehouse Staff**|Update raw material inventory, record batch updates, allocate product stock|
+|**Logistics Staff**|Monitor cold chain|
+
+![Step 2 - Commands](../assets/img/chapter-iv/es-commands-1.png)
+![Step 2 - Commands](../assets/img/chapter-iv/es-commands-2.png)
+![Step 2 - Commands](../assets/img/chapter-iv/es-commands-3.png)
+![Step 2 - Commands](../assets/img/chapter-iv/es-commands-4.png)
+![Step 2 - Commands](../assets/img/chapter-iv/es-commands-5.png)
+![Step 2 - Commands](../assets/img/chapter-iv/es-commands-6.png)
+![Step 2 - Commands](../assets/img/chapter-iv/es-commands-7.png)
+![Step 2 - Commands](../assets/img/chapter-iv/es-commands-8.png)
+
+**Paso 3: Policies and Actors**
+
+En este paso se incluyen las políticas del negocio (Reglas *Whenever* sucede un evento de dominio, *Then* acciona un comando). Se utilizan los actores ya identificados en Big Picture Event Storming.
+
+**Actores identificados**
+- Lab Technician
+- Quality Staff
+- Production Staff
+- R&D Formulator
+- Warehouse Staff
+- Logistics Staff
+
+**Politicas identificadas**
+- Whenever the environmental information is measured, then the measurements are recorded.
+- Whenever the raw material lot is stored, then its information is evaluated.
+- Whenever the environmental conditions are checked, then the environmental deviation is recorded.
+- Whenever an environmental deviation is notified, then the environmental conditions records are checked.
+- Whenever the quality record is written, then the quality records are reviewed.
+- Whenever the production is completed, then a quality control is performed.
+- Whenever the raw material inventory is updated, then a sample is analyzed.
+- Whenever the product proposal is created, then the raw material availability is checked.
+- Whenever a production viability is reported with the product being viable, then the product is released.
+- Whenever a certain amount of product stock is allocated, then the raw material inventory is updated.
+
+![Step 3 - Policies and Actors](../assets/img/chapter-iv/es-policies-1.png)
+![Step 3 - Policies and Actors](../assets/img/chapter-iv/es-policies-2.png)
+![Step 3 - Policies and Actors](../assets/img/chapter-iv/es-policies-3.png)
+![Step 3 - Policies and Actors](../assets/img/chapter-iv/es-policies-4.png)
+![Step 3 - Policies and Actors](../assets/img/chapter-iv/es-policies-5.png)
+![Step 3 - Policies and Actors](../assets/img/chapter-iv/es-policies-6.png)
+![Step 3 - Policies and Actors](../assets/img/chapter-iv/es-policies-7.png)
+![Step 3 - Policies and Actors](../assets/img/chapter-iv/es-policies-8.png)
 
 #### 4.1.1.1 Candidate Context Discovery. 
 #### 4.1.1.2 Domain Message Flows Modeling. 
