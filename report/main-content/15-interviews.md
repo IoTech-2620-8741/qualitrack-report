@@ -565,6 +565,16 @@ En los dispositivos móviles donde se especificó el sistema operativo, se ident
 
 Entre quienes indicaron explícitamente el navegador utilizado, Google Chrome es el más mencionado, con 75%, mientras que Microsoft Edge representa el 25%. Mario, Liz y Omar utilizan Google Chrome, mientras que César utiliza Microsoft Edge.
 
+##### Canales de Comunicacion
+
+El análisis de las entrevistas muestra que los participantes utilizan principalmente canales de comunicación directos y digitales para coordinar actividades dentro de sus organizaciones. Los canales identificados fueron.
+
+<div align="center">
+    <img src="../assets/img/chapter-ii/analisis-de-canales-de-comunicacion.png" width=700>
+</div>
+
+Los canales presentan diferencias según el contexto laboral. Mario utiliza comunicación presencial, llamadas y WhatsApp para coordinar con producción, mantenimiento y calidad. Liz utiliza principalmente correo electrónico y teléfono, señalando que WhatsApp está disponible pero no constituye un canal oficial. Omar utiliza RPC y Microsoft Teams para las comunicaciones internas. César emplea Microsoft Teams como canal oficial y también utiliza WhatsApp y correo corporativo.
+
 #### Conclusiones y Definición de Arquetipos
 
 A partir del análisis realizado, se definen los siguientes perfiles de usuario (User Personas):
