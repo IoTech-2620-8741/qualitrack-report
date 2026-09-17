@@ -42,9 +42,27 @@ Se identificaron 8 flujos principales:
   <img src="../assets/img/chapter-iv/es-domain-events-flow-4.png" alt ="Big Picture" width=700>
 </div>
 
-**Paso 3: Pivotal Points**
+**Paso 2: Commands**
 
-**Paso 4: Commands**
+En este paso, se incluyen los comandos, los cuales indican las acciones que se realizarán en el sistema. Dichas acciones son ejecutadas por un actor o por una política (las cuales se incluiran en el siguiente paso).
+
+|Actor|Comandos|
+|-|-|
+|**Lab Technician**|Identify area, define environmental requirements, record measurements, measure environmental information, identify raw material, check raw material availability, evaluate formulation approval.|
+|**Quality Staff**|Review measurement records, check raw material information, evaluate raw material information, check environmental conditions, notify environmental deviation, check environmental conditions records, look up environmental conditions, record environmental deviation, write quality record, review quality records, review historial records, review deviation records, summarize quality information, perform quality control, evaluate batch, analize sample, start environmental monitoring.|
+|**Production Staff**|Identify batch, select raw materials, complete production|
+|**R&D Formulator**|Create product, analize production viability, report production viability, release product|
+|**Warehouse Staff**|Update raw material inventory, record batch updates, allocate product stock|
+|**Logistics Staff**|Monitor cold chain|
+
+![Step 2 - Commands](../assets/img/chapter-iv/es-commands-1.png)
+![Step 2 - Commands](../assets/img/chapter-iv/es-commands-2.png)
+![Step 2 - Commands](../assets/img/chapter-iv/es-commands-3.png)
+![Step 2 - Commands](../assets/img/chapter-iv/es-commands-4.png)
+![Step 2 - Commands](../assets/img/chapter-iv/es-commands-5.png)
+![Step 2 - Commands](../assets/img/chapter-iv/es-commands-6.png)
+![Step 2 - Commands](../assets/img/chapter-iv/es-commands-7.png)
+![Step 2 - Commands](../assets/img/chapter-iv/es-commands-8.png)
 
 **Paso 5: Policies and Actors**
 
