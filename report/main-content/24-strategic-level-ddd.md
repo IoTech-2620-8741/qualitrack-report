@@ -64,8 +64,38 @@ En este paso, se incluyen los comandos, los cuales indican las acciones que se r
 ![Step 2 - Commands](../assets/img/chapter-iv/es-commands-7.png)
 ![Step 2 - Commands](../assets/img/chapter-iv/es-commands-8.png)
 
-**Paso 5: Policies and Actors**
+**Paso 3: Policies and Actors**
 
+En este paso se incluyen las políticas del negocio (Reglas *Whenever* sucede un evento de dominio, *Then* acciona un comando). Se utilizan los actores ya identificados en Big Picture Event Storming.
+
+**Actores identificados**
+- Lab Technician
+- Quality Staff
+- Production Staff
+- R&D Formulator
+- Warehouse Staff
+- Logistics Staff
+
+**Politicas identificadas**
+- Whenever the environmental information is measured, then the measurements are recorded.
+- Whenever the raw material lot is stored, then its information is evaluated.
+- Whenever the environmental conditions are checked, then the environmental deviation is recorded.
+- Whenever an environmental deviation is notified, then the environmental conditions records are checked.
+- Whenever the quality record is written, then the quality records are reviewed.
+- Whenever the production is completed, then a quality control is performed.
+- Whenever the raw material inventory is updated, then a sample is analyzed.
+- Whenever the product proposal is created, then the raw material availability is checked.
+- Whenever a production viability is reported with the product being viable, then the product is released.
+- Whenever a certain amount of product stock is allocated, then the raw material inventory is updated.
+
+![Step 3 - Policies and Actors](../assets/img/chapter-iv/es-policies-1.png)
+![Step 3 - Policies and Actors](../assets/img/chapter-iv/es-policies-2.png)
+![Step 3 - Policies and Actors](../assets/img/chapter-iv/es-policies-3.png)
+![Step 3 - Policies and Actors](../assets/img/chapter-iv/es-policies-4.png)
+![Step 3 - Policies and Actors](../assets/img/chapter-iv/es-policies-5.png)
+![Step 3 - Policies and Actors](../assets/img/chapter-iv/es-policies-6.png)
+![Step 3 - Policies and Actors](../assets/img/chapter-iv/es-policies-7.png)
+![Step 3 - Policies and Actors](../assets/img/chapter-iv/es-policies-8.png)
 
 #### 4.1.1.1 Candidate Context Discovery. 
 #### 4.1.1.2 Domain Message Flows Modeling. 
