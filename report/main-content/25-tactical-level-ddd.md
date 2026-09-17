@@ -191,7 +191,7 @@ El diagrama de componentes presenta la posición de **Tracking & Telemetry** den
 
 Para esta entrega se utiliza la vista de Structurizr **`Components-Tracking`**, definida sobre el container `Cloud REST API`. Esta vista representa el estado actual de la arquitectura y será refinada posteriormente para mostrar con mayor detalle los componentes internos del contexto.
 
-![Tracking & Telemetry Component Diagram](../assets/img/chapter-IV/Components-Tracking.png)
+![Tracking & Telemetry Component Diagram](../assets/img/chapter-iv/Components-Tracking.png)
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams.
 
@@ -380,7 +380,7 @@ El diagrama de componentes presenta la posición de **Compliance & Alerting** de
 
 Para esta entrega se utiliza la vista de Structurizr **`Components-Compliance`**, definida sobre el container `Cloud REST API`. La vista corresponde al C4 actual del proyecto y posteriormente podrá ser refinada para evidenciar con mayor detalle los controladores, servicios de aplicación, modelo de dominio y adapters del contexto.
 
-![Compliance & Alerting Component Diagram](../assets/img/chapter-IV/Components-Compliance.png)
+![Compliance & Alerting Component Diagram](../assets/img/chapter-iv/Components-Compliance.png)
 
 #### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams.
 
@@ -565,7 +565,7 @@ El diagrama de componentes presenta la posición de **Equipment Management** den
 
 Para esta entrega se utiliza la vista de Structurizr **`Components-Equipment`**, definida sobre el container `Cloud REST API`. La vista refleja el C4 disponible actualmente y será detallada posteriormente a medida que se refine la descomposición interna del contexto.
 
-![Equipment Management Component Diagram](../assets/img/chapter-IV/Components-Equipment.png)
+![Equipment Management Component Diagram](../assets/img/chapter-iv/Components-Equipment.png)
 
 #### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams.
 
@@ -740,7 +740,7 @@ El diagrama de componentes presenta la posición de **Laboratory Management** de
 
 Para esta entrega se utiliza la vista de Structurizr **`Components-Laboratory`**, definida sobre el container `Cloud REST API`. En el C4 actual todavía pueden observarse relaciones asociadas con funcionalidades heredadas de productos y materias primas; estas se consideran parte de la transición hacia Inventory Management y Product Batch Management.
 
-![Laboratory Management Component Diagram](../assets/img/chapter-IV/Components-Laboratory.png)
+![Laboratory Management Component Diagram](../assets/img/chapter-iv/Components-Laboratory.png)
 
 #### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams.
 
@@ -908,7 +908,7 @@ El diagrama de componentes presenta la posición de **Inventory Management** den
 
 Para esta entrega se utiliza la vista de Structurizr **`Components-Inventory`**, definida sobre el container `Cloud REST API`. La vista corresponde al estado actual del C4 y podrá ser refinada posteriormente para detallar los componentes internos de Interface, Application, Domain e Infrastructure.
 
-![Inventory Management Component Diagram](../assets/img/chapter-IV/Components-Inventory.png)
+![Inventory Management Component Diagram](../assets/img/chapter-iv/Components-Inventory.png)
 
 #### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams.
 
@@ -1072,7 +1072,7 @@ El diagrama de componentes presenta la posición de **Product Batch Management**
 
 Para esta entrega se utiliza la vista de Structurizr **`Components-ProductBatch`**, definida sobre el container `Cloud REST API`. La vista representa la arquitectura actual y posteriormente podrá ampliarse para mostrar con mayor detalle los componentes internos del contexto.
 
-![Product Batch Management Component Diagram](../assets/img/chapter-IV/Components-ProductBatch.png)
+![Product Batch Management Component Diagram](../assets/img/chapter-iv/Components-ProductBatch.png)
 
 #### 4.2.6.6. Bounded Context Software Architecture Code Level Diagrams.
 
@@ -1235,7 +1235,7 @@ El diagrama de componentes presenta la posición de **Reporting & Audit** dentro
 
 Para esta entrega se utiliza la vista de Structurizr **`Components-Reporting`**, definida sobre el container `Cloud REST API`. La vista evidencia las relaciones principales del contexto dentro del monolito modular y será refinada posteriormente para mostrar su estructura interna con mayor detalle.
 
-![Reporting & Audit Component Diagram](../assets/img/chapter-IV/Components-Reporting.png)
+![Reporting & Audit Component Diagram](../assets/img/chapter-iv/Components-Reporting.png)
 
 #### 4.2.7.6. Bounded Context Software Architecture Code Level Diagrams.
 
@@ -1398,7 +1398,7 @@ El diagrama de componentes presenta la posición de **Identity & Access Manageme
 
 Para esta entrega se utiliza la vista de Structurizr **`Components-IAM`**, definida sobre el container `Cloud REST API`. La vista corresponde al C4 actual y posteriormente podrá detallarse para evidenciar de manera interna los componentes de autenticación, autorización, repositorios y seguridad.
 
-![Identity & Access Management Component Diagram](../assets/img/chapter-IV/Components-IAM.png)
+![Identity & Access Management Component Diagram](../assets/img/chapter-iv/Components-IAM.png)
 
 #### 4.2.8.6. Bounded Context Software Architecture Code Level Diagrams.
 
@@ -1587,7 +1587,7 @@ El diagrama de componentes presenta la posición de **Payments & Subscriptions**
 
 Para esta entrega se utiliza la vista de Structurizr **`Components-Payments`**, definida sobre el container `Cloud REST API`. La vista representa el C4 actual del proyecto y podrá refinarse posteriormente para mostrar con mayor detalle la separación entre dominio, servicios de aplicación, persistencia e integración con Stripe.
 
-![Payments & Subscriptions Component Diagram](../assets/img/chapter-IV/Components-Payments.png)
+![Payments & Subscriptions Component Diagram](../assets/img/chapter-iv/Components-Payments.png)
 
 #### 4.2.9.6. Bounded Context Software Architecture Code Level Diagrams.
 
