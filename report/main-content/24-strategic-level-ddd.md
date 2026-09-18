@@ -48,10 +48,10 @@ En este paso, se incluyen los comandos, los cuales indican las acciones que se r
 
 |Actor|Comandos|
 |-|-|
-|**Lab Technician**|Identify area, define environmental requirements, record measurements, measure environmental information, identify raw material, check raw material availability, evaluate formulation approval.|
+|**Lab Technician**|Identify area, define environmental requirements, record measurements, measure environmental information, identify raw material, check raw material availability, evaluate formulation approval, approve formulation, rework formulation.|
 |**Quality Staff**|Review measurement records, check raw material information, evaluate raw material information, check environmental conditions, notify environmental deviation, check environmental conditions records, look up environmental conditions, record environmental deviation, write quality record, review quality records, review historial records, review deviation records, summarize quality information, perform quality control, evaluate batch, analize sample, start environmental monitoring.|
 |**Production Staff**|Identify batch, select raw materials, complete production|
-|**R&D Formulator**|Create product, analize production viability, report production viability, release product|
+|**R&D Formulator**|Create product proposal, start final quality control|
 |**Warehouse Staff**|Update raw material inventory, record batch updates, allocate product stock|
 |**Logistics Staff**|Monitor cold chain|
 
@@ -85,7 +85,7 @@ En este paso se incluyen las políticas del negocio (Reglas *Whenever* sucede un
 - Whenever the production is completed, then a quality control is performed.
 - Whenever the raw material inventory is updated, then a sample is analyzed.
 - Whenever the product proposal is created, then the raw material availability is checked.
-- Whenever a production viability is reported with the product being viable, then the product is released.
+- Whenever the formulation is approved, then the final quality control is started.
 - Whenever a certain amount of product stock is allocated, then the raw material inventory is updated.
 
 ![Step 3 - Policies and Actors](../assets/img/chapter-iv/es-policies-1.png)
@@ -97,7 +97,33 @@ En este paso se incluyen las políticas del negocio (Reglas *Whenever* sucede un
 ![Step 3 - Policies and Actors](../assets/img/chapter-iv/es-policies-7.png)
 ![Step 3 - Policies and Actors](../assets/img/chapter-iv/es-policies-8.png)
 
-#### 4.1.1.1 Candidate Context Discovery. 
+**Paso 4: Read Models**
+
+Los read models representan todo lo que se va a ver en la interfaz de usuario. Estos permitiran visualizar las futuras vistas dentro del Design-Level Event Storming.
+
+**Modelos de lectura identificados**
+- Laboratory area selection
+- Telemetry dashboard
+- Historical telemetry analysis
+- Raw material catalog
+- Tracking and telemetry dashboard
+- Report & Document generator
+- Product lot catalog
+- New product registration
+- Pharmaceutical product catalog
+- Production Batches
+- Telemetry dashboard
+
+![Step 4 - Read Models](../assets/img/chapter-iv/es-read-models-1.png)
+![Step 4 - Read Models](../assets/img/chapter-iv/es-read-models-2.png)
+![Step 4 - Read Models](../assets/img/chapter-iv/es-read-models-3.png)
+![Step 4 - Read Models](../assets/img/chapter-iv/es-read-models-4.png)
+![Step 4 - Read Models](../assets/img/chapter-iv/es-read-models-5.png)
+![Step 4 - Read Models](../assets/img/chapter-iv/es-read-models-6.png)
+![Step 4 - Read Models](../assets/img/chapter-iv/es-read-models-7.png)
+![Step 4 - Read Models](../assets/img/chapter-iv/es-read-models-8.png)
+
+#### 4.1.1.1 Candidate Context Discovery.
 #### 4.1.1.2 Domain Message Flows Modeling. 
 #### 4.1.1.3 Bounded Context Canvases.  
 ### 4.1.2. Context Mapping.
