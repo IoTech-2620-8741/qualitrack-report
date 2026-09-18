@@ -501,6 +501,11 @@ A nivel subjetivo, las entrevistas muestran que las principales dificultades son
 
 En conjunto, se observa que el segmento busca mantener la identificación, control y trazabilidad de los productos y materiales durante sus procesos, aunque las necesidades y dificultades varían de acuerdo con el entorno específico en el que se desempeña cada entrevistado.
 
+<br>
+
+<div align="center"><img src="../assets/img/chapter-ii/operational- staff-charts-image.png" width="850"></div>
+
+<br>
 
 #### Análisis Comparativo
 
