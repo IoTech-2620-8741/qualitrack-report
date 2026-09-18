@@ -51,7 +51,7 @@ En este paso, se incluyen los comandos, los cuales indican las acciones que se r
 |**Lab Technician**|Identify area, define environmental requirements, record measurements, measure environmental information, identify raw material, check raw material availability, evaluate formulation approval.|
 |**Quality Staff**|Review measurement records, check raw material information, evaluate raw material information, check environmental conditions, notify environmental deviation, check environmental conditions records, look up environmental conditions, record environmental deviation, write quality record, review quality records, review historial records, review deviation records, summarize quality information, perform quality control, evaluate batch, analize sample, start environmental monitoring.|
 |**Production Staff**|Identify batch, select raw materials, complete production|
-|**R&D Formulator**|Create product, analize production viability, report production viability, release product|
+|**R&D Formulator**|Create product proposal, complete final quality control|
 |**Warehouse Staff**|Update raw material inventory, record batch updates, allocate product stock|
 |**Logistics Staff**|Monitor cold chain|
 
@@ -96,6 +96,13 @@ En este paso se incluyen las políticas del negocio (Reglas *Whenever* sucede un
 ![Step 3 - Policies and Actors](../assets/img/chapter-iv/es-policies-6.png)
 ![Step 3 - Policies and Actors](../assets/img/chapter-iv/es-policies-7.png)
 ![Step 3 - Policies and Actors](../assets/img/chapter-iv/es-policies-8.png)
+
+**Paso 4: Read Models**
+
+Los read models representan todo lo que se va a ver en la interfaz de usuario. Estos permitiran visualizar las futuras vistas dentro del Design-Level Event Storming.
+
+**Modelos de lectura identificados**
+- 
 
 #### 4.1.1.1 Candidate Context Discovery. 
 #### 4.1.1.2 Domain Message Flows Modeling. 
