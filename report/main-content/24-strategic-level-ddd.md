@@ -85,6 +85,7 @@ En este paso se incluyen las políticas del negocio (Reglas *Whenever* sucede un
 - Whenever the production is completed, then a quality control is performed.
 - Whenever the raw material inventory is updated, then a sample is analyzed.
 - Whenever the product proposal is created, then the raw material availability is checked.
+- Whenever the formulation is approved, then the final quality control is started.
 - Whenever a certain amount of product stock is allocated, then the raw material inventory is updated.
 
 ![Step 3 - Policies and Actors](../assets/img/chapter-iv/es-policies-1.png)
