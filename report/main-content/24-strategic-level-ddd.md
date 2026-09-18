@@ -48,7 +48,7 @@ En este paso, se incluyen los comandos, los cuales indican las acciones que se r
 
 |Actor|Comandos|
 |-|-|
-|**Lab Technician**|Identify area, define environmental requirements, record measurements, measure environmental information, identify raw material, check raw material availability, evaluate formulation approval.|
+|**Lab Technician**|Identify area, define environmental requirements, record measurements, measure environmental information, identify raw material, check raw material availability, evaluate formulation approval, approve formulation, rework formulation.|
 |**Quality Staff**|Review measurement records, check raw material information, evaluate raw material information, check environmental conditions, notify environmental deviation, check environmental conditions records, look up environmental conditions, record environmental deviation, write quality record, review quality records, review historial records, review deviation records, summarize quality information, perform quality control, evaluate batch, analize sample, start environmental monitoring.|
 |**Production Staff**|Identify batch, select raw materials, complete production|
 |**R&D Formulator**|Create product proposal, start final quality control|
