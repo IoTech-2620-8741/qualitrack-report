@@ -482,7 +482,7 @@ Respecto a la gestión de la información, el 100% de los entrevistados utiliza 
 
 A nivel subjetivo, el 67% de los entrevistados manifestó dificultades relacionadas con el registro y gestión manual de las mediciones, principalmente por registros realizados posteriormente a la medición y por el esfuerzo requerido para revisar la información. Además, un 67% destacó la importancia de contar con una visualización más organizada y centralizada de las condiciones de las áreas, especialmente para facilitar la supervisión y consulta de información histórica.
 
-En conjunto, se observa que el responsable de calidad busca mantener las condiciones ambientales dentro de los parámetros establecidos, detectar oportunamente las desviaciones y disponer de información confiable para la supervisión y toma de decisiones.
+En conjunto, se observa que el responsable de calidad busca mantener las condiciones ambientales dentro de los parámetros establecidos, detectar oportunamente las desviaciones y disponer de información confiable para la supervisión y toma de decisiones. 
 
 <br>
 
@@ -493,18 +493,18 @@ En conjunto, se observa que el responsable de calidad busca mantener las condici
 
 **Segmento 2: Personal operativo de laboratorios y almacenes**
 
-El análisis de las entrevistas evidencia que el control de condiciones ambientales constituye una actividad fundamental en los procesos de calidad farmacéutica. El 100% de los entrevistados verifica la temperatura y humedad de las áreas bajo su responsabilidad, mientras que el 100% también implementa sistemas formales de documentación de procesos. Asimismo, todos utilizan registros manuales o físicos para documentar las mediciones ambientales. A nivel objetivo, el 100% implementa también sistemas de identificación de productos y protocolos de rechazo de defectuosos, 
-evidenciando que la información puede encontrarse distribuida entre diferentes medios y formatos. 
- 
-A nivel subjetivo, el análisis revela dificultades relacionadas con la gestión manual de información y falta de visibilidad centralizada de procesos. El 67% de los entrevistados manifestó dificultades significativas en sus labores, principalmente por documentación posterior y archivado de registros, falta de visualización centralizada de información de lotes y dificultad en acceso a información histórica de recepciones. Un tercio reportó alta satisfacción sin frustración, considerando que cuando se manejan bien los procesos no existen dificultades. Los otros dos tercios identificaron frustraciones específicas: falta de seguimiento efectivo de acuerdos inter-departamentales en laboratorio transnacional, y desacoplamiento entre desarrollo y producción en áreas de I+D donde productos no pueden transferirse a escala comercial. A pesar de estas dificultades, todos reportaron autonomía en decisiones de calidad y reconocimiento del valor de su trabajo en la cadena de valor.
- 
-En conjunto, se observa que el Personal Operativo busca mantener las condiciones ambientales dentro de los parámetros establecidos para detectar oportunamente las desviaciones y disponer de información confiable para la supervisión y toma de decisiones. Las principales necesidades identificadas son centralización de información técnica y especificaciones, visibilidad de disponibilidad de suministro y gestión de proveedores críticos, además de integración inter-departamental y coordinación de flujos secuenciales. Con el 100% del segmento operando bajo regulación GMP estricta, existe predisposición clara a adoptar herramientas que mejoren cumplimiento, trazabilidad y eficiencia sin comprometer la seguridad del proceso farmacéutico.
+El análisis de las entrevistas evidencia que la identificación, verificación y documentación de los productos y materias primas constituyen actividades presentes en los diferentes contextos de trabajo del segmento. El 100% de los entrevistados utiliza algún mecanismo de identificación mediante lotes, códigos o registros para diferenciar los productos o materiales y mantener su seguimiento durante el proceso.
 
-<div align="center"><img src="../assets/img/chapter-ii/operative-personel.png" width=900></div>
+Respecto a la verificación de información antes de utilizar o liberar un producto, el 100% de los entrevistados menciona la revisión de documentación, especificaciones o condiciones como parte del proceso. En cuanto a la gestión de información y trazabilidad, el 100% de los entrevistados evidencia la necesidad de conservar registros relacionados con productos, materias primas o procesos. Sin embargo, el nivel de digitalización varía: el 67% utiliza sistemas empresariales como SAP.
+
+A nivel subjetivo, las entrevistas muestran que las principales dificultades son diferentes según el contexto de trabajo. Un 33% manifestó dificultades relacionadas con la sobrecarga de trabajo, otro 33% señaló problemas para transferir un producto desarrollado hacia un lote comercial y el 33% restante identificó dificultades en el seguimiento de acuerdos y responsabilidades debido a la pérdida de comunicación y trazabilidad.
+
+En conjunto, se observa que el segmento busca mantener la identificación, control y trazabilidad de los productos y materiales durante sus procesos, aunque las necesidades y dificultades varían de acuerdo con el entorno específico en el que se desempeña cada entrevistado.
+
 
 #### Análisis Comparativo
 
-Para complementar el análisis de los segmentos, se revisaron específicamente las respuestas relacionadas con dispositivos, sistemas operativos y navegadores utilizados durante las actividades laborales.
+Para complementar el análisis de los segmentos, se revisaron específicamente las respuestas relacionadas con dispositivos, sistemas operativos y navegadores utilizados durante las actividades laborales. 
 
 ##### **Uso de dispositivos**
 
