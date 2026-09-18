@@ -123,7 +123,7 @@ Los read models representan todo lo que se va a ver en la interfaz de usuario. E
 ![Step 4 - Read Models](../assets/img/chapter-iv/es-read-models-7.png)
 ![Step 4 - Read Models](../assets/img/chapter-iv/es-read-models-8.png)
 
-#### 4.1.1.1 Candidate Context Discovery. 
+#### 4.1.1.1 Candidate Context Discovery.
 #### 4.1.1.2 Domain Message Flows Modeling. 
 #### 4.1.1.3 Bounded Context Canvases.  
 ### 4.1.2. Context Mapping.
