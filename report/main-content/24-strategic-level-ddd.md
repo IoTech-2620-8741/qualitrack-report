@@ -102,7 +102,26 @@ En este paso se incluyen las políticas del negocio (Reglas *Whenever* sucede un
 Los read models representan todo lo que se va a ver en la interfaz de usuario. Estos permitiran visualizar las futuras vistas dentro del Design-Level Event Storming.
 
 **Modelos de lectura identificados**
-- 
+- Laboratory area selection
+- Telemetry dashboard
+- Historical telemetry analysis
+- Raw material catalog
+- Tracking and telemetry dashboard
+- Report & Document generator
+- Product lot catalog
+- New product registration
+- Pharmaceutical product catalog
+- Production Batches
+- Telemetry dashboard
+
+![Step 4 - Read Models](../assets/img/chapter-iv/es-read-models-1.png)
+![Step 4 - Read Models](../assets/img/chapter-iv/es-read-models-2.png)
+![Step 4 - Read Models](../assets/img/chapter-iv/es-read-models-3.png)
+![Step 4 - Read Models](../assets/img/chapter-iv/es-read-models-4.png)
+![Step 4 - Read Models](../assets/img/chapter-iv/es-read-models-5.png)
+![Step 4 - Read Models](../assets/img/chapter-iv/es-read-models-6.png)
+![Step 4 - Read Models](../assets/img/chapter-iv/es-read-models-7.png)
+![Step 4 - Read Models](../assets/img/chapter-iv/es-read-models-8.png)
 
 #### 4.1.1.1 Candidate Context Discovery. 
 #### 4.1.1.2 Domain Message Flows Modeling. 
