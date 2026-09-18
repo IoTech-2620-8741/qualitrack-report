@@ -51,7 +51,7 @@ En este paso, se incluyen los comandos, los cuales indican las acciones que se r
 |**Lab Technician**|Identify area, define environmental requirements, record measurements, measure environmental information, identify raw material, check raw material availability, evaluate formulation approval.|
 |**Quality Staff**|Review measurement records, check raw material information, evaluate raw material information, check environmental conditions, notify environmental deviation, check environmental conditions records, look up environmental conditions, record environmental deviation, write quality record, review quality records, review historial records, review deviation records, summarize quality information, perform quality control, evaluate batch, analize sample, start environmental monitoring.|
 |**Production Staff**|Identify batch, select raw materials, complete production|
-|**R&D Formulator**|Create product proposal, complete final quality control|
+|**R&D Formulator**|Create product proposal, start final quality control|
 |**Warehouse Staff**|Update raw material inventory, record batch updates, allocate product stock|
 |**Logistics Staff**|Monitor cold chain|
 
@@ -85,7 +85,6 @@ En este paso se incluyen las políticas del negocio (Reglas *Whenever* sucede un
 - Whenever the production is completed, then a quality control is performed.
 - Whenever the raw material inventory is updated, then a sample is analyzed.
 - Whenever the product proposal is created, then the raw material availability is checked.
-- Whenever a production viability is reported with the product being viable, then the product is released.
 - Whenever a certain amount of product stock is allocated, then the raw material inventory is updated.
 
 ![Step 3 - Policies and Actors](../assets/img/chapter-iv/es-policies-1.png)
