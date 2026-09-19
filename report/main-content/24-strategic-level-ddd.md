@@ -509,8 +509,29 @@ El Context Map resultante mantiene una alta cohesión dentro de cada dominio, re
 
 En esta sección se presenta la arquitectura de software de QualiTrack documentada mediante el C4 Model propuesto por Simon Brown, utilizando Structurizr DSL como fuente única de verdad. El modelo se define una sola vez en un archivo .dsl versionado en el repositorio de la organización, y a partir de él se generan las vistas que se exportan como imágenes para este informe; el código DSL no forma parte del documento.
 
+#### 4.1.3.1. Software Architecture System Landscape Diagram.
 
-#### 4.1.3.1. Software Architecture System Landscape Diagram. 
+La vista System Landscape presenta el panorama general del ecosistema en el que opera IoTech. A diferencia del Context Diagram, esta vista no se restringe a los elementos conectados directamente con el sistema de interés: incorpora actores y relaciones del entorno del laboratorio farmacéutico que explican cómo se realiza hoy el control de condiciones ambientales y qué dependencias forman parte del panorama operativo, aun cuando no pasen por la plataforma.
+
+![C4 - System Landscape](../assets/img/chapter-iv/c4-SystemLandscape.png)
+
+##### Personas del ecosistema:
+
+Visitor: persona que consulta el sitio público de IoTech para conocer la propuesta de valor, los planes y los documentos legales antes de registrarse.
+Quality Supervisor: responsable de calidad del laboratorio o almacén. Configura los ambientes monitoreados y sus rangos permitidos, supervisa la telemetría, atiende las alertas por desviación y genera la evidencia de trazabilidad.
+Plant Operator: operario de planta. Atiende las alertas en sitio y ejecuta las acciones correctivas sobre el ambiente, tanto desde la aplicación móvil como desde la interfaz física del nodo IoT.
+Field Technician: técnico de campo de IoTech. Instala, vincula y mantiene los nodos IoT y la estación local, y verifica su estado operativo.
+Regulatory Inspector: inspector regulatorio (DIGEMID u organismo equivalente). No es usuario del sistema: solicita la evidencia de cumplimiento al Quality Supervisor durante una inspección. Se incluye en el landscape porque su exigencia es el driver de negocio que justifica el registro trazable.
+
+##### Sistemas del ecosistema:
+
+QualiTrack Platform: sistema de interés. Monitorea las condiciones ambientales, ejecuta la respuesta automática local y conserva el registro trazable de mediciones, desviaciones y acciones correctivas.
+Stripe: procesa los pagos de las suscripciones de los laboratorios clientes.
+Resend API: entrega los correos transaccionales (activación de cuenta, recuperación de contraseña y aviso de desviación crítica).
+Firebase Cloud Messaging: entrega las notificaciones push a la aplicación móvil.
+QualiTrack Sensing Hardware: sensor BME680, actuadores e interfaz física del nodo. Se modela como sistema externo porque no ejecuta software de QualiTrack: la Embedded Application lo gobierna a través de GPIO, I2C y PWM, pero el hardware en sí queda fuera del límite del sistema de software.
+
+En conjunto, el landscape muestra que QualiTrack se ubica entre un plano físico (el ambiente monitoreado y su hardware) y un plano de cumplimiento normativo (la evidencia exigida al laboratorio), integrando servicios externos únicamente para capacidades genéricas: cobro, correo y notificación push.
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams. 
 
