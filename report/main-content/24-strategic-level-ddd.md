@@ -537,7 +537,7 @@ En conjunto, el landscape muestra que QualiTrack se ubica entre un plano físico
 
 La vista **System Context** centra la representación en QualiTrack Platform como caja negra y muestra únicamente las personas y los sistemas externos que mantienen una relación directa con él. Su propósito es delimitar la frontera del sistema y las responsabilidades que quedan fuera de ella, sin exponer decisiones de tecnología interna.
 
-![C4 - System Landscape](../assets/img/chapter-iv/c4-Containers.png)
+![C4 - System Context](../assets/img/chapter-iv/c4-SystemContext.png)
 
 **Relaciones con las personas:**
 
@@ -555,7 +555,35 @@ La vista **System Context** centra la representación en QualiTrack Platform com
 - **Firebase Cloud Messaging → QualiTrack Platform** *(HTTPS, asíncrona)*: entrega la notificación al dispositivo del usuario.
 - **QualiTrack Platform → QualiTrack Sensing Hardware** *(GPIO / I2C / PWM)*: lee el sensor y acciona los actuadores del nodo.
 
-
 #### 4.1.3.3. Software Architecture Container Level Diagrams. 
+
+La vista Container descompone QualiTrack Platform en sus unidades desplegables de forma independiente, mostrando la distribución de responsabilidades entre ellas, las decisiones principales de tecnología y los protocolos de comunicación. Siguiendo la definición de C4, un contenedor es una unidad ejecutable o almacén de datos desplegable por separado, no un contenedor de Docker.
+
+![C4 - System Container](../assets/img/chapter-iv/c4-Containers.png)
+
+**Productos web:**
+
+- **Landing Page** — *HTML5, CSS3, JavaScript.* Sitio estático público con la propuesta de valor, los planes y los documentos legales. Sus call-to-action dirigen al visitante hacia el registro en la Web Application o hacia la descarga de la Mobile Application.
+- **Web Server** — *Firebase Hosting.* Entrega al navegador del usuario el paquete compilado de la aplicación Angular. Se modela como contenedor independiente porque su ciclo de despliegue y su responsabilidad (servir estáticos) están separados de la ejecución de la SPA en el navegador.
+- **Web Application** — *TypeScript, Angular.* Se ejecuta en el navegador del Quality Supervisor. Cubre la gestión de la instalación y sus ambientes, el inventario de materia prima, los equipos y la vinculación de nodos, la configuración de rangos, la supervisión de telemetría, los lotes de producto, la atención de alertas y los reportes de trazabilidad. Consume el Cloud REST API mediante JSON sobre HTTPS y redirige al checkout alojado de Stripe.
+
+**Producto móvil:**
+
+- **Mobile Application** — *Dart, Flutter.* Permite consultar el estado de los ambientes, recibir avisos de desviación y registrar la atención de alertas en sitio. Consume el Cloud REST API vía JSON sobre HTTPS y recibe las notificaciones push desde Firebase Cloud Messaging.
+- **Mobile Local Database** — *SQLite.* Conserva el último estado conocido de los ambientes y las acciones pendientes de sincronización, de modo que el operario pueda consultar información dentro de zonas de la planta sin cobertura estable.
+
+**Servicio central:**
+
+- **Cloud REST API** — *Java 26, Spring Boot, Spring Data JPA.* Monolito modular: una única unidad desplegable que aloja los nueve bounded contexts identificados en el Strategic-Level DDD (Identity and Access Management, Payments and Subscriptions, Laboratory Management, Inventory Management, Equipment Management, Tracking and Telemetry, Product Batch Management, Compliance and Alerting, Reporting and Audit). La decisión de mantener un solo contenedor en lugar de un despliegue por contexto responde al tamaño del equipo y al alcance del ciclo: los límites se preservan en el código mediante módulos y Anti-Corruption Layers, no mediante procesos separados, y la descomposición interna se documenta en las vistas de componentes de la sección 4.2.
+- **Cloud Database** — *MySQL 8.* Persistencia central de los nueve bounded contexts. Se accede mediante JPA sobre TCP 3306.
+
+**Borde:**
+
+- **Edge REST API** — *Python, Flask, Peewee.* Se ejecuta en la sede del cliente. Recibe la telemetría y los eventos de actuación de los nodos, los conserva localmente, entrega a cada nodo la configuración vigente y sincroniza con la nube. Su existencia garantiza que la pérdida de conectividad a internet no interrumpa la captura de datos ni el control local.
+- **Edge Local Database** — *SQLite.* Almacena las mediciones, la configuración vigente y la cola de sincronización pendiente.
+
+**Dispositivo:**
+
+- **Embedded Application** — *C++, Arduino Framework, ESP32.* Lee las variables ambientales, evalúa cada lectura contra la configuración vigente, acciona los actuadores localmente, gobierna la interfaz física (display, indicador, alarma y pulsador) y comunica la telemetría al Edge REST API mediante JSON sobre HTTP. El lazo de control se cierra en el dispositivo y no en la nube, de modo que la respuesta ante una desviación no depende de la disponibilidad de la red.
 
 #### 4.1.3.4. Software Architecture Deployment Diagrams. 
