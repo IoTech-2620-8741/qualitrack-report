@@ -533,7 +533,28 @@ QualiTrack Sensing Hardware: sensor BME680, actuadores e interfaz física del no
 
 En conjunto, el landscape muestra que QualiTrack se ubica entre un plano físico (el ambiente monitoreado y su hardware) y un plano de cumplimiento normativo (la evidencia exigida al laboratorio), integrando servicios externos únicamente para capacidades genéricas: cobro, correo y notificación push.
 
-#### 4.1.3.2. Software Architecture Context Level Diagrams. 
+#### 4.1.3.2. Software Architecture Context Level Diagrams.
+
+La vista **System Context** centra la representación en QualiTrack Platform como caja negra y muestra únicamente las personas y los sistemas externos que mantienen una relación directa con él. Su propósito es delimitar la frontera del sistema y las responsabilidades que quedan fuera de ella, sin exponer decisiones de tecnología interna.
+
+![C4 - System Landscape](../assets/img/chapter-iv/c4-Containers.png)
+
+**Relaciones con las personas:**
+
+- **Visitor → QualiTrack Platform** *(HTTPS)*: consulta la información pública y los planes.
+- **Quality Supervisor → QualiTrack Platform** *(HTTPS)*: configura los ambientes monitoreados y sus rangos, supervisa la telemetría y atiende las alertas.
+- **Plant Operator → QualiTrack Platform** *(HTTPS / interfaz física)*: consulta el estado del ambiente y reconoce las alarmas. Es el único actor con dos canales de interacción: digital, desde la aplicación móvil, y físico, desde el pulsador y el display del nodo IoT.
+- **Field Technician → QualiTrack Platform** *(HTTP)*: instala y verifica los nodos y la estación local dentro de la red de la sede.
+
+**Relaciones con los sistemas externos:**
+
+- **QualiTrack Platform → Stripe** *(HTTPS / REST)*: gestiona la contratación y el estado de las suscripciones.
+- **Stripe → QualiTrack Platform** *(Webhook HTTPS, asíncrona)*: notifica los eventos de pago. Se modela como relación de retorno y no como simple respuesta, porque la confirmación del pago llega fuera del ciclo de la solicitud original.
+- **QualiTrack Platform → Resend API** *(HTTPS / API)*: solicita el envío de los correos transaccionales.
+- **QualiTrack Platform → Firebase Cloud Messaging** *(HTTPS / API)*: solicita el envío de las notificaciones push.
+- **Firebase Cloud Messaging → QualiTrack Platform** *(HTTPS, asíncrona)*: entrega la notificación al dispositivo del usuario.
+- **QualiTrack Platform → QualiTrack Sensing Hardware** *(GPIO / I2C / PWM)*: lee el sensor y acciona los actuadores del nodo.
+
 
 #### 4.1.3.3. Software Architecture Container Level Diagrams. 
 
