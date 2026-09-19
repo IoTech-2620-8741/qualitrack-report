@@ -507,6 +507,9 @@ El Context Map resultante mantiene una alta cohesión dentro de cada dominio, re
 
 ### 4.1.3. Software Architecture. 
 
+En esta sección se presenta la arquitectura de software de QualiTrack documentada mediante el C4 Model propuesto por Simon Brown, utilizando Structurizr DSL como fuente única de verdad. El modelo se define una sola vez en un archivo .dsl versionado en el repositorio de la organización, y a partir de él se generan las vistas que se exportan como imágenes para este informe; el código DSL no forma parte del documento.
+
+
 #### 4.1.3.1. Software Architecture System Landscape Diagram. 
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams. 
