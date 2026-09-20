@@ -293,6 +293,23 @@ Estos eventos fueron destacados en las líneas de tiempo mediante las líneas ve
 
 **Paso 5: Commands**
 
+El quinto paso consistió en identificar los commands asociados a los eventos de dominio previamente definidos. Un command representa la intención o acción que solicita la ejecución de una operación dentro del sistema y, cuando corresponde, produce como resultado un evento de dominio. Para su representación se utilizaron tarjetas de color azul, ubicadas antes del evento que generan.
+
+A partir de los flujos definidos, se identificaron los siguientes comandos:
+
+- Register User, Assign User Role, Authenticate User, Request Password Reset, Send Verification Code, Verify Recovery Code y Reset Password.
+- Select Plan, Create Checkout, Accept Payment, Update Subscription y Cancel Subscription.
+- Request Audit Information, Consult Historical Record, Generate Audit Report, Generate Batch Report, Generate Compliance Report, Export Equipment Log, Calculate KPI Dashboard y Calculate Deviation Trend.
+- Register Laboratory, Update Laboratory Profile, Register Environment, Update Environment, Register Box, Register Staff Member, Establish Laboratory Membership y Deactivate Staff Member.
+- Register Equipment, Register Maintenance, Link Sensor, Configure BPM Parameter, Calibrate Measurement Instrument, Calibration Expire, Detect Failure, Record Equipment Failure y Update Equipment Status.
+- Record Telemetry Measurements, Review Measurement, Record Telemetry History Point, Detect Telemetry Anomaly y Update Telemetry Status.
+- Create Batch, Start Batch, Register Pharmaceutical Product, Register Raw Material Usage, Complete Manufacturing, Evaluate Batch, Release Batch y Reject Batch.
+- Create Alert, Acknowledge Alert, Resolve Alert, Detect Compliance Event, Detect Low Stock, Create Low Stock Alert, Update Notification Preference, Detect Batch Release Compliance Event, Detect Batch Rejection Compliance Event y Notify Quality Supervisor.
+- Register Raw Material, Register Supplier Receipt, Receive Raw Material Lot, Accept Raw Material, Reject Raw Material, Store Raw Material in Box, Remove Raw Material from Box, Consume Raw Material, Update Inventory y Record Inventory Movement.
+
+En cada flujo, los comandos se ubicaron inmediatamente antes del evento correspondiente, permitiendo visualizar de manera explícita la relación acción → resultado, por ejemplo: Create Batch → Batch Created, Evaluate Batch → Batch Evaluated y Detect Telemetry Anomaly → Telemetry Anomaly Detected.
+
+
 **Paso 6: Policies and Actors**
 
 
