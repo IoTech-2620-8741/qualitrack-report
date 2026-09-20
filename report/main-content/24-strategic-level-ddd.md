@@ -549,7 +549,15 @@ El séptimo paso consistió en identificar los Read Models del sistema. Estos re
 | **Equipment Failure Details**     | Vista que permite consultar la información de una falla antes de registrarla.                                       |
 | **Equipment Status**              | Vista que muestra el estado actual del equipo antes de realizar una actualización.                                  |
 
+**Paso 8: External Systems**
 
+El octavo paso consistió en incorporar al modelo los sistemas externos. Estos se representan mediante tarjetas de color rosado y corresponden a servicios externos al dominio propio que participan en los flujos de negocio.
+
+El equipo identificó dos sistemas externos:
+
+- **Resend**,  utilizado para el envío del código de verificación durante el proceso de recuperación de contraseña. Se activa después del evento Password Reset Requested, mediante la política Whenever Password Reset Requested Then Send Verification Code.
+
+- **Stripe**, encargado de procesar los pagos asociados a las suscripciones. Participa en el flujo de pago mediante las políticas relacionadas con Checkout Created y Payment Received.
 
 #### 4.1.1.2 Domain Message Flows Modeling. 
 #### 4.1.1.3 Bounded Context Canvases.  
