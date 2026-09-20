@@ -3,18 +3,15 @@
 
 **AV1:**
 
-Durante esta primera etapa confirmamos que el sector farmacéutico peruano necesita urgentemente automatizar el monitoreo ambiental y la trazabilidad. Gracias a las entrevistas con los usuarios clave, logramos estructurar el problema y las hipótesis de solución en el Lean UX Canvas. Por el lado técnico, aterrizamos la arquitectura aplicando EventStorming y Domain-Driven Design para definir nueve Bounded Contexts y sus integraciones, documentando todo bajo el modelo C4. Con esto, ya armamos una base sólida tanto a nivel de negocio como de software, y solo nos queda pulir algunos detalles de consistencia antes de cerrar la entrega final. Todo este avance ha servido para recolectar la información clave para el desarrollo de QualiTrack.
+ Durante esta primera etapa se logró consolidar una base sólida para **QualiTrack**, integrando la investigación de usuarios con los artefactos de UX, el diseño del dominio mediante **Ubiquitous Language y Event Storming**, la definición de **Bounded Contexts** y su representación mediante **C4**, además de un **Product Backlog trazable y priorizado**. Este trabajo permitió relacionar las necesidades del sector farmacéutico con funcionalidades concretas de monitoreo IoT, trazabilidad, inventario y control de desviaciones, estableciendo una arquitectura y una planificación coherentes para continuar con el desarrollo de la solución.
 
-Recomendaciones:
+ ## Recomendaciones
 
-* Recomendamos mantener una coherencia estricta en todo el proyecto, asegurando que los hallazgos de las entrevistas del Capítulo 1 definan directamente los Bounded Contexts del Capítulo 2, los cuales dicten la arquitectura C4 del Capítulo 3 y alimenten el Backlog del Capítulo 4.
-
-* Recomendamos basar el problema de negocio en investigación real, sustentando el Capítulo 1 con normativas vigentes y entrevistas genuinas, lo que hará que el Lean UX Canvas y los perfiles de usuario sean creíbles.
-
-* Recomendamos aprovechar al máximo el EventStorming a nivel estratégico y de diseño para descubrir orgánicamente los Bounded Contexts del Capítulo 2.
-
-* Recomendamos alinear los contenedores técnicos con el diseño de dominio, asegurando que la arquitectura C4 respete los niveles de abstracción y refleje fielmente la división de los Bounded Contexts definidos previamente.
-
-* Recomendamos construir un Product Backlog con trazabilidad absoluta, donde cada historia de usuario nazca de un contexto técnico validado, resuelva una necesidad real y se priorice usando herramientas como el Impact Map.
+ - Mantener una **trazabilidad clara y consistente** entre la investigación, los artefactos de UX, los Bounded Contexts, la arquitectura C4 y el Product Backlog.
+- Mantener actualizado el **Product Backlog** conforme se obtengan nuevos resultados de validaciones con usuarios y decisiones técnicas.
+- Continuar utilizando **Event Storming y Domain-Driven Design** para validar y ajustar los Bounded Contexts conforme evolucione el proyecto.
+- Asegurar que la arquitectura C4 y los componentes técnicos mantengan coherencia con la separación de dominios definida previamente.
+- Priorizar en la siguiente etapa el desarrollo del **Landing Page y los principales flujos del frontend**, comenzando por funcionalidades de alto valor y con menores dependencias.
+- Realizar una revisión integral de consistencia antes de la entrega final, verificando que los capítulos de investigación, dominio, arquitectura y backlog estén correctamente relacionados.
 
 ## Video About-the-Team.
