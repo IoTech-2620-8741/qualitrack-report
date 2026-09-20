@@ -34,7 +34,7 @@ A partir de este análisis, el equipo avanzó con la construcción del modelo de
 <br>
 
 <div align="center">
-  <img src="">
+  <img src="../assets/img/chapter-iv/herramientas-utilizadas.png">
 </div>
 
 <br>
