@@ -573,6 +573,72 @@ El equipo identificó dos sistemas externos:
 
 El noveno paso consistió en identificar los agregados dentro de cada Bounded Context y agrupar alrededor de ellos los comandos, eventos, read models y políticas correspondientes. Los agregados se representan mediante tarjetas amarillas de mayor tamaño y constituyen la unidad de consistencia del dominio.
 
+<br>
+
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/aggregate-1.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/aggregate-2.png">
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/aggregate-3.png">
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/aggregate-4.png">
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/aggregate-5.png">
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/aggregate-6.png">
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/aggregate-7.png">
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/aggregate-8.png">
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/aggregate-9.png">
+</div>
+
+<br>
+
+
+
 
 El equipo identificó los agregados en cada Bounded Context de la siguiente manera:
 
