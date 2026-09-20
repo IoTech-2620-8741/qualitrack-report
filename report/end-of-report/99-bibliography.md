@@ -8,6 +8,12 @@
     Cohn, M. (2004). <em>User Stories Applied: For Agile Software Development</em>. Addison-Wesley Professional.
   </li>
   <li>
+    Dirección General de Medicamentos, Insumos y Drogas. (2026, 5 de junio). <em>Digemid fortalece control sanitario nacional e internacional con la supervisión de 70 laboratorios farmacéuticos en seis países</em>. Ministerio de Salud del Perú. Recuperado de <a href="https://www.digemid.minsa.gob.pe/webDigemid/notas/2026/digemid-fortalece-control-sanitario-nacional-e-internacional-con-la-supervision-de-70-laboratorios-farmaceuticos-en-seis-paises/">https://lix.li/s1cPA</a>
+  </li>
+  <li>
+    Dirección General de Medicamentos, Insumos y Drogas. (2026, 24 de julio). <em>Digemid fortalece cumplimiento de las Buenas Prácticas de Manufactura para garantizar productos y medicamentos seguros y de calidad</em>. Ministerio de Salud del Perú. Recuperado de <a href="https://www.digemid.minsa.gob.pe/webDigemid/notas/2026/digemid-fortalece-cumplimiento-de-las-buenas-practicas-de-manufactura-para-garantizar-productos-y-medicamentos-seguros-y-de-calidad/">https://lix.li/Vbi3s</a>
+  </li>
+  <li>
     Evans, E. (2003). <em>Domain-Driven Design: Tackling Complexity in the Heart of Software</em>. Addison-Wesley Professional.
   </li>
   <li>
