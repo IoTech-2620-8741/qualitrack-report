@@ -50,23 +50,23 @@ El primer paso consistió en la identificación de los eventos de dominio del si
 
 Entre los eventos identificados se encuentran:
 
-- **IAM:** User Registered, User Authenticated, User Role Assigned, Password Changed, Password Reset Requested, Verification Code Sent y Recovery Code Verified.
+-  User Registered, User Authenticated, User Role Assigned, Password Changed, Password Reset Requested, Verification Code Sent y Recovery Code Verified.
 
-- **Payments & Subscriptions:** Plan Selected, Checkout Created, Payment Received, Subscription Activated, Subscription Updated y Subscription Canceled.
+- Plan Selected, Checkout Created, Payment Received, Subscription Activated, Subscription Updated y Subscription Canceled.
 
-- **Laboratory Management:** Laboratory Registered, Laboratory Profile Updated, Environment Registered, Environment Updated, Staff Member Registered, Laboratory Membership Established, Staff Member Deactivated y Box Registered.
+- Laboratory Registered, Laboratory Profile Updated, Environment Registered, Environment Updated, Staff Member Registered, Laboratory Membership Established, Staff Member Deactivated y Box Registered.
 
-- **Equipment Management:** Equipment Registered, Sensor Linked, BPM Parameter Configured, Maintenance Registered, Equipment Status Updated, Measurement Instrument Calibrated, Calibration Expired, Equipment Failure Detected y Equipment Failure Recorded.
+- Equipment Registered, Sensor Linked, BPM Parameter Configured, Maintenance Registered, Equipment Status Updated, Measurement Instrument Calibrated, Calibration Expired, Equipment Failure Detected y Equipment Failure Recorded.
 
-- **Tracking & Telemetry:** Telemetry Measurement Recorded, Telemetry History Point Recorded, Telemetry Anomaly Detected, Telemetry Snapshot Updated, Telemetry Status Updated y Measurement Reviewed.
+- Telemetry Measurement Recorded, Telemetry History Point Recorded, Telemetry Anomaly Detected, Telemetry Snapshot Updated, Telemetry Status Updated y Measurement Reviewed.
 
-- **Inventory Management:** Raw Material Registered, Supplier Receipt Registered, Raw Material Lot Received, Raw Material Accepted, Raw Material Rejected, Inventory Updated, Inventory Movement Recorded, Raw Material Consumed, Low Stock Detected, Raw Material Stored in Box y Raw Material Removed from Box.
+- Raw Material Registered, Supplier Receipt Registered, Raw Material Lot Received, Raw Material Accepted, Raw Material Rejected, Inventory Updated, Inventory Movement Recorded, Raw Material Consumed, Low Stock Detected, Raw Material Stored in Box y Raw Material Removed from Box.
 
-- **Product Batch Management:** Batch Created, Batch Started, Pharmaceutical Product Registered, Raw Material Usage Registered, Manufacturing Completed, Batch Evaluated, Batch Released, Batch Rejected y Batch Traceability Updated.
+- Batch Created, Batch Started, Pharmaceutical Product Registered, Raw Material Usage Registered, Manufacturing Completed, Batch Evaluated, Batch Released, Batch Rejected y Batch Traceability Updated.
 
-- **Compliance & Alerting:** Compliance Event Detected, Deviation Alert Created, Alert Acknowledged, Alert Resolved, Notification Preference Updated, Low Stock Alert Created, Calibration Expiration Alert Created, Batch Release Compliance Event Detected, Batch Rejection Compliance Event Detected y Quality Supervisor Notified.
+-  Compliance Event Detected, Deviation Alert Created, Alert Acknowledged, Alert Resolved, Notification Preference Updated, Low Stock Alert Created, Calibration Expiration Alert Created, Batch Release Compliance Event Detected, Batch Rejection Compliance Event Detected y Quality Supervisor Notified.
 
-- **Reporting & Audit:** Audit Log Entry Recorded, Audit Information Requested, Historical Record Consulted, Audit Report Generated, Batch Report Generated, Compliance Report Generated, Equipment Log Exported, KPI Dashboard Calculated y Deviation Trend Calculated.
+-  Audit Log Entry Recorded, Audit Information Requested, Historical Record Consulted, Audit Report Generated, Batch Report Generated, Compliance Report Generated, Equipment Log Exported, KPI Dashboard Calculated y Deviation Trend Calculated.
 
 
 Durante esta etapa se priorizó que los eventos representaran hechos ocurridos dentro del dominio, evitando confundirlos con acciones realizadas por un usuario. Por ello, las acciones como registrar, actualizar, consultar, crear o detectar se expresaron como el resultado que se produce después de ejecutar una determinada operación. Por ejemplo, Create Batch corresponde al comando, mientras que Batch Created representa el evento producido.
@@ -76,6 +76,81 @@ Asimismo, se conservaron algunos eventos provenientes del Big Picture EventStorm
 
 
 **Paso 2: Timelines**
+
+El segundo paso consistió en organizar los eventos de dominio identificados en el paso anterior mediante líneas de tiempo. El objetivo fue establecer el orden cronológico natural en el que ocurren los hechos dentro de cada flujo.
+
+Los eventos fueron organizados en secuencias horizontales, conectando aquellos que forman parte de un mismo proceso y manteniendo separados los flujos que ocurren de manera independiente.
+
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/time-line-1.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/time-line-2.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/time-line-3.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/time-line-4.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/time-line-5.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/time-line-6.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/time-line-7.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/time-line-8.png">
+</div>
+
+<br>
+
+En el flujo de **gestión de usuarios**, se organizó la secuencia de registro, asignación de rol y autenticación, además del flujo independiente de recuperación de contraseña mediante la solicitud, envío y verificación del código de recuperación.
+
+En el flujo de **suscripciones y pagos**, se estableció la secuencia desde la selección del plan y creación del checkout hasta la recepción del pago y activación de la suscripción, considerando posteriormente su actualización o cancelación.
+
+En el flujo de **gestión de laboratorios**, se estableció la secuencia desde la selección del plan y creación del checkout hasta la recepción del pago y activación de la suscripción, considerando posteriormente su actualización o cancelación.
+
+En el flujo de **monitoreo de telemetría**, se estableció el registro de las mediciones y sus posibles derivaciones hacia el registro histórico, detección de anomalías, actualización del estado y revisión de las mediciones.
+
+En el flujo de **gestión de equipos**, se organizaron las actividades relacionadas con el registro del equipo, vinculación del sensor, configuración de parámetros, mantenimiento, calibración y actualización del estado del equipo.
+
+En el flujo de **gestión de materias primas** e inventario, se estableció la secuencia de registro de la materia prima, recepción del lote y su posterior aceptación o rechazo. Para los lotes aceptados se organizó la actualización del inventario, registro de movimientos y detección de bajo stock, incluyendo también el consumo de materia prima.
+
+En el flujo de **fabricación y gestión de lotes**, se organizó la secuencia de creación e inicio del lote, registro del uso de materias primas, finalización de la fabricación y evaluación del lote, que posteriormente puede resultar en su liberación o rechazo.
+
+En el flujo de **gestión de alertas y cumplimiento**, se organizaron los eventos relacionados con la creación, reconocimiento y resolución de alertas, así como la detección de bajo stock, eventos de cumplimiento y actualización de preferencias de notificación.
+
+Finalmente, en el flujo de **auditoría y generación de información**, se estableció la secuencia de solicitud de información, consulta de registros históricos y generación de reportes, además de los procesos independientes de cálculo de indicadores, tendencias y exportación de información.
+
+La organización de estos flujos permitió establecer una visión cronológica del comportamiento del sistema y sirvió como base para continuar con las siguientes etapas del Design-Level EventStorming.
 
 **Paso 3: Paint Point**
 
