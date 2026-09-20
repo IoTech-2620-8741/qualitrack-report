@@ -128,6 +128,15 @@ Los read models representan todo lo que se va a ver en la interfaz de usuario. E
  
 Una vez descubiertos los Bounded Contexts candidatos, el equipo necesitaba validar que dichos límites permitieran resolver los casos reales del negocio. Para ello se aplicó la técnica de visualización *Domain Storytelling*, con la cual se narran escenarios completos del dominio mostrando quién inicia la historia, qué sistemas participan, qué Bounded Contexts colaboran y qué mensaje viaja entre ellos en cada paso.
 
+El proceso seguido fue el siguiente:
+ 
+1. *Selección de escenarios.* A partir de los pivotal points, políticas y líneas de tiempo del Design-Level EventStorming se eligieron seis escenarios representativos que atraviesan el sistema de extremo a extremo y que, en conjunto, involucran a los nueve Bounded Contexts de QualiTrack.
+2. *Identificación de participantes.* Para cada escenario se determinaron los actores (Lab Technician, Quality Supervisor, Production Staff, Warehouse Staff, Auditor, Maintenance, Country Manager, IoT Device), los sistemas (la aplicación web y móvil de QualiTrack, Stripe) y los Bounded Contexts involucrados.
+3. *Definición de los mensajes.* Cada interacción se expresó como un mensaje explícito tomado del Ubiquitous Language ya declarado en los Bounded Context Canvases y en el EventStorming: commands (una intención dirigida a un contexto), events (un hecho que ya ocurrió dentro de un contexto) y queries (una solicitud de información que no modifica el estado).
+4. *Ordenamiento y numeración.* Los mensajes se numeraron secuencialmente para reflejar el orden temporal de la historia, indicando además los datos que transporta cada mensaje.
+5. *Diagramación en Miro.* Cada escenario se modeló en el tablero del equipo utilizando la notación de Domain Message Flow Modelling, incluyendo en cada diagrama su propia leyenda de notación.
+6. *Validación de los límites.* Se revisó que ningún mensaje obligara a un contexto a conocer conceptos internos de otro. Los casos en los que esto ocurría se resolvieron sustituyendo el acceso directo por una query de referencia hacia el contexto propietario del dato, lo que confirmó las relaciones Customer/Supplier y ACL definidas en el Context Mapping.
+
 #### 4.1.1.3 Bounded Context Canvases.  
 ### 4.1.2. Context Mapping.
 
