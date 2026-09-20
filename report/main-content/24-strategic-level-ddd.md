@@ -3,18 +3,60 @@ En esta sección se aborda el enfoque de Strategic-Level Domain-Driven Design,
 el cual permite definir una vision clara del dominio de la plataforma QualiTrack, identificar los contextos delimitados y establecer las relaciones entre ellos. Se incluyen los siguientes subtemas:
 ### 4.1.1. Design-Level EventStorming.
 
-El EventStorming es una técnica de modelado colaborativa que permite descubrir y comprender el dominio de la plataforma QualiTrack, identificar los eventos del dominio, 
-los comandos, actores, politicas, modelo de lectura, sistemas externos y agregados. Este enfo permite definir los contextos delimitados y establecer las relaciones entre ellos. Se incluyen los siguientes pasos:
+En esta sección se presenta el Design-Level EventStorming, técnica utilizada para profundizar en el comportamiento del sistema a partir de los procesos identificados previamente en el Big Picture EventStorming. En esta etapa se detallan los eventos, comandos, actores, políticas, modelos de lectura, sistemas externos y agregados que permiten representar con mayor precisión las reglas e interacciones del dominio.
+
+A partir del análisis de los flujos identificados en el Big Picture EventStorming, el equipo identificó diversos pain points relacionados principalmente con el monitoreo de condiciones ambientales, la gestión de desviaciones, el control de materias primas, la trazabilidad de lotes y la consulta de información histórica. Estos puntos de fricción representan situaciones en las que el proceso actual presenta ambigüedades o requiere una definición más precisa para su posterior digitalización.
+
+**Flujo de monitoreo y control ambiental:**
+
+- *How do you confirm that an out-of-range condition really corresponds to an environmental deviation?:* No se encontraba completamente definido el mecanismo utilizado para confirmar que una medición fuera de rango corresponde realmente a una desviación ambiental. Este punto orientó el diseño de un flujo de monitoreo basado en registros de telemetría, detección de anomalías y generación de alertas.
+
+**Flujo de gestión de desviaciones ambientales:**
+
+- *"Who determines that the environmental condition has been corrected and that the activity can resume?":* El flujo no precisaba completamente cómo se valida la recuperación de una condición ambiental ni quién determina que la actividad puede continuar. Este punto permitió definir eventos relacionados con la detección, atención y resolución de desviaciones y alertas.
+
+**Flujo de desarrollo y producción de productos:**
+
+- *What criteria are considered to determine if a batch is approved or rejected?* No estaban completamente especificados los criterios y pasos posteriores a la evaluación de un lote. Este punto orientó el diseño del flujo de Product Batch Management, diferenciando la evaluación del lote de sus posibles resultados: liberación o rechazo.
+
+**Flujo de gestión de materias primas:**
+
+- *What criteria are used to accept or reject an incoming batch, and where is that decision registered?":* El proceso no detallaba suficientemente cómo se determina la aceptación o rechazo de una materia prima recibida ni cómo queda registrada dicha decisión. Este punto permitió estructurar el flujo de recepción, revisión, aceptación o rechazo y actualización del inventario.
+
+**Flujo de registros y auditorías:**
+
+- *How are historical quality records consulted during an audit?:* El proceso requería una forma más estructurada de consultar información histórica y proporcionar evidencia durante una auditoría. Este punto orientó la definición de los flujos de consulta de registros históricos, generación de reportes y consolidación de información para auditoría.
+
+Estos pain points permitieron identificar las principales necesidades de diseño del sistema y sirvieron como punto de partida para profundizar los procesos en el Design-Level EventStorming.
+
+A partir de este análisis, el equipo avanzó con la construcción del modelo detallado siguiendo los pasos establecidos para el Design-Level EventStorming. Durante esta etapa se identificaron y organizaron los siguientes elementos:
+
+<br>
+
+<div align="center">
+  <img src="">
+</div>
+
+<br>
+
+Con el fin de mantener la consistencia y facilitar la interpretación del modelo, el equipo definió una convención de colores para los post-its utilizados durante la tercera fase del Design-Level Event Storming. Esta convención permitió identificar de manera visual los distintos elementos del dominio, tales como eventos, comandos, actores, políticas, modelos de lectura y sistemas externos, facilitando la comprensión de las relaciones y flujos dentro del sistema.
+
+
+
+Entre los principales pain points identificados se encuentran:
 
 **Paso 1: Event**
 
 **Paso 2: Timelines**
 
-**Paso 3: Pivotal Points**
+**Paso 3: Paint Point**
 
-**Paso 4: Commands**
+**Paso 4: Pivotal Points**
 
-**Paso 5: Policies and Actors**
+**Paso 5: Commands**
+
+**Paso 6: Policies and Actors**
+
 
 
 #### 4.1.1.1 Candidate Context Discovery. 
