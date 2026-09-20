@@ -175,6 +175,28 @@ Compliance & Alerting no almacena ni interpreta datos de equipos ni de ambientes
  
 ---
 
+##### Scenario 2: Manufacturing a product batch with raw-material traceability
+ 
+Este escenario muestra la fabricación de un lote de producto y el registro del consumo de materias primas necesario para sostener la trazabilidad exigida por el negocio.
+ 
+| # | Mensaje | Tipo | Emisor | Receptor |
+|---|---|---|---|---|
+| 1 | Create Product Batch | Command | Production Staff | QualiTrack web and mobile application |
+| 2 | Create Product Batch | Command | QualiTrack web and mobile application | Product Batch Management |
+| 3 | Get Laboratory and Personnel Reference | Query | Product Batch Management | Laboratory Management |
+| 4 | Get Equipment Availability | Query | Product Batch Management | Equipment Management |
+| 5 | Get RawMaterialBatch Availability | Query | Product Batch Management | Inventory Management |
+| 6 | Register Material Consumption | Command | Product Batch Management | Inventory Management |
+| 7 | Raw Material Consumed | Event | Inventory Management | Product Batch Management |
+| 8 | Close Product Batch | Command | QualiTrack web and mobile application | Product Batch Management |
+| 9 | Get Product Batch Traceability | Query | Reporting & Audit | Product Batch Management |
+ 
+Product Batch Management se mantiene como fuente de verdad de la trazabilidad del lote fabricado, mientras que la disponibilidad y el descuento de materias primas permanecen bajo la autoridad de Inventory Management.
+ 
+![Domain Message Flow - Manufacturing a product batch with raw-material traceability](../assets/img/chapter-iv/domain-message-flow-2.png)
+ 
+---
+
 #### 4.1.1.3 Bounded Context Canvases.  
 ### 4.1.2. Context Mapping.
 
