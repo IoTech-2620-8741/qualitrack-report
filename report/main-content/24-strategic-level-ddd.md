@@ -663,6 +663,53 @@ El equipo identificó los agregados en cada Bounded Context de la siguiente mane
 | **Equipment Management**     | **Equipment**           | Centraliza el registro, configuración, vinculación de sensores, calibración, estado y fallas de los equipos.                |
 | **Equipment Management**     | **MaintenanceRecord**   | Gestiona el registro y seguimiento de las actividades de mantenimiento realizadas sobre los equipos.                        |
 
+A partir del modelo de Event Storming, se llevó a cabo una sesión de Candidate Context Discovery para identificar los Bounded Contexts de la solución. Se utilizó principalmente la técnica Look-for Pivotal Events, mediante la cual se identificaron eventos que representan cambios significativos de estado dentro de los diferentes procesos del dominio.
+
+Primero, se identificaron los eventos pivote y se agruparon junto con sus comandos, actores, read models, políticas y agregados relacionados.
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/1.png">
+</div>
+
+<br>
+
+
+Luego, se analizaron las relaciones entre los diferentes grupos identificados, considerando las dependencias y comunicaciones existentes entre las distintas responsabilidades del sistema.
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/2.png">
+</div>
+
+<br>
+
+
+
+Finalmente, se trazaron fronteras alrededor de los grupos resultantes y se asignaron nombres de acuerdo con la responsabilidad principal de cada grupo. Como resultado, se definieron los siguientes 9 Bounded Contexts:
+
+- Identity and Access Management (IAM)
+- Payments & Subscriptions
+- Laboratory Management
+- Product Batch Management
+- Tracking & Telemetry
+- Equipment Management
+- Compliance & Alerting
+- Inventory Management
+- Reporting & Audit
+
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/3.png">
+</div>
+
+<br>
+
+
 
 
 #### 4.1.1.2 Domain Message Flows Modeling. 
