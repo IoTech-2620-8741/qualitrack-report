@@ -137,6 +137,44 @@ El proceso seguido fue el siguiente:
 5. *Diagramación en Miro.* Cada escenario se modeló en el tablero del equipo utilizando la notación de Domain Message Flow Modelling, incluyendo en cada diagrama su propia leyenda de notación.
 6. *Validación de los límites.* Se revisó que ningún mensaje obligara a un contexto a conocer conceptos internos de otro. Los casos en los que esto ocurría se resolvieron sustituyendo el acceso directo por una query de referencia hacia el contexto propietario del dato, lo que confirmó las relaciones Customer/Supplier y ACL definidas en el Context Mapping.
 
+La notación empleada en los diagramas es la siguiente:
+ 
+| Elemento | Representación | Significado |
+|---|---|---|
+| Actor / User | Ícono de persona | Persona o dispositivo que inicia o recibe una interacción. |
+| System | Ícono de engranaje | Sistema que participa en el flujo (aplicación web y móvil de QualiTrack, Stripe). |
+| Bounded Context | Nube morada | Contexto delimitado que recibe o emite el mensaje. |
+| Command | Tarjeta azul numerada | Intención: se solicita a un Bounded Context que realice algo. |
+| Event | Tarjeta naranja numerada | Hecho: algo que ya ocurrió dentro de un Bounded Context. |
+| Query | Tarjeta verde numerada | Solicitud de información que no modifica el estado. |
+| Direction of message | Flecha punteada | Sentido del mensaje, del emisor al receptor. |
+
+A continuación se presentan los seis escenarios modelados.
+ 
+---
+ 
+##### Scenario 1: Environmental deviation detected and alert reviewed
+ 
+Este escenario evidencia cómo una lectura ambiental fuera de rango se propaga desde los dispositivos IoT hasta la gestión del ciclo de vida de la alerta y su posterior consolidación analítica.
+ 
+| # | Mensaje | Tipo | Emisor | Receptor |
+|---|---|---|---|---|
+| 1 | Record Measurement | Command | IoT Device | Tracking & Telemetry |
+| 2 | Telemetry Anomaly Detected | Event | Tracking & Telemetry | Compliance & Alerting |
+| 3 | Get Device Reference | Query | Compliance & Alerting | Equipment Management |
+| 4 | Get Environment Reference | Query | Compliance & Alerting | Laboratory Management |
+| 5 | Alert Created | Event | Compliance & Alerting | QualiTrack web and mobile application |
+| 6 | Acknowledge Alert | Command | Quality Supervisor | QualiTrack web and mobile application |
+| 7 | Acknowledge Alert | Command | QualiTrack web and mobile application | Compliance & Alerting |
+| 8 | Resolve Alert | Command | QualiTrack web and mobile application | Compliance & Alerting |
+| 9 | Get Alert Lifecycle Data | Query | Reporting & Audit | Compliance & Alerting |
+ 
+Compliance & Alerting no almacena ni interpreta datos de equipos ni de ambientes: los obtiene mediante queries de referencia hacia Equipment Management y Laboratory Management, conservando la autoridad de cada contexto sobre su propio modelo.
+ 
+![Domain Message Flow - Environmental deviation detected and alert reviewed](../assets/img/chapter-iv/domain-message-flow-1.png)
+ 
+---
+
 #### 4.1.1.3 Bounded Context Canvases.  
 ### 4.1.2. Context Mapping.
 
