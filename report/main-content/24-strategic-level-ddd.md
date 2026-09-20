@@ -215,6 +215,82 @@ Estos pain points permitieron identificar los aspectos del diseño que requería
 
 **Paso 4: Pivotal Points**
 
+El cuarto paso consistió en identificar los pivotal points dentro de las líneas de tiempo previamente organizadas. Estos puntos representan momentos de transición relevantes en los que ocurre un cambio significativo de estado, etapa o responsabilidad dentro de los flujos del sistema. Para su representación se utilizaron líneas verticales de separación sobre los eventos seleccionados.
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/pivotal-points-1.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/pivotal-points-2.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/pivotal-points-3.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/pivotal-points-4.png">
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/pivotal-points-5.png">
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/pivotal-points-6.png">
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/pivotal-points-7.png">
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/pivotal-points-8.png">
+</div>
+
+<br>
+
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/pivotal-points-9.png">
+</div>
+
+<br>
+
+A partir de la revisión de los flujos, el equipo identificó los siguientes pivotal points:
+
+- User Registered, Role User Assigned, User Authenticated, Password Reset Requested, Recovery Code Verified y Password Changed.
+- Checkout Created, Payment Received, Subscription Activated y Subscription Canceled.
+- Audit Information Requested, Audit Report Generated, Batch Report Generated, Compliance Report Generated, Equipment Log Exported, KPI Dashboard Calculated y Deviation Trend Calculated.
+- Batch Created, Manufacturing Completed, Batch Evaluated, Batch Released y Batch Rejected.
+- Raw Material Registered, Raw Material Lot Received, Raw Material Accepted, Raw Material Rejected, Inventory Updated, Raw Material Consumed, Low Stock Detected e Inventory Movement Recorded.
+- Laboratory Registered, Environment Registered, Box Registered, Staff Member Registered, Laboratory Membership Established y Staff Member Deactivated.
+- Equipment Registered, Sensor Linked, Measurement Instrument Calibrated, Calibration Expired, Equipment Failure Detected y Equipment Failure Recorded.
+- Telemetry Measurement Recorded, Telemetry History Point Recorded, Telemetry Anomaly Detected y Telemetry Status Updated.
+
+Estos eventos fueron destacados en las líneas de tiempo mediante las líneas verticales, permitiendo visualizar los principales puntos de transición del comportamiento diseñado para el sistema.
+
 **Paso 5: Commands**
 
 **Paso 6: Policies and Actors**
