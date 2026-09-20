@@ -125,6 +125,169 @@ Los read models representan todo lo que se va a ver en la interfaz de usuario. E
 
 #### 4.1.1.1 Candidate Context Discovery.
 #### 4.1.1.2 Domain Message Flows Modeling. 
+ 
+Una vez descubiertos los Bounded Contexts candidatos, el equipo necesitaba validar que dichos límites permitieran resolver los casos reales del negocio. Para ello se aplicó la técnica de visualización *Domain Storytelling*, con la cual se narran escenarios completos del dominio mostrando quién inicia la historia, qué sistemas participan, qué Bounded Contexts colaboran y qué mensaje viaja entre ellos en cada paso.
+
+El proceso seguido fue el siguiente:
+ 
+1. *Selección de escenarios.* A partir de los pivotal points, políticas y líneas de tiempo del Design-Level EventStorming se eligieron seis escenarios representativos que atraviesan el sistema de extremo a extremo y que, en conjunto, involucran a los nueve Bounded Contexts de QualiTrack.
+2. *Identificación de participantes.* Para cada escenario se determinaron los actores (Lab Technician, Quality Supervisor, Production Staff, Warehouse Staff, Auditor, Maintenance, Country Manager, IoT Device), los sistemas (la aplicación web y móvil de QualiTrack, Stripe) y los Bounded Contexts involucrados.
+3. *Definición de los mensajes.* Cada interacción se expresó como un mensaje explícito tomado del Ubiquitous Language ya declarado en los Bounded Context Canvases y en el EventStorming: commands (una intención dirigida a un contexto), events (un hecho que ya ocurrió dentro de un contexto) y queries (una solicitud de información que no modifica el estado).
+4. *Ordenamiento y numeración.* Los mensajes se numeraron secuencialmente para reflejar el orden temporal de la historia, indicando además los datos que transporta cada mensaje.
+5. *Diagramación en Miro.* Cada escenario se modeló en el tablero del equipo utilizando la notación de Domain Message Flow Modelling, incluyendo en cada diagrama su propia leyenda de notación.
+6. *Validación de los límites.* Se revisó que ningún mensaje obligara a un contexto a conocer conceptos internos de otro. Los casos en los que esto ocurría se resolvieron sustituyendo el acceso directo por una query de referencia hacia el contexto propietario del dato, lo que confirmó las relaciones Customer/Supplier y ACL definidas en el Context Mapping.
+
+La notación empleada en los diagramas es la siguiente:
+ 
+| Elemento | Representación | Significado |
+|---|---|---|
+| Actor / User | Ícono de persona | Persona o dispositivo que inicia o recibe una interacción. |
+| System | Ícono de engranaje | Sistema que participa en el flujo (aplicación web y móvil de QualiTrack, Stripe). |
+| Bounded Context | Nube morada | Contexto delimitado que recibe o emite el mensaje. |
+| Command | Tarjeta azul numerada | Intención: se solicita a un Bounded Context que realice algo. |
+| Event | Tarjeta naranja numerada | Hecho: algo que ya ocurrió dentro de un Bounded Context. |
+| Query | Tarjeta verde numerada | Solicitud de información que no modifica el estado. |
+| Direction of message | Flecha punteada | Sentido del mensaje, del emisor al receptor. |
+
+A continuación se presentan los seis escenarios modelados.
+ 
+---
+ 
+##### Scenario 1: Environmental deviation detected and alert reviewed
+ 
+Este escenario evidencia cómo una lectura ambiental fuera de rango se propaga desde los dispositivos IoT hasta la gestión del ciclo de vida de la alerta y su posterior consolidación analítica.
+ 
+| # | Mensaje | Tipo | Emisor | Receptor |
+|---|---|---|---|---|
+| 1 | Record Measurement | Command | IoT Device | Tracking & Telemetry |
+| 2 | Telemetry Anomaly Detected | Event | Tracking & Telemetry | Compliance & Alerting |
+| 3 | Get Device Reference | Query | Compliance & Alerting | Equipment Management |
+| 4 | Get Environment Reference | Query | Compliance & Alerting | Laboratory Management |
+| 5 | Alert Created | Event | Compliance & Alerting | QualiTrack web and mobile application |
+| 6 | Acknowledge Alert | Command | Quality Supervisor | QualiTrack web and mobile application |
+| 7 | Acknowledge Alert | Command | QualiTrack web and mobile application | Compliance & Alerting |
+| 8 | Resolve Alert | Command | QualiTrack web and mobile application | Compliance & Alerting |
+| 9 | Get Alert Lifecycle Data | Query | Reporting & Audit | Compliance & Alerting |
+ 
+Compliance & Alerting no almacena ni interpreta datos de equipos ni de ambientes: los obtiene mediante queries de referencia hacia Equipment Management y Laboratory Management, conservando la autoridad de cada contexto sobre su propio modelo.
+ 
+![Domain Message Flow - Environmental deviation detected and alert reviewed](../assets/img/chapter-iv/domain-message-flow-1.png)
+ 
+---
+
+##### Scenario 2: Manufacturing a product batch with raw-material traceability
+ 
+Este escenario muestra la fabricación de un lote de producto y el registro del consumo de materias primas necesario para sostener la trazabilidad exigida por el negocio.
+ 
+| # | Mensaje | Tipo | Emisor | Receptor |
+|---|---|---|---|---|
+| 1 | Create Product Batch | Command | Production Staff | QualiTrack web and mobile application |
+| 2 | Create Product Batch | Command | QualiTrack web and mobile application | Product Batch Management |
+| 3 | Get Laboratory and Personnel Reference | Query | Product Batch Management | Laboratory Management |
+| 4 | Get Equipment Availability | Query | Product Batch Management | Equipment Management |
+| 5 | Get RawMaterialBatch Availability | Query | Product Batch Management | Inventory Management |
+| 6 | Register Material Consumption | Command | Product Batch Management | Inventory Management |
+| 7 | Raw Material Consumed | Event | Inventory Management | Product Batch Management |
+| 8 | Close Product Batch | Command | QualiTrack web and mobile application | Product Batch Management |
+| 9 | Get Product Batch Traceability | Query | Reporting & Audit | Product Batch Management |
+ 
+Product Batch Management se mantiene como fuente de verdad de la trazabilidad del lote fabricado, mientras que la disponibilidad y el descuento de materias primas permanecen bajo la autoridad de Inventory Management.
+ 
+![Domain Message Flow - Manufacturing a product batch with raw-material traceability](../assets/img/chapter-iv/domain-message-flow-2.png)
+ 
+---
+
+##### Scenario 3: Onboarding, subscription payment and laboratory registration
+ 
+Este escenario describe la incorporación de una nueva organización a la plataforma, desde el registro del usuario hasta la activación de la suscripción y el alta del laboratorio.
+ 
+| # | Mensaje | Tipo | Emisor | Receptor |
+|---|---|---|---|---|
+| 1 | Register User | Command | Visitant | QualiTrack web and mobile application |
+| 2 | Register User | Command | QualiTrack web and mobile application | Identity & Access Management |
+| 3 | Create Subscription | Command | QualiTrack web and mobile application | Payments & Subscriptions |
+| 4 | Create Checkout Session | Command | Payments & Subscriptions | Stripe |
+| 5 | Payment Received | Event | Stripe | Payments & Subscriptions |
+| 6 | Subscription Activated | Event | Payments & Subscriptions | QualiTrack web and mobile application |
+| 7 | Register Laboratory | Command | Country Manager | QualiTrack web and mobile application |
+| 8 | Register Laboratory | Command | QualiTrack web and mobile application | Laboratory Management |
+| 9 | Assign Laboratory Membership | Command | QualiTrack web and mobile application | Laboratory Management |
+ 
+Stripe se modela como sistema externo y la confirmación del pago ingresa al dominio como un evento, evitando que Payments & Subscriptions dependa de la disponibilidad síncrona del proveedor.
+ 
+![Domain Message Flow - Onboarding, subscription payment and laboratory registration](../assets/img/chapter-iv/domain-message-flow-3.png)
+ 
+---
+
+##### Scenario 4: Building the compliance report for a regulatory audit
+ 
+Este escenario evidencia el carácter downstream de Reporting & Audit, que consolida información proveniente de los demás Bounded Contexts sin ser propietario de ninguno de sus modelos.
+ 
+| # | Mensaje | Tipo | Emisor | Receptor |
+|---|---|---|---|---|
+| 1 | Generate Report | Query | Auditor | QualiTrack web and mobile application |
+| 2 | Generate Report | Query | QualiTrack web and mobile application | Reporting & Audit |
+| 3 | Get Alert Lifecycle Data | Query | Reporting & Audit | Compliance & Alerting |
+| 4 | Get Product Batch Traceability | Query | Reporting & Audit | Product Batch Management |
+| 5 | Get Environmental Information | Query | Reporting & Audit | Tracking & Telemetry |
+| 6 | Get Equipment Audit Data | Query | Reporting & Audit | Equipment Management |
+| 7 | Get Inventory Audit Data | Query | Reporting & Audit | Inventory Management |
+| 8 | Get Subscription Information | Query | Reporting & Audit | Payments & Subscriptions |
+| 9 | Get User Identity | Query | Reporting & Audit | Identity & Access Management |
+| 10 | Get Laboratory Reference | Query | Reporting & Audit | Laboratory Management |
+ 
+Todas las interacciones de este escenario son queries: Reporting & Audit únicamente lee información y la traduce a indicadores y evidencia de auditoría, lo que confirma su clasificación como contexto de soporte analítico.
+ 
+![Domain Message Flow - Building the compliance report for a regulatory audit](../assets/img/chapter-iv/domain-message-flow-4.png)
+ 
+---
+
+##### Scenario 5: Receiving a raw material lot and raising a low-stock alert
+ 
+Este escenario muestra la recepción de un lote de materia prima, la validación del estado de la suscripción y la generación automática de una alerta cuando el stock cae por debajo del mínimo definido.
+ 
+| # | Mensaje | Tipo | Emisor | Receptor |
+|---|---|---|---|---|
+| 1 | Register Raw Material Batch | Command | Warehouse Staff | QualiTrack web and mobile application |
+| 2 | Register Raw Material Batch | Command | QualiTrack web and mobile application | Inventory Management |
+| 3 | Get User Reference | Query | Inventory Management | Identity & Access Management |
+| 4 | Get Subscription Status | Query | Inventory Management | Payments & Subscriptions |
+| 5 | Low Stock Detected | Event | Inventory Management | Compliance & Alerting |
+| 6 | Low Stock Alert Created | Event | Compliance & Alerting | QualiTrack web and mobile application |
+| 7 | Change Batch Status | Command | Quality Staff | QualiTrack web and mobile application |
+| 8 | Change Batch Status | Command | QualiTrack web and mobile application | Inventory Management |
+| 9 | Get Inventory Audit Data | Query | Reporting & Audit | Inventory Management |
+ 
+La cuarentena o liberación de un lote de materia prima permanece dentro de Inventory Management, mientras que el ciclo de vida de la alerta generada es responsabilidad exclusiva de Compliance & Alerting.
+ 
+![Domain Message Flow - Receiving a raw material lot and raising a low-stock alert](../assets/img/chapter-iv/domain-message-flow-5.png)
+ 
+---
+
+##### Scenario 6: Equipment maintenance and calibration expiry
+ 
+Este escenario describe el registro del mantenimiento de un equipo y la alerta generada cuando su calibración vence, así como el uso de esa información por parte de la fabricación y la auditoría.
+ 
+| # | Mensaje | Tipo | Emisor | Receptor |
+|---|---|---|---|---|
+| 1 | Register Equipment | Command | Maintenance | QualiTrack web and mobile application |
+| 2 | Register Equipment | Command | QualiTrack web and mobile application | Equipment Management |
+| 3 | Register Maintenance | Command | QualiTrack web and mobile application | Equipment Management |
+| 4 | Change Equipment Status | Command | Quality Supervisor | QualiTrack web and mobile application |
+| 5 | Calibration Expired | Event | Equipment Management | Compliance & Alerting |
+| 6 | Calibration Expiration Alert Created | Event | Compliance & Alerting | QualiTrack web and mobile application |
+| 7 | Get Environment Reference | Query | Compliance & Alerting | Laboratory Management |
+| 8 | Get Equipment Audit Data | Query | Reporting & Audit | Equipment Management |
+| 9 | Get Equipment Availability | Query | Product Batch Management | Equipment Management |
+ 
+Equipment Management conserva la autoridad sobre el estado y la calibración de los equipos; tanto Product Batch Management como Reporting & Audit consumen esa información mediante queries explícitas, sin replicar el modelo.
+ 
+![Domain Message Flow - Equipment maintenance and calibration expiry](../assets/img/chapter-iv/domain-message-flow-6.png)
+ 
+---
+
+El modelado de estos seis escenarios permitió verificar que los nueve Bounded Contexts definidos son suficientes para resolver los casos de negocio de QualiTrack y que las colaboraciones entre ellos pueden expresarse mediante contratos explícitos. Asimismo, evidenció que la mayor parte de las dependencias corresponde a queries de referencia hacia el contexto propietario del dato y a events que comunican hechos ya ocurridos, patrón que sustenta las relaciones Customer/Supplier y Anti-Corruption Layer documentadas posteriormente en el Context Mapping.
+
 #### 4.1.1.3 Bounded Context Canvases.  
 ### 4.1.2. Context Mapping.
 
