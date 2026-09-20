@@ -569,6 +569,36 @@ El equipo identificó dos sistemas externos:
 
 - **Stripe**, encargado de procesar los pagos asociados a las suscripciones. Participa en el flujo de pago mediante las políticas relacionadas con Checkout Created y Payment Received.
 
+**Paso 9: Add Aggregates**
+
+El noveno paso consistió en identificar los agregados dentro de cada Bounded Context y agrupar alrededor de ellos los comandos, eventos, read models y políticas correspondientes. Los agregados se representan mediante tarjetas amarillas de mayor tamaño y constituyen la unidad de consistencia del dominio.
+
+
+El equipo identificó los agregados en cada Bounded Context de la siguiente manera:
+
+| Bounded Context              | Aggregate               | Descripción                                                                                                                 |
+| ---------------------------- | ----------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| **IAM**                      | **User**                | Centraliza la gestión del usuario, incluyendo su registro, autenticación, asignación de roles y recuperación de contraseña. |
+| **Payments & Subscriptions** | **Plan**                | Gestiona la selección y configuración de los planes de suscripción disponibles.                                             |
+| **Payments & Subscriptions** | **Payment**             | Centraliza el registro y procesamiento de los pagos asociados a las suscripciones.                                          |
+| **Payments & Subscriptions** | **Subscription**        | Gestiona el ciclo de vida de la suscripción, incluyendo su activación, actualización y cancelación.                         |
+| **Reporting & Audit**        | **Audit Report**        | Centraliza la solicitud, consulta y generación de información relacionada con auditorías y registros históricos.            |
+| **Reporting & Audit**        | **KPI Dashboard**       | Gestiona el cálculo y presentación de indicadores clave para el seguimiento del sistema.                                    |
+| **Reporting & Audit**        | **Deviation Trend**     | Centraliza el cálculo y presentación de tendencias relacionadas con las desviaciones registradas.                           |
+| **Product Batch Management** | **Batch**               | Centraliza el ciclo de vida del lote, desde su creación e inicio hasta la fabricación, evaluación, liberación o rechazo.    |
+| **Compliance & Alerting**    | **Deviation Alert**     | Gestiona las alertas de cumplimiento, incluyendo su creación, reconocimiento y resolución.                                  |
+| **Inventory Management**     | **Raw Material**        | Centraliza la gestión de las materias primas, incluyendo su registro, almacenamiento, consumo y movimientos de inventario.  |
+| **Inventory Management**     | **Raw Material Batch**  | Gestiona los lotes de materia prima recibidos y su proceso de aceptación o rechazo.                                         |
+| **Tracking & Telemetry**     | **Equipment Telemetry** | Centraliza el registro y seguimiento de las mediciones de telemetría, su historial, anomalías y estado.                     |
+| **Laboratory Management**    | **Laboratory**          | Gestiona la información principal del laboratorio y su perfil.                                                              |
+| **Laboratory Management**    | **Environment**         | Gestiona los ambientes asociados al laboratorio y su información correspondiente.                                           |
+| **Laboratory Management**    | **Box**                 | Gestiona las cajas asociadas a los ambientes para el almacenamiento de materias primas.                                     |
+| **Laboratory Management**    | **Staff Member**        | Centraliza el registro, membresía y desactivación del personal asociado al laboratorio.                                     |
+| **Equipment Management**     | **Equipment**           | Centraliza el registro, configuración, vinculación de sensores, calibración, estado y fallas de los equipos.                |
+| **Equipment Management**     | **MaintenanceRecord**   | Gestiona el registro y seguimiento de las actividades de mantenimiento realizadas sobre los equipos.                        |
+
+
+
 #### 4.1.1.2 Domain Message Flows Modeling. 
 #### 4.1.1.3 Bounded Context Canvases.  
 
