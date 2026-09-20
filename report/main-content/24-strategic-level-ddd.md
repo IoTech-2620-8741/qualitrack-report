@@ -125,6 +125,9 @@ Los read models representan todo lo que se va a ver en la interfaz de usuario. E
 
 #### 4.1.1.1 Candidate Context Discovery.
 #### 4.1.1.2 Domain Message Flows Modeling. 
+ 
+Una vez descubiertos los Bounded Contexts candidatos, el equipo necesitaba validar que dichos límites permitieran resolver los casos reales del negocio. Para ello se aplicó la técnica de visualización *Domain Storytelling*, con la cual se narran escenarios completos del dominio mostrando quién inicia la historia, qué sistemas participan, qué Bounded Contexts colaboran y qué mensaje viaja entre ellos en cada paso.
+
 #### 4.1.1.3 Bounded Context Canvases.  
 ### 4.1.2. Context Mapping.
 
