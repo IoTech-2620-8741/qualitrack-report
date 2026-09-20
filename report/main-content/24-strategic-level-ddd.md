@@ -242,6 +242,28 @@ Todas las interacciones de este escenario son queries: Reporting & Audit únicam
  
 ---
 
+##### Scenario 5: Receiving a raw material lot and raising a low-stock alert
+ 
+Este escenario muestra la recepción de un lote de materia prima, la validación del estado de la suscripción y la generación automática de una alerta cuando el stock cae por debajo del mínimo definido.
+ 
+| # | Mensaje | Tipo | Emisor | Receptor |
+|---|---|---|---|---|
+| 1 | Register Raw Material Batch | Command | Warehouse Staff | QualiTrack web and mobile application |
+| 2 | Register Raw Material Batch | Command | QualiTrack web and mobile application | Inventory Management |
+| 3 | Get User Reference | Query | Inventory Management | Identity & Access Management |
+| 4 | Get Subscription Status | Query | Inventory Management | Payments & Subscriptions |
+| 5 | Low Stock Detected | Event | Inventory Management | Compliance & Alerting |
+| 6 | Low Stock Alert Created | Event | Compliance & Alerting | QualiTrack web and mobile application |
+| 7 | Change Batch Status | Command | Quality Staff | QualiTrack web and mobile application |
+| 8 | Change Batch Status | Command | QualiTrack web and mobile application | Inventory Management |
+| 9 | Get Inventory Audit Data | Query | Reporting & Audit | Inventory Management |
+ 
+La cuarentena o liberación de un lote de materia prima permanece dentro de Inventory Management, mientras que el ciclo de vida de la alerta generada es responsabilidad exclusiva de Compliance & Alerting.
+ 
+![Domain Message Flow - Receiving a raw material lot and raising a low-stock alert](../assets/img/chapter-iv/domain-message-flow-5.png)
+ 
+---
+
 #### 4.1.1.3 Bounded Context Canvases.  
 ### 4.1.2. Context Mapping.
 
