@@ -88,7 +88,7 @@
 
     **Definición:** Persona responsable de supervisar el cumplimiento de las condiciones y procedimientos de calidad, revisar desviaciones y determinar las medidas necesarias ante situaciones que puedan afectar un proceso o producto.
 
-23. **Quality Control Analyst** (Analista de Control de Calidad)
+23. **Quality Staff** (Personal de Calidad)
 
     **Definición:** Profesional encargado de realizar o verificar actividades de control de calidad, analizar resultados y comprobar que las condiciones, materiales o productos evaluados cumplan con los criterios establecidos.
 
@@ -107,3 +107,71 @@
 27. **Good Manufacturing Practices – GMP** (Buenas Prácticas de Manufactura – BPM)
 
     **Definición:** Conjunto de principios y prácticas que orientan las actividades de fabricación y control de productos farmacéuticos para asegurar que los procesos se desarrollen de manera controlada, documentada y conforme con los requisitos de calidad establecidos.
+
+28. **Maintenance** (Mantenimiento)
+
+    **Definición:** Área responsable de conservar y restablecer las condiciones adecuadas de funcionamiento de los equipos e instalaciones. Interviene cuando una desviación ambiental puede estar relacionada con una falla o condición técnica.
+
+29. **Supplier** (Proveedor)
+
+    **Definición:** Persona u organización que suministra materias primas, materiales o productos al laboratorio y proporciona la documentación requerida para verificar su procedencia y cumplimiento de los requisitos establecidos.
+
+30. **Batch Release** (Liberación de Lote)
+
+    **Definición:** Decisión mediante la cual un lote es autorizado para continuar con las siguientes etapas del proceso, almacenamiento o distribución después de comprobar que cumple con los criterios de calidad establecidos.
+
+31. **Batch Rejection** (Rechazo de Lote)
+
+    **Definición:** Decisión mediante la cual un lote es considerado no apto para continuar con el proceso, ser utilizado o ser distribuido debido al incumplimiento de los criterios o especificaciones establecidos.
+
+32. **Certificate of Analysis - CoA** (Certificado de Análisis)
+
+    **Definición:** Documento que contiene los resultados de los análisis realizados a una materia prima o producto y que permite verificar su cumplimiento con las especificaciones establecidas antes de su aceptación o utilización.
+
+33. **Quality Record** (Registro de Calidad)
+
+    **Definición:** Evidencia documentada de las actividades, controles, resultados, desviaciones o decisiones relacionadas con la calidad, utilizada para demostrar el cumplimiento de los procedimientos y facilitar revisiones posteriores.
+
+34. **Audit** (Auditoría)
+
+    **Definición:** Proceso de revisión mediante el cual se verifican registros, procedimientos y evidencias con el propósito de comprobar el cumplimiento de los requisitos y controles establecidos.
+
+35. **Incoming Inspection** (Inspección de Ingreso)
+
+    **Definición:** Proceso de verificación realizado sobre una materia prima o material recibido antes de habilitarlo para su uso, considerando aspectos documentales, físicos y, cuando corresponda, analíticos.
+
+36. **Product Specification** (Especificación del Producto)
+
+    **Definición:** Conjunto de características, parámetros y criterios previamente establecidos que una materia prima, material o producto debe cumplir para ser considerado conforme.
+
+37. **Product Formulation** (Formulación del Producto)
+
+    **Definición:** Definición de la composición y características de un producto durante su etapa de desarrollo, considerando las materias primas y requisitos necesarios para obtener el resultado esperado.
+
+38. **Pilot Batch** (Lote Piloto)
+
+    **Definición:** Lote elaborado durante la etapa de desarrollo de un producto con el propósito de evaluar su formulación, comportamiento y capacidad de ser posteriormente trasladado a una fabricación a escala comercial.
+
+39. **Stability Test** (Prueba de Estabilidad)
+
+    **Definición:** Evaluación realizada para determinar cómo se mantienen las características de un producto bajo determinadas condiciones durante un periodo definido.
+
+40. **Product Viability** (Viabilidad del Producto)
+
+    **Definición:** Evaluación que determina si un producto desarrollado puede continuar hacia una fabricación a escala comercial considerando aspectos como su formulación, resultados obtenidos, capacidad de los equipos y condiciones necesarias para su producción.
+
+41. **Technology Transfer** (Transferencia de Tecnología)
+
+    **Definición:** Proceso mediante el cual la información, conocimientos, procedimientos y condiciones definidos durante el desarrollo de un producto son trasladados al área de producción para permitir su fabricación a escala comercial.
+
+42. **Cold Chain** (Cadena de Frío)
+
+    **Definición:** Conjunto de condiciones de temperatura controlada que deben mantenerse durante el almacenamiento y transporte de determinados productos para preservar sus características y calidad.
+
+43. **Environmental Incident** (Incidencia Ambiental)
+
+    **Definición:** Evento relacionado con una condición ambiental anómala o una desviación que requiere ser investigado y documentado para determinar su impacto y las acciones correspondientes.
+
+44. **Quarantine** (Cuarentena)
+
+    **Definición:** Estado temporal asignado a un lote o producto que impide su utilización o distribución mientras se evalúa una desviación, incidencia o condición que pueda afectar su conformidad.
