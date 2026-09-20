@@ -43,7 +43,7 @@ El primer paso consistió en la identificación de los eventos de dominio del si
 <br>
 
 <div align="center">
-  <img src="">
+  <img src="../assets/img/chapter-iv/Events.jpg">
 </div>
 
 <br>
