@@ -553,6 +553,16 @@ El séptimo paso consistió en identificar los Read Models del sistema. Estos re
 
 El octavo paso consistió en incorporar al modelo los sistemas externos. Estos se representan mediante tarjetas de color rosado y corresponden a servicios externos al dominio propio que participan en los flujos de negocio.
 
+<br>
+
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/system-externs.png">
+</div>
+
+<br>
+
+
 El equipo identificó dos sistemas externos:
 
 - **Resend**,  utilizado para el envío del código de verificación durante el proceso de recuperación de contraseña. Se activa después del evento Password Reset Requested, mediante la política Whenever Password Reset Requested Then Send Verification Code.
