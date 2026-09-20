@@ -1,10 +1,10 @@
 ## 2.2. Entrevistas
 
-Las entrevistas son clave para la metodología de diseño centrado en el usuario al permitirnos recolectar información cualitativa directamente de los actores que enfrentan la problematica identificada. A través del dialogo estructurado, se busca comprender las necesidades, comportamientos, frustaciones y expectativas de los segmentos objetivos, validando o refutando las hipótesis plantadas previamente.
+Las entrevistas son clave para la metodología de diseño centrado en el usuario al permitirnos recolectar información cualitativa directamente de los actores que enfrentan la problematica identif[...]
 
 ### 2.2.1. Diseño de entrevistas
 
-Teniendo en cuenta la importancia en la información que nos puede proveer los entrevistados, se presentan las preguntas clave para cada segmento objetivo. Para eso se considera dos tipos de preguntas: las personales, orientadas a conocer el perfil del entrevistado y las especificas, las cuales estan enfocadas en los procesos actuales, herramientas utilizadas, desafios operativos y expectativas frente a una solución tecnológica como QualiTrack.
+Teniendo en cuenta la importancia en la información que nos puede proveer los entrevistados, se presentan las preguntas clave para cada segmento objetivo. Para eso se considera dos tipos de pregun[...]
 
 #### **Preguntas Personales – Ambos Segmentos:**
 
@@ -90,7 +90,7 @@ Teniendo en cuenta la importancia en la información que nos puede proveer los e
 
 *9.	¿Qué información necesitan registrar cuando comienza una nueva fabricación?* 
 
-*10.	¿Cómo registran qué materias primas fueron utilizadas en una fabricación determinada y, si una misma materia prima fue recibida varias veces, cómo identifican cuál de esas recepciones se utilizó?* 
+*10.	¿Cómo registran qué materias primas fueron utilizadas en una fabricación determinada y, si una misma materia prima fue recibida varias veces, cómo identifican cuál de esas recepciones s[...]
 
 *11.	Si posteriormente se detectara un problema con una materia prima utilizada, ¿cómo identificarían los productos o fabricaciones relacionados y qué ocurriría con ellos?*
 
@@ -114,7 +114,7 @@ Teniendo en cuenta la importancia en la información que nos puede proveer los e
 
 ### 2.2.2. Registro de entrevistas
 
-En esta sección se presentan los resultados de las entrevistas aplicadas a cada segmento objetivo. Para cada sesión, se incluye: datos del entrevistado, un resumen de las respuestas clave, observaciones del equipo y las principales conclusiones. Este registro sirve como evidencia para orientar las decisiones de diseño y funcionalidades de QualiTrack.
+En esta sección se presentan los resultados de las entrevistas aplicadas a cada segmento objetivo. Para cada sesión, se incluye: datos del entrevistado, un resumen de las respuestas clave, obse[...]
 
 
 #### **Segmento objetivo 1: Responsables de calidad y supervisión**
@@ -168,7 +168,7 @@ En esta sección se presentan los resultados de las entrevistas aplicadas a cada
         <tr>
             <td>Resumen</td>
             <td>
-          Missli Medina Sarabia es supervisora de calidad de productos farmacéuticos en Hyc Pharma. Su principal responsabilidad es asegurar que los procesos de manufactura cumplan con los estándares de calidad, especialmente respecto a las condiciones ambientales de las diferentes áreas y salas. La empresa controla principalmente temperatura, humedad y presión diferencial, cuyos rangos dependen del medicamento y de los procedimientos establecidos. Actualmente, el monitoreo se realiza mediante registros manuales y formatos específicos para cada área. Durante la manufactura, las mediciones se realizan aproximadamente cada tres horas, mientras que las áreas que no están en uso cuentan con horarios específicos. También utilizan una guía de producción física y una guía virtual para gestionar la información. Uno de los principales problemas identificados es el registro manual, ya que los operarios pueden completar las mediciones posteriormente, generando dudas sobre la exactitud de los datos. Cuando se presenta una condición fuera de rango, se considera una desviación ambiental y se comunica a la supervisora de calidad, quien puede detener el proceso mientras se verifica la causa y, si es necesario, interviene mantenimiento. Una vez corregida la situación, la supervisora determina si el proceso puede continuar. Finalmente, destaca la importancia de conservar registros históricos para auditorías y de que el personal conozca los horarios de registro, los parámetros establecidos y el factor de corrección de los termohigrómetros.
+          Missli Medina Sarabia es supervisora de calidad de productos farmacéuticos en Hyc Pharma. Su principal responsabilidad es asegurar que los procesos de manufactura cumplan con los está[...]
             </td>
         </tr>
     </tbody>
@@ -339,11 +339,11 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
         <tr>
             <td>Resumen</td>
             <td>
-                César Agüero, de 38 años con 14 años de experiencia en farmacéutica, es Country Manager de Barat Ceronat Vaccines (transnacional de origen indio) con responsabilidad sobre 4 países: Perú, Bolivia, Chile y Honduras. Gestiona aspectos comerciales, operativos, regulatorios, financieros, de marketing, ventas y legales.
-                Utiliza múltiples dispositivos en Microsoft Teams como canal oficial, aunque identifica un problema crítico: falta de seguimiento efectivo de acuerdos de reuniones y pérdida de trazabilidad en responsabilidades.
-                El flujo productivo comienza con recepción de materias primas en almacén especializado bajo condiciones específicas con monitoreo continuo. Opera líneas de sólidos y líquidos estériles, algunas automatizadas y otras semi-automatizadas. Incluye controles de calidad en cada etapa: liberación de tanda, envasado, rotulado y control final. Los sistemas utilizados son: Data Master File que centraliza información de materias primas con certificados y especificaciones en repositorio digital, y Sistema virtual de gestión de producción basado en Buenas Prácticas de Manufactura con integrity, visibilidad 360, trazabilidad total. Completamente digitalizado desde el año anterior, eliminando progresivamente el papel.
-                La compañía no puede cambiar de materia prima ni proveedor: existe un proceso obligatorio previo de selección y calificación que incluye inspección, auditoría y verificación de licencias. Solo trabaja con fabricantes licenciados. Cada materia prima se identifica por lote y código de recepción con unidades de medida estandarizadas. Si hay problema en recepción, se rechaza completamente sin registrar. El sistema rastrea exactamente qué materias primas específicas fueron utilizadas en cada fabricación. Si posteriormente se detecta un problema, es posible identificar todos los productos y fabricaciones afectadas para acciones correctivas precisas.
-                Cada producto se verifica contra especificaciones aprobadas con tests obligatorios según farmacopea o parámetros críticos internos. Se fabrica solo cuando hay pedido y se libera inmediatamente para despacho, sin inventario. La información consultada más frecuentemente es sobre disponibilidad de materias primas, especialmente aquellas de un único fabricante mundial. Para personal nuevo, es absolutamente obligatorio conocer GMP; sin esto, no se ubicará en el contexto. La compañía usa señalización visual explícita porque prefiere comunicación visual clara sobre avisos escritos.
+                César Agüero, de 38 años con 14 años de experiencia en farmacéutica, es Country Manager de Barat Ceronat Vaccines (transnacional de origen indio) con responsabilidad sobre 4 [...]
+                Utiliza múltiples dispositivos en Microsoft Teams como canal oficial, aunque identifica un problema crítico: falta de seguimiento efectivo de acuerdos de reuniones y pérdida de[...]
+                El flujo productivo comienza con recepción de materias primas en almacén especializado bajo condiciones específicas con monitoreo continuo. Opera líneas de sólidos y líquido[...]
+                La compañía no puede cambiar de materia prima ni proveedor: existe un proceso obligatorio previo de selección y calificación que incluye inspección, auditoría y verificació[...]
+                Cada producto se verifica contra especificaciones aprobadas con tests obligatorios según farmacopea o parámetros críticos internos. Se fabrica solo cuando hay pedido y se liber[...]
             </td>
         </tr>
     </tbody>
@@ -399,11 +399,11 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
         <tr>
             <td>Resumen</td>
             <td>
-                Liz Aliaga, de 45 años y 20 años de experiencia en sector farmacéutico, trabaja en un hospital público de Jesús María, Lima, a cargo de 1,900 medicamentos. Sus tres responsabilidades principales son: velar que el paciente reciba medicamentos efectivos y seguros, mantener medicamentos en condiciones adecuadas según normativa regulatoria, garantizar correcta administración como bienes del Estado. A diferencia de laboratorios de producción, no recibe materias primas sino medicamentos terminados con certificado. Los medicamentos llegan por licitación y compras institucionales a través de 26 farmacias del hospital. Utiliza computadoras, tablas de control, termómetros, hidroxicóticos y cadenas de frío. Comunica por correos electrónicos y teléfono (WhatsApp no oficial). Reporta no tener dificultades ni frustraciones.
-                Cada medicamento ingresa con documentación completa: ficha técnica, buenas prácticas de manufactura, certificados del país de origen, registro de Dijaní, y controles de la empresa productora. Liz verifica cumplimiento de todos requisitos según normativa. Para diferenciar recepciones del mismo medicamento, utiliza sistema "FIFO Peso": si recibe lote hoy, es el primero a distribuir; si llega otro mañana, entra en segundo lugar. Información de proveedor, fechas y estado viene determinada por procesos de compra y licitación donde se especifica cuándo ingresa, qué documentación trae y qué requisitos cumple. Todos los productos tienen mismos requisitos estandarizados.
-                Liz realiza checklist riguroso: si encuentra envase dañado, caja humedecida, blisters con comprimidos partidos o con cambio de color, devuelve todo el lote. Para cantidades grandes, utiliza sistemas de muestreo: toma una cajita de cada lado. Si identifica problema, devuelve toda remesa. Medicamentos rechazados se registran en libro con lote, fecha y código. Si proveedor reenvía, debe ser con otro lote diferente, también registrado. Garantiza trazabilidad completa: problema con lote específico nunca vuelve a ser aceptado.
-                Información de medicamentos consultada frecuentemente: estabilidad, protección de luz, cadena de frío. Valida detalles como "si producto es oxidado, solo reconstituyese en cloruro para mantener estabilidad". Como usuario del hospital, no necesita conocer toda cadena de personal de producción. Lo que valida es información en documentos y caja: farmacéutico que produjo y director técnico que aseguró calidad. En plantas de producción: químicos farmacéuticos certifican insumos, producción, control de calidad, más director técnico.
-           </td>
+                Liz Aliaga, de 45 años y 20 años de experiencia en sector farmacéutico, trabaja en un hospital público de Jesús María, Lima, a cargo de 1,900 medicamentos. Sus tres responsa[...]
+                Cada medicamento ingresa con documentación completa: ficha técnica, buenas prácticas de manufactura, certificados del país de origen, registro de Dijaní, y controles de la em[...]
+                Liz realiza checklist riguroso: si encuentra envase dañado, caja humedecida, blisters con comprimidos partidos o con cambio de color, devuelve todo el lote. Para cantidades grand[...]
+                Información de medicamentos consultada frecuentemente: estabilidad, protección de luz, cadena de frío. Valida detalles como "si producto es oxidado, solo reconstituyese en clor[...]
+            </td>
         </tr>
     </tbody>
 </table>
@@ -457,11 +457,11 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
         <tr>
             <td>Resumen</td>
             <td>
-                Omar Chávez, de 42 años y 15 años de experiencia, es formulador de Investigación y Desarrollo en un laboratorio. Su principal responsabilidad es desarrollo de productos nuevos, desde conceptualización hasta viabilidad comercial. Su mayor frustración es cuando un desarrollo no es transferible a lote comercial. Utiliza computadoras, celulares, tablets, radio y RPC para comunicaciones. Utiliza SAP como sistema de gestión. Su trabajo es fundamental en etapa inicial del ciclo de vida del medicamento, validando que productos puedan escalar a producción comercial.
-                El proceso sigue secuencia rigurosa: análisis de formulación estándar, ensayos para verificar estabilidad y características físico-químicas y farmacotécnicas, verificación analítica, estresamiento para garantizar estabilidad en forma y nivel físico-químico, generación de pilotos, estudios de estabilidad acelerada y largo plazo, tras validación, entrada a fabricación comercial. Diseñado para garantizar que solo productos con estabilidad y viabilidad demostradas lleguen a producción. Todo es respaldado en Buenas Prácticas de Manufactura.
-                Materias primas se identifican por codificación interna (know-how confidencial). Unidades de medida varían: kilogramos, gramos, litros, onzas, unidades, frascos según empresa y producto. Antes de usar materia prima: requisito mínimo es certificado de análisis. Dependiendo empresa/insumo, también solicitan: ficha técnica, ficha de seguridad, certificado de metales pesados, ruta de síntesis, MOA, ROT, ruta de análisis. Algunas empresas solo necesitan COA para iniciar desarrollo. Materias primas con problemas entran a "desmedro".
-                Todo equipo debe cumplir calificación: instalación, operación y desempeño. Nomenclatura de equipos es propia de cada empresa. Área de mantenimiento garantiza condiciones óptimas durante tiempo. Información de equipos permite trazabilidad: software logueado en tiempo real, voucher de registro temporal, huella digital. Si equipo falla durante fabricación, proceso se detiene por completo; no puede continuarse sin garantizar 100% óptimo. Falla detectada después de fabricación: no hay remedio posible.
-                Toda etapa de manufactura es documentada: desde dispensación hasta producto final. Se mantiene registro de todo personal participante, obligatorio GMP. Estados de productos varían según empresa. Flujo es secuencial pero simultáneo entre áreas: dispensación, fabricación, control de calidad interactúan en orden lógico sin predominio. Para personal nuevo: GMP es requisito fundamental. Industria es altamente especializada con múltiples subáreas. Químicos farmacéuticos requieren expertise específica en su subárea especializada.
+                Omar Chávez, de 42 años y 15 años de experiencia, es formulador de Investigación y Desarrollo en un laboratorio. Su principal responsabilidad es desarrollo de productos nuevos[...]
+                El proceso sigue secuencia rigurosa: análisis de formulación estándar, ensayos para verificar estabilidad y características físico-químicas y farmacotécnicas, verificación[...]
+                Materias primas se identifican por codificación interna (know-how confidencial). Unidades de medida varían: kilogramos, gramos, litros, onzas, unidades, frascos según empresa y[...]
+                Todo equipo debe cumplir calificación: instalación, operación y desempeño. Nomenclatura de equipos es propia de cada empresa. Área de mantenimiento garantiza condiciones ópt[...]
+                Toda etapa de manufactura es documentada: desde dispensación hasta producto final. Se mantiene registro de todo personal participante, obligatorio GMP. Estados de productos varí[...]
             </td>
         </tr>
     </tbody>
@@ -469,7 +469,7 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
 
 ### 2.2.3. Análisis de entrevistas
 
-En esta sección se presenta el análisis detallado de la información recolectada de las entrevistas. Para cada segmento, se explican primero los hallazgos estadísticos objetivos y subjetivos, seguidos de la evidencia gráfica correspondiente.
+En esta sección se presenta el análisis detallado de la información recolectada de las entrevistas. Para cada segmento, se explican primero los hallazgos estadísticos objetivos y subjetivos, [...]
 
 #### Análisis de Características Objetivas y Subjetivas
 
@@ -478,9 +478,9 @@ En esta sección se presenta el análisis detallado de la información recolecta
 
 El análisis de las entrevistas evidencia que la supervisión de las condiciones ambientales constituye una actividad fundamental en los procesos de calidad farmacéutica. El 100% de los entrevistados controla la temperatura y humedad de las áreas bajo su responsabilidad, mientras que un 67% también considera el control de la presión diferencial, dependiendo de las características y requisitos de cada área.
 
-Respecto a la gestión de la información, el 100% de los entrevistados utiliza registros manuales o físicos para documentar las mediciones ambientales. Asimismo, un 33% complementa estos registros mediante herramientas como Excel, evidenciando que la información puede encontrarse distribuida entre diferentes medios y formatos.
+Respecto a la gestión de la información, el 100% de los entrevistados utiliza registros manuales o físicos para documentar las mediciones ambientales. Asimismo, un 33% complementa estos regist[...]
 
-A nivel subjetivo, el 67% de los entrevistados manifestó dificultades relacionadas con el registro y gestión manual de las mediciones, principalmente por registros realizados posteriormente a la medición y por el esfuerzo requerido para revisar la información. Además, un 67% destacó la importancia de contar con una visualización más organizada y centralizada de las condiciones de las áreas, especialmente para facilitar la supervisión y consulta de información histórica.
+A nivel subjetivo, el 67% de los entrevistados manifestó dificultades relacionadas con el registro y gestión manual de las mediciones, principalmente por registros realizados posteriormente a l[...]
 
 En conjunto, se observa que el responsable de calidad busca mantener las condiciones ambientales dentro de los parámetros establecidos, detectar oportunamente las desviaciones y disponer de información confiable para la supervisión y toma de decisiones. 
 
@@ -584,11 +584,11 @@ Los canales presentan diferencias según el contexto laboral. Mario utiliza comu
 
 A partir del análisis realizado, se definen los siguientes perfiles de usuario (User Personas):
 
-*Arquetipo: “El Supervisor de Calidad”*
+*Arquetipo: "El Supervisor de Calidad"*
 
 **Característica principal:** Responsable de controlar las condiciones ambientales de las áreas y tomar decisiones ante posibles desviaciones.
 
-**Necesidad principal:** Contar con información confiable, organizada y accesible sobre las condiciones ambientales de las áreas para facilitar la supervisión, detectar desviaciones y consultar registros históricos.
+**Necesidad principal:** Contar con información confiable, organizada y accesible sobre las condiciones ambientales de las áreas para facilitar la supervisión, detectar desviaciones y consulta[...]
 
 **Principal dificultad:** La dependencia de registros manuales y físicos, que puede dificultar el seguimiento oportuno y la revisión de la información.
 
@@ -596,10 +596,6 @@ A partir del análisis realizado, se definen los siguientes perfiles de usuario 
 
 **Característica principal:** Encargado de la supervisión de de las buenas prácticas profesionales durante la elaboración, almacenado y dispensación del producto.
 
-**Necesidad principal:** Mantener una clara trazabilidad de las materias primas, productos y procesos involucrados en el negocio para facilitar su correcto arbitraje según las normas profesionales.
+**Necesidad principal:** Mantener una clara trazabilidad de las materias primas, productos y procesos involucrados en el negocio para facilitar su correcto arbitraje según las normas profesional[...]
 
 **Principal dificultad:** Ante grandes producciones se dificulta la trazabilidad de cada producto junto a su lote y respectivas características de elaboración.
-
-
-
-
