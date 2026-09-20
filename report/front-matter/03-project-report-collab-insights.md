@@ -32,3 +32,25 @@ Dyron realizó varios aportes en varios capitulos del proyecto. Aportó en las c
 **Giovany Smith Torres Apolinario**
 
 **Franco Mauricio López Roman**
+
+A continuación se presentan los gráficos de colaboración que representan la cantidad de commits realizados por cada miembro del equipo en el repositorio del informe.
+
+<div align="center">
+  <img src="../assets/img/front-matter/commits-insights-av1.png" alt="Commits AV1 - Gráfico 1" width="90%">
+  <p><em>Figura: Contribuciones por miembro del equipo IoTech durante el AV1.</em></p>
+</div>
+
+**Ramificación del proyecto usando GitFlow:**
+
+El siguiente gráfico muestra la ramificación del repositorio y las visitas
+registradas durante la fase AV1, evidenciando el flujo de trabajo colaborativo
+del equipo.
+
+<div align="center">
+  <img src="../assets/img/front-matter/network-graph-insights-av1.png" alt="Network Graph AV1" width="90%">
+  <p><em>Figura: Network Graph del repositorio qualitrack-report durante el AV1.</em></p>
+</div>
+
+<div style="page-break-after: always;"></div>
+
+---
