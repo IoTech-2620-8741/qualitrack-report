@@ -467,6 +467,38 @@ Luego de identificar los eventos, flujos, comandos y políticas del dominio, el 
 
 El séptimo paso consistió en identificar los Read Models del sistema. Estos representan las vistas o conjuntos de información que los actores consultan antes de ejecutar determinados comandos. Se representan mediante tarjetas de color verde y permiten disponer de la información necesaria para realizar una acción dentro de cada bounded context.
 
+| Read Model                        | Descripción                                                                                                         |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **Form Sign Up**                  | Vista con la información necesaria para que el visitante pueda realizar el registro de usuario.                     |
+| **Form Sign-In**                  | Vista utilizada por el usuario para ingresar sus credenciales e iniciar sesión.                                     |
+| **Password Recovery Form**        | Vista que permite al usuario proporcionar la información necesaria para iniciar la recuperación de contraseña.      |
+| **Subscription Plans**            | Vista que muestra los planes de suscripción disponibles para que el usuario pueda seleccionar uno.                  |
+| **Payment Details**               | Vista con la información necesaria para revisar y procesar los datos del pago.                                      |
+| **Current Subscription**          | Vista que muestra la suscripción vigente del usuario antes de actualizarla o cancelarla.                            |
+| **Form Register**                 | Vista con los datos necesarios para registrar un producto farmacéutico asociado a un lote.                          |
+| **Available Raw Materials**       | Vista que permite consultar las materias primas disponibles antes de registrar su utilización en un lote.           |
+| **Batch Evaluation**              | Vista con la información del lote necesaria para determinar su liberación o rechazo.                                |
+| **Alert Details**                 | Vista que presenta la información de una alerta para que pueda ser revisada y gestionada.                           |
+| **Notification Preferences**      | Vista que muestra las preferencias actuales de notificación del usuario antes de modificarlas.                      |
+| **Raw Material Form**             | Vista utilizada para consultar o completar la información necesaria para registrar una materia prima.               |
+| **Raw Material Lot Details**      | Vista con la información del lote de materia prima necesaria para evaluar su aceptación o rechazo.                  |
+| **Available Box**                 | Vista que permite consultar las cajas disponibles antes de almacenar o retirar materia prima.                       |
+| **Details Measurement Dashboard** | Vista que presenta información detallada de las mediciones de telemetría para su revisión.                          |
+| **Laboratory Registration Form**  | Vista con los datos necesarios para registrar un laboratorio.                                                       |
+| **Update Laboratory Profile**     | Vista que permite consultar la información actual del laboratorio antes de actualizar su perfil.                    |
+| **Environment Registration Form** | Vista con la información necesaria para registrar un ambiente dentro del laboratorio.                               |
+| **Environment Details**           | Vista que permite consultar los datos del ambiente antes de realizar una actualización.                             |
+| **Box Registration Form**         | Vista con los datos necesarios para registrar una caja asociada al ambiente.                                        |
+| **Staff Registration Form**       | Vista utilizada para ingresar la información necesaria para registrar un miembro del personal.                      |
+| **Laboratory Staff**              | Vista que muestra el personal asociado al laboratorio para gestionar su membresía.                                  |
+| **Equipment Registration Form**   | Vista con los datos necesarios para registrar un equipo.                                                            |
+| **Available Sensors**             | Vista que muestra los sensores disponibles para seleccionar uno antes de vincularlo a un equipo.                    |
+| **Equipment Parameters**          | Vista con los parámetros del equipo necesarios para configurar sus parámetros BPM.                                  |
+| **Equipment Maintenance History** | Vista que muestra el historial de mantenimiento del equipo antes de registrar una nueva actividad de mantenimiento. |
+| **Calibration Information**       | Vista con la información de calibración necesaria antes de calibrar un instrumento de medición.                     |
+| **Equipment Failure Details**     | Vista que permite consultar la información de una falla antes de registrarla.                                       |
+| **Equipment Status**              | Vista que muestra el estado actual del equipo antes de realizar una actualización.                                  |
+
 
 
 #### 4.1.1.2 Domain Message Flows Modeling. 
