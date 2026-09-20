@@ -463,6 +463,11 @@ Las actores identificadas fueron las siguientes:
 
 Luego de identificar los eventos, flujos, comandos y políticas del dominio, el equipo avanzó con la detección de contextos candidatos. Esta fase les permitió organizar los elementos vinculados de acuerdo con su cohesión funcional y las reglas de negocio que compartían, lo que facilitó la definición de los futuros Bounded Contexts. De este modo, el equipo logro modelar el dominio de Qualitrack en contextos con responsabilidades claramente separadas.
 
+**Paso 7: Read Models**
+
+El séptimo paso consistió en identificar los Read Models del sistema. Estos representan las vistas o conjuntos de información que los actores consultan antes de ejecutar determinados comandos. Se representan mediante tarjetas de color verde y permiten disponer de la información necesaria para realizar una acción dentro de cada bounded context.
+
+
 
 #### 4.1.1.2 Domain Message Flows Modeling. 
 #### 4.1.1.3 Bounded Context Canvases.  
