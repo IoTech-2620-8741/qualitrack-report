@@ -219,6 +219,29 @@ Stripe se modela como sistema externo y la confirmación del pago ingresa al dom
  
 ---
 
+##### Scenario 4: Building the compliance report for a regulatory audit
+ 
+Este escenario evidencia el carácter downstream de Reporting & Audit, que consolida información proveniente de los demás Bounded Contexts sin ser propietario de ninguno de sus modelos.
+ 
+| # | Mensaje | Tipo | Emisor | Receptor |
+|---|---|---|---|---|
+| 1 | Generate Report | Query | Auditor | QualiTrack web and mobile application |
+| 2 | Generate Report | Query | QualiTrack web and mobile application | Reporting & Audit |
+| 3 | Get Alert Lifecycle Data | Query | Reporting & Audit | Compliance & Alerting |
+| 4 | Get Product Batch Traceability | Query | Reporting & Audit | Product Batch Management |
+| 5 | Get Environmental Information | Query | Reporting & Audit | Tracking & Telemetry |
+| 6 | Get Equipment Audit Data | Query | Reporting & Audit | Equipment Management |
+| 7 | Get Inventory Audit Data | Query | Reporting & Audit | Inventory Management |
+| 8 | Get Subscription Information | Query | Reporting & Audit | Payments & Subscriptions |
+| 9 | Get User Identity | Query | Reporting & Audit | Identity & Access Management |
+| 10 | Get Laboratory Reference | Query | Reporting & Audit | Laboratory Management |
+ 
+Todas las interacciones de este escenario son queries: Reporting & Audit únicamente lee información y la traduce a indicadores y evidencia de auditoría, lo que confirma su clasificación como contexto de soporte analítico.
+ 
+![Domain Message Flow - Building the compliance report for a regulatory audit](../assets/img/chapter-iv/domain-message-flow-4.png)
+ 
+---
+
 #### 4.1.1.3 Bounded Context Canvases.  
 ### 4.1.2. Context Mapping.
 
