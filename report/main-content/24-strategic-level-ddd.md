@@ -370,7 +370,61 @@ En cada flujo, los comandos se ubicaron inmediatamente antes del evento correspo
 
 El sexto paso incorporó al modelo los actores y las políticas del sistema. Los actores se representan mediante tarjetas pequeñas de color amarillo y permiten identificar quién inicia o participa en los diferentes flujos. Las políticas, representadas mediante tarjetas de color lila, corresponden a reglas automáticas que se ejecutan después de determinados eventos y desencadenan nuevas acciones dentro del sistema.
 
-A partir de los flujos definidos, se identificaron como principales actores al Visitor, User, Lab Technician, Quality Staff, Quality Supervisor y Auditor.
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/politica-actores-1.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/politica-actores-2.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/politica-actores-3.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/politica-actores-4.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/politica-actores-5.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/politica-actores-6.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/politica-actores-7.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/politica-actores-8.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/politica-actores-9.png">
+</div>
+
+<br>
 
 Las políticas identificadas fueron las siguientes:
 
