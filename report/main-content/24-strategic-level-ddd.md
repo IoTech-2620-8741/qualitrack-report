@@ -23,13 +23,6 @@ A partir del análisis de los flujos identificados en el Big Picture EventStormi
 
 - *What criteria are used to accept or reject an incoming batch, and where is that decision registered?":* El proceso no detallaba suficientemente cómo se determina la aceptación o rechazo de una materia prima recibida ni cómo queda registrada dicha decisión. Este punto permitió estructurar el flujo de recepción, revisión, aceptación o rechazo y actualización del inventario.
 
-**Flujo de registros y auditorías:**
-
-- *How are historical quality records consulted during an audit?:* El proceso requería una forma más estructurada de consultar información histórica y proporcionar evidencia durante una auditoría. Este punto orientó la definición de los flujos de consulta de registros históricos, generación de reportes y consolidación de información para auditoría.
-
-Estos pain points permitieron identificar las principales necesidades de diseño del sistema y sirvieron como punto de partida para profundizar los procesos en el Design-Level EventStorming.
-
-A partir de este análisis, el equipo avanzó con la construcción del modelo detallado siguiendo los pasos establecidos para el Design-Level EventStorming. Durante esta etapa se identificaron y organizaron los siguientes elementos:
 
 <br>
 
@@ -43,9 +36,44 @@ Con el fin de mantener la consistencia y facilitar la interpretación del modelo
 
 
 
-Entre los principales pain points identificados se encuentran:
-
 **Paso 1: Event**
+
+El primer paso consistió en la identificación de los eventos de dominio del sistema. Un evento representa un hecho relevante que ya ocurrió dentro del dominio y se expresa en tiempo pasado. En el Design-Level EventStorming, estos eventos se representaron mediante tarjetas de color naranja.
+
+<br>
+
+<div align="center">
+  <img src="">
+</div>
+
+<br>
+
+Entre los eventos identificados se encuentran:
+
+- **IAM:** User Registered, User Authenticated, User Role Assigned, Password Changed, Password Reset Requested, Verification Code Sent y Recovery Code Verified.
+
+- **Payments & Subscriptions:** Plan Selected, Checkout Created, Payment Received, Subscription Activated, Subscription Updated y Subscription Canceled.
+
+- **Laboratory Management:** Laboratory Registered, Laboratory Profile Updated, Environment Registered, Environment Updated, Staff Member Registered, Laboratory Membership Established, Staff Member Deactivated y Box Registered.
+
+- **Equipment Management:** Equipment Registered, Sensor Linked, BPM Parameter Configured, Maintenance Registered, Equipment Status Updated, Measurement Instrument Calibrated, Calibration Expired, Equipment Failure Detected y Equipment Failure Recorded.
+
+- **Tracking & Telemetry:** Telemetry Measurement Recorded, Telemetry History Point Recorded, Telemetry Anomaly Detected, Telemetry Snapshot Updated, Telemetry Status Updated y Measurement Reviewed.
+
+- **Inventory Management:** Raw Material Registered, Supplier Receipt Registered, Raw Material Lot Received, Raw Material Accepted, Raw Material Rejected, Inventory Updated, Inventory Movement Recorded, Raw Material Consumed, Low Stock Detected, Raw Material Stored in Box y Raw Material Removed from Box.
+
+- **Product Batch Management:** Batch Created, Batch Started, Pharmaceutical Product Registered, Raw Material Usage Registered, Manufacturing Completed, Batch Evaluated, Batch Released, Batch Rejected y Batch Traceability Updated.
+
+- **Compliance & Alerting:** Compliance Event Detected, Deviation Alert Created, Alert Acknowledged, Alert Resolved, Notification Preference Updated, Low Stock Alert Created, Calibration Expiration Alert Created, Batch Release Compliance Event Detected, Batch Rejection Compliance Event Detected y Quality Supervisor Notified.
+
+- **Reporting & Audit:** Audit Log Entry Recorded, Audit Information Requested, Historical Record Consulted, Audit Report Generated, Batch Report Generated, Compliance Report Generated, Equipment Log Exported, KPI Dashboard Calculated y Deviation Trend Calculated.
+
+
+Durante esta etapa se priorizó que los eventos representaran hechos ocurridos dentro del dominio, evitando confundirlos con acciones realizadas por un usuario. Por ello, las acciones como registrar, actualizar, consultar, crear o detectar se expresaron como el resultado que se produce después de ejecutar una determinada operación. Por ejemplo, Create Batch corresponde al comando, mientras que Batch Created representa el evento producido.
+
+Asimismo, se conservaron algunos eventos provenientes del Big Picture EventStorming cuando estos continuaban siendo relevantes para representar el comportamiento del sistema en el Design-Level. Entre ellos se encuentran Manufacturing Completed, Batch Evaluated, Raw Material Accepted, Raw Material Rejected, Measurement Reviewed y Measurement Instrument Calibrated. Esto permitió mantener la trazabilidad entre el proceso actual identificado durante el análisis del negocio y el comportamiento propuesto para la solución.
+
+
 
 **Paso 2: Timelines**
 
