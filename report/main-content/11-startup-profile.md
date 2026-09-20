@@ -82,11 +82,11 @@ Ser una startup reconocida por comprender las necesidades de las organizaciones 
 
   <tr>
     <td width="140" height="150" valign="top" align="center">
-      <!-- Foto del integrante -->
+      <img src="../assets/img/chapter-i/yaku.jpg" alt="Yaku Mateo Guzmán Cabrejos Photo" width="120">
     </td>
     <td valign="top">
-      <strong>[Nombres y Apellidos] - ([Código UPC])</strong> - Ingeniería de Software<br><br>
-      [Descripción del integrante]
+      <strong>Yaku Mateo Guzmán Cabrejos - (U20231B173)</strong> - Ingeniería de Software<br><br>
+      Soy estudiante de Ingeniería de Software y me considero una persona organizada, analítica y comprometida con los objetivos del equipo. Cuento con conocimientos en Java, Python y C++, desarrollo backend y móvil, arquitectura de software aplicando el modelo C4 y Domain-Driven Design, además de experiencia trabajando con bases de datos y análisis de datos. Actualmente realizo prácticas pre-profesionales en Abbott Laboratories, donde trabajo con datos operativos construyendo pipelines end-to-end, lo que me ha permitido entender cómo una solución tecnológica debe responder a necesidades reales del negocio. Me interesa seguir aprendiendo y aportar tanto en la parte técnica como en la definición de la solución para que el proyecto cumpla sus objetivos.
     </td>
   </tr>
 

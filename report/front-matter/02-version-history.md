@@ -1,45 +1,21 @@
-## Registro de Versiones del Informe
+## Report Version History
 
-<table border="3">
-  <tr>
-    <th>Versión</th>
-    <th>Fecha</th>
-    <th>Autor</th>
-    <th>Descripción de la modificación</th>
-  </tr>
-  <tr>
-    <td>0.1.0</td>
-    <td>2026-09-08</td>
-    <td>Vitaly Baca, Franco López, Giovany Torres, Dyron Huapaya, Billy Ruiz, Jaredt Montes, Fabrizio Cutiri</td>
-    <td>
-    - Se agregaron la información en las secciones: Startup Profile, Solution Profile (Antecedentes y Problematicas y Lean UX Process).<br>
-    - Documentación inicial con las secciones de los capitulos 1 al 4 realizada..<br>
-    - Archivos esenciales para la documentación.</td>
-  </tr>
-  <tr>
-    <td>0.1.1</td>
-    <td>2026-09-08</td>
-    <td>Dyron Huapaya</td>
-    <td>- Cambios en rutas de imagenes</td>
-  </tr>
-  <tr>
-    <td>0.1.2</td>
-    <td>2026-09-08</td>
-    <td>Dyron Huapaya</td>
-    <td>- Cambio de nombres de imagenes para consistencia</td>
-  </tr>
-  <tr>
-    <td>0.1.3</td>
-    <td>2026-09-14</td>
-    <td>Dyron Huapaya</td>
-    <td>- Se agrego el historial de versiones como parte del front-matter.<br>
-    - Se elimino el archivo CHANGELOG en cambio del archivo de historial de versiones.</td>
-  </tr>
-  <tr>
-    <td>0.2.0</td>
-    <td>2026-09-14</td>
-    <td>Vitaly Baca, Franco López, Giovany Torres, Dyron Huapaya, Billy Ruiz, Jaredt Montes, Fabrizio Cutiri</td>
-    <td>- Se agregaron las partes del Capitulo 2: Competidores, Entrevistas, Needfinding (User Personas, User Task Matrix, User Journey Mapping y Empathy Mapping), Big Picture Event Storming y Ubiquitous Language.<br>
-    - Se corrigio parte de la sección Lean UX Problem Statement</td>
-  </tr>
-</table>
+| Version | Date | Author | Description |
+|---|---|---|---|
+| 0.1.0 | 27/08/2026 | Baca Camargo, Vitaly Arturo | Se creó la estructura inicial del Project Report de QualiTrack, incorporando los capítulos, front matter, anexos, conclusiones y bibliografía, además de la configuración inicial para la generación de la documentación. |
+| 0.1.1 | 04/09/2026 | Ruiz Madrid, Billy Jake | Se desarrollaron las principales secciones del Capítulo I relacionadas con el Startup Profile y Lean UX Process, incluyendo Problem Statement, Assumptions, Hypothesis Statements y Lean UX Canvas. Asimismo, se creó la estructura inicial del Capítulo III con User Stories, Impact Mapping y Product Backlog. |
+| 0.1.2 | 05/09/2026 | Huapaya Galindo, Dyron | Se desarrolló el análisis competitivo de QualiTrack, incluyendo competidores, comparación de alternativas y estrategias frente a la competencia. También se definió el diseño de entrevistas para los segmentos de responsables de calidad y personal operativo. |
+| 0.1.3 | 11/09/2026 | Lopez Roman, Franco Mauricio | Se documentaron y analizaron las entrevistas correspondientes al personal operativo de laboratorios y almacenes, incorporando evidencias, necesidades, dificultades y características identificadas durante el proceso de Needfinding. |
+| 0.1.4 | 11/09/2026 | Cutiri Agüero, Fabrizio Alexander | Se desarrollaron los User Personas y Empathy Maps correspondientes a los segmentos de responsables de calidad y supervisión y personal operativo. Posteriormente se desarrolló el Impact Mapping para relacionar objetivos de negocio, actores, impactos y funcionalidades de QualiTrack. |
+| 0.1.5 | 12/09/2026 | Huapaya Galindo, Dyron | Se desarrollaron el User Task Matrix y los User Journey Maps para representar las tareas, necesidades, dificultades y comportamiento actual de los usuarios identificados durante el Needfinding. |
+| 0.1.6 | 13/09/2026 | Montes Ramos, Henry Jaredt | Se actualizó el Startup Profile de IoTech, incorporando la descripción de la startup, identidad visual, información de los integrantes y mejoras en la presentación inicial del proyecto y del proceso Lean UX. |
+| 0.1.7 | 13/09/2026 | Cutiri Agüero, Fabrizio Alexander | Se organizó y actualizó el Product Backlog de QualiTrack, revisando la priorización y estimación de las historias e incorporando la evidencia correspondiente del backlog gestionado mediante Jira. |
+| 0.1.8 | 14/09/2026 | Baca Camargo, Vitaly Arturo | Se consolidó el análisis de entrevistas y se desarrolló el Big Picture EventStorming, identificando los principales procesos del dominio relacionados con monitoreo ambiental, materias primas, desviaciones, registros de calidad y producción. |
+| 0.2.0 | 14/09/2026 | Torres Apolinario, Giovany Smith | Se definió y amplió el Ubiquitous Language de QualiTrack, incorporando conceptos relacionados con monitoreo ambiental, trazabilidad, calidad y los procesos identificados durante el EventStorming. |
+| 0.2.1 | 16/09/2026 | Torres Apolinario, Giovany Smith | Se desarrollaron los Bounded Context Canvases y el Context Mapping de los nueve Bounded Contexts de QualiTrack. Se analizaron alternativas de organización y se documentaron relaciones Upstream/Downstream y patrones Customer/Supplier y Anti-Corruption Layer. |
+| 0.2.2 | 16/09/2026 | Ruiz Madrid, Billy Jake | Se revisó y reestructuró la Requirements Specification, mejorando las User Stories, Technical Stories, Maker Stories y Spike Stories, sus criterios de aceptación y su relación con las Epics definidas para QualiTrack. |
+| 0.2.3 | 18/09/2026 | Huapaya Galindo, Dyron | Se desarrolló el Design-Level EventStorming mediante Domain Events, Commands, Policies, Actors y Read Models, representando los principales flujos y responsabilidades del dominio de QualiTrack. |
+| 0.2.4 | 18/09/2026 | Baca Camargo, Vitaly Arturo | Se amplió el análisis de las entrevistas mediante información estadística sobre dispositivos, navegadores y canales de comunicación utilizados por los participantes, y se actualizaron los User Personas a partir de los resultados obtenidos. |
+| 0.2.5 | 19/09/2026 | Ruiz Madrid, Billy Jake | Se desarrolló el Tactical-Level Domain-Driven Design para los Bounded Contexts priorizados de QualiTrack, documentando sus capas Domain, Application, Interface e Infrastructure e incorporando los diagramas de componentes y diagramas de código correspondientes. |
+| 0.2.6 | 19/09/2026 | Guzmán Cabrejos, Yaku Mateo | Se desarrolló la sección Software Architecture de QualiTrack utilizando C4 Model y Structurizr, incorporando las vistas System Landscape, System Context, Container y Deployment y documentando los actores, sistemas externos, tecnologías y relaciones de comunicación de la solución. |
+| 0.2.7 | 20/09/2026 | Huapaya Galindo, Dyron | Se actualizó el Project Report Collaboration Insights, incorporando los repositorios del proyecto, la descripción del proceso colaborativo, las principales contribuciones del equipo y las evidencias correspondientes al trabajo realizado durante el AV1. |
