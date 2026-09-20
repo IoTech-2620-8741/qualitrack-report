@@ -154,6 +154,65 @@ La organización de estos flujos permitió establecer una visión cronológica d
 
 **Paso 3: Paint Point**
 
+El tercer paso consistió en identificar los pain points presentes en los flujos organizados durante el paso anterior. Estos puntos representan dudas, ambigüedades o decisiones de diseño que requieren una definición adicional para completar el comportamiento del sistema. En el tablero se representaron mediante tarjetas en forma de rombo de color rosa.
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/paint-point-1.jpg">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/paint-point-2.jpg">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/paint-point-3.jpg">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/paint-point-4.jpg">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/paint-point-5.jpg">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/paint-point-6.jpg">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/paint-point-7.jpg">
+</div>
+
+<br>
+
+A partir de la revisión de los flujos, se identificaron los siguientes pain points:
+
+- *How many ways does the system have to send the verification code?:* identificado en el flujo de recuperación de contraseña, donde fue necesario determinar el mecanismo mediante el cual se enviará el código de verificación antes de permitir el cambio de contraseña.
+- *Which additional information will be required when generating the audit report?:* identificado en el flujo de auditoría, debido a la necesidad de definir qué información adicional debe considerarse para completar la generación del reporte de auditoría.
+- *What are the validations to release or reject a batch?:* identificado en el flujo de evaluación de lotes, donde se requiere establecer las validaciones que determinan si un lote puede ser liberado o debe ser rechazado.
+- *How is the alert going to be resolved?:* identificado en el flujo de gestión de alertas, debido a la necesidad de definir cómo se llevará a cabo la resolución de una alerta después de que haya sido reconocida.
+- *What are the validations to accept or reject raw material lot?:* identificado en el flujo de recepción de materias primas, donde se requiere establecer las validaciones necesarias para aceptar o rechazar un lote recibido.
+- *What information is going to be shown in the telemetry?:* identificado en el flujo de registro de telemetría, debido a la necesidad de determinar qué información será presentada a partir de las mediciones registradas.
+- *How can we check that the sensor has already been linked?:* identificado en el flujo de registro y vinculación de equipos, debido a la necesidad de determinar cómo verificar que un sensor ya se encuentra vinculado antes de realizar una nueva asociación.
+
+Estos pain points permitieron identificar los aspectos del diseño que requerían una definición adicional.
+
+
 **Paso 4: Pivotal Points**
 
 **Paso 5: Commands**
