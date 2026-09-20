@@ -599,7 +599,3 @@ A partir del análisis realizado, se definen los siguientes perfiles de usuario 
 **Necesidad principal:** Mantener una clara trazabilidad de las materias primas, productos y procesos involucrados en el negocio para facilitar su correcto arbitraje según las normas profesionales.
 
 **Principal dificultad:** Ante grandes producciones se dificulta la trazabilidad de cada producto junto a su lote y respectivas características de elaboración.
-
-
-
-
