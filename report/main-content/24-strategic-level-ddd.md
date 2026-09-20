@@ -197,6 +197,28 @@ Product Batch Management se mantiene como fuente de verdad de la trazabilidad de
  
 ---
 
+##### Scenario 3: Onboarding, subscription payment and laboratory registration
+ 
+Este escenario describe la incorporación de una nueva organización a la plataforma, desde el registro del usuario hasta la activación de la suscripción y el alta del laboratorio.
+ 
+| # | Mensaje | Tipo | Emisor | Receptor |
+|---|---|---|---|---|
+| 1 | Register User | Command | Visitant | QualiTrack web and mobile application |
+| 2 | Register User | Command | QualiTrack web and mobile application | Identity & Access Management |
+| 3 | Create Subscription | Command | QualiTrack web and mobile application | Payments & Subscriptions |
+| 4 | Create Checkout Session | Command | Payments & Subscriptions | Stripe |
+| 5 | Payment Received | Event | Stripe | Payments & Subscriptions |
+| 6 | Subscription Activated | Event | Payments & Subscriptions | QualiTrack web and mobile application |
+| 7 | Register Laboratory | Command | Country Manager | QualiTrack web and mobile application |
+| 8 | Register Laboratory | Command | QualiTrack web and mobile application | Laboratory Management |
+| 9 | Assign Laboratory Membership | Command | QualiTrack web and mobile application | Laboratory Management |
+ 
+Stripe se modela como sistema externo y la confirmación del pago ingresa al dominio como un evento, evitando que Payments & Subscriptions dependa de la disponibilidad síncrona del proveedor.
+ 
+![Domain Message Flow - Onboarding, subscription payment and laboratory registration](../assets/img/chapter-iv/domain-message-flow-3.png)
+ 
+---
+
 #### 4.1.1.3 Bounded Context Canvases.  
 ### 4.1.2. Context Mapping.
 
