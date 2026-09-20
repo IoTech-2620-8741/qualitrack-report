@@ -295,6 +295,62 @@ Estos eventos fueron destacados en las líneas de tiempo mediante las líneas ve
 
 El quinto paso consistió en identificar los commands asociados a los eventos de dominio previamente definidos. Un command representa la intención o acción que solicita la ejecución de una operación dentro del sistema y, cuando corresponde, produce como resultado un evento de dominio. Para su representación se utilizaron tarjetas de color azul, ubicadas antes del evento que generan.
 
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/command-1.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/command-2.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/command-3.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/command-4.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/command-5.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/command-6.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/command-7.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/command-8.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/command-9.png">
+</div>
+
+<br>
+
 A partir de los flujos definidos, se identificaron los siguientes comandos:
 
 - Register User, Assign User Role, Authenticate User, Request Password Reset, Send Verification Code, Verify Recovery Code y Reset Password.
