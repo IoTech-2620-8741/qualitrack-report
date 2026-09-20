@@ -368,6 +368,41 @@ En cada flujo, los comandos se ubicaron inmediatamente antes del evento correspo
 
 **Paso 6: Policies and Actors**
 
+El sexto paso incorporó al modelo los actores y las políticas del sistema. Los actores se representan mediante tarjetas pequeñas de color amarillo y permiten identificar quién inicia o participa en los diferentes flujos. Las políticas, representadas mediante tarjetas de color lila, corresponden a reglas automáticas que se ejecutan después de determinados eventos y desencadenan nuevas acciones dentro del sistema.
+
+A partir de los flujos definidos, se identificaron como principales actores al Visitor, User, Lab Technician, Quality Staff, Quality Supervisor y Auditor.
+
+Las políticas identificadas fueron las siguientes:
+
+| N.° | Política                                                                                                                                        | Descripción                                                                                                                                                            |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | **Whenever Sensor Linked Then Record Telemetry Measurements**                                                                                   | Cuando un sensor es vinculado, se inicia automáticamente el registro de las mediciones de telemetría.                                                                  |
+| 2   | **Whenever Maintenance Registered Then Detect Compliance Event**                                                                                | Cuando se registra un mantenimiento, se genera automáticamente la detección de un evento relacionado con el cumplimiento.                                              |
+| 3   | **Whenever Equipment failure detected Then Create Alert**                                                                                       | Cuando se detecta una falla en un equipo, se crea automáticamente una alerta para su atención.                                                                         |
+| 4   | **Whenever Box Registered Then Store Raw Material in Box**                                                                                      | Cuando se registra una caja, se inicia automáticamente el almacenamiento de la materia prima en dicha caja.                                                            |
+| 5   | **Whenever Box Registered Then Register Equipment to Mensurement Parameters (Temperature, Humidity, Refrigeration, Ventilation, and Lighting)** | Cuando se registra una caja, se inicia el registro del equipo asociado a los parámetros de medición de temperatura, humedad, refrigeración, ventilación e iluminación. |
+| 6   | **Whenever Environment Registered Then Create Batch for the manufacture of the pharmaceutical product**                                         | Cuando se registra un ambiente, se inicia automáticamente la creación de un lote destinado a la fabricación de un producto farmacéutico.                               |
+| 7   | **Whenever Environment Registered Then Register Equipment to Mensurement Parameters (Movement, Air Quality, Humidity, Buzzer Led)**             | Cuando se registra un ambiente, se inicia el registro del equipo asociado a los parámetros de movimiento, calidad del aire, humedad y buzzer LED.                      |
+| 8   | **Whenever Environment Registered Then Create Batch for the manufacture of the pharmaceutical product**                                         | Cuando se registra un ambiente, se inicia automáticamente la creación de un lote destinado a la fabricación de un producto farmacéutico.                               |
+| 9   | **Whenever Raw Material Accepted Then Register Raw Material Usage for the production of a pharmaceutical product**                              | Cuando una materia prima es aceptada, se inicia automáticamente el registro de su utilización para la producción de un producto farmacéutico.                          |
+| 10  | **Whenever Subscription Activated Then Laboratory Registered**                                                                                  | Cuando una suscripción es activada, se registra automáticamente el laboratorio correspondiente.                                                                        |
+| 11  | **Whenever User Registered Then Select Subscription Plan**                                                                                      | Cuando un usuario es registrado, se inicia automáticamente la selección del plan de suscripción.                                                                       |
+| 12  | **Whenever Batch Released Then Detect Batch Release Compliance Event**                                                                          | Cuando un lote es liberado, se detecta automáticamente un evento de cumplimiento asociado a la liberación del lote.                                                    |
+| 13  | **Whenever Batch Released Then Generate Batch Report**                                                                                          | Cuando un lote es liberado, se genera automáticamente el reporte correspondiente al lote.                                                                              |
+| 14  | **Whenever Batch Rejected Then Generate Batch Report**                                                                                          | Cuando un lote es rechazado, se genera automáticamente el reporte correspondiente al lote.                                                                             |
+| 15  | **Whenever Batch Rejected Then Detect Batch Rejected Compliance Event**                                                                         | Cuando un lote es rechazado, se detecta automáticamente un evento de cumplimiento asociado al rechazo del lote.                                                        |
+
+Las actores identificadas fueron las siguientes:
+
+
+| Actor                  | Participación principal                                                               |
+| ---------------------- | ------------------------------------------------------------------------------------- |
+| **Visitor**            | Usuario visitante provediente de un pagina estatica.                                  |
+| **User**               | Autenticación, recuperación de contraseña y gestión de suscripción.                   |
+| **Lab Technician**     | Registro y operación de lotes, materias primas, equipos y actividades de laboratorio. |
+| **Quality Staff**      | Registro y revisión de mediciones, telemetría y parámetros de calidad.                |
+| **Quality Supervisor** | Gestión y supervisión de laboratorios, ambientes, personal y procesos de calidad.     |
+| **Auditor**            | Solicitud y revisión de información histórica y reportes de auditoría.                |
 
 
 #### 4.1.1.1 Candidate Context Discovery. 
