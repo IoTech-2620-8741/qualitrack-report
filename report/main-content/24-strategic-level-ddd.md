@@ -467,6 +467,56 @@ Luego de identificar los eventos, flujos, comandos y políticas del dominio, el 
 
 El séptimo paso consistió en identificar los Read Models del sistema. Estos representan las vistas o conjuntos de información que los actores consultan antes de ejecutar determinados comandos. Se representan mediante tarjetas de color verde y permiten disponer de la información necesaria para realizar una acción dentro de cada bounded context.
 
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/read-modal-1.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/read-modal-2.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/read-modal-3.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/read-modal-4.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/read-modal-5.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/read-modal-6.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/read-modal-7.png">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-iv/read-modal-8.png">
+</div>
+
+<br>
+
 | Read Model                        | Descripción                                                                                                         |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
 | **Form Sign Up**                  | Vista con la información necesaria para que el visitante pueda realizar el registro de usuario.                     |
