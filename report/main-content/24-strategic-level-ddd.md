@@ -460,6 +460,10 @@ Las actores identificadas fueron las siguientes:
 
 
 #### 4.1.1.1 Candidate Context Discovery. 
+
+Luego de identificar los eventos, flujos, comandos y políticas del dominio, el equipo avanzó con la detección de contextos candidatos. Esta fase les permitió organizar los elementos vinculados de acuerdo con su cohesión funcional y las reglas de negocio que compartían, lo que facilitó la definición de los futuros Bounded Contexts. De este modo, el equipo logro modelar el dominio de Qualitrack en contextos con responsabilidades claramente separadas.
+
+
 #### 4.1.1.2 Domain Message Flows Modeling. 
 #### 4.1.1.3 Bounded Context Canvases.  
 
