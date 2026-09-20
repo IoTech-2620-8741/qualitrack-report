@@ -264,6 +264,30 @@ La cuarentena o liberación de un lote de materia prima permanece dentro de Inve
  
 ---
 
+##### Scenario 6: Equipment maintenance and calibration expiry
+ 
+Este escenario describe el registro del mantenimiento de un equipo y la alerta generada cuando su calibración vence, así como el uso de esa información por parte de la fabricación y la auditoría.
+ 
+| # | Mensaje | Tipo | Emisor | Receptor |
+|---|---|---|---|---|
+| 1 | Register Equipment | Command | Maintenance | QualiTrack web and mobile application |
+| 2 | Register Equipment | Command | QualiTrack web and mobile application | Equipment Management |
+| 3 | Register Maintenance | Command | QualiTrack web and mobile application | Equipment Management |
+| 4 | Change Equipment Status | Command | Quality Supervisor | QualiTrack web and mobile application |
+| 5 | Calibration Expired | Event | Equipment Management | Compliance & Alerting |
+| 6 | Calibration Expiration Alert Created | Event | Compliance & Alerting | QualiTrack web and mobile application |
+| 7 | Get Environment Reference | Query | Compliance & Alerting | Laboratory Management |
+| 8 | Get Equipment Audit Data | Query | Reporting & Audit | Equipment Management |
+| 9 | Get Equipment Availability | Query | Product Batch Management | Equipment Management |
+ 
+Equipment Management conserva la autoridad sobre el estado y la calibración de los equipos; tanto Product Batch Management como Reporting & Audit consumen esa información mediante queries explícitas, sin replicar el modelo.
+ 
+![Domain Message Flow - Equipment maintenance and calibration expiry](../assets/img/chapter-iv/domain-message-flow-6.png)
+ 
+---
+
+El modelado de estos seis escenarios permitió verificar que los nueve Bounded Contexts definidos son suficientes para resolver los casos de negocio de QualiTrack y que las colaboraciones entre ellos pueden expresarse mediante contratos explícitos. Asimismo, evidenció que la mayor parte de las dependencias corresponde a queries de referencia hacia el contexto propietario del dato y a events que comunican hechos ya ocurridos, patrón que sustenta las relaciones Customer/Supplier y Anti-Corruption Layer documentadas posteriormente en el Context Mapping.
+
 #### 4.1.1.3 Bounded Context Canvases.  
 ### 4.1.2. Context Mapping.
 
