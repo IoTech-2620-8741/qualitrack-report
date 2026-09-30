@@ -1,4 +1,4 @@
-<img width="1647" height="977" alt="image" src="https://github.com/user-attachments/assets/117b7a8a-fa90-4519-a26d-eabfc7af7c28" /><img width="1021" height="687" alt="image" src="https://github.com/user-attachments/assets/8c1e3aa5-e08c-40cd-b1af-afe3ba60df29" />## 2.2. Entrevistas
+## 2.2. Entrevistas
 
 Las entrevistas son clave para la metodología de diseño centrado en el usuario al permitirnos recolectar información cualitativa directamente de los actores que enfrentan la problematica identificada. A través del dialogo estructurado, se busca comprender las necesidades, comportamientos, frustaciones y expectativas de los segmentos objetivos, validando o refutando las hipótesis plantadas previamente.
 
