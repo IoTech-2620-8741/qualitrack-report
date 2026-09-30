@@ -557,7 +557,8 @@ El octavo paso consistió en incorporar al modelo los sistemas externos. Estos s
 
 
 <div align="center">
-  <img src="../assets/img/chapter-iv/system-externs.png">
+  <img src="../assets/img/chapter-iv/system-externs-1.png">
+    <img src="../assets/img/chapter-iv/system-externs-2.png">
 </div>
 
 <br>
@@ -577,7 +578,8 @@ El noveno paso consistió en identificar los agregados dentro de cada Bounded Co
 
 
 <div align="center">
-  <img src="../assets/img/chapter-iv/aggregate-1.png">
+  <img src="../assets/img/chapter-iv/aggregate-1-1.png">
+    <img src="../assets/img/chapter-iv/aggregate-1-2.png">
 </div>
 
 <br>
@@ -625,7 +627,8 @@ El noveno paso consistió en identificar los agregados dentro de cada Bounded Co
 
 
 <div align="center">
-  <img src="../assets/img/chapter-iv/aggregate-8.png">
+  <img src="../assets/img/chapter-iv/aggregate-8-1.png">
+  <img src="../assets/img/chapter-iv/aggregate-8-2.png">
 </div>
 
 <br>
