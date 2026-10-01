@@ -120,11 +120,15 @@ En esta sección se presentan los User Journey Maps correspondientes a ambos seg
 
 **Segmento 1: Responsables de calidad y supervisión**
 
-<img src="../assets/img/chapter-ii/diego-ramirez-user-journey-mapping.png" alt="Diego Ramirez - User Journey Mapping" width="1900" height="1900"/>
+<img src="../assets/img/chapter-ii/diego-ramirez-user-journey-mapping-1.png" alt="Diego Ramirez - User Journey Mapping (1/3)" width="600"/>
+<img src="../assets/img/chapter-ii/diego-ramirez-user-journey-mapping-2.png" alt="Diego Ramirez - User Journey Mapping (2/3)" width="600"/>
+<img src="../assets/img/chapter-ii/diego-ramirez-user-journey-mapping-3.png" alt="Diego Ramirez - User Journey Mapping (3/3)" width="600"/>
 
 **Segmento 2: Personal operativo de laboratorios y almacenes**
 
-<img src="../assets/img/chapter-ii/alberto-garcia-user-journey-mapping.png" alt="Alberto García - User Journey Mapping" width="1900" height="1900"/>
+<img src="../assets/img/chapter-ii/alberto-garcia-user-journey-mapping-1.png" alt="Alberto García - User Journey Mapping (1/3)" width="600"/>
+<img src="../assets/img/chapter-ii/alberto-garcia-user-journey-mapping-2.png" alt="Alberto García - User Journey Mapping (2/3)" width="600"/>
+<img src="../assets/img/chapter-ii/alberto-garcia-user-journey-mapping-3.png" alt="Alberto García - User Journey Mapping (3/3)" width="600"/>
 
 ### 2.3.4. Empathy Mapping
 
