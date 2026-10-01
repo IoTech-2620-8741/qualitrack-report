@@ -670,26 +670,7 @@ A partir del modelo de Event Storming, se llevó a cabo una sesión de Candidate
 
 Primero, se identificaron los eventos pivote y se agruparon junto con sus comandos, actores, read models, políticas y agregados relacionados.
 
-<br>
-
-<div align="center">
-  <img src="../assets/img/chapter-iv/1.png">
-</div>
-
-<br>
-
-
 Luego, se analizaron las relaciones entre los diferentes grupos identificados, considerando las dependencias y comunicaciones existentes entre las distintas responsabilidades del sistema.
-
-<br>
-
-<div align="center">
-  <img src="../assets/img/chapter-iv/2.png">
-</div>
-
-<br>
-
-
 
 Finalmente, se trazaron fronteras alrededor de los grupos resultantes y se asignaron nombres de acuerdo con la responsabilidad principal de cada grupo. Como resultado, se definieron los siguientes 9 Bounded Contexts:
 
@@ -703,17 +684,77 @@ Finalmente, se trazaron fronteras alrededor de los grupos resultantes y se asign
 - Inventory Management
 - Reporting & Audit
 
-
-<br>
-
 <div align="center">
   <img src="../assets/img/chapter-iv/3.png">
 </div>
 
-<br>
+**Bounded context: Identity and Access Management**
 
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/IAM.jpg"> </div>
 
+**Bounded context: Subscriptions and Payments**
 
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Subscription%20and%20payments.jpg"> </div>
+
+**Bounded context: Tracking and Telemetry**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Tracking-Telemetry.jpg"> </div>
+
+**Bounded context: Reporting & Audit**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Reporting-Audit.jpg"> </div>
+
+**Bounded context: Product Batch Management**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Product%20Batch%20Managment.jpg"> </div>
+
+**Bounded context: Compliance & Alerting**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Compliance-Alerting.jpg"> </div>
+
+**Bounded context: Equipment Management**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Equipment%20Management/Vista%20General.jpg"> </div>
+
+* **Equipment**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Equipment%20Management/Equipement.jpg"> </div>
+
+* **Maintenance Record**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Equipment%20Management/Maintenance%20Record.jpg"> </div>
+
+**Bounded context: Inventory Management**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Inventory%20Management/Vista%20general.jpg"> </div>
+
+* **Raw Material**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Inventory%20Management/Raw%20Material.jpg"> </div>
+
+* **Raw Material Batch**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Inventory%20Management/Raw%20Material%20Batch.jpg"> </div>
+
+**Bounded context: Laboratory Management**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/laboratory%20Management/Vista%20General.jpg"> </div>
+
+* **Box**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/laboratory%20Management/Box.jpg"> </div>
+
+* **Environment**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/laboratory%20Management/Enviroment.jpg"> </div>
+
+* **Laboratory**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/laboratory%20Management/Laboratory.jpg"> </div>
+
+* **Staff Member**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/laboratory%20Management/StaffMember.jpg"> </div>
 
 #### 4.1.1.2 Domain Message Flows Modeling. 
  
