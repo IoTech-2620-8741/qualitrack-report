@@ -88,11 +88,15 @@ Los eventos fueron organizados en secuencias horizontales, conectando aquellos q
   <img src="../assets/img/chapter-iv/time-line-1.png">
 </div>
 
+se organizaron los eventos del IAM y Payments & Subscriptions en secuencias temporales, mostrando el orden en que ocurren dentro de cada flujo. Se identificaron procesos independientes, como el registro y autenticación de usuarios, la recuperación de contraseña y la gestión de suscripciones y pagos.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/time-line-2.png">
 </div>
+
+se organizaron los eventos del Reporting & Audit según su secuencia. El flujo principal parte de la solicitud de información de auditoría, continúa con la consulta del registro histórico y finaliza con la generación del reporte de auditoría. También se ubicaron como procesos independientes la generación de reportes de lote y cumplimiento, la exportación del registro de equipos, el cálculo del dashboard de KPIs y el cálculo de tendencias de desviaciones.
 
 <br>
 
@@ -100,11 +104,15 @@ Los eventos fueron organizados en secuencias horizontales, conectando aquellos q
   <img src="../assets/img/chapter-iv/time-line-3.png">
 </div>
 
+se organizaron los eventos del Product Batch Management. El flujo inicia con la creación y comienzo del lote, seguido del registro del producto farmacéutico y del uso de materias primas. Luego, tras completar la fabricación, el lote es evaluado y puede continuar por dos caminos: Batch Released o Batch Rejected.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/time-line-4.png">
 </div>
+
+El flujo principal muestra la creación, reconocimiento y resolución de una alerta. También se presentan procesos independientes relacionados con la detección de bajo stock y la creación de su alerta, la actualización de preferencias de notificación y los eventos de cumplimiento asociados a la liberación o rechazo de lotes. Finalmente, se incluye la notificación al supervisor de calidad.
 
 <br>
 
@@ -112,11 +120,15 @@ Los eventos fueron organizados en secuencias horizontales, conectando aquellos q
   <img src="../assets/img/chapter-iv/time-line-5.png">
 </div>
 
+El flujo inicia con el registro de la materia prima, la recepción del lote y su evaluación, que puede resultar en su aceptación o rechazo. Cuando la materia prima es aceptada y almacenada, puede ser consumida, actualizando el inventario y registrando el movimiento correspondiente. A partir de la actualización del inventario también se puede detectar un nivel bajo de stock.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/time-line-6.png">
 </div>
+
+El flujo parte del registro de una medición de telemetría, a partir del cual se generan diferentes acciones: registrar el punto histórico, revisar la medición, detectar anomalías y actualizar el estado de la telemetría. La actualización del estado se mantiene como un proceso independiente.
 
 <br>
 
@@ -124,31 +136,37 @@ Los eventos fueron organizados en secuencias horizontales, conectando aquellos q
   <img src="../assets/img/chapter-iv/time-line-7.png">
 </div>
 
+En esta imagen se organizaron los eventos en tres flujos principales. El primero corresponde al registro y actualización del laboratorio. El segundo muestra el registro y actualización de un ambiente, seguido del registro de un Box, que funciona como contenedor de productos farmacéuticos y permite organizar su seguimiento mediante mediciones de temperatura, calidad del aire, humedad y luminosidad. Finalmente, el tercer flujo representa el registro del personal, el establecimiento de su membresía en el laboratorio y su posterior desactivación.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/time-line-8.png">
 </div>
 
-<br>
+El flujo inicia con el registro del equipo, seguido de la vinculación del sensor y la configuración de sus parámetros BPM. También se consideran el mantenimiento y la calibración del instrumento. Finalmente, se contempla la expiración de la calibración, la detección y registro de fallas del equipo, además de la actualización de su estado.
 
-En el flujo de **gestión de usuarios**, se organizó la secuencia de registro, asignación de rol y autenticación, además del flujo independiente de recuperación de contraseña mediante la solicitud, envío y verificación del código de recuperación.
+---
 
-En el flujo de **suscripciones y pagos**, se estableció la secuencia desde la selección del plan y creación del checkout hasta la recepción del pago y activación de la suscripción, considerando posteriormente su actualización o cancelación.
+**Resumen**
 
-En el flujo de **gestión de laboratorios**, se estableció la secuencia desde la selección del plan y creación del checkout hasta la recepción del pago y activación de la suscripción, considerando posteriormente su actualización o cancelación.
+En el **flujo de gestión de usuarios,** se organizó la secuencia de registro, asignación de rol y autenticación, además del flujo independiente de recuperación de contraseña mediante la solicitud, envío y verificación del código de recuperación.
 
-En el flujo de **monitoreo de telemetría**, se estableció el registro de las mediciones y sus posibles derivaciones hacia el registro histórico, detección de anomalías, actualización del estado y revisión de las mediciones.
+En el **flujo de suscripciones y pagos**, se estableció la secuencia desde la selección del plan y creación del checkout hasta la recepción del pago y activación de la suscripción, considerando posteriormente su actualización o cancelación.
 
-En el flujo de **gestión de equipos**, se organizaron las actividades relacionadas con el registro del equipo, vinculación del sensor, configuración de parámetros, mantenimiento, calibración y actualización del estado del equipo.
+En el **flujo de gestión de laboratorios**, se organizaron los eventos relacionados con el registro y actualización del laboratorio, el registro y actualización de ambientes, el registro de los Box como contenedores para los productos farmacéuticos y la gestión del personal mediante su registro, membresía y desactivación.
 
-En el flujo de **gestión de materias primas** e inventario, se estableció la secuencia de registro de la materia prima, recepción del lote y su posterior aceptación o rechazo. Para los lotes aceptados se organizó la actualización del inventario, registro de movimientos y detección de bajo stock, incluyendo también el consumo de materia prima.
+En el **flujo de monitoreo de telemetría**, se estableció el registro de las mediciones y sus posibles derivaciones hacia el registro histórico, detección de anomalías, actualización del estado y revisión de las mediciones.
 
-En el flujo de **fabricación y gestión de lotes**, se organizó la secuencia de creación e inicio del lote, registro del uso de materias primas, finalización de la fabricación y evaluación del lote, que posteriormente puede resultar en su liberación o rechazo.
+En el **flujo de gestión de equipos**, se organizaron las actividades relacionadas con el registro del equipo, vinculación del sensor, configuración de parámetros BPM, mantenimiento, calibración, detección y registro de fallas, así como la actualización del estado del equipo.
 
-En el flujo de **gestión de alertas y cumplimiento**, se organizaron los eventos relacionados con la creación, reconocimiento y resolución de alertas, así como la detección de bajo stock, eventos de cumplimiento y actualización de preferencias de notificación.
+En el **flujo de gestión de materias primas e inventario**, se estableció la secuencia de registro de la materia prima, recepción del lote y su posterior aceptación o rechazo. Para los lotes aceptados se organizó el almacenamiento, consumo, actualización del inventario, registro de movimientos y detección de bajo stock.
 
-Finalmente, en el flujo de **auditoría y generación de información**, se estableció la secuencia de solicitud de información, consulta de registros históricos y generación de reportes, además de los procesos independientes de cálculo de indicadores, tendencias y exportación de información.
+En el **flujo de fabricación y gestión de lotes**, se organizó la secuencia de creación e inicio del lote, registro del producto farmacéutico y uso de materias primas, finalización de la fabricación y evaluación del lote, que posteriormente puede resultar en su liberación o rechazo.
+
+En el **flujo de gestión de alertas y cumplimiento**, se organizaron los eventos relacionados con la creación, reconocimiento y resolución de alertas, la detección de bajo stock y los eventos de cumplimiento asociados a la liberación o rechazo de lotes, además de la actualización de preferencias de notificación y la notificación al supervisor de calidad.
+
+Finalmente, en el **flujo de auditoría y generación de información**, se estableció la secuencia de solicitud de información, consulta de registros históricos y generación del reporte de auditoría, además de los procesos independientes de generación de reportes, cálculo de indicadores y tendencias y exportación de información.
 
 La organización de estos flujos permitió establecer una visión cronológica del comportamiento del sistema y sirvió como base para continuar con las siguientes etapas del Design-Level EventStorming.
 
