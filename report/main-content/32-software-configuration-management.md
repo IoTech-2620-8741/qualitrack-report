@@ -284,6 +284,58 @@ El despliegue de QualiTrack utiliza servicios diferenciados de acuerdo con las c
 
 ### 6.1.2. Source Code Management
 
+<p>
+El código fuente del proyecto QualiTrack se organiza en repositorios independientes con el propósito de facilitar el seguimiento de modificaciones, la revisión del código y la gestión del ciclo de vida de cada uno de los productos digitales que conforman la solución IoT. GitHub es utilizado como plataforma de colaboración y alojamiento de los repositorios, mientras que Git se emplea como sistema distribuido de control de versiones.
+</p>
+
+<p>
+Cada producto mantiene su propio historial de cambios y aplica las convenciones de branching, commits y versionado definidas por el equipo. Para el Backend Web Service, el repositorio incluye tanto el código fuente de la aplicación como los archivos correspondientes a las pruebas unitarias y de integración o aceptación.
+</p>
+
+<h4>Repositorios del Proyecto</h4>
+
+<p>
+Los repositorios del proyecto se encuentran centralizados dentro de la organización <strong>IoTech-2620-8741</strong> en GitHub:
+<a href="https://github.com/IoTech-2620-8741" target="_blank">
+https://github.com/IoTech-2620-8741
+</a>.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Producto</th>
+      <th>URL del Repositorio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Project Report</td>
+      <td>
+        <a href="https://github.com/IoTech-2620-8741/qualitrack-report" target="_blank">
+          https://github.com/IoTech-2620-8741/qualitrack-report
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>Landing Page</td>
+      <td>
+        <a href="https://github.com/IoTech-2620-8741/qualitrack-landing-page" target="_blank">
+          https://github.com/IoTech-2620-8741/qualitrack-landing-page
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>Web Application</td>
+      <td>
+        <a href="https://github.com/IoTech-2620-8741/qualitrack-web-app" target="_blank">
+          https://github.com/IoTech-2620-8741/qualitrack-web-app
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 ### 6.1.3. Source Code Style Guide & Conventions
 
 ### 6.1.4. Software Deployment Configuration
