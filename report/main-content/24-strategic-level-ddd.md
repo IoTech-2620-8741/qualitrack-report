@@ -253,11 +253,15 @@ El cuarto paso consistió en identificar los pivotal points dentro de las línea
   <img src="../assets/img/chapter-iv/pivotal-points-1.png">
 </div>
 
+En el flujo de gestión de usuarios se identificaron como Pivotal Events User Registered, Role User Assigned, User Authenticated, Password Reset Requested, Recovery Code Verified y Password Changed, debido a que representan cambios relevantes en el estado del usuario o marcan el inicio y la finalización de procesos importantes. Por otro lado, Verification Code Sent no se considera un Pivotal Event, ya que corresponde a un paso intermedio dentro del proceso de recuperación de contraseña y no representa un cambio significativo de estado.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/pivotal-points-2.png">
 </div>
+
+En el flujo de suscripciones y pagos se identificaron como Pivotal Events Checkout Created, Payment Received, Subscription Activated y Subscription Canceled, debido a que representan cambios relevantes en el proceso de contratación y en el estado de la suscripción. Por otro lado, Plan Selected y Subscription Updated no se consideran Pivotal Events, ya que corresponden a acciones dentro del flujo que no representan un cambio significativo de estado.
 
 <br>
 
@@ -265,11 +269,15 @@ El cuarto paso consistió en identificar los pivotal points dentro de las línea
   <img src="../assets/img/chapter-iv/pivotal-points-3.png">
 </div>
 
+En el flujo de auditoría y generación de información se identificaron como Pivotal Events Audit Information Requested, Audit Report Generated, Batch Report Generated, Compliance Report Generated, Equipment Log Exported, KPI Dashboard Calculated y Deviation Trend Calculated, debido a que representan la generación o disponibilidad de información relevante para auditorías, seguimiento y análisis. Por otro lado, Historical Record Consulted no se considera Pivotal Event, ya que corresponde a una actividad intermedia dentro del proceso de generación del reporte de auditoría.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/pivotal-points-4.png">
 </div>
+
+En el flujo de fabricación y gestión de lotes se identificaron como Pivotal Events Batch Created, Manufacturing Completed, Batch Evaluated, Batch Released y Batch Rejected, debido a que representan cambios relevantes en el ciclo de vida del lote, desde su creación y evaluación hasta la decisión final de liberarlo o rechazarlo. Por otro lado, Batch Started, Pharmaceutical Product Registered y Raw Material Usage Registered no se consideran Pivotal Events, ya que corresponden a actividades intermedias dentro del proceso.
 
 <br>
 
@@ -278,12 +286,16 @@ El cuarto paso consistió en identificar los pivotal points dentro de las línea
   <img src="../assets/img/chapter-iv/pivotal-points-5.png">
 </div>
 
+En el flujo de gestión de alertas y cumplimiento se identificaron como Pivotal Events Alert Created, Alert Resolved, Low Stock Detected, Low Stock Alert Created y Calibration Expiration Alert Created, debido a que representan cambios relevantes en la detección y gestión de situaciones que requieren atención. Por otro lado, Alert Acknowledged, Notification Preference Updated, Batch Release Compliance Event Detected, Batch Rejection Compliance Event Detected y Quality Supervisor Notified no se consideran Pivotal Events, ya que corresponden a acciones complementarias o pasos intermedios del proceso.
+
 <br>
 
 
 <div align="center">
   <img src="../assets/img/chapter-iv/pivotal-points-6.png">
 </div>
+
+En el flujo de gestión de materias primas e inventario se identificaron como Pivotal Events Raw Material Registered, Raw Material Lot Received, Raw Material Accepted, Raw Material Rejected y Raw Material Consumed, debido a que representan cambios relevantes en el ciclo de vida de la materia prima, desde su registro y recepción hasta su aceptación, rechazo o consumo. Por otro lado, Supplier Receipt Registered, Raw Material Stored in Box, Inventory Updated e Inventory Movement Recorded no se consideran Pivotal Events, ya que corresponden a actividades de registro o actualización dentro del proceso.
 
 <br>
 
@@ -292,12 +304,16 @@ El cuarto paso consistió en identificar los pivotal points dentro de las línea
   <img src="../assets/img/chapter-iv/pivotal-points-7.png">
 </div>
 
+En el flujo de monitoreo de telemetría se identificaron como Pivotal Events Telemetry Measurement Recorded, Telemetry Anomaly Detected y Telemetry Status Updated, debido a que representan cambios relevantes en el registro y estado de la información de telemetría. Por otro lado, Measurement Reviewed, Telemetry History Point Recorded y Telemetry Snapshot Updated corresponden a procesos de consulta, almacenamiento o actualización derivados de la medición registrada.
+
 <br>
 
 
 <div align="center">
   <img src="../assets/img/chapter-iv/pivotal-points-8.png">
 </div>
+
+En el flujo de gestión de laboratorios se identificaron como Pivotal Events Laboratory Registered, Environment Registered, Staff Member Registered, Laboratory Membership Established y Staff Member Deactivated, debido a que representan cambios relevantes en la creación y administración del laboratorio, sus ambientes y el personal asociado. Por otro lado, Laboratory Profile Updated, Environment Updated y Box Registered no se consideran Pivotal Events, ya que corresponden a actualizaciones o acciones complementarias dentro de estos procesos.
 
 <br>
 
@@ -306,20 +322,20 @@ El cuarto paso consistió en identificar los pivotal points dentro de las línea
   <img src="../assets/img/chapter-iv/pivotal-points-9.png">
 </div>
 
-<br>
+En el flujo de gestión de equipos se identificaron como Pivotal Events Equipment Registered, Sensor Linked, Measurement Instrument Calibrated, Calibration Expired, Equipment Failure Detected y Equipment Status Updated, debido a que representan cambios relevantes en el estado y ciclo de vida del equipo. Por otro lado, Maintenance Registered, BPM Parameter Configured y Equipment Failure Recorded no se consideran Pivotal Events, ya que corresponden a actividades de mantenimiento, configuración o registro dentro del proceso.
 
-A partir de la revisión de los flujos, el equipo identificó los siguientes pivotal points:
+A partir de la revisión de los flujos, el equipo identificó los siguientes Pivotal Events:
 
 - User Registered, Role User Assigned, User Authenticated, Password Reset Requested, Recovery Code Verified y Password Changed.
 - Checkout Created, Payment Received, Subscription Activated y Subscription Canceled.
 - Audit Information Requested, Audit Report Generated, Batch Report Generated, Compliance Report Generated, Equipment Log Exported, KPI Dashboard Calculated y Deviation Trend Calculated.
 - Batch Created, Manufacturing Completed, Batch Evaluated, Batch Released y Batch Rejected.
-- Raw Material Registered, Raw Material Lot Received, Raw Material Accepted, Raw Material Rejected, Inventory Updated, Raw Material Consumed, Low Stock Detected e Inventory Movement Recorded.
-- Laboratory Registered, Environment Registered, Box Registered, Staff Member Registered, Laboratory Membership Established y Staff Member Deactivated.
-- Equipment Registered, Sensor Linked, Measurement Instrument Calibrated, Calibration Expired, Equipment Failure Detected y Equipment Failure Recorded.
-- Telemetry Measurement Recorded, Telemetry History Point Recorded, Telemetry Anomaly Detected y Telemetry Status Updated.
+- Raw Material Registered, Raw Material Lot Received, Raw Material Accepted, Raw Material Rejected, Raw Material Consumed y Low Stock Detected.
+- Laboratory Registered, Environment Registered, Staff Member Registered, Laboratory Membership Established y Staff Member Deactivated.
+- Equipment Registered, Sensor Linked, Measurement Instrument Calibrated, Calibration Expired, Equipment Failure Detected y Equipment Status Updated.
+- Telemetry Measurement Recorded, Telemetry Anomaly Detected y Telemetry Status Updated.
 
-Estos eventos fueron destacados en las líneas de tiempo mediante las líneas verticales, permitiendo visualizar los principales puntos de transición del comportamiento diseñado para el sistema.
+Estos eventos fueron destacados en las líneas de tiempo mediante las líneas verticales, permitiendo visualizar los principales puntos de transición identificados en el comportamiento diseñado para el sistema.
 
 **Paso 5: Commands**
 
