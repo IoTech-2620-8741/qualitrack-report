@@ -398,6 +398,110 @@ El workflow se aplica de manera independiente en los repositorios correspondient
   </li>
 </ul>
 
+<h4>Conventional Commits</h4>
+
+<p>
+El equipo utiliza la especificación Conventional Commits para mantener mensajes de commit claros, consistentes y trazables en los distintos repositorios de QualiTrack. La estructura general utilizada es:
+</p>
+
+<pre><code>&lt;type&gt;[optional scope]: &lt;description&gt;</code></pre>
+
+<p>
+El <code>type</code> identifica la naturaleza del cambio realizado, mientras que el
+<code>scope</code> permite indicar opcionalmente el módulo, bounded context o componente afectado.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>feat</code></td>
+      <td>Incorporación de una nueva funcionalidad al producto.</td>
+    </tr>
+    <tr>
+      <td><code>fix</code></td>
+      <td>Corrección de un error o comportamiento incorrecto.</td>
+    </tr>
+    <tr>
+      <td><code>docs</code></td>
+      <td>Cambios relacionados únicamente con documentación.</td>
+    </tr>
+    <tr>
+      <td><code>style</code></td>
+      <td>Cambios de formato que no modifican el comportamiento del software.</td>
+    </tr>
+    <tr>
+      <td><code>refactor</code></td>
+      <td>Modificación interna del código que no agrega funcionalidades ni corrige errores.</td>
+    </tr>
+    <tr>
+      <td><code>test</code></td>
+      <td>Creación, modificación o corrección de pruebas.</td>
+    </tr>
+    <tr>
+      <td><code>build</code></td>
+      <td>Cambios relacionados con compilación, dependencias o configuración de construcción.</td>
+    </tr>
+    <tr>
+      <td><code>chore</code></td>
+      <td>Tareas de mantenimiento que no modifican directamente las funcionalidades del producto.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Ejemplos de commits para los productos de QualiTrack:</strong></p>
+
+<pre><code>feat(benefits): add product benefits section
+fix(toolbar): fix toolbar landing page
+feat(equipment): add equipment monitoring dashboard
+feat(alerts): add equipment alert visualization
+feat(iam): implement user authentication
+feat(batch): add batch management
+fix(laboratory): fix laboratory subscription and staff management endpoints
+feat(telemetry): implement telemetry processing
+feat(sensors): add sensor data acquisition
+feat(equipment): expose equipment telemetry endpoints
+fix(telemetry): correct telemetry validation
+fix(iam): correct authentication token validation
+docs(report): update sprint execution evidence
+</code></pre>
+
+<h4>Semantic Versioning</h4>
+
+<p>
+El equipo utiliza Semantic Versioning 2.0.0 como convención para identificar las versiones estables de los productos de QualiTrack. Cada release utiliza el formato
+<code>MAJOR.MINOR.PATCH</code>.
+</p>
+
+<ul>
+  <li>
+    <strong>MAJOR:</strong> Se incrementa cuando se incorporan cambios incompatibles con versiones anteriores.
+  </li>
+  <li>
+    <strong>MINOR:</strong> Se incrementa cuando se incorporan nuevas funcionalidades manteniendo compatibilidad con la versión anterior.
+  </li>
+  <li>
+    <strong>PATCH:</strong> Se incrementa cuando se realizan correcciones compatibles con la versión anterior.
+  </li>
+</ul>
+
+<p>
+Por ejemplo, una primera versión estable puede identificarse como <code>1.0.0</code>. La incorporación posterior de una nueva funcionalidad compatible generaría la versión
+<code>1.1.0</code>, mientras que una corrección sobre dicha versión produciría
+<code>1.1.1</code>.
+</p>
+
+<p>
+Al integrar una release o hotfix en la rama <code>main</code>, se utiliza un tag de Git asociado con la versión correspondiente siguiendo la convención
+<code>vMAJOR.MINOR.PATCH</code>, por ejemplo:
+<code>v1.0.0</code>, <code>v1.1.0</code> o <code>v1.1.1</code>.
+</p>
+
 ### 6.1.3. Source Code Style Guide & Conventions
 
 ### 6.1.4. Software Deployment Configuration
