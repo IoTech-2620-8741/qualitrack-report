@@ -180,11 +180,15 @@ El tercer paso consistió en identificar los pain points presentes en los flujos
   <img src="../assets/img/chapter-iv/paint-point-1.jpg">
 </div>
 
+El Pain Point identificado en este flujo se relaciona con las validaciones necesarias para determinar si un lote de materia prima debe ser aceptado o rechazado después de su recepción. La pregunta busca definir qué criterios deben considerarse antes de actualizar el inventario con una materia prima aceptada.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/paint-point-2.jpg">
 </div>
+
+El Pain Point identificado en este flujo se relaciona con qué información debe mostrarse en la telemetría. Esto permite definir los datos que se presentarán a partir de las mediciones registradas y que posteriormente podrán ser revisados, almacenados en el historial, utilizados para detectar anomalías y actualizar el estado de la telemetría.
 
 <br>
 
@@ -192,17 +196,21 @@ El tercer paso consistió en identificar los pain points presentes en los flujos
   <img src="../assets/img/chapter-iv/paint-point-3.jpg">
 </div>
 
+El Pain Point identificado en este flujo se relaciona con cómo se resolverá una alerta después de que ha sido creada y reconocida. Esto permite definir el proceso necesario para llevar una alerta hasta su resolución.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/paint-point-4.jpg">
 </div>
 
-<br>
+El Pain Point identificado en este flujo se relaciona con qué validaciones deben realizarse para determinar si un lote puede ser liberado o debe ser rechazado después de completar su fabricación y evaluar el lote.
 
 <div align="center">
   <img src="../assets/img/chapter-iv/paint-point-5.jpg">
 </div>
+
+El Pain Point identificado en este flujo se relaciona con determinar qué información adicional debe incluirse al generar un reporte de auditoría, a partir de la consulta de los registros históricos y la información solicitada por el auditor.
 
 <br>
 
@@ -210,25 +218,29 @@ El tercer paso consistió en identificar los pain points presentes en los flujos
   <img src="../assets/img/chapter-iv/paint-point-6.jpg">
 </div>
 
+El Pain Point identificado en este flujo se relaciona con definir los medios disponibles para enviar el código de verificación durante la recuperación de contraseña.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/paint-point-7.jpg">
 </div>
 
-<br>
+El Pain Point identificado en este flujo se relaciona con verificar si un sensor ya se encuentra vinculado a otro equipo antes de realizar una nueva vinculación.
 
-A partir de la revisión de los flujos, se identificaron los siguientes pain points:
+---
 
-- *How many ways does the system have to send the verification code?:* identificado en el flujo de recuperación de contraseña, donde fue necesario determinar el mecanismo mediante el cual se enviará el código de verificación antes de permitir el cambio de contraseña.
-- *Which additional information will be required when generating the audit report?:* identificado en el flujo de auditoría, debido a la necesidad de definir qué información adicional debe considerarse para completar la generación del reporte de auditoría.
-- *What are the validations to release or reject a batch?:* identificado en el flujo de evaluación de lotes, donde se requiere establecer las validaciones que determinan si un lote puede ser liberado o debe ser rechazado.
-- *How is the alert going to be resolved?:* identificado en el flujo de gestión de alertas, debido a la necesidad de definir cómo se llevará a cabo la resolución de una alerta después de que haya sido reconocida.
-- *What are the validations to accept or reject raw material lot?:* identificado en el flujo de recepción de materias primas, donde se requiere establecer las validaciones necesarias para aceptar o rechazar un lote recibido.
-- *What information is going to be shown in the telemetry?:* identificado en el flujo de registro de telemetría, debido a la necesidad de determinar qué información será presentada a partir de las mediciones registradas.
-- *How can we check that the sensor has already been linked?:* identificado en el flujo de registro y vinculación de equipos, debido a la necesidad de determinar cómo verificar que un sensor ya se encuentra vinculado antes de realizar una nueva asociación.
+**Resumen de Pain Points**
 
-Estos pain points permitieron identificar los aspectos del diseño que requerían una definición adicional.
+- **How many ways does the system have to send the verification code?** Identificado en el flujo de recuperación de contraseña, donde se requiere definir el mecanismo mediante el cual se enviará el código de verificación.
+- **Which additional information will be required when generating the audit report?** Identificado en el flujo de auditoría, debido a la necesidad de determinar qué información adicional será necesaria para generar el reporte de auditoría.
+- **What are the validations to release or reject a batch?** Identificado en el flujo de evaluación de lotes, donde se requiere establecer las validaciones que determinarán si un lote será liberado o rechazado.
+- **How is the alert going to be resolved?** Identificado en el flujo de gestión de alertas, debido a la necesidad de definir cómo se realizará la resolución de una alerta después de que haya sido reconocida.
+- **What are the validations to accept or reject raw material lot?** Identificado en el flujo de recepción de materias primas, donde se requiere establecer las validaciones necesarias para aceptar o rechazar un lote recibido.
+- **What information is going to be shown in the telemetry?** Identificado en el flujo de registro de telemetría, debido a la necesidad de determinar qué información será presentada a partir de las mediciones registradas.
+- **How can we check that the sensor has already been linked?** Identificado en el flujo de registro y vinculación de equipos, debido a la necesidad de determinar cómo verificar que un sensor ya se encuentra vinculado antes de realizar una nueva asociación.
+
+En conjunto, estos Pain Points permitieron identificar los aspectos del diseño que requerían una definición adicional antes de continuar con la implementación de los flujos.
 
 
 **Paso 4: Pivotal Points**
