@@ -288,10 +288,6 @@ El despliegue de QualiTrack utiliza servicios diferenciados de acuerdo con las c
 El código fuente del proyecto QualiTrack se organiza en repositorios independientes con el propósito de facilitar el seguimiento de modificaciones, la revisión del código y la gestión del ciclo de vida de cada uno de los productos digitales que conforman la solución IoT. GitHub es utilizado como plataforma de colaboración y alojamiento de los repositorios, mientras que Git se emplea como sistema distribuido de control de versiones.
 </p>
 
-<p>
-Cada producto mantiene su propio historial de cambios y aplica las convenciones de branching, commits y versionado definidas por el equipo. Para el Backend Web Service, el repositorio incluye tanto el código fuente de la aplicación como los archivos correspondientes a las pruebas unitarias y de integración o aceptación.
-</p>
-
 <h4>Repositorios del Proyecto</h4>
 
 <p>
