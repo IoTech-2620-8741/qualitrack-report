@@ -347,11 +347,35 @@ El quinto paso consistió en identificar los commands asociados a los eventos de
   <img src="../assets/img/chapter-iv/command-1.png">
 </div>
 
+En esta etapa se identificaron los comandos asociados a las principales acciones del flujo de gestión de usuarios. Cada comando representa una intención del usuario o del sistema que, al ejecutarse correctamente, genera un evento de dominio. De esta manera, se estableció la relación entre las acciones realizadas y los cambios de estado producidos en el sistema.
+
+| **Comando**                | **Evento asociado**      | **Descripción**                                                                                                                     |
+| -------------------------- | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
+| **Register User**          | User Registered          | Permite registrar un nuevo usuario en el sistema, generando su registro correspondiente.                                            |
+| **Assign User Role**       | Role User Assigned       | Permite asignar un rol al usuario registrado, definiendo los permisos que tendrá dentro del sistema.                                |
+| **Authenticate User**      | User Authenticated       | Permite validar las credenciales del usuario para verificar su identidad y permitir el acceso al sistema.                           |
+| **Request Password Reset** | Password Reset Requested | Permite iniciar el proceso de recuperación de contraseña cuando el usuario solicita restablecer su acceso.                          |
+| **Send Verification Code** | Verification Code Sent   | Permite enviar un código de verificación al usuario como parte del proceso de recuperación de contraseña.                           |
+| **Verify Recovery Code**   | Recovery Code Verified   | Permite comprobar que el código de recuperación ingresado por el usuario sea válido antes de continuar con el cambio de contraseña. |
+| **Reset Password**         | Password Changed         | Permite establecer una nueva contraseña una vez que el proceso de recuperación ha sido validado correctamente.                      |
+
+
 <br>
 
 <div align="center">
-  <img src="../assets/img/chapter-iv/command-2.png">
+  <img src="../assets/img/chapter-iv/command-2.png" width="500">
 </div>
+
+se identificaron los comandos relacionados con la selección del plan, la creación del checkout, el procesamiento del pago y la gestión posterior de la suscripción. Cada comando se encuentra asociado a un evento que representa el cambio producido en el estado de la suscripción.
+
+| **Comando**             | **Evento asociado**   | **Descripción**                                                                        |
+| ----------------------- | --------------------- | -------------------------------------------------------------------------------------- |
+| **Select Plan**         | Plan Selected         | Permite seleccionar el plan de suscripción que el usuario desea contratar.             |
+| **Create Checkout**     | Checkout Created      | Permite crear el proceso de checkout para continuar con el pago del plan seleccionado. |
+| **Accept Payment**      | Payment Received      | Permite procesar el pago correspondiente a la suscripción seleccionada.                |
+| **Cancel Subscription** | Subscription Canceled | Permite cancelar una suscripción que se encuentra activa.                              |
+| **Update Subscription** | Subscription Updated  | Permite modificar la configuración o condiciones de una suscripción existente.         |
+
 
 <br>
 
@@ -359,11 +383,37 @@ El quinto paso consistió en identificar los commands asociados a los eventos de
   <img src="../assets/img/chapter-iv/command-3.png">
 </div>
 
+se identificaron los comandos relacionados con la consulta de información histórica, generación de reportes, exportación de registros y cálculo de indicadores. Cada comando produce un evento que representa el resultado de la operación realizada dentro del contexto de auditoría y generación de información.
+
+| **Comando**                    | **Evento asociado**         | **Descripción**                                                                                               |
+| ------------------------------ | --------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| **Request Audit Information**  | Audit Information Requested | Permite solicitar la información necesaria para realizar una auditoría.                                       |
+| **Consult Historical Record**  | Historical Record Consulted | Permite consultar los registros históricos disponibles para obtener información relacionada con la auditoría. |
+| **Generate Audit Report**      | Audit Report Generated      | Permite generar el reporte de auditoría a partir de la información recopilada.                                |
+| **Generate Batch Report**      | Batch Report Generated      | Permite generar un reporte con la información relacionada con los lotes registrados.                          |
+| **Generate Compliance Report** | Compliance Report Generated | Permite generar un reporte relacionado con el cumplimiento de las condiciones y controles establecidos.       |
+| **Export Equipment Log**       | Equipment Log Exported      | Permite exportar el registro histórico de información asociada a los equipos.                                 |
+| **Calculate KPI Dashboard**    | KPI Dashboard Calculated    | Permite calcular los indicadores utilizados para mostrar el estado general del sistema mediante el dashboard. |
+| **Calculate Deviation Trend**  | Deviation Trend Calculated  | Permite calcular la tendencia de las desviaciones registradas para facilitar su análisis histórico.           |
+
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/command-4.png">
 </div>
+
+se identificaron los comandos relacionados con la creación y evaluación de lotes, el registro del producto farmacéutico y el uso de materias primas, así como la finalización de la fabricación. Finalmente, la evaluación del lote permite determinar su liberación o rechazo, generando el evento correspondiente en cada caso.
+
+| **Comando**                         | **Evento asociado**               | **Descripción**                                                                                              |
+| ----------------------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **Create Batch**                    | Batch Created                     | Permite crear un nuevo lote de producción para iniciar su gestión y trazabilidad.                            |
+| **Register Pharmaceutical Product** | Pharmaceutical Product Registered | Permite registrar el producto farmacéutico asociado al proceso de producción.                                |
+| **Register Raw Material Usage**     | Raw Material Usage Registered     | Permite registrar las materias primas utilizadas durante la fabricación del lote.                            |
+| **Complete Manufacturing**          | Manufacturing Completed           | Permite registrar la finalización del proceso de fabricación del lote.                                       |
+| **Evaluate Batch**                  | Batch Evaluated                   | Permite evaluar el lote terminado de acuerdo con las validaciones establecidas para determinar su resultado. |
+| **Release Batch**                   | Batch Released                    | Permite liberar el lote cuando cumple con las condiciones requeridas para su aprobación.                     |
+| **Reject Batch**                    | Batch Rejected                    | Permite rechazar el lote cuando no cumple con las condiciones requeridas para su aprobación.                 |
 
 <br>
 
@@ -371,11 +421,42 @@ El quinto paso consistió en identificar los commands asociados a los eventos de
   <img src="../assets/img/chapter-iv/command-5.png">
 </div>
 
+se identificaron los comandos relacionados con la detección y gestión de eventos de cumplimiento, creación, reconocimiento y resolución de alertas, así como el control de bajo stock y las preferencias de notificación. También se consideraron los eventos de cumplimiento asociados a la liberación o rechazo de lotes y la notificación al supervisor de calidad.
+
+| **Comando**                                 | **Evento asociado**                       | **Descripción**                                                                                                    |
+| ------------------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| **Create Alert**                            | Alert Created                             | Permite crear una alerta cuando se identifica una situación que requiere atención.                                 |
+| **Acknowledge Alert**                       | Alert Acknowledged                        | Permite registrar que una alerta ha sido reconocida y atendida por el responsable correspondiente.                 |
+| **Resolve Alert**                           | Alert Resolved                            | Permite registrar la resolución de una alerta una vez atendida la situación que la originó.                        |
+| **Detect Compliance Event**                 | Compliance Event Detected                 | Permite detectar y registrar un evento relacionado con el cumplimiento de las condiciones establecidas.            |
+| **Detect Low Stock**                        | Low Stock Detected                        | Permite detectar una condición de bajo stock en las materias primas disponibles.                                   |
+| **Create Low Stock Alert**                  | Low Stock Alert Created                   | Permite generar una alerta cuando se detecta que el nivel de stock se encuentra por debajo del límite establecido. |
+| **Update Notification Preference**          | Notification Preference Updated           | Permite actualizar las preferencias de notificación configuradas por el usuario.                                   |
+| **Detect Batch Release Compliance Event**   | Batch Release Compliance Event Detected   | Permite detectar un evento de cumplimiento relacionado con la liberación de un lote.                               |
+| **Detect Batch Rejection Compliance Event** | Batch Rejection Compliance Event Detected | Permite detectar un evento de cumplimiento relacionado con el rechazo de un lote.                                  |
+| **Notify Quality Supervisor**               | Quality Supervisor Notified               | Permite notificar al supervisor de calidad cuando una situación requiere su atención.                              |
+
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/command-6.png">
 </div>
+
+se identificaron los comandos relacionados con el registro, recepción, aceptación y rechazo de materias primas, así como con su almacenamiento, consumo y actualización de existencias. También se consideró el registro de los movimientos de inventario para mantener la trazabilidad de las operaciones realizadas.
+
+| **Comando**                      | **Evento asociado**           | **Descripción**                                                                                              |
+| -------------------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **Register Raw Material**        | Raw Material Registered       | Permite registrar una nueva materia prima dentro del inventario.                                             |
+| **Register Supplier Receipt**    | Supplier Receipt Registered   | Permite registrar la recepción de materia prima proveniente de un proveedor.                                 |
+| **Receive Raw Material Lot**     | Raw Material Lot Received     | Permite registrar la recepción de un lote específico de materia prima.                                       |
+| **Accept Raw Material**          | Raw Material Accepted         | Permite aceptar un lote de materia prima después de realizar las validaciones correspondientes.              |
+| **Reject Raw Material**          | Raw Material Rejected         | Permite rechazar un lote de materia prima cuando no cumple con las condiciones establecidas.                 |
+| **Store Raw Material in Box**    | Raw Material Stored in Box    | Permite registrar el almacenamiento de la materia prima en un contenedor o box.                              |
+| **Remove Raw Material from Box** | Raw Material Removed from Box | Permite registrar la salida de la materia prima almacenada en un box.                                        |
+| **Consume Raw Material**         | Raw Material Consumed         | Permite registrar el consumo de una cantidad de materia prima durante un proceso de producción.              |
+| **Update Inventory**             | Inventory Updated             | Permite actualizar las cantidades disponibles de materia prima después de una operación de inventario.       |
+| **Record Inventory Movement**    | Inventory Movement Recorded   | Permite registrar el movimiento realizado sobre una materia prima para mantener su historial de operaciones. |
 
 <br>
 
@@ -383,11 +464,37 @@ El quinto paso consistió en identificar los commands asociados a los eventos de
   <img src="../assets/img/chapter-iv/command-7.png">
 </div>
 
+se identificaron los comandos relacionados con el registro y revisión de las mediciones de telemetría. Además, se consideraron las operaciones para mantener el historial, detectar anomalías y actualizar el estado de la telemetría a partir de las mediciones registradas.
+
+| **Comando**                        | **Evento asociado**              | **Descripción**                                                                                |
+| ---------------------------------- | -------------------------------- | ---------------------------------------------------------------------------------------------- |
+| **Record Telemetry Measurements**  | Telemetry Measurement Recorded   | Permite registrar las mediciones obtenidas de los dispositivos de telemetría.                  |
+| **Review Measurement**             | Measurement Reviewed             | Permite revisar una medición registrada para verificar la información obtenida.                |
+| **Record Telemetry History Point** | Telemetry History Point Recorded | Permite registrar una medición como punto dentro del historial de telemetría.                  |
+| **Detect Telemetry Anomaly**       | Telemetry Anomaly Detected       | Permite detectar una anomalía en los valores de telemetría registrados.                        |
+| **Update Telemetry Status**        | Telemetry Status Updated         | Permite actualizar el estado actual de la telemetría de acuerdo con la información registrada. |
+
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/command-8.png">
 </div>
+
+se identificaron los comandos relacionados con el registro y actualización del laboratorio, sus ambientes y boxes, además de la gestión de los miembros del personal y su pertenencia al laboratorio. También se consideró la desactivación del personal cuando deja de formar parte del laboratorio.
+
+| **Comando**                         | **Evento asociado**               | **Descripción**                                                                                                 |
+| ----------------------------------- | --------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Register Laboratory**             | Laboratory Registered             | Permite registrar un nuevo laboratorio dentro del sistema.                                                      |
+| **Update Laboratory Profile**       | Laboratory Profile Updated        | Permite actualizar la información y configuración básica del laboratorio.                                       |
+| **Register Environment**            | Environment Registered            | Permite registrar un nuevo ambiente o área perteneciente al laboratorio.                                        |
+| **Update Environment**              | Environment Updated               | Permite actualizar la información configurada para un ambiente del laboratorio.                                 |
+| **Register Box**                    | Box Registered                    | Permite registrar un box dentro del ambiente para organizar los productos farmacéuticos que serán monitoreados. |
+| **Register Staff Member**           | Staff Member Registered           | Permite registrar a un nuevo miembro del personal asociado al laboratorio.                                      |
+| **Establish Laboratory Membership** | Laboratory Membership Established | Permite establecer la relación entre un miembro del personal y el laboratorio correspondiente.                  |
+| **Deactivate Staff Member**         | Staff Member Deactivated          | Permite desactivar la participación de un miembro del personal dentro del laboratorio.                          |
+
+
 
 <br>
 
@@ -395,21 +502,24 @@ El quinto paso consistió en identificar los commands asociados a los eventos de
   <img src="../assets/img/chapter-iv/command-9.png">
 </div>
 
+se identificaron los comandos relacionados con el registro y mantenimiento de los equipos, la vinculación de sensores y configuración de parámetros BPM. También se consideraron las operaciones de calibración, detección y registro de fallas, así como la actualización del estado del equipo y la expiración de su calibración.
+
+| **Comando**                          | **Evento asociado**               | **Descripción**                                                                                                 |
+| ------------------------------------ | --------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Register Equipment**               | Equipment Registered              | Permite registrar un nuevo equipo dentro del sistema.                                                           |
+| **Register Maintenance**             | Maintenance Registered            | Permite registrar las actividades de mantenimiento realizadas sobre un equipo.                                  |
+| **Link Sensor**                      | Sensor Linked                     | Permite vincular un sensor con el equipo correspondiente.                                                       |
+| **Configure BPM Parameter**          | BPM Parameter Configured          | Permite configurar los parámetros BPM asociados al equipo.                                                      |
+| **Measurement Instrument Calibrate** | Measurement Instrument Calibrated | Permite registrar la calibración del instrumento de medición para asegurar su correcto funcionamiento.          |
+| **Detect Failure**                   | Equipment Failure Detected        | Permite registrar la detección de una falla en el equipo.                                                       |
+| **Record Equipment Failure**         | Equipment Failure Recorded        | Permite registrar formalmente la falla detectada y mantener su información como parte del historial del equipo. |
+| **Update Equipment Status**          | Equipment Status Updated          | Permite actualizar el estado operativo del equipo.                                                              |
+| **Calibration Expire**               | Calibration Expired               | Representa la expiración de la calibración del equipo cuando se alcanza el periodo establecido.                 |
+
+Los comandos identifacdos abarcan las principales operaciones de gestión de usuarios y autenticación, suscripciones y pagos, auditoría y generación de reportes, gestión de lotes y materias primas, monitoreo de telemetría, gestión de laboratorios y equipos, y control de alertas y cumplimiento. De esta manera, se estableció una relación clara entre las acciones realizadas y los eventos generados, permitiendo definir de forma más estructurada los flujos funcionales de la solución.
+
 <br>
 
-A partir de los flujos definidos, se identificaron los siguientes comandos:
-
-- Register User, Assign User Role, Authenticate User, Request Password Reset, Send Verification Code, Verify Recovery Code y Reset Password.
-- Select Plan, Create Checkout, Accept Payment, Update Subscription y Cancel Subscription.
-- Request Audit Information, Consult Historical Record, Generate Audit Report, Generate Batch Report, Generate Compliance Report, Export Equipment Log, Calculate KPI Dashboard y Calculate Deviation Trend.
-- Register Laboratory, Update Laboratory Profile, Register Environment, Update Environment, Register Box, Register Staff Member, Establish Laboratory Membership y Deactivate Staff Member.
-- Register Equipment, Register Maintenance, Link Sensor, Configure BPM Parameter, Calibrate Measurement Instrument, Calibration Expire, Detect Failure, Record Equipment Failure y Update Equipment Status.
-- Record Telemetry Measurements, Review Measurement, Record Telemetry History Point, Detect Telemetry Anomaly y Update Telemetry Status.
-- Create Batch, Start Batch, Register Pharmaceutical Product, Register Raw Material Usage, Complete Manufacturing, Evaluate Batch, Release Batch y Reject Batch.
-- Create Alert, Acknowledge Alert, Resolve Alert, Detect Compliance Event, Detect Low Stock, Create Low Stock Alert, Update Notification Preference, Detect Batch Release Compliance Event, Detect Batch Rejection Compliance Event y Notify Quality Supervisor.
-- Register Raw Material, Register Supplier Receipt, Receive Raw Material Lot, Accept Raw Material, Reject Raw Material, Store Raw Material in Box, Remove Raw Material from Box, Consume Raw Material, Update Inventory y Record Inventory Movement.
-
-En cada flujo, los comandos se ubicaron inmediatamente antes del evento correspondiente, permitiendo visualizar de manera explícita la relación acción → resultado, por ejemplo: Create Batch → Batch Created, Evaluate Batch → Batch Evaluated y Detect Telemetry Anomaly → Telemetry Anomaly Detected.
 
 
 **Paso 6: Policies and Actors**
