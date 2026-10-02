@@ -688,6 +688,8 @@ Finalmente, se trazaron fronteras alrededor de los grupos resultantes y se asign
   <img src="../assets/img/chapter-iv/3.png">
 </div>
 
+A continuación se presenta el detalle de cada Bounded Context identificado. Para cada uno se muestra el recorte del tablero de Design-Level EventStorming correspondiente, junto con una explicación de sus agregados, comandos, eventos, políticas, read models y sistemas externos, así como de la responsabilidad que cumple dentro del dominio de Qualitrack. Esta descripción permite comprender cómo se distribuye el comportamiento del sistema entre los distintos contextos y cómo se relacionan entre sí mediante eventos y políticas.
+
 **Bounded context: Identity and Access Management**
 
 <div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/IAM.jpg"> </div>
