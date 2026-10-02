@@ -59,9 +59,9 @@ El diseño de experiencia de usuario y de interfaz permite definir la propuesta 
 
 El desarrollo de QualiTrack comprende la implementación de los diferentes productos digitales que conforman la solución IoT: Landing Page, Web Application, Mobile Application, Backend Web Services, Edge Application y Embedded Application. Cada producto utiliza tecnologías y entornos de desarrollo especializados según sus responsabilidades dentro de la arquitectura.
 
-- **GitHub:** Plataforma utilizada para alojar los repositorios del proyecto, administrar el control de versiones y mantener la trazabilidad de los cambios realizados sobre los diferentes productos digitales de QualiTrack.
-   **Ruta de referencia:** [https://github.com](https://github.com)
-   **Organización del proyecto:** [https://github.com/ClosedSource-11848](https://github.com/ClosedSource-11848)
+- **GitHub:** Plataforma utilizada para alojar los repositorios del proyecto, administrar el control de versiones y mantener la trazabilidad de los cambios realizados sobre los diferentes productos digitales de QualiTrack. 
+    **Ruta de referencia:** [https://github.com](https://github.com)
+    **Organización del proyecto:** [https://github.com/IoTech-2620-8741](https://github.com/IoTech-2620-8741)
 
 - **WebStorm:** IDE utilizado para el desarrollo de la Web Application con Angular, TypeScript, HTML y CSS.
    **Ruta de descarga:** [https://www.jetbrains.com/webstorm/](https://www.jetbrains.com/webstorm/)
