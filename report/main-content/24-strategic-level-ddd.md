@@ -692,9 +692,29 @@ Finalmente, se trazaron fronteras alrededor de los grupos resultantes y se asign
 
 <div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/IAM.jpg"> </div>
 
+El Bounded Context de Identity and Access Management (IAM) es responsable de la identidad de las personas que interactúan con Qualitrack, incluyendo su registro, autenticación, asignación de roles y recuperación de contraseña. Su modelo se organiza alrededor del agregado **User**, que constituye la unidad de consistencia de este contexto y concentra los comandos, eventos y reglas relacionados con el acceso al sistema.
+
+En el flujo de **registro**, el Visitor consulta el read model *Form Sign Up* y ejecuta el comando *Register User*, lo que produce el evento *User Registered*. Este evento activa la política *Whenever User Registered Then Select Plan*, que conecta IAM con el contexto de Payments & Subscriptions e inicia la selección del plan de suscripción. Posteriormente, el comando *Assign User Role* genera el evento *User Role Assigned*, que determina los permisos del usuario dentro del sistema según su rol (Lab Technician, Quality Staff, Quality Supervisor o Auditor).
+
+En el flujo de **autenticación**, el usuario ingresa sus credenciales mediante el read model *Form Sign-In* y ejecuta el comando *Authenticate User*, cuyo resultado es el evento *User Authenticated*. Este evento permite que los demás contextos reconozcan al usuario y validen sus accesos.
+
+El flujo de **recuperación de contraseña** es una secuencia de varios pasos. Comienza con el comando *Request Password Reset*, ejecutado desde el read model *Password Recovery Form*, que genera el evento *Password Reset Requested*. A continuación se ejecuta *Send Verification Code* mediante el sistema externo **Resend**, que produce *Verification Code Sent*. El usuario ingresa el código recibido con *Verify Recovery Code*, lo que genera *Recovery Code Verified*, y finalmente *Reset Password* produce el evento *Password Changed*, que completa el proceso.
+
+Dentro de este contexto se identificó el pain point *"How many ways does the system have to send the verification code?"*, el cual indica que aún debía definirse el mecanismo de envío del código de verificación antes de permitir el cambio de contraseña.
+
 **Bounded context: Subscriptions and Payments**
 
 <div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Subscription%20and%20payments.jpg"> </div>
+
+El Bounded Context de Payments & Subscriptions gestiona el modelo de negocio de Qualitrack: la selección de planes, el procesamiento de los pagos y el ciclo de vida de las suscripciones. Está compuesto por tres agregados (**Plan**, **Payment** y **Subscription**), cada uno con responsabilidades diferenciadas. Además, este contexto se integra con el sistema externo **Stripe** para procesar los pagos de forma segura.
+
+El agregado **Plan** gestiona la selección de los planes disponibles. El usuario consulta el read model *Subscription Plans* y ejecuta el comando *Select Plan*, que genera el evento *Plan Selected*. Luego, el comando *Create Checkout* se apoya en Stripe para crear la sesión de pago y produce el evento *Checkout Created*.
+
+El agregado **Payment** centraliza el procesamiento del pago. A partir del read model *Payment Details*, el usuario ejecuta el comando *Accept Payment*, validado mediante Stripe, lo que genera el evento *Payment Received*. Una vez confirmado el pago, se produce el evento *Subscription Activated*, que dispara la política *Whenever Subscription Activated Then Laboratory Registered*. Mediante esta política, este contexto se comunica con Laboratory Management para iniciar el registro del laboratorio asociado a la suscripción.
+
+El agregado **Subscription** administra el ciclo de vida posterior a la activación. El usuario revisa su suscripción vigente en el read model *Current Subscription* y puede ejecutar el comando *Update Subscription*, que genera el evento *Subscription Updated*, o el comando *Cancel Subscription*, que produce el evento *Subscription Canceled*.
+
+De esta manera, el contexto garantiza que un laboratorio solo pueda registrarse cuando existe una suscripción activa y un pago confirmado.
 
 **Bounded context: Tracking and Telemetry**
 
