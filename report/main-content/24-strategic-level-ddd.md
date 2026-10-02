@@ -313,7 +313,7 @@ En el flujo de monitoreo de telemetría se identificaron como Pivotal Events Tel
   <img src="../assets/img/chapter-iv/pivotal-points-8.png">
 </div>
 
-En el flujo de gestión de laboratorios se identificaron como Pivotal Events Laboratory Registered, Environment Registered, Staff Member Registered, Laboratory Membership Established y Staff Member Deactivated, debido a que representan cambios relevantes en la creación y administración del laboratorio, sus ambientes y el personal asociado. Por otro lado, Laboratory Profile Updated, Environment Updated y Box Registered no se consideran Pivotal Events, ya que corresponden a actualizaciones o acciones complementarias dentro de estos procesos.
+En el flujo de gestión de laboratorios se identificaron como Pivotal Events Laboratory Registered, Environment Registered, Staff Member Registered, Laboratory Membership Established, Staff Member Deactivated y  Box Registered debido a que representan cambios relevantes en la creación y administración del laboratorio, sus ambientes, los contenedores (Box) que tendra dicho ambiente del laboratorio y el personal asociado. Por otro lado, Laboratory Profile Updated y Environment Updated no se consideran Pivotal Events, ya que corresponden a actualizaciones o acciones complementarias dentro de estos procesos.
 
 <br>
 
