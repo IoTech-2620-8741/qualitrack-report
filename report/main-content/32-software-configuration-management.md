@@ -336,6 +336,68 @@ https://github.com/IoTech-2620-8741
   </tbody>
 </table>
 
+<h4>GitFlow Workflow</h4>
+
+<p>
+El equipo adopta GitFlow como workflow de control de versiones para organizar el desarrollo de cada producto de QualiTrack. Esta estrategia permite separar las versiones estables del producto, el trabajo de integración, el desarrollo de nuevas funcionalidades, la preparación de releases y las correcciones urgentes realizadas sobre versiones publicadas.
+</p>
+
+<p>
+El workflow se aplica de manera independiente en los repositorios correspondientes a los diferentes productos del proyecto.
+</p>
+
+<p><strong>Ramas principales:</strong></p>
+
+<ul>
+  <li>
+    <strong><code>main</code>:</strong> Rama principal que contiene las versiones estables y desplegables de cada producto. El código integrado en esta rama debe corresponder a una versión preparada para ser utilizada en los entornos de despliegue definidos por el equipo.
+  </li>
+  <li>
+    <strong><code>develop</code>:</strong> Rama de integración que contiene las funcionalidades completadas para la siguiente versión del producto. Las nuevas funcionalidades se integran primero en esta rama antes de formar parte de una release.
+  </li>
+</ul>
+
+<p><strong>Ramas de soporte:</strong></p>
+
+<ul>
+  <li>
+    <strong><code>feature/&lt;scope&gt;-&lt;functionality&gt;</code>:</strong>
+    Ramas utilizadas para desarrollar nuevas funcionalidades. Se crean a partir de
+    <code>develop</code> y, una vez completadas y revisadas, se integran nuevamente en
+    <code>develop</code>.
+    <br><br>
+    Ejemplos:
+    <code>feature/equipment-monitoring</code>,
+    <code>feature/batch-management</code>,
+    <code>feature/mobile-alerts</code>,
+    <code>feature/edge-telemetry</code>.
+    <br><br>
+  </li>
+
+  <li>
+    <strong><code>release/&lt;version&gt;</code>:</strong>
+    Ramas utilizadas para preparar una nueva versión estable del producto. Se crean a partir de <code>develop</code> cuando las funcionalidades previstas para la versión han sido completadas.
+    <br><br>
+    Ejemplos:
+    <code>release/1.0.0</code>,
+    <code>release/1.1.0</code>.
+    <br><br>
+    Una vez validada la versión, la rama se integra en <code>main</code> y posteriormente los cambios necesarios se sincronizan nuevamente con <code>develop</code>.
+    <br><br>
+  </li>
+
+  <li>
+    <strong><code>hotfix/&lt;version&gt;-&lt;issue&gt;</code>:</strong>
+    Ramas utilizadas para realizar correcciones urgentes sobre una versión estable existente. Se crean a partir de <code>main</code> y utilizan una nueva versión de tipo PATCH.
+    <br><br>
+    Ejemplos:
+    <code>hotfix/1.0.1-authentication-error</code>,
+    <code>hotfix/1.1.1-telemetry-validation</code>.
+    <br><br>
+    Una vez finalizada la corrección, sus cambios se integran tanto en <code>main</code> como en <code>develop</code> para evitar que el defecto vuelva a aparecer en versiones posteriores.
+  </li>
+</ul>
+
 ### 6.1.3. Source Code Style Guide & Conventions
 
 ### 6.1.4. Software Deployment Configuration
