@@ -284,6 +284,220 @@ El despliegue de QualiTrack utiliza servicios diferenciados de acuerdo con las c
 
 ### 6.1.2. Source Code Management
 
+<p>
+El código fuente del proyecto QualiTrack se organiza en repositorios independientes con el propósito de facilitar el seguimiento de modificaciones, la revisión del código y la gestión del ciclo de vida de cada uno de los productos digitales que conforman la solución IoT. GitHub es utilizado como plataforma de colaboración y alojamiento de los repositorios, mientras que Git se emplea como sistema distribuido de control de versiones.
+</p>
+
+<h4>Repositorios del Proyecto</h4>
+
+<p>
+Los repositorios del proyecto se encuentran centralizados dentro de la organización <strong>IoTech-2620-8741</strong> en GitHub:
+<a href="https://github.com/IoTech-2620-8741" target="_blank">
+https://github.com/IoTech-2620-8741
+</a>.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Producto</th>
+      <th>URL del Repositorio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Project Report</td>
+      <td>
+        <a href="https://github.com/IoTech-2620-8741/qualitrack-report" target="_blank">
+          https://github.com/IoTech-2620-8741/qualitrack-report
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>Landing Page</td>
+      <td>
+        <a href="https://github.com/IoTech-2620-8741/qualitrack-landing-page" target="_blank">
+          https://github.com/IoTech-2620-8741/qualitrack-landing-page
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>Web Application</td>
+      <td>
+        <a href="https://github.com/IoTech-2620-8741/qualitrack-web-app" target="_blank">
+          https://github.com/IoTech-2620-8741/qualitrack-web-app
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>GitFlow Workflow</h4>
+
+<p>
+El equipo adopta GitFlow como workflow de control de versiones para organizar el desarrollo de cada producto de QualiTrack. Esta estrategia permite separar las versiones estables del producto, el trabajo de integración, el desarrollo de nuevas funcionalidades, la preparación de releases y las correcciones urgentes realizadas sobre versiones publicadas.
+</p>
+
+<p>
+El workflow se aplica de manera independiente en los repositorios correspondientes a los diferentes productos del proyecto.
+</p>
+
+<p><strong>Ramas principales:</strong></p>
+
+<ul>
+  <li>
+    <strong><code>main</code>:</strong> Rama principal que contiene las versiones estables y desplegables de cada producto. El código integrado en esta rama debe corresponder a una versión preparada para ser utilizada en los entornos de despliegue definidos por el equipo.
+  </li>
+  <li>
+    <strong><code>develop</code>:</strong> Rama de integración que contiene las funcionalidades completadas para la siguiente versión del producto. Las nuevas funcionalidades se integran primero en esta rama antes de formar parte de una release.
+  </li>
+</ul>
+
+<p><strong>Ramas de soporte:</strong></p>
+
+<ul>
+  <li>
+    <strong><code>feature/&lt;scope&gt;-&lt;functionality&gt;</code>:</strong>
+    Ramas utilizadas para desarrollar nuevas funcionalidades. Se crean a partir de
+    <code>develop</code> y, una vez completadas y revisadas, se integran nuevamente en
+    <code>develop</code>.
+    <br><br>
+    Ejemplos:
+    <code>feature/equipment-monitoring</code>,
+    <code>feature/batch-management</code>,
+    <code>feature/mobile-alerts</code>,
+    <code>feature/edge-telemetry</code>.
+    <br><br>
+  </li>
+
+  <li>
+    <strong><code>release/&lt;version&gt;</code>:</strong>
+    Ramas utilizadas para preparar una nueva versión estable del producto. Se crean a partir de <code>develop</code> cuando las funcionalidades previstas para la versión han sido completadas.
+    <br><br>
+    Ejemplos:
+    <code>release/1.0.0</code>,
+    <code>release/1.1.0</code>.
+    <br><br>
+    Una vez validada la versión, la rama se integra en <code>main</code> y posteriormente los cambios necesarios se sincronizan nuevamente con <code>develop</code>.
+    <br><br>
+  </li>
+
+  <li>
+    <strong><code>hotfix/&lt;version&gt;-&lt;issue&gt;</code>:</strong>
+    Ramas utilizadas para realizar correcciones urgentes sobre una versión estable existente. Se crean a partir de <code>main</code> y utilizan una nueva versión de tipo PATCH.
+    <br><br>
+    Ejemplos:
+    <code>hotfix/1.0.1-authentication-error</code>,
+    <code>hotfix/1.1.1-telemetry-validation</code>.
+    <br><br>
+    Una vez finalizada la corrección, sus cambios se integran tanto en <code>main</code> como en <code>develop</code> para evitar que el defecto vuelva a aparecer en versiones posteriores.
+  </li>
+</ul>
+
+<h4>Conventional Commits</h4>
+
+<p>
+El equipo utiliza la especificación Conventional Commits para mantener mensajes de commit claros, consistentes y trazables en los distintos repositorios de QualiTrack. La estructura general utilizada es:
+</p>
+
+<pre><code>&lt;type&gt;[optional scope]: &lt;description&gt;</code></pre>
+
+<p>
+El <code>type</code> identifica la naturaleza del cambio realizado, mientras que el
+<code>scope</code> permite indicar opcionalmente el módulo, bounded context o componente afectado.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>feat</code></td>
+      <td>Incorporación de una nueva funcionalidad al producto.</td>
+    </tr>
+    <tr>
+      <td><code>fix</code></td>
+      <td>Corrección de un error o comportamiento incorrecto.</td>
+    </tr>
+    <tr>
+      <td><code>docs</code></td>
+      <td>Cambios relacionados únicamente con documentación.</td>
+    </tr>
+    <tr>
+      <td><code>style</code></td>
+      <td>Cambios de formato que no modifican el comportamiento del software.</td>
+    </tr>
+    <tr>
+      <td><code>refactor</code></td>
+      <td>Modificación interna del código que no agrega funcionalidades ni corrige errores.</td>
+    </tr>
+    <tr>
+      <td><code>test</code></td>
+      <td>Creación, modificación o corrección de pruebas.</td>
+    </tr>
+    <tr>
+      <td><code>build</code></td>
+      <td>Cambios relacionados con compilación, dependencias o configuración de construcción.</td>
+    </tr>
+    <tr>
+      <td><code>chore</code></td>
+      <td>Tareas de mantenimiento que no modifican directamente las funcionalidades del producto.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Ejemplos de commits para los productos de QualiTrack:</strong></p>
+
+<pre><code>feat(benefits): add product benefits section
+fix(toolbar): fix toolbar landing page
+feat(equipment): add equipment monitoring dashboard
+feat(alerts): add equipment alert visualization
+feat(iam): implement user authentication
+feat(batch): add batch management
+fix(laboratory): fix laboratory subscription and staff management endpoints
+feat(telemetry): implement telemetry processing
+feat(sensors): add sensor data acquisition
+feat(equipment): expose equipment telemetry endpoints
+fix(telemetry): correct telemetry validation
+fix(iam): correct authentication token validation
+docs(report): update sprint execution evidence
+</code></pre>
+
+<h4>Semantic Versioning</h4>
+
+<p>
+El equipo utiliza Semantic Versioning 2.0.0 como convención para identificar las versiones estables de los productos de QualiTrack. Cada release utiliza el formato
+<code>MAJOR.MINOR.PATCH</code>.
+</p>
+
+<ul>
+  <li>
+    <strong>MAJOR:</strong> Se incrementa cuando se incorporan cambios incompatibles con versiones anteriores.
+  </li>
+  <li>
+    <strong>MINOR:</strong> Se incrementa cuando se incorporan nuevas funcionalidades manteniendo compatibilidad con la versión anterior.
+  </li>
+  <li>
+    <strong>PATCH:</strong> Se incrementa cuando se realizan correcciones compatibles con la versión anterior.
+  </li>
+</ul>
+
+<p>
+Por ejemplo, una primera versión estable puede identificarse como <code>1.0.0</code>. La incorporación posterior de una nueva funcionalidad compatible generaría la versión
+<code>1.1.0</code>, mientras que una corrección sobre dicha versión produciría
+<code>1.1.1</code>.
+</p>
+
+<p>
+Al integrar una release o hotfix en la rama <code>main</code>, se utiliza un tag de Git asociado con la versión correspondiente siguiendo la convención
+<code>vMAJOR.MINOR.PATCH</code>, por ejemplo:
+<code>v1.0.0</code>, <code>v1.1.0</code> o <code>v1.1.1</code>.
+</p>
+
 ### 6.1.3. Source Code Style Guide & Conventions
 
 ### 6.1.4. Software Deployment Configuration
