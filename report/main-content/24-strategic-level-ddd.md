@@ -782,11 +782,16 @@ El noveno paso consistió en identificar los agregados dentro de cada Bounded Co
     <img src="../assets/img/chapter-iv/aggregate-1-2.png">
 </div>
 
+El Aggregate User se identificó porque concentra las operaciones y eventos relacionados con la gestión de la identidad del usuario, como su registro, asignación de roles y autenticación. Agrupar estas responsabilidades permite mantener la información del usuario bajo una única raíz de consistencia y controlar de manera centralizada los cambios relacionados con su ciclo de vida.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/aggregate-2.png">
 </div>
+
+Los Aggregates Plan, Payment y Subscription se identificaron porque cada uno concentra un conjunto de operaciones y eventos relacionados con una responsabilidad específica. Esta separación permite mantener de forma independiente la información y las reglas asociadas a la selección de planes, el procesamiento de pagos y la gestión del estado de una suscripción, evitando mezclar responsabilidades diferentes dentro de un mismo Aggregate.
+
 
 <br>
 
@@ -795,12 +800,16 @@ El noveno paso consistió en identificar los agregados dentro de cada Bounded Co
   <img src="../assets/img/chapter-iv/aggregate-3.png">
 </div>
 
+El Aggregate Audit Report se identificó porque reúne las operaciones relacionadas con la consulta de información histórica y la generación de reportes de auditoría, incluyendo reportes de lotes y registros de equipos. Por su parte, KPI Dashboard se definió como un Aggregate independiente debido a que concentra específicamente el cálculo de indicadores clave, mientras que Deviation Trend mantiene separada la responsabilidad de calcular las tendencias de las desviaciones.
+
 <br>
 
 
 <div align="center">
   <img src="../assets/img/chapter-iv/aggregate-4.png">
 </div>
+
+El Aggregate Batch se identificó porque concentra las operaciones y eventos relacionados con el ciclo de vida de un lote farmacéutico, desde su creación y registro del producto hasta el uso de materias primas, la finalización de la fabricación y su evaluación. Además, la decisión de liberar o rechazar el lote forma parte de este mismo conjunto de reglas, por lo que mantener estas operaciones bajo el Aggregate Batch permite gestionar de manera consistente el estado y la trazabilidad del lote.
 
 <br>
 
@@ -809,6 +818,8 @@ El noveno paso consistió en identificar los agregados dentro de cada Bounded Co
   <img src="../assets/img/chapter-iv/aggregate-5.png">
 </div>
 
+El Aggregate Deviation Alert se identificó porque concentra las operaciones relacionadas con el ciclo de vida de las alertas de cumplimiento, desde su creación y reconocimiento hasta su resolución. También permite gestionar la información necesaria para atender una alerta y mantener su estado actualizado.
+
 <br>
 
 
@@ -816,12 +827,16 @@ El noveno paso consistió en identificar los agregados dentro de cada Bounded Co
   <img src="../assets/img/chapter-iv/aggregate-6.png">
 </div>
 
+El Aggregate Raw Material se identificó porque concentra las operaciones relacionadas con la gestión de la materia prima como recurso, incluyendo su registro, almacenamiento, consumo y actualización de inventario. Por otro lado, Raw Material Batch se definió para agrupar las operaciones asociadas específicamente al lote de materia prima, como su recepción, aceptación o rechazo, manteniendo separada la información del lote respecto a la materia prima y su disponibilidad en inventario.
+
 <br>
 
 
 <div align="center">
   <img src="../assets/img/chapter-iv/aggregate-7.png">
 </div>
+
+El Aggregate Equipment Telemetry se identificó porque concentra las operaciones relacionadas con la recepción, registro y seguimiento de las mediciones generadas por los equipos. Dentro de este Aggregate se agrupan los eventos de Telemetry Measurement Recorded, Telemetry History Point Recorded, Telemetry Anomaly Detected y Telemetry Status Updated, manteniendo bajo una misma responsabilidad la información sobre el estado y comportamiento de la telemetría. Esto permite gestionar de forma consistente el historial de mediciones y la detección de anomalías asociadas a los equipos.
 
 <br>
 
@@ -831,6 +846,8 @@ El noveno paso consistió en identificar los agregados dentro de cada Bounded Co
   <img src="../assets/img/chapter-iv/aggregate-8-2.png">
 </div>
 
+El Aggregate Laboratory se identifica porque concentra la información principal del laboratorio y permite gestionar su registro y actualización. El Aggregate Environment se define para controlar los ambientes asociados al laboratorio, incluyendo su registro y actualización, además de servir como referencia para otras operaciones relacionadas con la producción y los equipos. El Aggregate Box se identifica para gestionar las cajas asociadas a un ambiente, sobre las cuales posteriormente pueden realizarse acciones como el almacenamiento de materias primas o la configuración de parámetros de medición. Finalmente, StaffMember se establece para gestionar al personal perteneciente al laboratorio, incluyendo su registro, membresía y desactivación.
+
 <br>
 
 
@@ -838,33 +855,13 @@ El noveno paso consistió en identificar los agregados dentro de cada Bounded Co
   <img src="../assets/img/chapter-iv/aggregate-9.png">
 </div>
 
+El Aggregate Equipment se identifica porque concentra la información y las operaciones relacionadas con la gestión de los equipos utilizados dentro del laboratorio. En este Aggregate se agrupan acciones como el registro del equipo, la vinculación de sensores, la configuración de parámetros BPM, la calibración de instrumentos, el mantenimiento y la actualización de su estado.
+
+Además, permite gestionar situaciones relacionadas con el ciclo de vida del equipo, como la expiración de una calibración y el registro de fallas detectadas. Por ello, Equipment actúa como la unidad principal para mantener la identidad, configuración y estado operativo de cada equipo, manteniendo estas responsabilidades dentro de un mismo límite de consistencia.
+
 <br>
 
-
-
-
-El equipo identificó los agregados en cada Bounded Context de la siguiente manera:
-
-| Bounded Context              | Aggregate               | Descripción                                                                                                                 |
-| ---------------------------- | ----------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| **IAM**                      | **User**                | Centraliza la gestión del usuario, incluyendo su registro, autenticación, asignación de roles y recuperación de contraseña. |
-| **Payments & Subscriptions** | **Plan**                | Gestiona la selección y configuración de los planes de suscripción disponibles.                                             |
-| **Payments & Subscriptions** | **Payment**             | Centraliza el registro y procesamiento de los pagos asociados a las suscripciones.                                          |
-| **Payments & Subscriptions** | **Subscription**        | Gestiona el ciclo de vida de la suscripción, incluyendo su activación, actualización y cancelación.                         |
-| **Reporting & Audit**        | **Audit Report**        | Centraliza la solicitud, consulta y generación de información relacionada con auditorías y registros históricos.            |
-| **Reporting & Audit**        | **KPI Dashboard**       | Gestiona el cálculo y presentación de indicadores clave para el seguimiento del sistema.                                    |
-| **Reporting & Audit**        | **Deviation Trend**     | Centraliza el cálculo y presentación de tendencias relacionadas con las desviaciones registradas.                           |
-| **Product Batch Management** | **Batch**               | Centraliza el ciclo de vida del lote, desde su creación e inicio hasta la fabricación, evaluación, liberación o rechazo.    |
-| **Compliance & Alerting**    | **Deviation Alert**     | Gestiona las alertas de cumplimiento, incluyendo su creación, reconocimiento y resolución.                                  |
-| **Inventory Management**     | **Raw Material**        | Centraliza la gestión de las materias primas, incluyendo su registro, almacenamiento, consumo y movimientos de inventario.  |
-| **Inventory Management**     | **Raw Material Batch**  | Gestiona los lotes de materia prima recibidos y su proceso de aceptación o rechazo.                                         |
-| **Tracking & Telemetry**     | **Equipment Telemetry** | Centraliza el registro y seguimiento de las mediciones de telemetría, su historial, anomalías y estado.                     |
-| **Laboratory Management**    | **Laboratory**          | Gestiona la información principal del laboratorio y su perfil.                                                              |
-| **Laboratory Management**    | **Environment**         | Gestiona los ambientes asociados al laboratorio y su información correspondiente.                                           |
-| **Laboratory Management**    | **Box**                 | Gestiona las cajas asociadas a los ambientes para el almacenamiento de materias primas.                                     |
-| **Laboratory Management**    | **Staff Member**        | Centraliza el registro, membresía y desactivación del personal asociado al laboratorio.                                     |
-| **Equipment Management**     | **Equipment**           | Centraliza el registro, configuración, vinculación de sensores, calibración, estado y fallas de los equipos.                |
-| **Equipment Management**     | **MaintenanceRecord**   | Gestiona el registro y seguimiento de las actividades de mantenimiento realizadas sobre los equipos.                        |
+---
 
 A partir del modelo de Event Storming, se llevó a cabo una sesión de Candidate Context Discovery para identificar los Bounded Contexts de la solución. Se utilizó principalmente la técnica Look-for Pivotal Events, mediante la cual se identificaron eventos que representan cambios significativos de estado dentro de los diferentes procesos del dominio.
 
