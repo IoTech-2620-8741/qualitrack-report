@@ -45,7 +45,7 @@ Ser una startup reconocida por comprender las necesidades de las organizaciones 
         <img src="../assets/img/chapter-i/vitaly.jpeg" alt="Vitaly Baca Photo" width="120">
     </td>
     <td valign="top">
-      <strong>Vitaly Baca Camargo Arturo - (u20231c426)</strong> - Ingeniería de Software<br><br>
+      <strong>Vitaly Baca Camargo Arturo - (U20231c426)</strong> - Ingeniería de Software<br><br>
       Tengo 21 años y soy una persona tranquila, colaborativa y adaptable. Me gusta trabajar en equipo, aportar ideas y buscar soluciones eficientes a los problemas que se presentan. Cuento con conocimientos en desarrollo Backend utilizando Java y Node.js, así como en desarrollo móvil con Flutter y Kotlin. También tengo conocimientos en diseño UX/UI y en Domain-Driven Design (DDD), lo que me permite tener una visión más completa del desarrollo de software. Me interesa seguir aprendiendo nuevas tecnologías y aplicar mis conocimientos para desarrollar soluciones eficientes que aporten valor a cada proyecto.
     </td>
   </tr>
@@ -110,4 +110,14 @@ Ser una startup reconocida por comprender las necesidades de las organizaciones 
     </td>
   </tr>
 
-</table>
+  <tr>
+    <td width="140" height="150" valign="top" align="center">
+      <img src="../assets/img/chapter-i/adrian.jpeg" alt="Adrian Quiroz Photo"  width="120">
+    </td>
+    <td valign="top">
+      <strong>Adrian Alonso Quiroz Caceres - (U202214864)</strong> - Ingeniería de Software<br><br>
+      Soy estudiante de la carrera de Ingeniería de Software, cuento con conocimientos y experiencia en diversos lenguajes de programación como Python, C#, Java, C++ y JavaScript, lo que me permite adaptarme con facilidad a distintos entornos y proyectos. Además, manejo Frameworks y tecnologías modernas como Node.js, Vue.js, Angular y Spring Boot, que me han permitido desarrollar aplicaciones web, servicios backend.
+    </td>
+  </tr>
+  
+  </table>
