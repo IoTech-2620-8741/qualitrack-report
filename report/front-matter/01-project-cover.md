@@ -68,6 +68,10 @@ Proyecto
     <td style="border: none;">U202311601</td>
     <td style="border: none;">Torres Apolinario, Giovany Smith</td>
   </tr>
+  <tr>
+    <td style="border: none;">U202214864</td>
+    <td style="border: none;">Quiroz Caceres, Adrian Alonso</td>
+  </tr>
 </table>
 
 **Período 202620**
