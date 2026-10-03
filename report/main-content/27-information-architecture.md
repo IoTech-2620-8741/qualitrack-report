@@ -18,6 +18,10 @@ La arquitectura de la información de **QualiTrack** está diseñada para una na
 
 ### 5.2.2. Labeling Systems
 
+* **Nomenclatura:** Se utiliza un lenguaje técnico alineado a la industria farmacéutica en los títulos de las secciones. Los botones tienen etiquetas accionables como *Request a Demo*, *Sign In* y *Sign Up*.
+* **Consistencia:** Mantenemos una nomenclatura uniforme en toda la plataforma. La sección de costos se identifica como *Plans* tanto en la navegación principal como en el título de la sección de precios.
+* **Lenguaje Adaptativo:** El contenido está diseñado para ser comprendido por profesionales del sector farmacéutico, integrando términos regulatorios clave como DIGEMID y BPM sin perder la claridad operativa.
+
 ### 5.2.3. SEO Tags and Meta Tags
 
 ### 5.2.4. Searching Systems
