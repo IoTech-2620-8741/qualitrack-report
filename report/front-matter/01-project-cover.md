@@ -45,7 +45,7 @@ Proyecto
     <td style="border: none;">Cutiri Agüero, Fabrizio Alexander</td>
   </tr>
   <tr>
-    <td style="border: none;">u20231b173</td>
+    <td style="border: none;">U20231b173</td>
     <td style="border: none;">Guzmán Cabrejos, Yaku Mateo</td>
   </tr>
   <tr>
@@ -76,7 +76,7 @@ Proyecto
 
 **Período 202620**
 
-**Septiembre 2026**
+**Octubre 2026**
 
 </div>
 </div>
