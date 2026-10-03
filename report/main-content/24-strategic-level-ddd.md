@@ -88,11 +88,15 @@ Los eventos fueron organizados en secuencias horizontales, conectando aquellos q
   <img src="../assets/img/chapter-iv/time-line-1.png">
 </div>
 
+se organizaron los eventos del IAM y Payments & Subscriptions en secuencias temporales, mostrando el orden en que ocurren dentro de cada flujo. Se identificaron procesos independientes, como el registro y autenticación de usuarios, la recuperación de contraseña y la gestión de suscripciones y pagos.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/time-line-2.png">
 </div>
+
+se organizaron los eventos del Reporting & Audit según su secuencia. El flujo principal parte de la solicitud de información de auditoría, continúa con la consulta del registro histórico y finaliza con la generación del reporte de auditoría. También se ubicaron como procesos independientes la generación de reportes de lote y cumplimiento, la exportación del registro de equipos, el cálculo del dashboard de KPIs y el cálculo de tendencias de desviaciones.
 
 <br>
 
@@ -100,11 +104,15 @@ Los eventos fueron organizados en secuencias horizontales, conectando aquellos q
   <img src="../assets/img/chapter-iv/time-line-3.png">
 </div>
 
+se organizaron los eventos del Product Batch Management. El flujo inicia con la creación y comienzo del lote, seguido del registro del producto farmacéutico y del uso de materias primas. Luego, tras completar la fabricación, el lote es evaluado y puede continuar por dos caminos: Batch Released o Batch Rejected.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/time-line-4.png">
 </div>
+
+El flujo principal muestra la creación, reconocimiento y resolución de una alerta. También se presentan procesos independientes relacionados con la detección de bajo stock y la creación de su alerta, la actualización de preferencias de notificación y los eventos de cumplimiento asociados a la liberación o rechazo de lotes. Finalmente, se incluye la notificación al supervisor de calidad.
 
 <br>
 
@@ -112,11 +120,15 @@ Los eventos fueron organizados en secuencias horizontales, conectando aquellos q
   <img src="../assets/img/chapter-iv/time-line-5.png">
 </div>
 
+El flujo inicia con el registro de la materia prima, la recepción del lote y su evaluación, que puede resultar en su aceptación o rechazo. Cuando la materia prima es aceptada y almacenada, puede ser consumida, actualizando el inventario y registrando el movimiento correspondiente. A partir de la actualización del inventario también se puede detectar un nivel bajo de stock.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/time-line-6.png">
 </div>
+
+El flujo parte del registro de una medición de telemetría, a partir del cual se generan diferentes acciones: registrar el punto histórico, revisar la medición, detectar anomalías y actualizar el estado de la telemetría. La actualización del estado se mantiene como un proceso independiente.
 
 <br>
 
@@ -124,31 +136,37 @@ Los eventos fueron organizados en secuencias horizontales, conectando aquellos q
   <img src="../assets/img/chapter-iv/time-line-7.png">
 </div>
 
+En esta imagen se organizaron los eventos en tres flujos principales. El primero corresponde al registro y actualización del laboratorio. El segundo muestra el registro y actualización de un ambiente, seguido del registro de un Box, que funciona como contenedor de productos farmacéuticos y permite organizar su seguimiento mediante mediciones de temperatura, calidad del aire, humedad y luminosidad. Finalmente, el tercer flujo representa el registro del personal, el establecimiento de su membresía en el laboratorio y su posterior desactivación.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/time-line-8.png">
 </div>
 
-<br>
+El flujo inicia con el registro del equipo, seguido de la vinculación del sensor y la configuración de sus parámetros BPM. También se consideran el mantenimiento y la calibración del instrumento. Finalmente, se contempla la expiración de la calibración, la detección y registro de fallas del equipo, además de la actualización de su estado.
 
-En el flujo de **gestión de usuarios**, se organizó la secuencia de registro, asignación de rol y autenticación, además del flujo independiente de recuperación de contraseña mediante la solicitud, envío y verificación del código de recuperación.
+---
 
-En el flujo de **suscripciones y pagos**, se estableció la secuencia desde la selección del plan y creación del checkout hasta la recepción del pago y activación de la suscripción, considerando posteriormente su actualización o cancelación.
+**Resumen**
 
-En el flujo de **gestión de laboratorios**, se estableció la secuencia desde la selección del plan y creación del checkout hasta la recepción del pago y activación de la suscripción, considerando posteriormente su actualización o cancelación.
+En el **flujo de gestión de usuarios,** se organizó la secuencia de registro, asignación de rol y autenticación, además del flujo independiente de recuperación de contraseña mediante la solicitud, envío y verificación del código de recuperación.
 
-En el flujo de **monitoreo de telemetría**, se estableció el registro de las mediciones y sus posibles derivaciones hacia el registro histórico, detección de anomalías, actualización del estado y revisión de las mediciones.
+En el **flujo de suscripciones y pagos**, se estableció la secuencia desde la selección del plan y creación del checkout hasta la recepción del pago y activación de la suscripción, considerando posteriormente su actualización o cancelación.
 
-En el flujo de **gestión de equipos**, se organizaron las actividades relacionadas con el registro del equipo, vinculación del sensor, configuración de parámetros, mantenimiento, calibración y actualización del estado del equipo.
+En el **flujo de gestión de laboratorios**, se organizaron los eventos relacionados con el registro y actualización del laboratorio, el registro y actualización de ambientes, el registro de los Box como contenedores para los productos farmacéuticos y la gestión del personal mediante su registro, membresía y desactivación.
 
-En el flujo de **gestión de materias primas** e inventario, se estableció la secuencia de registro de la materia prima, recepción del lote y su posterior aceptación o rechazo. Para los lotes aceptados se organizó la actualización del inventario, registro de movimientos y detección de bajo stock, incluyendo también el consumo de materia prima.
+En el **flujo de monitoreo de telemetría**, se estableció el registro de las mediciones y sus posibles derivaciones hacia el registro histórico, detección de anomalías, actualización del estado y revisión de las mediciones.
 
-En el flujo de **fabricación y gestión de lotes**, se organizó la secuencia de creación e inicio del lote, registro del uso de materias primas, finalización de la fabricación y evaluación del lote, que posteriormente puede resultar en su liberación o rechazo.
+En el **flujo de gestión de equipos**, se organizaron las actividades relacionadas con el registro del equipo, vinculación del sensor, configuración de parámetros BPM, mantenimiento, calibración, detección y registro de fallas, así como la actualización del estado del equipo.
 
-En el flujo de **gestión de alertas y cumplimiento**, se organizaron los eventos relacionados con la creación, reconocimiento y resolución de alertas, así como la detección de bajo stock, eventos de cumplimiento y actualización de preferencias de notificación.
+En el **flujo de gestión de materias primas e inventario**, se estableció la secuencia de registro de la materia prima, recepción del lote y su posterior aceptación o rechazo. Para los lotes aceptados se organizó el almacenamiento, consumo, actualización del inventario, registro de movimientos y detección de bajo stock.
 
-Finalmente, en el flujo de **auditoría y generación de información**, se estableció la secuencia de solicitud de información, consulta de registros históricos y generación de reportes, además de los procesos independientes de cálculo de indicadores, tendencias y exportación de información.
+En el **flujo de fabricación y gestión de lotes**, se organizó la secuencia de creación e inicio del lote, registro del producto farmacéutico y uso de materias primas, finalización de la fabricación y evaluación del lote, que posteriormente puede resultar en su liberación o rechazo.
+
+En el **flujo de gestión de alertas y cumplimiento**, se organizaron los eventos relacionados con la creación, reconocimiento y resolución de alertas, la detección de bajo stock y los eventos de cumplimiento asociados a la liberación o rechazo de lotes, además de la actualización de preferencias de notificación y la notificación al supervisor de calidad.
+
+Finalmente, en el **flujo de auditoría y generación de información**, se estableció la secuencia de solicitud de información, consulta de registros históricos y generación del reporte de auditoría, además de los procesos independientes de generación de reportes, cálculo de indicadores y tendencias y exportación de información.
 
 La organización de estos flujos permitió establecer una visión cronológica del comportamiento del sistema y sirvió como base para continuar con las siguientes etapas del Design-Level EventStorming.
 
@@ -162,11 +180,15 @@ El tercer paso consistió en identificar los pain points presentes en los flujos
   <img src="../assets/img/chapter-iv/paint-point-1.jpg">
 </div>
 
+El Pain Point identificado en este flujo se relaciona con las validaciones necesarias para determinar si un lote de materia prima debe ser aceptado o rechazado después de su recepción. La pregunta busca definir qué criterios deben considerarse antes de actualizar el inventario con una materia prima aceptada.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/paint-point-2.jpg">
 </div>
+
+El Pain Point identificado en este flujo se relaciona con qué información debe mostrarse en la telemetría. Esto permite definir los datos que se presentarán a partir de las mediciones registradas y que posteriormente podrán ser revisados, almacenados en el historial, utilizados para detectar anomalías y actualizar el estado de la telemetría.
 
 <br>
 
@@ -174,17 +196,21 @@ El tercer paso consistió en identificar los pain points presentes en los flujos
   <img src="../assets/img/chapter-iv/paint-point-3.jpg">
 </div>
 
+El Pain Point identificado en este flujo se relaciona con cómo se resolverá una alerta después de que ha sido creada y reconocida. Esto permite definir el proceso necesario para llevar una alerta hasta su resolución.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/paint-point-4.jpg">
 </div>
 
-<br>
+El Pain Point identificado en este flujo se relaciona con qué validaciones deben realizarse para determinar si un lote puede ser liberado o debe ser rechazado después de completar su fabricación y evaluar el lote.
 
 <div align="center">
   <img src="../assets/img/chapter-iv/paint-point-5.jpg">
 </div>
+
+El Pain Point identificado en este flujo se relaciona con determinar qué información adicional debe incluirse al generar un reporte de auditoría, a partir de la consulta de los registros históricos y la información solicitada por el auditor.
 
 <br>
 
@@ -192,25 +218,29 @@ El tercer paso consistió en identificar los pain points presentes en los flujos
   <img src="../assets/img/chapter-iv/paint-point-6.jpg">
 </div>
 
+El Pain Point identificado en este flujo se relaciona con definir los medios disponibles para enviar el código de verificación durante la recuperación de contraseña.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/paint-point-7.jpg">
 </div>
 
-<br>
+El Pain Point identificado en este flujo se relaciona con verificar si un sensor ya se encuentra vinculado a otro equipo antes de realizar una nueva vinculación.
 
-A partir de la revisión de los flujos, se identificaron los siguientes pain points:
+---
 
-- *How many ways does the system have to send the verification code?:* identificado en el flujo de recuperación de contraseña, donde fue necesario determinar el mecanismo mediante el cual se enviará el código de verificación antes de permitir el cambio de contraseña.
-- *Which additional information will be required when generating the audit report?:* identificado en el flujo de auditoría, debido a la necesidad de definir qué información adicional debe considerarse para completar la generación del reporte de auditoría.
-- *What are the validations to release or reject a batch?:* identificado en el flujo de evaluación de lotes, donde se requiere establecer las validaciones que determinan si un lote puede ser liberado o debe ser rechazado.
-- *How is the alert going to be resolved?:* identificado en el flujo de gestión de alertas, debido a la necesidad de definir cómo se llevará a cabo la resolución de una alerta después de que haya sido reconocida.
-- *What are the validations to accept or reject raw material lot?:* identificado en el flujo de recepción de materias primas, donde se requiere establecer las validaciones necesarias para aceptar o rechazar un lote recibido.
-- *What information is going to be shown in the telemetry?:* identificado en el flujo de registro de telemetría, debido a la necesidad de determinar qué información será presentada a partir de las mediciones registradas.
-- *How can we check that the sensor has already been linked?:* identificado en el flujo de registro y vinculación de equipos, debido a la necesidad de determinar cómo verificar que un sensor ya se encuentra vinculado antes de realizar una nueva asociación.
+**Resumen de Pain Points**
 
-Estos pain points permitieron identificar los aspectos del diseño que requerían una definición adicional.
+- **How many ways does the system have to send the verification code?** Identificado en el flujo de recuperación de contraseña, donde se requiere definir el mecanismo mediante el cual se enviará el código de verificación.
+- **Which additional information will be required when generating the audit report?** Identificado en el flujo de auditoría, debido a la necesidad de determinar qué información adicional será necesaria para generar el reporte de auditoría.
+- **What are the validations to release or reject a batch?** Identificado en el flujo de evaluación de lotes, donde se requiere establecer las validaciones que determinarán si un lote será liberado o rechazado.
+- **How is the alert going to be resolved?** Identificado en el flujo de gestión de alertas, debido a la necesidad de definir cómo se realizará la resolución de una alerta después de que haya sido reconocida.
+- **What are the validations to accept or reject raw material lot?** Identificado en el flujo de recepción de materias primas, donde se requiere establecer las validaciones necesarias para aceptar o rechazar un lote recibido.
+- **What information is going to be shown in the telemetry?** Identificado en el flujo de registro de telemetría, debido a la necesidad de determinar qué información será presentada a partir de las mediciones registradas.
+- **How can we check that the sensor has already been linked?** Identificado en el flujo de registro y vinculación de equipos, debido a la necesidad de determinar cómo verificar que un sensor ya se encuentra vinculado antes de realizar una nueva asociación.
+
+En conjunto, estos Pain Points permitieron identificar los aspectos del diseño que requerían una definición adicional antes de continuar con la implementación de los flujos.
 
 
 **Paso 4: Pivotal Points**
@@ -223,11 +253,15 @@ El cuarto paso consistió en identificar los pivotal points dentro de las línea
   <img src="../assets/img/chapter-iv/pivotal-points-1.png">
 </div>
 
+En el flujo de gestión de usuarios se identificaron como Pivotal Events User Registered, Role User Assigned, User Authenticated, Password Reset Requested, Recovery Code Verified y Password Changed, debido a que representan cambios relevantes en el estado del usuario o marcan el inicio y la finalización de procesos importantes. Por otro lado, Verification Code Sent no se considera un Pivotal Event, ya que corresponde a un paso intermedio dentro del proceso de recuperación de contraseña y no representa un cambio significativo de estado.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/pivotal-points-2.png">
 </div>
+
+En el flujo de suscripciones y pagos se identificaron como Pivotal Events Checkout Created, Payment Received, Subscription Activated y Subscription Canceled, debido a que representan cambios relevantes en el proceso de contratación y en el estado de la suscripción. Por otro lado, Plan Selected y Subscription Updated no se consideran Pivotal Events, ya que corresponden a acciones dentro del flujo que no representan un cambio significativo de estado.
 
 <br>
 
@@ -235,11 +269,15 @@ El cuarto paso consistió en identificar los pivotal points dentro de las línea
   <img src="../assets/img/chapter-iv/pivotal-points-3.png">
 </div>
 
+En el flujo de auditoría y generación de información se identificaron como Pivotal Events Audit Information Requested, Audit Report Generated, Batch Report Generated, Compliance Report Generated, Equipment Log Exported, KPI Dashboard Calculated y Deviation Trend Calculated, debido a que representan la generación o disponibilidad de información relevante para auditorías, seguimiento y análisis. Por otro lado, Historical Record Consulted no se considera Pivotal Event, ya que corresponde a una actividad intermedia dentro del proceso de generación del reporte de auditoría.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/pivotal-points-4.png">
 </div>
+
+En el flujo de fabricación y gestión de lotes se identificaron como Pivotal Events Batch Created, Manufacturing Completed, Batch Evaluated, Batch Released y Batch Rejected, debido a que representan cambios relevantes en el ciclo de vida del lote, desde su creación y evaluación hasta la decisión final de liberarlo o rechazarlo. Por otro lado, Batch Started, Pharmaceutical Product Registered y Raw Material Usage Registered no se consideran Pivotal Events, ya que corresponden a actividades intermedias dentro del proceso.
 
 <br>
 
@@ -248,12 +286,16 @@ El cuarto paso consistió en identificar los pivotal points dentro de las línea
   <img src="../assets/img/chapter-iv/pivotal-points-5.png">
 </div>
 
+En el flujo de gestión de alertas y cumplimiento se identificaron como Pivotal Events Alert Created, Alert Resolved, Low Stock Detected, Low Stock Alert Created y Calibration Expiration Alert Created, debido a que representan cambios relevantes en la detección y gestión de situaciones que requieren atención. Por otro lado, Alert Acknowledged, Notification Preference Updated, Batch Release Compliance Event Detected, Batch Rejection Compliance Event Detected y Quality Supervisor Notified no se consideran Pivotal Events, ya que corresponden a acciones complementarias o pasos intermedios del proceso.
+
 <br>
 
 
 <div align="center">
   <img src="../assets/img/chapter-iv/pivotal-points-6.png">
 </div>
+
+En el flujo de gestión de materias primas e inventario se identificaron como Pivotal Events Raw Material Registered, Raw Material Lot Received, Raw Material Accepted, Raw Material Rejected y Raw Material Consumed, debido a que representan cambios relevantes en el ciclo de vida de la materia prima, desde su registro y recepción hasta su aceptación, rechazo o consumo. Por otro lado, Supplier Receipt Registered, Raw Material Stored in Box, Inventory Updated e Inventory Movement Recorded no se consideran Pivotal Events, ya que corresponden a actividades de registro o actualización dentro del proceso.
 
 <br>
 
@@ -262,12 +304,16 @@ El cuarto paso consistió en identificar los pivotal points dentro de las línea
   <img src="../assets/img/chapter-iv/pivotal-points-7.png">
 </div>
 
+En el flujo de monitoreo de telemetría se identificaron como Pivotal Events Telemetry Measurement Recorded, Telemetry Anomaly Detected y Telemetry Status Updated, debido a que representan cambios relevantes en el registro y estado de la información de telemetría. Por otro lado, Measurement Reviewed, Telemetry History Point Recorded y Telemetry Snapshot Updated corresponden a procesos de consulta, almacenamiento o actualización derivados de la medición registrada.
+
 <br>
 
 
 <div align="center">
   <img src="../assets/img/chapter-iv/pivotal-points-8.png">
 </div>
+
+En el flujo de gestión de laboratorios se identificaron como Pivotal Events Laboratory Registered, Environment Registered, Staff Member Registered, Laboratory Membership Established, Staff Member Deactivated y  Box Registered debido a que representan cambios relevantes en la creación y administración del laboratorio, sus ambientes, los contenedores (Box) que tendra dicho ambiente del laboratorio y el personal asociado. Por otro lado, Laboratory Profile Updated y Environment Updated no se consideran Pivotal Events, ya que corresponden a actualizaciones o acciones complementarias dentro de estos procesos.
 
 <br>
 
@@ -276,20 +322,20 @@ El cuarto paso consistió en identificar los pivotal points dentro de las línea
   <img src="../assets/img/chapter-iv/pivotal-points-9.png">
 </div>
 
-<br>
+En el flujo de gestión de equipos se identificaron como Pivotal Events Equipment Registered, Sensor Linked, Measurement Instrument Calibrated, Calibration Expired, Equipment Failure Detected y Equipment Status Updated, debido a que representan cambios relevantes en el estado y ciclo de vida del equipo. Por otro lado, Maintenance Registered, BPM Parameter Configured y Equipment Failure Recorded no se consideran Pivotal Events, ya que corresponden a actividades de mantenimiento, configuración o registro dentro del proceso.
 
-A partir de la revisión de los flujos, el equipo identificó los siguientes pivotal points:
+A partir de la revisión de los flujos, el equipo identificó los siguientes Pivotal Events:
 
 - User Registered, Role User Assigned, User Authenticated, Password Reset Requested, Recovery Code Verified y Password Changed.
 - Checkout Created, Payment Received, Subscription Activated y Subscription Canceled.
 - Audit Information Requested, Audit Report Generated, Batch Report Generated, Compliance Report Generated, Equipment Log Exported, KPI Dashboard Calculated y Deviation Trend Calculated.
 - Batch Created, Manufacturing Completed, Batch Evaluated, Batch Released y Batch Rejected.
-- Raw Material Registered, Raw Material Lot Received, Raw Material Accepted, Raw Material Rejected, Inventory Updated, Raw Material Consumed, Low Stock Detected e Inventory Movement Recorded.
-- Laboratory Registered, Environment Registered, Box Registered, Staff Member Registered, Laboratory Membership Established y Staff Member Deactivated.
-- Equipment Registered, Sensor Linked, Measurement Instrument Calibrated, Calibration Expired, Equipment Failure Detected y Equipment Failure Recorded.
-- Telemetry Measurement Recorded, Telemetry History Point Recorded, Telemetry Anomaly Detected y Telemetry Status Updated.
+- Raw Material Registered, Raw Material Lot Received, Raw Material Accepted, Raw Material Rejected, Raw Material Consumed y Low Stock Detected.
+- Laboratory Registered, Environment Registered, Staff Member Registered, Laboratory Membership Established y Staff Member Deactivated.
+- Equipment Registered, Sensor Linked, Measurement Instrument Calibrated, Calibration Expired, Equipment Failure Detected y Equipment Status Updated.
+- Telemetry Measurement Recorded, Telemetry Anomaly Detected y Telemetry Status Updated.
 
-Estos eventos fueron destacados en las líneas de tiempo mediante las líneas verticales, permitiendo visualizar los principales puntos de transición del comportamiento diseñado para el sistema.
+Estos eventos fueron destacados en las líneas de tiempo mediante las líneas verticales, permitiendo visualizar los principales puntos de transición identificados en el comportamiento diseñado para el sistema.
 
 **Paso 5: Commands**
 
@@ -301,11 +347,35 @@ El quinto paso consistió en identificar los commands asociados a los eventos de
   <img src="../assets/img/chapter-iv/command-1.png">
 </div>
 
+En esta etapa se identificaron los comandos asociados a las principales acciones del flujo de gestión de usuarios. Cada comando representa una intención del usuario o del sistema que, al ejecutarse correctamente, genera un evento de dominio. De esta manera, se estableció la relación entre las acciones realizadas y los cambios de estado producidos en el sistema.
+
+| **Comando**                | **Evento asociado**      | **Descripción**                                                                                                                     |
+| -------------------------- | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
+| **Register User**          | User Registered          | Permite registrar un nuevo usuario en el sistema, generando su registro correspondiente.                                            |
+| **Assign User Role**       | Role User Assigned       | Permite asignar un rol al usuario registrado, definiendo los permisos que tendrá dentro del sistema.                                |
+| **Authenticate User**      | User Authenticated       | Permite validar las credenciales del usuario para verificar su identidad y permitir el acceso al sistema.                           |
+| **Request Password Reset** | Password Reset Requested | Permite iniciar el proceso de recuperación de contraseña cuando el usuario solicita restablecer su acceso.                          |
+| **Send Verification Code** | Verification Code Sent   | Permite enviar un código de verificación al usuario como parte del proceso de recuperación de contraseña.                           |
+| **Verify Recovery Code**   | Recovery Code Verified   | Permite comprobar que el código de recuperación ingresado por el usuario sea válido antes de continuar con el cambio de contraseña. |
+| **Reset Password**         | Password Changed         | Permite establecer una nueva contraseña una vez que el proceso de recuperación ha sido validado correctamente.                      |
+
+
 <br>
 
 <div align="center">
-  <img src="../assets/img/chapter-iv/command-2.png">
+  <img src="../assets/img/chapter-iv/command-2.png" width="500">
 </div>
+
+se identificaron los comandos relacionados con la selección del plan, la creación del checkout, el procesamiento del pago y la gestión posterior de la suscripción. Cada comando se encuentra asociado a un evento que representa el cambio producido en el estado de la suscripción.
+
+| **Comando**             | **Evento asociado**   | **Descripción**                                                                        |
+| ----------------------- | --------------------- | -------------------------------------------------------------------------------------- |
+| **Select Plan**         | Plan Selected         | Permite seleccionar el plan de suscripción que el usuario desea contratar.             |
+| **Create Checkout**     | Checkout Created      | Permite crear el proceso de checkout para continuar con el pago del plan seleccionado. |
+| **Accept Payment**      | Payment Received      | Permite procesar el pago correspondiente a la suscripción seleccionada.                |
+| **Cancel Subscription** | Subscription Canceled | Permite cancelar una suscripción que se encuentra activa.                              |
+| **Update Subscription** | Subscription Updated  | Permite modificar la configuración o condiciones de una suscripción existente.         |
+
 
 <br>
 
@@ -313,11 +383,37 @@ El quinto paso consistió en identificar los commands asociados a los eventos de
   <img src="../assets/img/chapter-iv/command-3.png">
 </div>
 
+se identificaron los comandos relacionados con la consulta de información histórica, generación de reportes, exportación de registros y cálculo de indicadores. Cada comando produce un evento que representa el resultado de la operación realizada dentro del contexto de auditoría y generación de información.
+
+| **Comando**                    | **Evento asociado**         | **Descripción**                                                                                               |
+| ------------------------------ | --------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| **Request Audit Information**  | Audit Information Requested | Permite solicitar la información necesaria para realizar una auditoría.                                       |
+| **Consult Historical Record**  | Historical Record Consulted | Permite consultar los registros históricos disponibles para obtener información relacionada con la auditoría. |
+| **Generate Audit Report**      | Audit Report Generated      | Permite generar el reporte de auditoría a partir de la información recopilada.                                |
+| **Generate Batch Report**      | Batch Report Generated      | Permite generar un reporte con la información relacionada con los lotes registrados.                          |
+| **Generate Compliance Report** | Compliance Report Generated | Permite generar un reporte relacionado con el cumplimiento de las condiciones y controles establecidos.       |
+| **Export Equipment Log**       | Equipment Log Exported      | Permite exportar el registro histórico de información asociada a los equipos.                                 |
+| **Calculate KPI Dashboard**    | KPI Dashboard Calculated    | Permite calcular los indicadores utilizados para mostrar el estado general del sistema mediante el dashboard. |
+| **Calculate Deviation Trend**  | Deviation Trend Calculated  | Permite calcular la tendencia de las desviaciones registradas para facilitar su análisis histórico.           |
+
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/command-4.png">
 </div>
+
+se identificaron los comandos relacionados con la creación y evaluación de lotes, el registro del producto farmacéutico y el uso de materias primas, así como la finalización de la fabricación. Finalmente, la evaluación del lote permite determinar su liberación o rechazo, generando el evento correspondiente en cada caso.
+
+| **Comando**                         | **Evento asociado**               | **Descripción**                                                                                              |
+| ----------------------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **Create Batch**                    | Batch Created                     | Permite crear un nuevo lote de producción para iniciar su gestión y trazabilidad.                            |
+| **Register Pharmaceutical Product** | Pharmaceutical Product Registered | Permite registrar el producto farmacéutico asociado al proceso de producción.                                |
+| **Register Raw Material Usage**     | Raw Material Usage Registered     | Permite registrar las materias primas utilizadas durante la fabricación del lote.                            |
+| **Complete Manufacturing**          | Manufacturing Completed           | Permite registrar la finalización del proceso de fabricación del lote.                                       |
+| **Evaluate Batch**                  | Batch Evaluated                   | Permite evaluar el lote terminado de acuerdo con las validaciones establecidas para determinar su resultado. |
+| **Release Batch**                   | Batch Released                    | Permite liberar el lote cuando cumple con las condiciones requeridas para su aprobación.                     |
+| **Reject Batch**                    | Batch Rejected                    | Permite rechazar el lote cuando no cumple con las condiciones requeridas para su aprobación.                 |
 
 <br>
 
@@ -325,11 +421,42 @@ El quinto paso consistió en identificar los commands asociados a los eventos de
   <img src="../assets/img/chapter-iv/command-5.png">
 </div>
 
+se identificaron los comandos relacionados con la detección y gestión de eventos de cumplimiento, creación, reconocimiento y resolución de alertas, así como el control de bajo stock y las preferencias de notificación. También se consideraron los eventos de cumplimiento asociados a la liberación o rechazo de lotes y la notificación al supervisor de calidad.
+
+| **Comando**                                 | **Evento asociado**                       | **Descripción**                                                                                                    |
+| ------------------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| **Create Alert**                            | Alert Created                             | Permite crear una alerta cuando se identifica una situación que requiere atención.                                 |
+| **Acknowledge Alert**                       | Alert Acknowledged                        | Permite registrar que una alerta ha sido reconocida y atendida por el responsable correspondiente.                 |
+| **Resolve Alert**                           | Alert Resolved                            | Permite registrar la resolución de una alerta una vez atendida la situación que la originó.                        |
+| **Detect Compliance Event**                 | Compliance Event Detected                 | Permite detectar y registrar un evento relacionado con el cumplimiento de las condiciones establecidas.            |
+| **Detect Low Stock**                        | Low Stock Detected                        | Permite detectar una condición de bajo stock en las materias primas disponibles.                                   |
+| **Create Low Stock Alert**                  | Low Stock Alert Created                   | Permite generar una alerta cuando se detecta que el nivel de stock se encuentra por debajo del límite establecido. |
+| **Update Notification Preference**          | Notification Preference Updated           | Permite actualizar las preferencias de notificación configuradas por el usuario.                                   |
+| **Detect Batch Release Compliance Event**   | Batch Release Compliance Event Detected   | Permite detectar un evento de cumplimiento relacionado con la liberación de un lote.                               |
+| **Detect Batch Rejection Compliance Event** | Batch Rejection Compliance Event Detected | Permite detectar un evento de cumplimiento relacionado con el rechazo de un lote.                                  |
+| **Notify Quality Supervisor**               | Quality Supervisor Notified               | Permite notificar al supervisor de calidad cuando una situación requiere su atención.                              |
+
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/command-6.png">
 </div>
+
+se identificaron los comandos relacionados con el registro, recepción, aceptación y rechazo de materias primas, así como con su almacenamiento, consumo y actualización de existencias. También se consideró el registro de los movimientos de inventario para mantener la trazabilidad de las operaciones realizadas.
+
+| **Comando**                      | **Evento asociado**           | **Descripción**                                                                                              |
+| -------------------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **Register Raw Material**        | Raw Material Registered       | Permite registrar una nueva materia prima dentro del inventario.                                             |
+| **Register Supplier Receipt**    | Supplier Receipt Registered   | Permite registrar la recepción de materia prima proveniente de un proveedor.                                 |
+| **Receive Raw Material Lot**     | Raw Material Lot Received     | Permite registrar la recepción de un lote específico de materia prima.                                       |
+| **Accept Raw Material**          | Raw Material Accepted         | Permite aceptar un lote de materia prima después de realizar las validaciones correspondientes.              |
+| **Reject Raw Material**          | Raw Material Rejected         | Permite rechazar un lote de materia prima cuando no cumple con las condiciones establecidas.                 |
+| **Store Raw Material in Box**    | Raw Material Stored in Box    | Permite registrar el almacenamiento de la materia prima en un contenedor o box.                              |
+| **Remove Raw Material from Box** | Raw Material Removed from Box | Permite registrar la salida de la materia prima almacenada en un box.                                        |
+| **Consume Raw Material**         | Raw Material Consumed         | Permite registrar el consumo de una cantidad de materia prima durante un proceso de producción.              |
+| **Update Inventory**             | Inventory Updated             | Permite actualizar las cantidades disponibles de materia prima después de una operación de inventario.       |
+| **Record Inventory Movement**    | Inventory Movement Recorded   | Permite registrar el movimiento realizado sobre una materia prima para mantener su historial de operaciones. |
 
 <br>
 
@@ -337,11 +464,37 @@ El quinto paso consistió en identificar los commands asociados a los eventos de
   <img src="../assets/img/chapter-iv/command-7.png">
 </div>
 
+se identificaron los comandos relacionados con el registro y revisión de las mediciones de telemetría. Además, se consideraron las operaciones para mantener el historial, detectar anomalías y actualizar el estado de la telemetría a partir de las mediciones registradas.
+
+| **Comando**                        | **Evento asociado**              | **Descripción**                                                                                |
+| ---------------------------------- | -------------------------------- | ---------------------------------------------------------------------------------------------- |
+| **Record Telemetry Measurements**  | Telemetry Measurement Recorded   | Permite registrar las mediciones obtenidas de los dispositivos de telemetría.                  |
+| **Review Measurement**             | Measurement Reviewed             | Permite revisar una medición registrada para verificar la información obtenida.                |
+| **Record Telemetry History Point** | Telemetry History Point Recorded | Permite registrar una medición como punto dentro del historial de telemetría.                  |
+| **Detect Telemetry Anomaly**       | Telemetry Anomaly Detected       | Permite detectar una anomalía en los valores de telemetría registrados.                        |
+| **Update Telemetry Status**        | Telemetry Status Updated         | Permite actualizar el estado actual de la telemetría de acuerdo con la información registrada. |
+
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/command-8.png">
 </div>
+
+se identificaron los comandos relacionados con el registro y actualización del laboratorio, sus ambientes y boxes, además de la gestión de los miembros del personal y su pertenencia al laboratorio. También se consideró la desactivación del personal cuando deja de formar parte del laboratorio.
+
+| **Comando**                         | **Evento asociado**               | **Descripción**                                                                                                 |
+| ----------------------------------- | --------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Register Laboratory**             | Laboratory Registered             | Permite registrar un nuevo laboratorio dentro del sistema.                                                      |
+| **Update Laboratory Profile**       | Laboratory Profile Updated        | Permite actualizar la información y configuración básica del laboratorio.                                       |
+| **Register Environment**            | Environment Registered            | Permite registrar un nuevo ambiente o área perteneciente al laboratorio.                                        |
+| **Update Environment**              | Environment Updated               | Permite actualizar la información configurada para un ambiente del laboratorio.                                 |
+| **Register Box**                    | Box Registered                    | Permite registrar un box dentro del ambiente para organizar los productos farmacéuticos que serán monitoreados. |
+| **Register Staff Member**           | Staff Member Registered           | Permite registrar a un nuevo miembro del personal asociado al laboratorio.                                      |
+| **Establish Laboratory Membership** | Laboratory Membership Established | Permite establecer la relación entre un miembro del personal y el laboratorio correspondiente.                  |
+| **Deactivate Staff Member**         | Staff Member Deactivated          | Permite desactivar la participación de un miembro del personal dentro del laboratorio.                          |
+
+
 
 <br>
 
@@ -349,21 +502,24 @@ El quinto paso consistió en identificar los commands asociados a los eventos de
   <img src="../assets/img/chapter-iv/command-9.png">
 </div>
 
+se identificaron los comandos relacionados con el registro y mantenimiento de los equipos, la vinculación de sensores y configuración de parámetros BPM. También se consideraron las operaciones de calibración, detección y registro de fallas, así como la actualización del estado del equipo y la expiración de su calibración.
+
+| **Comando**                          | **Evento asociado**               | **Descripción**                                                                                                 |
+| ------------------------------------ | --------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Register Equipment**               | Equipment Registered              | Permite registrar un nuevo equipo dentro del sistema.                                                           |
+| **Register Maintenance**             | Maintenance Registered            | Permite registrar las actividades de mantenimiento realizadas sobre un equipo.                                  |
+| **Link Sensor**                      | Sensor Linked                     | Permite vincular un sensor con el equipo correspondiente.                                                       |
+| **Configure BPM Parameter**          | BPM Parameter Configured          | Permite configurar los parámetros BPM asociados al equipo.                                                      |
+| **Measurement Instrument Calibrate** | Measurement Instrument Calibrated | Permite registrar la calibración del instrumento de medición para asegurar su correcto funcionamiento.          |
+| **Detect Failure**                   | Equipment Failure Detected        | Permite registrar la detección de una falla en el equipo.                                                       |
+| **Record Equipment Failure**         | Equipment Failure Recorded        | Permite registrar formalmente la falla detectada y mantener su información como parte del historial del equipo. |
+| **Update Equipment Status**          | Equipment Status Updated          | Permite actualizar el estado operativo del equipo.                                                              |
+| **Calibration Expire**               | Calibration Expired               | Representa la expiración de la calibración del equipo cuando se alcanza el periodo establecido.                 |
+
+Los comandos identifacdos abarcan las principales operaciones de gestión de usuarios y autenticación, suscripciones y pagos, auditoría y generación de reportes, gestión de lotes y materias primas, monitoreo de telemetría, gestión de laboratorios y equipos, y control de alertas y cumplimiento. De esta manera, se estableció una relación clara entre las acciones realizadas y los eventos generados, permitiendo definir de forma más estructurada los flujos funcionales de la solución.
+
 <br>
 
-A partir de los flujos definidos, se identificaron los siguientes comandos:
-
-- Register User, Assign User Role, Authenticate User, Request Password Reset, Send Verification Code, Verify Recovery Code y Reset Password.
-- Select Plan, Create Checkout, Accept Payment, Update Subscription y Cancel Subscription.
-- Request Audit Information, Consult Historical Record, Generate Audit Report, Generate Batch Report, Generate Compliance Report, Export Equipment Log, Calculate KPI Dashboard y Calculate Deviation Trend.
-- Register Laboratory, Update Laboratory Profile, Register Environment, Update Environment, Register Box, Register Staff Member, Establish Laboratory Membership y Deactivate Staff Member.
-- Register Equipment, Register Maintenance, Link Sensor, Configure BPM Parameter, Calibrate Measurement Instrument, Calibration Expire, Detect Failure, Record Equipment Failure y Update Equipment Status.
-- Record Telemetry Measurements, Review Measurement, Record Telemetry History Point, Detect Telemetry Anomaly y Update Telemetry Status.
-- Create Batch, Start Batch, Register Pharmaceutical Product, Register Raw Material Usage, Complete Manufacturing, Evaluate Batch, Release Batch y Reject Batch.
-- Create Alert, Acknowledge Alert, Resolve Alert, Detect Compliance Event, Detect Low Stock, Create Low Stock Alert, Update Notification Preference, Detect Batch Release Compliance Event, Detect Batch Rejection Compliance Event y Notify Quality Supervisor.
-- Register Raw Material, Register Supplier Receipt, Receive Raw Material Lot, Accept Raw Material, Reject Raw Material, Store Raw Material in Box, Remove Raw Material from Box, Consume Raw Material, Update Inventory y Record Inventory Movement.
-
-En cada flujo, los comandos se ubicaron inmediatamente antes del evento correspondiente, permitiendo visualizar de manera explícita la relación acción → resultado, por ejemplo: Create Batch → Batch Created, Evaluate Batch → Batch Evaluated y Detect Telemetry Anomaly → Telemetry Anomaly Detected.
 
 
 **Paso 6: Policies and Actors**
@@ -376,11 +532,15 @@ El sexto paso incorporó al modelo los actores y las políticas del sistema. Los
   <img src="../assets/img/chapter-iv/politica-actores-1.png">
 </div>
 
+se identificaron los actores y las políticas que intervienen en el flujo de gestión de usuarios. El Visitante participa en el registro inicial, mientras que el Usuario interviene en la autenticación y en el proceso de recuperación de contraseña. A partir del registro, se realiza la asignación del rol correspondiente y, posteriormente, el usuario puede autenticarse en el sistema. En el caso de la recuperación de contraseña, el usuario solicita el restablecimiento, recibe un código de verificación, este es validado y finalmente se realiza el cambio de contraseña. Además, se estableció la política que indica que, después del registro del usuario, debe realizarse la selección de un plan de suscripción.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/politica-actores-2.png">
 </div>
+
+se identificaron los actores y las políticas relacionadas con la gestión de suscripciones. El Usuario participa en la selección del plan, la aceptación del pago, así como en la actualización o cancelación de su suscripción. El flujo inicia con la selección del plan y la creación del checkout; posteriormente, al recibir el pago, la suscripción es activada. Como política, se establece que cuando la suscripción es activada, se procede con el registro del laboratorio. Asimismo, el usuario puede actualizar o cancelar su suscripción según corresponda.
 
 <br>
 
@@ -388,11 +548,15 @@ El sexto paso incorporó al modelo los actores y las políticas del sistema. Los
   <img src="../assets/img/chapter-iv/politica-actores-3.png">
 </div>
 
+se identificaron los actores y las políticas relacionadas con la auditoría y generación de información. El Auditor participa solicitando la información de auditoría, mientras que el Quality Staff interviene en la consulta de registros históricos, generación de reportes, exportación de registros de equipos y cálculo de indicadores si los auditores lo solicitan.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/politica-actores-4.png">
 </div>
+
+En esta etapa se identificaron los actores y las políticas relacionadas con la gestión de lotes. El Lab Technician participa en la creación del lote, el inicio del proceso y el registro del uso de materias primas, así como en la finalización de la fabricación. Posteriormente, el lote es evaluado y puede ser liberado o rechazado según las validaciones establecidas. Como políticas, se contempla que cuando un lote es liberado se genere un reporte del lote, mientras que ante un rechazo también se genere el reporte correspondiente. Además, se identifica como punto pendiente definir las validaciones necesarias para determinar si un lote puede ser liberado o rechazado.
 
 <br>
 
@@ -400,11 +564,15 @@ El sexto paso incorporó al modelo los actores y las políticas del sistema. Los
   <img src="../assets/img/chapter-iv/politica-actores-5.png">
 </div>
 
+En esta etapa se identificaron los actores y las políticas relacionadas con la gestión de alertas y cumplimiento. El Lab Technician participa en el reconocimiento de las alertas, mientras que el User puede actualizar sus preferencias de notificación. El flujo contempla la creación, reconocimiento y resolución de alertas, además de la detección de eventos de cumplimiento, bajo stock y vencimiento de calibraciones. También se consideran eventos asociados a la liberación o rechazo de lotes y la notificación al Quality Supervisor.
+
 <br>
 
 <div align="center">
-  <img src="../assets/img/chapter-iv/politica-actores-6.png">
+  <img src="../assets/img/chapter-iv/politica-actores-6.jpg">
 </div>
+
+En esta etapa se identificaron los actores y las políticas relacionadas con la gestión de materias primas e inventario. El Lab Technician participa en el registro de la materia prima, la recepción del lote, su almacenamiento y las actividades de consumo. El lote recibido puede ser aceptado o rechazado según las validaciones establecidas. Cuando una materia prima es aceptada, se actualiza el inventario y se registra el movimiento correspondiente; posteriormente, puede ser consumida para la producción y retirarse del box cuando sea necesario. Como política, se establece que cuando una materia prima es aceptada, puede registrarse su uso para la producción de un producto farmacéutico.
 
 <br>
 
@@ -412,11 +580,17 @@ El sexto paso incorporó al modelo los actores y las políticas del sistema. Los
   <img src="../assets/img/chapter-iv/politica-actores-7.png">
 </div>
 
+En esta etapa se identificaron los actores y las políticas relacionadas con el monitoreo de telemetría. El flujo parte del registro de las mediciones de telemetría, a partir del cual se puede consultar el historial, revisar las mediciones, detectar anomalías y actualizar el estado de la telemetría. Como políticas, se establece que cuando se registra un punto del historial de telemetría, se puede generar un reporte de auditoría, y que cuando se detecta una anomalía de telemetría, se debe crear una alerta.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/politica-actores-8.png">
 </div>
+
+En esta etapa se identificaron los actores y las políticas relacionadas con la gestión del laboratorio. El Quality Supervisor participa en el registro y actualización del laboratorio y sus ambientes, así como en el registro del personal y la gestión de su pertenencia al laboratorio. También se contempla el registro de boxes dentro de los ambientes para organizar los espacios donde se realizan las mediciones y el almacenamiento de materias primas.
+
+Como políticas, se establece que cuando se registra un ambiente, se debe registrar el equipo necesario para medir los parámetros correspondientes; cuando se registra un box, se deben registrar los equipos de medición y posteriormente se puede almacenar materia prima en él. Asimismo, cuando se registra un ambiente, se contempla la creación de un lote para la fabricación del producto farmacéutico.
 
 <br>
 
@@ -424,9 +598,13 @@ El sexto paso incorporó al modelo los actores y las políticas del sistema. Los
   <img src="../assets/img/chapter-iv/politica-actores-9.png">
 </div>
 
-<br>
+En esta etapa se identificaron los actores y las políticas relacionadas con la gestión de equipos. El Lab Technician participa en el registro y actualización del equipo, mantenimiento y calibración, mientras que el Quality Staff interviene en la configuración de los parámetros BPM. El flujo también contempla la vinculación de sensores, la detección y registro de fallas y la expiración de la calibración.
 
-Las políticas identificadas fueron las siguientes:
+Como políticas, se establece que cuando un sensor es vinculado, se deben registrar las mediciones de telemetría; cuando se registra un mantenimiento, se debe detectar el evento de cumplimiento correspondiente; y cuando se detecta o registra una falla del equipo, se generan acciones relacionadas con la auditoría y las alertas. Además, cuando se registra un equipo, se contempla la exportación de su registro para las auditorias.
+
+**Resumen**
+
+Las políticas se redactaron siguiendo la estructura “Whenever Event X, then Command Y”, indicando que, cuando ocurre un determinado evento, se ejecuta el comando correspondiente. De esta manera, se representan de forma clara las reglas que conectan los eventos del dominio con las acciones que debe realizar el sistema.
 
 | N.° | Política                                                                                                                                        | Descripción                                                                                                                                                            |
 | --- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -473,11 +651,15 @@ El séptimo paso consistió en identificar los Read Models del sistema. Estos re
   <img src="../assets/img/chapter-iv/read-modal-1.png">
 </div>
 
+se identificaron tres Read Models principales que representan la información presentada al usuario durante los procesos de gestión de acceso. El Form Sign Up permite al visitante ingresar la información necesaria para iniciar su registro en el sistema. El Form Sign-In presenta los campos requeridos para que un usuario pueda ingresar sus credenciales y realizar la autenticación. Finalmente, el Password Recovery Form permite al usuario iniciar y continuar el proceso de recuperación de su contraseña, incluyendo la verificación necesaria antes de establecer una nueva contraseña.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/read-modal-2.png">
 </div>
+
+se identificaron tres Read Models principales que permiten al usuario consultar la información necesaria para gestionar su suscripción. Subscription Plans presenta los planes disponibles para que el usuario pueda seleccionar la opción que desea contratar. Payment Details permite visualizar la información necesaria relacionada con el pago durante el proceso de suscripción. Finalmente, Current Subscription muestra la información correspondiente a la suscripción vigente del usuario, permitiendo consultar su estado y gestionar acciones posteriores, como su actualización o cancelación.
 
 <br>
 
@@ -485,11 +667,15 @@ El séptimo paso consistió en identificar los Read Models del sistema. Estos re
   <img src="../assets/img/chapter-iv/read-modal-3.png">
 </div>
 
+se identificaron tres Read Models principales que permiten consultar la información necesaria durante la gestión de los lotes. El Form Register proporciona la información requerida para registrar el producto farmacéutico asociado al lote. El Available Raw Materials permite consultar las materias primas disponibles antes de registrar su utilización en el proceso de producción. Finalmente, Batch Evaluation presenta la información necesaria para evaluar el lote y determinar, de acuerdo con las validaciones correspondientes, si este debe ser liberado o rechazado.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/read-modal-4.png">
 </div>
+
+se identificaron dos Read Models principales. Alert Details permite consultar la información asociada a una alerta, proporcionando los datos necesarios para su revisión y posterior resolución. Por otro lado, Notification Preferences permite al usuario consultar las preferencias configuradas para la recepción de notificaciones relacionadas con las alertas.
 
 <br>
 
@@ -497,11 +683,15 @@ El séptimo paso consistió en identificar los Read Models del sistema. Estos re
   <img src="../assets/img/chapter-iv/read-modal-5.png">
 </div>
 
+se identificaron tres Read Models principales. Raw Material Form permite consultar y proporcionar la información necesaria para registrar una nueva materia prima. Raw Material Lot Details permite consultar la información asociada a un lote de materia prima recibido, facilitando su evaluación antes de determinar si será aceptado o rechazado. Finalmente, Available Box permite consultar las materias primas disponibles almacenadas en los contenedores, proporcionando la información necesaria para realizar su almacenamiento, retiro o consumo.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/read-modal-6.png">
 </div>
+
+se identificó el Read Model Details Measurement Dashboard, que permite consultar y visualizar información detallada sobre las mediciones de telemetría registradas por el sistema como luminosidad, temperatura, humedad y etc.
 
 <br>
 
@@ -509,13 +699,23 @@ El séptimo paso consistió en identificar los Read Models del sistema. Estos re
   <img src="../assets/img/chapter-iv/read-modal-7.png">
 </div>
 
+se identificaron siete Read Models que permiten consultar la información necesaria para gestionar la estructura y los recursos del laboratorio. Laboratory Registration Form proporciona la información requerida para registrar un nuevo laboratorio, mientras que Update Laboratory Profile permite consultar y modificar los datos asociados a su perfil. Para la gestión de los ambientes, Environment Registration Form permite registrar un nuevo ambiente y Environment Details consultar su información. Asimismo, Box Registration Form permite proporcionar los datos necesarios para registrar una caja y Staff Registration Form facilita el registro del personal del laboratorio. Finalmente, Laboratory Staff permite consultar la información del personal asociado al laboratorio.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/read-modal-8.png">
 </div>
 
+se identificaron varios Read Models orientados a consultar la información necesaria para administrar los equipos e instrumentos. Equipment Registration Form proporciona la información requerida para registrar un nuevo equipo, mientras que Available Sensors permite consultar los sensores disponibles para su vinculación. Equipment Parameters permite consultar los parámetros asociados al equipo antes de realizar su configuración. Asimismo, Equipment Maintenance History permite consultar el historial de mantenimientos registrados y Calibration Information presenta la información relacionada con la calibración del instrumento. Finalmente, Equipment Failure Details permite consultar la información asociada a una falla registrada y Equipment Status permite visualizar el estado actual del equipo.
+
 <br>
+
+**Resumen**
+
+Los Read Models definidos permiten representar la información que los usuarios necesitan consultar durante los diferentes procesos del sistema. Cada uno está asociado a una necesidad específica de lectura, como el registro y autenticación de usuarios, la gestión de suscripciones y pagos, el seguimiento de lotes y materias primas, la gestión de alertas, el monitoreo de mediciones, así como la administración de laboratorios y equipos.
+
+A continuación, se consolidan los Read Models identificados:
 
 | Read Model                        | Descripción                                                                                                         |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
@@ -523,14 +723,14 @@ El séptimo paso consistió en identificar los Read Models del sistema. Estos re
 | **Form Sign-In**                  | Vista utilizada por el usuario para ingresar sus credenciales e iniciar sesión.                                     |
 | **Password Recovery Form**        | Vista que permite al usuario proporcionar la información necesaria para iniciar la recuperación de contraseña.      |
 | **Subscription Plans**            | Vista que muestra los planes de suscripción disponibles para que el usuario pueda seleccionar uno.                  |
-| **Payment Details**               | Vista con la información necesaria para revisar y procesar los datos del pago.                                      |
+| **Payment Details**               | Vista que muestra la información necesaria para consultar y verificar los datos del pago                           |
 | **Current Subscription**          | Vista que muestra la suscripción vigente del usuario antes de actualizarla o cancelarla.                            |
 | **Form Register**                 | Vista con los datos necesarios para registrar un producto farmacéutico asociado a un lote.                          |
 | **Available Raw Materials**       | Vista que permite consultar las materias primas disponibles antes de registrar su utilización en un lote.           |
 | **Batch Evaluation**              | Vista con la información del lote necesaria para determinar su liberación o rechazo.                                |
 | **Alert Details**                 | Vista que presenta la información de una alerta para que pueda ser revisada y gestionada.                           |
 | **Notification Preferences**      | Vista que muestra las preferencias actuales de notificación del usuario antes de modificarlas.                      |
-| **Raw Material Form**             | Vista utilizada para consultar o completar la información necesaria para registrar una materia prima.               |
+| **Raw Material Form**             | Vista con la información necesaria para registrar una materia prima.               |
 | **Raw Material Lot Details**      | Vista con la información del lote de materia prima necesaria para evaluar su aceptación o rechazo.                  |
 | **Available Box**                 | Vista que permite consultar las cajas disponibles antes de almacenar o retirar materia prima.                       |
 | **Details Measurement Dashboard** | Vista que presenta información detallada de las mediciones de telemetría para su revisión.                          |
@@ -540,13 +740,13 @@ El séptimo paso consistió en identificar los Read Models del sistema. Estos re
 | **Environment Details**           | Vista que permite consultar los datos del ambiente antes de realizar una actualización.                             |
 | **Box Registration Form**         | Vista con los datos necesarios para registrar una caja asociada al ambiente.                                        |
 | **Staff Registration Form**       | Vista utilizada para ingresar la información necesaria para registrar un miembro del personal.                      |
-| **Laboratory Staff**              | Vista que muestra el personal asociado al laboratorio para gestionar su membresía.                                  |
+| **Laboratory Staff**              | Vista que muestra la información del personal asociado al laboratorio y su membresía.                                  |
 | **Equipment Registration Form**   | Vista con los datos necesarios para registrar un equipo.                                                            |
 | **Available Sensors**             | Vista que muestra los sensores disponibles para seleccionar uno antes de vincularlo a un equipo.                    |
 | **Equipment Parameters**          | Vista con los parámetros del equipo necesarios para configurar sus parámetros BPM.                                  |
 | **Equipment Maintenance History** | Vista que muestra el historial de mantenimiento del equipo antes de registrar una nueva actividad de mantenimiento. |
 | **Calibration Information**       | Vista con la información de calibración necesaria antes de calibrar un instrumento de medición.                     |
-| **Equipment Failure Details**     | Vista que permite consultar la información de una falla antes de registrarla.                                       |
+| **Equipment Failure Details**     | Vista que presenta la información necesaria para consultar y registrar los detalles de una falla del equipo.                                       |
 | **Equipment Status**              | Vista que muestra el estado actual del equipo antes de realizar una actualización.                                  |
 
 **Paso 8: External Systems**
@@ -557,7 +757,8 @@ El octavo paso consistió en incorporar al modelo los sistemas externos. Estos s
 
 
 <div align="center">
-  <img src="../assets/img/chapter-iv/system-externs.png">
+  <img src="../assets/img/chapter-iv/system-externs-1.png">
+    <img src="../assets/img/chapter-iv/system-externs-2.png">
 </div>
 
 <br>
@@ -577,14 +778,20 @@ El noveno paso consistió en identificar los agregados dentro de cada Bounded Co
 
 
 <div align="center">
-  <img src="../assets/img/chapter-iv/aggregate-1.png">
+  <img src="../assets/img/chapter-iv/aggregate-1-1.png">
+    <img src="../assets/img/chapter-iv/aggregate-1-2.png">
 </div>
+
+El Aggregate User se identificó porque concentra las operaciones y eventos relacionados con la gestión de la identidad del usuario, como su registro, asignación de roles y autenticación. Agrupar estas responsabilidades permite mantener la información del usuario bajo una única raíz de consistencia y controlar de manera centralizada los cambios relacionados con su ciclo de vida.
 
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/aggregate-2.png">
 </div>
+
+Los Aggregates Plan, Payment y Subscription se identificaron porque cada uno concentra un conjunto de operaciones y eventos relacionados con una responsabilidad específica. Esta separación permite mantener de forma independiente la información y las reglas asociadas a la selección de planes, el procesamiento de pagos y la gestión del estado de una suscripción, evitando mezclar responsabilidades diferentes dentro de un mismo Aggregate.
+
 
 <br>
 
@@ -593,12 +800,16 @@ El noveno paso consistió en identificar los agregados dentro de cada Bounded Co
   <img src="../assets/img/chapter-iv/aggregate-3.png">
 </div>
 
+El Aggregate Audit Report se identificó porque reúne las operaciones relacionadas con la consulta de información histórica y la generación de reportes de auditoría, incluyendo reportes de lotes y registros de equipos. Por su parte, KPI Dashboard se definió como un Aggregate independiente debido a que concentra específicamente el cálculo de indicadores clave, mientras que Deviation Trend mantiene separada la responsabilidad de calcular las tendencias de las desviaciones.
+
 <br>
 
 
 <div align="center">
   <img src="../assets/img/chapter-iv/aggregate-4.png">
 </div>
+
+El Aggregate Batch se identificó porque concentra las operaciones y eventos relacionados con el ciclo de vida de un lote farmacéutico, desde su creación y registro del producto hasta el uso de materias primas, la finalización de la fabricación y su evaluación. Además, la decisión de liberar o rechazar el lote forma parte de este mismo conjunto de reglas, por lo que mantener estas operaciones bajo el Aggregate Batch permite gestionar de manera consistente el estado y la trazabilidad del lote.
 
 <br>
 
@@ -607,12 +818,16 @@ El noveno paso consistió en identificar los agregados dentro de cada Bounded Co
   <img src="../assets/img/chapter-iv/aggregate-5.png">
 </div>
 
+El Aggregate Deviation Alert se identificó porque concentra las operaciones relacionadas con el ciclo de vida de las alertas de cumplimiento, desde su creación y reconocimiento hasta su resolución. También permite gestionar la información necesaria para atender una alerta y mantener su estado actualizado.
+
 <br>
 
 
 <div align="center">
   <img src="../assets/img/chapter-iv/aggregate-6.png">
 </div>
+
+El Aggregate Raw Material se identificó porque concentra las operaciones relacionadas con la gestión de la materia prima como recurso, incluyendo su registro, almacenamiento, consumo y actualización de inventario. Por otro lado, Raw Material Batch se definió para agrupar las operaciones asociadas específicamente al lote de materia prima, como su recepción, aceptación o rechazo, manteniendo separada la información del lote respecto a la materia prima y su disponibilidad en inventario.
 
 <br>
 
@@ -621,12 +836,17 @@ El noveno paso consistió en identificar los agregados dentro de cada Bounded Co
   <img src="../assets/img/chapter-iv/aggregate-7.png">
 </div>
 
+El Aggregate Equipment Telemetry se identificó porque concentra las operaciones relacionadas con la recepción, registro y seguimiento de las mediciones generadas por los equipos. Dentro de este Aggregate se agrupan los eventos de Telemetry Measurement Recorded, Telemetry History Point Recorded, Telemetry Anomaly Detected y Telemetry Status Updated, manteniendo bajo una misma responsabilidad la información sobre el estado y comportamiento de la telemetría. Esto permite gestionar de forma consistente el historial de mediciones y la detección de anomalías asociadas a los equipos.
+
 <br>
 
 
 <div align="center">
-  <img src="../assets/img/chapter-iv/aggregate-8.png">
+  <img src="../assets/img/chapter-iv/aggregate-8-1.png">
+  <img src="../assets/img/chapter-iv/aggregate-8-2.png">
 </div>
+
+El Aggregate Laboratory se identifica porque concentra la información principal del laboratorio y permite gestionar su registro y actualización. El Aggregate Environment se define para controlar los ambientes asociados al laboratorio, incluyendo su registro y actualización, además de servir como referencia para otras operaciones relacionadas con la producción y los equipos. El Aggregate Box se identifica para gestionar las cajas asociadas a un ambiente, sobre las cuales posteriormente pueden realizarse acciones como el almacenamiento de materias primas o la configuración de parámetros de medición. Finalmente, StaffMember se establece para gestionar al personal perteneciente al laboratorio, incluyendo su registro, membresía y desactivación.
 
 <br>
 
@@ -635,58 +855,17 @@ El noveno paso consistió en identificar los agregados dentro de cada Bounded Co
   <img src="../assets/img/chapter-iv/aggregate-9.png">
 </div>
 
-<br>
+El Aggregate Equipment se identifica porque concentra la información y las operaciones relacionadas con la gestión de los equipos utilizados dentro del laboratorio. En este Aggregate se agrupan acciones como el registro del equipo, la vinculación de sensores, la configuración de parámetros BPM, la calibración de instrumentos, el mantenimiento y la actualización de su estado.
 
+Además, permite gestionar situaciones relacionadas con el ciclo de vida del equipo, como la expiración de una calibración y el registro de fallas detectadas. Por ello, Equipment actúa como la unidad principal para mantener la identidad, configuración y estado operativo de cada equipo, manteniendo estas responsabilidades dentro de un mismo límite de consistencia.
 
-
-
-El equipo identificó los agregados en cada Bounded Context de la siguiente manera:
-
-| Bounded Context              | Aggregate               | Descripción                                                                                                                 |
-| ---------------------------- | ----------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| **IAM**                      | **User**                | Centraliza la gestión del usuario, incluyendo su registro, autenticación, asignación de roles y recuperación de contraseña. |
-| **Payments & Subscriptions** | **Plan**                | Gestiona la selección y configuración de los planes de suscripción disponibles.                                             |
-| **Payments & Subscriptions** | **Payment**             | Centraliza el registro y procesamiento de los pagos asociados a las suscripciones.                                          |
-| **Payments & Subscriptions** | **Subscription**        | Gestiona el ciclo de vida de la suscripción, incluyendo su activación, actualización y cancelación.                         |
-| **Reporting & Audit**        | **Audit Report**        | Centraliza la solicitud, consulta y generación de información relacionada con auditorías y registros históricos.            |
-| **Reporting & Audit**        | **KPI Dashboard**       | Gestiona el cálculo y presentación de indicadores clave para el seguimiento del sistema.                                    |
-| **Reporting & Audit**        | **Deviation Trend**     | Centraliza el cálculo y presentación de tendencias relacionadas con las desviaciones registradas.                           |
-| **Product Batch Management** | **Batch**               | Centraliza el ciclo de vida del lote, desde su creación e inicio hasta la fabricación, evaluación, liberación o rechazo.    |
-| **Compliance & Alerting**    | **Deviation Alert**     | Gestiona las alertas de cumplimiento, incluyendo su creación, reconocimiento y resolución.                                  |
-| **Inventory Management**     | **Raw Material**        | Centraliza la gestión de las materias primas, incluyendo su registro, almacenamiento, consumo y movimientos de inventario.  |
-| **Inventory Management**     | **Raw Material Batch**  | Gestiona los lotes de materia prima recibidos y su proceso de aceptación o rechazo.                                         |
-| **Tracking & Telemetry**     | **Equipment Telemetry** | Centraliza el registro y seguimiento de las mediciones de telemetría, su historial, anomalías y estado.                     |
-| **Laboratory Management**    | **Laboratory**          | Gestiona la información principal del laboratorio y su perfil.                                                              |
-| **Laboratory Management**    | **Environment**         | Gestiona los ambientes asociados al laboratorio y su información correspondiente.                                           |
-| **Laboratory Management**    | **Box**                 | Gestiona las cajas asociadas a los ambientes para el almacenamiento de materias primas.                                     |
-| **Laboratory Management**    | **Staff Member**        | Centraliza el registro, membresía y desactivación del personal asociado al laboratorio.                                     |
-| **Equipment Management**     | **Equipment**           | Centraliza el registro, configuración, vinculación de sensores, calibración, estado y fallas de los equipos.                |
-| **Equipment Management**     | **MaintenanceRecord**   | Gestiona el registro y seguimiento de las actividades de mantenimiento realizadas sobre los equipos.                        |
+### Bounded Context
 
 A partir del modelo de Event Storming, se llevó a cabo una sesión de Candidate Context Discovery para identificar los Bounded Contexts de la solución. Se utilizó principalmente la técnica Look-for Pivotal Events, mediante la cual se identificaron eventos que representan cambios significativos de estado dentro de los diferentes procesos del dominio.
 
 Primero, se identificaron los eventos pivote y se agruparon junto con sus comandos, actores, read models, políticas y agregados relacionados.
 
-<br>
-
-<div align="center">
-  <img src="../assets/img/chapter-iv/1.png">
-</div>
-
-<br>
-
-
 Luego, se analizaron las relaciones entre los diferentes grupos identificados, considerando las dependencias y comunicaciones existentes entre las distintas responsabilidades del sistema.
-
-<br>
-
-<div align="center">
-  <img src="../assets/img/chapter-iv/2.png">
-</div>
-
-<br>
-
-
 
 Finalmente, se trazaron fronteras alrededor de los grupos resultantes y se asignaron nombres de acuerdo con la responsabilidad principal de cada grupo. Como resultado, se definieron los siguientes 9 Bounded Contexts:
 
@@ -700,17 +879,99 @@ Finalmente, se trazaron fronteras alrededor de los grupos resultantes y se asign
 - Inventory Management
 - Reporting & Audit
 
-
-<br>
-
 <div align="center">
   <img src="../assets/img/chapter-iv/3.png">
 </div>
 
-<br>
+A continuación se presenta el detalle de cada Bounded Context identificado. Para cada uno se muestra el recorte del tablero de Design-Level EventStorming correspondiente, junto con una explicación de sus agregados, comandos, eventos, políticas, read models y sistemas externos, así como de la responsabilidad que cumple dentro del dominio de Qualitrack. Esta descripción permite comprender cómo se distribuye el comportamiento del sistema entre los distintos contextos y cómo se relacionan entre sí mediante eventos y políticas.
 
+**Bounded context: Identity and Access Management**
 
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/IAM.jpg"> </div>
 
+El Bounded Context de Identity and Access Management (IAM) es responsable de la identidad de las personas que interactúan con Qualitrack, incluyendo su registro, autenticación, asignación de roles y recuperación de contraseña. Su modelo se organiza alrededor del agregado **User**, que constituye la unidad de consistencia de este contexto y concentra los comandos, eventos y reglas relacionados con el acceso al sistema.
+
+En el flujo de **registro**, el Visitor consulta el read model *Form Sign Up* y ejecuta el comando *Register User*, lo que produce el evento *User Registered*. Este evento activa la política *Whenever User Registered Then Select Plan*, que conecta IAM con el contexto de Payments & Subscriptions e inicia la selección del plan de suscripción. Posteriormente, el comando *Assign User Role* genera el evento *User Role Assigned*, que determina los permisos del usuario dentro del sistema según su rol (Lab Technician, Quality Staff, Quality Supervisor o Auditor).
+
+En el flujo de **autenticación**, el usuario ingresa sus credenciales mediante el read model *Form Sign-In* y ejecuta el comando *Authenticate User*, cuyo resultado es el evento *User Authenticated*. Este evento permite que los demás contextos reconozcan al usuario y validen sus accesos.
+
+El flujo de **recuperación de contraseña** es una secuencia de varios pasos. Comienza con el comando *Request Password Reset*, ejecutado desde el read model *Password Recovery Form*, que genera el evento *Password Reset Requested*. A continuación se ejecuta *Send Verification Code* mediante el sistema externo **Resend**, que produce *Verification Code Sent*. El usuario ingresa el código recibido con *Verify Recovery Code*, lo que genera *Recovery Code Verified*, y finalmente *Reset Password* produce el evento *Password Changed*, que completa el proceso.
+
+Dentro de este contexto se identificó el pain point *"How many ways does the system have to send the verification code?"*, el cual indica que aún debía definirse el mecanismo de envío del código de verificación antes de permitir el cambio de contraseña.
+
+**Bounded context: Subscriptions and Payments**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Subscription%20and%20payments.jpg"> </div>
+
+El Bounded Context de Payments & Subscriptions gestiona el modelo de negocio de Qualitrack: la selección de planes, el procesamiento de los pagos y el ciclo de vida de las suscripciones. Está compuesto por tres agregados (**Plan**, **Payment** y **Subscription**), cada uno con responsabilidades diferenciadas. Además, este contexto se integra con el sistema externo **Stripe** para procesar los pagos de forma segura.
+
+El agregado **Plan** gestiona la selección de los planes disponibles. El usuario consulta el read model *Subscription Plans* y ejecuta el comando *Select Plan*, que genera el evento *Plan Selected*. Luego, el comando *Create Checkout* se apoya en Stripe para crear la sesión de pago y produce el evento *Checkout Created*.
+
+El agregado **Payment** centraliza el procesamiento del pago. A partir del read model *Payment Details*, el usuario ejecuta el comando *Accept Payment*, validado mediante Stripe, lo que genera el evento *Payment Received*. Una vez confirmado el pago, se produce el evento *Subscription Activated*, que dispara la política *Whenever Subscription Activated Then Laboratory Registered*. Mediante esta política, este contexto se comunica con Laboratory Management para iniciar el registro del laboratorio asociado a la suscripción.
+
+El agregado **Subscription** administra el ciclo de vida posterior a la activación. El usuario revisa su suscripción vigente en el read model *Current Subscription* y puede ejecutar el comando *Update Subscription*, que genera el evento *Subscription Updated*, o el comando *Cancel Subscription*, que produce el evento *Subscription Canceled*.
+
+De esta manera, el contexto garantiza que un laboratorio solo pueda registrarse cuando existe una suscripción activa y un pago confirmado.
+
+**Bounded context: Tracking and Telemetry**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Tracking-Telemetry.jpg"> </div>
+
+**Bounded context: Reporting & Audit**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Reporting-Audit.jpg"> </div>
+
+**Bounded context: Product Batch Management**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Product%20Batch%20Managment.jpg"> </div>
+
+**Bounded context: Compliance & Alerting**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Compliance-Alerting.jpg"> </div>
+
+**Bounded context: Equipment Management**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Equipment%20Management/Vista%20General.jpg"> </div>
+
+* **Equipment**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Equipment%20Management/Equipement.jpg"> </div>
+
+* **Maintenance Record**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Equipment%20Management/Maintenance%20Record.jpg"> </div>
+
+**Bounded context: Inventory Management**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Inventory%20Management/Vista%20general.jpg"> </div>
+
+* **Raw Material**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Inventory%20Management/Raw%20Material.jpg"> </div>
+
+* **Raw Material Batch**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Inventory%20Management/Raw%20Material%20Batch.jpg"> </div>
+
+**Bounded context: Laboratory Management**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/laboratory%20Management/Vista%20General.jpg"> </div>
+
+* **Box**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/laboratory%20Management/Box.jpg"> </div>
+
+* **Environment**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/laboratory%20Management/Enviroment.jpg"> </div>
+
+* **Laboratory**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/laboratory%20Management/Laboratory.jpg"> </div>
+
+* **Staff Member**
+
+<div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/laboratory%20Management/StaffMember.jpg"> </div>
 
 #### 4.1.1.2 Domain Message Flows Modeling. 
  
