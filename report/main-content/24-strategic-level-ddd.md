@@ -651,11 +651,15 @@ El séptimo paso consistió en identificar los Read Models del sistema. Estos re
   <img src="../assets/img/chapter-iv/read-modal-1.png">
 </div>
 
+se identificaron tres Read Models principales que representan la información presentada al usuario durante los procesos de gestión de acceso. El Form Sign Up permite al visitante ingresar la información necesaria para iniciar su registro en el sistema. El Form Sign-In presenta los campos requeridos para que un usuario pueda ingresar sus credenciales y realizar la autenticación. Finalmente, el Password Recovery Form permite al usuario iniciar y continuar el proceso de recuperación de su contraseña, incluyendo la verificación necesaria antes de establecer una nueva contraseña.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/read-modal-2.png">
 </div>
+
+se identificaron tres Read Models principales que permiten al usuario consultar la información necesaria para gestionar su suscripción. Subscription Plans presenta los planes disponibles para que el usuario pueda seleccionar la opción que desea contratar. Payment Details permite visualizar la información necesaria relacionada con el pago durante el proceso de suscripción. Finalmente, Current Subscription muestra la información correspondiente a la suscripción vigente del usuario, permitiendo consultar su estado y gestionar acciones posteriores, como su actualización o cancelación.
 
 <br>
 
@@ -663,11 +667,15 @@ El séptimo paso consistió en identificar los Read Models del sistema. Estos re
   <img src="../assets/img/chapter-iv/read-modal-3.png">
 </div>
 
+se identificaron tres Read Models principales que permiten consultar la información necesaria durante la gestión de los lotes. El Form Register proporciona la información requerida para registrar el producto farmacéutico asociado al lote. El Available Raw Materials permite consultar las materias primas disponibles antes de registrar su utilización en el proceso de producción. Finalmente, Batch Evaluation presenta la información necesaria para evaluar el lote y determinar, de acuerdo con las validaciones correspondientes, si este debe ser liberado o rechazado.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/read-modal-4.png">
 </div>
+
+se identificaron dos Read Models principales. Alert Details permite consultar la información asociada a una alerta, proporcionando los datos necesarios para su revisión y posterior resolución. Por otro lado, Notification Preferences permite al usuario consultar las preferencias configuradas para la recepción de notificaciones relacionadas con las alertas.
 
 <br>
 
@@ -675,11 +683,15 @@ El séptimo paso consistió en identificar los Read Models del sistema. Estos re
   <img src="../assets/img/chapter-iv/read-modal-5.png">
 </div>
 
+se identificaron tres Read Models principales. Raw Material Form permite consultar y proporcionar la información necesaria para registrar una nueva materia prima. Raw Material Lot Details permite consultar la información asociada a un lote de materia prima recibido, facilitando su evaluación antes de determinar si será aceptado o rechazado. Finalmente, Available Box permite consultar las materias primas disponibles almacenadas en los contenedores, proporcionando la información necesaria para realizar su almacenamiento, retiro o consumo.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/read-modal-6.png">
 </div>
+
+se identificó el Read Model Details Measurement Dashboard, que permite consultar y visualizar información detallada sobre las mediciones de telemetría registradas por el sistema como luminosidad, temperatura, humedad y etc.
 
 <br>
 
@@ -687,13 +699,23 @@ El séptimo paso consistió en identificar los Read Models del sistema. Estos re
   <img src="../assets/img/chapter-iv/read-modal-7.png">
 </div>
 
+se identificaron siete Read Models que permiten consultar la información necesaria para gestionar la estructura y los recursos del laboratorio. Laboratory Registration Form proporciona la información requerida para registrar un nuevo laboratorio, mientras que Update Laboratory Profile permite consultar y modificar los datos asociados a su perfil. Para la gestión de los ambientes, Environment Registration Form permite registrar un nuevo ambiente y Environment Details consultar su información. Asimismo, Box Registration Form permite proporcionar los datos necesarios para registrar una caja y Staff Registration Form facilita el registro del personal del laboratorio. Finalmente, Laboratory Staff permite consultar la información del personal asociado al laboratorio.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/read-modal-8.png">
 </div>
 
+se identificaron varios Read Models orientados a consultar la información necesaria para administrar los equipos e instrumentos. Equipment Registration Form proporciona la información requerida para registrar un nuevo equipo, mientras que Available Sensors permite consultar los sensores disponibles para su vinculación. Equipment Parameters permite consultar los parámetros asociados al equipo antes de realizar su configuración. Asimismo, Equipment Maintenance History permite consultar el historial de mantenimientos registrados y Calibration Information presenta la información relacionada con la calibración del instrumento. Finalmente, Equipment Failure Details permite consultar la información asociada a una falla registrada y Equipment Status permite visualizar el estado actual del equipo.
+
 <br>
+
+**Resumen**
+
+Los Read Models definidos permiten representar la información que los usuarios necesitan consultar durante los diferentes procesos del sistema. Cada uno está asociado a una necesidad específica de lectura, como el registro y autenticación de usuarios, la gestión de suscripciones y pagos, el seguimiento de lotes y materias primas, la gestión de alertas, el monitoreo de mediciones, así como la administración de laboratorios y equipos.
+
+A continuación, se consolidan los Read Models identificados:
 
 | Read Model                        | Descripción                                                                                                         |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
@@ -701,14 +723,14 @@ El séptimo paso consistió en identificar los Read Models del sistema. Estos re
 | **Form Sign-In**                  | Vista utilizada por el usuario para ingresar sus credenciales e iniciar sesión.                                     |
 | **Password Recovery Form**        | Vista que permite al usuario proporcionar la información necesaria para iniciar la recuperación de contraseña.      |
 | **Subscription Plans**            | Vista que muestra los planes de suscripción disponibles para que el usuario pueda seleccionar uno.                  |
-| **Payment Details**               | Vista con la información necesaria para revisar y procesar los datos del pago.                                      |
+| **Payment Details**               | Vista que muestra la información necesaria para consultar y verificar los datos del pago                           |
 | **Current Subscription**          | Vista que muestra la suscripción vigente del usuario antes de actualizarla o cancelarla.                            |
 | **Form Register**                 | Vista con los datos necesarios para registrar un producto farmacéutico asociado a un lote.                          |
 | **Available Raw Materials**       | Vista que permite consultar las materias primas disponibles antes de registrar su utilización en un lote.           |
 | **Batch Evaluation**              | Vista con la información del lote necesaria para determinar su liberación o rechazo.                                |
 | **Alert Details**                 | Vista que presenta la información de una alerta para que pueda ser revisada y gestionada.                           |
 | **Notification Preferences**      | Vista que muestra las preferencias actuales de notificación del usuario antes de modificarlas.                      |
-| **Raw Material Form**             | Vista utilizada para consultar o completar la información necesaria para registrar una materia prima.               |
+| **Raw Material Form**             | Vista con la información necesaria para registrar una materia prima.               |
 | **Raw Material Lot Details**      | Vista con la información del lote de materia prima necesaria para evaluar su aceptación o rechazo.                  |
 | **Available Box**                 | Vista que permite consultar las cajas disponibles antes de almacenar o retirar materia prima.                       |
 | **Details Measurement Dashboard** | Vista que presenta información detallada de las mediciones de telemetría para su revisión.                          |
@@ -718,13 +740,13 @@ El séptimo paso consistió en identificar los Read Models del sistema. Estos re
 | **Environment Details**           | Vista que permite consultar los datos del ambiente antes de realizar una actualización.                             |
 | **Box Registration Form**         | Vista con los datos necesarios para registrar una caja asociada al ambiente.                                        |
 | **Staff Registration Form**       | Vista utilizada para ingresar la información necesaria para registrar un miembro del personal.                      |
-| **Laboratory Staff**              | Vista que muestra el personal asociado al laboratorio para gestionar su membresía.                                  |
+| **Laboratory Staff**              | Vista que muestra la información del personal asociado al laboratorio y su membresía.                                  |
 | **Equipment Registration Form**   | Vista con los datos necesarios para registrar un equipo.                                                            |
 | **Available Sensors**             | Vista que muestra los sensores disponibles para seleccionar uno antes de vincularlo a un equipo.                    |
 | **Equipment Parameters**          | Vista con los parámetros del equipo necesarios para configurar sus parámetros BPM.                                  |
 | **Equipment Maintenance History** | Vista que muestra el historial de mantenimiento del equipo antes de registrar una nueva actividad de mantenimiento. |
 | **Calibration Information**       | Vista con la información de calibración necesaria antes de calibrar un instrumento de medición.                     |
-| **Equipment Failure Details**     | Vista que permite consultar la información de una falla antes de registrarla.                                       |
+| **Equipment Failure Details**     | Vista que presenta la información necesaria para consultar y registrar los detalles de una falla del equipo.                                       |
 | **Equipment Status**              | Vista que muestra el estado actual del equipo antes de realizar una actualización.                                  |
 
 **Paso 8: External Systems**
