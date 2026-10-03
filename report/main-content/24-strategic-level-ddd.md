@@ -532,11 +532,15 @@ El sexto paso incorporó al modelo los actores y las políticas del sistema. Los
   <img src="../assets/img/chapter-iv/politica-actores-1.png">
 </div>
 
+se identificaron los actores y las políticas que intervienen en el flujo de gestión de usuarios. El Visitante participa en el registro inicial, mientras que el Usuario interviene en la autenticación y en el proceso de recuperación de contraseña. A partir del registro, se realiza la asignación del rol correspondiente y, posteriormente, el usuario puede autenticarse en el sistema. En el caso de la recuperación de contraseña, el usuario solicita el restablecimiento, recibe un código de verificación, este es validado y finalmente se realiza el cambio de contraseña. Además, se estableció la política que indica que, después del registro del usuario, debe realizarse la selección de un plan de suscripción.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/politica-actores-2.png">
 </div>
+
+se identificaron los actores y las políticas relacionadas con la gestión de suscripciones. El Usuario participa en la selección del plan, la aceptación del pago, así como en la actualización o cancelación de su suscripción. El flujo inicia con la selección del plan y la creación del checkout; posteriormente, al recibir el pago, la suscripción es activada. Como política, se establece que cuando la suscripción es activada, se procede con el registro del laboratorio. Asimismo, el usuario puede actualizar o cancelar su suscripción según corresponda.
 
 <br>
 
@@ -544,11 +548,15 @@ El sexto paso incorporó al modelo los actores y las políticas del sistema. Los
   <img src="../assets/img/chapter-iv/politica-actores-3.png">
 </div>
 
+se identificaron los actores y las políticas relacionadas con la auditoría y generación de información. El Auditor participa solicitando la información de auditoría, mientras que el Quality Staff interviene en la consulta de registros históricos, generación de reportes, exportación de registros de equipos y cálculo de indicadores si los auditores lo solicitan.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/politica-actores-4.png">
 </div>
+
+En esta etapa se identificaron los actores y las políticas relacionadas con la gestión de lotes. El Lab Technician participa en la creación del lote, el inicio del proceso y el registro del uso de materias primas, así como en la finalización de la fabricación. Posteriormente, el lote es evaluado y puede ser liberado o rechazado según las validaciones establecidas. Como políticas, se contempla que cuando un lote es liberado se genere un reporte del lote, mientras que ante un rechazo también se genere el reporte correspondiente. Además, se identifica como punto pendiente definir las validaciones necesarias para determinar si un lote puede ser liberado o rechazado.
 
 <br>
 
@@ -556,11 +564,15 @@ El sexto paso incorporó al modelo los actores y las políticas del sistema. Los
   <img src="../assets/img/chapter-iv/politica-actores-5.png">
 </div>
 
+En esta etapa se identificaron los actores y las políticas relacionadas con la gestión de alertas y cumplimiento. El Lab Technician participa en el reconocimiento de las alertas, mientras que el User puede actualizar sus preferencias de notificación. El flujo contempla la creación, reconocimiento y resolución de alertas, además de la detección de eventos de cumplimiento, bajo stock y vencimiento de calibraciones. También se consideran eventos asociados a la liberación o rechazo de lotes y la notificación al Quality Supervisor.
+
 <br>
 
 <div align="center">
-  <img src="../assets/img/chapter-iv/politica-actores-6.png">
+  <img src="../assets/img/chapter-iv/politica-actores-6.jpg">
 </div>
+
+En esta etapa se identificaron los actores y las políticas relacionadas con la gestión de materias primas e inventario. El Lab Technician participa en el registro de la materia prima, la recepción del lote, su almacenamiento y las actividades de consumo. El lote recibido puede ser aceptado o rechazado según las validaciones establecidas. Cuando una materia prima es aceptada, se actualiza el inventario y se registra el movimiento correspondiente; posteriormente, puede ser consumida para la producción y retirarse del box cuando sea necesario. Como política, se establece que cuando una materia prima es aceptada, puede registrarse su uso para la producción de un producto farmacéutico.
 
 <br>
 
@@ -568,11 +580,17 @@ El sexto paso incorporó al modelo los actores y las políticas del sistema. Los
   <img src="../assets/img/chapter-iv/politica-actores-7.png">
 </div>
 
+En esta etapa se identificaron los actores y las políticas relacionadas con el monitoreo de telemetría. El flujo parte del registro de las mediciones de telemetría, a partir del cual se puede consultar el historial, revisar las mediciones, detectar anomalías y actualizar el estado de la telemetría. Como políticas, se establece que cuando se registra un punto del historial de telemetría, se puede generar un reporte de auditoría, y que cuando se detecta una anomalía de telemetría, se debe crear una alerta.
+
 <br>
 
 <div align="center">
   <img src="../assets/img/chapter-iv/politica-actores-8.png">
 </div>
+
+En esta etapa se identificaron los actores y las políticas relacionadas con la gestión del laboratorio. El Quality Supervisor participa en el registro y actualización del laboratorio y sus ambientes, así como en el registro del personal y la gestión de su pertenencia al laboratorio. También se contempla el registro de boxes dentro de los ambientes para organizar los espacios donde se realizan las mediciones y el almacenamiento de materias primas.
+
+Como políticas, se establece que cuando se registra un ambiente, se debe registrar el equipo necesario para medir los parámetros correspondientes; cuando se registra un box, se deben registrar los equipos de medición y posteriormente se puede almacenar materia prima en él. Asimismo, cuando se registra un ambiente, se contempla la creación de un lote para la fabricación del producto farmacéutico.
 
 <br>
 
@@ -580,9 +598,13 @@ El sexto paso incorporó al modelo los actores y las políticas del sistema. Los
   <img src="../assets/img/chapter-iv/politica-actores-9.png">
 </div>
 
-<br>
+En esta etapa se identificaron los actores y las políticas relacionadas con la gestión de equipos. El Lab Technician participa en el registro y actualización del equipo, mantenimiento y calibración, mientras que el Quality Staff interviene en la configuración de los parámetros BPM. El flujo también contempla la vinculación de sensores, la detección y registro de fallas y la expiración de la calibración.
 
-Las políticas identificadas fueron las siguientes:
+Como políticas, se establece que cuando un sensor es vinculado, se deben registrar las mediciones de telemetría; cuando se registra un mantenimiento, se debe detectar el evento de cumplimiento correspondiente; y cuando se detecta o registra una falla del equipo, se generan acciones relacionadas con la auditoría y las alertas. Además, cuando se registra un equipo, se contempla la exportación de su registro para las auditorias.
+
+**Resumen**
+
+Las políticas se redactaron siguiendo la estructura “Whenever Event X, then Command Y”, indicando que, cuando ocurre un determinado evento, se ejecuta el comando correspondiente. De esta manera, se representan de forma clara las reglas que conectan los eventos del dominio con las acciones que debe realizar el sistema.
 
 | N.° | Política                                                                                                                                        | Descripción                                                                                                                                                            |
 | --- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
