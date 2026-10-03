@@ -859,9 +859,7 @@ El Aggregate Equipment se identifica porque concentra la información y las oper
 
 Además, permite gestionar situaciones relacionadas con el ciclo de vida del equipo, como la expiración de una calibración y el registro de fallas detectadas. Por ello, Equipment actúa como la unidad principal para mantener la identidad, configuración y estado operativo de cada equipo, manteniendo estas responsabilidades dentro de un mismo límite de consistencia.
 
-<br>
-
----
+### Bounded Context
 
 A partir del modelo de Event Storming, se llevó a cabo una sesión de Candidate Context Discovery para identificar los Bounded Contexts de la solución. Se utilizó principalmente la técnica Look-for Pivotal Events, mediante la cual se identificaron eventos que representan cambios significativos de estado dentro de los diferentes procesos del dominio.
 
