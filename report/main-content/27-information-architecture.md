@@ -1,5 +1,7 @@
 ## 5.2. Information Architecture
 
+La arquitectura de la información de **QualiTrack** está diseñada para una navegación intuitiva y técnica, permitiendo que los Jefes de Aseguramiento de Calidad y Directores de Salud Pública encuentren rápidamente la información sobre cumplimiento y telemetría.
+
 ### 5.2.1. Organization Systems
 
 ### 5.2.2. Labeling Systems
