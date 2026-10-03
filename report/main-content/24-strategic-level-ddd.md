@@ -917,61 +917,136 @@ De esta manera, el contexto garantiza que un laboratorio solo pueda registrarse 
 
 <div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Tracking-Telemetry.jpg"> </div>
 
+El Bounded Context de Tracking & Telemetry es responsable de recibir, registrar y dar seguimiento a las mediciones ambientales generadas por los sensores vinculados a los equipos del laboratorio, como temperatura, humedad, calidad del aire y luminosidad. Su modelo se organiza alrededor del agregado **EquipmentTelemetry**, que constituye la unidad de consistencia de este contexto y concentra el estado y el historial de las mediciones asociadas a cada equipo.
+
+En el flujo de registro de mediciones, el comando Record **Telemetry Measurements** produce el evento Telemetry Measurement Recorded. Este comando se dispara a partir de la política Whenever Sensor Linked Then Record Telemetry Measurements, que conecta este contexto con Equipment Management y asegura que solo se registren mediciones de sensores previamente vinculados a un equipo. A partir de este evento se derivan los procesos de historial, estado y detección de anomalías.
+
+En el flujo de **historial y estado**, el comando Record Telemetry History Point genera el evento Telemetry History Point Recorded, que conserva cada medición como un punto del historial de telemetría. Este evento activa la política Whenever Telemetry History Point Recorded Then Generate Audit Report, que conecta Tracking & Telemetry con Reporting & Audit. Por su parte, el comando Update Telemetry Status genera el evento Telemetry Status Updated, que mantiene actualizado el estado vigente de la telemetría del equipo.
+
+En el flujo de **detección de anomalías**, el comando Detect Telemetry Anomaly evalúa los valores registrados y, cuando identifica una lectura fuera de los parámetros esperados, produce el evento Telemetry Anomaly Detected. Este evento activa la política Whenever Telemetry Anomaly Detected Then Create Alert, que conecta este contexto con Compliance & Alerting para iniciar la gestión de la desviación ambiental.
+
+En el flujo de **revisión**, el Quality Staff consulta el read model Details Measurement Dashboard, que presenta la información detallada de las mediciones, y ejecuta el comando Review Measurement, cuyo resultado es el evento Measurement Reviewed. Este evento deja constancia de que una medición fue revisada por el personal de calidad.
+
+Dentro de este contexto se identificó el pain point "What information is going to be shown in the telemetry?", el cual indica que aún debía definirse qué datos se presentarían en el dashboard a partir de las mediciones registradas.
+
 **Bounded context: Reporting & Audit**
 
 <div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Reporting-Audit.jpg"> </div>
+
+El Bounded Context de Reporting & Audit es responsable de consolidar la información generada por los demás contextos de Qualitrack y ponerla a disposición para auditorías, seguimiento y análisis, mediante reportes, exportaciones e indicadores. Su modelo se organiza alrededor de dos agregados: **Audit Report**, que concentra la consulta de información histórica y la generación de reportes, y **KpiDashboard**, que se encarga del cálculo de indicadores clave.
+
+En el flujo de **auditoría**, el Auditor ejecuta el comando Request Audit Information, que produce el evento Audit Information Requested. A continuación, el Quality Staff ejecuta el comando Consult Historical Record, que genera el evento Historical Record Consulted y permite recuperar los registros históricos relacionados con la auditoría solicitada. Con esta información, el comando Generate Audit Report produce el evento Audit Report Generated, que completa el flujo. Este comando también puede ser activado desde otros contextos, como Tracking & Telemetry, mediante la política Whenever Telemetry History Point Recorded Then Generate Audit Report.
+
+En el flujo de **reportes de lotes**, el Quality Staff ejecuta el comando Generate Batch Report, que genera el evento Batch Report Generated. Este comando es activado desde Product Batch Management mediante las políticas Whenever Batch Released Then Generate Batch Report y Whenever Batch Rejected Then Generate Batch Report, de modo que cada decisión final sobre un lote quede documentada.
+
+En el flujo de **exportación de equipos**, el Quality Staff ejecuta el comando Export Equipment Log, que produce el evento Equipment Log Exported y permite disponer del registro histórico de los equipos para las auditorías. Este comando se activa desde Equipment Management mediante la política Whenever Equipment Registered Then Export Equipment Log.
+
+Por su parte, el agregado **KpiDashboard** se mantiene independiente porque su responsabilidad es distinta a la de los reportes: el Quality Staff ejecuta el comando Calculate KPI, que genera el evento KPI Dashboard Calculated con los indicadores utilizados para mostrar el estado general del sistema.
+
+Dentro de este contexto se identificó el pain point "Which additional information will be required when generating the audit report?", el cual indica que aún debía definirse qué información adicional debe incluirse en el reporte de auditoría a partir de los registros históricos consultados y la información solicitada por el auditor.
 
 **Bounded context: Product Batch Management**
 
 <div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Product%20Batch%20Managment.jpg"> </div>
 
+El Bounded Context de Product Batch Management es responsable de gestionar el ciclo de vida de los lotes de producción farmacéutica en Qualitrack, desde su creación hasta la decisión final de liberarlos o rechazarlos, garantizando su trazabilidad. Su modelo se organiza alrededor del agregado **Batch**, que constituye la unidad de consistencia de este contexto y concentra los comandos, eventos y reglas asociados al estado del lote.
+
+En el flujo de **creación y fabricación**, el Lab Technician ejecuta el comando Create Batch, que produce el evento Batch Created y da inicio al lote con el evento Batch Started. Este comando se activa desde Laboratory Management mediante la política Whenever Environment Registered Then Create Batch for the manufacture of the pharmaceutical product. Luego, a partir del read model Form Register, el Lab Technician ejecuta el comando Register Pharmaceutical Product, que genera el evento Pharmaceutical Product Registered y asocia el producto farmacéutico al lote. Después, consultando el read model Available Raw Materials, ejecuta el comando Register Raw Material Usage, cuyo resultado es el evento Raw Material Usage Registered. Este comando también puede ser activado desde Inventory Management mediante la política Whenever Raw Material Accepted Then Register Raw Material Usage, de modo que solo se utilicen materias primas previamente aceptadas. Finalmente, el comando Complete Manufacturing produce el evento Manufacturing Completed, que marca el cierre de la etapa de fabricación.
+
+En el flujo de **evaluación**, una vez completada la fabricación, el Lab Technician ejecuta el comando Evaluate Batch, que genera el evento Batch Evaluated. La evaluación se mantiene separada de su resultado, lo que permite distinguir el análisis del lote de la decisión final sobre este.
+
+En el flujo de **decisión final**, el Lab Technician consulta el read model Batch Evaluation y, según las validaciones establecidas, ejecuta el comando Release Batch, que genera el evento Batch Released, o el comando Reject Batch, que genera el evento Batch Rejected. Ambos eventos activan políticas que conectan este contexto con otros:
+
+- Cuando un lote es liberado, la política Whenever Batch Released Then Detect Batch Release Compliance Event conecta con Compliance & Alerting, y la política Whenever Batch Released Then Generate Batch Report conecta con Reporting & Audit.
+- Cuando un lote es rechazado, la política Whenever Batch Rejected Then Detect Batch Rejected Compliance Event conecta con Compliance & Alerting, y la política Whenever Batch Rejected Then Generate Batch Report conecta con Reporting & Audit.
+
+De esta manera, el contexto garantiza que toda decisión final sobre un lote quede registrada, genere su reporte correspondiente y sea notificada como evento de cumplimiento.
+
+Dentro de este contexto se identificó el pain point "What are the validations to release or reject a batch?", el cual indica que aún debía definirse qué criterios y validaciones determinan si un lote es liberado o rechazado.
+
 **Bounded context: Compliance & Alerting**
 
 <div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Compliance-Alerting.jpg"> </div>
+
+El Bounded Context de Compliance & Alerting es responsable de detectar, notificar y dar seguimiento a las situaciones que requieren atención dentro de Qualitrack, como desviaciones ambientales, fallas de equipos, bajo stock de materias primas y eventos de cumplimiento asociados a los lotes. Su modelo se organiza alrededor del agregado DeviationAlert, que constituye la unidad de consistencia de este contexto y concentra el ciclo de vida de las alertas, desde su creación hasta su resolución.
+
+En el flujo de **gestión de alertas**, el comando Create Alert produce el evento Alert Created. Este comando es activado desde otros contextos mediante las políticas Whenever Telemetry Anomaly Detected Then Create Alert, que proviene de Tracking & Telemetry, y Whenever Equipment Failure Detected Then Create Alert, que proviene de Equipment Management. Luego, el Lab Technician ejecuta el comando Acknowledge Alert, que genera el evento Alert Acknowledged y registra que la alerta fue reconocida por el responsable. Finalmente, a partir del read model Alert Details, que presenta la información necesaria para revisar la situación, el Lab Technician ejecuta el comando Resolve Alert, cuyo resultado es el evento Alert Resolved, con el cual se cierra el ciclo de la alerta.
+
+En el flujo de **bajo stock**, el comando Detect Low Stock produce el evento Low Stock Detected, que se origina a partir de la actualización del inventario en Inventory Management. Posteriormente, el comando Create Low Stock Alert genera el evento Low Stock Alert Created, que alerta sobre la necesidad de reponer la materia prima.
+
+En el flujo de **cumplimiento**, el comando Detect Compliance Event produce el evento Compliance Event Detected, y se activa desde Equipment Management mediante la política Whenever Maintenance Registered Then Detect Compliance Event. Asimismo, los comandos Detect Batch Release Compliance Event y Detect Batch Rejection Compliance Event generan los eventos Batch Release Compliance Event Detected y Batch Rejection Compliance Event Detected, y se activan desde Product Batch Management a través de las políticas asociadas a la liberación y al rechazo de lotes. Cuando corresponde, el Lab Technician ejecuta el comando Notify Quality Supervisor, que produce el evento Quality Supervisor Notified y asegura que el responsable de calidad conozca la situación.
+
+En el flujo de **preferencias de notificación**, el User consulta el read model Notification Preferences y ejecuta el comando Update Notification Preference, que genera el evento Notification Preference Updated, permitiendo configurar cómo desea recibir las notificaciones relacionadas con las alertas.
+
+Por último, el Quality Staff ejecuta el comando Calculate Deviation Trend, que produce el evento Deviation Trend Calculated y permite analizar la evolución histórica de las desviaciones registradas.
+
+Dentro de este contexto se identificó el pain point "How is the alert going to be resolved?", el cual indica que aún debía definirse el proceso necesario para llevar una alerta desde su reconocimiento hasta su resolución.
 
 **Bounded context: Equipment Management**
 
 <div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Equipment%20Management/Vista%20General.jpg"> </div>
 
+El Bounded Context de Equipment Management es responsable de gestionar los equipos e instrumentos de medición del laboratorio, incluyendo su registro, la vinculación de sensores, la configuración de parámetros, la calibración, el mantenimiento y el seguimiento de fallas. Su modelo se organiza alrededor de dos agregados: Equipment, que mantiene la identidad, configuración y estado operativo de cada equipo, y MaintenanceRecord, que concentra el registro de las actividades de mantenimiento. Ambos se comunican con otros contextos mediante políticas: Whenever Sensor Linked Then Record Telemetry Measurements (hacia Tracking & Telemetry), Whenever Equipment Failure Detected Then Create Alert y Whenever Maintenance Registered Then Detect Compliance Event (hacia Compliance & Alerting).
+
 * **Equipment**
 
 <div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Equipment%20Management/Equipement.jpg"> </div>
+
+El agregado Equipment concentra el ciclo de vida del equipo. El Lab Technician ejecuta el comando Register Equipment desde el read model Equipment Registration Form, lo que produce el evento Equipment Registered, y luego Link Sensor desde el read model Available Sensors, que genera Sensor Linked y activa el registro de telemetría. El Quality Staff configura los parámetros del equipo con Configure BPM Parameter, que genera BPM Parameter Configured. El Lab Technician también actualiza el estado operativo con Update Equipment Status (Equipment Status Updated) y registra la calibración con Measurement Instrument Calibrate (Measurement Instrument Calibrated). Cuando vence el periodo de calibración, Calibration Expire produce Calibration Expired. Finalmente, Detect Failure genera Equipment Failure Detected y, a partir del read model Equipment Failure Details, Record Equipment Failure produce Equipment Failure Recorded. Aquí se identificó el pain point "How can we check that the sensor has already been linked?", que indica que debía definirse cómo verificar que un sensor no esté vinculado a otro equipo antes de asociarlo.
 
 * **Maintenance Record**
 
 <div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Equipment%20Management/Maintenance%20Record.jpg"> </div>
 
+El agregado MaintenanceRecord conserva el historial de mantenimientos de los equipos. El Lab Technician consulta el read model Equipment Maintenance History y ejecuta el comando Register Maintenance, que produce el evento Maintenance Registered. Este evento activa la política Whenever Maintenance Registered Then Detect Compliance Event, que conecta con Compliance & Alerting para dejar constancia del cumplimiento. Separarlo de Equipment permite mantener el historial sin sobrecargar las reglas de configuración y estado del equipo.
+
 **Bounded context: Inventory Management**
 
 <div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Inventory%20Management/Vista%20general.jpg"> </div>
+
+El Bounded Context de Inventory Management es responsable de gestionar las materias primas del laboratorio, desde su registro y recepción hasta su almacenamiento, consumo y control de existencias. Su modelo se organiza alrededor de dos agregados: RawMaterial, que administra la materia prima como recurso y su disponibilidad en inventario, y RawMaterialBatch, que gestiona los lotes recibidos de proveedores y su aceptación o rechazo. Este contexto se comunica con otros mediante la política Whenever Raw Material Accepted Then Register Raw Material Usage for the production of a pharmaceutical product (hacia Product Batch Management) y mediante el evento Inventory Updated, que permite detectar bajo stock en Compliance & Alerting. Dentro del contexto se identificó el pain point "What are the validations to accept or reject raw material lot?", que indica que debían definirse los criterios para aceptar o rechazar un lote recibido.
 
 * **Raw Material**
 
 <div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Inventory%20Management/Raw%20Material.jpg"> </div>
 
+El agregado RawMaterial concentra el registro, almacenamiento y control de existencias de la materia prima. El Lab Technician consulta el read model Raw Material Form y ejecuta el comando Register Raw Material, que produce el evento Raw Material Registered. A partir del read model Available Box, ejecuta Store Raw Material in Box, que genera Raw Material Stored in Box, o Remove Raw Material from Box, que genera Raw Material Removed from Box. Estas operaciones llevan a Update Inventory, que produce el evento Inventory Updated, y luego Record Inventory Movement genera Inventory Movement Recorded, dejando trazabilidad de cada movimiento. El almacenamiento en box se activa desde Laboratory Management mediante la política Whenever Box Registered Then Store Raw Material in Box.
+
 * **Raw Material Batch**
 
 <div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Inventory%20Management/Raw%20Material%20Batch.jpg"> </div>
+
+El agregado RawMaterialBatch gestiona el ciclo de vida del lote recibido. El Lab Technician ejecuta Register Supplier Receipt (Supplier Receipt Registered) y Receive Raw Material Lot (Raw Material Lot Received). Luego, con el read model Raw Material Lot Details, evalúa el lote y ejecuta Accept Raw Material, que genera Raw Material Accepted, o Reject Raw Material, que genera Raw Material Rejected. Al aceptarse, se activa la política hacia Product Batch Management para registrar su uso en la producción. Finalmente, Consume Raw Material produce Raw Material Consumed, descontando la cantidad utilizada.
 
 **Bounded context: Laboratory Management**
 
 <div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/laboratory%20Management/Vista%20General.jpg"> </div>
 
+El Bounded Context de Laboratory Management es responsable de gestionar la estructura física y organizativa del laboratorio dentro de Qualitrack: el laboratorio, sus ambientes, los boxes donde se almacenan y monitorean los productos farmacéuticos y el personal que forma parte de él. Su modelo se organiza alrededor de cuatro agregados: Laboratory, Environment, Box y StaffMember. Este contexto se activa desde Payments & Subscriptions mediante la política Whenever Subscription Activated Then Laboratory Registered, de modo que un laboratorio solo se registra cuando existe una suscripción activa. A su vez, se comunica con otros contextos mediante las políticas Whenever Environment Registered Then Create Batch for the manufacture of the pharmaceutical product (hacia Product Batch Management), Whenever Box Registered Then Store Raw Material in Box (hacia Inventory Management) y las políticas de registro de equipos de medición para ambientes y boxes (hacia Equipment Management).
+
 * **Box**
 
 <div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/laboratory%20Management/Box.jpg"> </div>
+
+El agregado Box gestiona los contenedores de productos farmacéuticos asociados a un ambiente. El Quality Supervisor consulta el read model Box Registration Form y ejecuta el comando Register Box, que produce el evento Box Registered. Este evento activa dos políticas: Whenever Box Registered Then Store Raw Material in Box, que conecta con Inventory Management, y Whenever Box Registered Then Register Equipment to Measurement Parameters (Temperature, Humidity, Refrigeration, Ventilation, and Lighting), que conecta con Equipment Management para registrar los equipos que monitorearán las condiciones del box.
 
 * **Environment**
 
 <div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/laboratory%20Management/Enviroment.jpg"> </div>
 
+El agregado Environment controla los ambientes o áreas del laboratorio. El Quality Supervisor consulta el read model Environment Registration Form y ejecuta el comando Register Environment, que produce el evento Environment Registered. Con el read model Environment Details puede ejecutar Update Environment, que genera el evento Environment Updated. El evento Environment Registered activa dos políticas: Whenever Environment Registered Then Create Batch for the manufacture of the pharmaceutical product, que conecta con Product Batch Management, y Whenever Environment Registered Then Register Equipment to Measurement Parameters (Movement, Air Quality, Humidity, Buzzer Led), que conecta con Equipment Management para dotar al ambiente de los equipos de medición necesarios.
+
 * **Laboratory**
 
 <div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/laboratory%20Management/Laboratory.jpg"> </div>
 
+El agregado Laboratory concentra la información principal del laboratorio. El Quality Supervisor consulta el read model Laboratory Registration Form y ejecuta el comando Register Laboratory, que produce el evento Laboratory Registered. Posteriormente, a partir del read model Update Laboratory Profile, ejecuta el comando Update Laboratory Profile, que genera el evento Laboratory Profile Updated y mantiene actualizada la información y configuración básica del laboratorio.
+
 * **Staff Member**
 
 <div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/laboratory%20Management/StaffMember.jpg"> </div>
+
+El agregado StaffMember administra al personal del laboratorio. El Quality Supervisor consulta el read model Staff Registration Form y ejecuta el comando Register Staff Member, que produce el evento Staff Member Registered. Luego, con el read model Laboratory Staff, ejecuta Establish Laboratory Membership, que genera el evento Laboratory Membership Established y vincula al miembro con el laboratorio. Finalmente, el comando Deactivate Staff Member produce el evento Staff Member Deactivated cuando la persona deja de formar parte del laboratorio.
 
 #### 4.1.1.2 Domain Message Flows Modeling. 
  
