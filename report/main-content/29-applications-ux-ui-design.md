@@ -15,7 +15,3 @@
 #### Mobile Application
 
 ### 5.4.4. Applications User Flow Diagrams.
-
-#### Web Application
-
-#### Mobile Application
