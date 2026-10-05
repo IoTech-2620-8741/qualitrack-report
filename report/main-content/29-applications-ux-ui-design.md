@@ -71,7 +71,7 @@ En esta sección se presentan los esquemas de media fidelidad diseñados especí
 
 **Alertas críticas y desviaciones**
 
-**Descripción:** Esquema estructural de la ventana emergente de alertas críticas que detalla el sensor, la unidad de almacenamiento y el lote afectados
+**Descripción:** Esquema estructural de la ventana emergente de alertas críticas que detalla el sensor, la unidad de almacenamiento y el lote afectados.
 
 <div align="center">
   <img src="../assets/img/chapter-v/Wireframe App Mobile/wireframe_compilance_alerts_details.png"  height="600">
@@ -79,10 +79,82 @@ En esta sección se presentan los esquemas de media fidelidad diseñados especí
 
 **Manejo de lotes**
 
-**Descripción:** Esquema de estructural de la lista de lotes de producción que presenta los indicadores de lotes liberados, pendientes y rechazados
+**Descripción:** Esquema de estructural de la lista de lotes de producción que presenta los indicadores de lotes liberados, pendientes y rechazados.
 
 <div align="center">
   <img src="../assets/img/chapter-v/Wireframe App Mobile/wireframe_batch_management.png"  height="600">
+</div>
+
+**Información general de Lote**
+
+**Descripción:** Esquema de estructura de la información general de los lotes ya sean pendientes, aceptados o rechazados.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Wireframe App Mobile/wireframe_batch_general_info.png"  height="600">
+</div>
+
+**Materiales del Lote**
+
+**Descripción:** Esquema de estructura de los materiales usados para la creación de los lotes.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Wireframe App Mobile/wireframe_batch_material_used.png"  height="600">
+</div>
+
+**Confirmación de Lote**
+
+**Descripción:** Esquema de estructura de la pantalla de confirmación o rechazo de los lotes.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Wireframe App Mobile/wireframe_batch_status.png"  height="600">
+</div>
+
+**Manejo de Productos**
+
+**Descripción:** Esquema de estructura del catálogo de productos registrados que organiza en una tabla el código, el nombre, las especificaciones BPM.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Wireframe App Mobile/wireframe_product_management.png"  height="600">
+</div>
+
+**Registro de Productos**
+
+**Descripción:** Esquema de estructura del formulario de registro de productos farmacéuticos.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Wireframe App Mobile/wireframe_product_register.png"  height="600">
+</div>
+
+**Inventario de Material Primas**
+
+**Descripción:** Esquema de estructura del inventario de materias primas que advierte los materiales por debajo del umbral mínimo.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Wireframe App Mobile/wireframe_inventory_management.png"  height="600">
+</div>
+
+**Registro de Materia Prima**
+
+**Descripción:** Esquema de estructura del formulario de registro de materias primas.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Wireframe App Mobile/wireframe_inventory_register.png"  height="600">
+</div>
+
+**Facturación de suscripción**
+
+**Descripción:** Esquema de estructura de la pantalla de facturación que presenta la suscripción activa con su plan, estado y periodo, las opciones para cambiar de plan o cancelarla.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Wireframe App Mobile/wireframe_suscription_payment.png"  height="600">
+</div>
+
+**Planes de suscripción**
+
+**Descripción:** Esquema de estructura de la pantalla de planes con facturación mensual que compara los planes Enterprise y Standard Lab según su precio.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Wireframe App Mobile/wireframe_suscription_plans.png"  height="600">
 </div>
 
 ### 5.4.3. Applications Mock-ups
