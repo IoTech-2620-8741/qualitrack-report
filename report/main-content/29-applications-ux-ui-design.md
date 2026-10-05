@@ -18,7 +18,7 @@ En esta sección se presentan los esquemas de media fidelidad diseñados especí
 **Descripción:** Esquema estructural de la pantalla principal de inicio de sesión que define la disposición de campos para acceso estándar mediante credenciales o inicio de sesión único (SSO) corporativo.
 
 <div align="center">
-  <img src="../report/assets/img/chapter-v/Wireframe App Mobile/wireframe_sign_in.png"  height="600">
+  <img src="../assets/img/chapter-v/Wireframe App Mobile/wireframe_sign_in.png"  height="600">
 </div>
 
 **Registro de Usuario**
@@ -26,7 +26,7 @@ En esta sección se presentan los esquemas de media fidelidad diseñados especí
 **Descripción:** Esquema estructural de la pantalla de registro de nuevos usuarios, definiendo la disposición de campos para la creación de credenciales mediante correo.
 
 <div align="center">
-  <img src="../report/assets/img/chapter-v/Wireframe App Mobile/wireframe_sign_up.png"  height="600">
+  <img src="../assets/img/chapter-v/Wireframe App Mobile/wireframe_sign_up.png"  height="600">
 </div>
 
 **Dashboard de Monitoreo General**
@@ -34,7 +34,7 @@ En esta sección se presentan los esquemas de media fidelidad diseñados especí
 **Descripción:** Esquema de la pantalla principal que define la disposición estructural de indicadores de estado de los contenedores, ambientes, alertas y metricas.
 
 <div align="center">
-  <img src="../report/assets/img/chapter-v/Wireframe App Mobile/wireframe_dashboard.png"  height="600">
+  <img src="../assets/img/chapter-v/Wireframe App Mobile/wireframe_dashboard.png"  height="600">
 </div>
 
 **Dashboard Risk Overview**
@@ -42,7 +42,7 @@ En esta sección se presentan los esquemas de media fidelidad diseñados especí
 **Descripción:** Esquema de la pantalla extendida de la sección Risk Overview, define la disposición de las alertas registradas por los equipos.
 
 <div align="center">
-  <img src="../report/assets/img/chapter-v/Wireframe App Mobile/wireframe_dashboard_view_all.png"  height="600">
+  <img src="../assets/img/chapter-v/Wireframe App Mobile/wireframe_dashboard_view_all.png"  height="600">
 </div>
 
 **Dashboard de telemetría**
@@ -50,7 +50,7 @@ En esta sección se presentan los esquemas de media fidelidad diseñados especí
 **Descripción:** Esquema de estructural que define la disposición de las métricas registradas por el equipo seleccionado: estado de conexión con su latencia, las anomalías detectadas y la gráfica del perfil de temperatura.
 
 <div align="center">
-  <img src="../report/assets/img/chapter-v/Wireframe App Mobile/wireframe_telemetry.png"  height="600">
+  <img src="../assets/img/chapter-v/Wireframe App Mobile/wireframe_telemetry.png"  height="600">
 </div>
 
 **Data Log de telemetria**
@@ -58,7 +58,7 @@ En esta sección se presentan los esquemas de media fidelidad diseñados especí
 **Descripción:** Esquema de estructural del registro detallado de lecturas de los sensores, filtrable por equipo y rango de fechas, que identifica en cada entrada el parámetro, la fecha y hora.
 
 <div align="center">
-  <img src="../report/assets/img/chapter-v/Wireframe App Mobile/wireframe_telemetry_datalog.png"  height="600">
+  <img src="../assets/img/chapter-v/Wireframe App Mobile/wireframe_telemetry_datalog.png"  height="600">
 </div>
 
 **Alertas de cumplimiento**
@@ -66,7 +66,7 @@ En esta sección se presentan los esquemas de media fidelidad diseñados especí
 **Descripción:** Esquema de estructural del centro de alertas que presenta los indicadores de alertas sin resolver y desviaciones críticas, el filtrado de incidentes por estado.
 
 <div align="center">
-  <img src="../report/assets/img/chapter-v/Wireframe App Mobile/wireframe_compilance_alerts.png"  height="600">
+  <img src="../assets/img/chapter-v/Wireframe App Mobile/wireframe_compilance_alerts.png"  height="600">
 </div>
 
 **Alertas críticas y desviaciones**
@@ -74,7 +74,7 @@ En esta sección se presentan los esquemas de media fidelidad diseñados especí
 **Descripción:** Esquema estructural de la ventana emergente de alertas críticas que detalla el sensor, la unidad de almacenamiento y el lote afectados
 
 <div align="center">
-  <img src="../report/assets/img/chapter-v/Wireframe App Mobile/wireframe_compilance_alerts_details.png"  height="600">
+  <img src="../assets/img/chapter-v/Wireframe App Mobile/wireframe_compilance_alerts_details.png"  height="600">
 </div>
 
 **Manejo de lotes**
@@ -82,7 +82,7 @@ En esta sección se presentan los esquemas de media fidelidad diseñados especí
 **Descripción:** Esquema de estructural de la lista de lotes de producción que presenta los indicadores de lotes liberados, pendientes y rechazados
 
 <div align="center">
-  <img src="../report/assets/img/chapter-v/Wireframe App Mobile/wireframe_batch_management.png"  height="600">
+  <img src="../assets/img/chapter-v/Wireframe App Mobile/wireframe_batch_management.png"  height="600">
 </div>
 
 ### 5.4.3. Applications Mock-ups
