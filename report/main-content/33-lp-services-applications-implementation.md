@@ -94,6 +94,11 @@ También se confirmará cuando la arquitectura backend pueda responder correctam
 
 #### 6.2.1.2. Aspect Leaders and Collaborators
 
+Durante el Sprint 1 se definieron los responsables principales para cada componente desarrollado dentro de la plataforma QualiTrack.
+
+Debido a que esta primera iteración está orientada a construir la base tecnológica del sistema, los esfuerzos se distribuyeron principalmente entre los componentes de comunicación visual, aplicación web y servicios backend.
+
+
 #### 6.2.1.3. Sprint Backlog 1
 
 #### 6.2.1.4. Development Evidence for Sprint Review
