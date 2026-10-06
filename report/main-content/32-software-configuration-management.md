@@ -500,4 +500,149 @@ Al integrar una release o hotfix en la rama <code>main</code>, se utiliza un tag
 
 ### 6.1.3. Source Code Style Guide & Conventions
 
+En esta sección se establecen las convenciones de programación y nomenclatura que serán aplicadas en los diferentes productos digitales de QualiTrack. El objetivo es mantener un código consistente, legible y mantenible entre los miembros del equipo, aun cuando la solución utiliza diferentes lenguajes y tecnologías para la Landing Page, Web Application, Mobile Application, Backend Web Service, Edge Application y Embedded Application.
+
+Como convención general, todos los identificadores definidos por el equipo, incluyendo clases, interfaces, métodos, funciones, variables, archivos, componentes, servicios, endpoints y elementos del dominio, deben utilizar nombres en inglés. Asimismo, los términos asociados al dominio deben mantenerse alineados con el Ubiquitous Language establecido para QualiTrack.
+
+**Referencias de guías de estilo adoptadas**
+<table>
+  <thead>
+    <tr>
+      <th>Producto</th>
+      <th>Lenguaje / Tecnología</th>
+      <th>Referencia adoptada</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Landing Page</td>
+      <td>HTML / CSS</td>
+      <td><a href="https://google.github.io/styleguide/htmlcssguide.html" target="_blank">Google HTML/CSS Style Guide</a></td>
+    </tr>
+    <tr>
+      <td>Landing Page</td>
+      <td>JavaScript</td>
+      <td><a href="https://google.github.io/styleguide/jsguide.html" target="_blank">Google JavaScript Style Guide</a></td>
+    </tr>
+    <tr>
+      <td>Web Application</td>
+      <td>TypeScript</td>
+      <td><a href="https://google.github.io/styleguide/tsguide.html" target="_blank">Google TypeScript Style Guide</a></td>
+    </tr>
+    <tr>
+      <td>Web Application</td>
+      <td>Angular</td>
+      <td><a href="https://angular.dev/style-guide" target="_blank">Angular Style Guide</a></td>
+    </tr>
+    <tr>
+    <tr>
+      <td>Acceptance Criteria</td>
+      <td>Gherkin</td>
+      <td><a href="https://cucumber.io/docs/gherkin/reference/" target="_blank">Gherkin Reference</a></td>
+    </tr>
+  </tbody>
+</table>
+
+Estas referencias se utilizan como base para establecer criterios comunes de nomenclatura, formato y organización. Cuando una tecnología establece una convención específica distinta de las demás, se prioriza la convención correspondiente a dicha tecnología.
+
+**Nomenclatura General**
+<table>
+  <thead>
+    <tr>
+      <th>Elemento</th>
+      <th>Convención</th>
+      <th>Ejemplo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Clases TypeScript</td>
+      <td>PascalCase</td>
+      <td><code>EquipmentService</code>, <code>LaboratoryDashboard</code></td>
+    </tr>
+    <tr>
+      <td>Interfaces TypeScript</td>
+      <td>PascalCase</td>
+      <td><code>EquipmentResource</code>, <code>SignInRequest</code></td>
+    </tr>
+    <tr>
+      <td>Métodos y funciones</td>
+      <td>camelCase</td>
+      <td><code>getEquipmentById()</code>, <code>loadLaboratories()</code></td>
+    </tr>
+    <tr>
+      <td>Variables y propiedades</td>
+      <td>camelCase</td>
+      <td><code>laboratoryId</code>, <code>selectedEquipment</code></td>
+    </tr>
+    <tr>
+      <td>Constantes</td>
+      <td>SCREAMING_SNAKE_CASE</td>
+      <td><code>API_BASE_URL</code>, <code>DEFAULT_LANGUAGE</code></td>
+    </tr>
+    <tr>
+      <td>Archivos Angular</td>
+      <td>kebab-case</td>
+      <td><code>equipment-detail.ts</code>, <code>laboratory-dashboard.html</code></td>
+    </tr>
+    <tr>
+      <td>Componentes Angular</td>
+      <td>PascalCase</td>
+      <td><code>EquipmentDetail</code>, <code>LaboratoryDashboard</code></td>
+    </tr>
+    <tr>
+      <td>Clases CSS</td>
+      <td>kebab-case</td>
+      <td><code>.summary-card</code>, <code>.toolbar-actions</code></td>
+    </tr>
+  </tbody>
+</table>
+
+**Convenciones para Landing Page**
+- Utilizar HTML semántico para estructurar el contenido de la página.
+- Utilizar nombres de clases CSS en inglés y en kebab-case.
+- Evitar estilos inline cuando una regla pueda ser reutilizada mediante clases CSS.
+- Mantener una nomenclatura descriptiva para secciones y componentes.
+  
+**Convenciones para Web Application**
+- Uso de Angular standalone components.
+- Separación por bounded context dentro de src/app.
+- Organización por capas: domain, application, infrastructure y presentation.
+- Uso de stores y signals para gestión de estado.
+- Uso de services/endpoints para encapsular comunicación HTTP.
+- Uso de archivos de traducción para soporte bilingüe ES/EN.
+- Uso de nombres en inglés para componentes, entidades, comandos y recursos.
+
+<h4>Ejemplo TypeScript</h4>
+
+<pre><code>export class SubscriptionPlan {
+  constructor(params: {
+    id: number;
+    code: string;
+    name: string;
+    priceAmount: number;
+    currency: string;
+  }) {
+    this.id = params.id;
+    this.code = params.code;
+    this.name = params.name;
+    this.priceAmount = params.priceAmount;
+    this.currency = params.currency;
+  }
+}
+</code></pre>
+
+<h4>Ejemplo Gherkin</h4>
+
+<pre><code>Feature: Batch traceability
+
+  Scenario: Link raw material to a production batch
+    Given the QA Manager is authenticated
+    And a production batch exists
+    And a raw material exists in the laboratory inventory
+    When the QA Manager links the raw material to the batch
+    Then the system should register the raw material usage
+    And the batch traceability history should include the linked material
+</code></pre>
+
 ### 6.1.4. Software Deployment Configuration
