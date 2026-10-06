@@ -646,3 +646,38 @@ Estas referencias se utilizan como base para establecer criterios comunes de nom
 </code></pre>
 
 ### 6.1.4. Software Deployment Configuration
+
+En esta sección se establece la configuración utilizada para el despliegue de los productos digitales de QualiTrack. El objetivo es definir los pasos necesarios para publicar una versión funcional a partir del código fuente almacenado en los repositorios correspondientes. Para esta entrega se consideran dos productos desplegables: la Landing Page, publicada mediante GitHub Pages, y el Frontend Web Application, publicado mediante Firebase Hosting.
+
+**Landing Page - GitHub Pages**
+
+La Landing Page de QualiTrack se desplegó mediante GitHub Pages a partir del repositorio ClosedSource-LandingPage. Al estar desarrollada principalmente con HTML, CSS y JavaScript, puede publicarse como un sitio estático directamente desde el repositorio de GitHub.
+
+**Pasos de Configuración y Despliegue**
+
+<ol>
+  <li>Acceder al repositorio <code>qualitrack-landing-page</code> en GitHub.</li>
+  <li>Navegar a <strong>Settings &gt; Pages</strong>.</li>
+  <li>Seleccionar la rama <code>main</code> como fuente de publicación</li>
+  <li>Seleccionar la carpeta <code>/ (root)</code> como directorio de publicación.</li>
+  <li>Guardar la configuración y esperar a que GitHub Pages realice la publicación del sitio.</li>
+  <li>Verificar la correcta carga y funcionamiento de la Landing Page mediante la URL generada.</li>
+</ol>
+
+**Frontend Web Application - Firebase Hosting**
+
+La Frontend Web Application desarrollada con Angular se despliega mediante Firebase Hosting. Para ello, primero se genera una versión de producción y posteriormente los archivos resultantes son publicados mediante Firebase CLI.
+
+**Pasos de Configuración y Despliegue**
+
+<ol>
+  <li>Integrar los cambios aprobados a la rama <code>main</code> del repositorio<code>qualitrack-web-app</code> </li>
+  <li>Clonar el repositorio <code>qualitrack-web-app</code> en GitHub</li>
+  <li>Instalar las dependencias con <code>npm install</code>.</li>
+  <li>Instalar Firebase CLI mediante <code>npm install -g firebase-tools</code>.</li>
+  <li>Autenticarse mediante <code>firebase login</code>.</li>
+  <li>Inicializar Firebase Hosting con <code>firebase init hosting</code>.</li>
+  <li>Configurar el directorio de salida generado por Angular.</li>
+  <li>Compilar el proyecto con <code>ng build --configuration production</code>.</li>
+  <li>Desplegar con <code>firebase deploy --only hosting</code>.</li>
+</ol>
