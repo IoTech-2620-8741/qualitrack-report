@@ -508,37 +508,90 @@ Como convención general, todos los identificadores definidos por el equipo, inc
 <table>
   <thead>
     <tr>
-      <th>Producto</th>
       <th>Lenguaje / Tecnología</th>
-      <th>Referencia adoptada</th>
+      <th>Guía de referencia</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Landing Page</td>
       <td>HTML / CSS</td>
-      <td><a href="https://google.github.io/styleguide/htmlcssguide.html" target="_blank">Google HTML/CSS Style Guide</a></td>
+      <td>
+        <a href="https://google.github.io/styleguide/htmlcssguide.html" target="_blank">
+          Google HTML/CSS Style Guide
+        </a>
+      </td>
     </tr>
     <tr>
-      <td>Landing Page</td>
       <td>JavaScript</td>
-      <td><a href="https://google.github.io/styleguide/jsguide.html" target="_blank">Google JavaScript Style Guide</a></td>
+      <td>
+        <a href="https://google.github.io/styleguide/jsguide.html" target="_blank">
+          Google JavaScript Style Guide
+        </a>
+      </td>
     </tr>
     <tr>
-      <td>Web Application</td>
       <td>TypeScript</td>
-      <td><a href="https://google.github.io/styleguide/tsguide.html" target="_blank">Google TypeScript Style Guide</a></td>
+      <td>
+        <a href="https://google.github.io/styleguide/tsguide.html" target="_blank">
+          Google TypeScript Style Guide
+        </a>
+      </td>
     </tr>
     <tr>
-      <td>Web Application</td>
       <td>Angular</td>
-      <td><a href="https://angular.dev/style-guide" target="_blank">Angular Style Guide</a></td>
+      <td>
+        <a href="https://angular.dev/style-guide" target="_blank">
+          Angular Style Guide
+        </a>
+      </td>
     </tr>
     <tr>
+      <td>Java</td>
+      <td>
+        <a href="https://google.github.io/styleguide/javaguide.html" target="_blank">
+          Google Java Style Guide
+        </a>
+      </td>
+    </tr>
     <tr>
-      <td>Acceptance Criteria</td>
+      <td>Spring Boot</td>
+      <td>
+        <a href="https://docs.spring.io/spring-boot/index.html" target="_blank">
+          Spring Boot Reference Documentation
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>Dart / Flutter</td>
+      <td>
+        <a href="https://dart.dev/effective-dart/style" target="_blank">
+          Effective Dart: Style
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>Python</td>
+      <td>
+        <a href="https://peps.python.org/pep-0008/" target="_blank">
+          PEP 8 - Style Guide for Python Code
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>C++</td>
+      <td>
+        <a href="https://google.github.io/styleguide/cppguide.html" target="_blank">
+          Google C++ Style Guide
+        </a>
+      </td>
+    </tr>
+    <tr>
       <td>Gherkin</td>
-      <td><a href="https://cucumber.io/docs/gherkin/reference/" target="_blank">Gherkin Reference</a></td>
+      <td>
+        <a href="https://cucumber.io/docs/gherkin/reference/" target="_blank">
+          Gherkin Reference
+        </a>
+      </td>
     </tr>
   </tbody>
 </table>
@@ -546,6 +599,9 @@ Como convención general, todos los identificadores definidos por el equipo, inc
 Estas referencias se utilizan como base para establecer criterios comunes de nomenclatura, formato y organización. Cuando una tecnología establece una convención específica distinta de las demás, se prioriza la convención correspondiente a dicha tecnología.
 
 **Nomenclatura General**
+
+Aunque cada lenguaje posee convenciones propias, se establece como regla común que todos los nombres sean descriptivos, estén redactados en inglés y representen claramente la responsabilidad del elemento correspondiente.
+
 <table>
   <thead>
     <tr>
@@ -556,28 +612,28 @@ Estas referencias se utilizan como base para establecer criterios comunes de nom
   </thead>
   <tbody>
     <tr>
-      <td>Clases TypeScript</td>
+      <td>Clases Java / TypeScript</td>
       <td>PascalCase</td>
       <td><code>EquipmentService</code>, <code>LaboratoryDashboard</code></td>
     </tr>
     <tr>
       <td>Interfaces TypeScript</td>
       <td>PascalCase</td>
-      <td><code>EquipmentResource</code>, <code>SignInRequest</code></td>
+      <td><code>SignInRequest</code>, <code>EquipmentResource</code></td>
     </tr>
     <tr>
-      <td>Métodos y funciones</td>
-      <td>camelCase</td>
-      <td><code>getEquipmentById()</code>, <code>loadLaboratories()</code></td>
+      <td>Métodos y funciones Java / TypeScript</td>
+      <td>lowerCamelCase</td>
+      <td><code>getEquipmentById()</code>, <code>registerLaboratory()</code></td>
     </tr>
     <tr>
-      <td>Variables y propiedades</td>
-      <td>camelCase</td>
+      <td>Variables Java / TypeScript</td>
+      <td>lowerCamelCase</td>
       <td><code>laboratoryId</code>, <code>selectedEquipment</code></td>
     </tr>
     <tr>
-      <td>Constantes</td>
-      <td>SCREAMING_SNAKE_CASE</td>
+      <td>Constantes Java / TypeScript</td>
+      <td>UPPER_SNAKE_CASE</td>
       <td><code>API_BASE_URL</code>, <code>DEFAULT_LANGUAGE</code></td>
     </tr>
     <tr>
@@ -586,25 +642,81 @@ Estas referencias se utilizan como base para establecer criterios comunes de nom
       <td><code>equipment-detail.ts</code>, <code>laboratory-dashboard.html</code></td>
     </tr>
     <tr>
-      <td>Componentes Angular</td>
-      <td>PascalCase</td>
-      <td><code>EquipmentDetail</code>, <code>LaboratoryDashboard</code></td>
-    </tr>
-    <tr>
       <td>Clases CSS</td>
       <td>kebab-case</td>
       <td><code>.summary-card</code>, <code>.toolbar-actions</code></td>
+    </tr>
+    <tr>
+      <td>Clases y Widgets Dart</td>
+      <td>UpperCamelCase</td>
+      <td><code>EquipmentAlert</code>, <code>TelemetryCard</code></td>
+    </tr>
+    <tr>
+      <td>Variables y métodos Dart</td>
+      <td>lowerCamelCase</td>
+      <td><code>equipmentId</code>, <code>loadAlerts()</code></td>
+    </tr>
+    <tr>
+      <td>Archivos Dart</td>
+      <td>snake_case</td>
+      <td><code>equipment_alert.dart</code>, <code>telemetry_service.dart</code></td>
+    </tr>
+    <tr>
+      <td>Clases Python</td>
+      <td>UpperCamelCase</td>
+      <td><code>TelemetryProcessor</code>, <code>DeviceGateway</code></td>
+    </tr>
+    <tr>
+      <td>Funciones y variables Python</td>
+      <td>snake_case</td>
+      <td><code>process_telemetry()</code>, <code>sensor_value</code></td>
+    </tr>
+    <tr>
+      <td>Constantes Python</td>
+      <td>UPPER_SNAKE_CASE</td>
+      <td><code>MAX_RETRY_COUNT</code>, <code>EDGE_API_URL</code></td>
+    </tr>
+    <tr>
+      <td>Clases y tipos C++</td>
+      <td>UpperCamelCase</td>
+      <td><code>EnvironmentMonitor</code>, <code>ContainerMonitor</code></td>
+    </tr>
+    <tr>
+      <td>Funciones C++</td>
+      <td>lowerCamelCase</td>
+      <td><code>readTemperature()</code>, <code>sendTelemetry()</code></td>
+    </tr>
+    <tr>
+      <td>Variables C++</td>
+      <td>snake_case</td>
+      <td><code>sensor_value</code>, <code>device_status</code></td>
+    </tr>
+    <tr>
+      <td>Constantes C++</td>
+      <td>UPPER_SNAKE_CASE</td>
+      <td><code>MAXIMUM_TEMPERATURE</code>, <code>RETRY_INTERVAL</code></td>
+    </tr>
+    <tr>
+      <td>REST Resources</td>
+      <td>kebab-case plural</td>
+      <td><code>/api/v1/equipments</code>, <code>/api/v1/raw-materials</code></td>
     </tr>
   </tbody>
 </table>
 
 **Convenciones para Landing Page**
+
+La Landing Page se desarrolla utilizando HTML, CSS y JavaScript, manteniendo una estructura orientada a separar el contenido, la presentación visual y el comportamiento de la interfaz.
+
 - Utilizar HTML semántico para estructurar el contenido de la página.
 - Utilizar nombres de clases CSS en inglés y en kebab-case.
 - Evitar estilos inline cuando una regla pueda ser reutilizada mediante clases CSS.
 - Mantener una nomenclatura descriptiva para secciones y componentes.
   
 **Convenciones para Web Application**
+
+La Frontend Web Application se desarrolla utilizando Angular y TypeScript, organizada mediante bounded contexts y una separación de responsabilidades entre las distintas capas de la aplicación.
+
 - Uso de Angular standalone components.
 - Separación por bounded context dentro de src/app.
 - Organización por capas: domain, application, infrastructure y presentation.
@@ -612,6 +724,57 @@ Estas referencias se utilizan como base para establecer criterios comunes de nom
 - Uso de services/endpoints para encapsular comunicación HTTP.
 - Uso de archivos de traducción para soporte bilingüe ES/EN.
 - Uso de nombres en inglés para componentes, entidades, comandos y recursos.
+
+**Convenciones Backend Web Service**
+
+El Backend Web Service se desarrolla utilizando Java y Spring Boot, organizado mediante bounded contexts y principios de Domain-Driven Design.
+Se adoptan las siguientes convenciones:
+
+* Organización por bounded context dentro del paquete platform.
+* Uso de capas domain, application, infrastructure e interfaces.
+* Uso de REST controllers dentro de interfaces.rest.
+* Uso de resources y assemblers para transformar datos de entrada y salida.
+* Uso de command services y query services para separar casos de uso.
+* Uso de repositories como puertos de persistencia del dominio.
+* Uso de entidades JPA, assemblers y adapters dentro de infrastructure.
+* Uso de endpoints REST con recursos en plural y parámetros de recurso en path.
+* Uso de Javadoc para clases públicas relevantes.
+
+**Convenciones Mobile Application**
+
+El Mobile Application se desarrollará utilizando Flutter y Dart, manteniendo separadas las responsabilidades relacionadas con presentación, lógica de aplicación, modelos y comunicación con servicios externos.
+
+* Organización de las funcionalidades de acuerdo con los módulos o bounded contexts utilizados por QualiTrack.
+* Separación entre screens, widgets, models, services y repositories.
+* Uso de widgets reutilizables para elementos comunes de la interfaz.
+* Uso de services o repositories para realizar la comunicación con el Backend Web Service.
+* Evitar incorporar lógica de negocio compleja directamente dentro de widgets.
+* Separación entre navegación, presentación de información y acceso a datos.
+* Uso de componentes reutilizables cuando una funcionalidad visual sea utilizada en diferentes pantallas.
+
+**Convenciones Edge Application**
+
+La Edge Application se desarrollará utilizando Python y será responsable de recibir información proveniente de los dispositivos IoT, procesarla localmente y sincronizarla con los servicios cloud de QualiTrack.
+
+* Organización del código en módulos según su responsabilidad.
+* Separación entre comunicación con dispositivos, procesamiento de telemetría, almacenamiento temporal y comunicación con el Backend Web Service.
+* Uso de clases para encapsular responsabilidades como procesamiento, comunicación y administración de dispositivos.
+* Manejo controlado de errores y excepciones relacionados con comunicación y procesamiento de datos.
+* Almacenamiento de credenciales y configuraciones sensibles fuera del código fuente.
+* Uso de nombres en inglés coherentes con los sensores, dispositivos y conceptos del dominio.
+* Evitar concentrar adquisición, procesamiento y comunicación dentro de un único módulo.
+
+**Convenciones Embedded Applications**
+
+Los Embedded Applications se desarrollarán utilizando C++ y serán ejecutados en dispositivos ESP32 encargados de recolectar información proveniente de sensores y comunicarla hacia la Edge Application. La solución contempla dispositivos destinados tanto al monitoreo de ambientes del laboratorio como al monitoreo de contenedores de almacenamiento.
+
+* Separación entre adquisición de sensores, procesamiento de mediciones, control de actuadores y comunicación con la Edge Application.
+* Organización del código en archivos .h y .cpp de acuerdo con la responsabilidad de cada módulo.
+* Uso de clases para representar sensores, actuadores, dispositivos y servicios de comunicación cuando corresponda.
+* Uso de constantes para representar pines, intervalos de lectura, límites y parámetros de configuración.
+* Mantener separadas las responsabilidades de lectura de sensores, procesamiento de datos y envío de telemetría.
+* Uso de nombres en inglés para sensores, mediciones, estados, actuadores y operaciones.
+* Mantener funciones pequeñas y enfocadas en una única responsabilidad.
 
 <h4>Ejemplo TypeScript</h4>
 
@@ -629,6 +792,101 @@ Estas referencias se utilizan como base para establecer criterios comunes de nom
     this.priceAmount = params.priceAmount;
     this.currency = params.currency;
   }
+}
+</code></pre>
+
+<h4>Ejemplo Java</h4>
+
+<pre><code>public class EquipmentCommandService {
+
+    private final EquipmentRepository equipmentRepository;
+
+    public EquipmentCommandService(
+            EquipmentRepository equipmentRepository) {
+        this.equipmentRepository = equipmentRepository;
+    }
+
+    public Equipment registerEquipment(
+            RegisterEquipmentCommand command) {
+
+        var equipment = new Equipment(command);
+
+        return equipmentRepository.save(equipment);
+    }
+}
+</code></pre>
+
+<h4>Ejemplo REST Controller</h4>
+
+<pre><code>@RestController
+@RequestMapping("/api/v1/equipments")
+public class EquipmentController {
+
+    @GetMapping("/{equipmentId}")
+    public ResponseEntity&lt;EquipmentResource&gt; getEquipmentById(
+            @PathVariable Long equipmentId) {
+        // Application service invocation
+    }
+}
+</code></pre>
+
+<h4>Ejemplo Dart</h4>
+
+<pre><code>class EquipmentAlert {
+  final int id;
+  final String message;
+  final String severity;
+
+  EquipmentAlert({
+    required this.id,
+    required this.message,
+    required this.severity,
+  });
+}
+
+Future&lt;List&lt;EquipmentAlert&gt;&gt; loadEquipmentAlerts() async {
+  return [];
+}
+</code></pre>
+
+<h4>Ejemplo Python</h4>
+
+<pre><code>MAX_RETRY_COUNT = 3
+EDGE_API_URL = "http://localhost:8080"
+
+
+class TelemetryProcessor:
+
+    def process_measurement(self, sensor_value):
+        if sensor_value is None:
+            return
+
+        self.send_telemetry(sensor_value)
+
+    def send_telemetry(self, sensor_value):
+        pass
+</code></pre>
+
+<h4>Ejemplo C++</h4>
+
+<pre><code>const float MAXIMUM_TEMPERATURE = 30.0;
+const int TELEMETRY_INTERVAL = 5000;
+
+class EnvironmentMonitor {
+ public:
+  void readTemperature();
+  void sendTelemetry();
+
+ private:
+  float temperature_value;
+};
+
+void EnvironmentMonitor::readTemperature() {
+  temperature_value = 25.5;
+}
+
+void EnvironmentMonitor::sendTelemetry() {
+  // Send collected telemetry to the Edge Application
 }
 </code></pre>
 
