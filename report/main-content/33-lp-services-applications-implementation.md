@@ -42,18 +42,18 @@ Previo a iniciar los pasos:
 
 1) En [Portal de Azure](https://portal.azure.com/), buscamos en la barra de navegación **Suscripciones**:
 
-Step 1-1
+![Step 1-1 - Búsqueda en el portal de Azure](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-1-1.png)
 
 2) Seleccionamos la suscripción que tenemos:
 
-Step-1-2
+![Step 1-2 - Selección de la suscripción](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-1-2.png)
 
 3) Vamos a Configuración y después Proveedores de Recursos:
 
-Step-1-3
+![Step 1-3 - Proveedores de recursos](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-1-3.png)
 
 4) Seleccionamos los siguientes recursos: Microsoft.App, Microsoft.OperationalInsights, Microsoft.ContainerRegistry, Microsoft.DBforMySQL y Microsoft.ManagedIdentity y le damos a registrar.
 
-Step-1-4
+![Step 1-4 - Registro de los proveedores de recursos](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-1-4.png)
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
