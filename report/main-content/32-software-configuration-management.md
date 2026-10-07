@@ -681,3 +681,13 @@ La Frontend Web Application desarrollada con Angular se despliega mediante Fireb
   <li>Compilar el proyecto con <code>ng build --configuration production</code>.</li>
   <li>Desplegar con <code>firebase deploy --only hosting</code>.</li>
 </ol>
+
+**Backend Web Service:** Será empaquetado en un contenedor Docker y desplegado en Microsoft Azure, desde donde se expondrán los servicios REST desarrollados con Spring Boot.
+
+**Database:** La base de datos MySQL será ejecutada en un contenedor Docker dentro de Microsoft Azure, proporcionando la persistencia requerida por el Backend Web Service.
+
+**Mobile Application:** Las versiones de prueba desarrolladas con Flutter serán distribuidas mediante Firebase App Distribution, permitiendo entregar builds pre-release a los integrantes del equipo y testers autorizados.
+
+**Edge Application:** Será instalada y ejecutada directamente sobre el Edge Device definido por la arquitectura IoT.
+
+**Embedded Applications:** Serán compiladas como firmware y desplegadas directamente sobre dispositivos ESP32. La solución contempla un dispositivo destinado al monitoreo de ambientes del laboratorio y otro destinado al monitoreo de contenedores utilizados para almacenar lotes, permitiendo supervisar las condiciones físicas correspondientes.
