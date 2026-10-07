@@ -166,16 +166,16 @@ Previo a iniciar los pasos:
 
 * Registramos las variables del nombre de grupo de recursos y región:
 
-Step-5-1
+![Step 5-1 - Variables de grupo de recursos y región](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-5-1.png)
 
 * Creamos el entorno para la aplicación de contenedores en el grupo de recursos y región:
 
-Step-5-2
+![Step 5-2 - Creación del entorno de Container Apps](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-5-2.png)
 
-Step-5-3
+![Step 5-3 - Entorno de Container Apps creado](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-5-3.png)
 
 * Creamos la aplicación de contenedores dentro del entorno creado:
 
-Step-5-4
+![Step 5-4 - Creación de la aplicación contenedora](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-5-4.png)
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
