@@ -32,10 +32,10 @@ Previo a iniciar los pasos:
 
 2) Ingresas el nombre de la aplicación, en este caso, escribimos **iotech-qualitrack**:
 
-Previous Step 1
+![Previous Step 1 - Ingreso del nombre de la aplicación](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-previous-step-1.png)
 
 3) Finalmente, mostrará la contraseña para la aplicación, que nos permitirá usar la cuenta de correo para las aplicaciones externas:
 
-Previous Step 2
+![Previous Step 2 - Contraseña de aplicación generada](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-previous-step-2.png)
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
