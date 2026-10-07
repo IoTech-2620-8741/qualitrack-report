@@ -120,44 +120,44 @@ Previo a iniciar los pasos:
 
 1) Buscamos y entramos a **Azure Database for MySQL servers**:
 
-Step-4-1
+![Step 4-1 - Búsqueda de Azure Database for MySQL](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-4-1.png)
 
 2) Le damos a Crear y seleccionamos la opción **Servidor flexible**:
 
-Step-4-2
+![Step 4-2 - Opción Servidor flexible](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-4-2.png)
 
 3) En Datos básicos, seleccionamos nuestro grupo de recursos **iotech-qualitrack-rg**, ingresamos el nombre **iotech-qualitrack-mysql**, la región **Chile Central** y la versión **8.4**:
 
-Step-4-3
+![Step 4-3 - Datos básicos del servidor flexible](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-4-3.png)
 
 4) En Carga de trabajo, seleccionamos **Desarrollo o aficionado** y verificamos que quede el tamaño **Burstable B1ms** con **20 GiB** de almacenamiento. Además, dejamos desactivada la opción de Alta disponibilidad:
 
-Step-4-4
+![Step 4-4 - Proceso, almacenamiento y alta disponibilidad](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-4-4.png)
 
 5) En Autenticación, seleccionamos únicamente **MySQL**, ingresamos el usuario **iotechadmin** y una contraseña segura. Es importante guardar esta contraseña, ya que no se puede recuperar después:
 
-Step-4-5
+![Step 4-5 - Autenticación del servidor](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-4-5.png)
 
 6) En la pestaña Redes, seleccionamos como método de conectividad **Acceso público** y marcamos la opción **Permitir acceso público desde cualquier servicio de Azure dentro de Azure a este servidor**, lo que permitirá que nuestra Container App se conecte a la base de datos. Opcionalmente, podemos agregar nuestra IP actual si queremos conectarnos desde MySQL Workbench:
 
-Step-4-6
+![Step 4-6 - Configuración de redes](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-4-6.png)
 
 7) Le damos a Revisar y crear, verificamos que la validación sea superada y creamos el servidor. Este proceso puede tardar varios minutos:
 
-Step-4-7
+![Step 4-7 - Revisión de la configuración del servidor](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-4-7.png)
 
-Step-4-8
+![Step 4-8 - Implementación completada](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-4-8.png)
 
 8) Cuando termine el despliegue, entramos al servidor, vamos a **Bases de datos** y le damos a Agregar:
 
-Step-4-9
+![Step 4-9 - Lista de bases de datos del servidor](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-4-9.png)
 
 9) Ingresamos el nombre de la base de datos **iotech_qualitrack** y la guardamos:
 
-Step-4-10
+![Step 4-10 - Creación de la base de datos iotech_qualitrack](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-4-10.png)
 
 10) Finalmente, en **Información general**, copiamos el nombre del servidor, que termina en **.mysql.database.azure.com**, ya que lo usaremos más adelante para la configuración del back-end:
 
-Step-4-11
+![Step 4-11 - Nombre del servidor en Información general](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-4-11.png)
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
