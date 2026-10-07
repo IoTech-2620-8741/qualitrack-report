@@ -599,6 +599,9 @@ Como convención general, todos los identificadores definidos por el equipo, inc
 Estas referencias se utilizan como base para establecer criterios comunes de nomenclatura, formato y organización. Cuando una tecnología establece una convención específica distinta de las demás, se prioriza la convención correspondiente a dicha tecnología.
 
 **Nomenclatura General**
+
+Aunque cada lenguaje posee convenciones propias, se establece como regla común que todos los nombres sean descriptivos, estén redactados en inglés y representen claramente la responsabilidad del elemento correspondiente.
+
 <table>
   <thead>
     <tr>
@@ -609,28 +612,28 @@ Estas referencias se utilizan como base para establecer criterios comunes de nom
   </thead>
   <tbody>
     <tr>
-      <td>Clases TypeScript</td>
+      <td>Clases Java / TypeScript</td>
       <td>PascalCase</td>
       <td><code>EquipmentService</code>, <code>LaboratoryDashboard</code></td>
     </tr>
     <tr>
       <td>Interfaces TypeScript</td>
       <td>PascalCase</td>
-      <td><code>EquipmentResource</code>, <code>SignInRequest</code></td>
+      <td><code>SignInRequest</code>, <code>EquipmentResource</code></td>
     </tr>
     <tr>
-      <td>Métodos y funciones</td>
-      <td>camelCase</td>
-      <td><code>getEquipmentById()</code>, <code>loadLaboratories()</code></td>
+      <td>Métodos y funciones Java / TypeScript</td>
+      <td>lowerCamelCase</td>
+      <td><code>getEquipmentById()</code>, <code>registerLaboratory()</code></td>
     </tr>
     <tr>
-      <td>Variables y propiedades</td>
-      <td>camelCase</td>
+      <td>Variables Java / TypeScript</td>
+      <td>lowerCamelCase</td>
       <td><code>laboratoryId</code>, <code>selectedEquipment</code></td>
     </tr>
     <tr>
-      <td>Constantes</td>
-      <td>SCREAMING_SNAKE_CASE</td>
+      <td>Constantes Java / TypeScript</td>
+      <td>UPPER_SNAKE_CASE</td>
       <td><code>API_BASE_URL</code>, <code>DEFAULT_LANGUAGE</code></td>
     </tr>
     <tr>
@@ -639,14 +642,64 @@ Estas referencias se utilizan como base para establecer criterios comunes de nom
       <td><code>equipment-detail.ts</code>, <code>laboratory-dashboard.html</code></td>
     </tr>
     <tr>
-      <td>Componentes Angular</td>
-      <td>PascalCase</td>
-      <td><code>EquipmentDetail</code>, <code>LaboratoryDashboard</code></td>
-    </tr>
-    <tr>
       <td>Clases CSS</td>
       <td>kebab-case</td>
       <td><code>.summary-card</code>, <code>.toolbar-actions</code></td>
+    </tr>
+    <tr>
+      <td>Clases y Widgets Dart</td>
+      <td>UpperCamelCase</td>
+      <td><code>EquipmentAlert</code>, <code>TelemetryCard</code></td>
+    </tr>
+    <tr>
+      <td>Variables y métodos Dart</td>
+      <td>lowerCamelCase</td>
+      <td><code>equipmentId</code>, <code>loadAlerts()</code></td>
+    </tr>
+    <tr>
+      <td>Archivos Dart</td>
+      <td>snake_case</td>
+      <td><code>equipment_alert.dart</code>, <code>telemetry_service.dart</code></td>
+    </tr>
+    <tr>
+      <td>Clases Python</td>
+      <td>UpperCamelCase</td>
+      <td><code>TelemetryProcessor</code>, <code>DeviceGateway</code></td>
+    </tr>
+    <tr>
+      <td>Funciones y variables Python</td>
+      <td>snake_case</td>
+      <td><code>process_telemetry()</code>, <code>sensor_value</code></td>
+    </tr>
+    <tr>
+      <td>Constantes Python</td>
+      <td>UPPER_SNAKE_CASE</td>
+      <td><code>MAX_RETRY_COUNT</code>, <code>EDGE_API_URL</code></td>
+    </tr>
+    <tr>
+      <td>Clases y tipos C++</td>
+      <td>UpperCamelCase</td>
+      <td><code>EnvironmentMonitor</code>, <code>ContainerMonitor</code></td>
+    </tr>
+    <tr>
+      <td>Funciones C++</td>
+      <td>lowerCamelCase</td>
+      <td><code>readTemperature()</code>, <code>sendTelemetry()</code></td>
+    </tr>
+    <tr>
+      <td>Variables C++</td>
+      <td>snake_case</td>
+      <td><code>sensor_value</code>, <code>device_status</code></td>
+    </tr>
+    <tr>
+      <td>Constantes C++</td>
+      <td>UPPER_SNAKE_CASE</td>
+      <td><code>MAXIMUM_TEMPERATURE</code>, <code>RETRY_INTERVAL</code></td>
+    </tr>
+    <tr>
+      <td>REST Resources</td>
+      <td>kebab-case plural</td>
+      <td><code>/api/v1/equipments</code>, <code>/api/v1/raw-materials</code></td>
     </tr>
   </tbody>
 </table>
