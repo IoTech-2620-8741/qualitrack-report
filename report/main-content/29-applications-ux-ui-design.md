@@ -189,7 +189,7 @@ El visitante ingresa a QualiTrack y crea su cuenta en modo QA Manager / Supervis
 **- Task Flow 2:** Inicio de sesión y actualización del perfil del laboratorio
 
 <p align="center">
-  <img src="../assets/img/chapter-v/Wireflow Diagrams/task-flow-2"
+  <img src="../assets/img/chapter-v/Wireflow Diagrams/task-flow-2.png"
     alt="task-flow-2"/>
 </p>
 
@@ -206,7 +206,7 @@ El visitante ingresa a QualiTrack y crea su cuenta en modo QA Manager / Supervis
 **- User Goal 2:** Como responsable de calidad y supervisión, quiero iniciar sesión y mantener actualizados los datos de mi laboratorio, para que la información registrada en QualiTrack esté vigente.
 
 <p align="center">
-  <img src="../assets/img/chapter-v/Wireflow Diagrams/wireflow-2"/>
+  <img src="../assets/img/chapter-v/Wireflow Diagrams/wireflow-2.png"/>
 </p>
 
 El responsable de calidad inicia sesión con sus credenciales y llega al Dashboard, donde ve el resumen de lotes, alertas, materias primas y telemetría. Desde el menú lateral accede al perfil del laboratorio, edita su nombre, dirección, teléfono o normativas aplicables, y guarda los cambios para mantener la información vigente.
