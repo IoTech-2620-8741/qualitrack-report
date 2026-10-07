@@ -795,6 +795,101 @@ Los Embedded Applications se desarrollarán utilizando C++ y serán ejecutados e
 }
 </code></pre>
 
+<h4>Ejemplo Java</h4>
+
+<pre><code>public class EquipmentCommandService {
+
+    private final EquipmentRepository equipmentRepository;
+
+    public EquipmentCommandService(
+            EquipmentRepository equipmentRepository) {
+        this.equipmentRepository = equipmentRepository;
+    }
+
+    public Equipment registerEquipment(
+            RegisterEquipmentCommand command) {
+
+        var equipment = new Equipment(command);
+
+        return equipmentRepository.save(equipment);
+    }
+}
+</code></pre>
+
+<h4>Ejemplo REST Controller</h4>
+
+<pre><code>@RestController
+@RequestMapping("/api/v1/equipments")
+public class EquipmentController {
+
+    @GetMapping("/{equipmentId}")
+    public ResponseEntity&lt;EquipmentResource&gt; getEquipmentById(
+            @PathVariable Long equipmentId) {
+        // Application service invocation
+    }
+}
+</code></pre>
+
+<h4>Ejemplo Dart</h4>
+
+<pre><code>class EquipmentAlert {
+  final int id;
+  final String message;
+  final String severity;
+
+  EquipmentAlert({
+    required this.id,
+    required this.message,
+    required this.severity,
+  });
+}
+
+Future&lt;List&lt;EquipmentAlert&gt;&gt; loadEquipmentAlerts() async {
+  return [];
+}
+</code></pre>
+
+<h4>Ejemplo Python</h4>
+
+<pre><code>MAX_RETRY_COUNT = 3
+EDGE_API_URL = "http://localhost:8080"
+
+
+class TelemetryProcessor:
+
+    def process_measurement(self, sensor_value):
+        if sensor_value is None:
+            return
+
+        self.send_telemetry(sensor_value)
+
+    def send_telemetry(self, sensor_value):
+        pass
+</code></pre>
+
+<h4>Ejemplo C++</h4>
+
+<pre><code>const float MAXIMUM_TEMPERATURE = 30.0;
+const int TELEMETRY_INTERVAL = 5000;
+
+class EnvironmentMonitor {
+ public:
+  void readTemperature();
+  void sendTelemetry();
+
+ private:
+  float temperature_value;
+};
+
+void EnvironmentMonitor::readTemperature() {
+  temperature_value = 25.5;
+}
+
+void EnvironmentMonitor::sendTelemetry() {
+  // Send collected telemetry to the Edge Application
+}
+</code></pre>
+
 <h4>Ejemplo Gherkin</h4>
 
 <pre><code>Feature: Batch traceability
