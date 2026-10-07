@@ -537,5 +537,60 @@ El responsable de calidad accede al inventario de materias primas, donde el sist
   <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-production-batches-confirm-reject.png" alt="Formulario de rechazo de lote no conforme" height="400">
 </div>
 
+**Catálogo de productos farmacéuticos**
+
+**Descripción:** Listado de productos registrados con búsqueda, código, nombre y especificaciones BPM, con acceso para registrar un nuevo producto.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-pharmaceutical-product.png" alt="Catálogo de productos farmacéuticos registrados" height="400">
+</div>
+
+**Registro de producto farmacéutico**
+
+**Descripción:** Formulario para definir un producto con su código interno, nombre comercial, descripción terapéutica y especificaciones de calidad BPM.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-pharmaceutical-register.png" alt="Formulario de registro de producto farmacéutico" height="400">
+</div>
+
+**Inventario de materias primas**
+
+**Descripción:** Tabla de materias primas con código interno, proveedor autorizado y stock actual, encabezada por una alerta de materiales por debajo del umbral mínimo.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-inventory-materials.png" alt="Inventario de materias primas con alerta de stock bajo" height="400">
+</div>
+
+**Registro de materia prima**
+
+**Descripción:** Formulario para ingresar una materia prima con su proveedor, lote del proveedor, vencimiento, cantidad inicial, unidad de medida y umbral mínimo de stock.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-inventory-register.png" alt="Formulario de registro de materia prima" height="400">
+</div>
+
+**Planes de suscripción mensual**
+
+**Descripción:** Vista comparativa de los planes Enterprise y Standard Lab con facturación mensual, detallando el precio, los usuarios, los registros de equipos y los beneficios incluidos.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-subscription-plans-month.png" alt="Planes de suscripción con facturación mensual" height="400">
+</div>
+
+**Planes de suscripción anual**
+
+**Descripción:** Vista de los planes con la facturación anual seleccionada, que aplica el descuento por pago anual y actualiza el precio de cada plan.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-subscription-plans-year.png" alt="Planes de suscripción con facturación anual" height="400">
+</div>
+
+**Resumen de facturación**
+
+**Descripción:** Pantalla de gestión de la suscripción activa que muestra el plan, su estado y el periodo vigente, junto con el historial de pagos procesados por Stripe y la descarga de recibos en PDF.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-subscription-payment.png" alt="Resumen de la suscripción activa e historial de pagos" height="400">
+</div>
 
 ### 5.4.4. Applications User Flow Diagrams.
