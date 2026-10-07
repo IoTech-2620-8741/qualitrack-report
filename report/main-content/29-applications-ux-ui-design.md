@@ -457,6 +457,85 @@ El responsable de calidad accede al inventario de materias primas, donde el sist
   <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-telemetry-datalog.png" alt="Historial de lecturas de sensores con desviaciones BPM" height="400">
 </div>
 
+**Alertas de cumplimiento**
+
+**Descripción:** Centro de alertas que presenta los incidentes BPM activos por equipo, con indicadores de alertas sin resolver y desviaciones críticas, filtros por estado y la opción de reconocer todas las alertas.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-compliance-alerts.png" alt="Centro de alertas de cumplimiento BPM" height="400">
+</div>
+
+**Detalle de desviación sin resolver**
+
+**Descripción:** Ventana de inspección técnica de una alerta pendiente que muestra su severidad, valor registrado, umbral y equipo, y solicita notas de resolución para marcarla como resuelta.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-compliance-alerts-unresolved.png" alt="Detalle de una desviación pendiente de resolución" height="400">
+</div>
+
+**Detalle de desviación resuelta**
+
+**Descripción:** Ventana de inspección de una alerta ya atendida que conserva las notas de resolución como evidencia de la acción correctiva aplicada.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-compliance-alerts-resolved.png" alt="Detalle de una desviación resuelta con sus notas de resolución" height="400">
+</div>
+
+**Lotes de producción**
+
+**Descripción:** Listado de lotes con indicadores por estado, búsqueda y filtros, en el que los lotes pendientes pueden aprobarse o rechazarse directamente desde su tarjeta.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-production-batches.png" alt="Listado de lotes de producción por estado" height="400">
+</div>
+
+**Detalle de lote pendiente**
+
+**Descripción:** Ventana con la información general de un lote en espera de aprobación de QA, incluidas sus notas BPM de revisión.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-production-batches-pending.png" alt="Detalle de un lote pendiente de aprobación" height="400">
+</div>
+
+**Detalle de lote liberado**
+
+**Descripción:** Ventana con la información general de un lote liberado, que muestra el producto, la cantidad, la fecha de inicio y las notas BPM.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-production-batches-release.png" alt="Detalle de un lote liberado" height="400">
+</div>
+
+**Detalle de lote rechazado**
+
+**Descripción:** Ventana con la información general de un lote rechazado y las notas BPM que sustentan la decisión.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-production-batches-reject.png" alt="Detalle de un lote rechazado" height="400">
+</div>
+
+**Materias primas utilizadas**
+
+**Descripción:** Pestaña del detalle del lote que muestra el historial de materias primas utilizadas con su cantidad y fecha de uso, como soporte de la trazabilidad.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-production-batches-materials-used.png" alt="Historial de materias primas utilizadas en el lote" height="400">
+</div>
+
+**Confirmación de liberación de lote**
+
+**Descripción:** Formulario del proceso de liberación conforme a BPM que registra la fecha de liberación y las notas de verificación de calidad antes de confirmar la decisión.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-production-batches-confirm-release.png" alt="Formulario de liberación de lote conforme a BPM" height="400">
+</div>
+
+**Confirmación de rechazo de lote**
+
+**Descripción:** Formulario de rechazo de un lote no conforme que exige registrar la fecha y el motivo regulatorio del rechazo, obligatorio según las Buenas Prácticas de Manufactura.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-production-batches-confirm-reject.png" alt="Formulario de rechazo de lote no conforme" height="400">
+</div>
 
 
 ### 5.4.4. Applications User Flow Diagrams.
