@@ -164,26 +164,26 @@ Previo a iniciar los pasos:
 
 1) Creamos una aplicación contenedora de Container Apps:
 
-Step-5-1
+![Step 5-1 - Búsqueda de Container Apps](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-5-1.png)
 
-Step-5-2
+![Step 5-2 - Opción Aplicación contenedora](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-5-2.png)
 
 2) Ingresamos los datos básicos (grupo de recursos, nombre de la aplicación, región):
 
-Step-5-3
+![Step 5-3 - Datos básicos de la aplicación contenedora](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-5-3.png)
 
 3) Creamos el nuevo entorno de Container Apps con el nombre **iotech-qualitrack-env**:
 
-Step-5-4
+![Step 5-4 - Creación del entorno de Container Apps](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-5-4.png)
 
 4) En contenedor, elegimos la opción de imagen de inicio rápido y toda su configuración predeterminada de la opción, esto con el fin de cambiar la imagen más adelante:
 
-Step-5-5
+![Step 5-5 - Imagen de inicio rápido del contenedor](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-5-5.png)
 
 5) Revisamos y creamos la aplicación de contenedor:
 
-Step-5-6
+![Step 5-6 - Revisión de la aplicación contenedora](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-5-6.png)
 
-Step-5-7
+![Step 5-7 - Implementación completada](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-5-7.png)
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
