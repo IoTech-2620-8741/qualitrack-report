@@ -279,6 +279,10 @@ Todos deben ser coherentes con la aplicación web y móvil en lenguaje visual, c
 **Botón Físico**
  
 Un único botón lateral, con función exclusiva de encender/apagar (presión larga de 3 segundos).
+
+**Imágen del dispositivo**
+ 
+![Monitor de Ambiente](../assets/img/chapter-v/monitor-ambiente.png)
  
 **Dispositivo 2 — Monitor de Contenedor**
  
@@ -338,6 +342,10 @@ Mensajes temporales (3 s): `ACCESO AUTORIZADO`, `ACCESO DENEGADO`.
 **Botón Físico**
  
 Un único botón lateral, con función exclusiva de encender/apagar (presión larga de 3 segundos).
+
+**Imágen del dispositivo**
+ 
+![Monitor de Contenedor](../assets/img/chapter-v/monitor-contenedor.png)
  
 **Dispositivo 3 — Edge Device**
  
@@ -363,9 +371,3 @@ Un único botón lateral, con función exclusiva de encender/apagar (presión la
 4. La campanita avisa a todo el laboratorio; si es crítica, también se envía un correo.
 5. Si el monitor tiene una regla para ese estado, ejecuta la acción y la reporta.
 6. Cuando la lectura vuelve a normal se registra la normalización; la alerta sigue abierta hasta que una persona la resuelva.
- 
-**Imágenes de los dispositivos**
- 
-![Monitor de Ambiente](../assets/img/chapter-V/monitor-ambiente.png)
- 
-![Monitor de Contenedor](../assets/img/chapter-V/monitor-contenedor.png)
