@@ -123,7 +123,7 @@ Las directrices de estilo web de **QualiTrack** se centran en la precisión téc
 * **Organización:** El proyecto sigue una estructura de archivos lógica y modular. Los activos visuales se encuentran en `public/assets/images`, los estilos en `public/assets/styles/style.css`, y la lógica interactiva en `public/assets/scripts/main.js`.
 * **Versionado:** Usamos **Git** como sistema de control de versiones para gestionar los cambios en el código y asegurar que todo el equipo de ClosedSource trabaje sobre la versión más estable y actualizada del producto.
 
-### Mobile Style Guidelines
+**Mobile Style Guidelines**
  
 **1) Layout y Grid**
  
@@ -131,6 +131,7 @@ Las directrices de estilo web de **QualiTrack** se centran en la precisión téc
 * **Columna única:** Todo el contenido se presenta en una sola columna, con padding horizontal fijo de **16 dp**, siguiendo Material Design 3.
 * **Área táctil mínima:** Todos los elementos interactivos (botones, ítems de lista, íconos de acción) tienen un área táctil mínima de **48 × 48 dp**, pensada para el Operario que trabaja con guantes dentro del laboratorio.
 * **Cards de lectura:** Altura mínima de 80 dp, con el valor de la lectura en tipografía grande (H2). Un borde lateral de 4 dp en el color de estado (verde/amarillo/rojo) identifica la condición sin leer el número.
+  
 **2) Navegación — Bottom Navigation Bar**
  
 | Destino       | Ícono Material                        | Descripción de uso por rol                                                                                                   |
@@ -142,6 +143,7 @@ Las directrices de estilo web de **QualiTrack** se centran en la precisión téc
 | **More**      | `menu`                                | Accesos secundarios: inventario, equipos, reportes, perfil, preferencias de notificación e idioma.                           |
  
 * El destino activo se resalta con un indicador (pill) de color primario suave detrás del ícono; las etiquetas siempre están visibles.
+  
 **3) Tipografía Mobile**
  
 | Elemento                    | Tamaño | Peso     | Uso                                              |
@@ -154,12 +156,14 @@ Las directrices de estilo web de **QualiTrack** se centran en la precisión téc
 | Button label                | 14 sp  | Medium   | Etiquetas de botones de acción                   |
  
 * Interlineado: **1.5** para cuerpo de texto y **1.2** para encabezados.
+  
 **4) Colores en contexto móvil**
  
 * **Fondo de pantalla:** `#F3F4F6` (gris azulado muy claro).
 * **Fondo de card:** `#FFFFFF` con sombra `elevation: 1`.
 * **Color de acento:** verde azulado (teal) para el ítem activo de la barra inferior, los *chips* seleccionados y la serie de la gráfica; títulos en azul marino.
 * **Colores de estado:** verde = `NORMAL`, amarillo = `WARNING`, rojo = `CRITICAL`, azul = información/vinculación, gris = `Requiere revisión` (sin lectura en 5 minutos). Siempre acompañados de ícono y texto de estado.
+  
 **5) Componentes principales**
  
 * **Reading Card:** Nombre de la métrica, valor actual (H2 bold), unidad, estado (`NORMAL` / `WARNING` / `CRITICAL`) y hora de la lectura. Íconos `trending_up` / `trending_down` / `trending_flat` complementan el color.
@@ -171,12 +175,14 @@ Las directrices de estilo web de **QualiTrack** se centran en la precisión téc
 * **Notification Bell:** Campanita en la barra superior con contador de avisos sin leer; se actualiza cada 30 segundos.
 * **Batch Status Chip:** Chip de estado del lote (Cuarentena, Liberado, Observado, Rechazado; Pendiente, En proceso) y de vencimiento (vigente, por vencer, vencido).
 * **Search Bar, FAB y Empty State:** Search bar con filtrado desde el segundo carácter; FAB (56 dp) `add` en listas que permiten crear registros (según rol); empty state con ícono de 80 dp y texto H3.
+  
 **6) Interaction Design**
  
 * **Pull-to-refresh:** En todas las listas, en Telemetry y en Alerts.
 * **Transiciones:** `slide` horizontal entre pantallas; las Reading Cards usan `fade` al actualizarse.
 * **Push (Firebase Cloud Messaging):** Una alerta crítica envía un push con deep link que abre el detalle de la alerta, sin pasar por Home.
 * **Retroalimentación háptica:** Vibración corta (50 ms) al confirmar una acción (atender o resolver una alerta). Vibración larga (200 ms) al recibir una alerta crítica con la app en primer plano.
+
 **7) Variaciones por rol**
  
 | Elemento             | QA Manager                                           | Operario                                                  | Auditor                                  |
@@ -205,3 +211,161 @@ Las directrices de estilo web de **QualiTrack** se centran en la precisión téc
 | Acceso RFID denegado                | Rojo — 3 destellos                          | Evento de acceso con ícono `lock` en rojo                  |
 | Movimiento detectado (ambiente)     | Azul — destello breve                       | Indicador `directions_run` en la Environment Card          |
 | Vinculación al Edge                 | Azul — pulso suave                          | Badge azul "Vinculando"                                    |
+
+**IoT Style Guidelines**
+
+Los dispositivos IoT de **QualiTrack** son el punto de contacto físico del sistema con el laboratorio o almacén farmacéutico. Operan en segundo plano de forma continua y solo se manifiestan cuando existe un estado relevante, por lo que cualquier información visual o sonora debe ser **comprensible en menos de dos segundos**, sin conocimientos técnicos previos.
+ 
+Estos lineamientos aplican a los componentes de la capa Embedded:
+ 
+- **Monitor de Ambiente** (*Dispositivo Ambiental*, ESP32): uno por ambiente. Mide calidad de aire (ppm) y movimiento, y señaliza con LED y buzzer.
+- **Monitor de Contenedor** (*Container Monitor*, ESP32): varios por ambiente. Mide temperatura, humedad y luz, lee etiquetas RFID, muestra la información en una pantalla y ejecuta acciones automáticas (ventilación, enfriamiento y servo de cierre).
+- **Edge Device**: gateway que recibe las lecturas de los ESP32, las envía a la nube con la hora en que se midieron, descarga el perfil ambiental vigente y reporta las acciones ejecutadas.
+Todos deben ser coherentes con la aplicación web y móvil en lenguaje visual, codificación de color y terminología (`NORMAL`, `WARNING`, `CRITICAL`, Requiere revisión).
+ 
+**Principios de Diseño para Dispositivos IoT**
+ 
+1. **Invisibilidad funcional**: el dispositivo no requiere atención durante la operación normal.
+2. **Legibilidad inmediata**: el Operario debe interpretar el estado de un vistazo, incluso con poca luz.
+3. **Consistencia cross-platform**: el mismo color, ícono y término en dispositivo, app móvil y web. Un estado rojo en el dispositivo es rojo en la app.
+4. **Mínima fricción operativa**: se prioriza la automatización (ventilación, enfriamiento, cierre del servo) sobre la interacción manual.
+5. **Diseño inclusivo**: los indicadores no dependen solo del color; se complementan con patrones de parpadeo, sonido y texto en pantalla.
+6. **Trazabilidad BPM**: toda lectura y acción del dispositivo queda registrada con su hora para la auditoría exigida por las BPM de DIGEMID.
+7. **Resiliencia ante desconectividad**: si no hay lectura en 5 minutos, el dispositivo pasa a **Requiere revisión** y lo comunica visualmente.
+ 
+**Dispositivo 1 — Monitor de Ambiente (Dispositivo Ambiental)**
+ 
+**Descripción General**
+ 
+| Atributo               | Detalle                                                                                         |
+|------------------------|-------------------------------------------------------------------------------------------------|
+| Tipo                   | Dispositivo ESP32 de montaje en pared o techo                                                   |
+| Ubicación              | Uno por ambiente del laboratorio o almacén                                                      |
+| Función principal      | Medir calidad de aire (ppm) y detectar movimiento                                               |
+| Modo de operación      | Pasivo y continuo; envía lecturas al Edge Device                                                |
+| Evento disparador      | Calidad de aire fuera del rango normal (`WARNING`) o crítico (`CRITICAL`) del perfil ambiental  |
+ 
+**Diseño Físico**
+ 
+- **Forma**: carcasa compacta de perfil bajo, con el sensor de movimiento al centro y un anillo LED a su alrededor, visible desde cualquier punto del ambiente.
+- **Ventilación**: aberturas laterales para el sensor de calidad de aire, sin exponer la electrónica.
+- **Buzzer**: rejilla en la parte inferior de la cara frontal.
+- **Material**: plástico ABS blanco, fácil de limpiar con desinfectantes de uso en laboratorio.
+- **Identificación**: etiqueta con el ID del dispositivo y el código del ambiente asignado.
+
+**Indicador LED de Estado**
+ 
+| Estado del Sistema        | Color LED | Patrón                  | Descripción                                          |
+|---------------------------|-----------|-------------------------|------------------------------------------------------|
+| **Operación normal**      | Verde     | Pulso lento             | Calidad de aire dentro del rango normal.             |
+| **Advertencia**           | Amarillo  | Parpadeo lento          | Calidad de aire fuera del rango normal.              |
+| **Alerta crítica**        | Rojo      | Parpadeo rápido         | Calidad de aire fuera del rango crítico.             |
+| **Requiere revisión**     | Rojo      | Sólido fijo             | Sin lectura en 5 minutos. Revisar red o energía.     |
+| **Movimiento detectado**  | Azul      | Destello breve          | Presencia registrada como lectura, sin alerta.       |
+| **Vinculación al Edge**   | Azul      | Pulso suave y continuo  | Emparejando con el gateway Edge.                     |
+ 
+**Buzzer**
+ 
+| Evento                       | Patrón de sonido                         |
+|------------------------------|------------------------------------------|
+| Operación normal             | Silencio                                 |
+| Advertencia (`WARNING`)      | Silencio                                 |
+| Alerta crítica (`CRITICAL`)  | Pitido corto repetido                    |
+| Vinculación exitosa          | Un pitido largo de 500 ms                |
+| Silenciado desde la app      | Buzzer apagado; el LED continúa activo   |
+ 
+> El sonido debe ser audible en el ambiente sin interferir con la operación del laboratorio.
+ 
+**Botón Físico**
+ 
+Un único botón lateral, con función exclusiva de encender/apagar (presión larga de 3 segundos).
+ 
+**Dispositivo 2 — Monitor de Contenedor**
+ 
+**Descripción General**
+ 
+| Atributo               | Detalle                                                                                                      |
+|------------------------|--------------------------------------------------------------------------------------------------------------|
+| Tipo                   | Dispositivo ESP32 montado sobre o junto al contenedor                                                        |
+| Ubicación              | Varios por ambiente; uno por contenedor monitoreado (cadena de frío, almacén de materias primas, producto terminado) |
+| Función principal      | Medir temperatura, humedad y luz; leer etiquetas RFID; ejecutar acciones automáticas                         |
+| Modo de operación      | Continuo; los actuadores responden a las reglas del perfil ambiental                                         |
+| Evento disparador      | Lectura fuera del rango normal o crítico del perfil del monitor                                              |
+
+**Diseño Físico**
+ 
+- **Pantalla**: display OLED en la cara frontal, a la altura de la vista.
+- **Lector RFID**: zona delimitada junto a la pantalla, con ícono de ondas.
+- **Servo de cierre**: indicador de candado junto al lector RFID.
+- **Salida de aire**: rejilla inferior para ventilación/enfriamiento.
+- **LED de estado**: en la parte superior del dispositivo.
+- **Material**: carcasa resistente a desinfectantes y a la humedad propia de cámaras frías.
+
+**Indicador LED de Estado**
+ 
+| Estado del Sistema       | Color LED | Patrón                  | Descripción                                            |
+|--------------------------|-----------|-------------------------|--------------------------------------------------------|
+| **Operación normal**     | Verde     | Pulso lento             | Temperatura, humedad y luz dentro del rango normal.    |
+| **Advertencia**          | Amarillo  | Parpadeo lento          | Fuera del rango normal. Se activa la ventilación.      |
+| **Alerta crítica**       | Rojo      | Parpadeo rápido         | Fuera del rango crítico. Se activa el enfriamiento.    |
+| **Requiere revisión**    | Rojo      | Sólido fijo             | Sin lectura en 5 minutos. Revisar red o energía.       |
+| **Acceso autorizado**    | Verde     | Sólido 2 segundos       | Etiqueta RFID válida; el servo abre el contenedor.     |
+| **Acceso denegado**      | Rojo      | 3 destellos             | Etiqueta RFID no válida; el servo permanece cerrado.   |
+| **Vinculación al Edge**  | Azul      | Pulso suave y continuo  | Emparejando con el gateway Edge.                       |
+
+**Acciones Automáticas**
+ 
+| Evento                          | Acción                      |
+|---------------------------------|-----------------------------|
+| Temperatura en `WARNING`        | Ventilación                 |
+| Temperatura en `CRITICAL`       | Enfriamiento                |
+| RFID autorizado                 | El servo abre               |
+| Fin del tiempo de apertura      | El servo cierra             |
+| Lectura vuelve a `NORMAL`       | Se apaga la acción          |
+ 
+> Las reglas (métrica + estado → acción) se definen en el perfil ambiental del monitor. El Edge descarga el perfil vigente y reporta cada acción con su causa y resultado (ejecutada o fallida). Se recomienda aplicar histéresis para evitar encendidos y apagados continuos.
+ 
+**Pantalla OLED**
+ 
+Jerarquía de información:
+ 
+1. **Identificador del contenedor** y ambiente (ej. `CONT-A01 · ALM-MP`).
+2. **Temperatura, humedad y luz**, cada una con su valor, unidad y estado (`NORMAL` / `WARNING` / `CRITICAL`).
+3. **Acción activa** (ventilación o enfriamiento) y **estado del servo** (abierto / cerrado).
+4. **Conectividad** con el Edge (`ONLINE` / `OFFLINE`).
+Mensajes temporales (3 s): `ACCESO AUTORIZADO`, `ACCESO DENEGADO`.
+ 
+**Botón Físico**
+ 
+Un único botón lateral, con función exclusiva de encender/apagar (presión larga de 3 segundos).
+ 
+**Dispositivo 3 — Edge Device**
+ 
+| Atributo            | Detalle                                                                                              |
+|---------------------|------------------------------------------------------------------------------------------------------|
+| Función principal   | Recibir lecturas de los ESP32, enviarlas a la nube, descargar el perfil vigente y reportar acciones  |
+| Ubicación           | Dentro del laboratorio, con buena cobertura hacia todos los ESP32                                    |
+| Modo de operación   | Continuo; conserva las lecturas pendientes si se pierde la conexión a internet                       |
+ 
+| Estado del Sistema                    | Color LED | Patrón                    |
+|---------------------------------------|-----------|---------------------------|
+| **Operación normal (con internet)**   | Verde     | Pulso lento               |
+| **Sin internet, red local activa**    | Amarillo  | Doble destello            |
+| **Sin comunicación con dispositivos** | Rojo      | Sólido fijo               |
+| **Recibiendo lectura de un ESP32**    | Azul      | Destello breve por paquete |
+| **Arranque / configuración**          | Azul      | Pulso suave y continuo    |
+ 
+**Flujo de la lectura a la alerta**
+ 
+1. El dispositivo mide y el Edge envía la lectura a la nube con la hora en que se midió.
+2. El backend la evalúa con el perfil vigente: `NORMAL`, `WARNING` o `CRITICAL`.
+3. Si el estado empeora, Compliance abre una alerta (una por dispositivo y métrica) o la escala si pasó a crítica.
+4. La campanita avisa a todo el laboratorio; si es crítica, también se envía un correo.
+5. Si el monitor tiene una regla para ese estado, ejecuta la acción y la reporta.
+6. Cuando la lectura vuelve a normal se registra la normalización; la alerta sigue abierta hasta que una persona la resuelva.
+ 
+**Imágenes de los dispositivos**
+ 
+![Monitor de Ambiente](../assets/img/chapter-V/monitor-ambiente.png)
+ 
+![Monitor de Contenedor](../assets/img/chapter-V/monitor-contenedor.png)
