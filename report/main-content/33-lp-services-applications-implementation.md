@@ -108,12 +108,12 @@ Previo a iniciar los pasos:
 
 1) Buscamos y entramos a **Container registries** y creamos un registro, seleccionando nuestro grupo e ingresando un nombre con una región y un plan de precios y lo creamos:
 
-Step-3-1
+![Step 3-1 - Búsqueda de Container registries](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-3-1.png)
 
-Step-3-2
+![Step 3-2 - Botón Crear en Container registries](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-3-2.png)
 
-Step-3-3
+![Step 3-3 - Datos básicos del registro de contenedor](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-3-3.png)
 
-Step-3-4
+![Step 3-4 - Revisión y validación del registro de contenedor](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-3-4.png)
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
