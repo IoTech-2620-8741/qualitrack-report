@@ -691,3 +691,11 @@ La Frontend Web Application desarrollada con Angular se despliega mediante Fireb
 **Edge Application:** Será instalada y ejecutada directamente sobre el Edge Device definido por la arquitectura IoT.
 
 **Embedded Applications:** Serán compiladas como firmware y desplegadas directamente sobre dispositivos ESP32. La solución contempla un dispositivo destinado al monitoreo de ambientes del laboratorio y otro destinado al monitoreo de contenedores utilizados para almacenar lotes, permitiendo supervisar las condiciones físicas correspondientes.
+
+**Deployment Diagram**
+
+El siguiente diagrama de despliegue representa la distribución de los productos de software de QualiTrack en los servicios y dispositivos donde serán ejecutados o distribuidos. Asimismo, muestra las principales relaciones de comunicación entre la Landing Page, la Frontend Web Application, los servicios cloud, la Mobile Application y los componentes IoT de la solución. El diagrama permite visualizar de forma general la infraestructura definida para el despliegue actual y previsto de QualiTrack.
+
+<div align="center">
+  <img src="../assets/img/chapter-vi/deployment-diagram.png"  height="600">
+</div>
