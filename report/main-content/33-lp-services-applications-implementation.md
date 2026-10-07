@@ -60,48 +60,48 @@ Previo a iniciar los pasos:
 
 1) Buscamos **Grupos de recursos**:
 
-Step-2-1
+![Step 2-1 - Búsqueda de grupos de recursos](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-2-1.png)
 
 2) Le damos a Crear grupo de recursos:
 
-Step-2-2
+![Step 2-2 - Creación del grupo de recursos](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-2-2.png)
 
 3) Ingresamos el nombre y la región del grupo de recursos a crear:
 
-Step-2-3
+![Step 2-3 - Nombre y región del grupo de recursos](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-2-3.png)
 
 4) Le damos a crear grupo de recursos:
 
-Step-2-4
+![Step 2-4 - Confirmación de creación del grupo](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-2-4.png)
 
-Step-2-5
+![Step 2-5 - Grupo de recursos creado](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-2-5.png)
 
 5) Ahora, vamos a **Identidades administradas**:
 
-Step-2-6
+![Step 2-6 - Acceso a identidades administradas](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-2-6.png)
 
 6) Le damos a crear, seleccionamos nuestro grupo, el nombre y la región para la identidad:
 
-Step-2-7
+![Step 2-7 - Datos de la identidad administrada](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-2-7.png)
 
-Step-2-8
+![Step 2-8 - Datos de la identidad administrada (región)](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-2-8.png)
 
 7) Creamos la identidad administrada:
 
-Step-2-9
+![Step 2-9 - Creación de la identidad administrada](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-2-9.png)
 
 8) Dentro de la identidad, vamos a Configuración y después Credenciales federadas:
 
-Step-2-10
+![Step 2-10 - Credenciales federadas](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-2-10.png)
 
 9) Agregaremos una credencial para Github Actions que nos permitirá realizar CI/CD con todos los valores que nos piden:
 
-Step-2-11
+![Step 2-11 - Credencial para GitHub Actions](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-2-11.png)
 
 10) Volvemos a grupos de recursos, entramos a Control de Acceso (IAM) y agregamos una asignación de roles con rol de **Colaborador**, en miembros, seleccionamos la credencial dentro de la identidad administrada:
 
-Step-2-12
+![Step 2-12 - Asignación de rol Colaborador en IAM](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-2-12.png)
 
-Step-2-13
+![Step 2-13 - Selección de la identidad como miembro](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-2-13.png)
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
