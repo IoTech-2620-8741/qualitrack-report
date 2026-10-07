@@ -28,7 +28,7 @@ Previo a iniciar los pasos:
 
 * Para el uso del servicio SMTP con Gmail, debes tener creado una contraseña de aplicacion en tu cuenta de correo a usar:
 
-1) En myaccount.google.com, buscamos **Contraseñas de aplicaciones** o entramos a https://myaccount.google.com/apppasswords:
+1) En myaccount.google.com, buscamos **Contraseñas de aplicaciones** o entramos a [Contraseñas de aplicaciones](https://myaccount.google.com/apppasswords):
 
 2) Ingresas el nombre de la aplicación, en este caso, escribimos **iotech-qualitrack**:
 
@@ -37,5 +37,23 @@ Previo a iniciar los pasos:
 3) Finalmente, mostrará la contraseña para la aplicación, que nos permitirá usar la cuenta de correo para las aplicaciones externas:
 
 ![Previous Step 2 - Contraseña de aplicación generada](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-previous-step-2.png)
+
+**Paso 1: Registro de proveedores en Azure**
+
+1) En [Portal de Azure](https://portal.azure.com/), buscamos en la barra de navegación **Suscripciones**:
+
+Step 1-1
+
+2) Seleccionamos la suscripción que tenemos:
+
+Step-1-2
+
+3) Vamos a Configuración y después Proveedores de Recursos:
+
+Step-1-3
+
+4) Seleccionamos los siguientes recursos: Microsoft.App, Microsoft.OperationalInsights, Microsoft.ContainerRegistry, Microsoft.DBforMySQL y Microsoft.ManagedIdentity y le damos a registrar.
+
+Step-1-4
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
