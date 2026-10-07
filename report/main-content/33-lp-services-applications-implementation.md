@@ -20,7 +20,7 @@
 
 En esta sección, se mostrarán las evidencias guardadas y documentadas sobre el despliegue del software que nosotros hemos incluido en el alcance de este primer sprint. Es importante documentar las acciones de despliegue para replicarlas y/o mejorarlas en los siguientes sprints.
 
-**Despliegue de la aplicación Back-end**:
+**Despliegue de la aplicación Back-end, incluyendo base de datos**:
 
 Nombre del repositorio en la organización: qualitrack-platform
 
@@ -185,5 +185,7 @@ Previo a iniciar los pasos:
 ![Step 5-6 - Revisión de la aplicación contenedora](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-5-6.png)
 
 ![Step 5-7 - Implementación completada](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-5-7.png)
+
+
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
