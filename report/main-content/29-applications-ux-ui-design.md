@@ -393,4 +393,30 @@ El responsable de calidad accede al inventario de materias primas, donde el sist
 
 #### Mobile Application
 
+**Inicio de sesión**
+
+**Descripción:** Pantalla de acceso a la aplicación móvil mediante usuario y contraseña, con enlaces para registrarse como QA Manager / Supervisor o como Lab Operator.
+
+<div align="center">
+  <img src="../report/assets/img/chapter-v/Mock Up App Mobile/mock-up-login.png" alt="Pantalla de inicio de sesión de la aplicación móvil" height="400">
+</div>
+
+**Registro de QA Manager**
+
+**Descripción:** Formulario de creación de cuenta para el responsable de la supervisión y liberación de lotes farmacéuticos, con usuario, contraseña y confirmación de contraseña.
+
+<div align="center">
+  <img src="../report/assets/img/chapter-v/Mock Up App Mobile/mock-up-register-qa-manager.png" alt="Formulario de registro de cuenta QA Manager" height="400">
+</div>
+
+**Registro de Lab Operator**
+
+**Descripción:** Formulario de creación de cuenta para el personal de análisis y ensayos de control en planta, con acceso directo al inicio de sesión.
+
+<div align="center">
+  <img src="../report/assets/img/chapter-v/Mock Up App Mobile/mock-up-register-operator.png" alt="Formulario de registro de cuenta Lab Operator" height="400">
+</div>
+
+
+
 ### 5.4.4. Applications User Flow Diagrams.
