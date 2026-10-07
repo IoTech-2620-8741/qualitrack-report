@@ -508,37 +508,90 @@ Como convención general, todos los identificadores definidos por el equipo, inc
 <table>
   <thead>
     <tr>
-      <th>Producto</th>
       <th>Lenguaje / Tecnología</th>
-      <th>Referencia adoptada</th>
+      <th>Guía de referencia</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Landing Page</td>
       <td>HTML / CSS</td>
-      <td><a href="https://google.github.io/styleguide/htmlcssguide.html" target="_blank">Google HTML/CSS Style Guide</a></td>
+      <td>
+        <a href="https://google.github.io/styleguide/htmlcssguide.html" target="_blank">
+          Google HTML/CSS Style Guide
+        </a>
+      </td>
     </tr>
     <tr>
-      <td>Landing Page</td>
       <td>JavaScript</td>
-      <td><a href="https://google.github.io/styleguide/jsguide.html" target="_blank">Google JavaScript Style Guide</a></td>
+      <td>
+        <a href="https://google.github.io/styleguide/jsguide.html" target="_blank">
+          Google JavaScript Style Guide
+        </a>
+      </td>
     </tr>
     <tr>
-      <td>Web Application</td>
       <td>TypeScript</td>
-      <td><a href="https://google.github.io/styleguide/tsguide.html" target="_blank">Google TypeScript Style Guide</a></td>
+      <td>
+        <a href="https://google.github.io/styleguide/tsguide.html" target="_blank">
+          Google TypeScript Style Guide
+        </a>
+      </td>
     </tr>
     <tr>
-      <td>Web Application</td>
       <td>Angular</td>
-      <td><a href="https://angular.dev/style-guide" target="_blank">Angular Style Guide</a></td>
+      <td>
+        <a href="https://angular.dev/style-guide" target="_blank">
+          Angular Style Guide
+        </a>
+      </td>
     </tr>
     <tr>
+      <td>Java</td>
+      <td>
+        <a href="https://google.github.io/styleguide/javaguide.html" target="_blank">
+          Google Java Style Guide
+        </a>
+      </td>
+    </tr>
     <tr>
-      <td>Acceptance Criteria</td>
+      <td>Spring Boot</td>
+      <td>
+        <a href="https://docs.spring.io/spring-boot/index.html" target="_blank">
+          Spring Boot Reference Documentation
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>Dart / Flutter</td>
+      <td>
+        <a href="https://dart.dev/effective-dart/style" target="_blank">
+          Effective Dart: Style
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>Python</td>
+      <td>
+        <a href="https://peps.python.org/pep-0008/" target="_blank">
+          PEP 8 - Style Guide for Python Code
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>C++</td>
+      <td>
+        <a href="https://google.github.io/styleguide/cppguide.html" target="_blank">
+          Google C++ Style Guide
+        </a>
+      </td>
+    </tr>
+    <tr>
       <td>Gherkin</td>
-      <td><a href="https://cucumber.io/docs/gherkin/reference/" target="_blank">Gherkin Reference</a></td>
+      <td>
+        <a href="https://cucumber.io/docs/gherkin/reference/" target="_blank">
+          Gherkin Reference
+        </a>
+      </td>
     </tr>
   </tbody>
 </table>
