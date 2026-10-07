@@ -116,4 +116,48 @@ Previo a iniciar los pasos:
 
 ![Step 3-4 - Revisión y validación del registro de contenedor](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-3-4.png)
 
+**Paso 4: Creación de la base de datos MySQL**
+
+1) Buscamos y entramos a **Azure Database for MySQL servers**:
+
+Step-4-1
+
+2) Le damos a Crear y seleccionamos la opción **Servidor flexible**:
+
+Step-4-2
+
+3) En Datos básicos, seleccionamos nuestro grupo de recursos **iotech-qualitrack-rg**, ingresamos el nombre **iotech-qualitrack-mysql**, la región **Chile Central** y la versión **8.4**:
+
+Step-4-3
+
+4) En Carga de trabajo, seleccionamos **Desarrollo o aficionado** y verificamos que quede el tamaño **Burstable B1ms** con **20 GiB** de almacenamiento. Además, dejamos desactivada la opción de Alta disponibilidad:
+
+Step-4-4
+
+5) En Autenticación, seleccionamos únicamente **MySQL**, ingresamos el usuario **iotechadmin** y una contraseña segura. Es importante guardar esta contraseña, ya que no se puede recuperar después:
+
+Step-4-5
+
+6) En la pestaña Redes, seleccionamos como método de conectividad **Acceso público** y marcamos la opción **Permitir acceso público desde cualquier servicio de Azure dentro de Azure a este servidor**, lo que permitirá que nuestra Container App se conecte a la base de datos. Opcionalmente, podemos agregar nuestra IP actual si queremos conectarnos desde MySQL Workbench:
+
+Step-4-6
+
+7) Le damos a Revisar y crear, verificamos que la validación sea superada y creamos el servidor. Este proceso puede tardar varios minutos:
+
+Step-4-7
+
+Step-4-8
+
+8) Cuando termine el despliegue, entramos al servidor, vamos a **Bases de datos** y le damos a Agregar:
+
+Step-4-9
+
+9) Ingresamos el nombre de la base de datos **iotech_qualitrack** y la guardamos:
+
+Step-4-10
+
+10) Finalmente, en **Información general**, copiamos el nombre del servidor, que termina en **.mysql.database.azure.com**, ya que lo usaremos más adelante para la configuración del back-end:
+
+Step-4-11
+
 #### 6.2.1.9. Team Collaboration Insights during Sprint
