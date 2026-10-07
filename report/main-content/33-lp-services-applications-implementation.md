@@ -18,4 +18,24 @@
 
 #### 6.2.1.8. Software Deployment Evidence for Sprint Review
 
+En esta sección, se mostrarán las evidencias guardadas y documentadas sobre el despliegue del software que nosotros hemos incluido en el alcance de este primer sprint. Es importante documentar las acciones de despliegue para replicarlas y/o mejorarlas en los siguientes sprints.
+
+**Despliegue de la aplicación Back-end**:
+
+Nombre del repositorio en la organización: qualitrack-platform
+
+Previo a iniciar los pasos:
+
+* Para el uso del servicio SMTP con Gmail, debes tener creado una contraseña de aplicacion en tu cuenta de correo a usar:
+
+1) En myaccount.google.com, buscamos **Contraseñas de aplicaciones** o entramos a https://myaccount.google.com/apppasswords:
+
+2) Ingresas el nombre de la aplicación, en este caso, escribimos **iotech-qualitrack**:
+
+Previous Step 1
+
+3) Finalmente, mostrará la contraseña para la aplicación, que nos permitirá usar la cuenta de correo para las aplicaciones externas:
+
+Previous Step 2
+
 #### 6.2.1.9. Team Collaboration Insights during Sprint
