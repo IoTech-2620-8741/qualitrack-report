@@ -243,7 +243,7 @@ El Product Backlog de QualiTrack reúne las User Stories (US), Technical Stories
 
 **Evidencia del Product Backlog:**
 
-![Product Backlog QualiTrack](../assets/img/chapter-iii/product-backlog-jira.jpg)
+![Product Backlog QualiTrack](../assets/img/chapter-iii/jira-product-backlog.jpg)
 
 **Enlace público al Product Backlog:**
 
