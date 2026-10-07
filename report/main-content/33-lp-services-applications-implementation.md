@@ -160,7 +160,7 @@ Previo a iniciar los pasos:
 
 ![Step 4-11 - Nombre del servidor en Información general](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-4-11.png)
 
-**Paso 5: Creación en Container Apps con imagen temporal:**
+**Paso 5: Creación en Container Apps con imagen temporal**
 
 1) Creamos una aplicación contenedora de Container Apps:
 
@@ -172,11 +172,11 @@ Step-5-2
 
 Step-5-3
 
-3) Creamos el nuevo entorno de tipo consumo:
+3) Creamos el nuevo entorno de Container Apps con el nombre **iotech-qualitrack-env**:
 
 Step-5-4
 
-4) En contenedor, elegimos la opción de imagen de inicio rápido y toda su configuración predeterminada de la opción, esto con el fin de cambiar la imagen mas adelante:
+4) En contenedor, elegimos la opción de imagen de inicio rápido y toda su configuración predeterminada de la opción, esto con el fin de cambiar la imagen más adelante:
 
 Step-5-5
 
