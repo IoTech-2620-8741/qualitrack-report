@@ -122,3 +122,86 @@ Las directrices de estilo web de **QualiTrack** se centran en la precisión téc
 
 * **Organización:** El proyecto sigue una estructura de archivos lógica y modular. Los activos visuales se encuentran en `public/assets/images`, los estilos en `public/assets/styles/style.css`, y la lógica interactiva en `public/assets/scripts/main.js`.
 * **Versionado:** Usamos **Git** como sistema de control de versiones para gestionar los cambios en el código y asegurar que todo el equipo de ClosedSource trabaje sobre la versión más estable y actualizada del producto.
+
+### Mobile Style Guidelines
+ 
+**1) Layout y Grid**
+ 
+* **Orientación:** La aplicación está optimizada para modo vertical (portrait). Las vistas de historial de telemetría (gráficos con líneas de umbral) también funcionan en landscape.
+* **Columna única:** Todo el contenido se presenta en una sola columna, con padding horizontal fijo de **16 dp**, siguiendo Material Design 3.
+* **Área táctil mínima:** Todos los elementos interactivos (botones, ítems de lista, íconos de acción) tienen un área táctil mínima de **48 × 48 dp**, pensada para el Operario que trabaja con guantes dentro del laboratorio.
+* **Cards de lectura:** Altura mínima de 80 dp, con el valor de la lectura en tipografía grande (H2). Un borde lateral de 4 dp en el color de estado (verde/amarillo/rojo) identifica la condición sin leer el número.
+**2) Navegación — Bottom Navigation Bar**
+ 
+| Destino       | Ícono Material                        | Descripción de uso por rol                                                                                                   |
+|---------------|---------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
+| **Home**      | `space_dashboard`                     | Panel del laboratorio: alertas abiertas, lotes en proceso, materiales con stock bajo y últimas alertas.                      |
+| **Telemetry** | `monitor_heart`                       | Telemetry Dashboard: última lectura por métrica (temperatura, humedad, luminosidad) y gráfico de las últimas 24 horas.       |
+| **Alerts**    | `notifications`                       | Alertas activas e historial. El Operario y el QA Manager atienden y resuelven; el Auditor solo consulta.                     |
+| **Batches**   | `inventory_2`                         | Lotes de producción y de materia prima, con estado, vencimiento y trazabilidad.                                              |
+| **More**      | `menu`                                | Accesos secundarios: inventario, equipos, reportes, perfil, preferencias de notificación e idioma.                           |
+ 
+* El destino activo se resalta con un indicador (pill) de color primario suave detrás del ícono; las etiquetas siempre están visibles.
+**3) Tipografía Mobile**
+ 
+| Elemento                    | Tamaño | Peso     | Uso                                              |
+|-----------------------------|--------|----------|--------------------------------------------------|
+| H1 — Título de pantalla     | 22 sp  | Bold     | Nombre de la sección activa                      |
+| H2 — Título de card         | 18 sp  | SemiBold | Nombre del ambiente/contenedor, valor de lectura |
+| H3 — Subtítulo / Etiqueta   | 16 sp  | Medium   | Nombre de la métrica (Temperatura, Humedad)      |
+| Body — Texto de contenido   | 14 sp  | Regular  | Descripciones, notas                             |
+| Caption — Metadatos         | 12 sp  | Regular  | Hora de la última lectura, ID del dispositivo    |
+| Button label                | 14 sp  | Medium   | Etiquetas de botones de acción                   |
+ 
+* Interlineado: **1.5** para cuerpo de texto y **1.2** para encabezados.
+**4) Colores en contexto móvil**
+ 
+* **Fondo de pantalla:** `#F3F4F6` (gris azulado muy claro).
+* **Fondo de card:** `#FFFFFF` con sombra `elevation: 1`.
+* **Color de acento:** verde azulado (teal) para el ítem activo de la barra inferior, los *chips* seleccionados y la serie de la gráfica; títulos en azul marino.
+* **Colores de estado:** verde = `NORMAL`, amarillo = `WARNING`, rojo = `CRITICAL`, azul = información/vinculación, gris = `Requiere revisión` (sin lectura en 5 minutos). Siempre acompañados de ícono y texto de estado.
+**5) Componentes principales**
+ 
+* **Reading Card:** Nombre de la métrica, valor actual (H2 bold), unidad, estado (`NORMAL` / `WARNING` / `CRITICAL`) y hora de la lectura. Íconos `trending_up` / `trending_down` / `trending_flat` complementan el color.
+* **Environment Card:** Código y nombre del ambiente, uso (laboratorio, producción, almacén), calidad de aire en ppm, movimiento y badge de conexión del Monitor de Ambiente.
+* **Container Card:** Identificador del Monitor de Contenedor, temperatura, humedad, luz, acción automática activa (`air` ventilación, `ac_unit` enfriamiento) y estado del servo (`lock` / `lock_open`).
+* **Alert Card y Banner:** La alerta (una por incidente, por dispositivo y métrica) muestra severidad, estado (Sin atender → Atendida → Resuelta) y botones `Atender` y `Resolver`. Una alerta crítica nueva aparece como banner rojo (`#F44336`) con el botón `Ver detalle`.
+* **Telemetry Chart:** Gráfico de líneas (últimas 24 h) con selector de métrica (Temperature, Humidity, Luminosity) y de rango (15 min, 1 h, 6 h) mediante *filter chips*. Dibuja el rango normal (línea verde discontinua) y el rango crítico (línea roja discontinua) sobre la serie, con leyenda: Temperature, Warning, Critical, Normal range, Critical range.
+* **Metric Card:** Card con ícono de la métrica, valor en tipografía grande, chip de estado (`Normal`, `Warning`, `Critical`), rangos configurados (por ejemplo "normal 15–25 °C · critical 10–30 °C") y fecha/hora de la lectura. Se muestran dos por fila.
+* **Notification Bell:** Campanita en la barra superior con contador de avisos sin leer; se actualiza cada 30 segundos.
+* **Batch Status Chip:** Chip de estado del lote (Cuarentena, Liberado, Observado, Rechazado; Pendiente, En proceso) y de vencimiento (vigente, por vencer, vencido).
+* **Search Bar, FAB y Empty State:** Search bar con filtrado desde el segundo carácter; FAB (56 dp) `add` en listas que permiten crear registros (según rol); empty state con ícono de 80 dp y texto H3.
+**6) Interaction Design**
+ 
+* **Pull-to-refresh:** En todas las listas, en Telemetry y en Alerts.
+* **Transiciones:** `slide` horizontal entre pantallas; las Reading Cards usan `fade` al actualizarse.
+* **Push (Firebase Cloud Messaging):** Una alerta crítica envía un push con deep link que abre el detalle de la alerta, sin pasar por Home.
+* **Retroalimentación háptica:** Vibración corta (50 ms) al confirmar una acción (atender o resolver una alerta). Vibración larga (200 ms) al recibir una alerta crítica con la app en primer plano.
+**7) Variaciones por rol**
+ 
+| Elemento             | QA Manager                                           | Operario                                                  | Auditor                                  |
+|----------------------|------------------------------------------------------|-----------------------------------------------------------|------------------------------------------|
+| Home                 | Panel completo del laboratorio                       | Alertas abiertas y lotes en proceso                       | Panel en solo lectura                    |
+| Telemetry            | Lecturas y edición de perfiles ambientales           | Lecturas de los ambientes y contenedores                  | Solo lectura                             |
+| Alertas              | Atender, resolver y "Avisar por correo"              | Atender y resolver                                        | Solo consulta                            |
+| Batches e inventario | Revisión de lotes (liberar, observar, rechazar)      | Recibir lotes, guardarlos en contenedores y registrar consumos | Solo lectura                        |
+| Acciones disponibles | Gestión completa del laboratorio                     | Operación diaria                                          | Sin escritura (puede editar su perfil)   |
+ 
+**8) Accesibilidad**
+ 
+* **Contraste de texto:** Ratio mínimo 4.5:1 (WCAG 2.1 AA).
+* **Descriptores de accesibilidad:** Todos los íconos y botones incluyen `contentDescription` (TalkBack / VoiceOver). Las lecturas incluyen métrica, unidad y estado (por ejemplo, "Temperatura del contenedor A01: 4,8 grados Celsius, estado normal").
+* **Tamaño de fuente dinámico:** Respeta la configuración del sistema hasta `sp × 1.3`.
+* **Color nunca como único indicador:** Todo estado se acompaña de ícono y texto, igual que en el LED de los dispositivos.
+**9) Consistencia cross-platform con los dispositivos IoT**
+ 
+| Estado del sistema                  | LED del dispositivo                         | Interfaz Móvil                                             |
+|-------------------------------------|---------------------------------------------|------------------------------------------------------------|
+| Operación normal (`NORMAL`)         | Verde — pulso lento                         | Borde card verde + badge "Normal"                          |
+| Advertencia (`WARNING`)             | Amarillo — parpadeo lento                   | Borde card amarillo + badge "Warning" + acción de ventilación |
+| Alerta crítica (`CRITICAL`)         | Rojo — parpadeo rápido                      | Borde card rojo + Alert Banner + vibración larga           |
+| Requiere revisión                   | Rojo — sólido fijo                          | Badge gris "Requiere revisión" + ícono `signal_wifi_off`   |
+| Acceso RFID autorizado              | Verde — sólido 2 s                          | Evento de acceso con ícono `lock_open`                     |
+| Acceso RFID denegado                | Rojo — 3 destellos                          | Evento de acceso con ícono `lock` en rojo                  |
+| Movimiento detectado (ambiente)     | Azul — destello breve                       | Indicador `directions_run` en la Environment Card          |
+| Vinculación al Edge                 | Azul — pulso suave                          | Badge azul "Vinculando"                                    |
