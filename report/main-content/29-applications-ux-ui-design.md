@@ -398,7 +398,7 @@ El responsable de calidad accede al inventario de materias primas, donde el sist
 **Descripción:** Pantalla de acceso a la aplicación móvil mediante usuario y contraseña, con enlaces para registrarse como QA Manager / Supervisor o como Lab Operator.
 
 <div align="center">
-  <img src="../report/assets/img/chapter-v/Mock Up App Mobile/mock-up-login.png" alt="Pantalla de inicio de sesión de la aplicación móvil" height="400">
+  <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-login.png" alt="Pantalla de inicio de sesión de la aplicación móvil" height="400">
 </div>
 
 **Registro de QA Manager**
@@ -406,7 +406,7 @@ El responsable de calidad accede al inventario de materias primas, donde el sist
 **Descripción:** Formulario de creación de cuenta para el responsable de la supervisión y liberación de lotes farmacéuticos, con usuario, contraseña y confirmación de contraseña.
 
 <div align="center">
-  <img src="../report/assets/img/chapter-v/Mock Up App Mobile/mock-up-register-qa-manager.png" alt="Formulario de registro de cuenta QA Manager" height="400">
+  <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-register-qa-manager.png" alt="Formulario de registro de cuenta QA Manager" height="400">
 </div>
 
 **Registro de Lab Operator**
@@ -414,7 +414,47 @@ El responsable de calidad accede al inventario de materias primas, donde el sist
 **Descripción:** Formulario de creación de cuenta para el personal de análisis y ensayos de control en planta, con acceso directo al inicio de sesión.
 
 <div align="center">
-  <img src="../report/assets/img/chapter-v/Mock Up App Mobile/mock-up-register-operator.png" alt="Formulario de registro de cuenta Lab Operator" height="400">
+  <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-register-operator.png" alt="Formulario de registro de cuenta Lab Operator" height="400">
+</div>
+
+**Menú de navegación lateral**
+
+**Descripción:** Panel de navegación con el perfil del usuario y su planta asignada, los módulos principales de la aplicación y el acceso para sincronizar la telemetría.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-burger-menu.png" alt="Menú lateral con los módulos principales de la aplicación" height="400">
+</div>
+
+**Dashboard general**
+
+**Descripción:** Centro de mando que resume el índice de salud operativa, las métricas de lotes, alertas y materias primas, el estado de la telemetría en vivo, la distribución de recursos y los riesgos pendientes.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-general-dashboard.png" alt="Dashboard general con métricas operativas y riesgos" height="400">
+</div>
+
+**Alertas críticas del dashboard**
+
+**Descripción:** Ventana emergente que lista las alertas críticas recientes y detalla la desviación principal con su sensor, lote afectado, valor registrado y umbral BPM, con acciones para investigar, reconocer o consultar el audit log.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-general-dashboard-view-all.png" alt="Ventana emergente de alertas críticas y desviaciones" height="400">
+</div>
+
+**Dashboard de telemetría**
+
+**Descripción:** Panel de supervisión en tiempo real del área seleccionada, con el estado de conexión, las anomalías detectadas, el perfil de temperatura y las lecturas actuales de temperatura, calidad de aire y humedad.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-telemetry-dashboard.png" alt="Dashboard de telemetría en tiempo real" height="400">
+</div>
+
+**Data log de telemetría**
+
+**Descripción:** Historial de lecturas de los sensores filtrable por equipo y rango de fechas, que distingue las mediciones normales de las desviaciones BPM.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/Mock Up App Mobile/mock-up-telemetry-datalog.png" alt="Historial de lecturas de sensores con desviaciones BPM" height="400">
 </div>
 
 
