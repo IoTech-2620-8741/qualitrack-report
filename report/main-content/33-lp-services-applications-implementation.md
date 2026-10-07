@@ -162,30 +162,20 @@ Previo a iniciar los pasos:
 
 **Paso 5: Creación en Container Apps con imagen temporal**
 
-1) Creamos una aplicación contenedora de Container Apps:
+1) Creamos una aplicación contenedora de Container Apps, lo crearemos desde bash porque la creación mediante la GUI de Azure crea una versión que no admite secretos:
 
-![Step 5-1 - Búsqueda de Container Apps](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-5-1.png)
+* Registramos las variables del nombre de grupo de recursos y región:
 
-![Step 5-2 - Opción Aplicación contenedora](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-5-2.png)
+Step-5-1
 
-2) Ingresamos los datos básicos (grupo de recursos, nombre de la aplicación, región):
+* Creamos el entorno para la aplicación de contenedores en el grupo de recursos y región:
 
-![Step 5-3 - Datos básicos de la aplicación contenedora](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-5-3.png)
+Step-5-2
 
-3) Creamos el nuevo entorno de Container Apps con el nombre **iotech-qualitrack-env**:
+Step-5-3
 
-![Step 5-4 - Creación del entorno de Container Apps](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-5-4.png)
+* Creamos la aplicación de contenedores dentro del entorno creado:
 
-4) En contenedor, elegimos la opción de imagen de inicio rápido y toda su configuración predeterminada de la opción, esto con el fin de cambiar la imagen más adelante:
-
-![Step 5-5 - Imagen de inicio rápido del contenedor](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-5-5.png)
-
-5) Revisamos y creamos la aplicación de contenedor:
-
-![Step 5-6 - Revisión de la aplicación contenedora](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-5-6.png)
-
-![Step 5-7 - Implementación completada](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-5-7.png)
-
-
+Step-5-4
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
