@@ -38,7 +38,7 @@ Previo a iniciar los pasos:
 
 ![Previous Step 2 - Contraseña de aplicación generada](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-previous-step-2.png)
 
-**Paso 1: Registro de proveedores en Azure**
+**Paso 1: Registro de proveedores en Azure:**
 
 1) En [Portal de Azure](https://portal.azure.com/), buscamos en la barra de navegación **Suscripciones**:
 
@@ -104,7 +104,7 @@ Previo a iniciar los pasos:
 
 ![Step 2-13 - Selección de la identidad como miembro](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-2-13.png)
 
-**Paso 3: Registro de imagen de contenedor**
+**Paso 3: Registro de imagen de contenedor:**
 
 1) Buscamos y entramos a **Container registries** y creamos un registro, seleccionando nuestro grupo e ingresando un nombre con una región y un plan de precios y lo creamos:
 
@@ -159,5 +159,31 @@ Previo a iniciar los pasos:
 10) Finalmente, en **Información general**, copiamos el nombre del servidor, que termina en **.mysql.database.azure.com**, ya que lo usaremos más adelante para la configuración del back-end:
 
 ![Step 4-11 - Nombre del servidor en Información general](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-4-11.png)
+
+**Paso 5: Creación en Container Apps con imagen temporal:**
+
+1) Creamos una aplicación contenedora de Container Apps:
+
+Step-5-1
+
+Step-5-2
+
+2) Ingresamos los datos básicos (grupo de recursos, nombre de la aplicación, región):
+
+Step-5-3
+
+3) Creamos el nuevo entorno de tipo consumo:
+
+Step-5-4
+
+4) En contenedor, elegimos la opción de imagen de inicio rápido y toda su configuración predeterminada de la opción, esto con el fin de cambiar la imagen mas adelante:
+
+Step-5-5
+
+5) Revisamos y creamos la aplicación de contenedor:
+
+Step-5-6
+
+Step-5-7
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
