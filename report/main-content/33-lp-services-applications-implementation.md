@@ -56,4 +56,52 @@ Previo a iniciar los pasos:
 
 ![Step 1-4 - Registro de los proveedores de recursos](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-1-4.png)
 
+**Paso 2: Creación de grupo de recursos, identidad en GitHub y permisos:**
+
+1) Buscamos **Grupos de recursos**:
+
+Step-2-1
+
+2) Le damos a Crear grupo de recursos:
+
+Step-2-2
+
+3) Ingresamos el nombre y la región del grupo de recursos a crear:
+
+Step-2-3
+
+4) Le damos a crear grupo de recursos:
+
+Step-2-4
+
+Step-2-5
+
+5) Ahora, vamos a **Identidades administradas**:
+
+Step-2-6
+
+6) Le damos a crear, seleccionamos nuestro grupo, el nombre y la región para la identidad:
+
+Step-2-7
+
+Step-2-8
+
+7) Creamos la identidad administrada:
+
+Step-2-9
+
+8) Dentro de la identidad, vamos a Configuración y después Credenciales federadas:
+
+Step-2-10
+
+9) Agregaremos una credencial para Github Actions que nos permitirá realizar CI/CD con todos los valores que nos piden:
+
+Step-2-11
+
+10) Volvemos a grupos de recursos, entramos a Control de Acceso (IAM) y agregamos una asignación de roles con rol de **Colaborador**, en miembros, seleccionamos la credencial dentro de la identidad administrada:
+
+Step-2-12
+
+Step-2-13
+
 #### 6.2.1.9. Team Collaboration Insights during Sprint
