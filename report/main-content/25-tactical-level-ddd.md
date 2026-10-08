@@ -1371,3 +1371,115 @@ El diagrama de clases representa `Subscription`, `SubscriptionPlan`, `Subscripti
 El diagrama de base de datos muestra planes, suscripciones y pagos, incluyendo los identificadores externos necesarios para relacionar los registros internos con Stripe. Los datos sensibles de tarjetas u otros medios de pago no se almacenan dentro de QualiTrack.
 
 ![Payments & Subscriptions Database Design Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/subscription/subscription-database-diagram.puml&fmt=svg&v=4)
+
+---
+
+### 4.2.10. Bounded Context: Profile Management
+
+Profile Management es un Bounded Context genérico que conserva los **datos personales** que cada persona mantiene sobre sí misma en QualiTrack: nombre completo, DNI, teléfono, ubicación y foto de perfil. Se separa de Identity & Access Management porque la cuenta de acceso (usuario, correo, contraseña y roles) y el perfil cambian por motivos distintos. El nombre del perfil es además el que el resto del laboratorio ve en el personal, las alertas atendidas y las decisiones sobre lotes.
+
+#### 4.2.10.1. Domain Layer.
+
+**`Profile` — Aggregate Root**
+
+- **Propósito:** datos personales de la persona dueña de una cuenta, además de la cuenta que mantiene IAM.
+- **Atributos principales:** `id`, `userId`, `fullName` (`PersonName`), `dni` (`Dni`), `phoneNumber` (`PhoneNumber`), `location` (`Location`), `photo` (`ProfilePhoto`) y `updatedAt`.
+- **Métodos principales:** `update`, `changePhoto`, `removePhoto`, `hasPhoto`, `isStored` y `getFullNameValue`.
+- **Reglas:** el perfil se crea la primera vez que la persona lo guarda. `update` informa si el nombre cambió, para publicar el evento solo en ese caso.
+
+**Value Objects**
+
+- `PersonName`: nombre completo tal como lo ve el resto del laboratorio.
+- `Dni`: documento nacional de identidad peruano.
+- `PhoneNumber`: teléfono de contacto, opcionalmente con prefijo internacional.
+- `Location`: lugar donde vive o trabaja la persona, por ejemplo "Miraflores, Lima".
+- `PhotoImage`: imagen de la foto (JPEG, PNG o WebP) con un tamaño máximo de 2 MB.
+- `ProfilePhoto`: descripción de la foto guardada (tipo, tamaño y fecha).
+- `ProfileDetail`: perfil mostrado a la persona, con su cuenta (usuario, correo y roles) y, para el personal, su registro en el laboratorio (cargo).
+
+**Commands principales**
+
+- `UpdateProfileCommand`: reemplaza los datos personales del usuario autenticado.
+- `ChangeProfilePhotoCommand` y `RemoveProfilePhotoCommand`: cambian o retiran su foto.
+
+**Queries principales**
+
+- `GetProfileByUserIdQuery` y `GetProfilePhotoQuery`: perfil y foto de una cuenta.
+- `GetStaffProfileQuery` y `GetStaffProfilePhotoQuery`: perfil y foto de una persona del personal, consultados por el responsable de calidad.
+
+**Eventos de dominio**
+
+- `ProfileUpdatedEvent`: la persona cambió el nombre completo de su perfil.
+
+**Repository Interface**
+
+- `ProfileRepository`.
+
+#### 4.2.10.2. Interface Layer.
+
+**REST controllers**
+
+- `ProfileController` — `/api/v1/users/me/profile`: `GET` y `PUT` del perfil del usuario autenticado. También `GET`, `PUT` y `DELETE /photo` para su foto (JPEG, PNG o WebP).
+- `StaffProfileController` — `/api/v1/laboratories/{laboratoryId}/staff/{staffId}/profile`: perfil y foto (`GET /photo`) de una persona del personal, tal como los ve el responsable de calidad.
+- `ProfilePhotoResponses`: respuestas compartidas por los endpoints de la foto.
+
+**Resources y assemblers**
+
+- `ProfileResource`, `UpdateProfileResource` y `ProfileResourceFromEntityAssembler`.
+
+**Fachada e integration events**
+
+- `ProfileContextFacade`: permite que otros contextos obtengan el nombre con que se muestra a una persona (`displayNameOf`). Si el perfil no tiene nombre, devuelve el usuario de la cuenta. Compliance & Alerting la usa para indicar quién atendió una alerta o decidió sobre un lote.
+- `ProfileUpdatedIntegrationEvent`: comunica el cambio de nombre para que Laboratory Management actualice la lista del personal.
+
+#### 4.2.10.3. Application Layer.
+
+**Command Service**
+
+- `ProfileCommandService` / `ProfileCommandServiceImpl`: guarda los datos personales y la foto del usuario autenticado, y crea el perfil la primera vez.
+
+**Query Service**
+
+- `ProfileQueryService` / `ProfileQueryServiceImpl`: lee los perfiles junto con la cuenta a la que pertenecen y sus fotos.
+
+**Event Handler**
+
+- `ProfileUpdatedEventHandler`: publica el evento de integración cuando cambia el nombre completo.
+
+**ACL y servicios de salida**
+
+- `ExternalIamService`: lee en IAM la cuenta del perfil (usuario, correo y roles).
+- `ExternalLaboratoryService`: lee en Laboratory Management el registro del personal vinculado a la cuenta.
+- `ProfilePhotoStorage`: puerto de salida que guarda las imágenes de las fotos.
+
+#### 4.2.10.4. Infrastructure Layer.
+
+- **Persistence Entities:** `ProfilePersistenceEntity` y `ProfilePhotoPersistenceEntity`. La imagen se guarda aparte del perfil para que leer un perfil no la cargue.
+- **Spring Data JPA Repositories:** `ProfilePersistenceRepository` y `ProfilePhotoPersistenceRepository`.
+- **Repository Adapter y Assembler:** `ProfileRepositoryImpl` y `ProfilePersistenceAssembler`.
+- **Almacenamiento:** `DatabaseProfilePhotoStorage` implementa `ProfilePhotoStorage` y guarda una foto por perfil en la base de datos.
+- **Configuración:** `ProfileConfiguration`.
+
+#### 4.2.10.5. Bounded Context Software Architecture Component Level Diagrams.
+
+El diagrama de componentes presenta **Profile Management** dentro del **Cloud REST API**. La Single-Page Application consulta y actualiza en él el perfil y la foto. El contexto resuelve la cuenta en IAM y el registro del personal en Laboratory Management, y Compliance & Alerting lo consulta para mostrar el nombre de las personas.
+
+Se utiliza la vista de Structurizr **`Components-Profile`**, definida sobre el container `Cloud REST API`.
+
+![Profile Management Component Diagram](../assets/img/chapter-iv/Components-Profile.png)
+
+#### 4.2.10.6. Bounded Context Software Architecture Code Level Diagrams.
+
+Los diagramas de nivel de código presentan las clases del Domain Layer de Profile Management y el esquema relacional que persiste los perfiles y sus fotos.
+
+##### 4.2.10.6.1. Bounded Context Domain Layer Class Diagrams.
+
+El diagrama muestra el Aggregate `Profile`, sus Value Objects de datos personales y foto, `ProfileDetail`, y los Commands, Queries, el evento y el repositorio del contexto.
+
+![Profile Management Domain Layer Class Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-report/develop/docs/diagrams/domain/profile-domain-layer-class-diagram.puml&fmt=svg&v=4)
+
+##### 4.2.10.6.2. Bounded Context Database Design Diagram.
+
+El diagrama de base de datos muestra las tablas `profiles` y `profile_photos`. Cada perfil se relaciona con la cuenta de IAM mediante `userId`, y cada foto con su perfil, sin duplicar el modelo de la cuenta.
+
+![Profile Management Database Design Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/profile/profile-database-diagram.puml&fmt=svg&v=4)
