@@ -1097,7 +1097,7 @@ El resumen organiza las lecturas por dispositivo y variable monitoreada, mostran
 
 ### 5.4.4. Applications User Flow Diagrams.
 
-El user flow es la representación visual del camino que un usuario sigue dentro de la plataforma QualiTrack para alcanzar un objetivo específico, como registrar un lote de producción, atender una alerta de desviación o generar un reporte de auditoría. Estos diagramas son esenciales para garantizar que la navegación sea lógica, intuitiva y libre de obstáculos, asegurando una experiencia de usuario satisfactoria y eficiente para cada uno de los roles definidos en el sistema: Jefe de Aseguramiento de la Calidad (QA Manager), Operario de laboratorio y Auditor regulatorio. A continuación, se detallan los flujos para las tareas clave de la plataforma, alineados con los procesos de cumplimiento BPM, monitoreo IoT y trazabilidad inmutable exigidos por DIGEMID.
+En esta sección se presentan los diagramas de User Flow definidos para la aplicación QualiTrack, representando la secuencia de acciones que sigue el usuario para completar los principales procesos de la aplicación. Cada flujo contempla un Happy Path, que describe la secuencia esperada cuando el usuario ingresa información válida y completa correctamente la operación, y un Unhappy Path, que representa situaciones alternativas en las que se presentan errores, datos inválidos o condiciones que impiden continuar con el proceso. De esta manera, los diagramas permiten visualizar tanto el recorrido exitoso como los posibles escenarios de excepción durante la interacción con la aplicación.
 
 ---
 
@@ -1161,6 +1161,8 @@ Al seleccionar Register, QualiTrack valida el código ingresado y detecta el err
   <img src="../assets/img/chapter-v/User Flow/UP/Registro del Producto.png" alt="Planes de suscripción con facturación anual" height="400">
 </div>
 
+---
+
 #### User Flow 3: Gestión de Lotes de Producción / Production Batch Management
 
 **User Goal**
@@ -1188,6 +1190,8 @@ Al intentar registrar el lote, QualiTrack valida el código y evita completar el
 <div align="center">
   <img src="../assets/img/chapter-v/User Flow/UP/Registro de Lote de Producto.png" alt="Planes de suscripción con facturación anual" height="400">
 </div>
+
+---
 
 #### User Flow 4: Gestión de Personal / Staff Management
 
@@ -1223,6 +1227,8 @@ El registro no se completa. El supervisor debe ingresar un correo diferente y vo
 <div align="center">
   <img src="../assets/img/chapter-v/User Flow/UP/Registrar staff pero sale un error.png" alt="Planes de suscripción con facturación anual" height="400">
 </div>
+
+---
 
 #### User Flow 5: Gestión de Materias Primas / Raw Material Management
 
@@ -1266,6 +1272,8 @@ El registro no se completa. El administrador debe modificar el código e intenta
 <div align="center">
   <img src="../assets/img/chapter-v/User Flow/UP/Registrar Materia Prima ERROR.png" alt="Planes de suscripción con facturación anual" height="400">
 </div>
+
+---
 
 #### User Flow 6: Gestión de Ambientes / Environment Management
 
