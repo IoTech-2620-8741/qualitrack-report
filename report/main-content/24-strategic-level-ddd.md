@@ -1783,9 +1783,9 @@ La separación entre **Web Application** y **Single-Page Application** sigue la 
 
 #### 4.1.3.4. Software Architecture Deployment Diagrams. 
 
-La vista **Deployment** muestra cómo las instancias de los contenedores descritos se distribuyen sobre la infraestructura de ejecución del entorno **Production**, cubriendo cuatro planos: la sede farmacéutica del cliente, la infraestructura cloud, el hosting de los productos web y los dispositivos del usuario.
+La vista **Deployment** muestra cómo las instancias de los contenedores descritos se distribuyen sobre la infraestructura de ejecución del entorno **Production**, cubriendo tres planos: la sede farmacéutica del cliente, la infraestructura cloud (backend, base de datos y hosting de los productos web) y los dispositivos del usuario.
 
-![C4 - System Container](../assets/img/chapter-iv/c4-Deployment-Production.png)
+![C4 - Deployment](../assets/img/chapter-iv/c4-Deployment-Production.png)
 
 **Pharmaceutical Facility** — sede del laboratorio o almacén cliente, sobre red local Ethernet / WiFi:
 
@@ -1794,17 +1794,19 @@ La vista **Deployment** muestra cómo las instancias de los contenedores descrit
 
 **Infraestructura cloud:**
 
-- **Render** — *Render Web Service.* El servicio `qualitrack-platform` ejecuta el monolito modular empaquetado en Docker y publica la documentación OpenAPI.
-- **Railway** — instancia administrada **QualiTrack MySQL** (MySQL 8) que aloja la Cloud Database.
+- **Microsoft Azure** — *región Chile Central, grupo de recursos `iotech-qualitrack-rg`.* Concentra el backend y su base de datos:
+    - **Container Apps Environment** con la Container App **`iotech-qualitrack-api`**, que ejecuta el monolito modular empaquetado en Docker (Java 26, Spring Boot), expone el puerto 8080 y publica la documentación OpenAPI.
+    - **Azure Container Registry `iotechqualitrack`** — almacena la imagen Docker del backend. El workflow de GitHub Actions la construye y la publica con cada integración en `main`, y la Container App la descarga mediante su identidad administrada.
+    - **Azure Database for MySQL Flexible Server `iotech-qualitrack-mysql`** — *MySQL 8.4, Burstable B1ms.* Aloja la Cloud Database `iotech_qualitrack`.
 - **GitHub Pages** — hosting estático donde se publica la instancia del Landing Page.
-- **Firebase** — plataforma de Google que concentra tres nodos: **Firebase Hosting**, que publica el build de producción de la aplicación Angular (Web Server); **Firebase App Distribution**, que entrega el APK a los evaluadores registrados; y **Firebase Cloud Messaging**, que entrega las notificaciones push a los dispositivos registrados.
-- **Third-Party SaaS Providers** — agrupa las instancias de Stripe y Resend API consumidas por el backend.
+- **Firebase** — plataforma de Google que concentra tres nodos: **Firebase Hosting**, que aloja la instancia de la Web Application y entrega el build de producción de la aplicación Angular; **Firebase App Distribution**, que entrega el APK a los evaluadores registrados; y **Firebase Cloud Messaging**, que entrega las notificaciones push a los dispositivos registrados.
+- **Third-Party SaaS Providers** — agrupa las instancias de Stripe y Gmail SMTP consumidas por el backend.
 
 **Dispositivos del usuario:**
 
-- **User Computer** — computador del responsable de calidad (Windows, macOS o Linux). La Web Application se ejecuta como instancia dentro del navegador (Chrome, Edge o Safari), coherente con el hecho de que una SPA se despliega en el cliente y no en el servidor.
+- **User Computer** — computador del responsable de calidad (Windows, macOS o Linux). La Single-Page Application se ejecuta como instancia dentro del navegador (Chrome, Edge o Safari) después de que la Web Application alojada en Firebase Hosting la entrega, coherente con el hecho de que una SPA se ejecuta en el cliente y no en el servidor.
 - **User Mobile Device** — teléfono Android 10 o superior del responsable de calidad o del operario. Sobre Android OS se instalan la Mobile Application y su Mobile Local Database.
 
 La relación **Firebase App Distribution → Mobile Application** representa la entrega e instalación de la compilación de prueba en el dispositivo del evaluador, tal como exige el alcance del curso para la distribución de aplicaciones móviles.
 
-El diagrama evidencia la naturaleza distribuida de la solución en los tres niveles exigidos por el logro del curso: **Embedded Systems** en el nodo ESP32, **Edge Computing** en la estación local de la sede y **Cloud Computing** en Render y Railway, con los productos de usuario ejecutándose en navegador y dispositivo móvil.
+El diagrama evidencia la naturaleza distribuida de la solución en los tres niveles exigidos por el logro del curso: **Embedded Systems** en el nodo ESP32, **Edge Computing** en la estación local de la sede y **Cloud Computing** en Microsoft Azure, con los productos de usuario ejecutándose en navegador y dispositivo móvil.
