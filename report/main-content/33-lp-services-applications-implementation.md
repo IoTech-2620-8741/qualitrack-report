@@ -239,4 +239,28 @@ az account show --query "{tenant:tenantId, subscription:id}" -o table
 
 * Para que funcionen correctamente los workflows creados, deben restringir los merge sin previa creación de un PR.
 
+**Paso 9: Creación de rama release versión 1.0.0**
+
+1) Creamos nuestra rama release, en la versión 1.0.0 y la pasamos a remoto:
+
+Step-9-1
+
+2) Creamos nuestro PR hacia main:
+
+* Previo a la creación del PR, verificamo que todo lo creado en Azure funcione correctamente.
+
+Step-9-2
+
+3) Esperamos a que las pruebas y el despliegue integrados en workflows terminen:
+
+Step-9-3
+
+Step-9-4
+
+4) Después de aceptar y realizar el merge a main, esperamos a que termine el workflow de despliegue hacia Azure Container Apps que hemos creado
+
+Step-9-5
+
+Step-9-6
+
 #### 6.2.1.9. Team Collaboration Insights during Sprint
