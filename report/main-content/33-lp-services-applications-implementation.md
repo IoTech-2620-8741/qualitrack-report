@@ -263,4 +263,34 @@ az account show --query "{tenant:tenantId, subscription:id}" -o table
 
 ![Step 9-6 - Workflow de despliegue completado](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-9-5.png)
 
+**Paso 10: Verificaciones y pasos finales**
+
+1) Entramos a la aplicación del contenedor, dentro, entramos a revisiones y réplicas:
+
+Step-10-1
+
+2) Verificamos que podemos entrar a la documentación Swagger con el link: [Qualitrack Swagger Documentation](https://iotech-qualitrack-api.wonderfulocean-c1f38f8b.chilecentral.azurecontainerapps.io/swagger-ui/index.html)
+
+Step-10-2
+
+3) Verificamos la base de datos usando MySQL Workbench mediante una conexión remota y si existen las tablas:
+
+Step-10-3
+
+Step-10-4
+
+4) Etiquetamos la rama main con la nuev version de lanzamiento
+
+Step-10-5
+
+Step-10-6
+
+Step-10-7
+
+* Tambien eliminamos las ramas release y hotfix, cumpliendo el estandar Gitflow
+
+5) En nuestra aplicación de contenedores, en la sección aplicaciones, contenedores y variables de entorno quitamos SPRING_JPA_HIBERNATE_DDL_AUTO para evitar cambios de esquema
+
+Step-10-8
+
 #### 6.2.1.9. Team Collaboration Insights during Sprint
