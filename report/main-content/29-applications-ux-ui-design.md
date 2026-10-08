@@ -1132,7 +1132,7 @@ El sistema valida los datos y detecta que el usuario o correo electrónico ya ex
 
 ---
 
-**User Flow 2: Gestión de Productos Farmacéuticos / Pharmaceutical Product Management**
+#### User Flow 2: Gestión de Productos Farmacéuticos / Pharmaceutical Product Management
 
 **User Goal**
 
@@ -1159,4 +1159,32 @@ Al seleccionar Register, QualiTrack valida el código ingresado y detecta el err
 
 <div align="center">
   <img src="../assets/img/chapter-v/User Flow/UP/Registro del Producto.png" alt="Planes de suscripción con facturación anual" height="400">
+</div>
+
+#### User Flow 3: Gestión de Lotes de Producción / Production Batch Management
+
+**User Goal**
+
+Como técnico de laboratorio, quiero registrar y gestionar lotes de producción asociados a un producto, para mantener la trazabilidad de la producción y controlar las materias primas utilizadas en cada lote.
+
+**Happy Path**
+
+El técnico de laboratorio accede a Products & Batches → Production Batches y selecciona Register New Batch.
+Se muestra el formulario Create Production Batch, donde ingresa la información requerida del lote. Luego selecciona la opción para registrar el lote.
+QualiTrack valida el código del lote. Si el código es válido, el nuevo lote es registrado y aparece en el listado de Production Batches.
+El técnico de laboratorio selecciona el lote para consultar sus detalles. Desde el detalle del lote puede registrar el Raw Material Usage, seleccionando las materias primas correspondientes.
+Antes de utilizar una materia prima, el administrador revisa la recepción asociada y verifica que el lote de materia prima haya sido released.
+Una vez disponible la materia prima, el técnico de laboratorio la agrega al lote de producción y la información queda registrada en el detalle del lote, permitiendo mantener la trazabilidad de los materiales utilizados.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/User Flow/HP/Asociar Materias Primas al Lote.png" alt="Planes de suscripción con facturación anual" height="400">
+</div>
+
+**Unhappy Path**
+
+Durante la creación del lote, el técnico de laboratorio ingresa un código de lote inválido o que no cumple con la validación.
+Al intentar registrar el lote, QualiTrack valida el código y evita completar el registro mientras la información no sea corregida.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/User Flow/UP/Registro de Lote de Producto.png" alt="Planes de suscripción con facturación anual" height="400">
 </div>
