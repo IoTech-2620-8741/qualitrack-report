@@ -332,17 +332,17 @@ npx firebase-tools init hosting
 
 2) Se crean 2 archivos: .firebaserc y firebase.json:
 
-![Frontend Step 2-2 - Archivos .firebaserc y firebase.json](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-2.png)
+![Frontend Step 2-2 - Archivos creados](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-2.png)
 
 3) Conectamos GitHub con Firebase:
 
 ![Frontend Step 2-3 - Inicialización de hosting con GitHub](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-3.png)
 
-![Frontend Step 2-4 - Inicialización de Firebase completada](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-4.png)
+![Frontend Step 2-4 - Inicialización de hosting con GitHub completada](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-4.png)
 
 4) Hacemos push a la rama feature y realizamos un PR a develop para el release.
 
-![Frontend Step 2-5 - Pull request hacia develop con el workflow de despliegue](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-5.png)
+![Frontend Step 2-4 - Pull request hacia develop con el workflow de despliegue](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-5.png)
 
 **Paso 3: Release y despliegue a Firebase**
 
