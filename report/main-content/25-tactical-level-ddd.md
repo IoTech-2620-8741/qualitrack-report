@@ -1040,162 +1040,140 @@ El diagrama de base de datos muestra las tablas `audit_reports` (reportes genera
 
 ### 4.2.8. Bounded Context: Identity & Access Management
 
-Identity & Access Management es un Bounded Context transversal encargado de la identidad, autenticación y autorización de los usuarios de QualiTrack. Su función es proporcionar una identidad confiable al resto del sistema sin asumir responsabilidades relacionadas con laboratorios, inventario, telemetría o suscripciones.
+Identity & Access Management es un Bounded Context transversal encargado de la identidad, la autenticación y la autorización de los usuarios de QualiTrack. Administra las cuentas y sus roles, emite los tokens JWT, crea las cuentas del personal que registra el responsable de calidad, recupera contraseñas con un código enviado por correo e indica qué le falta a cada usuario para operar: suscripción y laboratorio. Los datos personales y la foto pertenecen a Profile Management.
 
 #### 4.2.8.1. Domain Layer.
 
 **`User` — Aggregate Root**
 
-- **Propósito:** representa la cuenta de acceso de un usuario.
-- **Atributos principales:** `id`, `username`, `password`, `roles`, `laboratoryId` y `status`.
-- **Métodos principales:** `addRole`, `addRoles`, `deactivate`, `isActive`, `getUsernameValue` y `getPasswordValue`.
-- **Relaciones:** contiene roles y utiliza `Username`, `PasswordHash` y `UserStatus`.
+- **Propósito:** cuenta de acceso de una persona.
+- **Atributos principales:** `id`, `username` (`Username`), `email` (`EmailAddress`), `password` (`PasswordHash`), `roles`, `laboratoryId`, `status` (`UserStatus`) y `passwordChangeRequired`.
+- **Métodos principales:** `staffAccount` (cuenta del personal con contraseña temporal), `changePassword`, `updateAccount`, `addRole`, `addRoles`, `deactivate` e `isActive`.
+
+**`PasswordRecovery` — Aggregate Root**
+
+- **Propósito:** recuperación de la contraseña de una cuenta con un código de verificación enviado a su correo (US16, US17). El código se conserva solo como hash.
+- **Atributos principales:** `id`, `userId`, `codeHash`, `requestedAt`, `expiresAt`, `failedAttempts`, `status` (`PasswordRecoveryStatus`) y `completedAt`.
+- **Métodos principales:** `start`, `isUsable`, `blocksNewCode`, `registerFailedAttempt`, `complete` y `revoke`.
+- **Reglas:** el código vence a los 15 minutos y se usa una sola vez. Cinco intentos fallidos revocan la recuperación, y un código nuevo exige esperar un minuto y reemplaza al anterior.
 
 **`Role` — Entity**
 
-- **Propósito:** representa un rol asignable a los usuarios.
 - **Atributos principales:** `id` y `name`.
 - **Métodos principales:** `getStringName`, `hasName` y `validateRoleSet`.
 
-**`Username` — Value Object**
+**Value Objects y enumeraciones**
 
-Encapsula el identificador utilizado para el inicio de sesión.
-
-**`PasswordHash` — Value Object**
-
-Representa únicamente la contraseña ya protegida. La contraseña en texto plano no forma parte del modelo persistido.
-
-**`Roles` — Enumeration**
-
-- `ROLE_ADMIN`.
-- `ROLE_QA_MANAGER`.
-- `ROLE_LAB_OPERATOR`.
-
-**`UserStatus` — Enumeration**
-
-- `ACTIVE`.
-- `INACTIVE`.
-- `SUSPENDED`.
+- `Username`, `EmailAddress` y `PasswordHash`. La contraseña en texto plano no forma parte del modelo persistido.
+- `PasswordPolicy`: reglas de una contraseña elegida por la persona, al cambiarla o al restablecerla.
+- `UserOnboarding`: requisitos pendientes para el acceso operativo (suscripción activa y laboratorio registrado), resueltos a partir del estado persistido.
+- `Roles`: `ROLE_ADMIN`, `ROLE_QA_MANAGER`, `ROLE_LAB_OPERATOR` y `ROLE_AUDITOR`.
+- `UserStatus`: `ACTIVE`, `INACTIVE` y `SUSPENDED`.
+- `PasswordRecoveryStatus`: `PENDING`, `COMPLETED` y `REVOKED`.
 
 **Commands principales**
 
-- `SignInCommand`.
-- `SignUpCommand`.
-- `AssignRoleCommand`.
-- `DeactivateUserCommand`.
-- `SeedRolesCommand`.
+- `SignUpCommand`, `SignInCommand` y `SeedRolesCommand`.
+- `CreateStaffAccountCommand`, `AssignRoleCommand` y `DeactivateUserCommand`.
+- `UpdateAccountCommand` y `ChangePasswordCommand`.
+- `RequestPasswordRecoveryCommand` (US16, TS05) y `ResetPasswordCommand` (US17, TS06).
 
 **Queries principales**
 
-- `GetUserByIdQuery`.
-- `GetUserByUsernameQuery`.
-- `GetAllUsersQuery`.
-- `GetRoleByNameQuery`.
-- `GetAllRolesQuery`.
+- `GetUserByIdQuery`, `GetUserByUsernameQuery` y `GetAllUsersQuery`.
+- `GetRoleByNameQuery` y `GetAllRolesQuery`.
+- `GetUserOnboardingQuery`.
+
+**Eventos de dominio**
+
+- `UserAccountUpdatedEvent`: la persona cambió su usuario o su correo.
 
 **Repository Interfaces**
 
-- `UserRepository`.
-- `RoleRepository`.
+- `UserRepository`, `RoleRepository` y `PasswordRecoveryRepository`.
 
 #### 4.2.8.2. Interface Layer.
 
-**`AuthenticationController`**
+**REST controllers**
 
-- Recibe las solicitudes de registro e inicio de sesión.
-- Convierte los Resources a `SignUpCommand` o `SignInCommand`.
-- Devuelve el usuario autenticado junto con el token cuando las credenciales son válidas.
+- `AuthenticationController` — `/api/v1/authentication`: `POST /sign-up` y `POST /sign-in`. Devuelve el usuario autenticado con su token.
+- `PasswordRecoveryController` — `/api/v1/authentication`: `POST /password-recovery-requests` y `POST /password-resets` (TS05, TS06). La respuesta no revela qué cuentas existen.
+- `UserAccountController` — `/api/v1/users/me`: consulta y actualiza el usuario y el correo de la cuenta.
+- `UserPasswordController` — `/api/v1/users/me/password-changes`: cambia la contraseña, por ejemplo la temporal de una cuenta de personal.
+- `UserOnboardingController` — `/api/v1/users/me/onboarding`: indica qué le falta al usuario para operar.
+- `UsersController` — `/api/v1/users`: consulta las cuentas del laboratorio y asigna roles (`PUT /{userId}/roles/{roleName}`).
+- `RolesController` — `/api/v1/roles`: consulta los roles disponibles.
 
-**`UsersController`**
+**Fachada e integration events**
 
-- Permite consultar usuarios, asignar roles y desactivar cuentas de acuerdo con los permisos definidos.
-
-**`RolesController`**
-
-- Expone la consulta de los roles disponibles.
-
-**`IamContextFacade`**
-
-Expone información mínima hacia otros contextos, como comprobar que un usuario exista, obtener su laboratorio asociado, consultar el nombre del usuario o verificar si tiene un rol determinado.
-
-**Resources principales**
-
-- `SignInResource`.
-- `SignUpResource`.
-- `AuthenticatedUserResource`.
-- `UserResource`.
-- `RoleResource`.
+- `IamContextFacade`: expone información mínima a otros contextos. Permite comprobar que un usuario existe, obtener su laboratorio, su usuario y su cuenta con correo y roles, verificar si tiene un rol, asociar la cuenta al laboratorio durante la configuración inicial y crear o deshabilitar las cuentas del personal.
+- `UserAccountUpdatedIntegrationEvent`: permite que Laboratory Management mantenga alineado el correo del personal.
 
 #### 4.2.8.3. Application Layer.
 
-**`UserCommandService` / `UserCommandServiceImpl`**
+**Command Services**
 
-Coordina el registro, inicio de sesión, asignación de roles y desactivación de usuarios. Utiliza `HashingService` para proteger contraseñas y `TokenService` para generar tokens de acceso.
-
-**`RoleCommandService` / `RoleCommandServiceImpl`**
-
-Inicializa y administra los roles base requeridos por la aplicación.
+- `UserCommandService` / `UserCommandServiceImpl`: registro, inicio de sesión, cuentas del personal, roles, desactivación y cambios de cuenta y contraseña. Usa `HashingService` y `TokenService`.
+- `PasswordRecoveryCommandService` / `PasswordRecoveryCommandServiceImpl`: solicita, envía y verifica el código y restablece la contraseña.
+- `RoleCommandService` / `RoleCommandServiceImpl`: inicializa los roles base.
 
 **Query Services**
 
-- `UserQueryService` / `UserQueryServiceImpl`.
-- `RoleQueryService` / `RoleQueryServiceImpl`.
+- `UserQueryService`, `RoleQueryService` y `UserOnboardingQueryService`, con sus implementaciones. `UserOnboardingQueryServiceImpl` consulta Payments & Subscriptions y Laboratory Management para saber si el usuario tiene suscripción activa y laboratorio.
 
-**`ApplicationReadyEventHandler`**
+**Event Handlers**
 
-Inicializa los roles cuando la aplicación se encuentra disponible, evitando depender de una carga manual previa.
+- `ApplicationReadyEventHandler`: inicializa los roles al arrancar la aplicación.
+- `UserAccountUpdatedEventHandler`: publica el cambio de usuario o correo.
 
 **Outbound Service Contracts**
 
-- `HashingService`.
-- `TokenService`.
-
-Estas interfaces se definen fuera de Infrastructure para evitar que el dominio de identidad dependa de BCrypt o JWT como tecnologías concretas.
+- `HashingService` y `TokenService`, definidos fuera de Infrastructure para no acoplar el dominio a BCrypt o JWT.
+- `CredentialsNotifier`, `PasswordRecoveryNotifier`, `TemporaryPasswordGenerator` y `RecoveryCodeGenerator`.
 
 #### 4.2.8.4. Infrastructure Layer.
 
-**Seguridad y hashing**
+**Seguridad, hashing y JWT**
 
-- `BCryptHashingService` configura `BCryptPasswordEncoder`.
-- `HashingServiceImpl` implementa el contrato de hashing.
+- `BCryptHashingService` y `HashingServiceImpl`.
+- `TokenServiceImpl` y `BearerTokenService`.
+- `WebSecurityConfiguration`, `BearerAuthorizationRequestFilter`, `UserDetailsServiceImpl`, `UserDetailsImpl`, `UnauthorizedRequestHandlerEntryPoint` y `ForbiddenRequestHandler`.
+- `ReadOnlyAuditorAuthorizationManager`: mantiene en solo lectura a los usuarios cuyo único rol es `ROLE_AUDITOR`.
+- `TenantResourceInterceptor` y `TenantAccess`: verifican que el recurso de la ruta pertenezca al laboratorio del usuario.
+- `OnboardingInterceptor` y `OnboardingWebConfiguration`: bloquean las funciones operativas hasta completar suscripción y laboratorio.
+- `CurrentUserImpl`: entrega el usuario autenticado a los demás contextos.
 
-**JWT y autorización**
+**Credenciales y correo**
 
-- `TokenServiceImpl` implementa la generación y validación de tokens JWT.
-- `BearerTokenService` extrae el token del header de autorización.
-- `BearerAuthorizationRequestFilter` valida las solicitudes protegidas.
-- `UserDetailsServiceImpl` integra el usuario del dominio con Spring Security.
-- `UserDetailsImpl` adapta `User` al contrato `UserDetails`.
-- `UnauthorizedRequestHandlerEntryPoint` gestiona accesos no autorizados.
-- `WebSecurityConfiguration` define la cadena de filtros y configuración de seguridad.
+- `SecureRandomTemporaryPasswordGenerator` (12 caracteres) y `SecureRandomRecoveryCodeGenerator` (6 dígitos), de fuente criptográficamente segura.
+- `EmailCredentialsNotifier` y `EmailPasswordRecoveryNotifier`: envían las credenciales y el código mediante el proveedor de correo configurado (Gmail SMTP en producción o Resend API).
 
 **Persistencia**
 
-- `UserPersistenceEntity` y `RolePersistenceEntity`.
-- `UserPersistenceRepository` y `RolePersistenceRepository`.
-- `UserRepositoryImpl` y `RoleRepositoryImpl`.
-- `UserPersistenceAssembler` y `RolePersistenceAssembler`.
+- Entidades, Spring Data JPA Repositories, assemblers y adapters para usuarios, roles y recuperaciones (`UserRepositoryImpl`, `RoleRepositoryImpl` y `PasswordRecoveryRepositoryImpl`).
 - `RolesPersistenceConverter` y `UserStatusPersistenceConverter`.
 
 #### 4.2.8.5. Bounded Context Software Architecture Component Level Diagrams.
 
-El diagrama de componentes presenta la posición de **Identity & Access Management** dentro del **Cloud REST API**. Este contexto proporciona identidad, autenticación y autorización a los demás módulos de QualiTrack y mantiene relaciones con aquellos procesos que necesitan validar al usuario autenticado o su acceso a las capacidades del sistema.
+El diagrama de componentes presenta **Identity & Access Management** dentro del **Cloud REST API**. Los demás contextos lo usan para validar el token y resolver usuarios. La Single-Page Application y la Mobile Application se autentican en él, y envía por Gmail SMTP las credenciales del personal y los códigos de recuperación.
 
-Para esta entrega se utiliza la vista de Structurizr **`Components-IAM`**, definida sobre el container `Cloud REST API`. La vista corresponde al C4 actual y posteriormente podrá detallarse para evidenciar de manera interna los componentes de autenticación, autorización, repositorios y seguridad.
+Se utiliza la vista de Structurizr **`Components-IAM`**, definida sobre el container `Cloud REST API`.
 
 ![Identity & Access Management Component Diagram](../assets/img/chapter-iv/Components-IAM.png)
 
 #### 4.2.8.6. Bounded Context Software Architecture Code Level Diagrams.
 
+Los diagramas de nivel de código presentan las clases del Domain Layer de IAM y el esquema relacional que persiste usuarios, roles y recuperaciones de contraseña.
+
 ##### 4.2.8.6.1. Bounded Context Domain Layer Class Diagrams.
 
-El diagrama muestra `User`, `Role`, los Value Objects de identidad y contraseña protegida, las enumeraciones de roles y estado, Commands, Queries y repositorios.
+El diagrama muestra los Aggregates `User` y `PasswordRecovery`, la entidad `Role`, los Value Objects de identidad, correo, contraseña y onboarding, las enumeraciones de roles y estados, y los Commands, Queries, eventos y repositorios.
 
-![Identity & Access Management Domain Layer Class Diagram](../assets/img/chapter-iv/iam-domain-layer-class-diagram.png)
+![Identity & Access Management Domain Layer Class Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-report/develop/docs/diagrams/domain/iam-domain-layer-class-diagram.puml&fmt=svg&v=4)
 
 ##### 4.2.8.6.2. Bounded Context Database Design Diagram.
 
-El esquema de base de datos representa usuarios, roles y su relación de muchos a muchos, además de los campos necesarios para mantener el estado y la relación de acceso con la organización correspondiente.
+El esquema de base de datos representa usuarios, roles y su relación de muchos a muchos, las recuperaciones de contraseña y los campos necesarios para mantener el estado de la cuenta y su relación con el laboratorio.
 
 ![Identity & Access Management Database Design Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/iam/iam-database-diagram.puml&fmt=svg&v=4)
 

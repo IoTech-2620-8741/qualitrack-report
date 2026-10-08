@@ -1,0 +1,239 @@
+@startuml iam-domain-layer-class-diagram
+
+title QualiTrack - Identity & Access Management - Domain Layer Class Diagram
+
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+package "shared" <<External>> {
+  abstract class AbstractDomainAggregateRoot
+}
+
+package "iam.domain.model.valueobjects" {
+  class Username <<record>> {
+    + value: String
+  }
+
+  class PasswordHash <<record>> {
+    + value: String
+  }
+
+  class EmailAddress <<record>> {
+    + value: String
+    + {static} looksLikeEmail(value: String): boolean
+  }
+
+  class PasswordPolicy {
+    + {static} validate(newPassword: String): void
+  }
+
+  enum PasswordRecoveryStatus {
+    PENDING
+    COMPLETED
+    REVOKED
+  }
+
+  enum Roles {
+    ROLE_ADMIN
+    ROLE_QA_MANAGER
+    ROLE_LAB_OPERATOR
+    ROLE_AUDITOR
+  }
+
+  enum UserStatus {
+    ACTIVE
+    INACTIVE
+    SUSPENDED
+  }
+}
+
+package "iam.domain.model.entities" {
+  class Role {
+    - id: Long
+    - name: Roles
+    + getStringName(): String
+    + hasName(roleName: String): boolean
+    + validateRoleSet(roles: Collection<Role>): Set<Role>
+  }
+}
+
+package "iam.domain.model.aggregates" {
+  class User {
+    - id: Long
+    - username: Username
+    - email: EmailAddress
+    - password: PasswordHash
+    - roles: Set<Role>
+    - laboratoryId: Long
+    - status: UserStatus
+    - passwordChangeRequired: boolean
+    + {static} staffAccount(email, temporaryPasswordHash, role, laboratoryId): User
+    + changePassword(newPasswordHash: String): void
+    + updateAccount(username: Username, email: EmailAddress): boolean
+    + addRole(role: Role): void
+    + addRoles(roles: Collection<Role>): void
+    + deactivate(): void
+    + isActive(): boolean
+    + getUsernameValue(): String
+    + getEmailValue(): String
+    + getPasswordValue(): String
+  }
+
+  class PasswordRecovery {
+    - id: Long
+    - userId: Long
+    - codeHash: String
+    - requestedAt: Instant
+    - expiresAt: Instant
+    - failedAttempts: int
+    - status: PasswordRecoveryStatus
+    - completedAt: Instant
+    + {static} CODE_VALIDITY: Duration = 15 min
+    + {static} MAX_FAILED_ATTEMPTS: int = 5
+    + {static} RESEND_INTERVAL: Duration = 1 min
+    + {static} start(userId, codeHash, now): PasswordRecovery
+    + isUsable(now): boolean
+    + blocksNewCode(now): boolean
+    + registerFailedAttempt(): void
+    + complete(now): void
+    + revoke(): void
+  }
+}
+User --|> AbstractDomainAggregateRoot
+User *-- Username
+User *-- PasswordHash
+User *-- EmailAddress
+PasswordRecovery --|> AbstractDomainAggregateRoot
+PasswordRecovery --> PasswordRecoveryStatus
+PasswordRecovery ..> User : userId
+User *-- Role
+User --> UserStatus
+Role --> Roles
+
+package "iam.domain.model.commands" {
+  class SignInCommand <<record>> {
+    + username: String
+    + password: String
+  }
+
+  class SignUpCommand <<record>> {
+    + username: String
+    + email: String
+    + password: String
+    + roles: List<String>
+    + laboratoryId: Long
+  }
+
+  class AssignRoleCommand <<record>> {
+    + userId: Long
+    + roleName: String
+  }
+
+  class DeactivateUserCommand <<record>> {
+    + userId: Long
+  }
+
+  class SeedRolesCommand <<record>>
+
+  class CreateStaffAccountCommand <<record>> {
+    + laboratoryId: Long
+    + email: String
+    + fullName: String
+    + role: Roles
+  }
+
+  class ChangePasswordCommand <<record>> {
+    + userId: Long
+    + currentPassword: String
+    + newPassword: String
+  }
+
+  class RequestPasswordRecoveryCommand <<record>> {
+    + account: String
+  }
+
+  class ResetPasswordCommand <<record>> {
+    + account: String
+    + code: String
+    + newPassword: String
+  }
+
+  class UpdateAccountCommand <<record>> {
+    + userId: Long
+    + username: Username
+    + email: EmailAddress
+    + currentPassword: String
+    + {static} of(userId, username, email, currentPassword): UpdateAccountCommand
+  }
+}
+
+package "iam.domain.model.events" {
+  class UserAccountUpdatedEvent <<record>> {
+    + userId: Long
+    + laboratoryId: Long
+    + username: String
+    + email: String
+  }
+}
+ChangePasswordCommand ..> PasswordPolicy
+ResetPasswordCommand ..> PasswordPolicy
+
+package "iam.domain.model.queries" {
+  class GetUserByIdQuery <<record>> {
+    + userId: Long
+  }
+
+  class GetUserByUsernameQuery <<record>> {
+    + username: String
+  }
+
+  class GetAllUsersQuery <<record>>
+
+  class GetRoleByNameQuery <<record>> {
+    + roleName: String
+  }
+
+  class GetAllRolesQuery <<record>>
+}
+
+package "iam.domain.repositories" {
+  interface UserRepository {
+    + findById(id: Long): Optional<User>
+    + findByUsername(username: String): Optional<User>
+    + findAll(): List<User>
+    + findByLaboratoryId(laboratoryId: Long): List<User>
+    + save(user: User): User
+    + existsById(id: Long): boolean
+    + existsByUsername(username: String): boolean
+    + findByEmail(email: String): Optional<User>
+    + existsByEmail(email: String): boolean
+  }
+
+  interface PasswordRecoveryRepository {
+    + save(recovery: PasswordRecovery): PasswordRecovery
+    + findLatestByUserId(userId: Long): Optional<PasswordRecovery>
+  }
+
+  interface RoleRepository {
+    + findById(id: Long): Optional<Role>
+    + findByName(name: Roles): Optional<Role>
+    + findAll(): List<Role>
+    + save(role: Role): Role
+    + existsByName(name: Roles): boolean
+  }
+}
+UserRepository --> User
+PasswordRecoveryRepository --> PasswordRecovery
+RoleRepository --> Role
+
+package "iam.domain.exceptions" {
+  class InactiveUserException
+  class InvalidCredentialsException
+  class RoleNotFoundException
+  class UsernameAlreadyExistsException
+  class UserNotFoundException
+}
+
+@enduml
