@@ -491,6 +491,137 @@ El responsable de calidad accede a los lotes de producción y selecciona un lote
 
 El responsable de calidad accede al inventario de materias primas, donde el sistema advierte cuántos materiales se encuentran por debajo del umbral mínimo. Desde allí registra una nueva materia prima con su código interno, proveedor, lote del proveedor, fecha de vencimiento, cantidad inicial, unidad de medida y stock mínimo. Al confirmar, el material aparece en el inventario con su estado de stock.
 
+**- Task Flow 10:** Registro de cuenta e inicio de sesión desde la aplicación móvil
+
+<p align="center">
+  <img src="../assets/img/chapter-v/Wireflow Diagrams/task-flow-10.png"
+    alt="task-flow-10"/>
+</p>
+
+#### Pasos del Task Flow 10:
+1. El visitante ingresa a la aplicación móvil
+2. El visitante selecciona registrarse como QA Manager / Supervisor
+3. El visitante ingresa su usuario
+4. El visitante ingresa y confirma su contraseña
+5. El visitante crea su cuenta
+6. El usuario regresa a la pantalla de inicio de sesión
+7. El usuario inicia sesión con su usuario y contraseña
+8. El usuario ingresa al Dashboard
+
+**- User Goal 10:** Como visitante, quiero crear mi cuenta e iniciar sesión desde la aplicación móvil, para supervisar la operación del laboratorio desde cualquier lugar de la planta.
+
+<p align="center">
+  <img src="../assets/img/chapter-v/Wireflow Diagrams/wireflow-10.png"
+    alt="wire-flow-10"/>
+</p>
+
+El visitante accede a la aplicación móvil y, desde la pantalla de inicio de sesión, elige registrarse como QA Manager / Supervisor. Ingresa su usuario, define y confirma su contraseña, y crea la cuenta. Luego inicia sesión con sus credenciales y accede al Dashboard, donde visualiza el estado operativo del laboratorio. Si el usuario ya está registrado o las contraseñas no coinciden, el sistema impide crear la cuenta.
+
+**- Task Flow 11:** Reconocimiento de alertas críticas desde el Dashboard
+
+<p align="center">
+  <img src="../assets/img/chapter-v/Wireflow Diagrams/task-flow-11.png"
+    alt="task-flow-11"/>
+</p>
+
+#### Pasos del Task Flow 11:
+1. El personal operativo ingresa a la aplicación móvil
+2. El personal operativo revisa el panel de riesgos del Dashboard
+3. El personal operativo selecciona ver todas las alertas críticas
+4. El personal operativo revisa el sensor, el lote afectado, el valor registrado y el umbral BPM de la desviación principal
+5. El personal operativo revisa el registro del incidente
+6. El personal operativo reconoce la alerta
+7. El personal operativo inspecciona las demás alertas críticas
+8. El personal operativo cierra la ventana de alertas
+
+**- User Goal 11:** Como personal operativo, quiero revisar y reconocer las alertas críticas desde el Dashboard, para dejar constancia de que estoy atendiendo las desviaciones detectadas.
+
+<p align="center">
+  <img src="../assets/img/chapter-v/Wireflow Diagrams/wireflow-11.png"
+    alt="wire-flow-11"/>
+</p>
+
+El personal operativo identifica en el panel de riesgos del Dashboard que existen alertas críticas y abre la ventana que las reúne. En la desviación principal revisa el sensor, la unidad de almacenamiento y el lote afectados, compara el valor registrado con el umbral BPM y lee el registro del incidente. Después reconoce la alerta para dejar constancia de su atención e inspecciona las demás alertas críticas. Desde esta ventana también puede abrir la investigación o consultar el audit log.
+
+**- Task Flow 12:** Rechazo de un lote no conforme
+
+<p align="center">
+  <img src="../assets/img/chapter-v/Wireflow Diagrams/task-flow-12.png"
+    alt="task-flow-12"/>
+</p>
+
+#### Pasos del Task Flow 12:
+1. El responsable de calidad abre el menú principal
+2. El responsable de calidad va a la sección de Lotes
+3. El responsable de calidad revisa el detalle de un lote pendiente
+4. El responsable de calidad selecciona rechazar el lote desde su tarjeta
+5. El responsable de calidad ingresa la fecha de rechazo
+6. El responsable de calidad describe el motivo regulatorio o la no conformidad BPM
+7. El responsable de calidad confirma el rechazo
+8. El responsable de calidad visualiza el lote con estado rechazado
+
+**- User Goal 12:** Como responsable de calidad y supervisión, quiero rechazar un lote no conforme registrando la fecha y el motivo, para que la decisión quede sustentada según las Buenas Prácticas de Manufactura.
+
+<p align="center">
+  <img src="../assets/img/chapter-v/Wireflow Diagrams/wireflow-12.png"
+    alt="wire-flow-12"/>
+</p>
+
+El responsable de calidad accede a los lotes de producción y revisa el detalle de un lote pendiente de aprobación. Al identificar que no cumple los criterios de calidad, selecciona rechazarlo desde su tarjeta y completa el formulario de rechazo con la fecha y el motivo regulatorio, que es obligatorio según las BPM. Al confirmar, el lote pasa a estado rechazado y conserva las notas que sustentan la decisión.
+
+**- Task Flow 13:** Registro de un producto farmacéutico
+
+<p align="center">
+  <img src="../assets/img/chapter-v/Wireflow Diagrams/task-flow-13.png"
+    alt="task-flow-13"/>
+</p>
+
+#### Pasos del Task Flow 13:
+1. El responsable de calidad abre el menú principal
+2. El responsable de calidad va a la sección de Productos
+3. El responsable de calidad revisa el catálogo de productos registrados
+4. El responsable de calidad selecciona registrar un nuevo producto
+5. El responsable de calidad ingresa el código interno y el nombre comercial
+6. El responsable de calidad ingresa la descripción terapéutica
+7. El responsable de calidad ingresa las especificaciones de calidad BPM
+8. El responsable de calidad confirma el registro
+9. El responsable de calidad visualiza el producto en el catálogo
+
+**- User Goal 13:** Como responsable de calidad y supervisión, quiero registrar los productos farmacéuticos con sus especificaciones BPM, para asociarlos a los lotes que se fabrican y evaluar su calidad.
+
+<p align="center">
+  <img src="../assets/img/chapter-v/Wireflow Diagrams/wireflow-13.png"
+    alt="wire-flow-13"/>
+</p>
+
+El responsable de calidad accede al catálogo de productos farmacéuticos y selecciona registrar uno nuevo. Ingresa su código interno, nombre comercial y descripción terapéutica, y define las especificaciones de calidad BPM con los criterios de aceptación, los límites y los controles requeridos. Al confirmar, el producto aparece en el catálogo y queda disponible para asociarlo a los lotes de producción.
+
+**- Task Flow 14:** Gestión de la suscripción y cambio de plan
+
+<p align="center">
+  <img src="../assets/img/chapter-v/Wireflow Diagrams/task-flow-14.png"
+    alt="task-flow-14"/>
+</p>
+
+#### Pasos del Task Flow 14:
+1. El responsable de calidad abre el menú principal
+2. El responsable de calidad va a la sección de Facturación
+3. El responsable de calidad revisa el plan, el estado y el periodo de su suscripción
+4. El responsable de calidad consulta el historial de pagos
+5. El responsable de calidad descarga el recibo en PDF de un pago
+6. El responsable de calidad selecciona cambiar de plan
+7. El responsable de calidad compara los planes con facturación mensual y anual
+8. El responsable de calidad selecciona un nuevo plan
+
+**- User Goal 14:** Como responsable de calidad y supervisión, quiero revisar mi suscripción y su historial de pagos y cambiar de plan cuando lo necesite, para ajustar QualiTrack al tamaño de mi laboratorio.
+
+<p align="center">
+  <img src="../assets/img/chapter-v/Wireflow Diagrams/wireflow-14.png"
+    alt="wire-flow-14"/>
+</p>
+
+El responsable de calidad accede al resumen de facturación, donde revisa el plan contratado, su estado y el periodo vigente, consulta el historial de pagos procesados por Stripe y descarga los recibos en PDF. Si necesita más usuarios o registros de equipos, selecciona cambiar de plan, compara las opciones con facturación mensual y anual y elige el plan que mejor se ajusta a su laboratorio. Desde el mismo resumen también puede cancelar la suscripción.
+
 ### 5.4.3. Applications Mock-ups
 
 #### Web Application
