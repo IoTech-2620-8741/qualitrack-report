@@ -259,10 +259,8 @@ az account show --query "{tenant:tenantId, subscription:id}" -o table
 
 4) Después de aceptar y realizar el merge a main, esperamos a que termine el workflow de despliegue hacia Azure Container Apps que hemos creado:
 
-![Step 9-5 - Workflow de despliegue en curso](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-9-5.png)
+* Posteriormente, se realizó un hotfix (**hotfix/deploy-image-flag**) hacia main para corregir la construcción de la imagen Docker en el workflow de despliegue. Este es el workflow que terminó correctamente:
 
-* Posteriormente, se realizó un hotfix (**hotfix/deploy-docker-build**) hacia main para corregir la construcción de la imagen Docker en el workflow de despliegue. Este es el workflow que terminó correctamente:
-
-![Step 9-6 - Workflow de despliegue completado](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-9-6.png)
+![Step 9-6 - Workflow de despliegue completado](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-9-5.png)
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
