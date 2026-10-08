@@ -1700,7 +1700,7 @@ El Context Map resultante mantiene una alta cohesión dentro de cada dominio, re
 
 ### 4.1.3. Software Architecture. 
 
-En esta sección se presenta la arquitectura de software de QualiTrack documentada mediante el C4 Model propuesto por Simon Brown, utilizando Structurizr DSL como fuente única de verdad. El modelo se define una sola vez en un archivo .dsl versionado en el repositorio de la organización, y a partir de él se generan las vistas que se exportan como imágenes para este informe; el código DSL no forma parte del documento.
+En esta sección se presenta la arquitectura de software de QualiTrack documentada mediante el C4 Model propuesto por Simon Brown, utilizando Structurizr DSL como fuente única de verdad. El modelo se define una sola vez en el archivo `docs/c4/qualitrack-workspace.dsl`, versionado en el repositorio del informe dentro de la organización, y a partir de él se generan las vistas que se exportan como imágenes para este informe; el código DSL no forma parte del documento.
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram.
 
@@ -1720,7 +1720,7 @@ Regulatory Inspector: inspector regulatorio (DIGEMID u organismo equivalente). N
 
 QualiTrack Platform: sistema de interés. Monitorea las condiciones ambientales, ejecuta la respuesta automática local y conserva el registro trazable de mediciones, desviaciones y acciones correctivas.
 Stripe: procesa los pagos de las suscripciones de los laboratorios clientes.
-Resend API: entrega los correos transaccionales (activación de cuenta, recuperación de contraseña y aviso de desviación crítica).
+Gmail SMTP: entrega los correos transaccionales (credenciales del personal, códigos de recuperación de contraseña y aviso de desviación crítica). El backend también admite Resend API como proveedor alternativo, configurable sin cambiar el código.
 Firebase Cloud Messaging: entrega las notificaciones push a la aplicación móvil.
 QualiTrack Sensing Hardware: sensor BME680, actuadores e interfaz física del nodo. Se modela como sistema externo porque no ejecuta software de QualiTrack: la Embedded Application lo gobierna a través de GPIO, I2C y PWM, pero el hardware en sí queda fuera del límite del sistema de software.
 
@@ -1743,7 +1743,7 @@ La vista **System Context** centra la representación en QualiTrack Platform com
 
 - **QualiTrack Platform → Stripe** *(HTTPS / REST)*: gestiona la contratación y el estado de las suscripciones.
 - **Stripe → QualiTrack Platform** *(Webhook HTTPS, asíncrona)*: notifica los eventos de pago. Se modela como relación de retorno y no como simple respuesta, porque la confirmación del pago llega fuera del ciclo de la solicitud original.
-- **QualiTrack Platform → Resend API** *(HTTPS / API)*: solicita el envío de los correos transaccionales.
+- **QualiTrack Platform → Gmail SMTP** *(SMTP / TLS)*: solicita el envío de los correos transaccionales.
 - **QualiTrack Platform → Firebase Cloud Messaging** *(HTTPS / API)*: solicita el envío de las notificaciones push.
 - **Firebase Cloud Messaging → QualiTrack Platform** *(HTTPS, asíncrona)*: entrega la notificación al dispositivo del usuario.
 - **QualiTrack Platform → QualiTrack Sensing Hardware** *(GPIO / I2C / PWM)*: lee el sensor y acciona los actuadores del nodo.
@@ -1752,13 +1752,15 @@ La vista **System Context** centra la representación en QualiTrack Platform com
 
 La vista Container descompone QualiTrack Platform en sus unidades desplegables de forma independiente, mostrando la distribución de responsabilidades entre ellas, las decisiones principales de tecnología y los protocolos de comunicación. Siguiendo la definición de C4, un contenedor es una unidad ejecutable o almacén de datos desplegable por separado, no un contenedor de Docker.
 
-![C4 - System Container](../assets/img/chapter-iv/c4-Containers.png)
+![C4 - Container](../assets/img/chapter-iv/c4-Containers.png)
 
 **Productos web:**
 
-- **Landing Page** — *HTML5, CSS3, JavaScript.* Sitio estático público con la propuesta de valor, los planes y los documentos legales. Sus call-to-action dirigen al visitante hacia el registro en la Web Application o hacia la descarga de la Mobile Application.
-- **Web Server** — *Firebase Hosting.* Entrega al navegador del usuario el paquete compilado de la aplicación Angular. Se modela como contenedor independiente porque su ciclo de despliegue y su responsabilidad (servir estáticos) están separados de la ejecución de la SPA en el navegador.
-- **Web Application** — *TypeScript, Angular.* Se ejecuta en el navegador del Quality Supervisor. Cubre la gestión de la instalación y sus ambientes, el inventario de materia prima, los equipos y la vinculación de nodos, la configuración de rangos, la supervisión de telemetría, los lotes de producto, la atención de alertas y los reportes de trazabilidad. Consume el Cloud REST API mediante JSON sobre HTTPS y redirige al checkout alojado de Stripe.
+- **Landing Page** — *HTML5, CSS3, JavaScript.* Sitio estático público con la propuesta de valor, los planes y los documentos legales. Sus call-to-action dirigen al visitante hacia el registro y el inicio de sesión en la Web Application, o hacia la descarga de la Mobile Application.
+- **Web Application** — *Angular build, Firebase Hosting.* Es el punto de acceso web de QualiTrack: el Quality Supervisor la visita por HTTPS y esta entrega a su navegador el contenido estático y la Single-Page Application. No contiene lógica de negocio; su responsabilidad es servir la aplicación compilada.
+- **Single-Page Application** — *TypeScript, Angular.* Se ejecuta en el navegador del Quality Supervisor una vez que la Web Application la entrega. Cubre la gestión de la instalación, sus ambientes y su personal, el perfil del usuario, el inventario de materia prima, los equipos y la vinculación de nodos, la configuración de rangos, la supervisión de telemetría, los productos y lotes, la atención de alertas y los reportes de trazabilidad. Consume el Cloud REST API mediante JSON sobre HTTPS y redirige al checkout alojado de Stripe.
+
+La separación entre **Web Application** y **Single-Page Application** sigue la convención de C4 para aplicaciones de una sola página: el usuario visita la Web Application (relación *Visita QualiTrack en*), esta entrega la SPA al navegador (relación *Entrega la aplicación al navegador del usuario*) y, desde ese momento, el usuario trabaja sobre la SPA, que es la que se comunica con el Cloud REST API. Por eso la Landing Page dirige al visitante hacia la Web Application y no directamente hacia la SPA.
 
 **Producto móvil:**
 
@@ -1767,8 +1769,8 @@ La vista Container descompone QualiTrack Platform en sus unidades desplegables d
 
 **Servicio central:**
 
-- **Cloud REST API** — *Java 26, Spring Boot, Spring Data JPA.* Monolito modular: una única unidad desplegable que aloja los nueve bounded contexts identificados en el Strategic-Level DDD (Identity and Access Management, Payments and Subscriptions, Laboratory Management, Inventory Management, Equipment Management, Tracking and Telemetry, Product Batch Management, Compliance and Alerting, Reporting and Audit). La decisión de mantener un solo contenedor en lugar de un despliegue por contexto responde al tamaño del equipo y al alcance del ciclo: los límites se preservan en el código mediante módulos y Anti-Corruption Layers, no mediante procesos separados, y la descomposición interna se documenta en las vistas de componentes de la sección 4.2.
-- **Cloud Database** — *MySQL 8.* Persistencia central de los nueve bounded contexts. Se accede mediante JPA sobre TCP 3306.
+- **Cloud REST API** — *Java 26, Spring Boot, Spring Data JPA.* Monolito modular: una única unidad desplegable que aloja los diez bounded contexts identificados en el Strategic-Level DDD (Identity & Access Management, Profile Management, Payments & Subscriptions, Laboratory Management, Inventory Management, Equipment Management, Tracking & Telemetry, Product Batch Management, Compliance & Alerting, Reporting & Audit). La decisión de mantener un solo contenedor en lugar de un despliegue por contexto responde al tamaño del equipo y al alcance del ciclo: los límites se preservan en el código mediante módulos y Anti-Corruption Layers, no mediante procesos separados, y la descomposición interna se documenta en las vistas de componentes de la sección 4.2.
+- **Cloud Database** — *MySQL 8.4.* Persistencia central de los diez bounded contexts. Se accede mediante JPA sobre TCP 3306.
 
 **Borde:**
 
