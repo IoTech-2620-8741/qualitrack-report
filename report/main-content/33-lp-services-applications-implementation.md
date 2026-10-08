@@ -664,8 +664,8 @@ La siguiente tabla relaciona cada clase de prueba con el Bounded Context, los co
 Ejecución de la suite de pruebas del backend:
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/backend-test-suite.png" alt="Ejecución de la suite de pruebas del backend" width="90%">
-  <p><em>Figura: Ejecución de la suite de pruebas del backend. Esta evidencia muestra la ejecución de las pruebas unitarias y de integración del RESTful API con Maven, que verifican el comportamiento de los servicios que consume la Web Application.</em></p>
+  <img src="../assets/img/chapter-vi/sprint-1/backend-test-suite.jpg" alt="Ejecución de la suite de pruebas del backend" width="90%">
+  <p><em>Figura: Ejecución de la suite de pruebas del backend en GitHub Actions. Esta evidencia muestra el workflow de integración continua que ejecuta con Maven las 172 pruebas unitarias y de integración del RESTful API, todas aprobadas (BUILD SUCCESS).</em></p>
 </div>
 
 Commits relacionados con las pruebas en este sprint:
@@ -795,165 +795,150 @@ La revisión del sprint verificó que un visitante pueda recorrer la Landing Pag
 </div>
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-change-password.png" alt="Web Application - Change temporary password" width="90%">
-  <p><em>Figura: Cambio obligatorio de la contraseña temporal. Esta pantalla muestra que el personal registrado por el responsable de calidad debe definir su propia contraseña en su primer acceso.</em></p>
-</div>
-
-<div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-onboarding-plans.png" alt="Web Application - Plan selection" width="90%">
-  <p><em>Figura: Selección del plan durante la configuración inicial. Esta evidencia muestra cómo el responsable de calidad sin suscripción activa elige un plan mensual o anual antes de usar las funciones operativas.</em></p>
-</div>
-
-<div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-payment-success.png" alt="Web Application - Payment confirmation" width="90%">
-  <p><em>Figura: Confirmación del pago de la suscripción. Esta vista valida el retorno desde Stripe Checkout y la activación de la suscripción del laboratorio.</em></p>
-</div>
-
-<div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-lab-registration.png" alt="Web Application - Laboratory registration" width="90%">
-  <p><em>Figura: Registro del laboratorio. Esta pantalla evidencia el último paso de la configuración inicial: nombre, RUC, dirección, teléfono y regulaciones aplicables de la instalación.</em></p>
+  <img src="../assets/img/chapter-vi/sprint-1/web-onboarding-plans.jpg" alt="Web Application - Plan selection" width="90%">
+  <p><em>Figura: Selección del plan de suscripción. Esta evidencia muestra los planes Standard Lab y Enterprise en modalidad mensual y anual, con sus cuentas de usuario y dispositivos conectados, que el responsable de calidad elige antes de usar las funciones operativas.</em></p>
 </div>
 
 *Panel de control*
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-dashboard.png" alt="Web Application - Dashboard" width="90%">
+  <img src="../assets/img/chapter-vi/sprint-1/web-dashboard.jpg" alt="Web Application - Dashboard" width="90%">
   <p><em>Figura: Panel de control del laboratorio. Esta evidencia reúne en una sola vista los equipos operativos, los lotes en proceso, las alertas abiertas, las materias primas con stock bajo, la telemetría reciente y el estado de la suscripción.</em></p>
 </div>
 
 *Laboratorio, ambientes y personal*
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-lab-profile.png" alt="Web Application - Laboratory profile" width="90%">
+  <img src="../assets/img/chapter-vi/sprint-1/web-lab-profile.jpg" alt="Web Application - Laboratory profile" width="90%">
   <p><em>Figura: Perfil del laboratorio. Esta vista muestra los datos registrados de la instalación y permite actualizarlos.</em></p>
 </div>
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-environments.png" alt="Web Application - Environments" width="90%">
+  <img src="../assets/img/chapter-vi/sprint-1/web-environments.jpg" alt="Web Application - Environments" width="90%">
   <p><em>Figura: Ambientes del laboratorio. Esta evidencia muestra el registro de ambientes y la definición de su uso (laboratorio, producción, almacén de materias primas o de producto), que determina qué se puede almacenar en cada uno.</em></p>
 </div>
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-staff.png" alt="Web Application - Staff" width="90%">
+  <img src="../assets/img/chapter-vi/sprint-1/web-staff.jpg" alt="Web Application - Staff" width="90%">
   <p><em>Figura: Personal del laboratorio. Esta pantalla muestra el registro de operarios y auditores, su cargo, su estado y la consulta de su actividad registrada.</em></p>
 </div>
 
 *Inventario de materias primas*
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-inventory-catalogue.png" alt="Web Application - Raw materials" width="90%">
+  <img src="../assets/img/chapter-vi/sprint-1/web-inventory-catalogue.jpg" alt="Web Application - Raw materials" width="90%">
   <p><em>Figura: Catálogo de materias primas por ambiente. Esta vista evidencia el stock utilizable y físico de cada material y resalta los que están por debajo del stock mínimo.</em></p>
 </div>
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-inventory-detail.png" alt="Web Application - Raw material detail" width="90%">
+  <img src="../assets/img/chapter-vi/sprint-1/web-inventory-detail.jpg" alt="Web Application - Raw material detail" width="90%">
   <p><em>Figura: Detalle de una materia prima. Esta evidencia muestra sus lotes recibidos con estado y vencimiento, su contenedor, el historial de movimientos y los lotes de producto que la consumieron.</em></p>
 </div>
 
 *Equipos y dispositivos IoT*
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-equipment-list.png" alt="Web Application - Equipment" width="90%">
+  <img src="../assets/img/chapter-vi/sprint-1/web-equipment-list.jpg" alt="Web Application - Equipment" width="90%">
   <p><em>Figura: Equipos y dispositivos IoT. Esta pantalla lista los equipos del laboratorio con su ambiente y estado operativo, e identifica los dispositivos ambientales y monitores de contenedor con su estado de conexión.</em></p>
 </div>
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-equipment-detail.png" alt="Web Application - Equipment detail" width="90%">
-  <p><em>Figura: Detalle de un equipo. Esta evidencia reúne su historial de mantenimiento, sus parámetros BPM, sus cambios de estado y su registro de auditoría.</em></p>
+  <img src="../assets/img/chapter-vi/sprint-1/web-equipment-detail.jpg" alt="Web Application - Equipment detail" width="90%">
+  <p><em>Figura: Detalle de un equipo. Esta evidencia reúne sus datos generales, la reubicación entre ambientes, el registro de cambios de su estado operativo y su historial de mantenimiento con el técnico responsable.</em></p>
 </div>
 
 *Monitoreo ambiental*
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-telemetry-monitoring.png" alt="Web Application - Telemetry dashboard" width="90%">
+  <img src="../assets/img/chapter-vi/sprint-1/web-telemetry-monitoring.jpg" alt="Web Application - Telemetry dashboard" width="90%">
   <p><em>Figura: Monitoreo ambiental en tiempo real. Esta vista muestra las lecturas actuales de calidad de aire, temperatura, humedad y luminosidad con su estado (normal, advertencia o crítico) frente a los rangos del perfil vigente.</em></p>
 </div>
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-telemetry-history.png" alt="Web Application - Telemetry history" width="90%">
+  <img src="../assets/img/chapter-vi/sprint-1/web-telemetry-history.jpg" alt="Web Application - Telemetry history" width="90%">
   <p><em>Figura: Historial de telemetría. Esta evidencia grafica las lecturas de un periodo de hasta 31 días junto con los rangos normal y crítico, resaltando las desviaciones.</em></p>
 </div>
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-environmental-profiles.png" alt="Web Application - Environmental profiles" width="90%">
-  <p><em>Figura: Perfiles ambientales. Esta pantalla evidencia la configuración versionada de rangos por ambiente y por contenedor, y las reglas de actuación automática del monitor (ventilación, enfriamiento y servo).</em></p>
+  <img src="../assets/img/chapter-vi/sprint-1/web-environmental-profiles.jpg" alt="Web Application - Environmental profiles" width="90%">
+  <p><em>Figura: Perfiles ambientales. Esta pantalla evidencia la configuración versionada de los límites normal y crítico por ambiente y por contenedor, que clasifican cada lectura como normal, advertencia o crítica.</em></p>
 </div>
 
 *Productos y lotes*
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-products.png" alt="Web Application - Products" width="90%">
+  <img src="../assets/img/chapter-vi/sprint-1/web-products.jpg" alt="Web Application - Products" width="90%">
   <p><em>Figura: Catálogo de productos farmacéuticos por ambiente. Esta vista muestra los productos registrados que pueden fabricarse en el laboratorio.</em></p>
 </div>
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-batches.png" alt="Web Application - Production batches" width="90%">
+  <img src="../assets/img/chapter-vi/sprint-1/web-batches.jpg" alt="Web Application - Production batches" width="90%">
   <p><em>Figura: Lotes de producción. Esta evidencia lista los lotes con su producto, cantidad y estado (pendiente, en proceso, liberado o rechazado).</em></p>
 </div>
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-batch-detail.png" alt="Web Application - Batch detail" width="90%">
-  <p><em>Figura: Detalle de un lote. Esta pantalla muestra el registro de consumos de materia prima, que descuenta el stock e inicia el lote, y la asociación de equipos y personal.</em></p>
+  <img src="../assets/img/chapter-vi/sprint-1/web-batch-detail.jpg" alt="Web Application - Batch detail" width="90%">
+  <p><em>Figura: Detalle de un lote en proceso. Esta pantalla muestra el registro de consumos de materia prima desde un lote liberado de un ambiente, que descuenta el stock del inventario, y el historial de consumos del lote.</em></p>
 </div>
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-batch-traceability.png" alt="Web Application - Batch traceability" width="90%">
-  <p><em>Figura: Trazabilidad de un lote. Esta evidencia reúne las materias primas con sus lotes de origen, los equipos, el personal y el contenedor donde se almacenó el producto.</em></p>
+  <img src="../assets/img/chapter-vi/sprint-1/web-batch-traceability.jpg" alt="Web Application - Batch traceability" width="90%">
+  <p><em>Figura: Trazabilidad de un lote liberado. Esta evidencia reúne las materias primas con sus lotes de origen, los equipos, el personal, el contenedor donde se almacenó el producto y la decisión de calidad firmada con su hash SHA-256.</em></p>
 </div>
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-batch-release.png" alt="Web Application - Batch release" width="90%">
-  <p><em>Figura: Liberación de un lote con firma digital. Esta vista evidencia que el responsable de calidad libera o rechaza el lote y que la liberación queda firmada con un hash SHA-256.</em></p>
+  <img src="../assets/img/chapter-vi/sprint-1/web-batch-release.jpg" alt="Web Application - Batch release" width="90%">
+  <p><em>Figura: Liberación de un lote. Esta vista evidencia que el responsable de calidad libera el lote con su fecha y sus notas de calidad, y que la liberación queda firmada con su usuario y ya no permite modificar el lote.</em></p>
 </div>
 
 *Alertas y avisos*
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-alerts.png" alt="Web Application - Deviation alerts" width="90%">
+  <img src="../assets/img/chapter-vi/sprint-1/web-alerts.jpg" alt="Web Application - Deviation alerts" width="90%">
   <p><em>Figura: Panel de alertas de desviación. Esta pantalla muestra las alertas por estado y severidad, con el ambiente, el dispositivo y la cantidad de desviaciones de cada incidente.</em></p>
 </div>
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-alert-detail.png" alt="Web Application - Alert detail" width="90%">
+  <img src="../assets/img/chapter-vi/sprint-1/web-alert-detail.jpg" alt="Web Application - Alert detail" width="90%">
   <p><em>Figura: Detalle de una alerta. Esta evidencia muestra la inspección técnica de la desviación, las acciones automáticas del contenedor y las acciones para atenderla y resolverla con notas.</em></p>
 </div>
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-notifications.png" alt="Web Application - Notifications" width="90%">
+  <img src="../assets/img/chapter-vi/sprint-1/web-notifications.jpg" alt="Web Application - Notifications" width="90%">
   <p><em>Figura: Campana de avisos y preferencias de notificación. Esta vista evidencia los avisos de alertas y lotes con su contador de no leídos, y la elección de qué avisos llegan a la aplicación y al correo.</em></p>
 </div>
 
 *Indicadores, reportes y auditoría*
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-kpi-dashboard.png" alt="Web Application - Indicators" width="90%">
-  <p><em>Figura: Indicadores ambientales. Esta pantalla muestra el resumen de mediciones del periodo (mínimo, máximo y promedio), el tiempo en rango y las tendencias de desviaciones por ambiente.</em></p>
+  <img src="../assets/img/chapter-vi/sprint-1/web-kpi-dashboard.jpg" alt="Web Application - Environmental summary" width="90%">
+  <p><em>Figura: Resumen ambiental. Esta pantalla muestra, para el periodo elegido (24 horas, 7 o 31 días) y por ambiente, la cantidad de lecturas, el promedio, el mínimo, el máximo y la última lectura de cada variable de los dispositivos.</em></p>
 </div>
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-reports.png" alt="Web Application - Reports" width="90%">
-  <p><em>Figura: Generación de reportes. Esta evidencia muestra los reportes en PDF ambiental, de trazabilidad de lote, de inventario y de mantenimiento, con su historial de generación.</em></p>
+  <img src="../assets/img/chapter-vi/sprint-1/web-reports.jpg" alt="Web Application - Reports" width="90%">
+  <p><em>Figura: Generación de reportes. Esta evidencia muestra los reportes de lote, ambiental y de inventario en PDF, y la exportación del historial técnico y de mantenimiento de los equipos.</em></p>
 </div>
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-audit-log.png" alt="Web Application - Audit log" width="90%">
-  <p><em>Figura: Registro de auditoría. Esta vista evidencia quién realizó cada acción y cuándo, sobre equipos, lotes y personal.</em></p>
+  <img src="../assets/img/chapter-vi/sprint-1/web-audit-log.jpg" alt="Web Application - Audit log" width="90%">
+  <p><em>Figura: Registro de auditoría. Esta vista evidencia quién realizó cada acción y cuándo, con filtros por equipo, lote y periodo.</em></p>
 </div>
 
 *Perfil y suscripción*
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-profile.png" alt="Web Application - Profile" width="90%">
-  <p><em>Figura: Perfil del usuario. Esta pantalla muestra los datos personales y la foto de perfil, junto con la información de la cuenta y del laboratorio.</em></p>
+  <img src="../assets/img/chapter-vi/sprint-1/web-profile.jpg" alt="Web Application - Profile" width="90%">
+  <p><em>Figura: Perfil del usuario. Esta pantalla muestra los datos personales y la foto de perfil, junto con la información de la cuenta (los datos de identidad y teléfono se ocultaron en la imagen).</em></p>
 </div>
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-billing.png" alt="Web Application - Billing summary" width="90%">
+  <img src="../assets/img/chapter-vi/sprint-1/web-billing.jpg" alt="Web Application - Billing summary" width="90%">
   <p><em>Figura: Resumen de la suscripción. Esta evidencia muestra el plan vigente, el periodo de facturación, el historial de pagos y la opción de cancelar la renovación.</em></p>
 </div>
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/web-language-es.png" alt="Web Application - Spanish interface" width="90%">
+  <img src="../assets/img/chapter-vi/sprint-1/web-language-es.jpg" alt="Web Application - Spanish interface" width="90%">
   <p><em>Figura: Interfaz en español. Esta vista valida la internacionalización de la Web Application en inglés y español con el selector de idioma.</em></p>
 </div>
 
@@ -1605,18 +1590,18 @@ La Landing Page es un sitio estático (`index.html` y la carpeta `public`), por 
 
 **Paso 1: Publicación con GitHub Pages**
 
-1) En el repositorio, vamos a Settings y después Pages:
+1) En el repositorio, vamos a Settings y después Pages. En Build and deployment seleccionamos **Deploy from a branch**, la rama **main** y la carpeta **/ (root)**, y guardamos:
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-landing-deployment-step-1-1.png" alt="Sección Pages del repositorio" width="90%">
-  <p><em>Figura: Sección Pages en la configuración del repositorio de la Landing Page. Esta vista evidencia el punto de partida de la publicación con GitHub Pages.</em></p>
+  <img src="../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-landing-deployment-step-1-1.jpg" alt="Configuración de GitHub Pages" width="90%">
+  <p><em>Figura: Configuración de GitHub Pages en el repositorio de la Landing Page. Esta vista evidencia el sitio publicado y su publicación desde la rama main y la carpeta raíz del repositorio.</em></p>
 </div>
 
-2) En Build and deployment, seleccionamos **Deploy from a branch**, la rama **main** y la carpeta **/ (root)**, y guardamos. Con cada push a main, el workflow **pages-build-deployment** publica el sitio:
+2) Con cada push a main, el workflow **pages-build-deployment** de GitHub Actions publica el sitio:
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-landing-deployment-step-1-2.png" alt="Configuración de GitHub Pages" width="90%">
-  <p><em>Figura: Configuración de GitHub Pages en el repositorio de la Landing Page. Esta vista evidencia la publicación desde la rama main y la carpeta raíz del repositorio.</em></p>
+  <img src="../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-landing-deployment-step-1-2.jpg" alt="Workflow de publicación de la Landing Page" width="90%">
+  <p><em>Figura: Ejecuciones del workflow pages-build-deployment en GitHub Actions. Esta evidencia muestra las publicaciones de la Landing Page realizadas desde la rama main.</em></p>
 </div>
 
 **Paso 2: Verificaciones**
