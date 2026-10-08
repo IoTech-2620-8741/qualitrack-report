@@ -186,11 +186,11 @@ Previo a iniciar los pasos:
 
 ![Step 6-1 - Obtención del ID de la identidad de la aplicación](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-6-1.png)
 
-* Asigna permisos para descargar imagenes de contenedores en el ACR
+* Asigna permisos para descargar imágenes de contenedores en el ACR:
 
 ![Step 6-2 - Asignación del rol AcrPull en el registro de contenedores](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-6-2.png)
 
-* Configura la identidad administrada por el sistema de la aplicación de contenedor
+* Configura la identidad administrada por el sistema de la aplicación de contenedor:
 
 ![Step 6-3 - Configuración de la identidad del sistema en el registro](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-6-3.png)
 
