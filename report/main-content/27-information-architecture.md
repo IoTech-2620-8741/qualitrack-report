@@ -11,7 +11,7 @@ La arquitectura de la información de **QualiTrack** está diseñada para una na
     * **Features:** Desglose técnico de funcionalidades clave del producto.
     * **Benefits:** Ventajas competitivas como la eliminación del error humano.
     * **About Us:** Propósito de QualiTrack y cumplimiento con DIGEMID.
-    * **Our Team:** Perfiles del equipo de ClosedSource.
+    * **Our Team:** Perfiles del equipo de QualiTrack.
     * **Plans:** Opciones de precios Standard y Enterprise.
     * **Testimonials & CTA:** Reseñas de directores de QA y llamado a la acción final.
 * **Agrupación de Contenidos:** El contenido se agrupa lógicamente mediante el uso de contenedores visuales. Por ejemplo, las funcionalidades de la plataforma se presentan en un acordeón interactivo para no saturar al usuario, permitiéndole expandir solo el área de su interés técnico.
