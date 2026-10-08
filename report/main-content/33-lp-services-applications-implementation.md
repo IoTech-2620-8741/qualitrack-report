@@ -247,7 +247,7 @@ Step-9-1
 
 2) Creamos nuestro PR hacia main:
 
-* Previo a la creación del PR, verificamo que todo lo creado en Azure funcione correctamente.
+* Previo a la creación del PR, verificamos que todo lo creado en Azure funcione correctamente.
 
 Step-9-2
 
@@ -257,9 +257,11 @@ Step-9-3
 
 Step-9-4
 
-4) Después de aceptar y realizar el merge a main, esperamos a que termine el workflow de despliegue hacia Azure Container Apps que hemos creado
+4) Después de aceptar y realizar el merge a main, esperamos a que termine el workflow de despliegue hacia Azure Container Apps que hemos creado:
 
 Step-9-5
+
+* Posteriormente, se realizó un hotfix (**hotfix/deploy-docker-build**) hacia main para corregir la construcción de la imagen Docker en el workflow de despliegue. Este es el workflow que terminó correctamente:
 
 Step-9-6
 
