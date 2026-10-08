@@ -267,30 +267,30 @@ az account show --query "{tenant:tenantId, subscription:id}" -o table
 
 1) Entramos a la aplicación del contenedor, dentro, entramos a revisiones y réplicas:
 
-Step-10-1
+![Step 10-1 - Revisiones y réplicas de la aplicación contenedora](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-10-1.png)
 
 2) Verificamos que podemos entrar a la documentación Swagger con el link: [Qualitrack Swagger Documentation](https://iotech-qualitrack-api.wonderfulocean-c1f38f8b.chilecentral.azurecontainerapps.io/swagger-ui/index.html)
 
-Step-10-2
+![Step 10-2 - Documentación Swagger de la API desplegada](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-10-2.png)
 
 3) Verificamos la base de datos usando MySQL Workbench mediante una conexión remota y si existen las tablas:
 
-Step-10-3
+![Step 10-3 - Conexión exitosa en MySQL Workbench](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-10-3.png)
 
-Step-10-4
+![Step 10-4 - Tablas de la base de datos iotech_qualitrack](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-10-4.png)
 
 4) Etiquetamos la rama main con la nuev version de lanzamiento
 
-Step-10-5
+![Step 10-5 - Lista de releases del repositorio](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-10-5.png)
 
-Step-10-6
+![Step 10-6 - Creación de la release v1.0.0](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-10-6.png)
 
-Step-10-7
+![Step 10-7 - Release v1.0.0 publicada](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-10-7.png)
 
 * Tambien eliminamos las ramas release y hotfix, cumpliendo el estandar Gitflow
 
 5) En nuestra aplicación de contenedores, en la sección aplicaciones, contenedores y variables de entorno quitamos SPRING_JPA_HIBERNATE_DDL_AUTO para evitar cambios de esquema
 
-Step-10-8
+![Step 10-8 - Variable SPRING_JPA_HIBERNATE_DDL_AUTO a eliminar](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-10-8.png)
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
