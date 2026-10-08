@@ -533,174 +533,144 @@ El diagrama de base de datos representa las tablas de equipos, configuraciones d
 
 ### 4.2.4. Bounded Context: Laboratory Management
 
-Laboratory Management administra la organización física sobre la cual opera QualiTrack. Aunque el nombre del Bounded Context se conserva por compatibilidad con el producto existente, su alcance considera laboratorios y almacenes farmacéuticos, junto con sus ambientes y personal básico.
+Laboratory Management administra la organización física sobre la que opera QualiTrack: el laboratorio o almacén farmacéutico, sus **ambientes** (laboratorio, producción, almacén de materia prima, almacén de producto) y su **personal**. Los demás contextos ubican sus registros en estos ambientes: los equipos y nodos IoT, el inventario, los lotes y la telemetría.
 
-El código heredado contiene además clases de productos y materias primas. Estas se mantienen temporalmente como compatibilidad de la versión anterior, pero la responsabilidad actual se encuentra separada: el inventario de materias primas pertenece a Inventory Management y la trazabilidad de lotes de producto pertenece a Product Batch Management.
+El contexto conserva además un catálogo heredado de materias primas (`RawMaterial`) de la versión inicial. Ese catálogo es de solo lectura y existe para que Inventory Management importe de forma explícita los saldos iniciales. Las altas, recepciones y consumos nuevos pertenecen a Inventory Management, y los productos farmacéuticos, a Product Batch Management.
 
 #### 4.2.4.1. Domain Layer.
 
 **`Laboratory` — Aggregate Root**
 
-- **Propósito:** representa la organización principal registrada en QualiTrack.
-- **Atributos principales:** `id`, `name`, `ruc`, `address`, `phone`, `regulations` y `status`.
+- **Propósito:** representa la organización registrada en QualiTrack por el responsable de calidad durante la configuración inicial.
+- **Atributos principales:** `id`, `name` (`LaboratoryName`), `ruc`, `address` (`LaboratoryAddress`), `phone`, `regulations` y `status`.
 - **Método principal:** `updateProfile`.
-- **Relaciones:** utiliza `LaboratoryName`, `LaboratoryAddress`, `Regulation` y `LaboratoryStatus`.
+
+**`Environment` — Aggregate Root**
+
+- **Propósito:** zona del laboratorio o almacén que QualiTrack supervisa, identificada por un código y con un uso principal.
+- **Atributos principales:** `id`, `laboratoryId`, `code`, `name`, `description`, `usage` (`EnvironmentUsage`), `usageAssignedBy` y `usageAssignedAt`.
+- **Métodos principales:** `update`, `assignUsage` y `belongsTo`.
+- **Reglas:** el código se normaliza al registrarse y el ambiente empieza sin uso. El uso puede cambiar, pero no reasignarse al mismo valor. Inventory Management y Product Batch Management usan `usage` para validar dónde se guardan los lotes (almacén de materia prima o de producto).
 
 **`StaffMember` — Aggregate Root**
 
-- **Propósito:** representa una persona registrada como parte del personal básico de la organización.
-- **Atributos principales:** `id`, `laboratoryId`, `fullName`, `role`, `email` y `active`.
-- **Método principal:** `deactivate`.
-- **Relaciones:** Product Batch Management puede utilizar la referencia del personal para conservar trazabilidad, sin copiar su modelo interno.
-
-**`PharmaceuticalProduct` — Aggregate Root heredado**
-
-- **Propósito actual:** mantiene compatibilidad con funciones desarrolladas en la versión inicial de QualiTrack.
-- **Atributos principales:** `laboratoryId`, `code`, `name`, `description` y `unit`.
-- **Decisión de alcance:** la fabricación y trazabilidad de lotes se documenta en Product Batch Management. Esta clase no debe ampliar nuevamente Laboratory Management hacia responsabilidades de producción.
+- **Propósito:** persona del personal del laboratorio. Al registrarla, el responsable de calidad le crea una cuenta para iniciar sesión (US34, TS19).
+- **Atributos principales:** `id`, `laboratoryId`, `fullName`, `role`, `email`, `active`, `accessRole` (`StaffAccessRole`) y `userId`.
+- **Métodos principales:** `linkAccount`, `rename`, `changeEmail`, `belongsTo` y `deactivate`.
 
 **`RawMaterial` — Aggregate Root heredado**
 
-- **Propósito actual:** conserva lecturas históricas y compatibilidad con información creada en la versión anterior.
-- **Atributos principales:** `laboratoryId`, `code`, `name`, `unit`, `currentStock` y `minimumThreshold`.
-- **Decisión de alcance:** las nuevas altas, recepciones por lote, estados y consumos de materia prima pertenecen a Inventory Management. La creación heredada deja de ser la fuente de verdad del inventario nuevo.
+- **Propósito:** saldo de materia prima registrado antes de que existiera Inventory Management. Se consulta en solo lectura y se importa una única vez hacia Inventory Management.
+- **Atributos principales:** `id`, `laboratoryId`, `code`, `name`, `unit`, `currentStock` y `minimumThreshold`.
 
-**`LaboratoryAddress` — Entity / Value Object compuesto**
+**Entity y Value Objects**
 
-- **Atributos:** `street`, `city` y `country`.
-- **Propósito:** encapsula la dirección de la organización.
-
-**Value Objects y Enumerations**
-
-- `LaboratoryName`.
-- `Regulation`.
-- `StockQuantity` como elemento heredado de inventario.
+- `LaboratoryAddress`: `street`, `city` y `country`.
+- `LaboratoryName`, `Regulation` y `StockQuantity`.
+- `EnvironmentUsage`: `LABORATORY`, `PRODUCTION`, `RAW_MATERIAL_STORAGE`, `PRODUCT_STORAGE` y `OTHER`.
 - `LaboratoryStatus`: `ACTIVE` e `INACTIVE`.
+- `StaffAccessRole`: `OPERATOR` y `AUDITOR`. Define lo que puede hacer en la plataforma la cuenta del personal.
 
 **Commands principales**
 
-- `CreateLaboratoryCommand`.
-- `UpdateLaboratoryCommand`.
-- `RegisterStaffCommand`.
-- `DeactivateStaffCommand`.
-- `CreateProductCommand` y `CreateRawMaterialCommand` se mantienen asociados a compatibilidad heredada y no deben utilizarse para ampliar el nuevo alcance de inventario o producción.
+- `CreateLaboratoryCommand` y `UpdateLaboratoryCommand`.
+- `RegisterEnvironmentCommand`, `UpdateEnvironmentCommand` y `AssignEnvironmentUsageCommand` (US30, US31).
+- `RegisterStaffCommand` y `DeactivateStaffCommand`.
+- `CreateRawMaterialCommand` (catálogo heredado).
 
 **Queries principales**
 
 - `GetLaboratoryByIdQuery`.
-- `GetStaffByLabIdQuery`.
-- Consultas históricas de productos y materias primas se mantienen para compatibilidad mientras la migración hacia sus contextos propietarios se completa.
+- `GetEnvironmentsByLaboratoryIdQuery` y `GetEnvironmentByIdQuery`.
+- `GetStaffByLabIdQuery`, `GetStaffMemberByIdQuery` y `GetStaffMemberByUserIdQuery`.
+- `GetRawMaterialsByLabIdQuery` y `GetLowStockMaterialsByLabIdQuery` (catálogo heredado).
 
-**Eventos principales**
+**Eventos de dominio**
 
 - `LaboratoryRegisteredEvent`.
-- `StaffRegisteredEvent`.
-- `StaffDeactivatedEvent`.
-- Los eventos heredados de producto y materia prima permanecen disponibles para la transición del modelo existente.
+- `EnvironmentRegisteredEvent`, `EnvironmentUpdatedEvent` y `EnvironmentUsageAssignedEvent`.
+- `StaffRegisteredEvent` y `StaffDeactivatedEvent`.
+- `RawMaterialCreatedEvent` y `RawMaterialLowStockEvent`.
 
 **Repository Interfaces**
 
-- `LaboratoryRepository`.
-- `StaffRepository`.
-- `ProductRepository` y `RawMaterialRepository` continúan presentes en el código heredado mientras se completa la separación del dominio.
+- `LaboratoryRepository`, `EnvironmentRepository`, `StaffRepository` y `RawMaterialRepository`.
 
 #### 4.2.4.2. Interface Layer.
 
-**`LaboratoryController`**
+**REST controllers**
 
-- Expone el registro, consulta y actualización de la organización.
+- `LaboratoryController` — `/api/v1/laboratories`: registra, consulta y actualiza el laboratorio.
+- `LaboratoryEnvironmentsController` — `/api/v1/laboratories/{laboratoryId}/environments`: registra, lista, consulta y actualiza los ambientes, y asigna su uso con `POST /{environmentId}/usage-assignments`.
+- `LaboratoryStaffController` — `/api/v1/laboratories/{laboratoryId}/staff`: registra al personal, lo lista o consulta y lo desactiva con `POST /{staffId}/deactivations`.
+- `LaboratoryRawMaterialsController` — `/api/v1/laboratories/{laboratoryId}/raw-materials`: vista de solo lectura del catálogo heredado.
 
-**`LaboratoryStaffController` y `StaffController`**
+**Assemblers principales**
 
-- Permiten registrar, consultar y actualizar el estado del personal asociado al laboratorio.
+- `CreateLaboratoryCommandFromResourceAssembler`, `UpdateLaboratoryCommandFromResourceAssembler` y `LaboratoryResourceFromEntityAssembler`.
+- `RegisterEnvironmentCommandFromResourceAssembler`, `UpdateEnvironmentCommandFromResourceAssembler`, `AssignEnvironmentUsageCommandFromResourceAssembler` y `EnvironmentResourceFromEntityAssembler`.
+- `RegisterStaffCommandFromResourceAssembler` y `StaffResourceFromEntityAssembler`.
+- `RawMaterialResourceFromEntityAssembler`.
 
-**`LaboratoryProductsController` y `LaboratoryRawMaterialsController`**
+**Fachadas e integration events**
 
-- Corresponden a funcionalidades heredadas.
-- Las lecturas históricas pueden mantenerse mientras dure la transición.
-- Las nuevas operaciones de inventario deben dirigirse a Inventory Management y las nuevas operaciones relacionadas con lotes de producto a Product Batch Management.
-
-**`LaboratoryContextFacade`**
-
-Permite que otros Bounded Contexts validen laboratorios y consulten referencias básicas sin acceder directamente a los repositorios internos.
-
-**`LegacyInventoryFacade`**
-
-Expone únicamente la información necesaria para importar de forma explícita un saldo inicial hacia Inventory Management. Su objetivo es facilitar la migración sin convertir Laboratory Management en la fuente de verdad del nuevo inventario.
+- `LaboratoryContextFacade`: permite que otros contextos validen el laboratorio y sus ambientes (`existsEnvironment`, `findEnvironment`, `findEnvironments`) y resuelvan al personal (`findStaffMember`, `findStaffMemberByAccount`).
+- `LegacyInventoryFacade`: entrega los saldos heredados (`materials`) y los bloquea al importarlos (`lock`) hacia Inventory Management.
+- `LaboratoryTenantResourceLookup`: permite verificar que un recurso pertenezca al laboratorio del usuario autenticado.
+- Integration events: `LaboratoryRegisteredIntegrationEvent`, `EnvironmentRegisteredIntegrationEvent`, `EnvironmentUpdatedIntegrationEvent`, `EnvironmentUsageAssignedIntegrationEvent`, `StaffRegisteredIntegrationEvent`, `StaffDeactivatedIntegrationEvent`, `RawMaterialCreatedIntegrationEvent` y `RawMaterialLowStockIntegrationEvent`.
 
 #### 4.2.4.3. Application Layer.
 
 **Command Services**
 
 - `LaboratoryCommandService` / `LaboratoryCommandServiceImpl`.
-- `StaffCommandService` / `StaffCommandServiceImpl`.
-- `ProductCommandService` y `RawMaterialCommandService` corresponden a capacidades heredadas y deben mantenerse limitadas durante la transición.
+- `LaboratoryOnboardingService` / `LaboratoryOnboardingServiceImpl`: crea el laboratorio y lo asocia al responsable de calidad en una sola operación, después de verificar su suscripción vigente.
+- `EnvironmentCommandService` / `EnvironmentCommandServiceImpl`.
+- `StaffCommandService` / `StaffCommandServiceImpl`: registra al personal y le crea su cuenta mediante IAM.
+- `RawMaterialCommandService` / `RawMaterialCommandServiceImpl` (catálogo heredado).
 
 **Query Services**
 
-- `LaboratoryQueryService` / `LaboratoryQueryServiceImpl`.
-- `StaffQueryService` / `StaffQueryServiceImpl`.
-- `ProductQueryService` y `RawMaterialQueryService` mantienen compatibilidad de lectura.
+- `LaboratoryQueryService`, `EnvironmentQueryService`, `StaffQueryService` y `RawMaterialQueryService`, con sus implementaciones.
 
 **Event Handlers**
 
-- `LaboratoryRegisteredEventHandler`.
-- `StaffRegisteredEventHandler`.
-- `StaffDeactivatedEventHandler`.
-- Los handlers heredados de producto y materia prima continúan disponibles para la transición.
+- `LaboratoryRegisteredEventHandler`, `EnvironmentRegisteredEventHandler`, `EnvironmentUpdatedEventHandler`, `EnvironmentUsageAssignedEventHandler`, `StaffRegisteredEventHandler`, `StaffDeactivatedEventHandler`, `RawMaterialCreatedEventHandler` y `RawMaterialLowStockEventHandler`: publican los eventos de integración correspondientes.
+- `StaffAccountSynchronizationEventHandler`: mantiene alineado al personal con su cuenta y su perfil. Escucha los cambios de correo de IAM y los cambios de nombre de Profile Management (`ProfileUpdatedIntegrationEvent`).
 
 **ACL**
 
-- `LaboratoryContextFacadeImpl` implementa el contrato que utilizan otros contextos.
-- `LegacyInventoryFacadeImpl` permite que Inventory Management importe datos heredados sin acoplarse directamente a las entidades de Laboratory Management.
+- `ExternalIamService`: crea y deshabilita las cuentas del personal en IAM.
+- `LaboratoryExternalComplianceService`: comunica a Compliance & Alerting los avisos de bajo stock del catálogo heredado.
+- `LaboratoryContextFacadeImpl` y `LegacyInventoryFacadeImpl`: implementan las fachadas del contexto.
 
 #### 4.2.4.4. Infrastructure Layer.
 
-**Persistence Entities**
-
-- `LaboratoryPersistenceEntity`.
-- `StaffPersistenceEntity`.
-- `ProductPersistenceEntity` y `RawMaterialPersistenceEntity` permanecen como persistencia heredada.
-
-**Persistence Repositories**
-
-- `LaboratoryPersistenceRepository`.
-- `StaffPersistenceRepository`.
-- `ProductPersistenceRepository`.
-- `RawMaterialPersistenceRepository`.
-
-**Repository Adapters**
-
-- `LaboratoryRepositoryImpl`.
-- `StaffRepositoryImpl`.
-- `ProductRepositoryImpl`.
-- `RawMaterialRepositoryImpl`.
-
-**Converters**
-
-- `LaboratoryAddressPersistenceConverter`.
-- `LaboratoryStatusPersistenceConverter`.
-- `RegulationPersistenceConverter`.
+- **Persistence Entities, Spring Data JPA Repositories y Assemblers** para `Laboratory`, `Environment`, `StaffMember` y `RawMaterial`.
+- **Repository Adapters:** `LaboratoryRepositoryImpl`, `EnvironmentRepositoryImpl`, `StaffRepositoryImpl` y `RawMaterialRepositoryImpl`.
+- **Converters:** `EnvironmentUsagePersistenceConverter`, `LaboratoryAddressPersistenceConverter`, `LaboratoryStatusPersistenceConverter` y `RegulationPersistenceConverter`.
 
 #### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams.
 
-El diagrama de componentes presenta la posición de **Laboratory Management** dentro del **Cloud REST API**. Este contexto mantiene la información principal de la organización, sus ambientes y su personal, y proporciona referencias utilizadas por otros Bounded Contexts para validar la pertenencia de equipos, inventario, lotes y demás elementos operativos.
+El diagrama de componentes presenta **Laboratory Management** dentro del **Cloud REST API**. La Single-Page Application registra en este contexto la instalación, sus ambientes y su personal. El contexto verifica el plan vigente con Payments & Subscriptions, crea las cuentas del personal con IAM y sirve de referencia para Inventory, Equipment, Product Batch, Tracking y Profile.
 
-Para esta entrega se utiliza la vista de Structurizr **`Components-Laboratory`**, definida sobre el container `Cloud REST API`. En el C4 actual todavía pueden observarse relaciones asociadas con funcionalidades heredadas de productos y materias primas; estas se consideran parte de la transición hacia Inventory Management y Product Batch Management.
+Se utiliza la vista de Structurizr **`Components-Laboratory`**, definida sobre el container `Cloud REST API`.
 
 ![Laboratory Management Component Diagram](../assets/img/chapter-iv/Components-Laboratory.png)
 
 #### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams.
 
+Los diagramas de nivel de código presentan las clases del Domain Layer de Laboratory Management y el esquema relacional que persiste laboratorios, ambientes, personal y el catálogo heredado.
+
 ##### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams.
 
-El diagrama representa `Laboratory`, `StaffMember` y los elementos de valor asociados. También puede mostrar clases heredadas de `PharmaceuticalProduct` y `RawMaterial`; estas se documentan como elementos de transición hacia Product Batch Management e Inventory Management respectivamente.
+El diagrama muestra los Aggregates `Laboratory`, `Environment`, `StaffMember` y `RawMaterial`, la entidad `LaboratoryAddress`, sus Value Objects y enumeraciones, y los Commands, Queries, eventos e interfaces de repositorio del contexto.
 
-![Laboratory Management Domain Layer Class Diagram](../assets/img/chapter-iv/laboratory-domain-layer-class-diagram.png)
+![Laboratory Management Domain Layer Class Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-report/develop/docs/diagrams/domain/laboratory-domain-layer-class-diagram.puml&fmt=svg&v=4)
 
 ##### 4.2.4.6.2. Bounded Context Database Design Diagram.
 
-El diagrama de base de datos muestra la persistencia del laboratorio y su personal, además de las tablas heredadas que todavía se conservan en la implementación. La migración se realiza de forma controlada para evitar duplicar la fuente de verdad entre contextos.
+El diagrama de base de datos muestra las tablas de laboratorios, ambientes, personal y materias primas heredadas, relacionadas mediante el identificador del laboratorio.
 
 ![Laboratory Management Database Design Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/laboratory/laboratory-database-diagram.puml&fmt=svg&v=4)
 
