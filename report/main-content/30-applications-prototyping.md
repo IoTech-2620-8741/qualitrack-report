@@ -19,4 +19,4 @@ Link del video: https://bit.ly/4yGwGTr
 
 </div>
 
-Link del video: 
+Link del video: https://shorturl.at/pV2C9
