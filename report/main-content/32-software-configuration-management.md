@@ -1,7 +1,7 @@
 # Capítulo VI: Product Implementation, Validation & Deployment
 
 ## 6.1. Software Configuration Management
-En esta sección se establecen las decisiones, convenciones y herramientas utilizadas por el equipo ClosedSource para gestionar de manera consistente el desarrollo, integración y despliegue de los diferentes productos digitales que conforman QualiTrack. La solución IoT está compuesta por seis productos principales: Landing Page, Web Application, Mobile Application, Backend Web Service, Edge Application y Embedded Application.
+En esta sección se establecen las decisiones, convenciones y herramientas utilizadas por el equipo IoTech para gestionar de manera consistente el desarrollo, integración y despliegue de los diferentes productos digitales que conforman QualiTrack. La solución IoT está compuesta por seis productos principales: Landing Page, Web Application, Mobile Application, Backend Web Service, Edge Application y Embedded Application.
 
 Durante el ciclo de vida del proyecto se definen prácticas para el control y organización del código fuente, la configuración de los entornos de desarrollo y la preparación de los entornos de despliegue correspondientes a cada producto. Estas decisiones permiten mantener la trazabilidad de los cambios realizados durante los sprints, facilitar el trabajo colaborativo entre los miembros del equipo y asegurar una integración progresiva entre las diferentes capas y componentes de la solución QualiTrack.
 
@@ -108,8 +108,8 @@ El desarrollo de QualiTrack comprende la implementación de los diferentes produ
       https://github.com
     </a><br>
     <strong>Organización del proyecto:</strong>
-    <a href="https://github.com/ClosedSource-11848" target="_blank">
-      https://github.com/ClosedSource-11848
+    <a href="https://github.com/IoTech-2620-8741" target="_blank">
+      https://github.com/IoTech-2620-8741
     </a>
   </li>
   <li>
@@ -267,17 +267,17 @@ El despliegue de QualiTrack utiliza servicios diferenciados de acuerdo con las c
     </a>
   </li>
   <li>
-    <strong>Render:</strong> Plataforma utilizada para desplegar el Backend Web Service de QualiTrack.<br>
+    <strong>Azure Container Apps:</strong> Servicio de Microsoft Azure utilizado para desplegar el Backend Web Service de QualiTrack como contenedor Docker, a partir de la imagen almacenada en Azure Container Registry.<br>
     <strong>Ruta de referencia:</strong>
-    <a href="https://render.com/" target="_blank">
-      https://render.com/
+    <a href="https://azure.microsoft.com/products/container-apps" target="_blank">
+      https://azure.microsoft.com/products/container-apps
     </a>
   </li>
   <li>
-    <strong>Railway:</strong> Plataforma utilizada para desplegar la base de datos MySQL utilizada por QualiTrack.<br>
+    <strong>Azure Database for MySQL:</strong> Servicio administrado de Microsoft Azure (Flexible Server) utilizado para desplegar la base de datos MySQL utilizada por QualiTrack.<br>
     <strong>Ruta de referencia:</strong>
-    <a href="https://railway.com/" target="_blank">
-      https://railway.com/
+    <a href="https://azure.microsoft.com/products/mysql" target="_blank">
+      https://azure.microsoft.com/products/mysql
     </a>
   </li>
 </ul>
@@ -909,7 +909,7 @@ En esta sección se establece la configuración utilizada para el despliegue de 
 
 **Landing Page - GitHub Pages**
 
-La Landing Page de QualiTrack se desplegó mediante GitHub Pages a partir del repositorio ClosedSource-LandingPage. Al estar desarrollada principalmente con HTML, CSS y JavaScript, puede publicarse como un sitio estático directamente desde el repositorio de GitHub.
+La Landing Page de QualiTrack se desplegó mediante GitHub Pages a partir del repositorio qualitrack-landing-page. Al estar desarrollada principalmente con HTML, CSS y JavaScript, puede publicarse como un sitio estático directamente desde el repositorio de GitHub.
 
 **Pasos de Configuración y Despliegue**
 
@@ -942,7 +942,7 @@ La Frontend Web Application desarrollada con Angular se despliega mediante Fireb
 
 **Backend Web Service:** Será empaquetado en un contenedor Docker y desplegado en Microsoft Azure, desde donde se expondrán los servicios REST desarrollados con Spring Boot.
 
-**Database:** La base de datos MySQL será ejecutada en un contenedor Docker dentro de Microsoft Azure, proporcionando la persistencia requerida por el Backend Web Service.
+**Database:** La base de datos MySQL será ejecutada en Azure Database for MySQL (Flexible Server) dentro de Microsoft Azure, proporcionando la persistencia requerida por el Backend Web Service.
 
 **Mobile Application:** Las versiones de prueba desarrolladas con Flutter serán distribuidas mediante Firebase App Distribution, permitiendo entregar builds pre-release a los integrantes del equipo y testers autorizados.
 
