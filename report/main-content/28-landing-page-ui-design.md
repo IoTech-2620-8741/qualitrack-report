@@ -95,15 +95,15 @@ En 'Benefits', destacamos las ventajas de utilizar QualiTrack. A través de un d
 
 **About Us**
 
-La sección 'About Us' presenta a ClosedSource, la empresa detrás de QualiTrack. Aquí, compartimos nuestra misión de transformar la supervisión de procesos farmacéuticos mediante la integración IoT y el cumplimiento normativo, así como los valores de innovación, transparencia e integridad de datos que nos impulsan. Un video o imagen animada acompaña el texto, reforzando nuestro mensaje de una manera visualmente atractiva y moderna.
+La sección 'About Us' presenta a QualiTrack. Aquí, compartimos nuestra misión de transformar la supervisión de procesos farmacéuticos mediante la integración IoT y el cumplimiento normativo, así como los valores de innovación, transparencia e integridad de datos que nos impulsan. Un video o imagen animada acompaña el texto, reforzando nuestro mensaje de una manera visualmente atractiva y moderna.
 
-<div="center">
+<div align="center">
   <img src="../assets/img/chapter-v/Mockup Landing Page/aboutus-section-landing.png" alt="Mock-up de About Us">
 </div>
 
 **Our Team**
 
-La sección "Our Team" presenta a los ingenieros de software detrás de ClosedSource. Las tarjetas de perfil muestran una foto, el nombre, el cargo y una breve biografía de cada miembro. El diseño de 3 tarjetas arriba y 2 abajo, centradas, brinda un aspecto organizado y profesional, permitiendo a los usuarios conocer al equipo de desarrollo.
+La sección "Our Team" presenta a los ingenieros de software detrás de QualiTrack. Las tarjetas de perfil muestran una foto, el nombre, el cargo y una breve biografía de cada miembro. El diseño de 3 tarjetas arriba y 2 abajo, centradas, brinda un aspecto organizado y profesional, permitiendo a los usuarios conocer al equipo de desarrollo.
 
 <div align="center">
   <img src="../assets/img/chapter-v/Mockup Landing Page/ourteam-section-landing.png" alt="Mock-up de Our Team">
