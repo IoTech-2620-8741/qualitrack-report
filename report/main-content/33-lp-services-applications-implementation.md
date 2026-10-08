@@ -217,8 +217,8 @@ az account show --query "{tenant:tenantId, subscription:id}" -o table
 
 * El AZURE_CLIENT_ID es del paso 2
 
-Step-7-1
+![Step 7-1 - Sección de secretos y variables de GitHub Actions](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-7-1.png)
 
-Step-7-2
+![Step 7-2 - Secretos de repositorio para la conexión a Azure](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-7-2.png)
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
