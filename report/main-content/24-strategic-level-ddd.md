@@ -883,6 +883,8 @@ Finalmente, se trazaron fronteras alrededor de los grupos resultantes y se asign
   <img src="../assets/img/chapter-iv/3.png">
 </div>
 
+Durante la implementación del Sprint 1 se incorporó un décimo Bounded Context, **Profile Management**. Surgió al separar de Identity and Access Management los datos personales de cada persona (nombre completo, DNI, teléfono, ubicación y foto), que cambian por motivos distintos que la cuenta de acceso y que el resto del laboratorio consulta para mostrar quién atendió una alerta o integra el personal. Su canvas se presenta en la sección 4.1.1.3, sus relaciones en 4.1.2 y su diseño táctico en 4.2.10.
+
 A continuación se presenta el detalle de cada Bounded Context identificado. Para cada uno se muestra el recorte del tablero de Design-Level EventStorming correspondiente, junto con una explicación de sus agregados, comandos, eventos, políticas, read models y sistemas externos, así como de la responsabilidad que cumple dentro del dominio de Qualitrack. Esta descripción permite comprender cómo se distribuye el comportamiento del sistema entre los distintos contextos y cómo se relacionan entre sí mediante eventos y políticas.
 
 **Bounded context: Identity and Access Management**
@@ -917,7 +919,7 @@ De esta manera, el contexto garantiza que un laboratorio solo pueda registrarse 
 
 <div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Tracking-Telemetry.jpg"> </div>
 
-El Bounded Context de Tracking & Telemetry es responsable de recibir, registrar y dar seguimiento a las mediciones ambientales generadas por los sensores vinculados a los equipos del laboratorio, como temperatura, humedad, calidad del aire y luminosidad. Su modelo se organiza alrededor del agregado **EquipmentTelemetry**, que constituye la unidad de consistencia de este contexto y concentra el estado y el historial de las mediciones asociadas a cada equipo.
+El Bounded Context de Tracking & Telemetry es responsable de recibir, registrar y dar seguimiento a las mediciones ambientales generadas por los sensores vinculados a los equipos del laboratorio, como temperatura, humedad, calidad del aire y luminosidad. En la sesión de EventStorming su modelo se organizó alrededor del agregado **EquipmentTelemetry**, que concentraba el estado y el historial de las mediciones de cada equipo. En la implementación este modelo evolucionó: la unidad de consistencia pasó a ser **EnvironmentalProfile** (rangos permitidos y reglas de actuación de un ambiente o de un Monitor de Contenedor), y las lecturas y acciones se registran como las entidades **Measurement** y **ActuationEvent**, como se detalla en la sección 4.2.1.
 
 En el flujo de registro de mediciones, el comando Record **Telemetry Measurements** produce el evento Telemetry Measurement Recorded. Este comando se dispara a partir de la política Whenever Sensor Linked Then Record Telemetry Measurements, que conecta este contexto con Equipment Management y asegura que solo se registren mediciones de sensores previamente vinculados a un equipo. A partir de este evento se derivan los procesos de historial, estado y detección de anomalías.
 
@@ -1210,7 +1212,7 @@ Equipment Management conserva la autoridad sobre el estado y la calibración de 
  
 ---
 
-El modelado de estos seis escenarios permitió verificar que los nueve Bounded Contexts definidos son suficientes para resolver los casos de negocio de QualiTrack y que las colaboraciones entre ellos pueden expresarse mediante contratos explícitos. Asimismo, evidenció que la mayor parte de las dependencias corresponde a queries de referencia hacia el contexto propietario del dato y a events que comunican hechos ya ocurridos, patrón que sustenta las relaciones Customer/Supplier y Anti-Corruption Layer documentadas posteriormente en el Context Mapping.
+El modelado de estos seis escenarios permitió verificar que los Bounded Contexts definidos son suficientes para resolver los casos de negocio de QualiTrack y que las colaboraciones entre ellos pueden expresarse mediante contratos explícitos. Asimismo, evidenció que la mayor parte de las dependencias corresponde a queries de referencia hacia el contexto propietario del dato y a events que comunican hechos ya ocurridos, patrón que sustenta las relaciones Customer/Supplier y Anti-Corruption Layer documentadas posteriormente en el Context Mapping.
 
 #### 4.1.1.3 Bounded Context Canvases.  
 
@@ -1229,10 +1231,10 @@ El orden definido es el siguiente:
 7. Payments & Subscriptions
 8. Reporting & Audit
 9. Identity & Access Management (IAM)
+10. Profile Management
 
 El orden definido responde a la relevancia estratégica de cada Bounded Context para la propuesta de valor de QualiTrack, priorizando las capacidades directamente relacionadas con la trazabilidad, monitoreo, cumplimiento y control de los procesos del laboratorio.
 
-El orden definido es el siguiente:
 ---
 
 ##### Product Batch Management Context - Canvas
@@ -1326,6 +1328,26 @@ Su principal responsabilidad consiste en mantener separados los conceptos relaci
 Otros Bounded Contexts utilizan únicamente referencias como `UserId` para identificar usuarios sin incorporar directamente las entidades internas de IAM.
 
 ![Bounded Context Canvas - Identity & Access Management](../assets/img/chapter-iv/bc-iam.png)
+
+---
+
+##### Profile Management Context - Canvas
+
+Profile Management administra los datos personales que cada persona mantiene sobre sí misma en QualiTrack, separados de la cuenta de acceso que conserva Identity & Access Management. Otros contextos lo consultan para mostrar el nombre de las personas, sin incorporar su modelo.
+
+| Elemento | Descripción |
+|---|---|
+| **Name** | Profile Management |
+| **Purpose** | Conservar el nombre completo, DNI, teléfono, ubicación y foto de cada cuenta, y entregar a los demás contextos el nombre con que se muestra a una persona. |
+| **Strategic Classification** | Generic subdomain (Profiles and Preferences Management). No diferencia a QualiTrack frente a la competencia, pero es necesario para identificar a las personas en la trazabilidad. |
+| **Domain Roles** | Specification model: guarda datos que las personas actualizan y que otros contextos leen. |
+| **Inbound Communication** | La Single-Page Application consulta y actualiza el perfil y la foto del usuario autenticado y consulta el perfil del personal (`GET/PUT /users/me/profile`, `GET .../staff/{staffId}/profile`). Compliance & Alerting solicita el nombre de una persona (`displayNameOf`). |
+| **Outbound Communication** | Consulta en IAM la cuenta del perfil y en Laboratory Management el registro del personal vinculado. Publica `ProfileUpdatedIntegrationEvent` para que Laboratory Management actualice el nombre en la lista del personal. |
+| **Ubiquitous Language** | Profile, Person Name, DNI, Phone Number, Location, Profile Photo, Staff Profile. |
+| **Business Decisions** | El perfil se crea la primera vez que la persona lo guarda. La foto admite JPEG, PNG o WebP de hasta 2 MB y se guarda aparte del perfil. Si una persona no registró su nombre, se muestra su usuario. |
+| **Assumptions** | Cada cuenta tiene a lo sumo un perfil. El responsable de calidad solo consulta, sin modificar, el perfil de su personal. |
+| **Verification Metrics** | Porcentaje de personas del laboratorio con nombre completo registrado; alertas y decisiones de lote que muestran el nombre de quien las atendió. |
+| **Open Questions** | ¿Se trasladarán aquí las preferencias de notificación, hoy en Compliance & Alerting, si crecen las preferencias del usuario? |
 
 ---
 
@@ -1444,7 +1466,7 @@ Esta aproximación permite que cada contexto mantenga autoridad sobre su propio 
 
 #### Selected Context Map
 
-Como resultado del análisis de alternativas se seleccionó una organización basada en nueve Bounded Contexts independientes.
+Como resultado del análisis de alternativas se seleccionó una organización basada en Bounded Contexts independientes: los nueve de la sesión de Context Mapping, representados en la imagen siguiente, más Profile Management, incorporado durante el Sprint 1. Sus relaciones se describen en el análisis posterior.
 
 Cada contexto mantiene la autoridad sobre su propio modelo de dominio y comparte únicamente la información necesaria para colaborar con los demás contextos.
 
@@ -1473,7 +1495,7 @@ El Context Map seleccionado está conformado por:
 - **C/S:** Customer/Supplier
 - **ACL:** Anti-Corruption Layer
 
-La alternativa seleccionada mantiene explícitamente los límites entre los nueve Bounded Contexts y establece las colaboraciones necesarias sin trasladar responsabilidades de dominio entre ellos.
+La alternativa seleccionada mantiene explícitamente los límites entre los diez Bounded Contexts y establece las colaboraciones necesarias sin trasladar responsabilidades de dominio entre ellos.
 
 ---
 
@@ -1645,14 +1667,46 @@ Para cada interacción se establece la dirección Upstream/Downstream y el patr�
 
 ---
 
+##### Identity & Access Management (IAM) → Profile Management
+
+- **Relationship:** Upstream (Identity & Access Management) / Downstream (Profile Management)
+- **Integration Pattern:** Anti-Corruption Layer (ACL)
+- **Description:** Profile Management necesita conocer la cuenta a la que pertenece cada perfil (usuario, correo y roles) para mostrarla junto con los datos personales. La traduce a su propia referencia `Account` mediante `ExternalIamService`, sin incorporar la entidad `User` de IAM.
+
+---
+
+##### Laboratory Management → Profile Management
+
+- **Relationship:** Upstream (Laboratory Management) / Downstream (Profile Management)
+- **Integration Pattern:** Anti-Corruption Layer (ACL)
+- **Description:** Para mostrar el perfil del personal, Profile Management obtiene de Laboratory Management el registro de la persona en el laboratorio (cargo y nombre registrado por el responsable de calidad) y lo adapta a su referencia `StaffMember`.
+
+---
+
+##### Profile Management → Laboratory Management
+
+- **Relationship:** Upstream (Profile Management) / Downstream (Laboratory Management)
+- **Integration Pattern:** Customer/Supplier
+- **Description:** Cuando una persona cambia su nombre completo, Profile Management publica `ProfileUpdatedIntegrationEvent`. Laboratory Management lo recibe y mantiene alineada la lista del personal, sin que Profile Management conozca el modelo del personal.
+
+---
+
+##### Profile Management → Compliance & Alerting
+
+- **Relationship:** Upstream (Profile Management) / Downstream (Compliance & Alerting)
+- **Integration Pattern:** Anti-Corruption Layer (ACL)
+- **Description:** Compliance & Alerting muestra quién atendió una alerta o decidió sobre un lote. Obtiene solo el nombre a mostrar mediante `ProfileContextFacade.displayNameOf`, a través de `CaExternalProfileService`, sin replicar los datos personales.
+
+---
+
 #### Summary of Applied Context Mapping Patterns
 
 A partir de las relaciones establecidas se identificaron dos patrones principales de Context Mapping dentro de QualiTrack.
 
 | Pattern | Relationships |
 |---|---|
-| **Anti-Corruption Layer (ACL)** | Identity & Access Management → Payments & Subscriptions; Identity & Access Management → Laboratory Management; Inventory Management → Reporting & Audit; Equipment Management → Tracking & Telemetry; Equipment Management → Reporting & Audit; Tracking & Telemetry → Compliance & Alerting; Tracking & Telemetry → Reporting & Audit; Product Batch Management → Compliance & Alerting; Product Batch Management → Reporting & Audit; Compliance & Alerting → Reporting & Audit |
-| **Customer/Supplier** | Identity & Access Management → Reporting & Audit; Payments & Subscriptions → Laboratory Management; Payments & Subscriptions → Reporting & Audit; Laboratory Management → Equipment Management; Laboratory Management → Tracking & Telemetry; Laboratory Management → Inventory Management; Laboratory Management → Product Batch Management; Inventory Management → Product Batch Management; Inventory Management → Compliance & Alerting; Equipment Management → Product Batch Management |
+| **Anti-Corruption Layer (ACL)** | Identity & Access Management → Payments & Subscriptions; Identity & Access Management → Laboratory Management; Inventory Management → Reporting & Audit; Equipment Management → Tracking & Telemetry; Equipment Management → Reporting & Audit; Tracking & Telemetry → Compliance & Alerting; Tracking & Telemetry → Reporting & Audit; Product Batch Management → Compliance & Alerting; Product Batch Management → Reporting & Audit; Compliance & Alerting → Reporting & Audit; Identity & Access Management → Profile Management; Laboratory Management → Profile Management; Profile Management → Compliance & Alerting |
+| **Customer/Supplier** | Identity & Access Management → Reporting & Audit; Payments & Subscriptions → Laboratory Management; Payments & Subscriptions → Reporting & Audit; Laboratory Management → Equipment Management; Laboratory Management → Tracking & Telemetry; Laboratory Management → Inventory Management; Laboratory Management → Product Batch Management; Inventory Management → Product Batch Management; Inventory Management → Compliance & Alerting; Equipment Management → Product Batch Management; Profile Management → Laboratory Management |
 
 **Customer/Supplier** se utiliza cuando un contexto Upstream actúa como Supplier de información o capacidades requeridas explícitamente por un contexto Downstream que actúa como Customer.
 
@@ -1682,7 +1736,7 @@ Por lo tanto, los patrones que mejor representan las relaciones identificadas en
 
 #### Final Context Mapping Decision
 
-Después de evaluar las distintas alternativas de Context Mapping, se determinó que mantener los nueve Bounded Contexts como unidades independientes representa la aproximación seleccionada para QualiTrack.
+Después de evaluar las distintas alternativas de Context Mapping, se determinó que mantener los diez Bounded Contexts como unidades independientes representa la aproximación seleccionada para QualiTrack.
 
 La integración de Tracking & Telemetry con Compliance & Alerting fue descartada debido a que mezclaría la representación del estado físico de los ambientes con la administración del ciclo de vida de alertas e incidentes.
 
@@ -1690,7 +1744,7 @@ Asimismo, la integración de Inventory Management con Product Batch Management f
 
 Finalmente, distribuir las capabilities de Reporting & Audit entre los demás Bounded Contexts fue descartado debido a que produciría duplicación de responsabilidades y dificultaría la construcción de indicadores, evidencia histórica y vistas de trazabilidad que requieren información proveniente de diferentes dominios.
 
-La alternativa seleccionada mantiene separados **Identity & Access Management, Payments & Subscriptions, Laboratory Management, Equipment Management, Tracking & Telemetry, Inventory Management, Product Batch Management, Compliance & Alerting y Reporting & Audit**.
+La alternativa seleccionada mantiene separados **Identity & Access Management, Payments & Subscriptions, Laboratory Management, Equipment Management, Tracking & Telemetry, Inventory Management, Product Batch Management, Compliance & Alerting, Reporting & Audit y Profile Management**.
 
 Las colaboraciones entre estos contextos se establecen mediante relaciones explícitas utilizando principalmente los patrones **Customer/Supplier** y **Anti-Corruption Layer**.
 
