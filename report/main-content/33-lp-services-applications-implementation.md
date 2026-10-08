@@ -178,4 +178,32 @@ Previo a iniciar los pasos:
 
 ![Step 5-4 - Creación de la aplicación contenedora](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-5-4.png)
 
+**Paso 6: Agregación de identidad, permisos, secretos y variables:**
+
+1) Para la agregación de identidad, usaremos Shell:
+
+* Obtener el ID de la identidad de la aplicación de contenedor dentro del grupo de recursos:
+
+Step-6-1
+
+* Asigna permisos para descargar imagenes de contenedores en el ACR
+
+Step-6-2
+
+* Configura la identidad administrada por el sistema de la aplicación de contenedor
+
+Step-6-3
+
+2) Para los secretos, ingresamos desde la aplicación de contenedor a seguridad, secretos y agregamos los secretos que necesitamos:
+
+Step-6-4
+
+3) Configuramos la entrada en Redes, entradas y cambiamos el puerto de entrada a 8080 (el que escucha Spring Boot):
+
+Step-6-5
+
+4) Ingresaremos las variables de entorno para la aplicación, en este caso, haremos referencia a los secretos para algunas variables de entorno:
+
+Step-6-6
+
 #### 6.2.1.9. Team Collaboration Insights during Sprint
