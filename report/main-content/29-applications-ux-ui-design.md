@@ -1266,3 +1266,35 @@ El registro no se completa. El administrador debe modificar el código e intenta
 <div align="center">
   <img src="../assets/img/chapter-v/User Flow/UP/Registrar Materia Prima ERROR.png" alt="Planes de suscripción con facturación anual" height="400">
 </div>
+
+#### User Flow 6: Gestión de Ambientes / Environment Management
+
+**User Goal**
+
+Como supervisor, quiero registrar ambientes del laboratorio, para organizar las zonas donde se realizan las operaciones y posteriormente asociar equipos y dispositivos IoT.
+
+**Happy Path**
+
+El supervisor accede a Laboratory → Environments y selecciona Register Environment.
+Se muestra el formulario Register environment, donde ingresa la información del ambiente:
+- Code
+- Name
+- Description
+- Usage
+  
+Luego selecciona Register.
+QualiTrack valida los datos ingresados. Si la información es válida y el código del ambiente no está registrado previamente, el ambiente se registra correctamente y aparece en el listado de Environments.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/User Flow/HP/Register Envirotments.png" alt="Planes de suscripción con facturación anual" height="400">
+</div>
+
+
+**Unhappy Path**
+
+En el segundo flujo se observa que el supervisor intenta registrar un ambiente con información que genera un conflicto, mostrando un mensaje de error en el formulario.
+El supervisor debe corregir los datos ingresados y volver a seleccionar Register.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/User Flow/UP/Registrar Envirotment ERROR.png" alt="Planes de suscripción con facturación anual" height="400">
+</div>
