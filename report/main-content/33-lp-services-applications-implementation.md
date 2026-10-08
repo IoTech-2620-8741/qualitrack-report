@@ -225,17 +225,17 @@ az account show --query "{tenant:tenantId, subscription:id}" -o table
 
 1) Creamos una nueva rama feature para la integración de workflows:
 
-Step-8-1
+![Step 8-1 - Creación de la rama feature/ci-cd-azure](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-8-1.png)
 
 2) Creamos los archivos deploy.yml y ci.yml dentro de .github/workflows
 
-Step-8-2
+![Step 8-2 - Workflow deploy.yml](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-8-2.png)
 
-Step-8-3
+![Step 8-3 - Workflow ci.yml](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-8-3.png)
 
 3) Hacemos push a la rama feature, creamos un PR, esperamos que el test de CI termine y hacemos merge:
 
-Step-8-4
+![Step 8-4 - Pull request fusionado con el CI aprobado](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-8-4.png)
 
 * Para que funcionen correctamente los workflows creados, deben restringir los merge sin previa creación de un PR.
 
