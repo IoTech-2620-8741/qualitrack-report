@@ -987,162 +987,138 @@ El diagrama de base de datos muestra las tablas de productos, lotes, consumos de
 
 ### 4.2.7. Bounded Context: Reporting & Audit
 
-Reporting & Audit consolida información producida por los otros Bounded Contexts para generar indicadores, reportes y evidencia histórica. Este contexto no se convierte en una segunda fuente de verdad de telemetría, alertas, equipos o lotes; utiliza ACL y eventos para construir sus propios modelos de consulta y auditoría.
+Reporting & Audit consolida la evidencia que el laboratorio necesita frente a una inspección. Mantiene el **registro de auditoría** de las operaciones realizadas en los demás contextos, genera los **reportes** de trazabilidad de lote, de cumplimiento del periodo, de equipos y de inventario en PDF o CSV, y calcula los **indicadores** del laboratorio y las **tendencias de desviación** de cada ambiente.
+
+Los indicadores y las tendencias no se guardan como copias que puedan quedar desactualizadas: se calculan al momento de la consulta a partir de los registros vigentes. Los reportes generados, en cambio, se almacenan con un checksum y no se modifican.
 
 #### 4.2.7.1. Domain Layer.
 
 **`AuditReport` — Aggregate Root**
 
-- **Propósito:** representa un reporte generado y asociado con un laboratorio, lote o equipo.
-- **Atributos principales:** `laboratoryId`, `batchId`, `equipmentId`, `generatedBy`, `generatedByName`, `reportType`, rango de fechas, `filePath`, `checksum` y `generatedAt`.
+- **Propósito:** reporte generado e inmutable, con su tipo, periodo, autor y checksum del contenido.
+- **Atributos principales:** `id`, `laboratoryId`, `batchId`, `equipmentId`, `generatedBy`, `generatedByName`, `reportType`, `dateRangeFrom`, `dateRangeTo`, `filePath`, `checksum` y `generatedAt`.
 - **Métodos principales:** `computeChecksum`, `isImmutable`, `isBatchReport` e `isEquipmentReport`.
-- **Regla:** un reporte generado se considera evidencia y no debe modificarse como si fuera un documento editable de negocio.
 
 **`KpiDashboard` — Aggregate Root**
 
-- **Propósito:** representa un conjunto de indicadores calculados para un laboratorio en un momento determinado.
-- **Atributos principales:** `laboratoryId`, `timestamp`, `overallHealthScore` y `metrics`.
+- **Propósito:** indicadores de un laboratorio en un periodo: conteos operativos y resumen de las lecturas ambientales (US93, TS81).
+- **Atributos principales:** `laboratoryId`, `timestamp`, `overallHealthScore`, `period` (`ReportingPeriod`), `metrics` y `measurementSummaries`.
 - **Métodos principales:** `hasCriticalMetrics` y `hasAtRiskMetrics`.
 
-**`AuditLogEntry` — Entity**
+**Entities**
 
-- **Propósito:** registra una acción relevante ejecutada por un usuario o por el sistema.
-- **Información principal:** acción, tipo de entidad, identificador, actor, fecha y detalle.
+- `AuditLogEntry`: entrada inmutable del registro de auditoría (`action`, `entityType`, `entityId`, `performedBy`, `timestamp`, `details`).
+- `KpiMetric`: indicador individual con su valor, unidad, meta y estado.
+- `DeviationTrend`: tendencia de una métrica de un dispositivo en un ambiente: dirección, lecturas evaluadas, porcentaje de tiempo en rango y número de desviaciones (US94, TS82). Se construye con `fromReadings`.
+- `TrendDataPoint`: punto de la tendencia con su valor, sus límites y su estado; `isDeviation` indica si está fuera de rango.
 
-**`DeviationTrend` — Entity**
+**Value Objects**
 
-- **Propósito:** representa una tendencia calculada sobre una variable monitoreada de un equipo.
-- **Atributos:** `parameterName`, `equipmentId`, `trendDirection` y `dataPoints`.
-
-**`KpiMetric` — Entity**
-
-- **Propósito:** representa un indicador individual dentro de un dashboard.
-- **Atributos:** nombre, valor, unidad, objetivo, estado y fecha de registro.
-
-**`TrendDataPoint` — Entity / Value Object**
-
-- **Propósito:** representa un punto utilizado para calcular una tendencia.
-- **Método principal:** `isDeviation`.
-
-**Enumerations**
-
-- `AuditAction`: acciones auditables como `CREATE`, `UPDATE`, `RELEASE`, `REJECT`, `EXPORT`, `LOGIN`, entre otras.
-- `KpiMetricStatus`: `ON_TRACK`, `AT_RISK`, `CRITICAL` y `UNKNOWN`.
-- `ReportFormat`: `PDF` y `CSV`.
-- `ReportType`: tipos de reporte como trazabilidad de lote, cumplimiento, log de equipo y resumen KPI.
-- `TrendDirection`: `INCREASING`, `DECREASING` y `STABLE`.
+- `ReportDocument`: contenido del archivo generado (`reportId`, `format`, `content`).
+- `ReportingPeriod`: periodo del que se calcula un indicador o reporte. Por defecto son los últimos siete días.
+- `MeasurementSummary`: promedio, mínimo y máximo de las lecturas numéricas de un dispositivo y métrica en el periodo.
+- `EnvironmentalReading`: lectura de un dispositivo tal como la ve este contexto, obtenida de Tracking & Telemetry.
+- Enumeraciones: `ReportType` (`BATCH_TRACEABILITY`, `COMPLIANCE_PERIOD`, `EQUIPMENT_LOG`, `KPI_SUMMARY`, `INVENTORY`), `ReportFormat` (`PDF`, `CSV`), `AuditAction`, `KpiMetricStatus` (`ON_TRACK`, `AT_RISK`, `CRITICAL`, `UNKNOWN`) y `TrendDirection` (`INCREASING`, `DECREASING`, `STABLE`).
 
 **Commands principales**
 
-- `CalculateKpiDashboardCommand`.
-- `CalculateDeviationTrendCommand`.
-- `GenerateBatchReportCommand`.
-- `GenerateComplianceReportCommand`.
-- `ExportEquipmentLogCommand`.
+- `GenerateBatchReportCommand` (TS84), `GenerateComplianceReportCommand` (TS83), `GenerateInventoryReportCommand` (US97, TS85) y `ExportEquipmentLogCommand`.
 - `RecordAuditLogEntryCommand`.
 
 **Queries principales**
 
-Incluyen consultas por laboratorio, equipo, lote, identificador de reporte y filtros del Audit Log.
+- `GetKpiDashboardByLaboratoryIdQuery` y `GetDeviationTrendsByEnvironmentQuery`.
+- `GetAuditLogQuery` y `GetStaffActivityQuery` (US92).
+- `GetAuditReportByIdQuery`, `GetAuditReportsByLaboratoryIdQuery`, `GetAuditReportsByBatchIdQuery`, `GetAuditReportsByEquipmentIdQuery` y `GetReportDocumentByIdQuery`.
+
+**Eventos de dominio**
+
+- `AuditLogEntryRecordedEvent`.
+- `AuditReportGeneratedEvent`.
 
 **Repository Interfaces**
 
-- `AuditLogRepository`.
-- `AuditReportRepository`.
-- `DeviationTrendRepository`.
-- `KpiDashboardRepository`.
+- `AuditReportRepository`, `AuditLogRepository` y `ReportDocumentRepository`.
+
+**Excepciones de dominio**
+
+- `ImmutableAuditReportException`, `InvalidReportDateRangeException`, `ReportGenerationException`, `AuditReportNotFoundException` y `AuditLogEntryNotFoundException`.
 
 #### 4.2.7.2. Interface Layer.
 
-La Interface Layer expone las consultas de indicadores, auditoría, tendencias y generación de reportes. Los controladores y Resources deben entregar únicamente datos calculados a partir de información real persistida; cuando no existen datos suficientes, el sistema debe comunicarlo en lugar de generar cifras ficticias.
+**REST controllers**
 
-Entre los Resources definidos se encuentran los correspondientes a Audit Log, Audit Report, KPI Dashboard, KPI Metric, Deviation Trend y sus puntos de datos, además de los Resources utilizados para solicitar reportes y exportaciones.
+- `KpiDashboardController` — `/api/v1/laboratories/{laboratoryId}/kpi-dashboards`: indicadores del laboratorio.
+- `DeviationTrendController` — `.../environments/{environmentId}/deviation-trends`: tendencias de desviación del ambiente.
+- `LaboratoryReportController` — `/api/v1/laboratories/{laboratoryId}`: genera reportes de cumplimiento (`POST /compliance-reports`) y de inventario (`POST /inventory/reports`) y lista los reportes generados (`GET /reports`).
+- `BatchReportController` — `/api/v1/batches/{batchId}/reports`: genera y lista los reportes de trazabilidad de un lote.
+- `EquipmentReportController` — `.../equipments/{equipmentId}/log-reports`: exporta el historial de un equipo.
+- `ReportController` — `/api/v1/reports/{reportId}` y `/{reportId}/content`: metadatos y contenido del reporte en PDF o CSV.
+- `BatchAuditLogController`, `EquipmentAuditLogController` y `StaffAuditLogController`: registro de auditoría de un lote, de un equipo y de la actividad de una persona del personal.
 
-**`RaContextFacade`**
+**Assemblers principales**
 
-Expone una interfaz controlada para que otros Bounded Contexts puedan registrar acciones auditables sin acceder al repositorio interno de auditoría.
+- `GenerateBatchReportCommandFromResourceAssembler`, `GenerateComplianceReportCommandFromResourceAssembler`, `GenerateInventoryReportCommandFromResourceAssembler` y `ExportEquipmentLogCommandFromResourceAssembler`.
+- `AuditReportResourceFromEntityAssembler`, `AuditLogEntryResourceFromEntityAssembler`, `KpiDashboardResourceFromEntityAssembler`, `KpiMetricResourceFromEntityAssembler`, `DeviationTrendResourceFromEntityAssembler` y `TrendDataPointResourceFromEntityAssembler`.
+- `ReportResponseAssembler` responde `201 Created` con el reporte guardado. `ReportingPeriodAssembler` lee el periodo solicitado.
+
+**Fachada e integration events**
+
+- `RaContextFacade`: permite que otros contextos registren entradas de auditoría (`recordAuditLog`).
+- `RaTenantResourceLookup`: resuelve el laboratorio dueño de un reporte.
+- Integration events: `AuditLogEntryRecordedIntegrationEvent` y `AuditReportGeneratedIntegrationEvent`.
 
 #### 4.2.7.3. Application Layer.
 
-**`RaCommandService` / `RaCommandServiceImpl`**
+**Command Services**
 
-Coordina el cálculo de KPI, tendencias y la generación o exportación de reportes.
+- `RaCommandService` / `RaCommandServiceImpl`: genera los reportes de lote, de cumplimiento, de equipo y de inventario. Reúne la información con los servicios ACL, la escribe con `ReportDocumentWriter` y la guarda como `AuditReport` con su `ReportDocument`.
+- `AuditLogCommandService` / `AuditLogCommandServiceImpl`: registra las entradas de auditoría.
 
-**`AuditLogCommandService` / `AuditLogCommandServiceImpl`**
+**Query Services**
 
-Centraliza el registro de acciones auditables provenientes de otros contextos.
-
-**`RaQueryService` / `RaQueryServiceImpl`**
-
-Resuelve las consultas de dashboards, tendencias, Audit Log y reportes generados.
-
-**ACL consumidas**
-
-- `RaExternalBatchService`: obtiene información resumida de Product Batch Management.
-- `RaExternalComplianceService`: obtiene métricas sobre alertas.
-- `RaExternalEquipmentService`: obtiene información resumida sobre equipos.
-- `RaExternalLaboratoryService`: valida la existencia de la organización.
+- `RaQueryService` / `RaQueryServiceImpl`: calcula los indicadores y las tendencias y resuelve el registro de auditoría y los reportes generados.
+- `ReportDocumentQueryService` / `ReportDocumentQueryServiceImpl`: entrega el contenido del reporte.
 
 **Event Handlers**
 
-- `BatchAuditEventHandler`.
-- `CaAuditEventHandler`.
-- `EquipmentAuditEventHandler`.
-- `LaboratoryAuditEventHandler`.
-- `TrackingAuditEventHandler`.
-- Handlers propios para `AuditLogEntryRecordedEvent`, `AuditReportGeneratedEvent`, `DeviationTrendCalculatedEvent` y `KpiDashboardCalculatedEvent`.
+- `LaboratoryAuditEventHandler`, `InventoryAuditEventHandler`, `EquipmentAuditEventHandler`, `TrackingAuditEventHandler`, `BatchAuditEventHandler` y `CaAuditEventHandler`: escuchan los eventos de integración de cada contexto y registran la operación en el registro de auditoría.
+- `AuditLogEntryRecordedEventHandler` y `AuditReportGeneratedEventHandler`: publican los eventos de integración propios.
 
-Estos handlers permiten mantener un registro transversal sin introducir reglas de auditoría dentro de cada Bounded Context productor.
+**ACL y datos de reporte**
+
+- `RaExternalTrackingService`, `RaExternalComplianceService`, `RaExternalBatchService`, `RaExternalEquipmentService`, `RaExternalInventoryService` y `RaExternalLaboratoryService`: leen, mediante las fachadas de cada contexto, las lecturas y acciones, las alertas, la trazabilidad del lote, los dispositivos, el inventario y el laboratorio.
+- `BatchReportData`, `ComplianceReportData`, `EquipmentReportData` e `InventoryReportData`: datos de cada reporte, independientes de su presentación.
+- `RaOperationalDataService`: obtiene los conteos operativos de los indicadores. Hoy los lee directamente de los repositorios de Product Batch, Laboratory, Equipment y Compliance & Alerting, en solo lectura. Es una dependencia pendiente de reemplazar por las fachadas de esos contextos, para respetar el ACL descrito en el Context Mapping.
 
 #### 4.2.7.4. Infrastructure Layer.
 
-**Persistence Entities**
-
-- `AuditLogEntryPersistenceEntity`.
-- `AuditReportPersistenceEntity`.
-- `DeviationTrendPersistenceEntity`.
-- `KpiDashboardPersistenceEntity`.
-- `KpiMetricPersistenceEntity`.
-- `TrendDataPointPersistenceEntity`.
-
-**Persistence Repositories**
-
-Existen repositorios JPA específicos para Audit Log, reportes, tendencias, dashboards, métricas y puntos de tendencia.
-
-**Repository Adapters**
-
-- `AuditLogRepositoryImpl`.
-- `AuditReportRepositoryImpl`.
-- `DeviationTrendRepositoryImpl`.
-- `KpiDashboardRepositoryImpl`.
-
-**Converters**
-
-- `AuditActionPersistenceConverter`.
-- `KpiMetricStatusPersistenceConverter`.
-- `ReportFormatPersistenceConverter`.
-- `ReportTypePersistenceConverter`.
-- `TrendDirectionPersistenceConverter`.
+- **Documentos:** `ReportDocumentWriterImpl` y los renderizadores PDF `AbstractReportPdfRenderer`, `BatchReportPdfRenderer`, `PeriodReportPdfRenderer` e `InventoryReportPdfRenderer`, implementados con Apache PDFBox.
+- **Persistencia:** entidades, Spring Data JPA Repositories y adapters para reportes, documentos y registro de auditoría (`AuditReportRepositoryImpl`, `ReportDocumentRepositoryImpl` y `AuditLogRepositoryImpl`).
+- **Converters:** `AuditActionPersistenceConverter`, `ReportFormatPersistenceConverter` y `ReportTypePersistenceConverter`.
+- **Configuración:** `RaConfiguration` usa la zona horaria del laboratorio (America/Lima) para los días calendario de los reportes.
 
 #### 4.2.7.5. Bounded Context Software Architecture Component Level Diagrams.
 
-El diagrama de componentes presenta la posición de **Reporting & Audit** dentro del **Cloud REST API**. Este contexto recibe o consulta información producida por otros Bounded Contexts para generar indicadores, tendencias, reportes y registros de auditoría sin reemplazar las fuentes de verdad de cada dominio.
+El diagrama de componentes presenta **Reporting & Audit** dentro del **Cloud REST API**. La Single-Page Application genera y exporta en él los reportes. El contexto obtiene la telemetría y las alertas del periodo de Tracking & Telemetry y Compliance & Alerting, y persiste reportes y auditoría en la Cloud Database.
 
-Para esta entrega se utiliza la vista de Structurizr **`Components-Reporting`**, definida sobre el container `Cloud REST API`. La vista evidencia las relaciones principales del contexto dentro del monolito modular y será refinada posteriormente para mostrar su estructura interna con mayor detalle.
+Se utiliza la vista de Structurizr **`Components-Reporting`**, definida sobre el container `Cloud REST API`.
 
 ![Reporting & Audit Component Diagram](../assets/img/chapter-iv/Components-Reporting.png)
 
 #### 4.2.7.6. Bounded Context Software Architecture Code Level Diagrams.
 
+Los diagramas de nivel de código presentan las clases del Domain Layer de Reporting & Audit y el esquema relacional que persiste reportes y registro de auditoría.
+
 ##### 4.2.7.6.1. Bounded Context Domain Layer Class Diagrams.
 
-El diagrama de clases muestra los aggregates `AuditReport` y `KpiDashboard`, las entidades de auditoría y tendencias, sus enumeraciones, repositorios y los servicios que construyen las vistas de análisis.
+El diagrama muestra los Aggregates `AuditReport` y `KpiDashboard`, las entidades `AuditLogEntry`, `KpiMetric`, `DeviationTrend` y `TrendDataPoint`, los Value Objects del periodo, los documentos y los resúmenes, y los Commands, Queries, eventos e interfaces de repositorio del contexto.
 
-![Reporting & Audit Domain Layer Class Diagram](../assets/img/chapter-iv/ra-domain-layer-class-diagram.png)
+![Reporting & Audit Domain Layer Class Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-report/develop/docs/diagrams/domain/ra-domain-layer-class-diagram.puml&fmt=svg&v=4)
 
 ##### 4.2.7.6.2. Bounded Context Database Design Diagram.
 
-El diagrama de base de datos representa la persistencia de Audit Log, reportes, dashboards, métricas y tendencias. Estos registros se generan a partir de información proveniente de otros contextos y no sustituyen sus datos operativos originales.
+El diagrama de base de datos muestra las tablas `audit_reports` (reportes generados) y `audit_log_entries` (registro de auditoría). Los indicadores y tendencias no tienen tablas porque se calculan al consultarlos.
 
 ![Reporting & Audit Database Design Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/ra/ra-database-diagram.puml&fmt=svg&v=4)
 
