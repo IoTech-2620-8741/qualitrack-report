@@ -846,163 +846,140 @@ El esquema de persistencia contiene las estructuras de materiales, recepciones y
 
 ### 4.2.6. Bounded Context: Product Batch Management
 
-Product Batch Management administra los productos fabricados y sus lotes, conservando la trazabilidad de las materias primas utilizadas. El contexto no administra el stock de la materia prima; solicita a Inventory Management la validación y consumo del lote correspondiente.
+Product Batch Management administra los **productos farmacéuticos** registrados en los ambientes del laboratorio y sus **lotes de fabricación**. Registra todo lo que participa en un lote: los lotes de materia prima consumidos, los equipos utilizados, el personal que intervino y el contenedor monitoreado donde se almacena. Con esa información reconstruye la trazabilidad que el responsable de calidad revisa antes de liberar o rechazar el lote.
+
+El contexto no administra el stock de la materia prima: Inventory Management valida y consume el lote de materia prima, y Product Batch Management registra el consumo cuando Inventory lo confirma.
 
 #### 4.2.6.1. Domain Layer.
 
+**`PharmaceuticalProduct` — Aggregate Root**
+
+- **Propósito:** producto farmacéutico que se fabrica en un ambiente del laboratorio (US71, TS61).
+- **Atributos principales:** `id`, `laboratoryId`, `environmentId`, `code`, `name`, `description`, `specifications` y `active`.
+- **Método principal:** `belongsTo`.
+
 **`Batch` — Aggregate Root**
 
-- **Propósito:** representa un lote específico de fabricación.
-- **Atributos principales:** `id`, `labId`, `productId`, `productName`, `batchNumber`, `quantity`, `unit`, `status`, `startDate`, `endDate` y `notes`.
-- **Métodos principales:** `start`, `release` y `reject`.
-- **Relaciones:** utiliza `BatchStatus`; se relaciona con la organización mediante `labId` y con el producto mediante `productId`.
+- **Propósito:** lote de fabricación de un producto.
+- **Atributos principales:** `id`, `labId`, `environmentId`, `productId`, `productName`, `batchNumber`, `quantity`, `unit`, `status` (`BatchStatus`), `startDate`, `endDate`, `notes` y `containerAssignment`.
+- **Métodos principales:** `start`, `registerRawMaterialConsumption`, `release`, `reject`, `storeIn`, `container`, `isOpen` y `belongsTo`.
+- **Reglas:** el lote nace en `PENDING` y pasa a `IN_PROGRESS` con su primer consumo de materia prima. Un lote cerrado (`RELEASED` o `REJECTED`) no vuelve a iniciarse ni acepta consumos. Solo se almacena en contenedores de un ambiente de almacén de producto.
 
-**`RawMaterialUsage` — Entity**
+**Entities**
 
-- **Propósito:** conserva la evidencia de qué lote de materia prima fue utilizado durante la fabricación y cuánto se consumió.
-- **Atributos principales:** `batchId`, `rawMaterialId`, `rawMaterialName`, `inventoryReceiptId`, `stockBefore`, `stockAfter`, `quantityUsed`, `unit` y `usageDate`.
-- **Relaciones:** se crea a partir del consumo confirmado por Inventory Management.
+- `RawMaterialUsage`: consumo de un lote de materia prima de Inventory (`batchId`, `rawMaterialId`, `inventoryReceiptId`, `quantityUsed`, `stockBefore`, `stockAfter`, `operationId`).
+- `EquipmentUsage`: evidencia de que un equipo participó en el lote (`batchId`, `equipmentId`, `equipmentName`, `registeredByUserId`) (US76).
+- `StaffParticipation`: evidencia de que una persona del personal participó en el lote (`batchId`, `staffId`, `staffName`, `staffRole`, `registeredByUserId`) (US77).
+- `DigitalSignature`: firma de quien liberó el lote (`signedByUserId`, `signatureHash`, `signedAt`).
+- `RejectionRecord`: registro del rechazo con su fecha y motivo.
 
-**`DigitalSignature` — Entity**
+**Value Objects**
 
-- **Propósito:** conserva evidencia de firma cuando una operación del lote requiere registrar al usuario responsable.
-- **Atributos principales:** `batchId`, `signedByUserId`, `signatureHash` y `signedAt`.
-
-**`RejectionRecord` — Entity**
-
-- **Propósito:** conserva la razón y fecha asociadas al rechazo de un lote.
-
-**`BatchStatus` — Enumeration**
-
-- **Valores:** `PENDING`, `IN_PROGRESS`, `RELEASED` y `REJECTED`.
+- `BatchStatus`: `PENDING`, `IN_PROGRESS`, `RELEASED` y `REJECTED`.
+- `ContainerAssignment`: contenedor monitoreado donde se guarda el lote, su ambiente, quién lo guardó y cuándo (US78).
+- `BatchContainer`: modelo de lectura del contenedor del lote (US79).
+- `BatchRelease` y `BatchRejection`: resultado de la decisión final, con la firma o el registro de rechazo.
+- `BatchTraceability`: todo lo que participó en el lote, es decir, lotes de materia prima consumidos, equipos, personal y decisión final (US80, TS70).
 
 **Commands principales**
 
-- `CreateBatchCommand`.
-- `ReleaseBatchCommand`.
-- `RejectBatchCommand`.
-- `LinkRawMaterialCommand` se mantiene por compatibilidad; el nuevo flujo de consumo se inicia desde Inventory Management para asegurar el descuento exacto del lote de materia prima.
+- `CreateProductCommand` (US71, TS61) y `CreateBatchCommand` (US73, TS63).
+- `RegisterRawMaterialUsageCommand` (US75, TS65), `RegisterEquipmentUsageCommand` (US76, TS66) y `RegisterStaffParticipationCommand` (US77, TS67).
+- `AssignBatchContainerCommand` (US78, TS68).
+- `ReleaseBatchCommand` (US81, TS71) y `RejectBatchCommand` (US82, TS72).
 
 **Queries principales**
 
-- `GetBatchByIdQuery`.
-- `GetBatchesByLabIdQuery`.
-- `GetBatchesByStatusQuery`.
-- `GetRawMaterialUsageByBatchIdQuery`.
+- `GetProductsByEnvironmentQuery` y `GetProductByIdQuery`.
+- `GetBatchesByProductQuery`, `GetProductBatchQuery`, `GetBatchByIdQuery` y `GetBatchesByLabIdQuery`.
+- `GetBatchContainerQuery` y `GetBatchTraceabilityQuery`.
+- `GetRawMaterialUsageByBatchIdQuery`, `GetRawMaterialUsagesByInventoryMaterialQuery` y `GetRawMaterialHistoryQuery`.
 
-**Eventos principales**
+**Eventos de dominio**
 
-- `BatchCreatedEvent`.
-- `BatchReleasedEvent`.
-- `BatchRejectedEvent`.
-- `RawMaterialLinkedToBatchEvent`.
+- `ProductCreatedEvent`.
+- `BatchCreatedEvent`, `BatchStartedEvent`, `BatchReleasedEvent` y `BatchRejectedEvent`.
+- `RawMaterialLinkedToBatchEvent`, `BatchParticipationRegisteredEvent` y `BatchStoredInContainerEvent`.
 
 **Repository Interfaces**
 
-- `BatchRepository`.
-- `RawMaterialUsageRepository`.
+- `ProductRepository`, `BatchRepository`, `RawMaterialUsageRepository`, `BatchParticipationRepository` y `BatchEvidenceRepository` (firmas de liberación y registros de rechazo).
 
 #### 4.2.6.2. Interface Layer.
 
-**`BatchController`**
+**REST controllers** (bajo `/api/v1/laboratories/{laboratoryId}`)
 
-Expone las operaciones para registrar, consultar, liberar o rechazar un lote de producto.
+- `EnvironmentProductsController` — `/environments/{environmentId}/products`: registra, lista y consulta los productos de un ambiente.
+- `ProductBatchesController` — `.../products/{productId}/batches`: registra, lista y consulta los lotes de un producto. También los libera (`POST /{batchId}/releases`) o rechaza (`POST /{batchId}/rejections`).
+- `BatchManufacturingController` — `.../batches/{batchId}`: registra los consumos de materia prima, los equipos y el personal (`POST /raw-material-usages`, `/equipment-usages`, `/staff-participations`). Además consulta o asigna el contenedor (`GET/PUT /container-assignment`) y devuelve la trazabilidad (`GET /traceability`).
+- `LaboratoryBatchesController` — `/batches`: lista los lotes de todo el laboratorio.
+- `EnvironmentRawMaterialUsagesController` y `RawMaterialHistoryController`: muestran en qué lotes se consumió una materia prima de Inventory o del catálogo heredado.
 
-**`LaboratoryBatchesController`**
+**Assemblers principales**
 
-Permite consultar los lotes que pertenecen a una organización determinada.
+- `CreateProductCommandFromResourceAssembler` y `ProductResourceFromEntityAssembler`.
+- `CreateBatchCommandFromResourceAssembler`, `ReleaseBatchCommandFromResourceAssembler`, `RejectBatchCommandFromResourceAssembler` y `BatchResourceFromEntityAssembler`.
+- `RawMaterialUsageResourceFromEntityAssembler`, `BatchParticipationResourceFromEntityAssembler`, `BatchContainerResourceFromEntityAssembler` y `BatchTraceabilityResourceFromEntityAssembler`.
 
-**`BatchRawMaterialUsageController`**
+**Fachadas e integration events**
 
-Permite consultar la materia prima utilizada por un lote. La creación heredada de consumos directos queda reemplazada por el flujo coordinado con Inventory Management para que exista un `RawMaterialBatch` real y una cantidad exacta descontada.
-
-**`BatchContextFacade`**
-
-Expone hacia Inventory Management operaciones como verificar la existencia del lote, comprobar que pertenece al laboratorio correcto y validar si se encuentra en un estado que permite registrar consumo.
-
-**Resources y Assemblers**
-
-La capa utiliza `BatchResource`, `CreateBatchResource`, `ReleaseBatchResource`, `RejectBatchResource`, `RawMaterialUsageResource` y sus respectivos assemblers para mantener separado el modelo REST del dominio.
+- `BatchContextFacade`: permite que Inventory valide un lote consumible (`requireConsumable`) y que otros contextos consulten su estado o su trazabilidad (`isBatchReleased`, `isBatchRejected`, `findTraceability`).
+- `BatchTenantResourceLookup`: resuelve el laboratorio dueño de un producto o lote.
+- Integration events: `ProductCreatedIntegrationEvent`, `BatchCreatedIntegrationEvent`, `BatchStartedIntegrationEvent`, `BatchReleasedIntegrationEvent`, `BatchRejectedIntegrationEvent`, `RawMaterialLinkedToBatchIntegrationEvent`, `BatchParticipationRegisteredIntegrationEvent` y `BatchStoredInContainerIntegrationEvent`.
 
 #### 4.2.6.3. Application Layer.
 
-**`BatchCommandService` / `BatchCommandServiceImpl`**
+**Command Services**
 
-Coordina la creación y los cambios de estado del lote. Antes de operar valida las referencias necesarias mediante servicios ACL y publica los eventos del dominio.
-
-**`RawMaterialUsageCommandService` / `RawMaterialUsageCommandServiceImpl`**
-
-Forma parte del diseño heredado de vinculación de materia prima. En el flujo actual, Inventory Management realiza el consumo y comunica el resultado para crear `RawMaterialUsage` con la información exacta de la recepción utilizada.
+- `ProductCommandService` / `ProductCommandServiceImpl`: registra productos en los ambientes del laboratorio.
+- `BatchCommandService` / `BatchCommandServiceImpl`: registra lotes, los almacena en contenedores y registra su liberación o rechazo.
+- `RawMaterialUsageCommandService` / `RawMaterialUsageCommandServiceImpl`: registra el consumo de materia prima solicitándolo a Inventory Management.
+- `BatchParticipationCommandService` / `BatchParticipationCommandServiceImpl`: asocia los equipos (validados con Equipment Management) y el personal (validado con Laboratory Management).
 
 **Query Services**
 
-- `BatchQueryService` / `BatchQueryServiceImpl`.
-- `RawMaterialUsageQueryService` / `RawMaterialUsageQueryServiceImpl`.
+- `ProductQueryService`, `BatchQueryService`, `RawMaterialUsageQueryService` y `BatchTraceabilityQueryService`. Este último reconstruye la trazabilidad con los registros del lote y la ubicación de cada lote de materia prima en Inventory.
 
 **Event Handlers**
 
-- `BatchCreatedEventHandler`.
-- `BatchReleasedEventHandler`.
-- `BatchRejectedEventHandler`.
-- `RawMaterialLinkedToBatchEventHandler`.
-- `ReceiptConsumedEventHandler`: recibe el evento de Inventory Management y registra la trazabilidad del consumo de forma sincronizada con la operación de stock.
+- `ReceiptConsumedEventHandler`: registra el consumo confirmado por Inventory Management e inicia el lote con su primer consumo.
+- `ProductCreatedEventHandler`, `BatchCreatedEventHandler`, `BatchStartedEventHandler`, `BatchReleasedEventHandler`, `BatchRejectedEventHandler`, `RawMaterialLinkedToBatchEventHandler`, `BatchParticipationRegisteredEventHandler` y `BatchStoredInContainerEventHandler`: publican los eventos de integración hacia los demás contextos.
 
 **ACL**
 
-- `ExternalLaboratoryService`: verifica la organización mediante `LaboratoryContextFacade`.
-- `BatchExternalComplianceService`: consulta Compliance & Alerting antes de operaciones que requieren validar condiciones de cumplimiento.
+- `BatchExternalInventoryService`: accede a las materias primas de Inventory Management.
+- `BatchExternalEquipmentService`: lee los equipos de Equipment Management.
+- `ExternalLaboratoryService`: valida ambientes y personal en Laboratory Management.
+- `BatchExternalComplianceService`: encapsula la consulta a Compliance & Alerting sobre si un lote puede liberarse (`canReleaseBatch`).
+- `BatchContextFacadeImpl`: implementa la fachada del contexto.
 
 #### 4.2.6.4. Infrastructure Layer.
 
-**Persistence Entities**
-
-- `BatchPersistenceEntity`.
-- `RawMaterialUsagePersistenceEntity`.
-- `DigitalSignaturePersistenceEntity`.
-- `RejectionRecordPersistenceEntity`.
-
-**Persistence Repositories**
-
-- `BatchPersistenceRepository`.
-- `RawMaterialUsagePersistenceRepository`.
-- `DigitalSignaturePersistenceRepository`.
-- `RejectionRecordPersistenceRepository`.
-
-**Repository Adapters**
-
-- `BatchRepositoryImpl`.
-- `RawMaterialUsageRepositoryImpl`.
-
-**Persistence Assemblers**
-
-- `BatchPersistenceAssembler`.
-- `RawMaterialUsagePersistenceAssembler`.
-- `DigitalSignaturePersistenceAssembler`.
-- `RejectionRecordPersistenceAssembler`.
-
-**Converter**
-
-- `BatchStatusPersistenceConverter`.
+- **Persistence Entities, Spring Data JPA Repositories y Assemblers** para productos, lotes, consumos de materia prima, participación (equipos y personal) y evidencia de la decisión (firma y rechazo).
+- **Repository Adapters:** `ProductRepositoryImpl`, `BatchRepositoryImpl`, `RawMaterialUsageRepositoryImpl`, `BatchParticipationRepositoryImpl` y `BatchEvidenceRepositoryImpl`.
+- **Converter:** `BatchStatusPersistenceConverter`.
 
 #### 4.2.6.5. Bounded Context Software Architecture Component Level Diagrams.
 
-El diagrama de componentes presenta la posición de **Product Batch Management** dentro del **Cloud REST API**. Este contexto administra los lotes de producto y su trazabilidad, y se relaciona especialmente con Inventory Management para utilizar materias primas existentes, con Laboratory Management para validar la organización y con Compliance & Alerting para las verificaciones relacionadas con calidad y cumplimiento.
+El diagrama de componentes presenta **Product Batch Management** dentro del **Cloud REST API**. La Single-Page Application registra en él productos y lotes. Inventory Management valida el lote y le notifica el consumo de materia prima, y Compliance & Alerting consulta los lotes expuestos a un ambiente con desviaciones.
 
-Para esta entrega se utiliza la vista de Structurizr **`Components-ProductBatch`**, definida sobre el container `Cloud REST API`. La vista representa la arquitectura actual y posteriormente podrá ampliarse para mostrar con mayor detalle los componentes internos del contexto.
+Se utiliza la vista de Structurizr **`Components-ProductBatch`**, definida sobre el container `Cloud REST API`.
 
 ![Product Batch Management Component Diagram](../assets/img/chapter-iv/Components-ProductBatch.png)
 
 #### 4.2.6.6. Bounded Context Software Architecture Code Level Diagrams.
 
+Los diagramas de nivel de código presentan las clases del Domain Layer de Product Batch Management y el esquema relacional que persiste productos, lotes y su trazabilidad.
+
 ##### 4.2.6.6.1. Bounded Context Domain Layer Class Diagrams.
 
-El diagrama muestra `Batch`, `RawMaterialUsage`, `DigitalSignature`, `RejectionRecord`, `BatchStatus`, Commands, Queries, eventos y repositorios del contexto.
+El diagrama muestra los Aggregates `PharmaceuticalProduct` y `Batch`, las entidades de consumo, participación y evidencia, los Value Objects de estado, contenedor y trazabilidad, y los Commands, Queries, eventos e interfaces de repositorio del contexto.
 
-![Product Batch Management Domain Layer Class Diagram](../assets/img/chapter-iv/batch-domain-layer-class-diagram.png)
+![Product Batch Management Domain Layer Class Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-report/develop/docs/diagrams/domain/batch-domain-layer-class-diagram.puml&fmt=svg&v=4)
 
 ##### 4.2.6.6.2. Bounded Context Database Design Diagram.
 
-El diagrama de base de datos representa los lotes de producto y su trazabilidad. La referencia al lote recibido en Inventory permite identificar exactamente qué materia prima participó en cada fabricación.
+El diagrama de base de datos muestra las tablas de productos, lotes, consumos de materia prima, equipos y personal participantes, firmas de liberación y registros de rechazo, relacionadas mediante el identificador del lote.
 
 ![Product Batch Management Database Design Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/batch/batch-database-diagram.puml&fmt=svg&v=4)
 
