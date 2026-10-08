@@ -297,7 +297,17 @@ az account show --query "{tenant:tenantId, subscription:id}" -o table
 
 **Pasos previos**
 
-1) Para el despliegue en producción, cambiamos la url base de nuestra api a la desplegada:
+1) Para el despliegue en producción, cambiamos la url base de nuestra api a la desplegada para que nuestra aplicación web funcione con nuestro backend en Azure:
+
+![Frontend Previous Step 1-1 - URL base de la API en environment.ts](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-previous-step-1-1.png)
+
+2) Creamos un pull request hacia develop con el cambio de la configuración de producción:
+
+![Frontend Previous Step 1-2 - Creación del pull request hacia develop](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-previous-step-1-2.png)
+
+3) Finalmente, el pull request fue fusionado en develop:
+
+![Frontend Previous Step 1-3 - Pull request fusionado](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-previous-step-1-3.png)
 
 
 
