@@ -104,15 +104,15 @@ Los esfuerzos fueron distribuidos entre la construcción de la Landing Page y la
 
 | Team Member | GitHub Username | Landing Page | Product Batch Management |Tracking & Telemetry| Compliance & Alerting | Inventory Management | Laboratory Management | Equipment Management | Reporting & Audit |
 |-|-|-|-|-|-|-|-|-|-|
-| Baca Camargo, Vitaly Arturo | username | L |-|-|-|-|-|-|-|
-| Cutiri Agüero, Fabrizio Alexander | username |-| L |-|-|-|-|-|-|
-| Guzmán Cabrejos, Yaku Mateo | username |-|-|-|-|-|-|-|-|
-| Huapaya Galindo, Dyron | username |-|-|-|-|-|-|-|-|
-| Lopez Roman, Franco Mauricio | username |-|-|-| L |-|-|-|-|
-| Montes Ramos, Henry Jaredt | username |-|-|-|-|-|-|-|-|
-| Ruiz Madrid, Billy Jake | username |-|-|-|-|-|L|-|-|
+| Baca Camargo, Vitaly Arturo | Mr-Code-star | L |-|-|-|-|-|-|-|
+| Cutiri Agüero, Fabrizio Alexander | FabrizioCutiri |-| L |-|-|-|-|-|-|
+| Guzmán Cabrejos, Yaku Mateo | yakumateo |-|-|-|-|-|-|-|-|
+| Huapaya Galindo, Dyron | MaineMa |-|-|-|-|-|-|-|-|
+| Lopez Roman, Franco Mauricio | FrancoLopez00 |-|-|-| L |-|-|-|-|
+| Montes Ramos, Henry Jaredt | jahen17 |-|-|-|-|-|-|-|-|
+| Ruiz Madrid, Billy Jake | BJRM03 |-|-|-|-|-|L|-|-|
 | Torres Apolinario, Giovany Smith | giovanydevv |-|-| L |-|-|-|-|-|
-| Quiroz Caceres, Adrian Alonso | username | L |-|-|-|-|-|-|-|
+| Quiroz Caceres, Adrian Alonso | Aqc1019 | L |-|-|-|-|-|-|-|
 
 
 
