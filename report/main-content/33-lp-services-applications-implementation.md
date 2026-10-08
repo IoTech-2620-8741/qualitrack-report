@@ -221,4 +221,22 @@ az account show --query "{tenant:tenantId, subscription:id}" -o table
 
 ![Step 7-2 - Secretos de repositorio para la conexión a Azure](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-7-2.png)
 
+**Paso 8: Creación de rama en repositorio para CI-CD junto a Azure**
+
+1) Creamos una nueva rama feature para la integración de workflows:
+
+Step-8-1
+
+2) Creamos los archivos deploy.yml y ci.yml dentro de .github/workflows
+
+Step-8-2
+
+Step-8-3
+
+3) Hacemos push a la rama feature, creamos un PR, esperamos que el test de CI termine y hacemos merge:
+
+Step-8-4
+
+* Para que funcionen correctamente los workflows creados, deben restringir los merge sin previa creación de un PR.
+
 #### 6.2.1.9. Team Collaboration Insights during Sprint
