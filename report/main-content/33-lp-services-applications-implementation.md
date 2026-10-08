@@ -243,26 +243,26 @@ az account show --query "{tenant:tenantId, subscription:id}" -o table
 
 1) Creamos nuestra rama release, en la versión 1.0.0 y la pasamos a remoto:
 
-Step-9-1
+![Step 9-1 - Creación y push de la rama release/v1.0.0](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-9-1.png)
 
 2) Creamos nuestro PR hacia main:
 
 * Previo a la creación del PR, verificamos que todo lo creado en Azure funcione correctamente.
 
-Step-9-2
+![Step 9-2 - Creación del pull request hacia main](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-9-2.png)
 
 3) Esperamos a que las pruebas y el despliegue integrados en workflows terminen:
 
-Step-9-3
+![Step 9-3 - Verificaciones del pull request en curso](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-9-3.png)
 
-Step-9-4
+![Step 9-4 - Verificaciones del pull request aprobadas](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-9-4.png)
 
 4) Después de aceptar y realizar el merge a main, esperamos a que termine el workflow de despliegue hacia Azure Container Apps que hemos creado:
 
-Step-9-5
+![Step 9-5 - Workflow de despliegue en curso](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-9-5.png)
 
 * Posteriormente, se realizó un hotfix (**hotfix/deploy-docker-build**) hacia main para corregir la construcción de la imagen Docker en el workflow de despliegue. Este es el workflow que terminó correctamente:
 
-Step-9-6
+![Step 9-6 - Workflow de despliegue completado](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-9-6.png)
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
