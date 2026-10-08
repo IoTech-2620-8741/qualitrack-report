@@ -1,0 +1,363 @@
+@startuml ca-domain-layer-class-diagram
+
+title QualiTrack - Compliance & Alerting - Domain Layer Class Diagram
+
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+package "shared" <<External>> {
+  abstract class AbstractDomainAggregateRoot
+}
+
+package "ca.domain.model.valueobjects" {
+  enum AlertSeverity {
+    LOW
+    WARNING
+    CRITICAL
+    + isAtLeast(minimum: AlertSeverity): boolean
+  }
+
+  enum AlertStatus {
+    UNRESOLVED
+    ACKNOWLEDGED
+    RESOLVED
+  }
+
+  enum AlertOrigin {
+    ENVIRONMENT
+    CONTAINER
+    + {static} fromDeviceType(deviceType: String): AlertOrigin
+  }
+
+  enum ComplianceEventType {
+    DEVIATION_ALERT_CREATED
+    DEVIATION_ALERT_ACKNOWLEDGED
+    DEVIATION_ALERT_RESOLVED
+    DEVIATION_ALERT_ESCALATED
+    DEVIATION_ALERT_EMAIL_SENT
+    DEVIATION_REPEATED
+    DEVIATION_CONDITION_NORMALIZED
+    NOTIFICATION_PREFERENCE_UPDATED
+    BATCH_BLOCKED
+    BATCH_RELEASED
+    BATCH_REJECTED
+    RAW_MATERIAL_LOW_STOCK
+    EQUIPMENT_CALIBRATION_EXPIRED
+    EQUIPMENT_DEVIATION_DETECTED
+  }
+
+  class DeviationRegistration <<record>> {
+    + alert: DeviationAlert
+    + created: boolean
+  }
+
+  class RelatedActuation <<record>> {
+    + id: Long
+    + action: String
+    + triggerState: String
+    + result: String
+    + occurredAt: Instant
+  }
+
+  class DeviationAlertDetail <<record>> {
+    + alert: DeviationAlert
+    + actuations: List<RelatedActuation>
+  }
+
+  enum NotificationType {
+    ALERT_OPENED
+    ALERT_ESCALATED
+    ALERT_ACKNOWLEDGED
+    ALERT_RESOLVED
+    BATCH_RELEASED
+    BATCH_REJECTED
+    + subject(): ComplianceEventSubject
+  }
+
+  class NotificationContent <<record>> {
+    + type: NotificationType
+    + severity: AlertSeverity
+    + subjectId: Long
+    + environmentName: String
+    + subjectName: String
+    + parameterName: String
+    + recordedValue: Double
+    + unit: String
+    + actorName: String
+    + note: String
+  }
+
+  class AlertEmailDelivery <<record>> {
+    + alertId: Long
+    + recipients: int
+    + delivered: int
+    + sentAt: String
+    + failed(): boolean
+  }
+}
+
+package "ca.domain.model.commands" {
+  class CreateDeviationAlertCommand <<record>> {
+    + laboratoryId: Long
+    + environmentId: Long
+    + deviceId: Long
+    + measurementId: Long
+    + parameterName: String
+    + recordedValue: Double
+    + thresholdValue: Double
+    + unit: String
+    + severity: AlertSeverity
+    + detectedAt: Instant
+  }
+
+  class RecordConditionNormalizedCommand <<record>> {
+    + laboratoryId: Long
+    + deviceId: Long
+    + parameterName: String
+    + normalizedAt: Instant
+  }
+
+  class AcknowledgeAlertCommand <<record>> {
+    + alertId: Long
+    + acknowledgedBy: Long
+  }
+
+  class ResolveAlertCommand <<record>> {
+    + alertId: Long
+    + resolvedBy: Long
+    + resolutionNotes: String
+  }
+
+  class UpdateNotificationPreferenceCommand <<record>> {
+    + userId: Long
+    + emailEnabled: Boolean
+    + inAppEnabled: Boolean
+    + minimumSeverity: AlertSeverity
+  }
+
+  class PublishNotificationCommand <<record>> {
+    + laboratoryId: Long
+    + content: NotificationContent
+    + actorUserId: Long
+  }
+
+  class MarkNotificationAsReadCommand <<record>> {
+    + userId: Long
+    + notificationId: Long
+  }
+
+  class MarkAllNotificationsAsReadCommand <<record>> {
+    + userId: Long
+  }
+
+  class SendAlertEmailNotificationCommand <<record>> {
+    + alertId: Long
+    + requestedBy: Long
+  }
+}
+
+package "ca.domain.model.queries" {
+  class GetAlertsQuery <<record>> {
+    + laboratoryId: Long
+    + environmentId: Long
+    + deviceId: Long
+    + status: AlertStatus
+    + severity: AlertSeverity
+    + activeOnly: boolean
+  }
+
+  class GetAlertByIdQuery <<record>> {
+    + alertId: Long
+  }
+
+  class GetAlertDetailQuery <<record>> {
+    + alertId: Long
+  }
+
+  class GetComplianceEventsByRelatedEntityIdQuery <<record>> {
+    + relatedEntityId: Long
+  }
+
+  class GetNotificationPreferenceByUserIdQuery <<record>> {
+    + userId: Long
+  }
+
+  class GetNotificationsQuery <<record>> {
+    + userId: Long
+    + unreadOnly: boolean
+    + limit: int
+  }
+
+  class GetUnreadNotificationCountQuery <<record>> {
+    + userId: Long
+  }
+}
+
+package "ca.domain.model.events" {
+  class DeviationAlertCreatedEvent <<record>>
+  class DeviationAlertEscalatedEvent <<record>>
+  class DeviationAlertAcknowledgedEvent <<record>>
+  class DeviationAlertResolvedEvent <<record>>
+  class NotificationPreferenceUpdatedEvent <<record>>
+}
+
+package "ca.domain.model.aggregates" {
+  class DeviationAlert {
+    - id: Long
+    - laboratoryId: Long
+    - environmentId: Long
+    - origin: AlertOrigin
+    - equipmentId: Long
+    - batchId: Long
+    - measurementId: Long
+    - lastMeasurementId: Long
+    - parameterName: String
+    - recordedValue: Double
+    - thresholdValue: Double
+    - unit: String
+    - timestamp: String
+    - severity: AlertSeverity
+    - status: AlertStatus
+    - deviationCount: Integer
+    - lastDetectedAt: Instant
+    - normalizedAt: Instant
+    - acknowledgedBy: Long
+    - acknowledgedAt: Instant
+    - resolvedBy: Long
+    - resolvedAt: Instant
+    - resolutionNotes: String
+    + registerDeviation(command: CreateDeviationAlertCommand): boolean
+    + markNormalized(at: Instant): boolean
+    + acknowledge(command: AcknowledgeAlertCommand, at: Instant): void
+    + resolve(command: ResolveAlertCommand, at: Instant): void
+    + isUnresolved(): boolean
+    + isOpen(): boolean
+    + isCritical(): boolean
+    + detectedAt(): Instant
+  }
+
+  class Notification {
+    - id: Long
+    - recipientUserId: Long
+    - laboratoryId: Long
+    - content: NotificationContent
+    - occurredAt: Instant
+    - readAt: Instant
+    + markAsRead(at: Instant): boolean
+    + isRead(): boolean
+    + belongsTo(userId: Long): boolean
+  }
+}
+
+package "ca.domain.model.entities" {
+  class ComplianceEvent {
+    - id: Long
+    - relatedEntityId: Long
+    - eventType: ComplianceEventType
+    - description: String
+    - timestamp: String
+    - resolvedBy: Long
+    + isResolved(): boolean
+    + isUnresolved(): boolean
+    + resolve(resolverId: Long): void
+  }
+
+  class NotificationPreference {
+    - id: Long
+    - userId: Long
+    - emailEnabled: Boolean
+    - inAppEnabled: Boolean
+    - minimumSeverity: AlertSeverity
+    + update(command: UpdateNotificationPreferenceCommand): void
+    + wantsInApp(alertSeverity: AlertSeverity): boolean
+    + wantsEmail(alertSeverity: AlertSeverity): boolean
+  }
+}
+DeviationAlert --|> AbstractDomainAggregateRoot
+DeviationAlert --> AlertSeverity
+DeviationAlert --> AlertStatus
+DeviationAlert --> AlertOrigin
+DeviationAlert ..> CreateDeviationAlertCommand
+DeviationAlert ..> AcknowledgeAlertCommand
+DeviationAlert ..> ResolveAlertCommand
+DeviationRegistration --> DeviationAlert
+DeviationAlertDetail --> DeviationAlert
+DeviationAlertDetail --> "0..*" RelatedActuation
+note right of DeviationAlert
+  One alert per incident (decisions of 2026-10-04): while it is open,
+  deviations of the same device and parameter are added to it, the
+  severity only rises and a return to normal is noted (normalizedAt);
+  only a person closes it with a resolution.
+end note
+ComplianceEvent --> ComplianceEventType
+NotificationPreference --> AlertSeverity
+NotificationPreference ..> UpdateNotificationPreferenceCommand
+Notification --|> AbstractDomainAggregateRoot
+Notification --> NotificationContent
+NotificationContent --> NotificationType
+NotificationContent --> AlertSeverity
+note right of Notification
+  One per person of the laboratory and event (US83): never for what the
+  person did; alerts reach the bell from the minimum severity, batch
+  decisions always. Critical alerts are also e-mailed (US84).
+end note
+
+package "ca.domain.repositories" {
+  interface DeviationAlertRepository {
+    + findById(id: Long): Optional<DeviationAlert>
+    + findAll(): List<DeviationAlert>
+    + findAllByEquipmentId(equipmentId: Long): List<DeviationAlert>
+    + findAllByBatchId(batchId: Long): List<DeviationAlert>
+    + findAllByStatus(status: AlertStatus): List<DeviationAlert>
+    + findAllBySeverity(severity: AlertSeverity): List<DeviationAlert>
+    + findAllByLaboratoryIdAndEnvironmentId(laboratoryId: Long, environmentId: Long): List<DeviationAlert>
+    + findOpenByEquipmentIdAndParameterName(equipmentId: Long, parameterName: String): Optional<DeviationAlert>
+    + save(alert: DeviationAlert): DeviationAlert
+    + existsById(id: Long): boolean
+    + deleteById(id: Long): void
+  }
+
+  interface ComplianceEventRepository {
+    + findById(id: Long): Optional<ComplianceEvent>
+    + findAll(): List<ComplianceEvent>
+    + findAllByRelatedEntityId(relatedEntityId: Long): List<ComplianceEvent>
+    + findAllByEventType(eventType: ComplianceEventType): List<ComplianceEvent>
+    + save(complianceEvent: ComplianceEvent): ComplianceEvent
+    + existsById(id: Long): boolean
+    + deleteById(id: Long): void
+  }
+
+  interface NotificationPreferenceRepository {
+    + findById(id: Long): Optional<NotificationPreference>
+    + findByUserId(userId: Long): Optional<NotificationPreference>
+    + findByUserIds(userIds: Collection<Long>): List<NotificationPreference>
+    + findAll(): List<NotificationPreference>
+    + save(preference: NotificationPreference): NotificationPreference
+    + existsById(id: Long): boolean
+    + existsByUserId(userId: Long): boolean
+    + deleteById(id: Long): void
+  }
+
+  interface NotificationRepository {
+    + findById(id: Long): Optional<Notification>
+    + findByRecipient(recipientUserId: Long, unreadOnly: boolean, limit: int): List<Notification>
+    + countUnread(recipientUserId: Long): long
+    + save(notification: Notification): Notification
+    + saveAll(notifications: List<Notification>): List<Notification>
+    + markAllAsRead(recipientUserId: Long, readAt: Instant): int
+  }
+}
+NotificationRepository --> Notification
+DeviationAlertRepository --> DeviationAlert
+ComplianceEventRepository --> ComplianceEvent
+NotificationPreferenceRepository --> NotificationPreference
+
+package "ca.domain.exceptions" {
+  class DeviationAlertNotFoundException
+  class ComplianceEventNotFoundException
+  class NotificationPreferenceNotFoundException
+}
+
+@enduml

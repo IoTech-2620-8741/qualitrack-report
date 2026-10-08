@@ -161,188 +161,141 @@ El diagrama de base de datos muestra las tablas de perfiles ambientales, con sus
 
 ### 4.2.2. Bounded Context: Compliance & Alerting
 
-Compliance & Alerting es el segundo Bounded Context Core de QualiTrack. Su responsabilidad es transformar las desviaciones relevantes detectadas por otros contextos en alertas que puedan ser atendidas, reconocidas y resueltas. También mantiene eventos de cumplimiento y preferencias de notificación.
+Compliance & Alerting es el segundo Bounded Context Core de QualiTrack. Convierte las desviaciones que detecta Tracking & Telemetry en **alertas** que el personal atiende, reconoce y resuelve. Registra los **eventos de cumplimiento** de equipos y lotes, y avisa a las personas del laboratorio con **notificaciones** en la aplicación y **correos** para las alertas críticas, según sus preferencias.
 
-La separación entre Tracking & Telemetry y Compliance & Alerting es importante: una medición, un estado ambiental o una actuación física pertenecen a Tracking & Telemetry; el ciclo de vida de la alerta pertenece a Compliance & Alerting.
+La separación con Tracking & Telemetry se mantiene: la lectura, el estado ambiental y la acción física pertenecen a Tracking & Telemetry, y el ciclo de vida de la alerta pertenece a este contexto. Se maneja **una alerta por incidente**, por dispositivo y métrica. Una nueva desviación del mismo incidente se correlaciona con la alerta abierta y, si empeora, la escala. La alerta sigue abierta hasta que una persona la resuelve, aunque la lectura vuelva a normal.
 
 #### 4.2.2.1. Domain Layer.
 
 **`DeviationAlert` — Aggregate Root**
 
-- **Propósito:** representa una desviación que requiere seguimiento dentro de QualiTrack.
-- **Atributos principales:** `id`, `equipmentId`, `batchId`, `parameterName`, `recordedValue`, `thresholdValue`, `unit`, `timestamp`, `severity`, `status`, `acknowledgedBy`, `resolvedBy` y `resolutionNotes`.
-- **Métodos principales:** `acknowledge`, `resolve`, `isUnresolved` e `isCritical`.
-- **Relaciones:** utiliza `AlertSeverity` y `AlertStatus`. Puede estar relacionada con un equipo y, cuando corresponde, con un lote de producto.
+- **Propósito:** incidente de desviación de un ambiente o de uno de sus contenedores monitoreados, con su atención.
+- **Atributos principales:** `id`, `laboratoryId`, `environmentId`, `origin` (`AlertOrigin`), `equipmentId`, `batchId`, `measurementId`, `lastMeasurementId`, `parameterName`, `recordedValue`, `thresholdValue`, `unit`, `severity`, `status`, `deviationCount`, `lastDetectedAt`, `normalizedAt`, `acknowledgedBy`, `acknowledgedAt`, `resolvedBy`, `resolvedAt` y `resolutionNotes`.
+- **Métodos principales:** `registerDeviation`, `markNormalized`, `acknowledge`, `resolve`, `isOpen`, `isUnresolved` e `isCritical`.
+- **Reglas:** `registerDeviation` acumula las desviaciones del mismo incidente y eleva la severidad cuando la condición empeora. Reconocer una alerta no la resuelve.
 
-**`ComplianceEvent` — Entity**
+**`Notification` — Aggregate Root**
 
-- **Propósito:** conserva un hecho relevante relacionado con cumplimiento o calidad.
-- **Atributos principales:** `id`, `relatedEntityId`, `eventType`, `description`, `timestamp` y `resolvedBy`.
-- **Métodos principales:** `isResolved`, `isUnresolved` y `resolve`.
-- **Relaciones:** utiliza `ComplianceEventType` para identificar el tipo de evento registrado.
+- **Propósito:** aviso que recibe una persona del laboratorio en la campana de la aplicación cuando ocurre algo que ella no hizo: un paso del ciclo de una alerta o una decisión de calidad sobre un lote (US83).
+- **Atributos principales:** `id`, `recipientUserId`, `laboratoryId`, `content` (`NotificationContent`), `occurredAt` y `readAt`.
+- **Métodos principales:** `markAsRead`, `isRead` y `belongsTo`.
 
-**`NotificationPreference` — Entity**
+**Entities**
 
-- **Propósito:** mantiene las preferencias del usuario sobre los canales y severidad mínima de las notificaciones.
-- **Atributos principales:** `userId`, `emailEnabled`, `smsEnabled`, `inAppEnabled` y `minimumSeverity`.
-- **Método principal:** `update`.
+- `ComplianceEvent`: hecho de cumplimiento registrado para un equipo o un lote (`relatedEntityId`, `eventType`, `description`, `timestamp`, `resolvedBy`).
+- `NotificationPreference`: canales y severidad mínima con que una persona quiere ser avisada (`userId`, `emailEnabled`, `inAppEnabled`, `minimumSeverity`). Sus métodos `wantsInApp` y `wantsEmail` deciden por cada alerta.
 
-**`AlertSeverity` — Enumeration**
+**Value Objects**
 
-- **Valores:** `LOW`, `WARNING` y `CRITICAL`.
+- `AlertOrigin`: dónde se originó la alerta, es decir, el ambiente (Dispositivo Ambiental) o un contenedor monitoreado (US86).
+- `DeviationRegistration`: resultado de registrar una desviación. Indica si abrió una alerta o se correlacionó con una abierta.
+- `DeviationAlertDetail` y `RelatedActuation`: alerta con las acciones que ejecutó su contenedor para la misma métrica durante el incidente (US86).
+- `NotificationContent`, `NotificationType` (`ALERT_OPENED`, `ALERT_ESCALATED`, `ALERT_ACKNOWLEDGED`, `ALERT_RESOLVED`, `BATCH_RELEASED`, `BATCH_REJECTED`) y `ComplianceEventSubject`.
+- `AlertEmailDelivery`: resultado del envío del correo de una alerta.
+- Enumeraciones: `AlertSeverity` (`LOW`, `WARNING`, `CRITICAL`), `AlertStatus` (`UNRESOLVED`, `ACKNOWLEDGED`, `RESOLVED`) y `ComplianceEventType` (creación, reconocimiento, resolución, escalamiento y correo de alertas; desviación repetida y normalizada; liberación, rechazo y bloqueo de lotes; bajo stock; calibración vencida).
 
-**`AlertStatus` — Enumeration**
+**Commands principales**
 
-- **Valores:** `UNRESOLVED`, `ACKNOWLEDGED` y `RESOLVED`.
-- **Propósito:** controla el ciclo de vida de la alerta. Reconocer una alerta no significa resolver la desviación que la originó.
-
-**`ComplianceEventType` — Enumeration**
-
-Permite clasificar eventos como creación, reconocimiento y resolución de alertas, cambios relevantes de lotes, bajo stock, vencimiento de calibración y otras situaciones que requieren trazabilidad.
-
-**Comandos principales**
-
-- `CreateDeviationAlertCommand`.
-- `AcknowledgeAlertCommand`.
-- `ResolveAlertCommand`.
+- `CreateDeviationAlertCommand` (TS73), `AcknowledgeAlertCommand`, `ResolveAlertCommand` y `RecordConditionNormalizedCommand`.
+- `SendAlertEmailNotificationCommand` (US84, TS78).
+- `PublishNotificationCommand`, `MarkNotificationAsReadCommand` y `MarkAllNotificationsAsReadCommand`.
 - `UpdateNotificationPreferenceCommand`.
 
 **Queries principales**
 
-- `GetAlertsQuery`.
-- `GetAlertByIdQuery`.
+- `GetAlertsQuery` (US85, TS74), `GetAlertByIdQuery` y `GetAlertDetailQuery` (US86).
 - `GetComplianceEventsByRelatedEntityIdQuery`.
+- `GetNotificationsQuery` y `GetUnreadNotificationCountQuery`.
 - `GetNotificationPreferenceByUserIdQuery`.
 
-**Eventos principales**
+**Eventos de dominio**
 
-- `DeviationAlertCreatedEvent`.
-- `DeviationAlertAcknowledgedEvent`.
-- `DeviationAlertResolvedEvent`.
+- `DeviationAlertCreatedEvent`, `DeviationAlertEscalatedEvent`, `DeviationAlertAcknowledgedEvent` y `DeviationAlertResolvedEvent`.
 - `NotificationPreferenceUpdatedEvent`.
 
 **Repository Interfaces**
 
-- `DeviationAlertRepository`.
-- `ComplianceEventRepository`.
-- `NotificationPreferenceRepository`.
+- `DeviationAlertRepository`, `NotificationRepository`, `ComplianceEventRepository` y `NotificationPreferenceRepository`.
 
 #### 4.2.2.2. Interface Layer.
 
-Esta capa expone las capacidades necesarias para consultar y atender alertas, consultar eventos de cumplimiento y administrar preferencias de notificación.
+**REST controllers** (bajo `/api/v1`)
 
-**`DeviationAlertController`**
+- `DeviationAlertController`: registra y lista las alertas de un ambiente (`/laboratories/{laboratoryId}/environments/{environmentId}/deviation-alerts`) y consulta su detalle (`GET /deviation-alerts/{alertId}`). Además las reconoce (`POST .../acknowledgements`), las resuelve (`POST .../resolutions`) y envía su aviso por correo (`POST .../email-notifications`).
+- `NotificationController` — `/users/me/notifications`: lista los avisos, cuenta los no leídos (`GET /unread-count`) y los marca como leídos (`POST /{notificationId}/read-receipts` y `POST /read-receipts`).
+- `NotificationPreferenceController` — `/users/me/notification-preferences`: consulta y actualiza las preferencias.
+- `ComplianceEventController`: eventos de cumplimiento de un equipo y de un lote.
 
-- Permite crear y consultar alertas.
-- Permite registrar el reconocimiento de una alerta.
-- Permite registrar la resolución y sus notas.
-- Utiliza `CaCommandService` y `CaQueryService` para no colocar reglas de negocio dentro del controlador.
+**Assemblers principales**
 
-**`ComplianceEventController`**
+- `CreateDeviationAlertCommandFromResourceAssembler`, `ResolveAlertCommandFromResourceAssembler` y `DeviationAlertResourceFromEntityAssembler`.
+- `ComplianceEventResourceFromEntityAssembler` y `NotificationResourceFromEntityAssembler`.
+- `NotificationPreferenceResourceFromEntityAssembler` y `UpdateNotificationPreferenceCommandFromResourceAssembler`.
 
-- Expone la consulta de eventos de cumplimiento relacionados con una entidad.
+**Fachada e integration events**
 
-**`NotificationPreferenceController`**
-
-- Permite consultar y actualizar las preferencias de notificación del usuario.
-
-**Resources y Assemblers principales**
-
-- `CreateDeviationAlertResource` y `CreateDeviationAlertCommandFromResourceAssembler`.
-- `DeviationAlertResource` y `DeviationAlertResourceFromEntityAssembler`.
-- `AcknowledgeAlertResource` y `AcknowledgeAlertCommandFromResourceAssembler`.
-- `ResolveAlertResource` y `ResolveAlertCommandFromResourceAssembler`.
-- `ComplianceEventResource` y `ComplianceEventResourceFromEntityAssembler`.
-- `NotificationPreferenceResource` y `NotificationPreferenceResourceFromEntityAssembler`.
-- `UpdateNotificationPreferenceResource` y `UpdateNotificationPreferenceCommandFromResourceAssembler`.
-
-**`ComplianceContextFacade`**
-
-Expone operaciones controladas hacia otros contextos, por ejemplo registrar eventos de bajo stock o consultar si las condiciones de cumplimiento permiten liberar un lote.
+- `ComplianceContextFacade`: expone a otros contextos operaciones controladas, como registrar el bajo stock o consultar si un lote puede liberarse (`canReleaseBatch`).
+- `CaTenantResourceLookup`: resuelve el laboratorio dueño de una alerta.
+- Integration events: `DeviationAlertCreatedIntegrationEvent`, `DeviationAlertEscalatedIntegrationEvent`, `DeviationAlertAcknowledgedIntegrationEvent`, `DeviationAlertResolvedIntegrationEvent` y `NotificationPreferenceUpdatedIntegrationEvent`.
 
 #### 4.2.2.3. Application Layer.
 
-**Command Service**
+**Command Services**
 
-- `CaCommandService` define los casos de uso para crear, reconocer y resolver alertas, además de actualizar preferencias.
-- `CaCommandServiceImpl` coordina repositorios, validaciones e integración con otros contextos.
+- `CaCommandService` / `CaCommandServiceImpl`: registra las desviaciones, correlacionándolas con la alerta abierta del incidente. También registra la normalización, reconoce y resuelve las alertas y actualiza las preferencias.
+- `NotificationCommandService` / `NotificationCommandServiceImpl`: crea los avisos de cada persona según sus preferencias y envía los correos de alertas críticas.
 
-**Query Service**
+**Query Services**
 
-- `CaQueryService` define consultas de alertas, eventos y preferencias.
-- `CaQueryServiceImpl` implementa las consultas utilizando los repositorios del dominio.
+- `CaQueryService` / `CaQueryServiceImpl`: alertas, su detalle, eventos de cumplimiento y preferencias.
+- `NotificationQueryService` / `NotificationQueryServiceImpl`: avisos de una persona.
 
 **Event Handlers**
 
-- `TelemetryAnomalyDetectedComplianceEventHandler`: transforma una anomalía proveniente de Tracking & Telemetry en una alerta cuando corresponde.
-- `RawMaterialLowStockComplianceEventHandler`: registra evidencia relacionada con stock bajo cuando el evento es recibido.
-- `CalibrationExpiredEventHandler`: procesa eventos de calibración vencida provenientes de Equipment Management.
-- `BatchRejectedComplianceEventHandler` y `BatchReleasedComplianceEventHandler`: registran cambios relevantes de lotes.
-- `DeviationAlertCreatedEventHandler`, `DeviationAlertAcknowledgedEventHandler` y `DeviationAlertResolvedEventHandler`: publican las integraciones relacionadas con el ciclo de vida de una alerta.
-- `NotificationPreferenceUpdatedEventHandler`: procesa la actualización de preferencias.
+- `EnvironmentalDeviationComplianceEventHandler`: registra la desviación detectada por Tracking & Telemetry con la severidad de su condición (`WARNING` o `CRITICAL`).
+- `EnvironmentalConditionNormalizedComplianceEventHandler`: anota en la alerta abierta que la métrica volvió a normal.
+- `RawMaterialLowStockComplianceEventHandler`, `CalibrationExpiredEventHandler`, `BatchReleasedComplianceEventHandler` y `BatchRejectedComplianceEventHandler`: registran los eventos de cumplimiento de stock, equipos y lotes.
+- `AlertNotificationEventHandler` y `BatchNotificationEventHandler`: avisan al laboratorio de cada paso de una alerta y de las decisiones sobre sus lotes.
+- `DeviationAlertCreatedEventHandler`, `DeviationAlertEscalatedEventHandler`, `DeviationAlertAcknowledgedEventHandler`, `DeviationAlertResolvedEventHandler` y `NotificationPreferenceUpdatedEventHandler`: publican los eventos de integración.
+- `CriticalAlertEmailScheduler`: envía en segundo plano el correo de una alerta crítica una vez guardada, para no retrasar la sincronización de la lectura que la originó.
 
-**ACL consumidas**
+**ACL**
 
-- `CaExternalEquipmentService`: valida equipos mediante Equipment Management.
-- `CaExternalBatchService`: valida lotes mediante Product Batch Management.
-
-El Application Layer mantiene separado el significado de una alerta de los modelos internos de telemetría, equipos y lotes.
+- `CaExternalTrackingService`: lee las acciones relacionadas con una alerta.
+- `CaExternalEquipmentService`: resuelve el dispositivo donde se originó la desviación.
+- `CaExternalLaboratoryService`: lee los nombres de los ambientes.
+- `CaExternalIamService`: lee las cuentas del laboratorio que reciben los avisos.
+- `CaExternalProfileService`: obtiene el nombre de quien atendió una alerta o decidió sobre un lote.
+- `AlertEmailNotifier`: puerto de salida para el correo de la alerta crítica.
 
 #### 4.2.2.4. Infrastructure Layer.
 
-**Persistence Entities**
-
-- `DeviationAlertPersistenceEntity`.
-- `ComplianceEventPersistenceEntity`.
-- `NotificationPreferencePersistenceEntity`.
-
-**Persistence Repositories**
-
-- `DeviationAlertPersistenceRepository`.
-- `ComplianceEventPersistenceRepository`.
-- `NotificationPreferencePersistenceRepository`.
-
-**Repository Adapters**
-
-- `DeviationAlertRepositoryImpl`.
-- `ComplianceEventRepositoryImpl`.
-- `NotificationPreferenceRepositoryImpl`.
-
-**Persistence Assemblers**
-
-- `DeviationAlertPersistenceAssembler`.
-- `ComplianceEventPersistenceAssembler`.
-- `NotificationPreferencePersistenceAssembler`.
-
-**Converters**
-
-- `AlertSeverityPersistenceConverter`.
-- `AlertStatusPersistenceConverter`.
-- `ComplianceEventTypePersistenceConverter`.
-
-Las notificaciones por correo o push se consideran integraciones técnicas del contexto. Estas integraciones deben recibir la información de la alerta desde Application Layer y no incorporar reglas de negocio propias sobre severidad o resolución.
+- **Persistencia:** entidades, Spring Data JPA Repositories, assemblers y adapters para alertas, avisos, eventos de cumplimiento y preferencias (`DeviationAlertRepositoryImpl`, `NotificationRepositoryImpl`, `ComplianceEventRepositoryImpl` y `NotificationPreferenceRepositoryImpl`).
+- **Converters:** `AlertSeverityPersistenceConverter`, `AlertStatusPersistenceConverter`, `ComplianceEventTypePersistenceConverter` y `NotificationTypePersistenceConverter`.
+- **Correo:** `EmailAlertNotifier` implementa `AlertEmailNotifier`. Envía el aviso en español e inglés, con el enlace a la alerta, mediante el proveedor configurado en la plataforma: Gmail SMTP en producción o Resend API.
+- **Configuración:** `CaConfiguration`.
 
 #### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams.
 
-El diagrama de componentes presenta la posición de **Compliance & Alerting** dentro del **Cloud REST API** de QualiTrack. El contexto concentra el seguimiento de desviaciones y alertas y mantiene relaciones con los componentes que le proporcionan información de telemetría, equipos y lotes, además de Reporting & Audit para conservar evidencia de los eventos relevantes.
+El diagrama de componentes presenta **Compliance & Alerting** dentro del **Cloud REST API**. Recibe de Tracking & Telemetry las desviaciones, consulta a Product Batch Management los lotes expuestos y a Profile Management los nombres de las personas, y envía los correos de alertas críticas mediante Gmail SMTP.
 
-Para esta entrega se utiliza la vista de Structurizr **`Components-Compliance`**, definida sobre el container `Cloud REST API`. La vista corresponde al C4 actual del proyecto y posteriormente podrá ser refinada para evidenciar con mayor detalle los controladores, servicios de aplicación, modelo de dominio y adapters del contexto.
+Se utiliza la vista de Structurizr **`Components-Compliance`**, definida sobre el container `Cloud REST API`.
 
 ![Compliance & Alerting Component Diagram](../assets/img/chapter-iv/Components-Compliance.png)
 
 #### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams.
 
-Los diagramas de nivel de código muestran el ciclo completo de una alerta y las estructuras utilizadas para conservar la evidencia de cumplimiento.
+Los diagramas de nivel de código presentan las clases del Domain Layer de Compliance & Alerting y el esquema relacional que persiste alertas, avisos, eventos de cumplimiento y preferencias.
 
 ##### 4.2.2.6.1. Bounded Context Domain Layer Class Diagrams.
 
-El diagrama muestra `DeviationAlert` como Aggregate Root, además de `ComplianceEvent`, `NotificationPreference`, las enumeraciones de severidad y estado, Commands, Queries, eventos e interfaces de repositorio.
+El diagrama muestra los Aggregates `DeviationAlert` y `Notification`, las entidades `ComplianceEvent` y `NotificationPreference`, sus Value Objects y enumeraciones, y los Commands, Queries, eventos e interfaces de repositorio del contexto.
 
-![Compliance & Alerting Domain Layer Class Diagram](../assets/img/chapter-iv/ca-domain-layer-class-diagram.png)
+![Compliance & Alerting Domain Layer Class Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-report/develop/docs/diagrams/domain/ca-domain-layer-class-diagram.puml&fmt=svg&v=4)
 
 ##### 4.2.2.6.2. Bounded Context Database Design Diagram.
 
-El diagrama de base de datos representa la persistencia de alertas, eventos de cumplimiento y preferencias de notificación. Las referencias a equipos, lotes y usuarios se mantienen mediante identificadores para evitar duplicar las entidades que pertenecen a otros Bounded Contexts.
+El diagrama de base de datos muestra las tablas de alertas de desviación, avisos, eventos de cumplimiento y preferencias de notificación. Los identificadores de laboratorio, ambiente, equipo y lote relacionan la información con los contextos que la originan.
 
 ![Compliance & Alerting Database Design Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/ca/ca-database-diagram.puml&fmt=svg&v=4)
 
