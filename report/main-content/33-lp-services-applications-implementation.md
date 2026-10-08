@@ -334,7 +334,7 @@ En total el sprint comprende 182 tareas y 561 horas estimadas. Al cierre del spr
 
 En este sprint se implementó la primera versión de la Landing Page y de la Web Application de QualiTrack.
 
-- **Landing Page:** se implementaron las secciones Home, Features (con video), Benefits, About Us (IoTech y el equipo, con video) y Plans, la navegación entre secciones, el cambio de idioma entre inglés y español, el diseño adaptable a dispositivos móviles y las páginas de Términos de Servicio y Política de Privacidad.
+- **Landing Page:** se implementaron las secciones Home, Features, Benefits, About Us (IoTech y el equipo), Plans y testimonios con la llamada final a la acción, la navegación entre secciones, el cambio de idioma entre inglés y español, el diseño adaptable a dispositivos móviles y las páginas de Términos de Servicio y Política de Privacidad.
 - **Web Application:** se construyó la base de la aplicación con Angular y Angular Material (layout, barra de navegación, selector de idioma e internacionalización) y los módulos de cada Bounded Context: autenticación, recuperación de contraseña y configuración inicial; planes, pago y resumen de suscripción; laboratorio, ambientes y personal; inventario de materias primas por ambiente; equipos, mantenimiento y dispositivos IoT; perfiles ambientales, monitoreo e historial de telemetría; productos, lotes, consumos, trazabilidad, liberación y rechazo; alertas de desviación y avisos; indicadores, auditoría y reportes; perfil del usuario y panel de control. Al final del sprint se documentó con TSDoc el módulo de Compliance & Alerting y se inició la documentación de entidades del módulo de inventario.
 
 Las siguientes tablas presentan los commits de implementación de cada repositorio, ordenados por fecha, junto con la rama en la que se realizaron.
@@ -356,7 +356,17 @@ Las siguientes tablas presentan los commits de implementación de cada repositor
 | Io​Tech-2620-8741/​qualitrack-landing-page | feature/​team-members | d262b10 | feat​(images): Remove unused team member icons for optimization | — | 01/10/2026 |
 | Io​Tech-2620-8741/​qualitrack-landing-page | feature/​team-members | d54f84f | feat​(images): Add new team member icons for enhanced representation | — | 01/10/2026 |
 | Io​Tech-2620-8741/​qualitrack-landing-page | feature/​team-members | 83f6cbd | feat(team): Update team member profiles and add new members | — | 01/10/2026 |
-| Io​Tech-2620-8741/​qualitrack-landing-page | main | e9212f6 | feat(team): Add new team member Adrian Quiroz Cáceres to the profiles | — | 01/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-landing-page | hotfix/​landing-page-video | e9212f6 | feat(team): Add new team member Adrian Quiroz Cáceres to the profiles | — | 01/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​landing-page | 6eb30de | fix(link): Update demo request link to the new URL | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​landing-page | 93d49fd | fix(link): Update plan links to the new URL | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​landing-page | af3980c | fix(link): Update demo request link to the new URL | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​landing-page | 4a37b08 | fix​(copyright): Update copyright information from ClosedSource to IoTech | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​landing-page | 8ed862c | fix(link): Update sign-up link to the new URL | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-landing-page | release/​v1.0.0 | baa57e3 | docs​(readme): add version 1.0.0 section | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-landing-page | hotfix/​landing-page-video | 4058b79 | fix(video): remove YouTube embed URL from features section | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-landing-page | hotfix/​landing-page-video | 969ed0d | fix(video): remove YouTube embed URL from About Us section | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-landing-page | hotfix/​landing-page | cc88589 | docs​(readme): replace ClosedSource with IoTech | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-landing-page | hotfix/​landing-page | cb57105 | fix(legal): replace ClosedSource with IoTech in terms and policies | — | 08/10/2026 |
 
 **Web Application** ([IoTech-2620-8741/qualitrack-web-app](https://github.com/IoTech-2620-8741/qualitrack-web-app))
 
@@ -569,6 +579,38 @@ Las siguientes tablas presentan los commits de implementación de cada repositor
 | Io​Tech-2620-8741/​qualitrack-web-app | feature/​environment-production-configuration | 615a3df | build​(environment): point production api to azure container apps backend | Replace the localhost server​Base​Path in the production environment with the deployed backend URL so the Firebase Hosting build can reach the API. | 08/10/2026 |
 | Io​Tech-2620-8741/​qualitrack-web-app | feature/​Trackingand​Telemetry | de2eb55 | feat​(tracking): improve IoT telemetry domain data mapping | — | 08/10/2026 |
 | Io​Tech-2620-8741/​qualitrack-web-app | feature/​Trackingand​Telemetry | a86ec29 | feat​(tracking): improve IoT device connectivity endpoint handling | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​laboratory | f19dd08 | feat​(laboratory): documentation for BC laboratory/​aplication | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​laboratory | e45ce77 | feat​(laboratory): documentation for BC laboratory/​domain/​model | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​laboratory | dc11012 | feat​(laboratory): documentation for BC laboratory/​infrastructure first half | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​laboratory | e5e9dc3 | feat​(laboratory): documentation for BC laboratory/​infrastructure second half | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​laboratory | b9eb2ae | feat​(laboratory): documentation for BC laboratory/​presentation/​components and views for environment-form.ts and environment-list.ts | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​laboratory | c6c9a4a | feat​(laboratory): documentation for BC laboratory/​presentation/​view | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​firebase-hosting-ci | 7bd7ac5 | ci: deploy to Firebase Hosting on push to main | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | — | 7e902bd | feat​(equipment): add TSDoc documentation to Bpm​Parameter​Config entity | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | — | e7b74cf | feat​(equipment): add TSDoc documentation to Change​Equipment​Status​Command | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | — | 768512a | feat​(equipment): add TSDoc documentation to Configure​Bpm​Command | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | — | 8e3fef0 | feat​(equipment): add TSDoc documentation to Equipment entity | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | — | e162209 | feat​(equipment): enhance TSDoc documentation for Equipment​Status and related constants | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | — | f843e50 | feat​(equipment): add TSDoc documentation for Iot​Device​Type and IOT_​DEVICE_​TYPES | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | — | 028f67f | feat​(equipment): add TSDoc documentation for Maintenance​Record entity and environment​Id property | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | — | a403819 | feat​(equipment): add TSDoc documentation for Register​Equipment​Command interface | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | — | d59508c | feat​(equipment): add TSDoc documentation for Register​Iot​Device​Command interface | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | — | 037edc5 | feat​(equipment): add TSDoc documentation for Register​Maintenance​Command interface | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | — | 7b710af | feat​(equipment): update TSDoc example formatting in Configure​Bpm​Request | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | — | 72e1730 | feat​(equipment): enhance TSDoc documentation for Bpm​Config​Api​Endpoint methods | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | — | 383f9c3 | feat​(equipment): enhance TSDoc documentation for BPM configuration methods | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | — | 46c4317 | feat​(equipment): improve TSDoc example formatting in bpm-config-response.ts | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | — | ca9df8e | feat​(equipment): enhance TSDoc documentation for equipment and device request interfaces | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | — | 3d02d62 | feat​(equipment): enhance TSDoc documentation for EquipmentApi methods and endpoints | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | — | 6b0cb82 | feat​(equipment): enhance TSDoc documentation for Equipment​Api​Endpoint methods | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | — | 807351d | feat​(equipment): enhance TSDoc documentation for equipment assembler methods | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | — | e35912b | feat​(equipment): enhance TSDoc documentation for Equipment​Resource and Equipments​Response interfaces | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | — | 7e9fa63 | feat​(equipment): enhance TSDoc documentation for Register​Maintenance​Request interface | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | — | f541b63 | feat​(equipment): enhance TSDoc documentation for Maintenance​Api​Endpoint methods | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | — | 844d2d4 | feat​(equipment): enhance TSDoc documentation for maintenance assembler methods | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | — | eaf7fed | feat​(equipment): add TSDoc documentation to maintenance resource and response | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | — | 5e9054c | feat​(equipment): enhance TSDoc documentation for Equipment​Store methods | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | — | 8158b66 | feat​(equipment): enhance TSDoc documentation for lazy loading functions in equipment routes | — | 08/10/2026 |
 
 ---
 
@@ -678,7 +720,7 @@ En este sprint se publicó la primera versión de la Landing Page y de la Web Ap
 La revisión del sprint verificó que un visitante pueda recorrer la Landing Page, comprender la propuesta de valor y llegar a la Web Application desde sus llamadas a la acción; y que, dentro de la aplicación, cada rol complete sus flujos principales con datos reales del laboratorio de demostración SENKA LAB, en inglés y en español.
 
 - **Landing Page:** [https://iotech-2620-8741.github.io/qualitrack-landing-page/](https://iotech-2620-8741.github.io/qualitrack-landing-page/)
-- **Web Application:** [https://iotech-qualitrack.web.app](https://iotech-qualitrack.web.app)
+- **Web Application:** [https://qualitrack-iotech.web.app](https://qualitrack-iotech.web.app)
 - **Video de Execution Evidence del Sprint 1:** [COMPLETAR: enlace al video en Microsoft Stream]
 
 **Landing Page**
@@ -695,7 +737,7 @@ La revisión del sprint verificó que un visitante pueda recorrer la Landing Pag
 
 <div align="center">
   <img src="../assets/img/chapter-vi/sprint-1/landing-features.png" alt="Landing Page - Features" width="90%">
-  <p><em>Figura: Sección Features. Esta evidencia muestra en un acordeón las funcionalidades clave de la plataforma, como la integración de telemetría IoT y el motor de cumplimiento BPM, junto con el video que explica cómo funciona QualiTrack.</em></p>
+  <p><em>Figura: Sección Features. Esta evidencia muestra en un acordeón las funcionalidades clave de la plataforma, como la integración de telemetría IoT, el motor de cumplimiento BPM, las alertas instantáneas de desviación y el panel de analítica y KPI.</em></p>
 </div>
 
 <div align="center">
@@ -705,12 +747,17 @@ La revisión del sprint verificó que un visitante pueda recorrer la Landing Pag
 
 <div align="center">
   <img src="../assets/img/chapter-vi/sprint-1/landing-about.png" alt="Landing Page - About Us" width="90%">
-  <p><em>Figura: Sección About Us. Esta evidencia presenta la visión de QualiTrack de digitalizar la supervisión de los procesos de manufactura y el cumplimiento de las Buenas Prácticas de Manufactura exigidas por DIGEMID, junto con el video y los perfiles del equipo de IoTech.</em></p>
+  <p><em>Figura: Sección About Us. Esta evidencia presenta la visión de QualiTrack de digitalizar la supervisión de los procesos de manufactura y el cumplimiento de las Buenas Prácticas de Manufactura exigidas por DIGEMID, sus pilares (integración IoT, trazabilidad inmutable y cumplimiento regulatorio) y los perfiles de los integrantes del equipo de IoTech.</em></p>
 </div>
 
 <div align="center">
   <img src="../assets/img/chapter-vi/sprint-1/landing-plans.png" alt="Landing Page - Plans" width="90%">
   <p><em>Figura: Sección Plans. Esta vista permite comparar los planes Standard Lab y Enterprise con su precio, periodicidad y características, alternando entre la modalidad mensual y anual.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/img/chapter-vi/sprint-1/landing-testimonials.png" alt="Landing Page - Testimonials" width="90%">
+  <p><em>Figura: Sección de testimonios y llamada final a la acción. Esta evidencia muestra las opiniones de responsables de calidad y producción sobre QualiTrack y el botón Get Started que lleva a la Web Application.</em></p>
 </div>
 
 <div align="center">
@@ -725,7 +772,7 @@ La revisión del sprint verificó que un visitante pueda recorrer la Landing Pag
 
 <div align="center">
   <img src="../assets/img/chapter-vi/sprint-1/landing-es-mobile.png" alt="Landing Page - Spanish and mobile view" width="90%">
-  <p><em>Figura: Landing Page en español y en un dispositivo móvil. Esta evidencia valida el cambio de idioma entre inglés y español y la adaptación del diseño a pantallas pequeñas.</em></p>
+  <p><em>Figura: Landing Page en español en un dispositivo móvil. Esta evidencia valida el cambio de idioma entre inglés y español y la adaptación del diseño a pantallas pequeñas en la portada, la sección de servicios y los planes.</em></p>
 </div>
 
 **Web Application**
@@ -739,12 +786,12 @@ La revisión del sprint verificó que un visitante pueda recorrer la Landing Pag
 
 <div align="center">
   <img src="../assets/img/chapter-vi/sprint-1/web-sign-up.png" alt="Web Application - Sign Up" width="90%">
-  <p><em>Figura: Registro de cuenta del responsable de calidad. Esta evidencia muestra la validación del correo único y de la política de contraseñas antes de crear la cuenta.</em></p>
+  <p><em>Figura: Registro de cuenta del responsable de calidad. Esta evidencia muestra los datos que se validan antes de crear la cuenta: usuario, correo único para recuperar la contraseña y contraseña con su confirmación.</em></p>
 </div>
 
 <div align="center">
   <img src="../assets/img/chapter-vi/sprint-1/web-password-recovery.png" alt="Web Application - Password recovery" width="90%">
-  <p><em>Figura: Recuperación de contraseña. Esta vista evidencia el envío de un código de seis dígitos al correo y el restablecimiento de la contraseña con ese código.</em></p>
+  <p><em>Figura: Recuperación de contraseña. Esta vista evidencia la solicitud con el usuario o el correo de la cuenta, a cuyo correo se envía un código de seis dígitos para restablecer la contraseña.</em></p>
 </div>
 
 <div align="center">
@@ -1168,12 +1215,12 @@ Interacción con la documentación usando datos de muestra:
 
 <div align="center">
   <img src="../assets/img/chapter-vi/sprint-1/swagger-ui-sign-in.png" alt="Swagger UI - Sign In" width="90%">
-  <p><em>Figura: Prueba del inicio de sesión desde Swagger UI. Esta evidencia muestra la petición con datos de muestra y la respuesta con el usuario autenticado y su token JWT.</em></p>
+  <p><em>Figura: Operación de inicio de sesión en Swagger UI. Esta evidencia muestra su descripción, el cuerpo de la petición con el usuario y la contraseña, y la respuesta exitosa, que devuelve el usuario autenticado con su token JWT.</em></p>
 </div>
 
 <div align="center">
   <img src="../assets/img/chapter-vi/sprint-1/swagger-ui-telemetry.png" alt="Swagger UI - Telemetry Measurements" width="90%">
-  <p><em>Figura: Consulta de mediciones de telemetría desde Swagger UI. Esta evidencia muestra los parámetros del periodo y de la métrica, y la respuesta con el estado de cada lectura según el perfil ambiental.</em></p>
+  <p><em>Figura: Consulta de mediciones de telemetría de un ambiente en Swagger UI. Esta evidencia muestra los parámetros del laboratorio, el ambiente, el periodo y la métrica, y las respuestas documentadas con el estado de cada lectura y los errores posibles.</em></p>
 </div>
 
 Commits relacionados con la documentación de los servicios en este sprint:
@@ -1200,6 +1247,7 @@ Commits relacionados con la documentación de los servicios en este sprint:
 | Io​Tech-2620-8741/​qualitrack-platform | feature/​profile-and-notifications | 28ef10c | docs​(diagrams): profile context, notifications and account changes | — | 04/10/2026 |
 | Io​Tech-2620-8741/​qualitrack-platform | feature/​subscription-plan-seed | 0b8f807 | docs​(diagrams): subscription plan seed at startup | — | 04/10/2026 |
 | Io​Tech-2620-8741/​qualitrack-platform | feature/​batch-in-progress | 8bbd7e5 | docs​(diagrams): batch started by its first raw material consumption | — | 05/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | release/​v1.0.1 | c52d7c8 | docs: add README and stop ignoring it | — | 08/10/2026 |
 
 ---
 
@@ -1549,110 +1597,7 @@ npx firebase-tools init hosting
 
 ![Frontend Step 3-5 - Aplicación web desplegada en Firebase Hosting](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-3-5.png)
 
-**Despliegue de la aplicación Front-end**:
-
-Nombre del repositorio en la organización: qualitrack-web-app
-
-La Web Application se publica en Firebase Hosting, que sirve los archivos estáticos que genera Angular, y consume el RESTful API desplegado en Azure Container Apps.
-
-Previo a iniciar los pasos:
-
-* Tener instalados Node.js y Angular CLI, e instalar Firebase CLI con `npm install -g firebase-tools`.
-* Tener desplegado el back-end, ya que la Web Application consume su RESTful API.
-
-**Paso 1: Creación del proyecto en Firebase**
-
-1) En la [Consola de Firebase](https://console.firebase.google.com/), le damos a Crear un proyecto e ingresamos el nombre **iotech-qualitrack**. Google Analytics no es necesario para este despliegue:
-
-<div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-frontend-step-1-1.png" alt="Creación del proyecto en Firebase" width="90%">
-  <p><em>Figura: Creación del proyecto iotech-qualitrack en la consola de Firebase. Esta vista evidencia el nombre del proyecto que aloja la Web Application.</em></p>
-</div>
-
-2) Dentro del proyecto, vamos a Compilación, después Hosting, y le damos a Comenzar:
-
-<div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-frontend-step-1-2.png" alt="Firebase Hosting" width="90%">
-  <p><em>Figura: Sección Hosting del proyecto en Firebase. Esta vista evidencia la activación del servicio que publica los archivos estáticos de la Web Application.</em></p>
-</div>
-
-**Paso 2: Conexión con el back-end desplegado**
-
-1) En `src/environments/environment.ts`, el archivo que Angular usa en la compilación de producción, la propiedad `serverBasePath` apunta al [RESTful API desplegado en Azure Container Apps](https://iotech-qualitrack-api.wonderfulocean-c1f38f8b.chilecentral.azurecontainerapps.io/api/v1) en lugar de `localhost`:
-
-<div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-frontend-step-2-1.png" alt="Entorno de producción de la Web Application" width="90%">
-  <p><em>Figura: Archivo environment.ts de la Web Application. Esta evidencia muestra la URL base del RESTful API en Azure Container Apps que usa la compilación de producción.</em></p>
-</div>
-
-2) En el back-end, el perfil de producción ya admite las peticiones de los dominios de Firebase Hosting (`iotech-qualitrack.web.app` y `iotech-qualitrack.firebaseapp.com`) y usa la URL de la Web Application en el correo de credenciales del personal y en el retorno del pago con Stripe. Si el sitio tuviera otro nombre, se actualizan las variables de entorno `APPLICATION_FRONTEND_URL` y `APPLICATION_CORS_ALLOWED_ORIGINS` de la aplicación contenedora, como en el Paso 6 del back-end.
-
-**Paso 3: Configuración de Firebase Hosting en el repositorio**
-
-1) Creamos la rama **feature/firebase-hosting** desde develop, iniciamos sesión con `firebase login` y ejecutamos `firebase init hosting` en la raíz del repositorio con las siguientes respuestas:
-
-* Proyecto: **Use an existing project** y seleccionamos **iotech-qualitrack**.
-* Directorio público: **dist/qualitrack-web-app/browser**, la carpeta que genera `ng build`.
-* Configurar como aplicación de una sola página (reescribir todas las URL a /index.html): **Yes**, para que las rutas de Angular, como /dashboard, funcionen al recargar la página.
-* Configurar compilaciones y despliegues automáticos con GitHub: **Yes**, con el repositorio **IoTech-2620-8741/qualitrack-web-app**, el script de compilación `npm ci && npm run build` y el despliegue al hacer merge en **main**.
-
-<div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-frontend-step-3-1.png" alt="Inicialización de Firebase Hosting" width="90%">
-  <p><em>Figura: Ejecución de firebase init hosting en el repositorio de la Web Application. Esta evidencia muestra el proyecto, el directorio público, la configuración de aplicación de una sola página y la integración con GitHub.</em></p>
-</div>
-
-2) El comando crea los archivos `firebase.json` y `.firebaserc`, agrega los workflows `firebase-hosting-merge.yml` y `firebase-hosting-pull-request.yml` en .github/workflows y registra en el repositorio el secreto **FIREBASE_SERVICE_ACCOUNT_IOTECH_QUALITRACK**, con la cuenta de servicio que usa GitHub Actions para desplegar. El archivo `firebase.json` queda así:
-
-```json
-{
-  "hosting": {
-    "public": "dist/qualitrack-web-app/browser",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-    "rewrites": [{ "source": "**", "destination": "/index.html" }]
-  }
-}
-```
-
-<div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-frontend-step-3-2.png" alt="Secreto de Firebase en GitHub" width="90%">
-  <p><em>Figura: Secretos de GitHub Actions del repositorio de la Web Application. Esta vista evidencia la cuenta de servicio de Firebase que usan los workflows de despliegue.</em></p>
-</div>
-
-3) Hacemos push de la rama feature y creamos un PR hacia develop. El workflow `firebase-hosting-pull-request.yml` compila la aplicación y publica una vista previa del PR; cuando termina, hacemos merge:
-
-<div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-frontend-step-3-3.png" alt="Vista previa del pull request" width="90%">
-  <p><em>Figura: Pull request de la configuración de Firebase Hosting. Esta evidencia muestra la compilación aprobada y el enlace de vista previa publicado por el workflow.</em></p>
-</div>
-
-**Paso 4: Despliegue mediante la rama release**
-
-1) Creamos la rama release con la nueva versión de la Web Application y su PR hacia main. Al hacer merge, el workflow `firebase-hosting-merge.yml` compila la aplicación y la publica en el canal en vivo de Firebase Hosting:
-
-<div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-frontend-step-4-1.png" alt="Workflow de despliegue en Firebase Hosting" width="90%">
-  <p><em>Figura: Workflow firebase-hosting-merge completado en GitHub Actions. Esta evidencia muestra la compilación de la Web Application y su publicación en el canal en vivo.</em></p>
-</div>
-
-2) Etiquetamos main con la nueva versión y eliminamos la rama release, cumpliendo el estándar GitFlow. Si se necesita, también se puede desplegar manualmente con `ng build` y `firebase deploy --only hosting`.
-
-**Paso 5: Verificaciones**
-
-1) En la sección Hosting de la consola de Firebase, verificamos la versión publicada y los dominios del sitio:
-
-<div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-frontend-step-5-1.png" alt="Historial de Firebase Hosting" width="90%">
-  <p><em>Figura: Panel de Hosting en la consola de Firebase. Esta vista evidencia la versión publicada de la Web Application y sus dominios web.app y firebaseapp.com.</em></p>
-</div>
-
-2) Ingresamos a la Web Application en [https://iotech-qualitrack.web.app](https://iotech-qualitrack.web.app), iniciamos sesión y comprobamos que las vistas cargan los datos del RESTful API desplegado:
-
-<div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-frontend-step-5-2.png" alt="Web Application desplegada" width="90%">
-  <p><em>Figura: Web Application publicada en Firebase Hosting. Esta evidencia confirma el acceso a la aplicación en la nube y su comunicación con el RESTful API desplegado en Azure Container Apps.</em></p>
-</div>
-
-**Despliegue de la Landing Page**:
+**Despliegue de la Landing Page**
 
 Nombre del repositorio en la organización: qualitrack-landing-page
 
@@ -1663,14 +1608,14 @@ La Landing Page es un sitio estático (`index.html` y la carpeta `public`), por 
 1) En el repositorio, vamos a Settings y después Pages:
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-landing-step-1-1.png" alt="Sección Pages del repositorio" width="90%">
+  <img src="../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-landing-deployment-step-1-1.png" alt="Sección Pages del repositorio" width="90%">
   <p><em>Figura: Sección Pages en la configuración del repositorio de la Landing Page. Esta vista evidencia el punto de partida de la publicación con GitHub Pages.</em></p>
 </div>
 
 2) En Build and deployment, seleccionamos **Deploy from a branch**, la rama **main** y la carpeta **/ (root)**, y guardamos. Con cada push a main, el workflow **pages-build-deployment** publica el sitio:
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-landing-step-1-2.png" alt="Configuración de GitHub Pages" width="90%">
+  <img src="../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-landing-deployment-step-1-2.png" alt="Configuración de GitHub Pages" width="90%">
   <p><em>Figura: Configuración de GitHub Pages en el repositorio de la Landing Page. Esta vista evidencia la publicación desde la rama main y la carpeta raíz del repositorio.</em></p>
 </div>
 
@@ -1679,14 +1624,14 @@ La Landing Page es un sitio estático (`index.html` y la carpeta `public`), por 
 1) Ingresamos a la Landing Page en [https://iotech-2620-8741.github.io/qualitrack-landing-page/](https://iotech-2620-8741.github.io/qualitrack-landing-page/) y recorremos sus secciones en inglés y en español:
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-landing-step-2-1.png" alt="Landing Page publicada" width="90%">
+  <img src="../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-landing-deployment-step-2-1.png" alt="Landing Page publicada" width="90%">
   <p><em>Figura: Landing Page publicada en GitHub Pages. Esta evidencia confirma que el sitio es accesible públicamente desde la URL de la organización.</em></p>
 </div>
 
 2) Verificamos que los botones Get started y los de cada plan lleven a la Web Application publicada en Firebase Hosting:
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-landing-step-2-2.png" alt="Enlace de la Landing Page a la Web Application" width="90%">
+  <img src="../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-landing-deployment-step-2-2.png" alt="Enlace de la Landing Page a la Web Application" width="90%">
   <p><em>Figura: Llamada a la acción de la Landing Page abierta en la Web Application. Esta evidencia muestra la conexión entre el sitio público y la aplicación desplegada.</em></p>
 </div>
 
@@ -1698,7 +1643,7 @@ Durante el Sprint 1 el equipo trabajó con GitFlow: cada funcionalidad se desarr
 
 Todos los integrantes del equipo participaron en la implementación de los productos del sprint, organizados según la matriz de liderazgo y colaboración: cada líder desarrolló las funcionalidades de su aspecto y los colaboradores apoyaron en la implementación de vistas, la integración con el RESTful API, la documentación del código y la revisión de los cambios antes de integrarlos en `develop`.
 
-**Landing Page.** En el repositorio de la Landing Page, los 14 commits de implementación del sprint fueron realizados por Huapaya Galindo, Dyron (MaineMa) el 01/10/2026. El trabajo se desarrolló en las ramas `feature/previous-landing-page` y `feature/team-members`, que se integraron en `develop` y luego en `main`, e incluye la estructura y estilos del sitio, el cambio de idioma con sus traducciones, las páginas legales y los perfiles del equipo.
+**Landing Page.** En el repositorio de la Landing Page, los 24 commits de implementación del sprint fueron realizados por Huapaya Galindo, Dyron (MaineMa). El trabajo se desarrolló en las ramas `feature/previous-landing-page` y `feature/team-members` y `feature/landing-page`, que se integraron en `develop` y luego en `main`, e incluye la estructura y estilos del sitio, el cambio de idioma con sus traducciones, las páginas legales y los perfiles del equipo.
 
 <div align="center">
   <img src="../assets/img/chapter-vi/sprint-1/insights-landing-page.png" alt="GitHub Insights - Landing Page" width="90%">
