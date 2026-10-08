@@ -917,7 +917,7 @@ De esta manera, el contexto garantiza que un laboratorio solo pueda registrarse 
 
 <div align="center"> <img src="../assets/img/chapter-iv/Bounded%20Context/Tracking-Telemetry.jpg"> </div>
 
-El Bounded Context de Tracking & Telemetry es responsable de recibir, registrar y dar seguimiento a las mediciones ambientales generadas por los sensores vinculados a los equipos del laboratorio, como temperatura, humedad, calidad del aire y luminosidad. Su modelo se organiza alrededor del agregado **EquipmentTelemetry**, que constituye la unidad de consistencia de este contexto y concentra el estado y el historial de las mediciones asociadas a cada equipo.
+El Bounded Context de Tracking & Telemetry es responsable de recibir, registrar y dar seguimiento a las mediciones ambientales generadas por los sensores vinculados a los equipos del laboratorio, como temperatura, humedad, calidad del aire y luminosidad. En la sesión de EventStorming su modelo se organizó alrededor del agregado **EquipmentTelemetry**, que concentraba el estado y el historial de las mediciones de cada equipo. En la implementación este modelo evolucionó: la unidad de consistencia pasó a ser **EnvironmentalProfile** (rangos permitidos y reglas de actuación de un ambiente o de un Monitor de Contenedor), y las lecturas y acciones se registran como las entidades **Measurement** y **ActuationEvent**, como se detalla en la sección 4.2.1.
 
 En el flujo de registro de mediciones, el comando Record **Telemetry Measurements** produce el evento Telemetry Measurement Recorded. Este comando se dispara a partir de la política Whenever Sensor Linked Then Record Telemetry Measurements, que conecta este contexto con Equipment Management y asegura que solo se registren mediciones de sensores previamente vinculados a un equipo. A partir de este evento se derivan los procesos de historial, estado y detección de anomalías.
 
@@ -1232,7 +1232,6 @@ El orden definido es el siguiente:
 
 El orden definido responde a la relevancia estratégica de cada Bounded Context para la propuesta de valor de QualiTrack, priorizando las capacidades directamente relacionadas con la trazabilidad, monitoreo, cumplimiento y control de los procesos del laboratorio.
 
-El orden definido es el siguiente:
 ---
 
 ##### Product Batch Management Context - Canvas
