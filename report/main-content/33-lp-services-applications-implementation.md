@@ -586,31 +586,84 @@ Las siguientes tablas presentan los commits de implementación de cada repositor
 | Io​Tech-2620-8741/​qualitrack-web-app | feature/​laboratory | b9eb2ae | feat​(laboratory): documentation for BC laboratory/​presentation/​components and views for environment-form.ts and environment-list.ts | — | 08/10/2026 |
 | Io​Tech-2620-8741/​qualitrack-web-app | feature/​laboratory | c6c9a4a | feat​(laboratory): documentation for BC laboratory/​presentation/​view | — | 08/10/2026 |
 | Io​Tech-2620-8741/​qualitrack-web-app | feature/​firebase-hosting-ci | 7bd7ac5 | ci: deploy to Firebase Hosting on push to main | — | 08/10/2026 |
-| Io​Tech-2620-8741/​qualitrack-web-app | — | 7e902bd | feat​(equipment): add TSDoc documentation to Bpm​Parameter​Config entity | — | 08/10/2026 |
-| Io​Tech-2620-8741/​qualitrack-web-app | — | e7b74cf | feat​(equipment): add TSDoc documentation to Change​Equipment​Status​Command | — | 08/10/2026 |
-| Io​Tech-2620-8741/​qualitrack-web-app | — | 768512a | feat​(equipment): add TSDoc documentation to Configure​Bpm​Command | — | 08/10/2026 |
-| Io​Tech-2620-8741/​qualitrack-web-app | — | 8e3fef0 | feat​(equipment): add TSDoc documentation to Equipment entity | — | 08/10/2026 |
-| Io​Tech-2620-8741/​qualitrack-web-app | — | e162209 | feat​(equipment): enhance TSDoc documentation for Equipment​Status and related constants | — | 08/10/2026 |
-| Io​Tech-2620-8741/​qualitrack-web-app | — | f843e50 | feat​(equipment): add TSDoc documentation for Iot​Device​Type and IOT_​DEVICE_​TYPES | — | 08/10/2026 |
-| Io​Tech-2620-8741/​qualitrack-web-app | — | 028f67f | feat​(equipment): add TSDoc documentation for Maintenance​Record entity and environment​Id property | — | 08/10/2026 |
-| Io​Tech-2620-8741/​qualitrack-web-app | — | a403819 | feat​(equipment): add TSDoc documentation for Register​Equipment​Command interface | — | 08/10/2026 |
-| Io​Tech-2620-8741/​qualitrack-web-app | — | d59508c | feat​(equipment): add TSDoc documentation for Register​Iot​Device​Command interface | — | 08/10/2026 |
-| Io​Tech-2620-8741/​qualitrack-web-app | — | 037edc5 | feat​(equipment): add TSDoc documentation for Register​Maintenance​Command interface | — | 08/10/2026 |
-| Io​Tech-2620-8741/​qualitrack-web-app | — | 7b710af | feat​(equipment): update TSDoc example formatting in Configure​Bpm​Request | — | 08/10/2026 |
-| Io​Tech-2620-8741/​qualitrack-web-app | — | 72e1730 | feat​(equipment): enhance TSDoc documentation for Bpm​Config​Api​Endpoint methods | — | 08/10/2026 |
-| Io​Tech-2620-8741/​qualitrack-web-app | — | 383f9c3 | feat​(equipment): enhance TSDoc documentation for BPM configuration methods | — | 08/10/2026 |
-| Io​Tech-2620-8741/​qualitrack-web-app | — | 46c4317 | feat​(equipment): improve TSDoc example formatting in bpm-config-response.ts | — | 08/10/2026 |
-| Io​Tech-2620-8741/​qualitrack-web-app | — | ca9df8e | feat​(equipment): enhance TSDoc documentation for equipment and device request interfaces | — | 08/10/2026 |
-| Io​Tech-2620-8741/​qualitrack-web-app | — | 3d02d62 | feat​(equipment): enhance TSDoc documentation for EquipmentApi methods and endpoints | — | 08/10/2026 |
-| Io​Tech-2620-8741/​qualitrack-web-app | — | 6b0cb82 | feat​(equipment): enhance TSDoc documentation for Equipment​Api​Endpoint methods | — | 08/10/2026 |
-| Io​Tech-2620-8741/​qualitrack-web-app | — | 807351d | feat​(equipment): enhance TSDoc documentation for equipment assembler methods | — | 08/10/2026 |
-| Io​Tech-2620-8741/​qualitrack-web-app | — | e35912b | feat​(equipment): enhance TSDoc documentation for Equipment​Resource and Equipments​Response interfaces | — | 08/10/2026 |
-| Io​Tech-2620-8741/​qualitrack-web-app | — | 7e9fa63 | feat​(equipment): enhance TSDoc documentation for Register​Maintenance​Request interface | — | 08/10/2026 |
-| Io​Tech-2620-8741/​qualitrack-web-app | — | f541b63 | feat​(equipment): enhance TSDoc documentation for Maintenance​Api​Endpoint methods | — | 08/10/2026 |
-| Io​Tech-2620-8741/​qualitrack-web-app | — | 844d2d4 | feat​(equipment): enhance TSDoc documentation for maintenance assembler methods | — | 08/10/2026 |
-| Io​Tech-2620-8741/​qualitrack-web-app | — | eaf7fed | feat​(equipment): add TSDoc documentation to maintenance resource and response | — | 08/10/2026 |
-| Io​Tech-2620-8741/​qualitrack-web-app | — | 5e9054c | feat​(equipment): enhance TSDoc documentation for Equipment​Store methods | — | 08/10/2026 |
-| Io​Tech-2620-8741/​qualitrack-web-app | — | 8158b66 | feat​(equipment): enhance TSDoc documentation for lazy loading functions in equipment routes | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 7e902bd | feat​(equipment): add TSDoc documentation to Bpm​Parameter​Config entity | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | e7b74cf | feat​(equipment): add TSDoc documentation to Change​Equipment​Status​Command | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 768512a | feat​(equipment): add TSDoc documentation to Configure​Bpm​Command | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 8e3fef0 | feat​(equipment): add TSDoc documentation to Equipment entity | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | e162209 | feat​(equipment): enhance TSDoc documentation for Equipment​Status and related constants | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | f843e50 | feat​(equipment): add TSDoc documentation for Iot​Device​Type and IOT_​DEVICE_​TYPES | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 028f67f | feat​(equipment): add TSDoc documentation for Maintenance​Record entity and environment​Id property | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | a403819 | feat​(equipment): add TSDoc documentation for Register​Equipment​Command interface | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | d59508c | feat​(equipment): add TSDoc documentation for Register​Iot​Device​Command interface | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 037edc5 | feat​(equipment): add TSDoc documentation for Register​Maintenance​Command interface | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 7b710af | feat​(equipment): update TSDoc example formatting in Configure​Bpm​Request | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 72e1730 | feat​(equipment): enhance TSDoc documentation for Bpm​Config​Api​Endpoint methods | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 383f9c3 | feat​(equipment): enhance TSDoc documentation for BPM configuration methods | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 46c4317 | feat​(equipment): improve TSDoc example formatting in bpm-config-response.ts | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | ca9df8e | feat​(equipment): enhance TSDoc documentation for equipment and device request interfaces | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 3d02d62 | feat​(equipment): enhance TSDoc documentation for EquipmentApi methods and endpoints | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 6b0cb82 | feat​(equipment): enhance TSDoc documentation for Equipment​Api​Endpoint methods | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 807351d | feat​(equipment): enhance TSDoc documentation for equipment assembler methods | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | e35912b | feat​(equipment): enhance TSDoc documentation for Equipment​Resource and Equipments​Response interfaces | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 7e9fa63 | feat​(equipment): enhance TSDoc documentation for Register​Maintenance​Request interface | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | f541b63 | feat​(equipment): enhance TSDoc documentation for Maintenance​Api​Endpoint methods | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 844d2d4 | feat​(equipment): enhance TSDoc documentation for maintenance assembler methods | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | eaf7fed | feat​(equipment): add TSDoc documentation to maintenance resource and response | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 5e9054c | feat​(equipment): enhance TSDoc documentation for Equipment​Store methods | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 8158b66 | feat​(equipment): enhance TSDoc documentation for lazy loading functions in equipment routes | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 40f3c86 | feat(batch): add batch entity. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | d9cf0fa | feat(batch): add batch request. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 2339438 | feat(batch): add batch store. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 56c7f43 | feat(batch): add batch api. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 7eb4faa | feat(batch): add batch api endpoint. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | afdd92f | feat(batch): add batch api assembler. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 8f384b5 | feat(batch): add batch detail view template. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 4ee6d98 | feat(batch): add batch detail view logic. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 9b741d8 | feat(batch): add batch form view logic. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 6af5263 | feat(batch): add batch home view logic. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | e61f5af | feat(batch): add batch list view logic. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 6ce6b70 | feat(batch): add batch participants view logic. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 35f0c8e | feat(batch): add batch redirect view logic. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 81863d8 | feat(batch): add batch reject form view logic. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 98c94fb | feat(batch): add batch release form view logic. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 2d0f007 | feat(batch): add batch storage view logic. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | afc244f | feat(batch): add batch traceability view logic. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 0830c4b | feat(batch): add batch catalog view logic. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 29332ee | feat(batch): add product detail view logic. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 916c39a | feat(batch): add product form view logic. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 8d96151 | feat(batch): add raw material usage view logic. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 3d9ba12 | feat(batch): add raw material usage view template. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 05252c2 | feat(batch): add product form view template. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 367cfe4 | feat(batch): add product detail view template. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | fb5f8f7 | feat(batch): add product catalog view template. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 89d2b28 | feat(batch): add batch traceability view template. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 24cd12a | feat(batch): add batch storage view template. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 2aae348 | feat(batch): add batch release form view template. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 28cae7f | feat(batch): add batch reject form view template. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 3243869 | feat(batch): add batch list view template. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 8dd2097 | feat(batch): add batch participants view template. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | b2646a9 | feat(batch): add batch form view template. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 9b4b756 | feat(batch): add batch routes. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | c45225b | feat(batch): add product store. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | e7d3212 | feat(batch): add raw material consumption store. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 1e88e4c | feat(batch): add batch participation entity. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | fca3801 | feat(batch): add batch traceability entity. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | be62231 | feat(batch): add raw material usage entity. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | aae349c | feat(batch): add pharmaceutical product entity. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 703855d | feat(batch): add create batch command. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 058d928 | feat(batch): add create product command. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | d900abe | feat(batch): add reject batch command. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 2e6c568 | feat(batch): add release batch command. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | f2c80e4 | feat(batch): add register raw material usage command. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 9893009 | feat(batch): add batch response. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | e97a39e | feat(batch): add product response. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 3dfcbea | feat(batch): add raw material usage response. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 9714321 | feat(batch): add product request. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | cc9a3f9 | feat(batch): add raw material usage request. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | c9da3d7 | feat(batch): add raw material usage api endpoint. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 69a06b9 | feat(batch): add raw material usage assembler. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 86c6fd5 | feat(batch): add product assembler. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 71b6291 | feat(batch): add product api endpoint. | — | 08/10/2026 |
 
 ---
 
@@ -1632,14 +1685,14 @@ Todos los integrantes del equipo participaron en la implementación de los produ
 
 <div align="center">
   <img src="../assets/img/chapter-vi/sprint-1/insights-landing-page.png" alt="GitHub Insights - Landing Page" width="90%">
-  <p><em>Figura: Analíticos de contribución del repositorio de la Landing Page en GitHub Insights. Esta evidencia muestra los commits de los integrantes durante el sprint.</em></p>
+  <p><em>Figura: Analíticos de contribución del repositorio de la Landing Page en GitHub Insights. Esta evidencia muestra los commits realizados durante el sprint e integrados en la rama main.</em></p>
 </div>
 
 **Web Application.** Cada Bounded Context del core business fue desarrollado por su líder con el apoyo del resto del equipo: Laboratory Management por Ruiz Madrid, Billy Jake; Inventory Management y Product Batch Management por Cutiri Agüero, Fabrizio Alexander; Equipment Management por Guzmán Cabrejos, Yaku Mateo; Tracking & Telemetry por Torres Apolinario, Giovany Smith; y Compliance & Alerting por Lopez Roman, Franco Mauricio. Los contextos de soporte (Identity & Access Management, Payments & Subscriptions, Reporting & Audit y Profile) se trabajaron de forma transversal, y la documentación del código con TSDoc se distribuyó entre los integrantes por módulo.
 
 <div align="center">
   <img src="../assets/img/chapter-vi/sprint-1/insights-web-app.png" alt="GitHub Insights - Web Application" width="90%">
-  <p><em>Figura: Analíticos de contribución del repositorio de la Web Application en GitHub Insights. Esta evidencia muestra la participación de los integrantes en la implementación de los módulos del sprint.</em></p>
+  <p><em>Figura: Analíticos de contribución del repositorio de la Web Application en GitHub Insights. Esta evidencia muestra la participación de los integrantes en la implementación de los módulos del sprint, con los commits integrados en la rama main.</em></p>
 </div>
 
 <div align="center">
