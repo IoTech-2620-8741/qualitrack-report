@@ -1129,3 +1129,34 @@ El sistema valida los datos y detecta que el usuario o correo electrónico ya ex
 <div align="center">
   <img src="../assets/img/chapter-v/User Flow/UP/Registro de Usuario UH.png" alt="Planes de suscripción con facturación anual" height="400">
 </div>
+
+---
+
+**User Flow 2: Gestión de Productos Farmacéuticos / Pharmaceutical Product Management**
+
+**User Goal**
+
+Como Supervisor de Calidad, quiero registrar productos farmacéuticos en un ambiente previamente configurado, para mantener actualizado el catálogo de productos y gestionar correctamente la información de los productos del laboratorio.
+
+**Happy Path**
+
+El Supervisor accede al módulo Products & Batches y selecciona la sección Products. Para poder registrar un producto, primero debe contar con un ambiente registrado.
+Si no existe un ambiente, el Supervisor accede a Laboratory → Environments, selecciona Register environment, completa la información requerida del ambiente y hace clic en Register. Una vez registrado, el ambiente aparece disponible en el listado.
+Luego el Supervisor regresa a Products & Batches → Products y selecciona New Product.
+Se muestra el formulario Register product, donde ingresa el Internal Product Code, Commercial Name, Therapeutic Description y Quality Specifications (BPM).
+El Supervisor completa la información y selecciona Register. QualiTrack valida que el código del producto sea válido y que la información requerida haya sido ingresada correctamente.
+Si la validación es exitosa, el producto es registrado y aparece en el listado de Pharmaceutical Products.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/User Flow/HP/Registro de Productos Pero primero necesitamos un ambiente que registrar para recien registrar los productos.png" alt="Planes de suscripción con facturación anual" height="400">
+</div>
+
+
+**Unhappy Path**
+
+Durante el registro, el Supervisor ingresa un código de producto inválido o que no cumple con la validación.
+Al seleccionar Register, QualiTrack valida el código ingresado y detecta el error. El registro no se completa y el Supervisor debe corregir la información del producto.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/User Flow/UP/Registro del Producto.png" alt="Planes de suscripción con facturación anual" height="400">
+</div>
