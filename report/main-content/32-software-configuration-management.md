@@ -1,7 +1,7 @@
 # Capítulo VI: Product Implementation, Validation & Deployment
 
 ## 6.1. Software Configuration Management
-En esta sección se establecen las decisiones, convenciones y herramientas utilizadas por el equipo ClosedSource para gestionar de manera consistente el desarrollo, integración y despliegue de los diferentes productos digitales que conforman QualiTrack. La solución IoT está compuesta por seis productos principales: Landing Page, Web Application, Mobile Application, Backend Web Service, Edge Application y Embedded Application.
+En esta sección se establecen las decisiones, convenciones y herramientas utilizadas por el equipo IoTech para gestionar de manera consistente el desarrollo, integración y despliegue de los diferentes productos digitales que conforman QualiTrack. La solución IoT está compuesta por seis productos principales: Landing Page, Web Application, Mobile Application, Backend Web Service, Edge Application y Embedded Application.
 
 Durante el ciclo de vida del proyecto se definen prácticas para el control y organización del código fuente, la configuración de los entornos de desarrollo y la preparación de los entornos de despliegue correspondientes a cada producto. Estas decisiones permiten mantener la trazabilidad de los cambios realizados durante los sprints, facilitar el trabajo colaborativo entre los miembros del equipo y asegurar una integración progresiva entre las diferentes capas y componentes de la solución QualiTrack.
 
@@ -108,8 +108,8 @@ El desarrollo de QualiTrack comprende la implementación de los diferentes produ
       https://github.com
     </a><br>
     <strong>Organización del proyecto:</strong>
-    <a href="https://github.com/ClosedSource-11848" target="_blank">
-      https://github.com/ClosedSource-11848
+    <a href="https://github.com/IoTech-2620-8741" target="_blank">
+      https://github.com/IoTech-2620-8741
     </a>
   </li>
   <li>
@@ -909,7 +909,7 @@ En esta sección se establece la configuración utilizada para el despliegue de 
 
 **Landing Page - GitHub Pages**
 
-La Landing Page de QualiTrack se desplegó mediante GitHub Pages a partir del repositorio ClosedSource-LandingPage. Al estar desarrollada principalmente con HTML, CSS y JavaScript, puede publicarse como un sitio estático directamente desde el repositorio de GitHub.
+La Landing Page de QualiTrack se desplegó mediante GitHub Pages a partir del repositorio qualitrack-landing-page. Al estar desarrollada principalmente con HTML, CSS y JavaScript, puede publicarse como un sitio estático directamente desde el repositorio de GitHub.
 
 **Pasos de Configuración y Despliegue**
 
