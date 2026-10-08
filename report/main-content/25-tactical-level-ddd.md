@@ -303,182 +303,126 @@ El diagrama de base de datos muestra las tablas de alertas de desviación, aviso
 
 ### 4.2.3. Bounded Context: Equipment Management
 
-Equipment Management administra los equipos físicos, instrumentos y dispositivos IoT registrados en QualiTrack. Es la fuente de verdad sobre la identidad del equipo, su estado operativo, su vínculo con un laboratorio o ambiente y sus mantenimientos. Las mediciones generadas por estos equipos no pertenecen a este contexto; son responsabilidad de Tracking & Telemetry.
+Equipment Management administra los equipos físicos e instrumentos del laboratorio y los **dispositivos IoT basados en ESP32**: el Dispositivo Ambiental de cada ambiente y los Monitores de Contenedor. Es la fuente de verdad sobre la identidad del equipo, su ubicación en un ambiente, su estado operativo, sus parámetros BPM y sus mantenimientos. Las lecturas que producen los dispositivos no pertenecen a este contexto, sino a Tracking & Telemetry.
 
 #### 4.2.3.1. Domain Layer.
 
 **`Equipment` — Aggregate Root**
 
-- **Propósito:** representa un equipo o dispositivo físico registrado en un laboratorio.
-- **Atributos principales:** `id`, `labId`, `name`, `type`, `model`, `serialNumber`, `status` y `sensorExternalId`.
-- **Métodos principales:** `linkSensor` y `updateStatus`.
-- **Relaciones:** utiliza `EquipmentType`, `EquipmentStatus` y `DeviceId`. La referencia `labId` se valida contra Laboratory Management.
+- **Propósito:** equipo o dispositivo IoT registrado en un laboratorio y ubicado en uno de sus ambientes.
+- **Atributos principales:** `id`, `labId`, `environmentId`, `name`, `type` (`EquipmentType`), `model`, `serialNumber`, `status` (`EquipmentStatus`), `sensorExternalId` (`DeviceId`), `deviceType` (`IotDeviceType`) y `firmwareVersion`.
+- **Métodos principales:** `assignToEnvironment`, `changeStatus`, `linkSensor`, `updateStatus`, `isIotDevice`, `isDeviceOfType`, `isLocatedIn` y `belongsTo`.
+- **Reglas:** se construye con `RegisterEquipmentCommand` (equipo) o `RegisterIotDeviceCommand` (dispositivo IoT). Cada cambio de estado genera un `EquipmentStatusChange` trazable.
 
 **`MaintenanceRecord` — Aggregate Root**
 
-- **Propósito:** registra una intervención de mantenimiento realizada sobre un equipo.
-- **Atributos principales:** `id`, `equipmentId`, `maintenanceDate`, `technicianName`, `description` y `type`.
-- **Relaciones:** utiliza `MaintenanceType` y se asocia al equipo mediante `equipmentId`.
+- **Propósito:** mantenimiento realizado a un equipo de un ambiente (US49, TS35).
+- **Atributos principales:** `id`, `equipmentId`, `environmentId`, `maintenanceDate`, `technicianName`, `technicianStaffId`, `description` y `type` (`MaintenanceType`).
 
-**`BpmParameterConfig` — Entity**
+**Entities**
 
-- **Propósito:** mantiene una configuración de límites para una variable crítica asociada a un equipo.
-- **Atributos principales:** `equipmentId`, `parameterName`, `minValue`, `maxValue` y `unit`.
-- **Método principal:** `updateLimits`.
-- **Relaciones:** utiliza `CriticalVariable`.
+- `BpmParameterConfig`: rango permitido de una variable crítica del equipo (`parameterName`, `minValue`, `maxValue`, `unit`), con el método `updateLimits`.
+- `EquipmentStatusChange`: registro del cambio de estado operativo, con el estado anterior y el nuevo, el motivo, quién lo cambió y cuándo (US48, TS34).
 
-En la evolución IoT, los límites estrictamente ambientales y las reglas de actuación se concentran en Tracking & Telemetry. `BpmParameterConfig` se mantiene como parte del modelo actual de Equipment Management para compatibilidad con la implementación existente y para configuraciones asociadas al equipo.
+**Value Objects y enumeraciones**
 
-**Value Objects y Enumerations**
-
-- `EquipmentType`: identifica el tipo de equipo.
-- `CriticalVariable`: identifica una variable controlada.
-- `DeviceId`: representa el identificador externo del dispositivo o sensor asociado.
+- `DeviceId`, `EquipmentType` y `CriticalVariable`.
 - `EquipmentStatus`: `OPERATIONAL`, `MAINTENANCE`, `OUT_OF_SERVICE` e `INACTIVE`.
+- `IotDeviceType`: `ENVIRONMENTAL_DEVICE` y `CONTAINER_MONITOR` (US51, US53).
 - `MaintenanceType`: `PREVENTIVE`, `CORRECTIVE`, `CALIBRATION`, `INSPECTION` y `OTHER`.
-- `DeviationSeverity`: niveles de severidad asociados a desviaciones del equipo.
+- `DeviationSeverity`.
 
 **Commands principales**
 
-- `RegisterEquipmentCommand`.
-- `LinkSensorCommand`.
-- `ConfigureBpmParametersCommand`.
-- `RegisterMaintenanceCommand`.
+- `RegisterEquipmentCommand` (US45, TS31) y `RegisterIotDeviceCommand` (US51, US53, TS37, TS39).
+- `AssignEquipmentToEnvironmentCommand` (US47, US52, US54) y `ChangeEquipmentStatusCommand` (US48, TS34).
+- `LinkSensorCommand`, `ConfigureBpmParametersCommand` y `RegisterMaintenanceCommand` (US49, TS35).
 
 **Queries principales**
 
-- `GetEquipmentByIdQuery`.
-- `GetEquipmentByLabIdQuery`.
-- `GetEquipmentByDeviceIdQuery`.
-- `GetCalibrationAlertsByLabIdQuery`.
-- `GetBpmParameterConfigsByEquipmentIdQuery`.
-- `GetMaintenanceByEquipmentIdQuery`.
+- `GetEquipmentByLabIdQuery`, `GetEquipmentByIdQuery` y `GetEquipmentByDeviceIdQuery`.
+- `GetBpmParameterConfigsByEquipmentIdQuery` y `GetBpmParameterConfigQuery`.
+- `GetMaintenanceByEquipmentIdQuery` (US50, TS36) y `GetCalibrationAlertsByLabIdQuery`.
 
-**Eventos principales**
+**Eventos de dominio**
 
-- `EquipmentRegisteredEvent`.
-- `SensorLinkedEvent`.
-- `BpmParameterConfiguredEvent`.
-- `CalibrationExpiredEvent`.
-- `MaintenanceRegisteredEvent`.
+- `EquipmentRegisteredEvent`, `EquipmentAssignedToEnvironmentEvent` y `EquipmentStatusChangedEvent`.
+- `SensorLinkedEvent`, `BpmParameterConfiguredEvent`, `MaintenanceRegisteredEvent` y `CalibrationExpiredEvent`.
 
 **Repository Interfaces**
 
-- `EquipmentRepository`.
-- `BpmParameterConfigRepository`.
-- `MaintenanceRepository`.
+- `EquipmentRepository`, `EquipmentStatusChangeRepository`, `MaintenanceRepository` y `BpmParameterConfigRepository`.
 
 #### 4.2.3.2. Interface Layer.
 
-**`EquipmentController`**
+**REST controllers** (bajo `/api/v1/laboratories/{laboratoryId}`)
 
-Gestiona las operaciones relacionadas con el registro y consulta de equipos y con la vinculación del dispositivo físico.
-
-**`EquipmentBpmConfigController`**
-
-Expone las operaciones para consultar y mantener configuraciones de parámetros del equipo.
-
-**`EquipmentMaintenanceController`**
-
-Expone las operaciones de registro y consulta del historial de mantenimiento.
-
-**Resources principales**
-
-- `RegisterEquipmentResource`.
-- `EquipmentResource`.
-- `ConfigureBpmResource`.
-- `BpmParameterConfigResource`.
-- `RegisterMaintenanceResource`.
-- `MaintenanceRecordResource`.
+- `LaboratoryEquipmentController` — `/equipments`: registra, lista y consulta los equipos y dispositivos del laboratorio (US45, US46, TS31, TS32).
+- `LaboratoryDevicesController` — `/devices`: registra Dispositivos Ambientales y Monitores de Contenedor (`POST /environmental-devices`, `POST /container-monitors`) (US51, US53, TS37, TS39).
+- `EnvironmentEquipmentController` — `/environments/{environmentId}/equipments`: ubica un equipo en el ambiente y registra sus cambios de estado (`POST /{equipmentId}/status-changes`) (US47, US48, TS33, TS34).
+- `EnvironmentDevicesController` — `/environments/{environmentId}`: asocia el Dispositivo Ambiental y los Monitores de Contenedor con el ambiente que supervisan (US52, US54, TS38, TS40).
+- `EquipmentBpmConfigController` — `/equipments/{equipmentId}/bpm-configs`: consulta y configura los parámetros BPM.
+- `EquipmentMaintenanceController` — `/environments/{environmentId}/equipments/{equipmentId}/maintenance-records`: registra y lista los mantenimientos.
 
 **Assemblers principales**
 
-- `RegisterEquipmentCommandFromResourceAssembler`.
-- `EquipmentResourceFromEntityAssembler`.
-- `ConfigureBpmCommandFromResourceAssembler`.
-- `BpmConfigResourceFromEntityAssembler`.
-- `RegisterMaintenanceCommandFromResourceAssembler`.
-- `MaintenanceResourceFromEntityAssembler`.
+- `RegisterEquipmentCommandFromResourceAssembler`, `RegisterIotDeviceCommandFromResourceAssembler`, `ChangeEquipmentStatusCommandFromResourceAssembler`, `ConfigureBpmCommandFromResourceAssembler` y `RegisterMaintenanceCommandFromResourceAssembler`.
+- `EquipmentResourceFromEntityAssembler`, `EquipmentStatusChangeResourceFromEntityAssembler`, `BpmConfigResourceFromEntityAssembler`, `MaintenanceResourceFromEntityAssembler` y `EquipmentLocationUriAssembler`.
+
+**Fachada e integration events**
+
+- `EquipmentContextFacade`: permite que otros contextos resuelvan un equipo (`findEquipment`), un dispositivo de un ambiente (`findDevice`, `findEnvironmentalDevice`), un Monitor de Contenedor (`findContainerMonitor`) y los dispositivos del laboratorio (`findDevices`).
+- `EquipmentTenantResourceLookup`: resuelve el laboratorio dueño de un equipo.
+- Integration events: `EquipmentRegisteredIntegrationEvent`, `EquipmentAssignedToEnvironmentIntegrationEvent`, `EquipmentStatusChangedIntegrationEvent`, `SensorLinkedIntegrationEvent`, `BpmParameterConfiguredIntegrationEvent`, `MaintenanceRegisteredIntegrationEvent` y `CalibrationExpiredIntegrationEvent`.
 
 #### 4.2.3.3. Application Layer.
 
 **Command Services**
 
-- `EquipmentCommandService` / `EquipmentCommandServiceImpl`: coordina registro de equipos y vinculación del sensor o dispositivo.
-- `BpmConfigCommandService` / `BpmConfigCommandServiceImpl`: coordina la configuración de parámetros.
-- `MaintenanceCommandService` / `MaintenanceCommandServiceImpl`: registra las operaciones de mantenimiento.
+- `EquipmentCommandService` / `EquipmentCommandServiceImpl`: registra equipos y dispositivos IoT, los ubica en ambientes, cambia su estado y vincula sensores.
+- `BpmConfigCommandService` / `BpmConfigCommandServiceImpl`.
+- `MaintenanceCommandService` / `MaintenanceCommandServiceImpl`.
 
 **Query Services**
 
-- `EquipmentQueryService` / `EquipmentQueryServiceImpl`.
-- `BpmConfigQueryService` / `BpmConfigQueryServiceImpl`.
-- `MaintenanceQueryService` / `MaintenanceQueryServiceImpl`.
+- `EquipmentQueryService`, `BpmConfigQueryService` y `MaintenanceQueryService`, con sus implementaciones.
 
 **Event Handlers**
 
-- `EquipmentRegisteredEventHandler`.
-- `SensorLinkedEventHandler`.
-- `BpmParameterConfiguredEventHandler`.
-- `CalibrationExpiryEventHandler`.
-- `MaintenanceRegisteredEventHandler`.
+- `EquipmentRegisteredEventHandler`, `EquipmentLocationEventHandler` (ubicación y cambios de estado), `SensorLinkedEventHandler`, `BpmParameterConfiguredEventHandler`, `MaintenanceRegisteredEventHandler` y `CalibrationExpiryEventHandler`: publican los eventos de integración.
 
-**ACL consumida**
+**ACL**
 
-- `ExternalLabService`: utiliza `LaboratoryContextFacade` para comprobar que el laboratorio o ambiente relacionado exista antes de registrar el equipo.
+- `ExternalLabService`: valida en Laboratory Management el ambiente destino del equipo.
+- `EquipmentContextFacadeImpl`: implementa la fachada del contexto.
 
 #### 4.2.3.4. Infrastructure Layer.
 
-La persistencia se implementa mediante Spring Data JPA y adapters separados del modelo de dominio.
-
-**Persistence Entities**
-
-- `EquipmentPersistenceEntity`.
-- `BpmParameterConfigPersistenceEntity`.
-- `MaintenancePersistenceEntity`.
-
-**Persistence Repositories**
-
-- `EquipmentPersistenceRepository`.
-- `BpmParameterConfigPersistenceRepository`.
-- `MaintenancePersistenceRepository`.
-
-**Repository Adapters**
-
-- `EquipmentRepositoryImpl`.
-- `BpmParameterConfigRepositoryImpl`.
-- `MaintenanceRepositoryImpl`.
-
-**Persistence Assemblers**
-
-- `EquipmentPersistenceAssembler`.
-- `BpmParameterConfigPersistenceAssembler`.
-- `MaintenancePersistenceAssembler`.
-
-**Converters**
-
-- `DeviceIdPersistenceConverter`.
-- `EquipmentStatusPersistenceConverter`.
-- `EquipmentTypePersistenceConverter`.
+- **Persistencia:** entidades, Spring Data JPA Repositories, assemblers y adapters para equipos, cambios de estado, mantenimientos y parámetros BPM (`EquipmentRepositoryImpl`, `EquipmentStatusChangeRepositoryImpl`, `MaintenanceRepositoryImpl` y `BpmParameterConfigRepositoryImpl`).
+- **Converters:** `DeviceIdPersistenceConverter`, `EquipmentStatusPersistenceConverter` y `EquipmentTypePersistenceConverter`.
+- **Configuración:** `EquipmentConfiguration`.
 
 #### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams.
 
-El diagrama de componentes presenta la posición de **Equipment Management** dentro del **Cloud REST API**. Este Bounded Context mantiene la información de los equipos y dispositivos registrados y se relaciona con Laboratory Management para validar su pertenencia a una organización, con Tracking & Telemetry para asociar la información generada por los dispositivos y con otros contextos que requieren conocer su estado.
+El diagrama de componentes presenta **Equipment Management** dentro del **Cloud REST API**. La Single-Page Application registra en él los equipos y vincula los nodos IoT. El contexto verifica el ambiente destino con Laboratory Management, y Tracking & Telemetry lo consulta para resolver el ambiente de cada dispositivo.
 
-Para esta entrega se utiliza la vista de Structurizr **`Components-Equipment`**, definida sobre el container `Cloud REST API`. La vista refleja el C4 disponible actualmente y será detallada posteriormente a medida que se refine la descomposición interna del contexto.
+Se utiliza la vista de Structurizr **`Components-Equipment`**, definida sobre el container `Cloud REST API`.
 
 ![Equipment Management Component Diagram](../assets/img/chapter-iv/Components-Equipment.png)
 
 #### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams.
 
+Los diagramas de nivel de código presentan las clases del Domain Layer de Equipment Management y el esquema relacional que persiste equipos, dispositivos, cambios de estado, parámetros y mantenimientos.
+
 ##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams.
 
-El diagrama de clases representa `Equipment`, `MaintenanceRecord` y `BpmParameterConfig`, junto con sus Value Objects, enumeraciones, Commands, Queries, eventos y repositorios.
+El diagrama muestra los Aggregates `Equipment` y `MaintenanceRecord`, las entidades `BpmParameterConfig` y `EquipmentStatusChange`, sus Value Objects y enumeraciones, y los Commands, Queries, eventos e interfaces de repositorio del contexto.
 
-![Equipment Management Domain Layer Class Diagram](../assets/img/chapter-iv/equipment-domain-layer-class-diagram.png)
+![Equipment Management Domain Layer Class Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-report/develop/docs/diagrams/domain/equipment-domain-layer-class-diagram.puml&fmt=svg&v=4)
 
 ##### 4.2.3.6.2. Bounded Context Database Design Diagram.
 
-El diagrama de base de datos representa las tablas de equipos, configuraciones de parámetros y mantenimientos. Las referencias al laboratorio se conservan mediante identificadores y no mediante una copia del modelo de Laboratory Management.
+El diagrama de base de datos representa las tablas de equipos, cambios de estado, configuraciones de parámetros y mantenimientos. Las referencias al laboratorio y al ambiente se conservan mediante identificadores, sin copiar el modelo de Laboratory Management.
 
 ![Equipment Management Database Design Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/equipment/equipment-database-diagram.puml&fmt=svg&v=4)
 
