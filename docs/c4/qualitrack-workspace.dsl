@@ -502,10 +502,11 @@ workspace "QualiTrack" "Plataforma IoT de monitoreo y control de condiciones amb
                 shape RoundedBox
             }
             element "WebStatic" {
-                shape WebBrowser
+                shape Folder
                 background #2e7cb8
             }
             element "WebServer" {
+                shape Folder
                 background #2e7cb8
             }
             element "SPA" {
