@@ -149,7 +149,9 @@ Los diagramas de nivel de código presentan con mayor detalle la implementación
 
 El diagrama de clases muestra `EnvironmentalProfile` como Aggregate Root con sus `EnvironmentalThreshold` y `ActuationRule`, las entidades `Measurement` y `ActuationEvent`, los Value Objects y enumeraciones del contexto, y sus Commands, Queries, eventos e interfaces de repositorio.
 
-![Tracking & Telemetry Domain Layer Class Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-report/develop/docs/diagrams/domain/tracking-domain-layer-class-diagram.puml&fmt=svg&v=4)
+![Tracking & Telemetry Domain Layer Class Diagram (1/2)](../assets/img/chapter-iv/tracking-domain-layer-class-diagram-1.png)
+
+![Tracking & Telemetry Domain Layer Class Diagram (2/2)](../assets/img/chapter-iv/tracking-domain-layer-class-diagram-2.png)
 
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram.
 
@@ -291,7 +293,9 @@ Los diagramas de nivel de código presentan las clases del Domain Layer de Compl
 
 El diagrama muestra los Aggregates `DeviationAlert` y `Notification`, las entidades `ComplianceEvent` y `NotificationPreference`, sus Value Objects y enumeraciones, y los Commands, Queries, eventos e interfaces de repositorio del contexto.
 
-![Compliance & Alerting Domain Layer Class Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-report/develop/docs/diagrams/domain/ca-domain-layer-class-diagram.puml&fmt=svg&v=4)
+![Compliance & Alerting Domain Layer Class Diagram (1/2)](../assets/img/chapter-iv/ca-domain-layer-class-diagram-1.png)
+
+![Compliance & Alerting Domain Layer Class Diagram (2/2)](../assets/img/chapter-iv/ca-domain-layer-class-diagram-2.png)
 
 ##### 4.2.2.6.2. Bounded Context Database Design Diagram.
 
@@ -418,7 +422,7 @@ Los diagramas de nivel de código presentan las clases del Domain Layer de Equip
 
 El diagrama muestra los Aggregates `Equipment` y `MaintenanceRecord`, las entidades `BpmParameterConfig` y `EquipmentStatusChange`, sus Value Objects y enumeraciones, y los Commands, Queries, eventos e interfaces de repositorio del contexto.
 
-![Equipment Management Domain Layer Class Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-report/develop/docs/diagrams/domain/equipment-domain-layer-class-diagram.puml&fmt=svg&v=4)
+![Equipment Management Domain Layer Class Diagram](../assets/img/chapter-iv/equipment-domain-layer-class-diagram.png)
 
 ##### 4.2.3.6.2. Bounded Context Database Design Diagram.
 
@@ -563,7 +567,9 @@ Los diagramas de nivel de código presentan las clases del Domain Layer de Labor
 
 El diagrama muestra los Aggregates `Laboratory`, `Environment`, `StaffMember` y `RawMaterial`, la entidad `LaboratoryAddress`, sus Value Objects y enumeraciones, y los Commands, Queries, eventos e interfaces de repositorio del contexto.
 
-![Laboratory Management Domain Layer Class Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-report/develop/docs/diagrams/domain/laboratory-domain-layer-class-diagram.puml&fmt=svg&v=4)
+![Laboratory Management Domain Layer Class Diagram (1/2)](../assets/img/chapter-iv/laboratory-domain-layer-class-diagram-1.png)
+
+![Laboratory Management Domain Layer Class Diagram (2/2)](../assets/img/chapter-iv/laboratory-domain-layer-class-diagram-2.png)
 
 ##### 4.2.4.6.2. Bounded Context Database Design Diagram.
 
@@ -748,7 +754,7 @@ Para esta entrega se utiliza la vista de Structurizr **`Components-Inventory`**,
 
 El diagrama presenta `RawMaterial`, `RawMaterialBatch`, `InventoryMovement`, los Value Objects de stock, vencimiento, revisión y contenedor, `RawMaterialBatchStatus`, los Commands, Queries y la interfaz `InventoryRepository`.
 
-![Inventory Management Domain Layer Class Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-report/develop/docs/diagrams/domain/inventory-domain-layer-class-diagram.puml&fmt=svg&v=4)
+![Inventory Management Domain Layer Class Diagram](../assets/img/chapter-iv/inventory-domain-layer-class-diagram.png)
 
 ##### 4.2.5.6.2. Bounded Context Database Design Diagram.
 
@@ -889,7 +895,9 @@ Los diagramas de nivel de código presentan las clases del Domain Layer de Produ
 
 El diagrama muestra los Aggregates `PharmaceuticalProduct` y `Batch`, las entidades de consumo, participación y evidencia, los Value Objects de estado, contenedor y trazabilidad, y los Commands, Queries, eventos e interfaces de repositorio del contexto.
 
-![Product Batch Management Domain Layer Class Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-report/develop/docs/diagrams/domain/batch-domain-layer-class-diagram.puml&fmt=svg&v=4)
+![Product Batch Management Domain Layer Class Diagram (1/2)](../assets/img/chapter-iv/batch-domain-layer-class-diagram-1.png)
+
+![Product Batch Management Domain Layer Class Diagram (2/2)](../assets/img/chapter-iv/batch-domain-layer-class-diagram-2.png)
 
 ##### 4.2.6.6.2. Bounded Context Database Design Diagram.
 
@@ -1028,7 +1036,9 @@ Los diagramas de nivel de código presentan las clases del Domain Layer de Repor
 
 El diagrama muestra los Aggregates `AuditReport` y `KpiDashboard`, las entidades `AuditLogEntry`, `KpiMetric`, `DeviationTrend` y `TrendDataPoint`, los Value Objects del periodo, los documentos y los resúmenes, y los Commands, Queries, eventos e interfaces de repositorio del contexto.
 
-![Reporting & Audit Domain Layer Class Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-report/develop/docs/diagrams/domain/ra-domain-layer-class-diagram.puml&fmt=svg&v=4)
+![Reporting & Audit Domain Layer Class Diagram (1/2)](../assets/img/chapter-iv/ra-domain-layer-class-diagram-1.png)
+
+![Reporting & Audit Domain Layer Class Diagram (2/2)](../assets/img/chapter-iv/ra-domain-layer-class-diagram-2.png)
 
 ##### 4.2.7.6.2. Bounded Context Database Design Diagram.
 
@@ -1169,7 +1179,7 @@ Los diagramas de nivel de código presentan las clases del Domain Layer de IAM y
 
 El diagrama muestra los Aggregates `User` y `PasswordRecovery`, la entidad `Role`, los Value Objects de identidad, correo, contraseña y onboarding, las enumeraciones de roles y estados, y los Commands, Queries, eventos y repositorios.
 
-![Identity & Access Management Domain Layer Class Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-report/develop/docs/diagrams/domain/iam-domain-layer-class-diagram.puml&fmt=svg&v=4)
+![Identity & Access Management Domain Layer Class Diagram](../assets/img/chapter-iv/iam-domain-layer-class-diagram.png)
 
 ##### 4.2.8.6.2. Bounded Context Database Design Diagram.
 
@@ -1476,7 +1486,7 @@ Los diagramas de nivel de código presentan las clases del Domain Layer de Profi
 
 El diagrama muestra el Aggregate `Profile`, sus Value Objects de datos personales y foto, `ProfileDetail`, y los Commands, Queries, el evento y el repositorio del contexto.
 
-![Profile Management Domain Layer Class Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-report/develop/docs/diagrams/domain/profile-domain-layer-class-diagram.puml&fmt=svg&v=4)
+![Profile Management Domain Layer Class Diagram](../assets/img/chapter-iv/profile-domain-layer-class-diagram.png)
 
 ##### 4.2.10.6.2. Bounded Context Database Design Diagram.
 
