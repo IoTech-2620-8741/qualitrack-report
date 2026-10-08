@@ -75,7 +75,7 @@ Esta capa contiene las reglas del monitoreo ambiental. No depende de controlador
 
 #### 4.2.1.2. Interface Layer.
 
-La Interface Layer expone Tracking & Telemetry a la Web Application, la Mobile Application y el Edge Service, y traduce las solicitudes a Commands y Queries del Application Layer.
+La Interface Layer expone Tracking & Telemetry a la Single-Page Application, la Mobile Application y el Edge Service, y traduce las solicitudes a Commands y Queries del Application Layer.
 
 **`EnvironmentTelemetryController`** — `/api/v1/laboratories/{laboratoryId}/environments/{environmentId}`
 
