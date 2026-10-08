@@ -279,7 +279,7 @@ az account show --query "{tenant:tenantId, subscription:id}" -o table
 
 ![Step 10-4 - Tablas de la base de datos iotech_qualitrack](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-10-4.png)
 
-4) Etiquetamos la rama main con la nuev version de lanzamiento
+4) Etiquetamos la rama main con la nueva versión de lanzamiento:
 
 ![Step 10-5 - Lista de releases del repositorio](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-10-5.png)
 
@@ -287,9 +287,9 @@ az account show --query "{tenant:tenantId, subscription:id}" -o table
 
 ![Step 10-7 - Release v1.0.0 publicada](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-10-7.png)
 
-* Tambien eliminamos las ramas release y hotfix, cumpliendo el estandar Gitflow
+* También eliminamos las ramas release y hotfix, cumpliendo el estándar Gitflow
 
-5) En nuestra aplicación de contenedores, en la sección aplicaciones, contenedores y variables de entorno quitamos SPRING_JPA_HIBERNATE_DDL_AUTO para evitar cambios de esquema
+5) En nuestra aplicación de contenedores, en la sección aplicaciones, contenedores y variables de entorno quitamos SPRING_JPA_HIBERNATE_DDL_AUTO para evitar cambios de esquema:
 
 ![Step 10-8 - Variable SPRING_JPA_HIBERNATE_DDL_AUTO a eliminar](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-10-8.png)
 
