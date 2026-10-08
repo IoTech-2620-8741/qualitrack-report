@@ -8,204 +8,152 @@ Para cada Bounded Context se presenta un diccionario de los principales elemento
 
 ### 4.2.1. Bounded Context: Tracking & Telemetry
 
-Tracking & Telemetry es uno de los Bounded Contexts Core de QualiTrack. Su responsabilidad es recibir, organizar y consultar la información generada por los equipos y dispositivos IoT, manteniendo el historial de mediciones y el estado de telemetría de cada equipo. Este contexto constituye el punto central entre los dispositivos físicos, el servicio Edge y el backend Cloud.
+Tracking & Telemetry es uno de los Bounded Contexts Core de QualiTrack. Recibe las lecturas y las acciones que los dispositivos IoT sincronizan a través del Edge, las evalúa contra el perfil ambiental vigente y conserva el historial que consultan las aplicaciones y los demás contextos. Es el punto de encuentro entre los dispositivos físicos, el servicio Edge y el backend Cloud.
 
-En la implementación actual, el modelo se organiza alrededor de `EquipmentTelemetry`, `Measurement`, `TelemetryHistoryPoint` y `EquipmentTelemetryStatus`. La evolución IoT de QualiTrack mantiene dentro de este mismo contexto la configuración ambiental y el registro de las acciones ejecutadas por el dispositivo; no se crea un Bounded Context independiente de Environmental Control.
+El modelo se organiza alrededor del agregado `EnvironmentalProfile`, que contiene los rangos permitidos y las reglas de actuación, y de las entidades `Measurement` y `ActuationEvent`. Hay dos tipos de perfil: el de un **ambiente**, que se evalúa con las lecturas de su Dispositivo Ambiental (calidad de aire), y el de un **Monitor de Contenedor** (temperatura, humedad y luminosidad, más sus reglas de actuación). Cuando una lectura empeora el estado de una métrica, el contexto publica un evento para que Compliance & Alerting abra o escale la alerta del incidente.
 
 #### 4.2.1.1. Domain Layer.
 
-Esta capa contiene las reglas que representan el monitoreo de telemetría de QualiTrack. El dominio no depende de controladores REST ni de detalles de base de datos. Sus principales elementos son los siguientes.
+Esta capa contiene las reglas del monitoreo ambiental. No depende de controladores REST ni de detalles de base de datos.
 
-**`EquipmentTelemetry` — Aggregate Root**
+**`EnvironmentalProfile` — Aggregate Root**
 
-- **Propósito:** representa la información de telemetría asociada a un equipo registrado en QualiTrack y actúa como punto de consistencia para su estado, mediciones e historial.
-- **Atributos principales:** `id`, `equipmentId`, `status`, `measurements` y `historyPoints`.
-- **Métodos principales:** `createForEquipment`, `recordMeasurement`, `recordHistoryPoint`, `updateStatus`, `hasAnomalies`, `anomalyCount` e `isOnline`.
-- **Relaciones:** agrupa `EquipmentTelemetryStatus`, `Measurement` y `TelemetryHistoryPoint`. El identificador del equipo se valida con Equipment Management mediante una capa de integración.
+- **Propósito:** representa la configuración ambiental que el responsable de calidad define para un ambiente o para un Monitor de Contenedor, y que el Edge descarga para aplicarla en el dispositivo.
+- **Atributos principales:** `id`, `laboratoryId`, `scope` (`ProfileScope`), `environmentId`, `deviceId`, `version`, `thresholds`, `actuationRules`, `updatedBy` y `updatedAt`.
+- **Métodos principales:** `forEnvironment`, `forContainerMonitor`, `replaceThresholds`, `replaceActuationRules` y `evaluate`.
+- **Reglas:** cada cambio incrementa `version`, de modo que cada lectura queda asociada a la versión del perfil con la que fue evaluada. Un perfil de ambiente solo configura la calidad de aire; uno de contenedor configura temperatura, humedad, luminosidad y reglas de actuación.
 
 **`Measurement` — Entity**
 
-- **Propósito:** representa una lectura puntual recibida desde un equipo o dispositivo IoT.
-- **Atributos principales:** `id`, `equipmentId`, `parameterName`, `value`, `unit`, `timestamp` y `createdAt`.
-- **Método principal:** `record`, utilizado para construir una medición válida asociada a un equipo.
-- **Relaciones:** pertenece conceptualmente a la telemetría del equipo y es persistida mediante `MeasurementRepository`.
+- **Propósito:** lectura producida por un dispositivo IoT y sincronizada desde el Edge.
+- **Atributos principales:** `id`, `laboratoryId`, `environmentId`, `equipmentId`, `parameterName`, `value`, `textValue`, `unit`, `measuredAt`, `state`, `thresholdValue`, `profileVersion` y `receivedAt`.
+- **Método principal:** `receive`, que construye la lectura con el resultado de evaluarla contra el perfil vigente.
+- **Relaciones:** registra el `EnvironmentalState` obtenido y el límite superado, si lo hubo. Las lecturas de texto (etiqueta RFID) y de detección (movimiento) se guardan sin rangos.
 
-**`TelemetryHistoryPoint` — Entity**
+**`ActuationEvent` — Entity**
 
-- **Propósito:** conserva un punto del historial de telemetría y permite indicar si el valor fue identificado como una anomalía.
-- **Atributos principales:** `id`, `equipmentId`, `parameterName`, `recordedValue`, `timestamp`, `isAnomaly` y `createdAt`.
-- **Métodos principales:** `record` e `isAnomaly`.
-- **Relaciones:** es utilizado para las consultas históricas y para el análisis posterior de desviaciones.
+- **Propósito:** acción física que ejecutó un Monitor de Contenedor (ventilación, enfriamiento o servo) y su resultado.
+- **Atributos principales:** `id`, `laboratoryId`, `environmentId`, `deviceId`, `action`, `triggerMetric`, `triggerState`, `result`, `occurredAt`, `profileVersion` y `receivedAt`.
+- **Método principal:** `record`.
 
-**`EquipmentTelemetryStatus` — Entity**
+**Value Objects**
 
-- **Propósito:** representa el estado de comunicación y operación reportado por un equipo.
-- **Atributos principales:** `id`, `equipmentId`, `isOnline`, `currentStatus`, `lastHeartbeat` y `createdAt`.
-- **Métodos principales:** `update`, `isOperational` y `requiresAttention`.
-- **Relaciones:** utiliza `TelemetryStatus` para representar el estado actual del equipo.
-
-**`TelemetryStatus` — Enumeration / Value Object**
-
-- **Valores:** `OPERATIONAL`, `WARNING`, `CRITICAL` y `OFFLINE`.
-- **Propósito:** estandariza los estados que puede tener la telemetría de un equipo dentro del contexto.
-
-**`TelemetryParameterType` — Enumeration / Value Object**
-
-- **Valores considerados:** `TEMPERATURE`, `HUMIDITY`, `PRESSURE`, `RPM`, `VOLTAGE` y `CUSTOM`.
-- **Propósito:** permite identificar el tipo de variable monitoreada sin acoplar el dominio a un sensor específico.
+- `EnvironmentalThreshold`: límites normal y crítico de una métrica (`normalMin`, `normalMax`, `criticalMin`, `criticalMax`). Exige `criticalMin < normalMin < normalMax < criticalMax` y su método `evaluate` devuelve un `ThresholdEvaluation`.
+- `ThresholdEvaluation`: estado resultante (`state`) y límite superado (`exceededLimit`).
+- `ActuationRule`: relaciona una métrica y un estado con la acción automática que ejecuta el contenedor.
+- `DeviceConnection`: estado de conexión de un dispositivo, calculado a partir de su última comunicación y del `ExpectedCommunicationPeriod`.
+- `ExpectedCommunicationPeriod`: tiempo máximo entre dos comunicaciones antes de que el dispositivo pase a requerir revisión.
+- Enumeraciones: `MonitoredMetric` (`AIR_QUALITY`, `MOTION`, `TEMPERATURE`, `HUMIDITY`, `LUMINOSITY`, `RFID_TAG`, cada una con su unidad y el tipo de dispositivo que la reporta), `EnvironmentalState` (`NORMAL`, `WARNING`, `CRITICAL`), `ActuationAction` (`VENTILATION_ON/OFF`, `COOLING_ON/OFF`, `SERVO_OPEN/CLOSE`), `ActuationResult` (`EXECUTED`, `FAILED`), `ProfileScope` (`ENVIRONMENT`, `CONTAINER_MONITOR`) y `DeviceConnectionStatus` (`CONNECTED`, `REQUIRES_REVIEW`).
 
 **Comandos principales**
 
-- `RecordMeasurementCommand`: solicita registrar una medición recibida para un equipo.
-- `RecordTelemetryHistoryPointCommand`: solicita registrar un punto histórico y su condición de anomalía.
-- `UpdateEquipmentTelemetryStatusCommand`: solicita actualizar conectividad, estado y último heartbeat del equipo.
+- `UpdateEnvironmentThresholdsCommand`: reemplaza los rangos del perfil de un ambiente (US56, TS42).
+- `UpdateContainerMonitorThresholdsCommand`: reemplaza los rangos de temperatura, humedad y luminosidad de un Monitor de Contenedor (US57, US58, TS43, TS44).
+- `UpdateActuationRulesCommand`: reemplaza las reglas de actuación de un Monitor de Contenedor (US59, TS45).
+- `RecordMeasurementCommand`: registra una lectura sincronizada desde el Edge (TS54, TS55).
+- `RecordActuationEventCommand`: registra una acción ejecutada por un Monitor de Contenedor (TS56).
 
 **Queries principales**
 
-- `GetLatestMeasurementsQuery`: obtiene las mediciones recientes de un equipo.
-- `GetEquipmentTelemetryStatusByEquipmentIdQuery`: consulta el estado actual de telemetría.
-- `GetTelemetryHistoryQuery`: recupera el historial de un equipo dentro de un periodo determinado.
+- `GetEnvironmentProfileQuery`, `GetContainerMonitorProfileQuery` y `GetDeviceProfileQuery`: obtienen el perfil de un ambiente, de un contenedor o el que aplica un dispositivo (TS57).
+- `GetMeasurementsQuery`: lecturas de un dispositivo en un periodo (TS58, TS59).
+- `GetActuationEventsQuery`: acciones ejecutadas por un contenedor en un periodo (TS60).
+- `GetDeviceConnectionQuery`: estado de conexión de un dispositivo (US55, TS41).
 
-**Eventos principales**
+**Eventos de dominio**
 
-- `MeasurementRecordedEvent`.
-- `TelemetryHistoryPointRecordedEvent`.
-- `TelemetryAnomalyDetectedEvent`.
-- `EquipmentTelemetryStatusUpdatedEvent`.
-
-Estos eventos permiten que otros procesos reaccionen a cambios relevantes sin incorporar sus reglas dentro de Tracking & Telemetry. En particular, una anomalía puede ser traducida por Compliance & Alerting a una alerta y las operaciones relevantes pueden enviarse a Reporting & Audit.
+- `MeasurementRecordedEvent`: se registró una lectura.
+- `EnvironmentalDeviationDetectedEvent`: una lectura empeoró el estado de una métrica (de `NORMAL` a `WARNING`, o a `CRITICAL`).
+- `EnvironmentalConditionNormalizedEvent`: una métrica volvió a `NORMAL` después de una desviación.
+- `EnvironmentalProfileUpdatedEvent`: cambiaron los rangos o las reglas de un perfil.
 
 **Repository Interfaces**
 
-- `EquipmentTelemetryRepository`.
+- `EnvironmentalProfileRepository`.
 - `MeasurementRepository`.
-- `TelemetryHistoryPointRepository`.
-- `EquipmentTelemetryStatusRepository`.
-
-Estas interfaces pertenecen al dominio. Sus implementaciones concretas se ubican en Infrastructure Layer.
+- `ActuationEventRepository`.
 
 #### 4.2.1.2. Interface Layer.
 
-La Interface Layer expone las capacidades de Tracking & Telemetry hacia la Web Application, Mobile Application, Edge Service y otros consumidores autorizados. Esta capa traduce las solicitudes externas a Commands y Queries del Application Layer y transforma las entidades de dominio en Resources de respuesta.
+La Interface Layer expone Tracking & Telemetry a la Web Application, la Mobile Application y el Edge Service, y traduce las solicitudes a Commands y Queries del Application Layer.
 
-**`TelemetryController`**
+**`EnvironmentTelemetryController`** — `/api/v1/laboratories/{laboratoryId}/environments/{environmentId}`
 
-- Expone las operaciones REST relacionadas con telemetría.
-- Permite registrar mediciones recibidas, actualizar el estado de un equipo y registrar puntos históricos.
-- Permite consultar las mediciones más recientes, el estado de telemetría y el historial del equipo.
-- Utiliza assemblers para evitar que las entidades de dominio sean expuestas directamente por la API.
+- `GET /environmental-profile` y `PUT /environmental-profile/thresholds`: consulta y configura el perfil del ambiente.
+- `POST /telemetry-measurements` y `GET /telemetry-measurements`: registra (Edge) y consulta las lecturas del Dispositivo Ambiental.
 
-**Resources principales**
+**`ContainerMonitorTelemetryController`** — `.../environments/{environmentId}/container-monitors/{deviceId}`
 
-- `MeasurementResource`.
-- `EquipmentTelemetryStatusResource`.
-- `TelemetryHistoryPointResource`.
-- `RecordMeasurementResource`.
-- `UpdateEquipmentTelemetryStatusResource`.
-- `RecordTelemetryHistoryPointResource`.
+- `GET /environmental-profile`, `PUT /environmental-profile/thresholds` y `PUT /environmental-profile/actuation-rules`: perfil del Monitor de Contenedor.
+- `POST` y `GET /telemetry-measurements`: lecturas del contenedor.
+- `POST` y `GET /actuation-events`: acciones ejecutadas por el contenedor.
 
-**Assemblers principales**
+**`DeviceTrackingController`** — `.../environments/{environmentId}/devices/{deviceId}`
 
-- `MeasurementResourceFromEntityAssembler`.
-- `EquipmentTelemetryStatusResourceFromEntityAssembler`.
-- `TelemetryHistoryPointResourceFromEntityAssembler`.
-- `RecordMeasurementCommandFromResourceAssembler`.
-- `UpdateEquipmentTelemetryStatusCommandFromResourceAssembler`.
-- `RecordTelemetryHistoryPointCommandFromResourceAssembler`.
+- `GET /telemetry-status`: estado de conexión del dispositivo (TS41).
+- `GET /environmental-profile`: perfil vigente que el Edge sincroniza para el dispositivo (TS57).
 
-**`TrackingContextFacade`**
+**Resources y assemblers**
 
-Esta interfaz expone una vista controlada del contexto hacia otros Bounded Contexts. Permite obtener mediciones recientes, estado del equipo, historial y conocer si existen anomalías sin entregar acceso directo a los repositorios internos.
+- Resources: `EnvironmentalProfileResource`, `ThresholdResource`, `ActuationRuleResource`, `UpdateThresholdsResource`, `UpdateActuationRulesResource`, `MeasurementResource`, `RecordMeasurementResource`, `ActuationEventResource`, `RecordActuationEventResource` y `DeviceTelemetryStatusResource`.
+- Assemblers: `EnvironmentalProfileCommandFromResourceAssembler`, `EnvironmentalProfileResourceFromEntityAssembler`, `RecordMeasurementCommandFromResourceAssembler`, `MeasurementResourceFromEntityAssembler`, `RecordActuationEventCommandFromResourceAssembler`, `ActuationEventResourceFromEntityAssembler` y `TelemetryResponseAssembler`. Los valores inválidos se convierten en respuestas `400` mediante `TrackingRequestValues`.
+
+**`TrackingContextFacade` e integration events**
+
+- La fachada expone a otros contextos las lecturas de un ambiente (`findMeasurements`) y las acciones de un dispositivo o ambiente (`findActuations`, `findEnvironmentActuations`), sin dar acceso a los repositorios.
+- Los eventos de integración `MeasurementRecordedIntegrationEvent`, `EnvironmentalDeviationDetectedIntegrationEvent`, `EnvironmentalConditionNormalizedIntegrationEvent` y `EnvironmentalProfileUpdatedIntegrationEvent` son el contrato publicado hacia Compliance & Alerting y Reporting & Audit.
 
 #### 4.2.1.3. Application Layer.
 
-El Application Layer coordina los casos de uso de Tracking & Telemetry. No contiene lógica de presentación ni detalles de persistencia; utiliza los objetos del dominio y los contratos definidos por el contexto.
-
 **Command Service**
 
-- `TrackingCommandService` define las operaciones para registrar mediciones, registrar historial y actualizar el estado de telemetría.
-- `TrackingCommandServiceImpl` implementa estos casos de uso, utiliza los repositorios del dominio y publica los eventos correspondientes mediante `ApplicationEventPublisher`.
+- `TrackingCommandService` / `TrackingCommandServiceImpl`: actualiza perfiles y registra lecturas y acciones. Al registrar una lectura la evalúa con el perfil vigente, compara el estado con el anterior de esa métrica y publica `EnvironmentalDeviationDetectedEvent` si empeora, o `EnvironmentalConditionNormalizedEvent` si vuelve a `NORMAL`.
 
 **Query Service**
 
-- `TrackingQueryService` define las consultas de mediciones, estado e historial.
-- `TrackingQueryServiceImpl` obtiene la información mediante los repositorios del dominio y la devuelve sin alterar el estado del contexto.
+- `TrackingQueryService` / `TrackingQueryServiceImpl`: resuelve perfiles, lecturas, acciones y el estado de conexión del dispositivo.
 
 **Event Handlers**
 
-- `MeasurementRecordedEventHandler`: procesa el registro de una medición y permite enviar evidencia hacia Reporting & Audit.
-- `TelemetryHistoryPointRecordedEventHandler`: procesa el registro de puntos históricos.
-- `TelemetryAnomalyDetectedEventHandler`: reacciona ante una anomalía e integra Tracking & Telemetry con Compliance & Alerting.
-- `EquipmentTelemetryStatusUpdatedEventHandler`: procesa los cambios de estado del equipo para auditoría e integración.
+- `MeasurementRecordedEventHandler`: publica las lecturas registradas para los demás contextos.
+- `EnvironmentalDeviationDetectedEventHandler`: entrega la desviación a Compliance & Alerting, que abre o escala la alerta.
+- `EnvironmentalConditionNormalizedEventHandler`: entrega la normalización a Compliance & Alerting para registrarla en la alerta abierta.
+- `EnvironmentalProfileUpdatedEventHandler`: publica el cambio de perfil para que Reporting & Audit registre quién cambió la configuración.
 
-**ACL y servicios externos internos**
+**ACL**
 
-- `TrackingExternalEquipmentService`: consulta Equipment Management para verificar la existencia del equipo y obtener configuraciones relacionadas con sus parámetros.
-- `TrackingExternalComplianceService`: solicita a Compliance & Alerting la creación de una alerta cuando se detecta una desviación.
-- `TrackingExternalAuditService`: registra las operaciones relevantes en Reporting & Audit.
-- `TrackingContextFacadeImpl`: implementa la fachada expuesta por el contexto utilizando `TrackingQueryService`.
-
-La evolución IoT incorpora en esta misma capa los flujos necesarios para recibir información sincronizada desde Edge y mantener la configuración ambiental que posteriormente consume el dispositivo.
+- `TrackingExternalEquipmentService`: consulta Equipment Management para validar la identidad, el tipo y la ubicación del dispositivo IoT.
+- `TrackingContextFacadeImpl`: implementa la fachada del contexto.
 
 #### 4.2.1.4. Infrastructure Layer.
 
-Esta capa implementa la persistencia y los adaptadores técnicos requeridos por Tracking & Telemetry.
-
-**Persistence Entities**
-
-- `EquipmentTelemetryPersistenceEntity`.
-- `MeasurementPersistenceEntity`.
-- `TelemetryHistoryPointPersistenceEntity`.
-- `EquipmentTelemetryStatusPersistenceEntity`.
-
-**Spring Data JPA Repositories**
-
-- `EquipmentTelemetryPersistenceRepository`.
-- `MeasurementPersistenceRepository`.
-- `TelemetryHistoryPointPersistenceRepository`.
-- `EquipmentTelemetryStatusPersistenceRepository`.
-
-**Repository Adapters**
-
-- `EquipmentTelemetryRepositoryImpl`.
-- `MeasurementRepositoryImpl`.
-- `TelemetryHistoryPointRepositoryImpl`.
-- `EquipmentTelemetryStatusRepositoryImpl`.
-
-Estos adaptadores implementan las interfaces definidas en Domain Layer y utilizan assemblers para transformar entre modelos de dominio y entidades JPA.
-
-**Persistence Assemblers**
-
-- `EquipmentTelemetryPersistenceAssembler`.
-- `MeasurementPersistenceAssembler`.
-- `TelemetryHistoryPointPersistenceAssembler`.
-- `EquipmentTelemetryStatusPersistenceAssembler`.
-
-**Converter**
-
-- `TelemetryStatusPersistenceConverter`: transforma `TelemetryStatus` entre su representación de dominio y persistencia.
+- **Persistence Entities:** `EnvironmentalProfilePersistenceEntity` (con `ThresholdEmbeddable` y `ActuationRuleEmbeddable`), `MeasurementPersistenceEntity` y `ActuationEventPersistenceEntity`.
+- **Spring Data JPA Repositories:** `EnvironmentalProfilePersistenceRepository`, `MeasurementPersistenceRepository` y `ActuationEventPersistenceRepository`.
+- **Repository Adapters:** `EnvironmentalProfileRepositoryImpl`, `MeasurementRepositoryImpl` y `ActuationEventRepositoryImpl`, que implementan las interfaces del dominio.
+- **Persistence Assemblers:** `EnvironmentalProfilePersistenceAssembler`, `MeasurementPersistenceAssembler` y `ActuationEventPersistenceAssembler`.
+- **Configuración:** `TrackingConfiguration` define el `ExpectedCommunicationPeriod` usado para decidir cuándo un dispositivo requiere revisión (5 minutos por defecto, configurable con `tracking.devices.expected-communication-period`).
 
 #### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams.
 
-El diagrama de componentes presenta la posición de **Tracking & Telemetry** dentro del **Cloud REST API** de QualiTrack y sus principales relaciones con los demás componentes del monolito modular. En el C4 actual, este Bounded Context concentra la telemetría, el historial de mediciones y el estado de los equipos, y se relaciona especialmente con Equipment Management, Compliance & Alerting y Reporting & Audit.
+El diagrama de componentes presenta la posición de **Tracking & Telemetry** dentro del **Cloud REST API** de QualiTrack. Recibe la telemetría del Edge REST API y las consultas de la Single-Page Application y la Mobile Application, resuelve el ambiente de cada dispositivo con Equipment Management y notifica las desviaciones a Compliance & Alerting.
 
-Para esta entrega se utiliza la vista de Structurizr **`Components-Tracking`**, definida sobre el container `Cloud REST API`. Esta vista representa el estado actual de la arquitectura y será refinada posteriormente para mostrar con mayor detalle los componentes internos del contexto.
+Se utiliza la vista de Structurizr **`Components-Tracking`**, definida sobre el container `Cloud REST API`.
 
 ![Tracking & Telemetry Component Diagram](../assets/img/chapter-iv/Components-Tracking.png)
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams.
 
-Los diagramas de nivel de código presentan con mayor detalle la implementación de los componentes del contexto Tracking & Telemetry. Se documentan las clases del Domain Layer y el esquema relacional utilizado para persistir la telemetría.
+Los diagramas de nivel de código presentan con mayor detalle la implementación del contexto Tracking & Telemetry: las clases del Domain Layer y el esquema relacional que persiste perfiles, lecturas y acciones.
 
 ##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams.
 
-El diagrama de clases muestra `EquipmentTelemetry` como Aggregate Root y su relación con `Measurement`, `TelemetryHistoryPoint` y `EquipmentTelemetryStatus`, además de Commands, Queries, eventos, Value Objects e interfaces de repositorio que forman parte del modelo.
+El diagrama de clases muestra `EnvironmentalProfile` como Aggregate Root con sus `EnvironmentalThreshold` y `ActuationRule`, las entidades `Measurement` y `ActuationEvent`, los Value Objects y enumeraciones del contexto, y sus Commands, Queries, eventos e interfaces de repositorio.
 
-![Tracking & Telemetry Domain Layer Class Diagram](../assets/img/chapter-iv/tracking-domain-layer-class-diagram.png)
+![Tracking & Telemetry Domain Layer Class Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-report/develop/docs/diagrams/domain/tracking-domain-layer-class-diagram.puml&fmt=svg&v=4)
 
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram.
 
-El diagrama de base de datos muestra las estructuras de persistencia necesarias para almacenar la telemetría del equipo, las mediciones, los puntos históricos y los cambios de estado. Las claves asociadas a `equipmentId` permiten relacionar la información con Equipment Management sin duplicar el modelo del equipo dentro de este contexto.
+El diagrama de base de datos muestra las tablas de perfiles ambientales, con sus rangos y reglas de actuación, de lecturas y de acciones ejecutadas. Los identificadores de laboratorio, ambiente y dispositivo relacionan la información con Laboratory Management y Equipment Management sin duplicar sus modelos.
 
 ![Tracking & Telemetry Database Design Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/tracking/tracking-database-diagram.puml&fmt=svg&v=4)
 
