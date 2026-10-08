@@ -1223,3 +1223,46 @@ El registro no se completa. El supervisor debe ingresar un correo diferente y vo
 <div align="center">
   <img src="../assets/img/chapter-v/User Flow/UP/Registrar staff pero sale un error.png" alt="Planes de suscripción con facturación anual" height="400">
 </div>
+
+#### User Flow 5: Gestión de Materias Primas / Raw Material Management
+
+**User Goal**
+
+Como técnico de laboratorio, quiero registrar materias primas en el inventario, para mantener actualizado el catálogo de insumos disponibles y controlar sus existencias.
+
+**Happy Path**
+
+El técnico de laboratorio accede a Inventory → Raw Material Catalog y selecciona New Material.
+Se muestra el formulario Register material, donde ingresa los datos requeridos de la materia prima, como:
+
+- Code
+- Material
+- Unit
+- Minimum stock
+Luego selecciona Save.
+
+QualiTrack valida la información ingresada. Si los datos son válidos y el código no está registrado previamente, la materia prima se guarda correctamente y aparece en el Raw Material Catalog.
+
+
+Unhappy Path
+El administrador intenta registrar una materia prima utilizando un código que ya existe en el catálogo.
+Al seleccionar Save, QualiTrack detecta que el código ya está registrado y muestra un mensaje de error en el formulario:
+“A material with this code already exists.”
+
+El registro no se completa. El administrador debe modificar el código e intentar guardar nuevamente. 
+
+<div align="center">
+  <img src="../assets/img/chapter-v/User Flow/HP/Asociar Materias Primas al Lote.png" alt="Planes de suscripción con facturación anual" height="400">
+</div>
+
+**Unhappy Path**
+
+El técnico de laboratorio intenta registrar una materia prima utilizando un código que ya existe en el catálogo.
+Al seleccionar Save, QualiTrack detecta que el código ya está registrado y muestra un mensaje de error en el formulario:
+“A material with this code already exists.”
+
+El registro no se completa. El administrador debe modificar el código e intentar guardar nuevamente.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/User Flow/UP/Registrar Materia Prima ERROR.png" alt="Planes de suscripción con facturación anual" height="400">
+</div>
