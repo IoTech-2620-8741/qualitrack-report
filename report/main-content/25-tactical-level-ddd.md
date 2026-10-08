@@ -1250,18 +1250,14 @@ Stripe se utiliza como proveedor externo para procesar el pago. QualiTrack manti
 
 #### 4.2.9.2. Interface Layer.
 
-**`SubscriptionController`**
+**REST controllers**
 
-Expone las operaciones para:
+- `SubscriptionPlanController` — `GET /api/v1/subscription-plans`: planes activos.
+- `SubscriptionCheckoutSessionController` — `POST /api/v1/subscription-checkout-sessions`: crea la sesión de checkout de Stripe.
+- `LaboratorySubscriptionController` — `GET /api/v1/laboratories/{laboratoryId}/subscriptions`: suscripción activa y resumen de facturación del laboratorio.
+- `SubscriptionController` — `/api/v1/subscriptions`: consulta los pagos de una suscripción (`GET /{subscriptionId}/payments`) y solicita su cancelación (`POST /{subscriptionId}/cancellation-requests`).
 
-- consultar planes activos;
-- crear una sesión de checkout;
-- consultar la suscripción activa;
-- consultar el resumen de facturación;
-- consultar pagos de una suscripción;
-- cancelar la renovación o suscripción según las reglas definidas.
-
-**`StripeWebhookController`**
+**`StripeWebhookController`** — `POST /api/v1/stripe/webhooks`
 
 Recibe los eventos enviados por Stripe. Su responsabilidad es verificar y traducir dichos eventos a Commands de aplicación, evitando que el payload externo modifique directamente el modelo de dominio.
 
@@ -1269,7 +1265,6 @@ Recibe los eventos enviados por Stripe. Su responsabilidad es verificar y traduc
 
 - `CreateCheckoutSessionResource`.
 - `CheckoutSessionResource`.
-- `CancelSubscriptionResource`.
 - `SubscriptionResource`.
 - `SubscriptionPlanResource`.
 - `SubscriptionPaymentResource`.
@@ -1277,13 +1272,21 @@ Recibe los eventos enviados por Stripe. Su responsabilidad es verificar y traduc
 
 **`SubscriptionContextFacade`**
 
-Permite a otros contextos consultar de forma controlada si existe una suscripción activa, verificar un plan o conocer el código del plan vigente.
+Permite a otros contextos consultar de forma controlada el acceso de un usuario (`getAccess`, que devuelve `SubscriptionAccess`), saber si un laboratorio tiene una suscripción activa o un plan determinado y conocer el código del plan vigente. También asocia la suscripción al laboratorio durante la configuración inicial (`assignLaboratory`). `SubscriptionTenantResourceLookup` resuelve el laboratorio dueño de una suscripción.
 
 #### 4.2.9.3. Application Layer.
 
 **`SubscriptionCommandService` / `SubscriptionCommandServiceImpl`**
 
 Coordina la creación de sesiones de pago, activación, cancelación y registro de pagos. La activación se realiza únicamente a partir de una confirmación válida del proveedor y no por una decisión tomada únicamente en el frontend.
+
+**`StripeWebhookService`**
+
+Procesa de forma transaccional e idempotente los eventos de Stripe ya verificados por firma, y registra la activación de la suscripción y sus pagos.
+
+**`SubscriptionPlanCommandService` / `SubscriptionPlanCommandServiceImpl`**
+
+Crea al arrancar los planes que todavía no existen en la base de datos (`SeedSubscriptionPlansCommand`), con el catálogo `SubscriptionPlanCatalog` y los precios de Stripe configurados en las propiedades de la aplicación.
 
 **`SubscriptionQueryService` / `SubscriptionQueryServiceImpl`**
 
@@ -1295,6 +1298,7 @@ Resuelve consultas de planes, suscripciones activas, historial y pagos.
 - `SubscriptionActivatedEventHandler`.
 - `SubscriptionCancelledEventHandler`.
 - `SubscriptionPaymentRecordedEventHandler`.
+- `SubscriptionPlanSeedEventHandler`: ejecuta la creación de los planes al iniciar la aplicación.
 
 **`ExternalStripeService` — ACL / Outbound Service**
 
