@@ -107,8 +107,8 @@ Donde:
 El objetivo del Sprint 1 es desplegar la primera versión de la Landing Page y de la Web Application de QualiTrack. Para ello se seleccionaron 101 User Stories (190 Story Points): 11 de la Landing Page (17 Story Points) y 90 de la Web Application (173 Story Points). Cada User Story se descompuso en tareas de implementación de la vista y de integración con el RESTful API, asignadas según la matriz de liderazgo y colaboración. El seguimiento del sprint se realizó en Jira.
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/sprint-1/jira-sprint-1-board.png" alt="Sprint 1 Board en Jira" width="90%">
-  <p><em>Figura: Tablero del Sprint 1 en Jira. Esta vista evidencia la organización de las User Stories del sprint y de sus tareas por estado, que el equipo utilizó para seguir el avance hacia el Sprint Goal.</em></p>
+  <img src="../assets/img/chapter-vi/sprint-1/jira-sprint-1-board.jpg" alt="Sprint 1 en Jira" width="90%">
+  <p><em>Figura: User Stories del Sprint 1 en Jira. Esta vista evidencia las 101 User Stories del sprint, filtradas por Sprint 1, con su prioridad y su estado Finalizado, con las que el equipo siguió el avance hacia el Sprint Goal.</em></p>
 </div>
 
 **Enlace público al tablero:** [Sprint 1 - Jira](https://iotech-2620.atlassian.net/jira/software/projects/SCRUM/boards/1)
@@ -721,7 +721,7 @@ La revisión del sprint verificó que un visitante pueda recorrer la Landing Pag
 
 - **Landing Page:** [https://iotech-2620-8741.github.io/qualitrack-landing-page/](https://iotech-2620-8741.github.io/qualitrack-landing-page/)
 - **Web Application:** [https://qualitrack-iotech.web.app](https://qualitrack-iotech.web.app)
-- **Video de Execution Evidence del Sprint 1:** [COMPLETAR: enlace al video en Microsoft Stream]
+- **Video de Execution Evidence del Sprint 1:** [https://shorturl.at/gppVX](https://shorturl.at/gppVX)
 
 **Landing Page**
 
