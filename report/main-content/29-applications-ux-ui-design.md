@@ -1096,3 +1096,36 @@ El resumen organiza las lecturas por dispositivo y variable monitoreada, mostran
 </div>
 
 ### 5.4.4. Applications User Flow Diagrams.
+
+El user flow es la representación visual del camino que un usuario sigue dentro de la plataforma QualiTrack para alcanzar un objetivo específico, como registrar un lote de producción, atender una alerta de desviación o generar un reporte de auditoría. Estos diagramas son esenciales para garantizar que la navegación sea lógica, intuitiva y libre de obstáculos, asegurando una experiencia de usuario satisfactoria y eficiente para cada uno de los roles definidos en el sistema: Jefe de Aseguramiento de la Calidad (QA Manager), Operario de laboratorio y Auditor regulatorio. A continuación, se detallan los flujos para las tareas clave de la plataforma, alineados con los procesos de cumplimiento BPM, monitoreo IoT y trazabilidad inmutable exigidos por DIGEMID.
+
+---
+
+#### User Flow 1: Registro y configuración inicial / User Registration & Initial Setup
+
+**User Goal**
+
+Como nuevo usuario, quiero registrarme y configurar mi laboratorio seleccionando un plan de suscripción, para comenzar a utilizar QualiTrack y gestionar las operaciones de mi laboratorio.
+
+**Happy Path**
+
+El usuario accede a la pantalla “Create Account” e ingresa su nombre de usuario, correo electrónico, contraseña y confirmación de contraseña. Luego hace clic en “Register as QA Manager / Supervisor”.
+Si los datos son válidos, el usuario continúa a la pantalla “Sign In”, donde ingresa sus credenciales y hace clic en “Sign In”.
+Una vez autenticado, accede a “Subscription Plans”, donde visualiza los planes disponibles y selecciona el plan que se adapta a las necesidades de su laboratorio.
+Luego continúa al Checkout, donde revisa la información del plan seleccionado y completa el proceso de pago.
+Después de completar el pago, el usuario accede al formulario “Create Laboratory”, donde registra la información de su laboratorio y confirma el registro.
+Finalmente, el laboratorio queda registrado y el usuario es dirigido al Dashboard, desde donde puede comenzar a utilizar QualiTrack.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/User Flow/HP/Registro de Usario.png" alt="Planes de suscripción con facturación anual" height="400">
+</div>
+
+**Unhappy Path**
+
+El usuario intenta registrarse utilizando un nombre de usuario o correo electrónico que ya se encuentra registrado.
+El sistema valida los datos y detecta que el usuario o correo electrónico ya existe. Por ello, bloquea el registro y muestra el mensaje: “The username or the e-mail is already registered.”
+
+
+<div align="center">
+  <img src="../assets/img/chapter-v/User Flow/UP/Registro de Usuario UH.png" alt="Planes de suscripción con facturación anual" height="400">
+</div>
