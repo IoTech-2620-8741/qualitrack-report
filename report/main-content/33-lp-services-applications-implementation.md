@@ -97,7 +97,31 @@ Por otro lado, la aplicación web frontend establece la estructura inicial de in
 
 #### 6.2.1.2. Aspect Leaders and Collaborators
 
+Durante el Sprint 1 se definieron responsables para los productos frontend desarrollados dentro del alcance inicial de QualiTrack.
 
+Los esfuerzos fueron distribuidos entre la construcción de la Landing Page y la implementación de la aplicación web frontend.
+
+
+| Team Member | GitHub Username | Landing Page | Product Batch Management |Tracking & Telemetry| Compliance & Alerting | Inventory Management | Laboratory Management | Equipment Management | Reporting & Audit |
+|-|-|-|-|-|-|-|-|-|-|
+| Baca Camargo, Vitaly Arturo | username | L |-|-|-|-|-|-|-|
+| Cutiri Agüero, Fabrizio Alexander | username |-| L |-|-|-|-|-|-|
+| Guzmán Cabrejos, Yaku Mateo | username |-|-|-|-|-|-|-|-|
+| Huapaya Galindo, Dyron | username |-|-|-|-|-|-|-|-|
+| Lopez Roman, Franco Mauricio | username |-|-|-| L |-|-|-|-|
+| Montes Ramos, Henry Jaredt | username |-|-|-|-|-|-|-|-|
+| Ruiz Madrid, Billy Jake | username |-|-|-|-|-|L|-|-|
+| Torres Apolinario, Giovany Smith | giovanydevv |-|-| L |-|-|-|-|-|
+| Quiroz Caceres, Adrian Alonso | username | L |-|-|-|-|-|-|-|
+
+
+
+Donde:
+
+- **L (Leader):** responsable principal del desarrollo.
+- **C (Collaborator):** miembro de apoyo en la implementación.
+
+---
 
 #### 6.2.1.3. Sprint Backlog 1
 
