@@ -309,6 +309,59 @@ az account show --query "{tenant:tenantId, subscription:id}" -o table
 
 ![Frontend Previous Step 1-3 - Pull request fusionado](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-previous-step-1-3.png)
 
+**Paso 1: Creación de proyecto en Firebase**
 
+1) Creamos nuestro proyecto llamado **iotech-qualitrack** en Firebase:
+
+![Frontend Step 1-1 - Nombre del proyecto en Firebase](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-1-1.png)
+
+![Frontend Step 1-2 - Creación del proyecto con Google Analytics](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-1-2.png)
+
+**Paso 2: Inicializar Firebase en el repositorio**
+
+1) Desde develop, creamos una rama feature para inicializar firebase
+
+* Realizamos los siguientes comandos:
+```bash
+npm ci
+npx firebase-tools login
+npx firebase-tools init hosting
+```
+
+![Frontend Step 2-1 - Instalación de firebase-tools en el login](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-1.png)
+
+![Frontend Step 2-2 - Selección del proyecto de Firebase existente](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-2.png)
+
+2) Se crean 2 archivos: .firebaserc y firebase.json:
+
+![Frontend Step 2-3 - Archivos .firebaserc y firebase.json](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-3.png)
+
+3) Conectamos GitHub con Firebase:
+
+![Frontend Step 2-4 - Inicialización de hosting con GitHub](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-4.png)
+
+![Frontend Step 2-5 - Inicialización de Firebase completada](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-5.png)
+
+4) Hacemos push a la rama feature y realizamos un PR a develop para el release.
+
+![Frontend Step 2-6 - Pull request hacia develop con el workflow de despliegue](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-6.png)
+
+**Paso 3: Release y despliegue a Firebase**
+
+1) Realizamos un release version 1.0.0 y realizamos un PR a main:
+
+![Frontend Step 3-1 - Creación de la rama release/v1.0.0](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-3-1.png)
+
+![Frontend Step 3-2 - Pull request del release hacia main](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-3-2.png)
+
+2) Esperamos a que el despliegue configurado en workflows termine:
+
+![Frontend Step 3-3 - Despliegue en progreso en GitHub Actions](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-3-3.png)
+
+3) Cuando ya termino, accedemos al link de nuestra aplicación web:
+
+![Frontend Step 3-4 - Despliegue completado en GitHub Actions](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-3-4.png)
+
+![Frontend Step 3-5 - Aplicación web desplegada en Firebase Hosting](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-3-5.png)
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
