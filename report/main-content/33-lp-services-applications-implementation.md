@@ -5,15 +5,18 @@
 
 En esta sección se detalla el proceso de trabajo realizado por el equipo durante el primer sprint del proyecto QualiTrack.
 
-Este sprint se centra en la implementación de la primera versión funcional de la plataforma, incluyendo el desarrollo de la Landing Page informativa, la aplicación web administrativa y los servicios backend principales que permitirán gestionar la información base del sistema.
+Este sprint se centra en el desarrollo de la primera versión funcional de los productos orientados a la interacción con los usuarios: la Landing Page y la aplicación web frontend.
 
-Durante esta iteración se establecen los fundamentos tecnológicos de la solución, implementando los módulos iniciales relacionados con la gestión de usuarios, laboratorios, equipos y configuración inicial de la plataforma. Asimismo, se prepara la arquitectura del backend para futuras integraciones con los dispositivos IoT encargados de capturar variables ambientales como temperatura y humedad dentro de los ambientes farmacéuticos.
+Durante esta iteración se implementan las interfaces principales que permiten presentar la propuesta de valor de QualiTrack y establecer la estructura inicial de navegación de la plataforma web.
+
+Asimismo, se desarrolla la base visual del sistema, definiendo componentes reutilizables, estructura de pantallas y experiencia de usuario, dejando preparada la aplicación frontend para futuras integraciones con los servicios backend y componentes IoT.
 
 ---
 
 #### 6.2.1.1. Sprint Planning 1
 
 <table>
+
 <tr>
 <td>Sprint #</td>
 <td>Sprint 1</td>
@@ -25,12 +28,12 @@ Durante esta iteración se establecen los fundamentos tecnológicos de la soluci
 
 <tr>
 <td>Date</td>
-<td>2026-XX-XX</td>
+<td>2026-07-05</td>
 </tr>
 
 <tr>
 <td>Time</td>
-<td>XX:XX PM (GMT-5)</td>
+<td>16:00 PM (GMT-5)</td>
 </tr>
 
 <tr>
@@ -45,7 +48,7 @@ Durante esta iteración se establecen los fundamentos tecnológicos de la soluci
 
 <tr>
 <td>Attendees</td>
-<td>Baca Camargo Vitaly Arturo/ Cutiri Agüero Fabrizio Alexander / Guzmán Cabrejos Yaku Mateo / Huapaya Galindo Dyron / Lopez Roman, Franco Mauricio / Montes Ramos Henry Jaredt / Torres Apolinario Giovany Smith</td>
+<td>Baca Camargo Vitaly Arturo/ Cutiri Agüero Fabrizio Alexander / Guzmán Cabrejos Yaku Mateo / Huapaya Galindo Dyron / Lopez Roman, Franco Mauricio / Montes Ramos Henry Jaredt / Torres Apolinario Giovany Smith / Quiroz Caceres Adrian Alonso</td>
 </tr>
 
 
@@ -58,21 +61,19 @@ Durante esta iteración se establecen los fundamentos tecnológicos de la soluci
 
 <td>
 
-<strong>Nos enfocamos en</strong> implementar la primera versión funcional del ecosistema QualiTrack mediante el desarrollo de una Landing Page informativa, una aplicación web administrativa y los servicios backend necesarios para soportar las funcionalidades principales del sistema.
+<strong>Nos enfocamos en</strong> desarrollar la primera versión visual y funcional de QualiTrack mediante la implementación de la Landing Page institucional y la aplicación web frontend.
 
-Asimismo, se desarrollan las bases arquitectónicas de la solución, estableciendo la comunicación entre frontend y backend mediante servicios REST, permitiendo gestionar usuarios, laboratorios y equipos dentro del dominio farmacéutico.
+La Landing Page tiene como objetivo comunicar la propuesta de valor de la plataforma, sus principales beneficios y la importancia del monitoreo ambiental dentro de laboratorios farmacéuticos.
 
-<br><br>
-
-<strong>Creemos que</strong> esto permitirá presentar la propuesta de valor de QualiTrack a los usuarios objetivo, brindando una primera experiencia digital para responsables de calidad y personal administrativo de laboratorios farmacéuticos.
-
-Además, permitirá contar con una base tecnológica preparada para posteriores integraciones con dispositivos IoT encargados del monitoreo ambiental.
+Por otro lado, la aplicación web frontend establece la estructura inicial de interacción del usuario mediante la creación de pantallas, componentes visuales y módulos base de navegación.
 
 <br><br>
 
-<strong>Esto se confirmará cuando</strong> los usuarios puedan acceder a la plataforma web, registrarse, autenticarse y gestionar la información inicial del laboratorio mediante interfaces funcionales.
+<strong>Creemos que</strong> esto permitirá que los usuarios conozcan la solución QualiTrack y tengan una primera aproximación a la plataforma digital antes de integrar las funcionalidades avanzadas relacionadas con servicios backend y dispositivos IoT.
 
-También se confirmará cuando la arquitectura backend pueda responder correctamente a las solicitudes realizadas desde la aplicación frontend, garantizando una comunicación estable entre los componentes desarrollados.
+<br><br>
+
+<strong>Esto se confirmará cuando</strong> los visitantes puedan navegar correctamente por la Landing Page y los usuarios puedan interactuar con la primera versión de la aplicación web frontend mediante sus principales interfaces visuales.
 
 </td>
 </tr>
@@ -90,13 +91,12 @@ También se confirmará cuando la arquitectura backend pueda responder correctam
 
 </table>
 
+
 ---
+
 
 #### 6.2.1.2. Aspect Leaders and Collaborators
 
-Durante el Sprint 1 se definieron los responsables principales para cada componente desarrollado dentro de la plataforma QualiTrack.
-
-Debido a que esta primera iteración está orientada a construir la base tecnológica del sistema, los esfuerzos se distribuyeron principalmente entre los componentes de comunicación visual, aplicación web y servicios backend.
 
 
 #### 6.2.1.3. Sprint Backlog 1
