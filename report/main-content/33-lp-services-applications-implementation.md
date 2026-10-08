@@ -178,7 +178,7 @@ Previo a iniciar los pasos:
 
 ![Step 5-4 - Creación de la aplicación contenedora](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-5-4.png)
 
-**Paso 6: Agregación de identidad, permisos, secretos y variables:**
+**Paso 6: Agregación de identidad, permisos, secretos y variables**
 
 1) Para la agregación de identidad, usaremos Shell:
 
@@ -205,5 +205,20 @@ Previo a iniciar los pasos:
 4) Ingresaremos las variables de entorno para la aplicación, en este caso, haremos referencia a los secretos para algunas variables de entorno:
 
 ![Step 6-6 - Variables de entorno de la aplicación](../assets/img/chapter-vi/sprint-1/deployment-evidence/sprint-1-deployment-step-6-6.png)
+
+**Paso 7: Ingreso de secretos en el repositorio**
+
+1) Entramos en nuestro repositorio, opciones, secretos y variables y agregamos los secretos de repositorio para conexión a Azure:
+
+* Los datos AZURE_SUBSCRIPTION_ID y AZURE_TENANT_ID se consiguen con este comando:
+```bash
+az account show --query "{tenant:tenantId, subscription:id}" -o table
+```
+
+* El AZURE_CLIENT_ID es del paso 2
+
+Step-7-1
+
+Step-7-2
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
