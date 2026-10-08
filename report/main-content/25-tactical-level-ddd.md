@@ -583,16 +583,16 @@ El stock no se mantiene como un número independiente que pueda quedar desactual
 
 **`RawMaterial` — Aggregate Root**
 
-- **Propósito:** representa el catálogo actual de una materia prima dentro de un laboratorio.
-- **Atributos principales:** `id`, `laboratoryId`, `code`, `name`, `unit` y `minimumStock`.
-- **Método principal:** `usableStock`, que calcula la cantidad utilizable a partir de los lotes recibidos.
+- **Propósito:** representa el catálogo actual de una materia prima guardada en un ambiente del laboratorio.
+- **Atributos principales:** `id`, `laboratoryId`, `environmentId`, `code`, `name`, `unit` y `minimumStock`.
+- **Métodos principales:** `usableStock`, que calcula la cantidad utilizable a partir de los lotes recibidos, y `belongsToEnvironment`.
 - **Relaciones:** puede tener múltiples `RawMaterialBatch` identificados mediante `rawMaterialId`.
 
 **`RawMaterialBatch` — Aggregate Root**
 
 - **Propósito:** representa una recepción o lote específico de una materia prima.
-- **Atributos principales:** `laboratoryId`, `rawMaterialId`, `supplier`, `batchNumber`, `unit`, `initialAmount`, `availableAmount`, `receivedOn`, `expiresOn` y `status`.
-- **Métodos principales:** `receive`, `isUsableOn`, `release`, `observe`, `reject` y `consume`.
+- **Atributos principales:** `laboratoryId`, `rawMaterialId`, `supplier`, `batchNumber`, `unit`, `initialAmount`, `availableAmount`, `receivedOn`, `expiresOn`, `status` y `containerAssignment`.
+- **Métodos principales:** `receive`, `isUsableOn`, `expirationStatus`, `release`, `observe`, `reject`, `consume`, `storeIn` y `container`.
 - **Reglas relevantes:** solo los lotes `RELEASED`, con cantidad positiva y dentro de su periodo válido, pueden ser consumidos. No se realiza conversión implícita entre unidades diferentes.
 
 **`InventoryMovement` — Entity / Record de dominio**
@@ -614,18 +614,29 @@ El stock no se mantiene como un número independiente que pueda quedar desactual
 
 - **Propósito:** representa el resultado de consumir una cantidad específica de un lote de materia prima para un lote de producto.
 
+**Otros Value Objects**
+
+- `ContainerAssignment`: contenedor monitoreado del mismo ambiente donde se guarda el lote, y quién lo guardó (US43).
+- `RawMaterialBatchContainer`: modelo de lectura del contenedor de un lote (US44).
+- `RawMaterialBatchReview`: resultado de la revisión de calidad de un lote (transición de estado, motivo y revisor) (US39).
+- `StockStatus` (`LOW`, `SUFFICIENT`): clasificación del stock frente al mínimo (US41).
+- `ExpirationStatus` (`VALID`, `NEAR_EXPIRY`, `EXPIRED`) y `NearExpiryPeriod`: clasificación del vencimiento de un lote y días de anticipación con que se considera por vencer (US42).
+
 **Commands principales**
 
 - `SaveRawMaterialCommand`.
 - `ReceiveRawMaterialBatchCommand`.
 - `ReviewRawMaterialBatchCommand`.
 - `ConsumeRawMaterialBatchCommand`.
+- `AssignRawMaterialBatchContainerCommand` (US43, TS29).
+- `ImportLegacyRawMaterialCommand`: importa un material del catálogo heredado de Laboratory Management con su saldo inicial.
 
 **Queries principales**
 
-- `GetInventoryMaterialsQuery`.
-- `GetMaterialReceiptsQuery`.
-- `GetMaterialMovementsQuery`.
+- `GetEnvironmentRawMaterialsQuery` (TS22, TS27) y `GetEnvironmentRawMaterialByIdQuery` (TS26).
+- `GetRawMaterialBatchesQuery` (TS24), `GetRawMaterialBatchByIdQuery` y `GetEnvironmentRawMaterialBatchesQuery` (TS28).
+- `GetRawMaterialBatchContainerQuery` (US44, TS30).
+- `GetRawMaterialMovementsQuery`.
 - `GetPendingLegacyMaterialsQuery`.
 
 **Repository Interface**
@@ -634,30 +645,31 @@ El stock no se mantiene como un número independiente que pueda quedar desactual
 
 #### 4.2.5.2. Interface Layer.
 
-**`InventoryController`**
+**`EnvironmentInventoryController`** — `/api/v1/laboratories/{laboratoryId}/environments/{environmentId}`
 
-Expone las capacidades principales del contexto:
+Expone el inventario de materia prima guardado en un ambiente (TS21-TS30):
 
-- consultar el catálogo de materias primas;
-- crear o actualizar una materia prima;
-- consultar las recepciones de un material;
-- consultar lotes utilizables;
-- registrar una nueva recepción;
-- revisar y cambiar el estado de un lote;
-- consumir materia prima para un lote de producto;
-- consultar movimientos e historial;
-- consultar elementos heredados pendientes de migración;
-- importar explícitamente un material de la versión anterior.
+- registrar, listar, consultar y actualizar materias primas (`/raw-materials`) y consultar su stock (`GET /raw-materials/{rawMaterialId}/stock`);
+- registrar y consultar las recepciones por lote (`/raw-materials/{rawMaterialId}/batches`) y listar los lotes del ambiente (`GET /raw-material-batches`);
+- revisar un lote (`POST .../batches/{rawMaterialBatchId}/reviews`) y consultar o asignar su contenedor (`GET/PUT .../container-assignment`);
+- consultar los movimientos de una materia prima (`GET /raw-materials/{rawMaterialId}/movements`);
+- importar un material heredado (`POST /raw-material-imports`).
 
-El controlador aplica el contexto del laboratorio a cada operación. Las acciones sensibles de revisión e importación deben requerir los permisos correspondientes.
+**`InventoryController`** — `/api/v1/laboratories/{laboratoryId}/inventory`
+
+- `GET /legacy-materials`: muestra los materiales del catálogo heredado pendientes de importar.
+
+`InventoryExceptionHandler` responde `409` (`INVENTORY_CONFLICT`) ante cambios concurrentes o registros duplicados.
 
 **`InventoryContextFacade`**
 
-Expone hacia Product Batch Management únicamente las operaciones necesarias para consultar lotes utilizables y realizar consumos, evitando que Batch acceda directamente al repositorio interno de Inventory.
+Expone hacia Product Batch Management únicamente las operaciones necesarias para consultar lotes utilizables y realizar consumos atómicos, y hacia Reporting & Audit la lectura del inventario, sin dar acceso directo al repositorio interno. `InventoryTenantResourceLookup` resuelve el laboratorio dueño de los recursos.
 
-**Integration Event**
+**Integration Events**
 
 - `ReceiptConsumedIntegrationEvent`: comunica que una cantidad de un `RawMaterialBatch` fue consumida para un lote de producto.
+- `InventoryMovementRecordedIntegrationEvent`: se publica por cada movimiento de un lote (recepción, revisión o consumo).
+- `RawMaterialSavedIntegrationEvent`: se publica cuando se registra o actualiza una materia prima del catálogo.
 
 **Resources y Assemblers**
 
@@ -683,7 +695,12 @@ Centraliza la creación de movimientos y registra el usuario actual y el momento
 
 **`InventoryContextFacadeImpl`**
 
-Implementa la fachada consumida por Product Batch Management.
+Implementa la fachada consumida por Product Batch Management y Reporting & Audit.
+
+**ACL**
+
+- `InventoryExternalLaboratoryService`: valida en Laboratory Management los ambientes referenciados y obtiene su uso.
+- `InventoryExternalEquipmentService`: lee en Equipment Management los Monitores de Contenedor donde se guardan los lotes.
 
 **Consistencia transaccional**
 
@@ -729,9 +746,9 @@ Para esta entrega se utiliza la vista de Structurizr **`Components-Inventory`**,
 
 ##### 4.2.5.6.1. Bounded Context Domain Layer Class Diagrams.
 
-El diagrama presenta `RawMaterial`, `RawMaterialBatch`, `InventoryMovement`, `MaterialStockSummary`, `ReceiptConsumption`, `RawMaterialBatchStatus`, Commands, Queries y la interfaz `InventoryRepository`.
+El diagrama presenta `RawMaterial`, `RawMaterialBatch`, `InventoryMovement`, los Value Objects de stock, vencimiento, revisión y contenedor, `RawMaterialBatchStatus`, los Commands, Queries y la interfaz `InventoryRepository`.
 
-![Inventory Management Domain Layer Class Diagram](../assets/img/chapter-iv/inventory-domain-layer-class-diagram.png)
+![Inventory Management Domain Layer Class Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-report/develop/docs/diagrams/domain/inventory-domain-layer-class-diagram.puml&fmt=svg&v=4)
 
 ##### 4.2.5.6.2. Bounded Context Database Design Diagram.
 
