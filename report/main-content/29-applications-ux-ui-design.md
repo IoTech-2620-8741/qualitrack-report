@@ -1188,3 +1188,38 @@ Al intentar registrar el lote, QualiTrack valida el código y evita completar el
 <div align="center">
   <img src="../assets/img/chapter-v/User Flow/UP/Registro de Lote de Producto.png" alt="Planes de suscripción con facturación anual" height="400">
 </div>
+
+#### User Flow 4: Gestión de Personal / Staff Management
+
+**User Goal**
+
+Como supervisor, quiero registrar y gestionar al personal del laboratorio, para asignarles un rol y permitirles acceder a las funciones correspondientes de QualiTrack.
+
+**Happy Path**
+
+El supervisor accede al módulo Laboratory → Staff, donde visualiza el listado del personal registrado.
+Selecciona Add Staff para registrar un nuevo miembro del personal.
+Se muestra Register Staff Member, donde ingresa el Full Name, Job Title y Corporate E-mail. El correo será utilizado como nombre de usuario.
+
+Luego selecciona el nivel de acceso que tendrá el trabajador:
+
+- Operator: puede registrar las operaciones que tiene asignadas.
+- Auditor: puede consultar registros y reportes sin modificarlos.
+
+El supervisor completa los datos y selecciona Register.
+QualiTrack valida la información y, si los datos son correctos, registra al nuevo miembro del personal. El usuario vuelve al listado de Staff, donde aparece el nuevo trabajador registrado.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/User Flow/HP/Registro de Staff.png" alt="Planes de suscripción con facturación anual" height="400">
+</div>
+
+**Unhappy Path**
+
+El supervisor intenta registrar un nuevo miembro del personal utilizando un correo electrónico que ya está registrado.
+Al seleccionar Register, QualiTrack detecta que el correo ya existe y muestra un mensaje de error: “There is already an account with this e-mail.”
+
+El registro no se completa. El supervisor debe ingresar un correo diferente y volver a realizar el registro.
+
+<div align="center">
+  <img src="../assets/img/chapter-v/User Flow/UP/Registrar staff pero sale un error.png" alt="Planes de suscripción con facturación anual" height="400">
+</div>
