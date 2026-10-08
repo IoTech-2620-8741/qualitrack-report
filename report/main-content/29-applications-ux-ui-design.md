@@ -1,5 +1,5 @@
 ## 5.4. Applications UX/UI Design
-Esta sección detalla el diseño de las interfaces operativas de la plataforma Restock, abarcando tanto la aplicación web de gestión como la aplicación móvil de monitoreo. El diseño UX/UI se ha centrado en la eficiencia operativa, buscando que el flujo de información entre las básculas inteligentes y el usuario final sea directo, minimizando errores en la interpretación de datos de inventario.
+Esta sección detalla el diseño de las interfaces operativas de la plataforma Qualitrack, abarcando tanto la aplicación web de gestión como la aplicación móvil de monitoreo. El diseño UX/UI se ha centrado en la eficiencia operativa, buscando que el flujo de información entre las básculas inteligentes y el usuario final sea directo, minimizando errores en la interpretación de datos de inventario.
 
 ### 5.4.1. Applications Wireframes
 
@@ -114,8 +114,6 @@ En esta sección se presentan los esquemas de media fidelidad diseñados especí
 #### Mobile Application
 
 En esta sección se presentan los esquemas de media fidelidad diseñados específicamente para dispositivos móviles. El enfoque principal de estos wireframes es la optimización de la experiencia de usuario (UX) en pantallas reducidas, priorizando la visualización rápida de alertas de stock y el estado de las básculas inteligentes. La arquitectura de información aquí expuesta busca minimizar la carga cognitiva del personal operativo, permitiendo una gestión de inventario eficiente y ágil mediante una navegación simplificada.
-
-### 5.4.2. Applications Wireflow Diagrams
 
 **Inicio de Sesión**
 
@@ -261,7 +259,7 @@ En esta sección se presentan los esquemas de media fidelidad diseñados especí
   <img src="../assets/img/chapter-v/Wireframe App Mobile/wireframe_suscription_plans.png"  height="600">
 </div>
 
-### 5.4.3. Applications Wireflow Diagrams
+### 5.4.2. Applications Wireflow Diagrams
 
 Un wireflow o flujo de pantalla es un diagrama donde se reúnen distintos wireframes realizados cuya finalidad es contar las metas del usuario (User Goal) con la aplicación y cómo las consiguen.
 
