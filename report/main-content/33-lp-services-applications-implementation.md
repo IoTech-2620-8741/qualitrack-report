@@ -26,7 +26,7 @@ En la reunión de Sprint Planning el equipo revisó el Product Backlog, acordó 
 </tr>
 <tr>
 <td>Date</td>
-<td>2026-07-05</td>
+<td>2026-09-22</td>
 </tr>
 <tr>
 <td>Time</td>
