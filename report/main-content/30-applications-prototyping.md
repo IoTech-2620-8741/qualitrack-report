@@ -4,7 +4,7 @@ En esta sección, se evidencian pruebas de uso del prototipo de la aplicación w
 
 Los prototipos se elaboraron en Figma a partir de los mock-ups de la sección 5.4.3 y se presentan en el modo de presentación de Figma, sobre un marco de MacBook Air para la aplicación web y de iPhone 13 Pro Max para la aplicación móvil. Sus pantallas están enlazadas entre sí, de modo que es posible recorrer los flujos de la aplicación como lo haría un usuario: desde el registro y la configuración inicial hasta la gestión de productos farmacéuticos, lotes de producción, personal, materias primas y ambientes. Estas pruebas permitieron validar la navegación y la consistencia visual antes de implementar las vistas de la Web Application en el Sprint 1.
 
-**Enlace al prototipo en Figma:** [Insertar enlace al prototipo de Figma]
+**Enlace al prototipo en Figma:** https://shorturl.at/Dm9VA
 
 **Prototipo de la aplicación web**
 
