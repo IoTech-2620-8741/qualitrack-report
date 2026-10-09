@@ -1,13 +1,23 @@
 # Capítulo VI: Product Implementation, Validation & Deployment
 
 ## 6.1. Software Configuration Management
-En esta sección se establecen las decisiones, convenciones y herramientas utilizadas por el equipo IoTech para gestionar de manera consistente el desarrollo, integración y despliegue de los diferentes productos digitales que conforman QualiTrack. La solución IoT está compuesta por seis productos principales: Landing Page, Web Application, Mobile Application, Backend Web Service, Edge Application y Embedded Application.
 
-Durante el ciclo de vida del proyecto se definen prácticas para el control y organización del código fuente, la configuración de los entornos de desarrollo y la preparación de los entornos de despliegue correspondientes a cada producto. Estas decisiones permiten mantener la trazabilidad de los cambios realizados durante los sprints, facilitar el trabajo colaborativo entre los miembros del equipo y asegurar una integración progresiva entre las diferentes capas y componentes de la solución QualiTrack.
+En esta sección se establecen las decisiones, convenciones y herramientas utilizadas por el equipo IoTech para gestionar
+de manera consistente el desarrollo, integración y despliegue de los diferentes productos digitales que conforman
+QualiTrack. La solución IoT está compuesta por seis productos principales: Landing Page, Web Application, Mobile
+Application, Backend Web Service, Edge Application y Embedded Application.
+
+Durante el ciclo de vida del proyecto se definen prácticas para el control y organización del código fuente, la
+configuración de los entornos de desarrollo y la preparación de los entornos de despliegue correspondientes a cada
+producto. Estas decisiones permiten mantener la trazabilidad de los cambios realizados durante los sprints, facilitar el
+trabajo colaborativo entre los miembros del equipo y asegurar una integración progresiva entre las diferentes capas y
+componentes de la solución QualiTrack.
 
 ### 6.1.1. Software Development Environment Configuration
 
-En esta sección se presentan las herramientas utilizadas durante el ciclo de vida del proyecto QualiTrack. Estas herramientas permiten la colaboración entre los miembros del equipo en las actividades de gestión, diseño, desarrollo, pruebas, documentación y despliegue de los diferentes productos digitales que conforman la solución IoT.
+En esta sección se presentan las herramientas utilizadas durante el ciclo de vida del proyecto QualiTrack. Estas
+herramientas permiten la colaboración entre los miembros del equipo en las actividades de gestión, diseño, desarrollo,
+pruebas, documentación y despliegue de los diferentes productos digitales que conforman la solución IoT.
 
 Las herramientas se organizan según las siguientes disciplinas:
 
@@ -21,7 +31,8 @@ Las herramientas se organizan según las siguientes disciplinas:
 
 #### Project Management
 
-Esta disciplina se centra en la planificación, seguimiento y control del trabajo realizado por el equipo durante los sprints.
+Esta disciplina se centra en la planificación, seguimiento y control del trabajo realizado por el equipo durante los
+sprints.
 
 <ul>
   <li>
@@ -42,7 +53,8 @@ Esta disciplina se centra en la planificación, seguimiento y control del trabaj
 
 #### Requirements Management
 
-La gestión de requisitos permite documentar las necesidades de los segmentos objetivo, definir User Stories, Technical Stories y criterios de aceptación asociados con las funcionalidades y características de calidad de QualiTrack.
+La gestión de requisitos permite documentar las necesidades de los segmentos objetivo, definir User Stories, Technical
+Stories y criterios de aceptación asociados con las funcionalidades y características de calidad de QualiTrack.
 
 <ul>
   <li>
@@ -63,7 +75,9 @@ La gestión de requisitos permite documentar las necesidades de los segmentos ob
 
 #### Product UX/UI Design
 
-El diseño de experiencia de usuario y de interfaz permite definir la propuesta visual de QualiTrack para los diferentes productos que interactúan directamente con sus usuarios, incluyendo la Landing Page, la Web Application y la Mobile Application.
+El diseño de experiencia de usuario y de interfaz permite definir la propuesta visual de QualiTrack para los diferentes
+productos que interactúan directamente con sus usuarios, incluyendo la Landing Page, la Web Application y la Mobile
+Application.
 
 <ul>
   <li>
@@ -98,7 +112,10 @@ El diseño de experiencia de usuario y de interfaz permite definir la propuesta 
 
 #### Software Development
 
-El desarrollo de QualiTrack comprende la implementación de los diferentes productos digitales que conforman la solución IoT: Landing Page, Web Application, Mobile Application, Backend Web Services, Edge Application y Embedded Application. Cada producto utiliza tecnologías y entornos de desarrollo especializados según sus responsabilidades dentro de la arquitectura.
+El desarrollo de QualiTrack comprende la implementación de los diferentes productos digitales que conforman la solución
+IoT: Landing Page, Web Application, Mobile Application, Backend Web Services, Edge Application y Embedded Application.
+Cada producto utiliza tecnologías y entornos de desarrollo especializados según sus responsabilidades dentro de la
+arquitectura.
 
 <ul>
   <li>
@@ -186,7 +203,9 @@ El desarrollo de QualiTrack comprende la implementación de los diferentes produ
 
 #### Software Testing
 
-Las pruebas y validaciones de QualiTrack comprenden la revisión del comportamiento de sus diferentes productos digitales, la ejecución de los principales flujos funcionales, la inspección de las comunicaciones HTTP y la validación de la información persistida.
+Las pruebas y validaciones de QualiTrack comprenden la revisión del comportamiento de sus diferentes productos
+digitales, la ejecución de los principales flujos funcionales, la inspección de las comunicaciones HTTP y la validación
+de la información persistida.
 
 <ul>
   <li>
@@ -214,7 +233,8 @@ Las pruebas y validaciones de QualiTrack comprenden la revisión del comportamie
 
 #### Software Documentation
 
-La documentación permite describir la arquitectura, endpoints, diagramas, decisiones de diseño y evidencias de desarrollo de los diferentes componentes del proyecto.
+La documentación permite describir la arquitectura, endpoints, diagramas, decisiones de diseño y evidencias de
+desarrollo de los diferentes componentes del proyecto.
 
 <ul>
   <li>
@@ -242,7 +262,8 @@ La documentación permite describir la arquitectura, endpoints, diagramas, decis
 
 #### Software Deployment
 
-El despliegue de QualiTrack utiliza servicios diferenciados de acuerdo con las características de cada producto digital que forma parte de la solución.
+El despliegue de QualiTrack utiliza servicios diferenciados de acuerdo con las características de cada producto digital
+que forma parte de la solución.
 
 <ul>
   <li>
@@ -500,9 +521,15 @@ Al integrar una release o hotfix en la rama <code>main</code>, se utiliza un tag
 
 ### 6.1.3. Source Code Style Guide & Conventions
 
-En esta sección se establecen las convenciones de programación y nomenclatura que serán aplicadas en los diferentes productos digitales de QualiTrack. El objetivo es mantener un código consistente, legible y mantenible entre los miembros del equipo, aun cuando la solución utiliza diferentes lenguajes y tecnologías para la Landing Page, Web Application, Mobile Application, Backend Web Service, Edge Application y Embedded Application.
+En esta sección se establecen las convenciones de programación y nomenclatura que serán aplicadas en los diferentes
+productos digitales de QualiTrack. El objetivo es mantener un código consistente, legible y mantenible entre los
+miembros del equipo, aun cuando la solución utiliza diferentes lenguajes y tecnologías para la Landing Page, Web
+Application, Mobile Application, Backend Web Service, Edge Application y Embedded Application.
 
-Como convención general, todos los identificadores definidos por el equipo, incluyendo clases, interfaces, métodos, funciones, variables, archivos, componentes, servicios, endpoints y elementos del dominio, deben utilizar nombres en inglés. Asimismo, los términos asociados al dominio deben mantenerse alineados con el Ubiquitous Language establecido para QualiTrack.
+Como convención general, todos los identificadores definidos por el equipo, incluyendo clases, interfaces, métodos,
+funciones, variables, archivos, componentes, servicios, endpoints y elementos del dominio, deben utilizar nombres en
+inglés. Asimismo, los términos asociados al dominio deben mantenerse alineados con el Ubiquitous Language establecido
+para QualiTrack.
 
 **Referencias de guías de estilo adoptadas**
 <table>
@@ -596,11 +623,14 @@ Como convención general, todos los identificadores definidos por el equipo, inc
   </tbody>
 </table>
 
-Estas referencias se utilizan como base para establecer criterios comunes de nomenclatura, formato y organización. Cuando una tecnología establece una convención específica distinta de las demás, se prioriza la convención correspondiente a dicha tecnología.
+Estas referencias se utilizan como base para establecer criterios comunes de nomenclatura, formato y organización.
+Cuando una tecnología establece una convención específica distinta de las demás, se prioriza la convención
+correspondiente a dicha tecnología.
 
 **Nomenclatura General**
 
-Aunque cada lenguaje posee convenciones propias, se establece como regla común que todos los nombres sean descriptivos, estén redactados en inglés y representen claramente la responsabilidad del elemento correspondiente.
+Aunque cada lenguaje posee convenciones propias, se establece como regla común que todos los nombres sean descriptivos,
+estén redactados en inglés y representen claramente la responsabilidad del elemento correspondiente.
 
 <table>
   <thead>
@@ -706,16 +736,18 @@ Aunque cada lenguaje posee convenciones propias, se establece como regla común 
 
 **Convenciones para Landing Page**
 
-La Landing Page se desarrolla utilizando HTML, CSS y JavaScript, manteniendo una estructura orientada a separar el contenido, la presentación visual y el comportamiento de la interfaz.
+La Landing Page se desarrolla utilizando HTML, CSS y JavaScript, manteniendo una estructura orientada a separar el
+contenido, la presentación visual y el comportamiento de la interfaz.
 
 - Utilizar HTML semántico para estructurar el contenido de la página.
 - Utilizar nombres de clases CSS en inglés y en kebab-case.
 - Evitar estilos inline cuando una regla pueda ser reutilizada mediante clases CSS.
 - Mantener una nomenclatura descriptiva para secciones y componentes.
-  
+
 **Convenciones para Web Application**
 
-La Frontend Web Application se desarrolla utilizando Angular y TypeScript, organizada mediante bounded contexts y una separación de responsabilidades entre las distintas capas de la aplicación.
+La Frontend Web Application se desarrolla utilizando Angular y TypeScript, organizada mediante bounded contexts y una
+separación de responsabilidades entre las distintas capas de la aplicación.
 
 - Uso de Angular standalone components.
 - Separación por bounded context dentro de src/app.
@@ -727,7 +759,8 @@ La Frontend Web Application se desarrolla utilizando Angular y TypeScript, organ
 
 **Convenciones Backend Web Service**
 
-El Backend Web Service se desarrolla utilizando Java y Spring Boot, organizado mediante bounded contexts y principios de Domain-Driven Design.
+El Backend Web Service se desarrolla utilizando Java y Spring Boot, organizado mediante bounded contexts y principios de
+Domain-Driven Design.
 Se adoptan las siguientes convenciones:
 
 * Organización por bounded context dentro del paquete platform.
@@ -742,7 +775,8 @@ Se adoptan las siguientes convenciones:
 
 **Convenciones Mobile Application**
 
-El Mobile Application se desarrollará utilizando Flutter y Dart, manteniendo separadas las responsabilidades relacionadas con presentación, lógica de aplicación, modelos y comunicación con servicios externos.
+El Mobile Application se desarrollará utilizando Flutter y Dart, manteniendo separadas las responsabilidades
+relacionadas con presentación, lógica de aplicación, modelos y comunicación con servicios externos.
 
 * Organización de las funcionalidades de acuerdo con los módulos o bounded contexts utilizados por QualiTrack.
 * Separación entre screens, widgets, models, services y repositories.
@@ -754,10 +788,12 @@ El Mobile Application se desarrollará utilizando Flutter y Dart, manteniendo se
 
 **Convenciones Edge Application**
 
-La Edge Application se desarrollará utilizando Python y será responsable de recibir información proveniente de los dispositivos IoT, procesarla localmente y sincronizarla con los servicios cloud de QualiTrack.
+La Edge Application se desarrollará utilizando Python y será responsable de recibir información proveniente de los
+dispositivos IoT, procesarla localmente y sincronizarla con los servicios cloud de QualiTrack.
 
 * Organización del código en módulos según su responsabilidad.
-* Separación entre comunicación con dispositivos, procesamiento de telemetría, almacenamiento temporal y comunicación con el Backend Web Service.
+* Separación entre comunicación con dispositivos, procesamiento de telemetría, almacenamiento temporal y comunicación
+  con el Backend Web Service.
 * Uso de clases para encapsular responsabilidades como procesamiento, comunicación y administración de dispositivos.
 * Manejo controlado de errores y excepciones relacionados con comunicación y procesamiento de datos.
 * Almacenamiento de credenciales y configuraciones sensibles fuera del código fuente.
@@ -766,9 +802,13 @@ La Edge Application se desarrollará utilizando Python y será responsable de re
 
 **Convenciones Embedded Applications**
 
-Los Embedded Applications se desarrollarán utilizando C++ y serán ejecutados en dispositivos ESP32 encargados de recolectar información proveniente de sensores y comunicarla hacia la Edge Application. La solución contempla dispositivos destinados tanto al monitoreo de ambientes del laboratorio como al monitoreo de contenedores de almacenamiento.
+Los Embedded Applications se desarrollarán utilizando C++ y serán ejecutados en dispositivos ESP32 encargados de
+recolectar información proveniente de sensores y comunicarla hacia la Edge Application. La solución contempla
+dispositivos destinados tanto al monitoreo de ambientes del laboratorio como al monitoreo de contenedores de
+almacenamiento.
 
-* Separación entre adquisición de sensores, procesamiento de mediciones, control de actuadores y comunicación con la Edge Application.
+* Separación entre adquisición de sensores, procesamiento de mediciones, control de actuadores y comunicación con la
+  Edge Application.
 * Organización del código en archivos .h y .cpp de acuerdo con la responsabilidad de cada módulo.
 * Uso de clases para representar sensores, actuadores, dispositivos y servicios de comunicación cuando corresponda.
 * Uso de constantes para representar pines, intervalos de lectura, límites y parámetros de configuración.
@@ -905,11 +945,16 @@ void EnvironmentMonitor::sendTelemetry() {
 
 ### 6.1.4. Software Deployment Configuration
 
-En esta sección se establece la configuración utilizada para el despliegue de los productos digitales de QualiTrack. El objetivo es definir los pasos necesarios para publicar una versión funcional a partir del código fuente almacenado en los repositorios correspondientes. Para esta entrega se consideran dos productos desplegables: la Landing Page, publicada mediante GitHub Pages, y el Frontend Web Application, publicado mediante Firebase Hosting.
+En esta sección se establece la configuración utilizada para el despliegue de los productos digitales de QualiTrack. El
+objetivo es definir los pasos necesarios para publicar una versión funcional a partir del código fuente almacenado en
+los repositorios correspondientes. Para esta entrega se consideran dos productos desplegables: la Landing Page,
+publicada mediante GitHub Pages, y el Frontend Web Application, publicado mediante Firebase Hosting.
 
 **Landing Page - GitHub Pages**
 
-La Landing Page de QualiTrack se desplegó mediante GitHub Pages a partir del repositorio qualitrack-landing-page. Al estar desarrollada principalmente con HTML, CSS y JavaScript, puede publicarse como un sitio estático directamente desde el repositorio de GitHub.
+La Landing Page de QualiTrack se desplegó mediante GitHub Pages a partir del repositorio qualitrack-landing-page. Al
+estar desarrollada principalmente con HTML, CSS y JavaScript, puede publicarse como un sitio estático directamente desde
+el repositorio de GitHub.
 
 **Pasos de Configuración y Despliegue**
 
@@ -924,7 +969,8 @@ La Landing Page de QualiTrack se desplegó mediante GitHub Pages a partir del re
 
 **Frontend Web Application - Firebase Hosting**
 
-La Frontend Web Application desarrollada con Angular se despliega mediante Firebase Hosting. Para ello, primero se genera una versión de producción y posteriormente los archivos resultantes son publicados mediante Firebase CLI.
+La Frontend Web Application desarrollada con Angular se despliega mediante Firebase Hosting. Para ello, primero se
+genera una versión de producción y posteriormente los archivos resultantes son publicados mediante Firebase CLI.
 
 **Pasos de Configuración y Despliegue**
 
@@ -940,20 +986,29 @@ La Frontend Web Application desarrollada con Angular se despliega mediante Fireb
   <li>Desplegar con <code>firebase deploy --only hosting</code>.</li>
 </ol>
 
-**Backend Web Service:** Será empaquetado en un contenedor Docker y desplegado en Microsoft Azure, desde donde se expondrán los servicios REST desarrollados con Spring Boot.
+**Backend Web Service:** Será empaquetado en un contenedor Docker y desplegado en Microsoft Azure, desde donde se
+expondrán los servicios REST desarrollados con Spring Boot.
 
-**Database:** La base de datos MySQL será ejecutada en Azure Database for MySQL (Flexible Server) dentro de Microsoft Azure, proporcionando la persistencia requerida por el Backend Web Service.
+**Database:** La base de datos MySQL será ejecutada en Azure Database for MySQL (Flexible Server) dentro de Microsoft
+Azure, proporcionando la persistencia requerida por el Backend Web Service.
 
-**Mobile Application:** Las versiones de prueba desarrolladas con Flutter serán distribuidas mediante Firebase App Distribution, permitiendo entregar builds pre-release a los integrantes del equipo y testers autorizados.
+**Mobile Application:** Las versiones de prueba desarrolladas con Flutter serán distribuidas mediante Firebase App
+Distribution, permitiendo entregar builds pre-release a los integrantes del equipo y testers autorizados.
 
 **Edge Application:** Será instalada y ejecutada directamente sobre el Edge Device definido por la arquitectura IoT.
 
-**Embedded Applications:** Serán compiladas como firmware y desplegadas directamente sobre dispositivos ESP32. La solución contempla un dispositivo destinado al monitoreo de ambientes del laboratorio y otro destinado al monitoreo de contenedores utilizados para almacenar lotes, permitiendo supervisar las condiciones físicas correspondientes.
+**Embedded Applications:** Serán compiladas como firmware y desplegadas directamente sobre dispositivos ESP32. La
+solución contempla un dispositivo destinado al monitoreo de ambientes del laboratorio y otro destinado al monitoreo de
+contenedores utilizados para almacenar lotes, permitiendo supervisar las condiciones físicas correspondientes.
 
 **Deployment Diagram**
 
-El siguiente diagrama de despliegue representa la distribución de los productos de software de QualiTrack en los servicios y dispositivos donde serán ejecutados o distribuidos. Asimismo, muestra las principales relaciones de comunicación entre la Landing Page, la Frontend Web Application, los servicios cloud, la Mobile Application y los componentes IoT de la solución. El diagrama permite visualizar de forma general la infraestructura definida para el despliegue actual y previsto de QualiTrack.
+El siguiente diagrama de despliegue representa la distribución de los productos de software de QualiTrack en los
+servicios y dispositivos donde serán ejecutados o distribuidos. Asimismo, muestra las principales relaciones de
+comunicación entre la Landing Page, la Frontend Web Application, los servicios cloud, la Mobile Application y los
+componentes IoT de la solución. El diagrama permite visualizar de forma general la infraestructura definida para el
+despliegue actual y previsto de QualiTrack.
 
 <div align="center">
-  <img src="../assets/img/chapter-vi/deployment-diagram.png"  height="600">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-diagram.png"  height="600">
 </div>

@@ -1,30 +1,57 @@
+# Capítulo I: Introducción
+
+El presente capítulo introduce el contexto general del proyecto **QualiTrack**, una solución tecnológica desarrollada
+por la startup **IoTech** y orientada a mejorar el monitoreo y control de las condiciones ambientales en laboratorios y
+almacenes farmacéuticos.
+
+El proyecto busca evolucionar QualiTrack hacia una solución IoT que combine monitoreo, respuesta automática y gestión de
+información, contribuyendo a reducir la dependencia de controles manuales y mejorar la trazabilidad de las condiciones
+ambientales dentro de instalaciones farmacéuticas.
+
 ### 1.1. Startup Profile
 
-En esta sección se presenta el perfil de **IoTech**, startup responsable del desarrollo de QualiTrack. Se describen su propósito, enfoque tecnológico, misión y visión, así como los perfiles de los integrantes que participan en el desarrollo del proyecto.
+En esta sección se presenta el perfil de **IoTech**, startup responsable del desarrollo de QualiTrack. Se describen su
+propósito, enfoque tecnológico, misión y visión, así como los perfiles de los integrantes que participan en el
+desarrollo del proyecto.
 
-IoTech busca desarrollar soluciones tecnológicas que permitan conectar el mundo físico con plataformas digitales, utilizando dispositivos IoT para obtener información del entorno, procesarla y generar acciones que permitan responder ante diferentes situaciones.
+IoTech busca desarrollar soluciones tecnológicas que permitan conectar el mundo físico con plataformas digitales,
+utilizando dispositivos IoT para obtener información del entorno, procesarla y generar acciones que permitan responder
+ante diferentes situaciones.
 
-Dentro de este enfoque, la startup desarrolla QualiTrack como una solución dirigida al sector farmacéutico, buscando mejorar la manera en que laboratorios y almacenes supervisan las condiciones de sus instalaciones y mantienen un registro de los eventos que ocurren en ellas.
+Dentro de este enfoque, la startup desarrolla QualiTrack como una solución dirigida al sector farmacéutico, buscando
+mejorar la manera en que laboratorios y almacenes supervisan las condiciones de sus instalaciones y mantienen un
+registro de los eventos que ocurren en ellas.
 
 #### 1.1.1. Descripción de la Startup
 
-**IoTech** es una startup orientada al desarrollo de soluciones que buscan apoyar a las organizaciones en la mejora de sus operaciones. Su enfoque parte de comprender las necesidades y situaciones que pueden afectar el desarrollo de las actividades de una organización, buscando generar alternativas que contribuyan a realizar sus procesos de manera más segura, eficiente y confiable.
+**IoTech** es una startup orientada al desarrollo de soluciones que buscan apoyar a las organizaciones en la mejora de
+sus operaciones. Su enfoque parte de comprender las necesidades y situaciones que pueden afectar el desarrollo de las
+actividades de una organización, buscando generar alternativas que contribuyan a realizar sus procesos de manera más
+segura, eficiente y confiable.
 
-La startup busca aportar valor a las organizaciones mediante soluciones adaptadas a sus necesidades y al contexto en el que desarrollan sus actividades. Para ello, considera las dificultades que enfrentan las personas responsables de los procesos y busca contribuir a una mejor gestión de las actividades, facilitando la identificación de situaciones relevantes y la toma de decisiones.
+La startup busca aportar valor a las organizaciones mediante soluciones adaptadas a sus necesidades y al contexto en el
+que desarrollan sus actividades. Para ello, considera las dificultades que enfrentan las personas responsables de los
+procesos y busca contribuir a una mejor gestión de las actividades, facilitando la identificación de situaciones
+relevantes y la toma de decisiones.
 
-Como parte de su enfoque inicial, IoTech se orienta al sector farmacéutico, principalmente a laboratorios y almacenes, donde resulta importante mantener condiciones adecuadas para el desarrollo de las operaciones y la conservación de los productos. A partir de este sector, la startup busca desarrollar experiencia y generar soluciones que puedan adaptarse posteriormente a organizaciones de otros sectores con necesidades similares.
+Como parte de su enfoque inicial, IoTech se orienta al sector farmacéutico, principalmente a laboratorios y almacenes,
+donde resulta importante mantener condiciones adecuadas para el desarrollo de las operaciones y la conservación de los
+productos. A partir de este sector, la startup busca desarrollar experiencia y generar soluciones que puedan adaptarse
+posteriormente a organizaciones de otros sectores con necesidades similares.
 
 <p align="center">
-  <img src="../assets/img/chapter-i/IoTech.jpg" alt="IoTech Logo" width="200">
+  <img src="../../assets/img/main-content/chapter-i/startup-profile/IoTech.jpg" alt="IoTech Logo" width="200">
 </p>
 
 ##### Misión
 
-Apoyar a las organizaciones en la mejora de sus operaciones mediante soluciones que respondan a sus necesidades y contribuyan a desarrollar actividades más seguras, eficientes y confiables.
+Apoyar a las organizaciones en la mejora de sus operaciones mediante soluciones que respondan a sus necesidades y
+contribuyan a desarrollar actividades más seguras, eficientes y confiables.
 
 ##### Visión
 
-Ser una startup reconocida por comprender las necesidades de las organizaciones y desarrollar soluciones que generen valor y contribuyan a la mejora de sus operaciones en diferentes sectores.
+Ser una startup reconocida por comprender las necesidades de las organizaciones y desarrollar soluciones que generen
+valor y contribuyan a la mejora de sus operaciones en diferentes sectores.
 
 #### 1.1.2. Perfiles de integrantes del equipo
 
@@ -32,7 +59,7 @@ Ser una startup reconocida por comprender las necesidades de las organizaciones 
 
   <tr>
     <td width="140" valign="top" align="center">
-      <img src="../assets/img/chapter-i/billy.jpg" alt="Billy Ruiz Photo" width="120" />
+      <img src="../../assets/img/main-content/chapter-i/team-member-profiles/billy.jpg" alt="Billy Ruiz Photo" width="120" />
     </td>
     <td valign="top">
       <strong>Billy Jake Ruiz Madrid - (U202116401)</strong> - Ingeniería de Software<br><br>
@@ -42,7 +69,7 @@ Ser una startup reconocida por comprender las necesidades de las organizaciones 
 
   <tr>
     <td width="140" height="150" valign="top" align="center">
-        <img src="../assets/img/chapter-i/vitaly.jpeg" alt="Vitaly Baca Photo" width="120">
+        <img src="../../assets/img/main-content/chapter-i/team-member-profiles/vitaly.jpeg" alt="Vitaly Baca Photo" width="120">
     </td>
     <td valign="top">
       <strong>Vitaly Baca Camargo Arturo - (U20231c426)</strong> - Ingeniería de Software<br><br>
@@ -50,9 +77,15 @@ Ser una startup reconocida por comprender las necesidades de las organizaciones 
     </td>
   </tr>
 
+</table>
+
+<div style="page-break-after: always;"></div>
+
+<table border="1" width="100%">
+
   <tr>
     <td width="140" height="150" valign="top" align="center">
-      <img src="../assets/img/chapter-i/fabrizio.png" alt="Fabrizio Cutiri Photo" width="120">
+      <img src="../../assets/img/main-content/chapter-i/team-member-profiles/fabrizio.png" alt="Fabrizio Cutiri Photo" width="120">
     </td>
     <td valign="top">
       <strong>Fabrizio Alexander Cutiri Agüero - (U201914181)</strong> - Ingeniería de Software<br><br>
@@ -62,7 +95,7 @@ Ser una startup reconocida por comprender las necesidades de las organizaciones 
 
   <tr>
     <td width="140" height="150" valign="top" align="center">
-      <img src="../assets/img/chapter-i/dyron.jpg" alt="Dyron Huapaya Photo" width="120">
+      <img src="../../assets/img/main-content/chapter-i/team-member-profiles/dyron.jpg" alt="Dyron Huapaya Photo" width="120">
     </td>
     <td valign="top">
       <strong>Dyron Huapaya Galindo - (U202322855)</strong> - Ingeniería de Software<br><br>
@@ -72,7 +105,7 @@ Ser una startup reconocida por comprender las necesidades de las organizaciones 
 
   <tr>
     <td width="140" height="150" valign="top" align="center">
-      <img src="../assets/img/chapter-i/henry.png" alt="Henry Jaredt Montes Ramos Photo" width="120">
+      <img src="../../assets/img/main-content/chapter-i/team-member-profiles/henry.png" alt="Henry Jaredt Montes Ramos Photo" width="120">
     </td>
     <td valign="top">
       <strong>Henry Jaredt Montes Ramos - (U20231d343)</strong> - Ingeniería de Software<br><br>
@@ -82,7 +115,7 @@ Ser una startup reconocida por comprender las necesidades de las organizaciones 
 
   <tr>
     <td width="140" height="150" valign="top" align="center">
-      <img src="../assets/img/chapter-i/yaku.jpg" alt="Yaku Mateo Guzmán Cabrejos Photo" width="120">
+      <img src="../../assets/img/main-content/chapter-i/team-member-profiles/yaku.jpg" alt="Yaku Mateo Guzmán Cabrejos Photo" width="120">
     </td>
     <td valign="top">
       <strong>Yaku Mateo Guzmán Cabrejos - (U20231B173)</strong> - Ingeniería de Software<br><br>
@@ -90,9 +123,15 @@ Ser una startup reconocida por comprender las necesidades de las organizaciones 
     </td>
   </tr>
 
+</table>
+
+<div style="page-break-after: always;"></div>
+
+<table border="1" width="100%">
+
   <tr>
     <td width="140" height="150" valign="top" align="center">
-      <img src="../assets/img/chapter-i/giovany.jpg" alt="Giovany Torres Photo" width="120">
+      <img src="../../assets/img/main-content/chapter-i/team-member-profiles/giovany.jpg" alt="Giovany Torres Photo" width="120">
     </td>
     <td valign="top">
       <strong>Giovany Smith Torres Apolinario - (U202311601)</strong> - Ingeniería de Software<br><br>
@@ -102,7 +141,7 @@ Ser una startup reconocida por comprender las necesidades de las organizaciones 
 
   <tr>
     <td width="140" height="150" valign="top" align="center">
-      <img src="../assets/img/chapter-i/franco.jpg" alt="Franco Lopez Photo"  width="120">
+      <img src="../../assets/img/main-content/chapter-i/team-member-profiles/franco.jpg" alt="Franco Lopez Photo"  width="120">
     </td>
     <td valign="top">
       <strong>Franco Mauricio López Roman - (U202315890)</strong> - Ingeniería de Software<br><br>
@@ -112,12 +151,12 @@ Ser una startup reconocida por comprender las necesidades de las organizaciones 
 
   <tr>
     <td width="140" height="150" valign="top" align="center">
-      <img src="../assets/img/chapter-i/adrian.jpeg" alt="Adrian Quiroz Photo"  width="120">
+      <img src="../../assets/img/main-content/chapter-i/team-member-profiles/adrian.jpeg" alt="Adrian Quiroz Photo"  width="120">
     </td>
     <td valign="top">
       <strong>Adrian Alonso Quiroz Caceres - (U202214864)</strong> - Ingeniería de Software<br><br>
       Soy estudiante de la carrera de Ingeniería de Software, cuento con conocimientos y experiencia en diversos lenguajes de programación como Python, C#, Java, C++ y JavaScript, lo que me permite adaptarme con facilidad a distintos entornos y proyectos. Además, manejo Frameworks y tecnologías modernas como Node.js, Vue.js, Angular y Spring Boot, que me han permitido desarrollar aplicaciones web, servicios backend.
     </td>
   </tr>
-  
-  </table>
+
+</table>

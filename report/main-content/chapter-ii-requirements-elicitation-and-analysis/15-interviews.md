@@ -1,70 +1,88 @@
 ## 2.2. Entrevistas
 
-Las entrevistas son clave para la metodología de diseño centrado en el usuario al permitirnos recolectar información cualitativa directamente de los actores que enfrentan la problematica identificada. A través del dialogo estructurado, se busca comprender las necesidades, comportamientos, frustaciones y expectativas de los segmentos objetivos, validando o refutando las hipótesis plantadas previamente.
+Las entrevistas son clave para la metodología de diseño centrado en el usuario al permitirnos recolectar información
+cualitativa directamente de los actores que enfrentan la problematica identificada. A través del dialogo estructurado,
+se busca comprender las necesidades, comportamientos, frustaciones y expectativas de los segmentos objetivos, validando
+o refutando las hipótesis plantadas previamente.
 
 ### 2.2.1. Diseño de entrevistas
 
-Teniendo en cuenta la importancia en la información que nos puede proveer los entrevistados, se presentan las preguntas clave para cada segmento objetivo. Para eso se considera dos tipos de preguntas: las personales, orientadas a conocer el perfil del entrevistado y las especificas, las cuales estan enfocadas en los procesos actuales, herramientas utilizadas, desafios operativos y expectativas frente a una solución tecnológica como QualiTrack.
+Teniendo en cuenta la importancia en la información que nos puede proveer los entrevistados, se presentan las preguntas
+clave para cada segmento objetivo. Para eso se considera dos tipos de preguntas: las personales, orientadas a conocer el
+perfil del entrevistado y las especificas, las cuales estan enfocadas en los procesos actuales, herramientas utilizadas,
+desafios operativos y expectativas frente a una solución tecnológica como QualiTrack.
 
 #### **Preguntas Personales – Ambos Segmentos:**
 
-*1.	¿Cuál es su nombre?* 
+*1. ¿Cuál es su nombre?*
 
-*2.	¿Qué edad tiene?* 
+*2. ¿Qué edad tiene?*
 
-*3.	¿En qué distrito, provincia o ciudad reside actualmente?* 
+*3. ¿En qué distrito, provincia o ciudad reside actualmente?*
 
-*4.	¿Cuál es su cargo o función dentro del laboratorio?* 
+*4. ¿Cuál es su cargo o función dentro del laboratorio?*
 
-*5.	¿Cuántos años de experiencia tiene trabajando en el sector farmacéutico?* 
+*5. ¿Cuántos años de experiencia tiene trabajando en el sector farmacéutico?*
 
-*6.	¿Cuáles son sus principales responsabilidades dentro de su puesto?* 
+*6. ¿Cuáles son sus principales responsabilidades dentro de su puesto?*
 
-*7.	¿Qué dispositivos utiliza normalmente durante su trabajo, como computadora, celular, tablet u otros?* 
+*7. ¿Qué dispositivos utiliza normalmente durante su trabajo, como computadora, celular, tablet u otros?*
 
-*8.	¿En qué situaciones utiliza cada uno de esos dispositivos?* 
+*8. ¿En qué situaciones utiliza cada uno de esos dispositivos?*
 
-*9.	¿Qué canales utiliza normalmente para comunicarse o coordinar con otras personas o áreas?* 
+*9. ¿Qué canales utiliza normalmente para comunicarse o coordinar con otras personas o áreas?*
 
-*10.	¿Cuál considera que es su principal objetivo o responsabilidad dentro de su función en el laboratorio?*
+*10. ¿Cuál considera que es su principal objetivo o responsabilidad dentro de su función en el laboratorio?*
 
-*11.	¿Qué situaciones relacionadas con su trabajo suelen generarle mayor dificultad o frustración?*
+*11. ¿Qué situaciones relacionadas con su trabajo suelen generarle mayor dificultad o frustración?*
 
 #### **Segmento 1: Rensponsables de Calidad y Supervisión**
 
 *Preguntas Específicas:*
 
-*1.	De manera general, ¿qué áreas, ambientes o espacios requieren control de condiciones dentro del laboratorio y cómo los denominan normalmente?*
+*1. De manera general, ¿qué áreas, ambientes o espacios requieren control de condiciones dentro del laboratorio y cómo
+los denominan normalmente?*
 
-*2.	¿Qué características o condiciones necesitan monitorear en esos espacios y cómo determinan cuáles son los valores o rangos aceptables?*
+*2. ¿Qué características o condiciones necesitan monitorear en esos espacios y cómo determinan cuáles son los valores o
+rangos aceptables?*
 
-*3.	¿Cómo realizan actualmente el monitoreo de esas condiciones y qué dispositivos, instrumentos o equipos utilizan?* 
+*3. ¿Cómo realizan actualmente el monitoreo de esas condiciones y qué dispositivos, instrumentos o equipos utilizan?*
 
-*4.	¿Cómo registran y almacenan las mediciones obtenidas?*
+*4. ¿Cómo registran y almacenan las mediciones obtenidas?*
 
-*5.	¿Qué sistemas, aplicaciones, documentos o registros utilizan actualmente para consultar o gestionar la información relacionada con el control de calidad?* 
+*5. ¿Qué sistemas, aplicaciones, documentos o registros utilizan actualmente para consultar o gestionar la información
+relacionada con el control de calidad?*
 
-*6.	¿Con qué frecuencia necesitan realizar, revisar o consultar las mediciones de los ambientes?*
+*6. ¿Con qué frecuencia necesitan realizar, revisar o consultar las mediciones de los ambientes?*
 
-*7.	Cuénteme qué sucede desde que se detecta una condición fuera de los valores aceptables hasta que la situación se considera resuelta.*
+*7. Cuénteme qué sucede desde que se detecta una condición fuera de los valores aceptables hasta que la situación se
+considera resuelta.*
 
-*8.	¿Qué términos utilizan para referirse a estas situaciones y existen diferentes niveles de gravedad o prioridad?* 
+*8. ¿Qué términos utilizan para referirse a estas situaciones y existen diferentes niveles de gravedad o prioridad?*
 
-*9.	¿Quiénes necesitan ser informados cuando ocurre una situación de este tipo y cómo se realiza actualmente esa comunicación?* 
+*9. ¿Quiénes necesitan ser informados cuando ocurre una situación de este tipo y cómo se realiza actualmente esa
+comunicación?*
 
-*10.	¿Existen reglas sobre cuánto tiempo puede permanecer una condición fuera de los valores aceptables antes de que sea necesario tomar alguna acción?* 
+*10. ¿Existen reglas sobre cuánto tiempo puede permanecer una condición fuera de los valores aceptables antes de que sea
+necesario tomar alguna acción?*
 
-*11.	¿Quién determina que una situación puede considerarse solucionada o cerrada y qué información debe conservarse sobre lo ocurrido?* 
+*11. ¿Quién determina que una situación puede considerarse solucionada o cerrada y qué información debe conservarse
+sobre lo ocurrido?*
 
-*12.	¿Qué información suelen necesitar recuperar cuando realizan auditorías, revisiones o verificaciones relacionadas con las condiciones ambientales?*
+*12. ¿Qué información suelen necesitar recuperar cuando realizan auditorías, revisiones o verificaciones relacionadas
+con las condiciones ambientales?*
 
-*13.	¿Qué indicadores utiliza actualmente para evaluar si las condiciones de los ambientes se están manteniendo dentro de los parámetros establecidos?*
+*13. ¿Qué indicadores utiliza actualmente para evaluar si las condiciones de los ambientes se están manteniendo dentro
+de los parámetros establecidos?*
 
-*14.	Si tuviera que revisar rápidamente el estado general de los ambientes en un panel, ¿qué indicadores o datos consideraría más importantes visualizar?*
+*14. Si tuviera que revisar rápidamente el estado general de los ambientes en un panel, ¿qué indicadores o datos
+consideraría más importantes visualizar?*
 
-*15.	¿Qué parte del proceso actual de monitoreo, registro o revisión considera más lenta, complicada o propensa a errores?* 
+*15. ¿Qué parte del proceso actual de monitoreo, registro o revisión considera más lenta, complicada o propensa a
+errores?*
 
-*16.	Para una persona nueva en el área, ¿qué términos, reglas o situaciones particulares debería conocer para entender correctamente cómo realizan el control de las condiciones ambientales?*
+*16. Para una persona nueva en el área, ¿qué términos, reglas o situaciones particulares debería conocer para entender
+correctamente cómo realizan el control de las condiciones ambientales?*
 
 #### **Segmento objetivo 2: Personal operativo de laboratorios y almacenes**
 
@@ -72,50 +90,66 @@ Teniendo en cuenta la importancia en la información que nos puede proveer los e
 
 *Preguntas Específicas*
 
-*1.	De manera general, ¿cómo se organiza el proceso desde que reciben las materias primas hasta que obtienen un producto terminado?* 
+*1. De manera general, ¿cómo se organiza el proceso desde que reciben las materias primas hasta que obtienen un producto
+terminado?*
 
-*2.	¿Qué sistemas, aplicaciones, documentos o registros utilizan actualmente para gestionar materias primas, fabricación y trazabilidad?* 
+*2. ¿Qué sistemas, aplicaciones, documentos o registros utilizan actualmente para gestionar materias primas, fabricación
+y trazabilidad?*
 
-*3.	Cuando reciben una materia prima, ¿cómo la identifican y qué información necesitan registrar sobre ella?* 
+*3. Cuando reciben una materia prima, ¿cómo la identifican y qué información necesitan registrar sobre ella?*
 
-*4.	Cuando reciben nuevamente la misma materia prima, ¿cómo diferencian una recepción de otra y qué término utilizan para referirse a esas recepciones?* 
+*4. Cuando reciben nuevamente la misma materia prima, ¿cómo diferencian una recepción de otra y qué término utilizan
+para referirse a esas recepciones?*
 
-*5.	¿Cómo registran la cantidad recibida y cómo determinan la unidad de medida que corresponde a cada materia prima?* 
+*5. ¿Cómo registran la cantidad recibida y cómo determinan la unidad de medida que corresponde a cada materia prima?*
 
-*6.	¿Qué información relacionada con proveedor, fechas y estado necesitan conocer antes de que una materia prima pueda utilizarse?*
+*6. ¿Qué información relacionada con proveedor, fechas y estado necesitan conocer antes de que una materia prima pueda
+utilizarse?*
 
-*7.	¿Qué ocurre cuando una materia prima deja de poder utilizarse, es rechazada o presenta algún problema?* 
+*7. ¿Qué ocurre cuando una materia prima deja de poder utilizarse, es rechazada o presenta algún problema?*
 
-*8.	Cuando van a fabricar nuevamente un producto que ya han elaborado antes, ¿cómo identifican esa nueva fabricación y qué nombre utilizan para referirse a ella?* 
+*8. Cuando van a fabricar nuevamente un producto que ya han elaborado antes, ¿cómo identifican esa nueva fabricación y
+qué nombre utilizan para referirse a ella?*
 
-*9.	¿Qué información necesitan registrar cuando comienza una nueva fabricación?* 
+*9. ¿Qué información necesitan registrar cuando comienza una nueva fabricación?*
 
-*10.	¿Cómo registran qué materias primas fueron utilizadas en una fabricación determinada y, si una misma materia prima fue recibida varias veces, cómo identifican cuál de esas recepciones se utilizó?* 
+*10. ¿Cómo registran qué materias primas fueron utilizadas en una fabricación determinada y, si una misma materia prima
+fue recibida varias veces, cómo identifican cuál de esas recepciones se utilizó?*
 
-*11.	Si posteriormente se detectara un problema con una materia prima utilizada, ¿cómo identificarían los productos o fabricaciones relacionados y qué ocurriría con ellos?*
+*11. Si posteriormente se detectara un problema con una materia prima utilizada, ¿cómo identificarían los productos o
+fabricaciones relacionados y qué ocurriría con ellos?*
 
-*12.	¿Qué información necesitan conservar sobre las personas que participaron en una fabricación y qué roles suelen intervenir?* 
+*12. ¿Qué información necesitan conservar sobre las personas que participaron en una fabricación y qué roles suelen
+intervenir?*
 
-*13.	¿Qué máquinas, equipos o instrumentos utilizan durante la fabricación y cómo identifican dónde se encuentra cada uno?*
+*13. ¿Qué máquinas, equipos o instrumentos utilizan durante la fabricación y cómo identifican dónde se encuentra cada
+uno?*
 
-*14.	¿Qué estados manejan para los equipos y qué condiciones debe cumplir un equipo antes de poder utilizarse?* 
+*14. ¿Qué estados manejan para los equipos y qué condiciones debe cumplir un equipo antes de poder utilizarse?*
 
-*15.	¿Cómo gestionan el mantenimiento de los equipos y qué condiciones deben cumplirse para que puedan volver a utilizarse?* 
+*15. ¿Cómo gestionan el mantenimiento de los equipos y qué condiciones deben cumplirse para que puedan volver a
+utilizarse?*
 
-*16.	¿Qué información necesitan conservar sobre los equipos utilizados en una fabricación?*
+*16. ¿Qué información necesitan conservar sobre los equipos utilizados en una fabricación?*
 
-*17.	Si posteriormente se detectara una falla en un equipo, ¿cómo identificarían los productos relacionados con ese equipo?* 
+*17. Si posteriormente se detectara una falla en un equipo, ¿cómo identificarían los productos relacionados con ese
+equipo?*
 
-*18.	Cuando termina una fabricación, ¿qué información necesitan conservar sobre el producto obtenido y qué estados puede tener hasta considerarse disponible o terminado?* 
+*18. Cuando termina una fabricación, ¿qué información necesitan conservar sobre el producto obtenido y qué estados puede
+tener hasta considerarse disponible o terminado?*
 
-*19.	¿Qué información relacionada con materias primas, productos y equipos necesitan consultar con mayor frecuencia?* 
+*19. ¿Qué información relacionada con materias primas, productos y equipos necesitan consultar con mayor frecuencia?*
 
-*20.	Para una persona nueva en el área, ¿qué términos, reglas o situaciones excepcionales debería conocer para entender correctamente cómo funciona el proceso?*
+*20. Para una persona nueva en el área, ¿qué términos, reglas o situaciones excepcionales debería conocer para entender
+correctamente cómo funciona el proceso?*
+
+<div style="page-break-after: always;"></div>
 
 ### 2.2.2. Registro de entrevistas
 
-En esta sección se presentan los resultados de las entrevistas aplicadas a cada segmento objetivo. Para cada sesión, se incluye: datos del entrevistado, un resumen de las respuestas clave, observaciones del equipo y las principales conclusiones. Este registro sirve como evidencia para orientar las decisiones de diseño y funcionalidades de QualiTrack.
-
+En esta sección se presentan los resultados de las entrevistas aplicadas a cada segmento objetivo. Para cada sesión, se
+incluye: datos del entrevistado, un resumen de las respuestas clave, observaciones del equipo y las principales
+conclusiones. Este registro sirve como evidencia para orientar las decisiones de diseño y funcionalidades de QualiTrack.
 
 #### **Segmento objetivo 1: Responsables de calidad y supervisión**
 
@@ -146,7 +180,7 @@ En esta sección se presentan los resultados de las entrevistas aplicadas a cada
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div ><img src="../assets/img/chapter-ii/mesly-medina-saravia.png" width="700"></div>
+                <div ><img src="../../assets/img/main-content/chapter-ii/interviews/mesly-medina-saravia.png" width="700"></div>
             </td>
         </tr>
         <tr>
@@ -182,7 +216,7 @@ En esta sección se presentan los resultados de las entrevistas aplicadas a cada
     <colgroup></colgroup>
     <thead>
         <tr>
-            <th colspan="2">Entrevista #3<br></th>
+            <th colspan="2">Entrevista #2<br></th>
         </tr>
     </thead>
     <tbody>
@@ -205,7 +239,7 @@ En esta sección se presentan los resultados de las entrevistas aplicadas a cada
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../assets/img/chapter-ii/mario-baca.png" width="700"></div>
+                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/mario-baca.png" width="700"></div>
             </td>
         </tr>
         <tr>
@@ -236,12 +270,13 @@ Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagno
     </tbody>
 </table>
 
+<div style="page-break-after: always;"></div>
 
 <table>
     <colgroup></colgroup>
     <thead>
         <tr>
-            <th colspan="2">Entrevista #2<br></th>
+            <th colspan="2">Entrevista #3<br></th>
         </tr>
     </thead>
     <tbody>
@@ -264,7 +299,7 @@ Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagno
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../assets/img/chapter-ii/ricardo-melendrez.png" width="700"></div>
+                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/ricardo-melendrez.png" width="700"></div>
             </td>
         </tr>
         <tr>
@@ -296,10 +331,6 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
     </tbody>
 </table>
 
-
-
-
-
 #### **Segmento objetivo 2: Personal operativo de laboratorios y almacenes**
 
  <table>
@@ -329,7 +360,7 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../assets/img/chapter-ii/cesar-aguero.png" width="700"></div>
+                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/cesar-aguero.png" width="700"></div>
             </td>
         </tr>
         <tr>
@@ -365,6 +396,7 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
     </tbody>
 </table>
 
+<div style="page-break-after: always;"></div>
 
 <table>
     <colgroup></colgroup>
@@ -393,7 +425,7 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../assets/img/chapter-ii/liz-aliaga.png" width="700"></div>
+                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/liz-aliaga.png" width="700"></div>
             </td>
         </tr>
         <tr>
@@ -455,7 +487,7 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../assets/img/chapter-ii/ohmar-chavez.png" width="700"></div>
+                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/ohmar-chavez.png" width="700"></div>
             </td>
         </tr>
         <tr>
@@ -491,118 +523,157 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
     </tbody>
 </table>
 
+<div style="page-break-after: always;"></div>
+
 ### 2.2.3. Análisis de entrevistas
 
-En esta sección se presenta el análisis detallado de la información recolectada de las entrevistas. Para cada segmento, se explican primero los hallazgos estadísticos objetivos y subjetivos, seguidos de la evidencia gráfica correspondiente.
+En esta sección se presenta el análisis detallado de la información recolectada de las entrevistas. Para cada segmento,
+se explican primero los hallazgos estadísticos objetivos y subjetivos, seguidos de la evidencia gráfica correspondiente.
 
 #### Análisis de Características Objetivas y Subjetivas
 
-
 **Segmento 1: Responsables de calidad y supervisión**
 
-El análisis de las entrevistas evidencia que la supervisión de las condiciones ambientales constituye una actividad fundamental en los procesos de calidad farmacéutica. El 100% de los entrevistados controla la temperatura y humedad de las áreas bajo su responsabilidad, mientras que un 67% también considera el control de la presión diferencial, dependiendo de las características y requisitos de cada área.
+El análisis de las entrevistas evidencia que la supervisión de las condiciones ambientales constituye una actividad
+fundamental en los procesos de calidad farmacéutica. El 100% de los entrevistados controla la temperatura y humedad de
+las áreas bajo su responsabilidad, mientras que un 67% también considera el control de la presión diferencial,
+dependiendo de las características y requisitos de cada área.
 
-Respecto a la gestión de la información, el 100% de los entrevistados utiliza registros manuales o físicos para documentar las mediciones ambientales. Asimismo, un 33% complementa estos registros mediante herramientas como Excel, evidenciando que la información puede encontrarse distribuida entre diferentes medios y formatos.
+Respecto a la gestión de la información, el 100% de los entrevistados utiliza registros manuales o físicos para
+documentar las mediciones ambientales. Asimismo, un 33% complementa estos registros mediante herramientas como Excel,
+evidenciando que la información puede encontrarse distribuida entre diferentes medios y formatos.
 
-A nivel subjetivo, el 67% de los entrevistados manifestó dificultades relacionadas con el registro y gestión manual de las mediciones, principalmente por registros realizados posteriormente a la medición y por el esfuerzo requerido para revisar la información. Además, un 67% destacó la importancia de contar con una visualización más organizada y centralizada de las condiciones de las áreas, especialmente para facilitar la supervisión y consulta de información histórica.
+A nivel subjetivo, el 67% de los entrevistados manifestó dificultades relacionadas con el registro y gestión manual de
+las mediciones, principalmente por registros realizados posteriormente a la medición y por el esfuerzo requerido para
+revisar la información. Además, un 67% destacó la importancia de contar con una visualización más organizada y
+centralizada de las condiciones de las áreas, especialmente para facilitar la supervisión y consulta de información
+histórica.
 
-En conjunto, se observa que el responsable de calidad busca mantener las condiciones ambientales dentro de los parámetros establecidos, detectar oportunamente las desviaciones y disponer de información confiable para la supervisión y toma de decisiones. 
+En conjunto, se observa que el responsable de calidad busca mantener las condiciones ambientales dentro de los
+parámetros establecidos, detectar oportunamente las desviaciones y disponer de información confiable para la supervisión
+y toma de decisiones.
 
 <br>
-
-<div align="center"><img src="../assets/img/chapter-ii/quality-managers-charts-image.png" width="900"></div>
-
+<div align="center"><img src="../../assets/img/main-content/chapter-ii/interview-analysis/quality-managers-charts-image.png" width="900"></div>
 <br>
 
+<div style="page-break-after: always;"></div>
 
 **Segmento 2: Personal operativo de laboratorios y almacenes**
 
-El análisis de las entrevistas evidencia que la identificación, verificación y documentación de los productos y materias primas constituyen actividades presentes en los diferentes contextos de trabajo del segmento. El 100% de los entrevistados utiliza algún mecanismo de identificación mediante lotes, códigos o registros para diferenciar los productos o materiales y mantener su seguimiento durante el proceso.
+El análisis de las entrevistas evidencia que la identificación, verificación y documentación de los productos y materias
+primas constituyen actividades presentes en los diferentes contextos de trabajo del segmento. El 100% de los
+entrevistados utiliza algún mecanismo de identificación mediante lotes, códigos o registros para diferenciar los
+productos o materiales y mantener su seguimiento durante el proceso.
 
-Respecto a la verificación de información antes de utilizar o liberar un producto, el 100% de los entrevistados menciona la revisión de documentación, especificaciones o condiciones como parte del proceso. En cuanto a la gestión de información y trazabilidad, el 100% de los entrevistados evidencia la necesidad de conservar registros relacionados con productos, materias primas o procesos. Sin embargo, el nivel de digitalización varía: el 67% utiliza sistemas empresariales como SAP.
+Respecto a la verificación de información antes de utilizar o liberar un producto, el 100% de los entrevistados menciona
+la revisión de documentación, especificaciones o condiciones como parte del proceso. En cuanto a la gestión de
+información y trazabilidad, el 100% de los entrevistados evidencia la necesidad de conservar registros relacionados con
+productos, materias primas o procesos. Sin embargo, el nivel de digitalización varía: el 67% utiliza sistemas
+empresariales como SAP.
 
-A nivel subjetivo, las entrevistas muestran que las principales dificultades son diferentes según el contexto de trabajo. Un 33% manifestó dificultades relacionadas con la sobrecarga de trabajo, otro 33% señaló problemas para transferir un producto desarrollado hacia un lote comercial y el 33% restante identificó dificultades en el seguimiento de acuerdos y responsabilidades debido a la pérdida de comunicación y trazabilidad.
+A nivel subjetivo, las entrevistas muestran que las principales dificultades son diferentes según el contexto de
+trabajo. Un 33% manifestó dificultades relacionadas con la sobrecarga de trabajo, otro 33% señaló problemas para
+transferir un producto desarrollado hacia un lote comercial y el 33% restante identificó dificultades en el seguimiento
+de acuerdos y responsabilidades debido a la pérdida de comunicación y trazabilidad.
 
-En conjunto, se observa que el segmento busca mantener la identificación, control y trazabilidad de los productos y materiales durante sus procesos, aunque las necesidades y dificultades varían de acuerdo con el entorno específico en el que se desempeña cada entrevistado.
+En conjunto, se observa que el segmento busca mantener la identificación, control y trazabilidad de los productos y
+materiales durante sus procesos, aunque las necesidades y dificultades varían de acuerdo con el entorno específico en el
+que se desempeña cada entrevistado.
 
 <br>
-
-<div align="center"><img src="../assets/img/chapter-ii/operational- staff-charts-image.png" width="850"></div>
-
+<div align="center"><img src="../../assets/img/main-content/chapter-ii/interview-analysis/operational-staff-charts-image.png" width="850"></div>
 <br>
+
+<div style="page-break-after: always;"></div>
 
 #### Análisis Comparativo
 
-Para complementar el análisis de los segmentos, se revisaron específicamente las respuestas relacionadas con dispositivos, sistemas operativos y navegadores utilizados durante las actividades laborales. 
+Para complementar el análisis de los segmentos, se revisaron específicamente las respuestas relacionadas con
+dispositivos, sistemas operativos y navegadores utilizados durante las actividades laborales.
 
 ##### **Uso de dispositivos**
 
 <div align="center">
-    <img src="../assets/img/chapter-ii/analis-de-dispositivos.png" width=600>
+    <img src="../../assets/img/main-content/chapter-ii/interview-analysis/analis-de-dispositivos.png" width=600>
 </div>
 
 <br>
 
-El gráfico muestra que computadoras/laptops y celulares son los dispositivos con mayor presencia, ambos utilizados por el 83.3% de los entrevistados. Las tablets o PDA alcanzan el 66.7%, mientras que los equipos especializados de medición representan el 50%.
+El gráfico muestra que computadoras/laptops y celulares son los dispositivos con mayor presencia, ambos utilizados por
+el 83.3% de los entrevistados. Las tablets o PDA alcanzan el 66.7%, mientras que los equipos especializados de medición
+representan el 50%.
 
-Esto evidencia que los entrevistados desarrollan sus actividades mediante un ecosistema tecnológico mixto, combinando dispositivos informáticos de uso general con dispositivos especializados propios de los procesos farmacéuticos.
+Esto evidencia que los entrevistados desarrollan sus actividades mediante un ecosistema tecnológico mixto, combinando
+dispositivos informáticos de uso general con dispositivos especializados propios de los procesos farmacéuticos.
 
-Los dispositivos tienen diferentes funciones según el entrevistado. Las computadoras se utilizan principalmente para revisar información, trabajar con Excel, SAP y otros sistemas; los celulares se emplean principalmente para comunicación y coordinación; mientras que tablets o PDA se utilizan para actividades de control y consulta en los laboratorios.
+Los dispositivos tienen diferentes funciones según el entrevistado. Las computadoras se utilizan principalmente para
+revisar información, trabajar con Excel, SAP y otros sistemas; los celulares se emplean principalmente para comunicación
+y coordinación; mientras que tablets o PDA se utilizan para actividades de control y consulta en los laboratorios.
 
 ##### **Sistemas operativos utilizados**
 
-Para evitar asumir información que no fue proporcionada, los porcentajes se calculan únicamente sobre los entrevistados que especificaron el sistema operativo.
+Para evitar asumir información que no fue proporcionada, los porcentajes se calculan únicamente sobre los entrevistados
+que especificaron el sistema operativo.
 
 <div align="center">
 
 **Computadoras**
 
 | Sistema operativo | Entrevistados que lo especificaron | Porcentaje |
-| ----------------- | ---------------------------------: | ---------: |
+|-------------------|-----------------------------------:|-----------:|
 | Windows           |                             5 de 5 |   **100%** |
 | Apple/macOS       |                             0 de 5 |     **0%** |
 
 </div>
 
-Los entrevistados que especificaron el sistema operativo de su computadora utilizan Windows. En el caso de César se especificó Windows 11, mientras que Liz y Omar utilizan Windows 10.
+Los entrevistados que especificaron el sistema operativo de su computadora utilizan Windows. En el caso de César se
+especificó Windows 11, mientras que Liz y Omar utilizan Windows 10.
 
 
 <div align="center">
 
 **Celulares / tablets**
-    
+
 | Sistema operativo | Entrevistados que lo especificaron | Porcentaje |
-| ----------------- | ---------------------------------: | ---------: |
+|-------------------|-----------------------------------:|-----------:|
 | Android           |                             2 de 3 |  **66.7%** |
 | Apple/iOS         |                             1 de 3 |  **33.3%** |
 
 </div>
 
 
-En los dispositivos móviles donde se especificó el sistema operativo, se identificaron Android y Apple. Mario y Omar utilizan dispositivos Android, mientras que César utiliza dispositivos Apple.
+En los dispositivos móviles donde se especificó el sistema operativo, se identificaron Android y Apple. Mario y Omar
+utilizan dispositivos Android, mientras que César utiliza dispositivos Apple.
 
 ##### Navegadores utilizados
 
 <div align="center">
-    
+
 | Navegador      | Entrevistados | Porcentaje |
-| -------------- | ------------: | ---------: |
+|----------------|--------------:|-----------:|
 | Google Chrome  |        3 de 4 |    **75%** |
 | Microsoft Edge |        1 de 4 |    **25%** |
 
 </div>
 
-Entre quienes indicaron explícitamente el navegador utilizado, Google Chrome es el más mencionado, con 75%, mientras que Microsoft Edge representa el 25%. Mario, Liz y Omar utilizan Google Chrome, mientras que César utiliza Microsoft Edge.
+Entre quienes indicaron explícitamente el navegador utilizado, Google Chrome es el más mencionado, con 75%, mientras que
+Microsoft Edge representa el 25%. Mario, Liz y Omar utilizan Google Chrome, mientras que César utiliza Microsoft Edge.
 
 ##### Canales de Comunicacion
 
-El análisis de las entrevistas muestra que los participantes utilizan principalmente canales de comunicación directos y digitales para coordinar actividades dentro de sus organizaciones. Los canales identificados fueron.
+El análisis de las entrevistas muestra que los participantes utilizan principalmente canales de comunicación directos y
+digitales para coordinar actividades dentro de sus organizaciones. Los canales identificados fueron.
 
 <div align="center">
-    <img src="../assets/img/chapter-ii/analisis-de-canales-de-comunicacion.png" width=700>
+    <img src="../../assets/img/main-content/chapter-ii/interview-analysis/analisis-de-canales-de-comunicacion.png" width=700>
 </div>
 
-Los canales presentan diferencias según el contexto laboral. Mario utiliza comunicación presencial, llamadas y WhatsApp para coordinar con producción, mantenimiento y calidad. Liz utiliza principalmente correo electrónico y teléfono, señalando que WhatsApp está disponible pero no constituye un canal oficial. Omar utiliza RPC y Microsoft Teams para las comunicaciones internas. César emplea Microsoft Teams como canal oficial y también utiliza WhatsApp y correo corporativo.
+Los canales presentan diferencias según el contexto laboral. Mario utiliza comunicación presencial, llamadas y WhatsApp
+para coordinar con producción, mantenimiento y calidad. Liz utiliza principalmente correo electrónico y teléfono,
+señalando que WhatsApp está disponible pero no constituye un canal oficial. Omar utiliza RPC y Microsoft Teams para las
+comunicaciones internas. César emplea Microsoft Teams como canal oficial y también utiliza WhatsApp y correo
+corporativo.
 
 #### Conclusiones y Definición de Arquetipos
 
@@ -610,16 +681,22 @@ A partir del análisis realizado, se definen los siguientes perfiles de usuario 
 
 *Arquetipo: “El Supervisor de Calidad”*
 
-**Característica principal:** Responsable de controlar las condiciones ambientales de las áreas y tomar decisiones ante posibles desviaciones.
+**Característica principal:** Responsable de controlar las condiciones ambientales de las áreas y tomar decisiones ante
+posibles desviaciones.
 
-**Necesidad principal:** Contar con información confiable, organizada y accesible sobre las condiciones ambientales de las áreas para facilitar la supervisión, detectar desviaciones y consultar registros históricos.
+**Necesidad principal:** Contar con información confiable, organizada y accesible sobre las condiciones ambientales de
+las áreas para facilitar la supervisión, detectar desviaciones y consultar registros históricos.
 
-**Principal dificultad:** La dependencia de registros manuales y físicos, que puede dificultar el seguimiento oportuno y la revisión de la información.
+**Principal dificultad:** La dependencia de registros manuales y físicos, que puede dificultar el seguimiento oportuno y
+la revisión de la información.
 
 *Arquetipo: "El Formulador de Desarrollo de laboratorio"*
 
-**Característica principal:** Encargado de la supervisión de de las buenas prácticas profesionales durante la elaboración, almacenado y dispensación del producto.
+**Característica principal:** Encargado de la supervisión de de las buenas prácticas profesionales durante la
+elaboración, almacenado y dispensación del producto.
 
-**Necesidad principal:** Mantener una clara trazabilidad de las materias primas, productos y procesos involucrados en el negocio para facilitar su correcto arbitraje según las normas profesionales.
+**Necesidad principal:** Mantener una clara trazabilidad de las materias primas, productos y procesos involucrados en el
+negocio para facilitar su correcto arbitraje según las normas profesionales.
 
-**Principal dificultad:** Ante grandes producciones se dificulta la trazabilidad de cada producto junto a su lote y respectivas características de elaboración.
+**Principal dificultad:** Ante grandes producciones se dificulta la trazabilidad de cada producto junto a su lote y
+respectivas características de elaboración.
