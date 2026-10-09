@@ -150,7 +150,7 @@ Por otro lado, se presenta la propuesta de diseño físico y de circuito de los 
 En la siguiente imagen, elaborada en Cirkit Designer, se muestran los dos nodos de la solución. A la izquierda, el **Monitor de Ambiente** (PIR, MQ-135, buzzer y anillo LED). A la derecha, el **Monitor de Contenedor** (OLED, BH1750, RC522, DHT, servo, ventilador con transistor, LED RGB y buzzer).
 
 <div align="center">
-  <img src="../assets/img/chapter-v/iot-design/circuit-image.png" alt="Circuito de los dispositivos IoT en Cirkit Designer" width="900px"/>
+  <img src="../assets/img/chapter-v/iot-design/qualitrack-circuit.png" alt="Circuito de los dispositivos IoT en Cirkit Designer" width="900px"/>
 </div>
 
 **Conexiones del Monitor de Ambiente:**
@@ -189,11 +189,11 @@ El **Edge** (Raspberry Pi 4) no requiere circuito adicional: se alimenta por USB
 El Monitor de Ambiente se plantea como una carcasa compacta de montaje en pared o techo, con el sensor PIR al centro rodeado por el anillo LED de estado, aberturas de ventilación laterales para el MQ-135 y la rejilla del buzzer en la parte inferior. El Monitor de Contenedor se plantea como un módulo para montar sobre o junto al contenedor, con la pantalla OLED al frente, la zona del lector RFID junto al indicador del servo, el LED de estado en la parte superior y una rejilla de aire para el ventilador. La alimentación USB de 5 V se ubica en un lateral de cada carcasa.
 
 <div align="center">
-  <img src="../assets/img/chapter-v/iot-design/monitor-ambiente.png" alt="Diseño físico del Monitor de Ambiente" width="900px"/>
+  <img src="../assets/img/chapter-v/iot-design/ambient-monitor-circuit.png" alt="Diseño físico del Monitor de Ambiente" width="900px"/>
 </div>
 
 <div align="center">
-  <img src="../assets/img/chapter-v/iot-design/monitor-contenedor.png" alt="Diseño físico del Monitor de Contenedor" width="900px"/>
+  <img src="../assets/img/chapter-v/iot-design/container-monitor-circuit.png" alt="Diseño físico del Monitor de Contenedor" width="900px"/>
 </div>
 
 ### Flujos de interacción de los dispositivos IoT
