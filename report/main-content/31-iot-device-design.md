@@ -1,3 +1,5 @@
+## 5.6. IoT Device Design
+
 ### Diseño de los dispositivos IoT
 
 Además del diseño de experiencia e interfaces de las aplicaciones web y móvil, se detalla a continuación el diseño de los dispositivos IoT de QualiTrack. Estos dispositivos son responsables de capturar, procesar y transmitir las condiciones físicas de los laboratorios y almacenes farmacéuticos (calidad de aire, movimiento, temperatura, humedad y luz), de ejecutar acciones automáticas sobre los contenedores (ventilación y apertura controlada) y de registrar los accesos mediante RFID. La solución está compuesta por dos nodos con ESP32 (**Monitor de Ambiente** y **Monitor de Contenedor**) y un **Edge**, una Raspberry Pi 4 que recibe los datos de los nodos y los reenvía a la nube.
