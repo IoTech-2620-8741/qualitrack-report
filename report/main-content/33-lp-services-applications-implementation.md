@@ -664,6 +664,12 @@ Las siguientes tablas presentan los commits de implementación de cada repositor
 | Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 69a06b9 | feat(batch): add raw material usage assembler. | — | 08/10/2026 |
 | Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 86c6fd5 | feat(batch): add product assembler. | — | 08/10/2026 |
 | Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 71b6291 | feat(batch): add product api endpoint. | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​app-metadata | bead0ba | fix(ui): correct application favicon | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​app-metadata | 5d4ad45 | fix(seo): add missing meta description | Added a meta description for the QualiTrack platform. | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​app-metadata | 5a5c357 | fix(i18n): add Spanish hero image description | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​app-metadata | f9ae415 | fix(i18n): add English hero image description | — | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​app-metadata | 0859764 | fix(a11y): localize home hero image alt text | Updated image tag to use translation for alt text. | 08/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​app-metadata | b070443 | perf(home): define hero image dimensions | Updated image tag to include translation and attributes. | 08/10/2026 |
 
 ---
 
@@ -671,7 +677,7 @@ Las siguientes tablas presentan los commits de implementación de cada repositor
 
 El alcance del Sprint 1 comprende la Landing Page y la Web Application. Para estos productos no se elaboró una suite de pruebas automatizadas en este sprint: su verificación se realizó de forma manual en el navegador, recorriendo los escenarios de los criterios de aceptación de cada User Story e inspeccionando las peticiones HTTP con las herramientas de desarrollo del navegador.
 
-Las funcionalidades de la Web Application consumen el RESTful API de QualiTrack, cuyos servicios cuentan con pruebas automatizadas desarrolladas con JUnit 5 y Spring Boot Test en el repositorio [IoTech-2620-8741/qualitrack-platform](https://github.com/IoTech-2620-8741/qualitrack-platform/tree/develop/src/test/java/com/iotech/qualitrack/platform). La suite contiene 36 clases de prueba (17 de pruebas unitarias del dominio y 19 de pruebas de integración con el contexto de Spring y la base de datos de prueba) y 164 métodos de prueba, y se ejecuta con `mvn test`. En este sprint no se elaboraron pruebas de aceptación BDD con archivos `.feature`.
+Las funcionalidades de la Web Application consumen el RESTful API de QualiTrack, cuyos servicios cuentan con pruebas automatizadas desarrolladas con JUnit 5 y Spring Boot Test en el repositorio [IoTech-2620-8741/qualitrack-platform](https://github.com/IoTech-2620-8741/qualitrack-platform/tree/develop/src/test/java/com/iotech/qualitrack/platform). La suite contiene 36 clases de prueba (17 de pruebas unitarias del dominio y 19 de pruebas de integración con el contexto de Spring y la base de datos de prueba) y 164 métodos de prueba; como tres de ellos son parametrizados, Maven ejecuta 172 casos de prueba con `mvn test`, todos aprobados en el workflow de integración continua. En este sprint no se elaboraron pruebas de aceptación BDD con archivos `.feature`.
 
 La siguiente tabla relaciona cada clase de prueba con el Bounded Context, los comportamientos que verifica y las User Stories que soporta.
 
@@ -1700,4 +1706,4 @@ Todos los integrantes del equipo participaron en la implementación de los produ
   <p><em>Figura: Gráfico de red del repositorio de la Web Application. Esta vista evidencia las ramas feature creadas desde develop y su integración mediante merges, siguiendo GitFlow.</em></p>
 </div>
 
-**Interpretación.** Los analíticos de GitHub muestran la participación de todos los integrantes en los repositorios del sprint, con commits en las ramas de funcionalidad de sus aspectos y en la documentación del código. El uso de ramas `feature/*`, merges hacia `develop` y commits convencionales permitió integrar el trabajo de cada miembro de forma ordenada y mantener un historial trazable de quién implementó cada funcionalidad. Como oportunidad de mejora, el equipo se propone distribuir los commits de manera más uniforme a lo largo del sprint, evitando concentrar la integración del trabajo en los días previos a la entrega.
+**Interpretación.** Los analíticos de contribución de GitHub contabilizan los commits integrados en la rama main de cada repositorio, mientras que el gráfico de red muestra las ramas de funcionalidad en las que los integrantes desarrollaron sus aspectos antes de integrarlos en `develop`. El uso de ramas `feature/*`, merges hacia `develop` y commits convencionales permitió integrar el trabajo de cada miembro de forma ordenada y mantener un historial trazable de quién implementó cada funcionalidad. Como oportunidad de mejora, el equipo se propone distribuir los commits de manera más uniforme a lo largo del sprint y publicar en main con mayor frecuencia, evitando concentrar la integración del trabajo en los días previos a la entrega.
