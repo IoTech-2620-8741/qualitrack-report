@@ -29,7 +29,3 @@ En el **Sprint 1** el equipo completó 101 User Stories (190 Story Points) y 182
 - Incorporar **pruebas automatizadas** de la Web Application, que en el Sprint 1 se verificó de forma manual, para complementar la suite del RESTful API.
 - Realizar las **entrevistas de validación** y las evaluaciones heurísticas con usuarios de ambos segmentos, y ajustar el Product Backlog según sus resultados.
 - Mantener alineados el diseño (Capítulos IV y V) y la implementación a medida que se agreguen el Edge, los dispositivos y la aplicación móvil.
-
-## Video About-the-Team.
-
-*[Insertar enlace del Video About-the-Team; corresponde a la entrega AV2.]*
