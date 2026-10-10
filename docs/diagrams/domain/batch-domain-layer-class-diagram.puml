@@ -1,0 +1,180 @@
+@startuml batch-domain-layer-class-diagram
+
+title QualiTrack - Product Batch Management - Domain Layer Class Diagram
+
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype ortho
+
+package "shared" <<External>> {
+  abstract class AbstractDomainAggregateRoot
+}
+
+package "batch.domain.model.valueobjects" {
+  enum BatchStatus {
+    PENDING
+    IN_PROGRESS
+    RELEASED
+    REJECTED
+  }
+  class BatchRelease <<record>>
+  class BatchRejection <<record>>
+  class BatchTraceability <<record>>
+  class ContainerAssignment <<record>> {
+    + containerMonitorId: Long
+    + environmentId: Long
+    + assignedBy: Long
+    + assignedAt: Instant
+    + isIn(containerMonitorId: Long): boolean
+  }
+  class BatchContainer <<record>> {
+    + batchId: Long
+    + containerMonitorId: Long
+    + containerName: String
+    + environmentId: Long
+    + assignedBy: Long
+    + assignedAt: Instant
+  }
+}
+
+package "batch.domain.model.aggregates" {
+  class PharmaceuticalProduct {
+    - id: Long
+    - laboratoryId: Long
+    - environmentId: Long
+    - code: String
+    - name: String
+    - description: String
+    - specifications: String
+    - active: boolean
+    + belongsTo(laboratoryId, environmentId): boolean
+  }
+
+  class Batch {
+    - id: Long
+    - labId: Long
+    - environmentId: Long
+    - productId: Long
+    - productName: String
+    - batchNumber: String
+    - quantity: Double
+    - unit: String
+    - status: BatchStatus
+    - startDate: String
+    - endDate: String
+    - notes: String
+    - containerAssignment: ContainerAssignment
+    + belongsTo(laboratoryId, environmentId, productId): boolean
+    + isOpen(): boolean
+    + start(): void
+    + registerRawMaterialConsumption(): boolean
+    + release(command: ReleaseBatchCommand): void
+    + reject(command: RejectBatchCommand): void
+    + storeIn(assignment: ContainerAssignment): boolean
+    + container(): Optional<ContainerAssignment>
+  }
+}
+PharmaceuticalProduct --|> AbstractDomainAggregateRoot
+Batch --|> AbstractDomainAggregateRoot
+Batch --> BatchStatus
+Batch ..> PharmaceuticalProduct : productId
+Batch --> "0..1" ContainerAssignment : stored in
+
+package "batch.domain.model.entities" {
+  class RawMaterialUsage {
+    - batchId: Long
+    - rawMaterialId: Long
+    - inventoryReceiptId: Long
+    - quantityUsed: Double
+    - stockBefore: BigDecimal
+    - stockAfter: BigDecimal
+    - operationId: String
+  }
+  class EquipmentUsage {
+    - batchId: Long
+    - equipmentId: Long
+    - equipmentName: String
+    - registeredByUserId: Long
+  }
+  class StaffParticipation {
+    - batchId: Long
+    - staffId: Long
+    - staffName: String
+    - staffRole: String
+    - registeredByUserId: Long
+  }
+  class DigitalSignature {
+    - batchId: Long
+    - signedByUserId: Long
+    - signatureHash: String
+    - signedAt: String
+    + {static} sign(batch, userId, signedAt): DigitalSignature
+  }
+  class RejectionRecord {
+    - batchId: Long
+    - rejectionDate: String
+    - reason: String
+  }
+}
+BatchRelease --> Batch
+BatchRelease --> DigitalSignature
+BatchRejection --> Batch
+BatchRejection --> RejectionRecord
+BatchTraceability --> Batch
+BatchTraceability --> PharmaceuticalProduct
+BatchTraceability --> RawMaterialUsage
+BatchTraceability --> EquipmentUsage
+BatchTraceability --> StaffParticipation
+BatchTraceability --> "0..1" BatchContainer : container
+
+package "batch.domain.model.commands" {
+  class CreateProductCommand <<record>>
+  class CreateBatchCommand <<record>>
+  class ReleaseBatchCommand <<record>>
+  class RejectBatchCommand <<record>>
+  class RegisterRawMaterialUsageCommand <<record>>
+  class RegisterEquipmentUsageCommand <<record>>
+  class RegisterStaffParticipationCommand <<record>>
+  class AssignBatchContainerCommand <<record>>
+}
+
+package "batch.domain.model.queries" {
+  class GetProductsByEnvironmentQuery <<record>>
+  class GetProductByIdQuery <<record>>
+  class GetBatchesByProductQuery <<record>>
+  class GetProductBatchQuery <<record>>
+  class GetBatchesByLabIdQuery <<record>>
+  class GetBatchByIdQuery <<record>>
+  class GetBatchTraceabilityQuery <<record>>
+  class GetRawMaterialUsagesByInventoryMaterialQuery <<record>>
+  class GetRawMaterialHistoryQuery <<record>>
+  class GetBatchContainerQuery <<record>>
+}
+
+package "batch.domain.model.events" {
+  class ProductCreatedEvent <<record>>
+  class BatchCreatedEvent <<record>>
+  class BatchStartedEvent <<record>> {
+    + startedAt: Instant
+  }
+  class BatchReleasedEvent <<record>> {
+    + releasedBy: Long
+  }
+  class BatchRejectedEvent <<record>> {
+    + rejectedBy: Long
+  }
+  class RawMaterialLinkedToBatchEvent <<record>>
+  class BatchParticipationRegisteredEvent <<record>>
+  class BatchStoredInContainerEvent <<record>>
+}
+
+package "batch.domain.repositories" {
+  interface ProductRepository
+  interface BatchRepository
+  interface RawMaterialUsageRepository
+  interface BatchParticipationRepository
+  interface BatchEvidenceRepository
+}
+
+@enduml

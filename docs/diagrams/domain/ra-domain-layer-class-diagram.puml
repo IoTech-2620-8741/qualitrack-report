@@ -1,0 +1,271 @@
+@startuml ra-domain-layer-class-diagram
+
+title QualiTrack - Reporting & Audit - Domain Layer Class Diagram
+
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+package "shared" <<External>> {
+  abstract class AbstractDomainAggregateRoot
+}
+
+package "ra.domain.model.valueobjects" {
+  enum AuditAction {
+    CREATE
+    UPDATE
+    DELETE
+    RELEASE
+    REJECT
+    APPROVE
+    REGISTER
+    REMOVE
+    EXPORT
+    GENERATE
+    LOGIN
+    LOGOUT
+    SYSTEM
+  }
+
+  enum KpiMetricStatus {
+    ON_TRACK
+    AT_RISK
+    CRITICAL
+    UNKNOWN
+  }
+
+  enum ReportFormat {
+    PDF
+    CSV
+  }
+
+  enum ReportType {
+    BATCH_TRACEABILITY
+    COMPLIANCE_PERIOD
+    EQUIPMENT_LOG
+    KPI_SUMMARY
+    INVENTORY
+  }
+
+  enum TrendDirection {
+    INCREASING
+    DECREASING
+    STABLE
+  }
+
+  class ReportingPeriod <<record>> {
+    + from: Instant
+    + to: Instant
+    + {static} DEFAULT_LENGTH: Duration = 7 days
+    + {static} MAX_INDICATOR_LENGTH: Duration = 31 days
+    + {static} forIndicators(from, to, now): ReportingPeriod
+    + {static} ofDays(startDate, endDate, zone): ReportingPeriod
+    + contains(moment: Instant): boolean
+  }
+
+  class EnvironmentalReading <<record>> {
+    + deviceId: Long
+    + metric: String
+    + value: Double
+    + unit: String
+    + state: String
+    + measuredAt: Instant
+    + isNumeric(): boolean
+    + isEvaluated(): boolean
+    + severityRank(): int
+  }
+
+  class MeasurementSummary <<record>> {
+    + environmentId: Long
+    + deviceId: Long
+    + metric: String
+    + unit: String
+    + readings: int
+    + average: Double
+    + minimum: Double
+    + maximum: Double
+    + firstMeasuredAt: Instant
+    + lastMeasuredAt: Instant
+    + {static} summarize(environmentId, readings): List<MeasurementSummary>
+  }
+}
+MeasurementSummary ..> EnvironmentalReading
+
+package "ra.domain.model.commands" {
+  class GenerateBatchReportCommand <<record>>
+  class GenerateComplianceReportCommand <<record>>
+  class GenerateInventoryReportCommand <<record>>
+  class ExportEquipmentLogCommand <<record>>
+  class RecordAuditLogEntryCommand <<record>>
+}
+
+package "ra.domain.model.queries" {
+  class GetKpiDashboardByLaboratoryIdQuery <<record>> {
+    + laboratoryId: Long
+    + environmentId: Long
+    + period: ReportingPeriod
+  }
+  class GetDeviationTrendsByEnvironmentQuery <<record>> {
+    + laboratoryId: Long
+    + environmentId: Long
+    + period: ReportingPeriod
+  }
+  class GetAuditLogQuery <<record>>
+  class GetAuditReportByIdQuery <<record>>
+  class GetAuditReportsByLaboratoryIdQuery <<record>>
+  class GetAuditReportsByBatchIdQuery <<record>>
+  class GetAuditReportsByEquipmentIdQuery <<record>>
+}
+
+package "ra.domain.model.aggregates" {
+  class AuditReport {
+    - id: Long
+    - laboratoryId: Long
+    - batchId: Long
+    - equipmentId: Long
+    - generatedBy: Long
+    - generatedByName: String
+    - reportType: ReportType
+    - dateRangeFrom: String
+    - dateRangeTo: String
+    - filePath: String
+    - checksum: String
+    - generatedAt: String
+    + computeChecksum(content: byte[]): String
+    + isImmutable(): boolean
+    + isBatchReport(): boolean
+    + isEquipmentReport(): boolean
+  }
+
+  class KpiDashboard {
+    - id: Long
+    - laboratoryId: Long
+    - timestamp: String
+    - overallHealthScore: Double
+    - period: ReportingPeriod
+    - metrics: List<KpiMetric>
+    - measurementSummaries: List<MeasurementSummary>
+    + hasCriticalMetrics(): boolean
+    + hasAtRiskMetrics(): boolean
+  }
+}
+
+package "ra.domain.model.entities" {
+  class AuditLogEntry {
+    - id: Long
+    - action: AuditAction
+    - entityType: String
+    - entityId: Long
+    - performedBy: Long
+    - timestamp: String
+    - details: String
+  }
+
+  class DeviationTrend {
+    - id: Long
+    - parameterName: String
+    - equipmentId: Long
+    - environmentId: Long
+    - unit: String
+    - trendDirection: TrendDirection
+    - evaluatedReadings: int
+    - timeInRangePercent: Double
+    - deviationCount: int
+    - criticalDeviationCount: int
+    - dataPoints: List<TrendDataPoint>
+    + {static} fromReadings(environmentId, deviceId, metric, unit, readings): DeviationTrend
+  }
+
+  class KpiMetric {
+    - id: Long
+    - name: String
+    - value: Double
+    - unit: String
+    - targetValue: Double
+    - status: KpiMetricStatus
+    - recordedAt: String
+  }
+
+  class TrendDataPoint {
+    - timestamp: String
+    - recordedValue: Double
+    - upperThreshold: Double
+    - lowerThreshold: Double
+    - state: String
+    + isDeviation(): boolean
+  }
+}
+AuditReport --|> AbstractDomainAggregateRoot
+KpiDashboard --|> AbstractDomainAggregateRoot
+AuditReport --> ReportType
+KpiDashboard *-- KpiMetric
+KpiDashboard --> ReportingPeriod
+KpiDashboard *-- MeasurementSummary
+note right of KpiDashboard
+  Calculated on request from the persisted readings (US93, TS81);
+  it is not stored. Counts are the current records of the laboratory.
+end note
+KpiMetric --> KpiMetricStatus
+AuditLogEntry --> AuditAction
+DeviationTrend --> TrendDirection
+DeviationTrend *-- TrendDataPoint
+DeviationTrend ..> EnvironmentalReading
+note right of DeviationTrend
+  One per device, variable and unit with numeric readings (US94, TS82).
+  Time in range: each evaluated reading keeps its condition until the next;
+  NORMAL time over the time between the first and last evaluated reading.
+  Deviation: a reading worse than the previous one (critical when it enters
+  CRITICAL). Calculated on request; not stored.
+end note
+GetKpiDashboardByLaboratoryIdQuery --> ReportingPeriod
+GetDeviationTrendsByEnvironmentQuery --> ReportingPeriod
+GenerateBatchReportCommand --> ReportFormat
+GenerateComplianceReportCommand --> ReportFormat
+GenerateInventoryReportCommand --> ReportFormat
+ExportEquipmentLogCommand --> ReportFormat
+RecordAuditLogEntryCommand --> AuditAction
+
+package "ra.domain.model.events" {
+  class AuditLogEntryRecordedEvent <<record>>
+  class AuditReportGeneratedEvent <<record>>
+}
+AuditLogEntryRecordedEvent --> AuditAction
+AuditReportGeneratedEvent --> ReportType
+
+package "ra.domain.repositories" {
+  interface AuditLogRepository {
+    + findById(id: Long): Optional<AuditLogEntry>
+    + findAll(): List<AuditLogEntry>
+    + findAllByEquipmentId(equipmentId: Long): List<AuditLogEntry>
+    + findAllByBatchId(batchId: Long): List<AuditLogEntry>
+    + findAllByPerformedBy(performedBy: Long): List<AuditLogEntry>
+    + findAllByAction(action: AuditAction): List<AuditLogEntry>
+    + findAllByDateRange(dateFrom: String, dateTo: String): List<AuditLogEntry>
+    + save(auditLogEntry: AuditLogEntry): AuditLogEntry
+    + existsById(id: Long): boolean
+  }
+
+  interface AuditReportRepository {
+    + findById(id: Long): Optional<AuditReport>
+    + findAllByLaboratoryId(laboratoryId: Long): List<AuditReport>
+    + findAllByBatchId(batchId: Long): List<AuditReport>
+    + findAllByEquipmentId(equipmentId: Long): List<AuditReport>
+    + findAllByReportType(reportType: ReportType): List<AuditReport>
+    + save(auditReport: AuditReport): AuditReport
+    + existsById(id: Long): boolean
+  }
+
+}
+AuditLogRepository --> AuditLogEntry
+AuditReportRepository --> AuditReport
+
+package "ra.domain.exceptions" {
+  class AuditLogEntryNotFoundException
+  class AuditReportNotFoundException
+  class ImmutableAuditReportException
+  class InvalidReportDateRangeException
+  class ReportGenerationException
+}
+
+@enduml

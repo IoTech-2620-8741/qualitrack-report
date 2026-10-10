@@ -1,0 +1,348 @@
+@startuml tracking-domain-layer-class-diagram
+
+title QualiTrack - Tracking & Telemetry - Domain Layer Class Diagram
+
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+package "shared" <<External>> {
+  abstract class AbstractDomainAggregateRoot
+}
+
+package "tracking.domain.model.valueobjects" {
+  enum MonitoredMetric {
+    AIR_QUALITY (ppm, ENVIRONMENTAL_DEVICE)
+    MOTION (event, ENVIRONMENTAL_DEVICE)
+    TEMPERATURE (°C, CONTAINER_MONITOR)
+    HUMIDITY (%RH, CONTAINER_MONITOR)
+    LUMINOSITY (lux, CONTAINER_MONITOR)
+    RFID_TAG (tag, CONTAINER_MONITOR)
+    + unit(): String
+    + hasThresholds(): boolean
+    + isText(): boolean
+    + isDetection(): boolean
+    + isReportedBy(deviceType: String): boolean
+    + {static} reportedBy(deviceType: String): List<MonitoredMetric>
+    + {static} parse(value: String): Optional<MonitoredMetric>
+  }
+
+  enum EnvironmentalState {
+    NORMAL
+    WARNING
+    CRITICAL
+    + worsens(previous: EnvironmentalState): boolean
+  }
+
+  class EnvironmentalThreshold <<record>> {
+    + metric: MonitoredMetric
+    + normalMin: Double
+    + normalMax: Double
+    + criticalMin: Double
+    + criticalMax: Double
+    + evaluate(value: double): ThresholdEvaluation
+    + unit(): String
+  }
+
+  class ThresholdEvaluation <<record>> {
+    + state: EnvironmentalState
+    + exceededLimit: Double
+  }
+
+  enum ActuationAction {
+    VENTILATION_ON
+    VENTILATION_OFF
+    COOLING_ON
+    COOLING_OFF
+    SERVO_OPEN
+    SERVO_CLOSE
+    + isActivation(): boolean
+    + {static} parse(value: String): Optional<ActuationAction>
+  }
+
+  class ActuationRule <<record>> {
+    + metric: MonitoredMetric
+    + state: EnvironmentalState
+    + action: ActuationAction
+  }
+
+  enum ProfileScope {
+    ENVIRONMENT
+    CONTAINER_MONITOR
+  }
+
+  enum ActuationResult {
+    EXECUTED
+    FAILED
+  }
+
+  enum DeviceConnectionStatus {
+    CONNECTED
+    REQUIRES_REVIEW
+  }
+
+  class ExpectedCommunicationPeriod <<record>> {
+    + value: Duration
+  }
+
+  class DeviceConnection <<record>> {
+    + deviceId: Long
+    + lastCommunicationAt: Instant
+    + status: DeviceConnectionStatus
+    + {static} evaluate(deviceId, lastCommunicationAt, now, expectedPeriod): DeviceConnection
+  }
+}
+EnvironmentalThreshold --> MonitoredMetric
+EnvironmentalThreshold ..> ThresholdEvaluation
+ThresholdEvaluation --> EnvironmentalState
+ActuationRule --> MonitoredMetric
+ActuationRule --> EnvironmentalState
+ActuationRule --> ActuationAction
+DeviceConnection --> DeviceConnectionStatus
+DeviceConnection ..> ExpectedCommunicationPeriod
+note bottom of EnvironmentalThreshold
+  Each side (min/max) is complete or empty and at least one is given.
+  criticalMin < normalMin < normalMax < criticalMax.
+  Critical limits are checked first; the normal range is inclusive.
+end note
+
+package "tracking.domain.model.aggregates" {
+  class EnvironmentalProfile {
+    - id: Long
+    - laboratoryId: Long
+    - scope: ProfileScope
+    - environmentId: Long
+    - deviceId: Long
+    - version: long
+    - thresholds: List<EnvironmentalThreshold>
+    - actuationRules: List<ActuationRule>
+    - updatedBy: Long
+    - updatedAt: Instant
+    + {static} forEnvironment(laboratoryId, environmentId): EnvironmentalProfile
+    + {static} forContainerMonitor(laboratoryId, deviceId): EnvironmentalProfile
+    + replaceThresholds(thresholds, userId, now): void
+    + replaceActuationRules(rules, userId, now): void
+    + evaluate(metric: MonitoredMetric, value: double): Optional<ThresholdEvaluation>
+  }
+}
+EnvironmentalProfile --|> AbstractDomainAggregateRoot
+EnvironmentalProfile --> ProfileScope
+EnvironmentalProfile *-- EnvironmentalThreshold
+EnvironmentalProfile *-- ActuationRule
+note right of EnvironmentalProfile
+  ENVIRONMENT: air quality thresholds of the environmental device (TS42).
+  CONTAINER_MONITOR: temperature, humidity (TS43) and luminosity (TS44)
+  thresholds and actuation rules (TS45). Every change increases the version.
+end note
+
+package "tracking.domain.model.entities" {
+  class Measurement {
+    - id: Long
+    - laboratoryId: Long
+    - environmentId: Long
+    - equipmentId: Long
+    - parameterName: String
+    - value: Double
+    - textValue: String
+    - unit: String
+    - timestamp: String
+    - measuredAt: Instant
+    - state: EnvironmentalState
+    - thresholdValue: Double
+    - profileVersion: Long
+    - receivedAt: Instant
+    + {static} receive(laboratoryId, environmentId, deviceId, metric, value, textValue, measuredAt, evaluation, profileVersion): Measurement
+  }
+
+  class ActuationEvent {
+    - id: Long
+    - laboratoryId: Long
+    - environmentId: Long
+    - deviceId: Long
+    - action: ActuationAction
+    - triggerMetric: MonitoredMetric
+    - triggerState: EnvironmentalState
+    - result: ActuationResult
+    - occurredAt: Instant
+    - profileVersion: Long
+    - receivedAt: Instant
+    + {static} record(laboratoryId, environmentId, deviceId, action, triggerMetric, triggerState, result, occurredAt, profileVersion): ActuationEvent
+  }
+}
+Measurement --> EnvironmentalState
+ActuationEvent --> ActuationAction
+ActuationEvent --> ActuationResult
+ActuationEvent --> MonitoredMetric
+
+package "tracking.domain.model.commands" {
+  class UpdateEnvironmentThresholdsCommand <<record>> {
+    + laboratoryId: Long
+    + environmentId: Long
+    + thresholds: List<EnvironmentalThreshold>
+    + userId: Long
+  }
+
+  class UpdateContainerMonitorThresholdsCommand <<record>> {
+    + laboratoryId: Long
+    + environmentId: Long
+    + deviceId: Long
+    + thresholds: List<EnvironmentalThreshold>
+    + userId: Long
+  }
+
+  class UpdateActuationRulesCommand <<record>> {
+    + laboratoryId: Long
+    + environmentId: Long
+    + deviceId: Long
+    + rules: List<ActuationRule>
+    + userId: Long
+  }
+
+  class RecordMeasurementCommand <<record>> {
+    + laboratoryId: Long
+    + environmentId: Long
+    + deviceId: Long
+    + metric: MonitoredMetric
+    + value: Double
+    + textValue: String
+    + measuredAt: Instant
+    + profileVersion: Long
+  }
+
+  class RecordActuationEventCommand <<record>> {
+    + laboratoryId: Long
+    + environmentId: Long
+    + deviceId: Long
+    + action: ActuationAction
+    + triggerMetric: MonitoredMetric
+    + triggerState: EnvironmentalState
+    + result: ActuationResult
+    + occurredAt: Instant
+    + profileVersion: Long
+  }
+}
+note bottom of RecordMeasurementCommand
+  deviceId null = environmental device of the environment.
+end note
+
+package "tracking.domain.model.queries" {
+  class GetEnvironmentProfileQuery <<record>> {
+    + laboratoryId: Long
+    + environmentId: Long
+  }
+
+  class GetContainerMonitorProfileQuery <<record>> {
+    + laboratoryId: Long
+    + environmentId: Long
+    + deviceId: Long
+  }
+
+  class GetDeviceProfileQuery <<record>> {
+    + laboratoryId: Long
+    + environmentId: Long
+    + deviceId: Long
+  }
+
+  class GetMeasurementsQuery <<record>> {
+    + laboratoryId: Long
+    + environmentId: Long
+    + deviceId: Long
+    + metric: MonitoredMetric
+    + from: Instant
+    + to: Instant
+  }
+
+  class GetActuationEventsQuery <<record>> {
+    + laboratoryId: Long
+    + environmentId: Long
+    + deviceId: Long
+    + from: Instant
+    + to: Instant
+  }
+
+  class GetDeviceConnectionQuery <<record>> {
+    + laboratoryId: Long
+    + environmentId: Long
+    + deviceId: Long
+  }
+}
+
+package "tracking.domain.model.events" {
+  class MeasurementRecordedEvent <<record>> {
+    + measurementId: Long
+    + laboratoryId: Long
+    + environmentId: Long
+    + deviceId: Long
+    + metric: MonitoredMetric
+    + value: Double
+    + textValue: String
+    + unit: String
+    + measuredAt: Instant
+    + state: EnvironmentalState
+  }
+
+  class EnvironmentalDeviationDetectedEvent <<record>> {
+    + measurementId: Long
+    + laboratoryId: Long
+    + environmentId: Long
+    + deviceId: Long
+    + metric: MonitoredMetric
+    + value: Double
+    + unit: String
+    + state: EnvironmentalState
+    + thresholdValue: Double
+    + measuredAt: Instant
+  }
+
+  class EnvironmentalConditionNormalizedEvent <<record>> {
+    + measurementId: Long
+    + laboratoryId: Long
+    + environmentId: Long
+    + deviceId: Long
+    + metric: MonitoredMetric
+    + value: Double
+    + unit: String
+    + measuredAt: Instant
+  }
+
+  class EnvironmentalProfileUpdatedEvent <<record>> {
+    + profileId: Long
+    + laboratoryId: Long
+    + scope: ProfileScope
+    + environmentId: Long
+    + deviceId: Long
+    + version: long
+    + updatedBy: Long
+  }
+}
+
+package "tracking.domain.repositories" {
+  interface EnvironmentalProfileRepository {
+    + save(profile: EnvironmentalProfile): EnvironmentalProfile
+    + findByEnvironmentId(environmentId: Long): Optional<EnvironmentalProfile>
+    + findByDeviceId(deviceId: Long): Optional<EnvironmentalProfile>
+  }
+
+  interface MeasurementRepository {
+    + save(measurement: Measurement): Measurement
+    + findByDeviceAndPeriod(deviceId, metric, from, to): List<Measurement>
+    + findByDeviceAndMetricAndMeasuredAt(deviceId, metric, measuredAt): Optional<Measurement>
+    + findPreviousReading(deviceId, metric, before): Optional<Measurement>
+    + findByEnvironmentAndPeriod(laboratoryId, environmentId, from, to): List<Measurement>
+    + findLastReceivedAt(deviceId: Long): Optional<Instant>
+  }
+
+  interface ActuationEventRepository {
+    + save(event: ActuationEvent): ActuationEvent
+    + findByDeviceAndPeriod(deviceId, from, to): List<ActuationEvent>
+    + findByDeviceAndActionAndOccurredAt(deviceId, action, occurredAt): Optional<ActuationEvent>
+    + findByEnvironmentAndPeriod(laboratoryId, environmentId, from, to): List<ActuationEvent>
+    + findLastReceivedAt(deviceId: Long): Optional<Instant>
+  }
+}
+EnvironmentalProfileRepository --> EnvironmentalProfile
+MeasurementRepository --> Measurement
+ActuationEventRepository --> ActuationEvent
+
+@enduml

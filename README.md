@@ -8,16 +8,17 @@ Authors:
 
 - U20231c426 - Baca Camargo, Vitaly Arturo
 - U201914181 - Cutiri Agüero, Fabrizio Alexander
-- u20231b173 - Guzmán Cabrejos, Yaku Mateo
+- U20231b173 - Guzmán Cabrejos, Yaku Mateo
 - U202322855 - Huapaya Galindo, Dyron
 - U202315890 - Lopez Roman, Franco Mauricio
 - U20231D343 - Montes Ramos, Henry Jaredt
 - U202116401 - Ruiz Madrid, Billy Jake
 - U202311601 - Torres Apolinario, Giovany Smith
+- U202214864 - Quiroz Caceres, Adrian Alonso
 
 
-Date: September 20th, 2026
-Version: 1.0.1
+Date: October 9th, 2026
+Version: 2.0.0
 
 ## QualiTrack
 

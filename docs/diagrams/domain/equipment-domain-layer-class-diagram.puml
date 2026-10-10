@@ -1,0 +1,231 @@
+@startuml equipment-domain-layer-class-diagram
+
+title QualiTrack - Equipment Management - Domain Layer Class Diagram
+
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype ortho
+
+package "shared" <<External>> {
+  abstract class AbstractDomainAggregateRoot
+}
+
+package "equipment.domain.model.valueobjects" {
+  class EquipmentType <<record>> {
+    + name: String
+  }
+
+  class CriticalVariable <<record>> {
+    + name: String
+  }
+
+  class DeviceId <<record>> {
+    + value: String
+  }
+
+  enum EquipmentStatus {
+    OPERATIONAL
+    MAINTENANCE
+    OUT_OF_SERVICE
+    INACTIVE
+  }
+
+  enum IotDeviceType {
+    ENVIRONMENTAL_DEVICE
+    CONTAINER_MONITOR
+  }
+
+  enum MaintenanceType {
+    PREVENTIVE
+    CORRECTIVE
+    CALIBRATION
+    INSPECTION
+    OTHER
+  }
+
+  enum DeviationSeverity {
+    LOW
+    MINOR
+    MAJOR
+    CRITICAL
+  }
+}
+
+package "equipment.domain.model.aggregates" {
+  class Equipment {
+    - id: Long
+    - labId: Long
+    - environmentId: Long
+    - name: String
+    - type: EquipmentType
+    - model: String
+    - serialNumber: String
+    - status: EquipmentStatus
+    - sensorExternalId: DeviceId
+    - deviceType: IotDeviceType
+    - firmwareVersion: String
+    + Equipment(command: RegisterEquipmentCommand)
+    + Equipment(command: RegisterIotDeviceCommand)
+    + isIotDevice(): boolean
+    + isDeviceOfType(type: IotDeviceType): boolean
+    + belongsTo(laboratoryId: Long): boolean
+    + isLocatedIn(laboratoryId: Long, environmentId: Long): boolean
+    + assignToEnvironment(environmentId: Long): void
+    + changeStatus(status, reason, changedByUserId, changedAt): EquipmentStatusChange
+    + linkSensor(sensorExternalId: String): void
+    + updateStatus(newStatus: EquipmentStatus): void
+  }
+
+  class MaintenanceRecord {
+    - id: Long
+    - equipmentId: Long
+    - environmentId: Long
+    - maintenanceDate: LocalDate
+    - technicianName: String
+    - technicianStaffId: Long
+    - description: String
+    - type: MaintenanceType
+    + MaintenanceRecord(command: RegisterMaintenanceCommand, technicianName: String, today: LocalDate)
+  }
+}
+
+package "equipment.domain.model.entities" {
+  class BpmParameterConfig {
+    - id: Long
+    - equipmentId: Long
+    - parameterName: CriticalVariable
+    - minValue: Double
+    - maxValue: Double
+    - unit: String
+    + updateLimits(newMinValue: Double, newMaxValue: Double): void
+  }
+
+  class EquipmentStatusChange {
+    - id: Long
+    - equipmentId: Long
+    - environmentId: Long
+    - previousStatus: EquipmentStatus
+    - newStatus: EquipmentStatus
+    - reason: String
+    - changedByUserId: Long
+    - changedAt: Instant
+  }
+}
+Equipment --|> AbstractDomainAggregateRoot
+MaintenanceRecord --|> AbstractDomainAggregateRoot
+Equipment *-- EquipmentType
+Equipment *-- EquipmentStatus
+Equipment *-- DeviceId
+Equipment *-- IotDeviceType
+Equipment ..> EquipmentStatusChange : creates
+MaintenanceRecord *-- MaintenanceType
+BpmParameterConfig *-- CriticalVariable
+note right of Equipment
+  An IoT device is an equipment with a device type and the
+  identity (sensorExternalId) that Edge uses to recognise it.
+  An environment has at most one environmental device.
+end note
+
+package "equipment.domain.model.commands" {
+  class RegisterEquipmentCommand <<record>> {
+    + labId: Long
+    + name: String
+    + type: String
+    + model: String
+    + serialNumber: String
+  }
+
+  class RegisterIotDeviceCommand <<record>> {
+    + laboratoryId: Long
+    + deviceType: IotDeviceType
+    + name: String
+    + sensorExternalId: String
+    + serialNumber: String
+    + model: String
+    + firmwareVersion: String
+  }
+
+  class AssignEquipmentToEnvironmentCommand <<record>> {
+    + laboratoryId: Long
+    + environmentId: Long
+    + equipmentId: Long
+    + requiredDeviceType: IotDeviceType
+  }
+
+  class ChangeEquipmentStatusCommand <<record>> {
+    + laboratoryId: Long
+    + environmentId: Long
+    + equipmentId: Long
+    + status: EquipmentStatus
+    + reason: String
+  }
+
+  class LinkSensorCommand <<record>> {
+    + equipmentId: Long
+    + sensorExternalId: String
+    + sensorType: String
+  }
+
+  class ConfigureBpmParametersCommand <<record>> {
+    + equipmentId: Long
+    + parameterName: String
+    + minValue: Double
+    + maxValue: Double
+    + unit: String
+  }
+
+  class RegisterMaintenanceCommand <<record>> {
+    + laboratoryId: Long
+    + environmentId: Long
+    + equipmentId: Long
+    + maintenanceDate: String
+    + technicianStaffId: Long
+    + description: String
+    + type: String
+  }
+}
+
+package "equipment.domain.model.queries" {
+  class GetEquipmentByIdQuery <<record>> {
+    + laboratoryId: Long
+    + equipmentId: Long
+  }
+  class GetEquipmentByLabIdQuery <<record>>
+  class GetEquipmentByDeviceIdQuery <<record>>
+  class GetCalibrationAlertsByLabIdQuery <<record>>
+  class GetBpmParameterConfigsByEquipmentIdQuery <<record>>
+  class GetMaintenanceByEquipmentIdQuery <<record>> {
+    + laboratoryId: Long
+    + environmentId: Long
+    + equipmentId: Long
+  }
+}
+
+package "equipment.domain.model.events" {
+  class EquipmentRegisteredEvent <<record>>
+  class EquipmentAssignedToEnvironmentEvent <<record>>
+  class EquipmentStatusChangedEvent <<record>>
+  class SensorLinkedEvent <<record>>
+  class BpmParameterConfiguredEvent <<record>>
+  class CalibrationExpiredEvent <<record>>
+  class MaintenanceRegisteredEvent <<record>>
+}
+
+package "equipment.domain.repositories" {
+  interface EquipmentRepository {
+    + existsBySerialNumber(serialNumber): boolean
+    + existsBySensorExternalId(sensorExternalId: DeviceId): boolean
+    + existsOtherDeviceInEnvironment(environmentId, deviceType, equipmentId): boolean
+  }
+  interface EquipmentStatusChangeRepository
+  interface BpmParameterConfigRepository
+  interface MaintenanceRepository
+}
+
+package "equipment.domain.exceptions" {
+  class EquipmentNotFoundException
+  class MaintenanceNotFoundException
+}
+
+@enduml

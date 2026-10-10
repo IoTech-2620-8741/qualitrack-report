@@ -1,0 +1,229 @@
+@startuml inventory-domain-layer-class-diagram
+
+title QualiTrack - Inventory Management - Domain Layer Class Diagram
+
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+hide empty members
+skinparam nodesep 25
+skinparam ranksep 50
+
+package "shared" <<External>> {
+  abstract class AbstractDomainAggregateRoot
+}
+
+package "inventory.domain" as Inventorydomain {
+  package "inventory.domain.model.aggregates" {
+    class RawMaterial {
+      -id: Long
+      -laboratoryId: Long
+      -environmentId: Long
+      -code: String
+      -name: String
+      -unit: String
+      -minimumStock: BigDecimal
+      +belongsToEnvironment(environmentId: Long): boolean
+      +usableStock(receipts: List<RawMaterialBatch>, onDate: LocalDate): BigDecimal
+    }
+    class RawMaterialBatch {
+      -id: Long
+      -laboratoryId: Long
+      -rawMaterialId: Long
+      -supplier: String
+      -batchNumber: String
+      -unit: String
+      -initialAmount: BigDecimal
+      -availableAmount: BigDecimal
+      -receivedOn: LocalDate
+      -expiresOn: LocalDate
+      -status: RawMaterialBatchStatus
+      -containerAssignment: ContainerAssignment
+      {static} +receive(...): RawMaterialBatch
+      +isUsableOn(onDate: LocalDate): boolean
+      +expirationStatus(onDate: LocalDate, nearExpiryDays: int): ExpirationStatus
+      +release(): void
+      +observe(): void
+      +reject(): void
+      +consume(amount: BigDecimal, requestedUnit: String, onDate: LocalDate): void
+      +storeIn(assignment: ContainerAssignment): boolean
+      +container(): Optional<ContainerAssignment>
+    }
+  }
+  
+  package "inventory.domain.model.commands" {
+    class AssignRawMaterialBatchContainerCommand <<record>> {
+      +laboratoryId: Long
+      +environmentId: Long
+      +materialId: Long
+      +receiptId: Long
+      +containerMonitorId: Long
+    }
+    class ConsumeRawMaterialBatchCommand <<record>> {
+      +laboratoryId: Long
+      +rawMaterialBatchId: Long
+      +productBatchId: Long
+      +amountUsed: BigDecimal
+      +unit: String
+      +operationId: String
+    }
+    class ImportLegacyRawMaterialCommand <<record>> {
+      +laboratoryId: Long
+      +environmentId: Long
+      +legacyId: Long
+    }
+    class ReceiveRawMaterialBatchCommand <<record>> {
+      +laboratoryId: Long
+      +environmentId: Long
+      +materialId: Long
+      +supplier: String
+      +batchNumber: String
+      +unit: String
+      +amount: java.math.BigDecimal
+      +receivedOn: java.time.LocalDate
+      +expiresOn: java.time.LocalDate
+    }
+    class ReviewRawMaterialBatchCommand <<record>> {
+      +laboratoryId: Long
+      +environmentId: Long
+      +materialId: Long
+      +receiptId: Long
+      +status: com.iotech.qualitrack.platform.inventory.domain.model.valueobjects.RawMaterialBatchStatus
+      +reason: String
+    }
+    class SaveRawMaterialCommand <<record>> {
+      +laboratoryId: Long
+      +environmentId: Long
+      +materialId: Long
+      +code: String
+      +name: String
+      +unit: String
+      +minimumStock: java.math.BigDecimal
+    }
+  }
+  
+  package "inventory.domain.model.entities" {
+    class InventoryMovement <<record>> {
+      +id: Long
+      +laboratoryId: Long
+      +materialId: Long
+      +receiptId: Long
+      +productBatchId: Long
+      +type: String
+      +amount: BigDecimal
+      +unit: String
+      +stockBefore: BigDecimal
+      +stockAfter: BigDecimal
+      +statusBefore: String
+      +statusAfter: String
+      +reason: String
+      +actorId: Long
+      +occurredAt: Instant
+      +operationId: String
+    }
+  }
+  
+  package "inventory.domain.model.queries" {
+    class GetPendingLegacyMaterialsQuery <<record>> {
+      +laboratoryId: Long
+    }
+    class GetEnvironmentRawMaterialsQuery <<record>>
+    class GetEnvironmentRawMaterialByIdQuery <<record>>
+    class GetRawMaterialBatchesQuery <<record>>
+    class GetRawMaterialBatchByIdQuery <<record>>
+    class GetRawMaterialMovementsQuery <<record>>
+    class GetEnvironmentRawMaterialBatchesQuery <<record>>
+    class GetRawMaterialBatchContainerQuery <<record>> {
+      +laboratoryId: Long
+      +environmentId: Long
+      +rawMaterialId: Long
+      +rawMaterialBatchId: Long
+    }
+  }
+  
+  package "inventory.domain.model.valueobjects" {
+    class MaterialStockSummary <<record>> {
+      +id: Long
+      +laboratoryId: Long
+      +environmentId: Long
+      +code: String
+      +name: String
+      +unit: String
+      +minimumStock: BigDecimal
+      +usableStock: BigDecimal
+      +physicalStock: BigDecimal
+      +legacyId: Long
+      +stockStatus(): StockStatus
+    }
+    enum StockStatus {
+      LOW
+      SUFFICIENT
+    }
+    enum ExpirationStatus {
+      VALID
+      NEAR_EXPIRY
+      EXPIRED
+    }
+    class NearExpiryPeriod <<record>>
+    class ContainerAssignment <<record>> {
+      +containerMonitorId: Long
+      +environmentId: Long
+      +assignedBy: Long
+      +assignedAt: Instant
+      +isIn(containerMonitorId: Long): boolean
+    }
+    class RawMaterialBatchContainer <<record>> {
+      +receiptId: Long
+      +containerMonitorId: Long
+      +containerName: String
+      +environmentId: Long
+      +assignedBy: Long
+      +assignedAt: Instant
+    }
+    class RawMaterialBatchReview <<record>>
+    enum RawMaterialBatchStatus {
+      QUARANTINED
+      RELEASED
+      OBSERVED
+      REJECTED
+    }
+    class ReceiptConsumption <<record>> {
+      +rawMaterialBatchId: Long
+      +productBatchId: Long
+      +amountUsed: BigDecimal
+      +unit: String
+      +stockBefore: BigDecimal
+      +stockAfter: BigDecimal
+      +operationId: String
+    }
+  }
+  
+  package "inventory.domain.repositories" {
+    interface InventoryRepository
+  }
+  
+}
+RawMaterial --|> AbstractDomainAggregateRoot
+RawMaterialBatch --|> AbstractDomainAggregateRoot
+RawMaterialBatch --> RawMaterialBatchStatus
+RawMaterial "1" <-- "0..*" RawMaterialBatch : rawMaterialId
+RawMaterialBatch "1" <-- "0..*" InventoryMovement : receiptId
+RawMaterialBatch --> "0..1" ContainerAssignment : stored in
+InventoryRepository ..> RawMaterial
+InventoryRepository ..> RawMaterialBatch
+InventoryRepository ..> InventoryMovement
+note bottom of RawMaterialBatch
+  QUARANTINED -> RELEASED only after QA/Admin review.
+  RELEASED -> OBSERVED; any non-rejected state -> REJECTED.
+  Only RELEASED receipts with positive stock can be consumed.
+  Receipt date <= business date < expiration date (America/Lima).
+  No implicit unit conversion; units must match.
+  Stored in an OPERATIONAL container monitor located in its environment,
+  which must be RAW_MATERIAL_STORAGE; a new container replaces the previous one.
+end note
+note bottom of InventoryMovement
+  Append-only application history: RECEIPT, REVIEW,
+  CONSUMPTION, OPENING_BALANCE and STORAGE (container change).
+end note
+
+@enduml

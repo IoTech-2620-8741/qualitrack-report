@@ -1,0 +1,162 @@
+@startuml laboratory-domain-layer-class-diagram
+
+title QualiTrack - Laboratory Management - Domain Layer Class Diagram
+
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype ortho
+
+package "shared" <<External>> {
+  abstract class AbstractDomainAggregateRoot
+}
+
+package "laboratory.domain.model.valueobjects" {
+  class LaboratoryName <<value object>>
+  class Regulation <<value object>>
+  class StockQuantity <<value object>>
+
+  enum EnvironmentUsage {
+    LABORATORY
+    PRODUCTION
+    RAW_MATERIAL_STORAGE
+    PRODUCT_STORAGE
+    OTHER
+  }
+
+  enum LaboratoryStatus {
+    ACTIVE
+    INACTIVE
+  }
+}
+
+package "laboratory.domain.model.entities" {
+  class LaboratoryAddress {
+    - street: String
+    - city: String
+    - country: String
+  }
+}
+
+package "laboratory.domain.model.aggregates" {
+  class Laboratory {
+    - id: Long
+    - name: LaboratoryName
+    - ruc: String
+    - address: LaboratoryAddress
+    - phone: String
+    - regulations: List<Regulation>
+    - status: LaboratoryStatus
+    + updateProfile(command: UpdateLaboratoryCommand): void
+  }
+
+  class RawMaterial {
+    - id: Long
+    - laboratoryId: Long
+    - code: String
+    - name: String
+    - unit: String
+    - currentStock: BigDecimal
+    - minimumThreshold: BigDecimal
+  }
+
+  class Environment {
+    - id: Long
+    - laboratoryId: Long
+    - code: String
+    - name: String
+    - description: String
+    - usage: EnvironmentUsage
+    - usageAssignedBy: Long
+    - usageAssignedAt: Instant
+    + update(command: UpdateEnvironmentCommand): void
+    + assignUsage(usage: EnvironmentUsage, assignedBy: Long, assignedAt: Instant): void
+    + belongsTo(laboratoryId: Long): boolean
+  }
+
+  class StaffMember {
+    - id: Long
+    - laboratoryId: Long
+    - fullName: String
+    - role: String
+    - email: String
+    - active: Boolean
+    - accessRole: StaffAccessRole
+    - userId: Long
+    + linkAccount(userId: Long): void
+    + rename(fullName: String): boolean
+    + changeEmail(email: String): boolean
+    + belongsTo(laboratoryId: Long): boolean
+    + deactivate(): void
+  }
+
+  enum StaffAccessRole {
+    OPERATOR
+    AUDITOR
+  }
+}
+StaffMember --> StaffAccessRole
+note right of StaffMember
+  Registering a staff member creates their IAM account (the e-mail is the
+  username) through IamContextFacade; deactivating it disables the account.
+end note
+Laboratory --|> AbstractDomainAggregateRoot
+RawMaterial --|> AbstractDomainAggregateRoot
+StaffMember --|> AbstractDomainAggregateRoot
+Environment --|> AbstractDomainAggregateRoot
+Environment --> EnvironmentUsage
+Laboratory *-- LaboratoryName
+Laboratory *-- LaboratoryAddress
+Laboratory *-- Regulation
+Laboratory *-- LaboratoryStatus
+RawMaterial *-- StockQuantity
+
+package "laboratory.domain.model.commands" {
+  record CreateLaboratoryCommand
+  record UpdateLaboratoryCommand
+  record CreateRawMaterialCommand
+  record RegisterStaffCommand
+  record DeactivateStaffCommand
+  record RegisterEnvironmentCommand
+  record UpdateEnvironmentCommand
+  record AssignEnvironmentUsageCommand
+}
+
+package "laboratory.domain.model.queries" {
+  record GetLaboratoryByIdQuery
+  record GetRawMaterialsByLabIdQuery
+  record GetLowStockMaterialsByLabIdQuery
+  record GetStaffByLabIdQuery
+  record GetEnvironmentsByLaboratoryIdQuery
+  record GetEnvironmentByIdQuery
+  record GetStaffMemberByIdQuery
+  record GetStaffMemberByUserIdQuery
+}
+
+package "laboratory.domain.model.events" {
+  record LaboratoryRegisteredEvent
+  record RawMaterialCreatedEvent
+  record RawMaterialLowStockEvent
+  record StaffRegisteredEvent
+  record StaffDeactivatedEvent
+  record EnvironmentRegisteredEvent
+  record EnvironmentUpdatedEvent
+  record EnvironmentUsageAssignedEvent
+}
+
+package "laboratory.domain.repositories" {
+  interface LaboratoryRepository
+  interface RawMaterialRepository
+  interface StaffRepository {
+    + findByUserId(userId: Long): Optional<StaffMember>
+  }
+  interface EnvironmentRepository
+}
+
+package "laboratory.domain.exceptions" {
+  class LaboratoryNotFoundException
+  class RawMaterialNotFoundException
+  class StaffMemberNotFoundException
+}
+
+@enduml
