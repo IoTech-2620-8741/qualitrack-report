@@ -18,7 +18,7 @@ Authors:
 
 
 Date: October 9th, 2026
-Version: 1.2.5
+Version: 2.0.0
 
 ## QualiTrack
 
