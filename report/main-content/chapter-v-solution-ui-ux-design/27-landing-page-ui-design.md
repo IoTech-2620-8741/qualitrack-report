@@ -144,7 +144,8 @@ foto, el nombre, el cargo y una breve biografía de cada miembro. El diseño de 
 brinda un aspecto organizado y profesional, permitiendo a los usuarios conocer al equipo de desarrollo.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/landing-page-mock-ups/our-team-section-landing.png" alt="Mock-up de Our Team">
+  <img src="../../assets/img/main-content/chapter-v/landing-page-mock-ups/our-team-section-landing-1.png" alt="Mock-up de Our Team">
+  <img src="../../assets/img/main-content/chapter-v/landing-page-mock-ups/our-team-section-landing-2.png" alt="Mock-up de Our Team">
 </div>
 
 **Plans**
