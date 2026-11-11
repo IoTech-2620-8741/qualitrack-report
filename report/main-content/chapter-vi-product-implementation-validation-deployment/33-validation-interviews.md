@@ -24,11 +24,11 @@ Se realizaron entrevistas con representantes de los segmentos objetivo del proye
 11. Al ver el Dashboard, ¿Podría saber en pocos segundos si su laboratorio está bien o necesita acción? ¿Qué parte se lo dice?
 12. Al ver el Dashboard, Qué le sobra y qué le falta en este panel?
 13.  Al ver el Dashboard, ¿Qué tan seguro se sentiría de empezar su turno revisando solo esta pantalla sin que se le escape algo importante?
-14. En la vista d Perfiles ambientales ¿Qué tan seguro se sentiría configurando usted mismo los rangos de un contenedor o del medidor ambiental? ¿Qué le preocuparía (escribir mal un valor, afectar un lote, que se active una acción automática)?
+14. En la vista d Perfiles ambientales ¿Qué tan seguro se sentiría configurando usted mismo los rangos de un contenedor o del medidor ambiental?
 17. En el Resumen Ambiental ¿Prefiere ver las tarjetas o la tabla? ¿Cuándo usaría cada una?
 18. En el Resumen Ambiental ¿Le sirve el promedio de 31 días o preferiría ver los picos? ¿Qué decisión tomaría con esta pantalla?
 19. Mirando el gráfico de Desviaciones con las zonas verde, amarilla y roja. ¿Se entiende sin explicación?
-20. Mirando las Indicadores de desviación ¿Qué tan seguro se sentiría de tomar una decisión (revisar un equipo, recalibrar) con esta información?
+20. Mirando los Indicadores de desviación ¿Qué tan seguro se sentiría de tomar una decisión con esta información?
 21. De acuerdo con el Generador de Reportes y Documentos ¿Qué tipo de reporte usaría más y presentaría en las auditorias?
 22. Genere un reporte de auditoría. ¿Incluye lo que le piden o que información nueva agregaría para reemplazar sus formatos físicos o archivos Excel?
 23. Comparada con cómo trabaja hoy (formatos físicos, Excel), ¿Qué le ahorraría más tiempo? ¿Hay algo que le daría más trabajo?
