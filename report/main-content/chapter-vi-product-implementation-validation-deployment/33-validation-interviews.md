@@ -36,11 +36,29 @@ Se realizaron entrevistas con representantes de los segmentos objetivo del proye
 25. En algunas alertas, el propio equipo corrigió el problema solo. ¿Qué opina de eso?
 26. Si un auditor le pidiera ver las alertas de los últimos 3 meses, ¿se sentiría seguro mostrándole esta pantalla? ¿Por qué?
 
-##### A4. Preguntas Finales
-23. ¿Qué es lo que más le gustó y qué cambiaría primero en ambas aplicaciones tanto web como móvil?
-24. ¿Qué tan seguro se sentiría usando estas aplicación todos los días sin capacitación larga?
-16. ¿Qué aspectos le generarían desconfianza al usar una de estas plataformas digitales?
+##### A3. Aplicación móvil
 
+27. Al ver el Inicio, ¿Qué haría con esta información al empezar su turno o cuando no está en el laboratorio? ¿Qué decisión tomaría a partir de ella?
+28. Imagine que está fuera del laboratorio y llega una notificación de alerta crítica. ¿Qué haría desde que la ve hasta que la deja controlada?
+29. Hoy, ¿Cómo se entera de que algo salió de rango cuando no está en el área? ¿Esta app reemplazaría esa forma? ¿Qué le faltaría?
+30. En el Detalle de una alerta, ¿Qué información necesitaría para decidir qué hacer? ¿Cuál de ellas es la que más usaría?
+31. Cuando la alerta ya se normalizó, ¿Cómo decide hoy si cerrarla? ¿Qué necesitaría revisar antes de marcarla como resuelta desde el celular?
+32. ¿A quién avisaría o qué tarea le asignaría después de recibir una alerta? ¿Lo haría desde la app o por otro medio?
+33. Imagine que un auditor le pregunta por un lote ya liberado. ¿Usaría la app para responderle? ¿Qué le mostraría y qué le faltaría?
+34. Si un material llega a stock bajo o se vence, ¿Qué haría con ese aviso? ¿Quién actuaría?
+35. Al revisar un lote, ¿Qué tendría que ver para sentirse seguro de liberarlo o rechazarlo? ¿Lo haría desde el celular o esperaría a la computadora?
+
+##### A4. Preguntas Finales
+36. ¿En qué momentos de su día usaría el celular para esto y en cuáles preferiría la computadora?
+37. ¿Qué es lo que más le gustó y qué cambiaría primero en ambas aplicaciones tanto web como móvil?
+38. ¿Qué tan seguro se sentiría usando estas aplicación todos los días sin capacitación larga?
+39. ¿Qué aspectos le generarían desconfianza al usar una de estas plataformas digitales?
+40. Pensando en los dos dispositivos (el Monitor de Ambiente y el Monitor de Contenedor) junto con las aplicaciones, ¿qué problema de su trabajo de hoy resolverían y cuál no?
+41. ¿Qué tendría que pasar o ver para confiar en las lecturas de los dispositivos y reemplazar sus registros manuales?
+42. Si tuviera que decidir hoy, ¿en qué áreas de su laboratorio o almacén instalaría primero estos dispositivos y por qué?
+43. ¿Qué le haría dudar o desistir de instalarlos en su laboratorio (costo, mantenimiento, validación BPM, tiempo de instalación)?
+44. Para terminar, de todo lo que vio hoy, los dispositivos y las aplicaciones, ¿qué es lo más valioso para su trabajo y qué es lo que más le falta?
+    
 #### Segmento 2: Personal operativo de laboratorios y almacenes
 
 
