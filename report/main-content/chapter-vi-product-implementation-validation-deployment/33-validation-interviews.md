@@ -334,6 +334,61 @@ Dar al texto de ayuda el espacio vertical necesario o acortarlo para que quepa e
 
 #### 6.3.3.2. Evaluación a la aplicación móvil
 
+<div align="center">
+  <h2>UX Heuristics & Principles Evaluation</h2>
+  <h3>Usability – Inclusive Design – Information Architecture</h3>
+</div>
 
+<p><strong>CARRERA:</strong> Ingeniería de Software</p>
+<p><strong>CURSO:</strong> Desarrollo de soluciones IoT</p>
+<p><strong>PROFESOR:</strong> Ángel Augusto Velasquez Nuñez</p>
+<p><strong>AUDITOR:</strong> Equipo Qualitrack</p>
+<p><strong>PRODUCTO EVALUADO:</strong> QualiTrack Mobile Application</p>
+<p><strong>CLIENTE(S):</strong> Responsables de control de calidad y Técnicos de laboratorio</p>
+
+#### SITE o APP A EVALUAR
+
+QualiTrack Mobile Application
+
+#### TAREAS A EVALUAR
+
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas:
+
+1. Inicio de sesión y restauración de la sesión al reabrir la app
+2. Cambio obligatorio de la contraseña temporal en el primer ingreso del personal
+3. Revisión de las prioridades del inicio (alertas, dispositivos IoT, lotes y materiales) y navegación a cada módulo
+4. Monitoreo en vivo de las condiciones de un ambiente o contenedor
+5. Consulta del historial de lecturas de telemetría
+6. Atención y resolución de una alerta de desviación
+7. Revisión de un lote de producción y de su trazabilidad
+8. Liberación con firma digital o rechazo de un lote
+9. Consulta del inventario de un ambiente (stock, lotes, vencimientos y movimientos)
+10. Consulta de un equipo (conexión, límites BPM y mantenimiento)
+
+No están incluidas en esta versión de la evaluación las siguientes tareas:
+
+1. Consulta de indicadores de desviación e historial de reportes
+2. Consulta de la suscripción y la facturación
+3. Edición del perfil (datos personales, foto y contraseña)
+4. Bandeja de notificaciones y preferencias de notificación
+5. Consulta del catálogo de productos y de la pantalla "Acerca de"
+
+#### ESCALA DE SEVERIDAD
+
+Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
+
+| Nivel | Descripción                                                                                                                                                       |
+| :---: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|   1   | **Problema superficial:** puede ser superado fácilmente por el usuario u ocurre con muy poca frecuencia. No necesita corregirse salvo que haya tiempo disponible. |
+|   2   | **Problema menor:** ocurre un poco más seguido o es algo más difícil de superar. Se le asigna prioridad baja para el siguiente release.                           |
+|   3   | **Problema mayor:** ocurre con frecuencia o el usuario no logra resolverlo. Es importante corregirlo; se le asigna prioridad alta.                                |
+|   4   | **Problema muy grave:** error de gran impacto que impide al usuario continuar usando la herramienta. Es imperativo corregirlo antes del lanzamiento.              |
+
+#### TABLA RESUMEN
+
+| #   | Problema | Escala de severidad | Heurística/Principio violada(o) |
+| :-: | -------- | :-----------------: | ------------------------------- |
+
+#### DESCRIPCIÓN DE PROBLEMAS
 
 ## 6.4 Video About-The-Product
