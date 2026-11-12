@@ -4,7 +4,7 @@
 
 ### 6.3.2 Registro de Entrevista
 
-### 6.3.3 Evaluación según Heuristica
+### 6.3.3 Evaluaciones según Heuristica
 
 <div align="center">
   <h2>UX Heuristics & Principles Evaluation</h2>
@@ -50,12 +50,12 @@ No están incluidas en esta versión de la evaluación las siguientes tareas:
 
 Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 
-| Nivel | Descripción |
-| :---: | :---------- |
-| 1 | **Problema superficial:** puede ser superado fácilmente por el usuario u ocurre con muy poca frecuencia. No necesita corregirse salvo que haya tiempo disponible. |
-| 2 | **Problema menor:** ocurre un poco más seguido o es algo más difícil de superar. Se le asigna prioridad baja para el siguiente release. |
-| 3 | **Problema mayor:** ocurre con frecuencia o el usuario no logra resolverlo. Es importante corregirlo; se le asigna prioridad alta. |
-| 4 | **Problema muy grave:** error de gran impacto que impide al usuario continuar usando la herramienta. Es imperativo corregirlo antes del lanzamiento. |
+| Nivel | Descripción                                                                                                                                                       |
+| :---: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|   1   | **Problema superficial:** puede ser superado fácilmente por el usuario u ocurre con muy poca frecuencia. No necesita corregirse salvo que haya tiempo disponible. |
+|   2   | **Problema menor:** ocurre un poco más seguido o es algo más difícil de superar. Se le asigna prioridad baja para el siguiente release.                           |
+|   3   | **Problema mayor:** ocurre con frecuencia o el usuario no logra resolverlo. Es importante corregirlo; se le asigna prioridad alta.                                |
+|   4   | **Problema muy grave:** error de gran impacto que impide al usuario continuar usando la herramienta. Es imperativo corregirlo antes del lanzamiento.              |
 
 #### TABLA RESUMEN
 
