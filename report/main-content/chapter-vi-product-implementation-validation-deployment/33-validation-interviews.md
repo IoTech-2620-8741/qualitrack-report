@@ -6,6 +6,8 @@
 
 ### 6.3.3 Evaluaciones según Heuristica
 
+#### 6.3.3.1. Evaluación a la aplicación web
+
 <div align="center">
   <h2>UX Heuristics & Principles Evaluation</h2>
   <h3>Usability – Inclusive Design – Information Architecture</h3>
@@ -329,5 +331,9 @@ En el formulario *Create Production Batch*, el texto de ayuda del campo *Batch N
 **Recomendación:**
 
 Dar al texto de ayuda el espacio vertical necesario o acortarlo para que quepa en una línea.
+
+#### 6.3.3.2. Evaluación a la aplicación móvil
+
+
 
 ## 6.4 Video About-The-Product
