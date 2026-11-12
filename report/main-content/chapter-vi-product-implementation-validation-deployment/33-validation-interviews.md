@@ -26,25 +26,36 @@ Qualitrack Web Application
 
 El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas:
 
-1. Tarea 1
-2. Tarea 2
-3. Tarea 3
+1. Registro de cuenta e inicio de sesión
+2. Onboarding: cambio de la contraseña temporal y creación del laboratorio
+3. Registro de personal del laboratorio
+4. Registro de un equipo y de un dispositivo IoT
+5. Configuración de los parámetros BPM de un equipo
+6. Registro de una materia prima
+7. Registro de un producto y creación de un lote
+8. Liberación o rechazo de un lote
+9. Atención y resolución de una alerta de desviación
+10. Generación de un reporte
 
 No están incluidas en esta versión de la evaluación las siguientes tareas:
 
-1. Tarea 1
-2. Tarea 2
+1. Pago de una suscripción en Stripe (formulario de pago, página de éxito y de cancelación)
+2. Cancelación de la suscripción y consulta del resumen de facturación
+3. Monitoreo ambiental en vivo y consulta del historial de telemetría
+4. Acceso a las rutas heredadas (legacy) que solo redirigen a otras vistas
+5. Consulta del perfil y de la actividad de otro miembro del personal
+6. Importación de registros de pre-inventario y asignación de contenedores
 
 #### ESCALA DE SEVERIDAD
 
 Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 
-| Nivel | Descripción                                                                                                                                                                          |
-| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 1     | Problema superficial: puede ser fácilmente superable por el usuario o ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo.        |
-| 2     | Problema menor: puede ocurrir un poco más frecuentemente o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja de cara al siguiente release. |
-| 3     | Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlo. Es importante que sea corregido y se le debe asignar una prioridad alta.                          |
-| 4     | Problema muy grave: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento.                    |
+| Nivel | Descripción |
+| :---: | :---------- |
+| 1 | **Problema superficial:** puede ser superado fácilmente por el usuario u ocurre con muy poca frecuencia. No necesita corregirse salvo que haya tiempo disponible. |
+| 2 | **Problema menor:** ocurre un poco más seguido o es algo más difícil de superar. Se le asigna prioridad baja para el siguiente release. |
+| 3 | **Problema mayor:** ocurre con frecuencia o el usuario no logra resolverlo. Es importante corregirlo; se le asigna prioridad alta. |
+| 4 | **Problema muy grave:** error de gran impacto que impide al usuario continuar usando la herramienta. Es imperativo corregirlo antes del lanzamiento. |
 
 #### TABLA RESUMEN
 
