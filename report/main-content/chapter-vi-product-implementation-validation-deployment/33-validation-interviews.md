@@ -388,7 +388,216 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 
 | #   | Problema | Escala de severidad | Heurística/Principio violada(o) |
 | :-: | -------- | :-----------------: | ------------------------------- |
+| 1 | Los nombres de las materias primas aparecen cortados en el inventario | 3 | Information Architecture: Is it clear? / Usability: Prevención de errores |
+| 2 | La lista de alertas muestra las ya reconocidas por encima de las críticas sin resolver | 2 | Usability: Visibilidad del estado del sistema / Flexibilidad y eficiencia en el uso |
+| 3 | Los lotes pendientes y en progreso se rotulan como "En espera de liberación QA" | 2 | Information Architecture: Is it communicative? / Usability: Relación entre el sistema y el mundo real |
+| 4 | La interfaz en español mezcla términos en inglés | 2 | Usability: Consistencia y estándares / Relación entre el sistema y el mundo real |
+| 5 | El detalle de la alerta muestra dos fechas distintas sin indicar qué representa cada una | 2 | Information Architecture: Is it clear? |
+| 6 | La app móvil y la web nombran de forma distinta los estados y acciones de una alerta | 2 | Usability: Consistencia y estándares |
+| 7 | Hay íconos y contadores sin texto que no se explican | 2 | Usability: Reconocer antes que recordar |
+| 8 | El botón flotante de filtros tapa parte del contenido de las listas | 2 | Usability: Diseño estético y minimalista |
+| 9 | Varios textos se cortan con puntos suspensivos en cabeceras, selectores y pestañas | 2 | Information Architecture: Is it clear? |
+| 10 | El estado "Requiere revisión" de un dispositivo no indica qué debe hacer el usuario | 2 | Usability: Ayuda a los usuarios a reconocer, diagnosticar y recuperarse de los errores |
+| 11 | El inicio de sesión no ofrece recuperar la contraseña | 2 | Usability: Libertad y control por parte del usuario / Ayuda y documentación |
 
 #### DESCRIPCIÓN DE PROBLEMAS
+
+**PROBLEMA #1:** Los nombres de las materias primas aparecen cortados en el inventario
+
+**Severidad:** 3
+
+**Heurística violada:** Information Architecture: Is it clear? / Usability: Prevención de errores
+
+**Problema:**
+
+En *Inventario de Materias Primas* el nombre de cada material se trunca a una sola línea porque comparte la fila con la etiqueta de estado: se lee "Amoxicilina trihidr…", "Cápsula de gelatin…" o "Estearato de magn…". En un catálogo farmacéutico varios materiales comparten el inicio del nombre y solo se distinguen por la concentración o la presentación, de modo que el usuario puede confundir un material con otro sin abrir cada ficha.
+
+<p align="center">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/inventory.jpg" alt="Inventario con los nombres de materiales cortados" width="40%">
+</p>
+
+**Recomendación:**
+
+Permitir que el nombre ocupe dos líneas y mover la etiqueta de estado debajo del código, como ya se hace en las tarjetas de equipos.
+
+**PROBLEMA #2:** La lista de alertas muestra las ya reconocidas por encima de las críticas sin resolver
+
+**Severidad:** 2
+
+**Heurística violada:** Usability: Visibilidad del estado del sistema / Flexibilidad y eficiencia en el uso
+
+**Problema:**
+
+La pestaña *Alertas* ordena por fecha: las dos alertas con estado "Reconocida" aparecen primero y las dos críticas "Sin resolver", que nadie ha atendido, quedan al final. La tarjeta "Últimas alertas" del inicio repite el mismo criterio y muestra una alerta ya reconocida. El usuario que abre la app para atender lo urgente debe recorrer la lista para encontrarlo.
+
+<p align="center">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/alerts-list.jpg" alt="Lista de alertas ordenada por fecha" width="40%">
+</p>
+
+**Recomendación:**
+
+Ordenar por defecto según prioridad (primero las críticas sin resolver) y ofrecer el orden por fecha como alternativa visible, igual que en la versión web.
+
+**PROBLEMA #3:** Los lotes pendientes y en progreso se rotulan como "En espera de liberación QA"
+
+**Severidad:** 2
+
+**Heurística violada:** Information Architecture: Is it communicative? / Usability: Relación entre el sistema y el mundo real
+
+**Problema:**
+
+Cada tarjeta de la lista de lotes muestra a la vez la etiqueta de estado ("Pendiente" o "En progreso") y el texto "En espera de liberación QA", y la tarjeta *Lotes* del inicio cuenta 6 lotes "en espera de liberación QA". Un lote pendiente todavía no ha consumido materia prima y uno en progreso sigue en fabricación, por lo que ninguno está realmente esperando la decisión de calidad. Los dos mensajes se contradicen y el indicador del inicio pierde significado.
+
+<p align="center">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/batches-list.jpg" alt="Lotes pendientes rotulados como en espera de liberación" width="40%">
+</p>
+
+**Recomendación:**
+
+Mostrar "En espera de liberación QA" solo cuando el lote terminó su fabricación y falta la decisión, o reemplazarlo por un texto que describa la etapa real ("Sin consumo de materias primas", "En fabricación").
+
+**PROBLEMA #4:** La interfaz en español mezcla términos en inglés
+
+**Severidad:** 2
+
+**Heurística violada:** Usability: Consistencia y estándares / Relación entre el sistema y el mundo real
+
+**Problema:**
+
+Con la app en español, las cantidades se muestran como "100 units" o "40.000 units" en lotes, inventario y trazabilidad; el tipo de equipo aparece como "Centrifuge"; y los mantenimientos se listan como "Preventive" y "Calibration". El resto de la pantalla está traducido, por lo que estos valores se perciben como errores.
+
+<p align="center">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/equipment-detail.jpg" alt="Detalle de equipo con tipos de mantenimiento en inglés" width="40%">
+</p>
+
+**Recomendación:**
+
+Traducir las unidades, los tipos de equipo y los tipos de mantenimiento con el mismo mecanismo de etiquetas que ya se usa para los estados ("unidades", "Centrífuga", "Preventivo", "Calibración").
+
+**PROBLEMA #5:** El detalle de la alerta muestra dos fechas distintas sin indicar qué representa cada una
+
+**Severidad:** 2
+
+**Heurística violada:** Information Architecture: Is it clear?
+
+**Problema:**
+
+La cabecera del detalle de la alerta #9 muestra "5 oct 2026 0:14" sin ningún rótulo, mientras que la sección *Inspección técnica* indica "Primera detección: 4 oct 2026 19:04". El usuario no puede saber si la fecha de la cabecera es la apertura, la última desviación o la última actualización, y la lista de alertas usa esa misma fecha sin explicarla.
+
+<p align="center">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/alert-detail.jpg" alt="Detalle de alerta con dos fechas distintas" width="40%">
+</p>
+
+**Recomendación:**
+
+Rotular la fecha de la cabecera (por ejemplo "Última desviación") y mostrar junto a ella el tiempo transcurrido desde que se abrió la alerta.
+
+**PROBLEMA #6:** La app móvil y la web nombran de forma distinta los estados y acciones de una alerta
+
+**Severidad:** 2
+
+**Heurística violada:** Usability: Consistencia y estándares
+
+**Problema:**
+
+En la app móvil la acción se llama "Reconocer" y los estados son "Reconocida" y "Sin resolver". En QualiTrack Web, también en español, la misma acción se llama "Registrar atención" y los estados son "En atención" y "Sin atender". Un responsable de calidad que usa ambas plataformas debe aprender dos vocabularios para el mismo flujo.
+
+<p align="center">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/alert-detail.jpg" alt="Acción "Reconocer" en el detalle de alerta móvil" width="40%">
+</p>
+
+**Recomendación:**
+
+Acordar un único término por acción y por estado y aplicarlo en las dos plataformas.
+
+**PROBLEMA #7:** Hay íconos y contadores sin texto que no se explican
+
+**Severidad:** 2
+
+**Heurística violada:** Usability: Reconocer antes que recordar
+
+**Problema:**
+
+Las tarjetas de alerta muestran un ícono de flechas seguido de un número ("⇄ 5") que corresponde a la cantidad de desviaciones, pero nada lo indica. El botón flotante de filtros es solo un ícono, y la pantalla de telemetría tiene en la esquina superior derecha un ícono sin etiqueta que abre el registro de lecturas.
+
+<p align="center">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/alerts-list.jpg" alt="Tarjetas de alerta con el contador sin etiqueta" width="40%">
+</p>
+
+**Recomendación:**
+
+Acompañar el contador con su unidad ("5 desviaciones"), agregar texto al botón de filtros ("Filtrar") y usar un ícono con etiqueta o un tooltip para el acceso al registro de telemetría.
+
+**PROBLEMA #8:** El botón flotante de filtros tapa parte del contenido de las listas
+
+**Severidad:** 2
+
+**Heurística violada:** Usability: Diseño estético y minimalista
+
+**Problema:**
+
+En las listas de equipos, inventario, lotes y alertas, el botón flotante de filtros queda encima de la última tarjeta visible. En equipos oculta la etiqueta "Monitor de contenedor" y en inventario tapa la etiqueta "Bajo el mínimo", que es justamente el dato que el usuario busca.
+
+<p align="center">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/equipment-list.jpg" alt="Botón de filtros sobre una tarjeta de equipo" width="40%">
+</p>
+
+**Recomendación:**
+
+Ubicar el filtro junto al buscador en la parte superior, o reservar un margen inferior en la lista para que ninguna tarjeta quede debajo del botón.
+
+**PROBLEMA #9:** Varios textos se cortan con puntos suspensivos en cabeceras, selectores y pestañas
+
+**Severidad:** 2
+
+**Heurística violada:** Information Architecture: Is it clear?
+
+**Problema:**
+
+A 375 px de ancho se cortan el subtítulo de telemetría ("Datos sensoriales y monitoreo de parámetros en t…"), el selector de dispositivo ("Contenedor MP-A1 · Almacén de …"), el buscador de lotes ("Buscar por número de lote o produ…"), la ubicación en las tarjetas de alerta ("Almacén de producto ter…") y la pestaña "Mantenimien" del detalle de equipo. En el selector de dispositivo el texto cortado es el ambiente, necesario para distinguir dos monitores con nombres parecidos.
+
+<p align="center">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/telemetry.jpg" alt="Panel de telemetría con textos cortados" width="40%">
+</p>
+
+**Recomendación:**
+
+Acortar los subtítulos y marcadores de posición, mostrar el ambiente en una segunda línea del selector y usar pestañas desplazables o rótulos más cortos ("Mantto.").
+
+**PROBLEMA #10:** El estado "Requiere revisión" de un dispositivo no indica qué debe hacer el usuario
+
+**Severidad:** 2
+
+**Heurística violada:** Usability: Ayuda a los usuarios a reconocer, diagnosticar y recuperarse de los errores
+
+**Problema:**
+
+El inicio informa "0/7 dispositivos en línea" y "Requiere revisión 7", y el panel de telemetría muestra "Requiere revisión" con la última comunicación de hace un mes y el mensaje "El dispositivo no envió lecturas en las últimas 24 horas". En ningún punto se explica la causa probable ni el siguiente paso (revisar energía, red o contactar a mantenimiento). También aparece "Perfil versión 2", un dato interno sin significado para el usuario.
+
+<p align="center">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/home.jpg" alt="Inicio con los 7 dispositivos en "Requiere revisión"" width="40%">
+</p>
+
+**Recomendación:**
+
+Agregar al estado una explicación corta con la causa probable y la acción sugerida, mostrar cuánto tiempo lleva sin comunicarse el dispositivo y retirar o explicar "Perfil versión".
+
+**PROBLEMA #11:** El inicio de sesión no ofrece recuperar la contraseña
+
+**Severidad:** 2
+
+**Heurística violada:** Usability: Libertad y control por parte del usuario / Ayuda y documentación
+
+**Problema:**
+
+La pantalla *Iniciar sesión* solo tiene usuario, contraseña y el texto "Las cuentas se crean y administran en QualiTrack Web". No existe la opción "¿Olvidaste tu contraseña?" que sí ofrece la versión web, por lo que un operario que olvida su contraseña en planta queda bloqueado sin una indicación de cómo recuperarla.
+
+<p align="center">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/sign-in.jpg" alt="Pantalla de inicio de sesión sin recuperación de contraseña" width="40%">
+</p>
+
+**Recomendación:**
+
+Agregar un enlace de recuperación que abra el flujo de la web o, como mínimo, un texto que indique dónde recuperar la contraseña.
 
 ## 6.4 Video About-The-Product
