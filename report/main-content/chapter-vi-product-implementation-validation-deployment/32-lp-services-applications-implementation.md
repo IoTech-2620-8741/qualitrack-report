@@ -1805,3 +1805,1120 @@ convencionales permitió integrar el trabajo de cada miembro de forma ordenada y
 implementó cada funcionalidad. Como oportunidad de mejora, el equipo se propone distribuir los commits de manera más
 uniforme a lo largo del sprint y publicar en main con mayor frecuencia, evitando concentrar la integración del trabajo
 en los días previos a la entrega.
+
+### 6.2.1. Sprint 2
+
+En esta sección se detalla el proceso de trabajo realizado por el equipo durante el primer sprint del proyecto
+QualiTrack.
+
+
+
+
+#### 6.2.1.1. Sprint Planning 2
+
+text
+
+<table>
+<tr>
+<td>Sprint #</td>
+<td>Sprint 1</td>
+</tr>
+<tr>
+<td colspan="2"><strong>Sprint Planning Background</strong></td>
+</tr>
+<tr>
+<td>Date</td>
+<td>2026-10-20</td>
+</tr>
+<tr>
+<td>Time</td>
+<td>05:00 PM (GMT-5)</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>Modalidad remota mediante la plataforma Discord</td>
+</tr>
+<tr>
+<td>Prepared By</td>
+<td>Ruiz Madrid, Billy Jake</td>
+</tr>
+<tr>
+<td>Attendees (to planning meeting)</td>
+<td>Baca Camargo, Vitaly Arturo / Cutiri Agüero, Fabrizio Alexander / Guzmán Cabrejos, Yaku Mateo / Huapaya Galindo, Dyron / Lopez Roman, Franco Mauricio / Montes Ramos, Henry Jaredt / Ruiz Madrid, Billy Jake / Torres Apolinario, Giovany Smith / Quiroz Caceres, Adrian Alonso</td>
+</tr>
+<tr>
+<td>Sprint 1 Review Summary</td>
+<td></td>
+</tr>
+<tr>
+<td>Sprint 1 Retrospective Summary</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2"><strong>Sprint Goal & User Stories</strong></td>
+</tr>
+<tr>
+<td>Sprint 2 Goal</td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td>Sprint 2 Velocity</td>
+<td>190</td>
+</tr>
+<tr>
+<td>Sum of Story Points</td>
+<td>190</td>
+</tr>
+</table>
+
+#### 6.2.1.2. Aspect Leaders and Collaborators
+
+text
+
+| Team Member (Last Name, First Name) / GitHub User­name | Aspect:  | Aspect:  | Aspect:  | Aspect:  | Aspect:  | Aspect:  | Aspect:  |
+|-------------------------------------------------------|----------------------|-------------------------------|------------------------------|------------------------------|------------------------------|----------------------------------|-------------------------------|
+| Baca Camargo, Vitaly Arturo<br>(Mr-Code-star)         | C                    | C                             | C                            | C                            | C                            | C                                | C                             |
+| Cutiri Agüero, Fabrizio Alexander<br>(Fabrizio​Cutiri) | C                    | C                             | L                            | C                            | C                            | L                                | C                             |
+| Guzmán Cabrejos, Yaku Mateo<br>(yakumateo)            | C                    | C                             | C                            | L                            | C                            | C                                | C                             |
+| Huapaya Galindo, Dyron<br>(Maine​Ma)                   | L                    | C                             | C                            | C                            | C                            | C                                | C                             |
+| Lopez Roman, Franco Mauricio<br>(Franco​Lopez00)       | C                    | C                             | C                            | C                            | C                            | C                                | L                             |
+| Montes Ramos, Henry Jaredt<br>(jahen17)               | C                    | C                             | C                            | C                            | C                            | C                                | C                             |
+| Ruiz Madrid, Billy Jake<br>(BJRM03)                   | C                    | L                             | C                            | C                            | C                            | C                                | C                             |
+| Torres Apoli­nario, Giovany Smith<br>(giovanydevv)     | C                    | C                             | C                            | C                            | L                            | C                                | C                             |
+| Quiroz Caceres, Adrian Alonso<br>(Aqc1019)            | C                    | C                             | C                            | C                            | C                            | C                                | C                             |
+
+Donde:
+
+- **L (Leader):** responsable principal del aspecto.
+- **C (Collaborator):** miembro de apoyo en la implementación.
+
+#### 6.2.1.3. Sprint Backlog 2
+
+El objetivo del Sprint 1 es desplegar la primera versión de la Landing Page y de la Web Application de QualiTrack. Para
+ello se seleccionaron 101 User Stories (190 Story Points): 11 de la Landing Page (17 Story Points) y 90 de la Web
+Application (173 Story Points). Cada User Story se descompuso en tareas de implementación de la vista y de integración
+con el RESTful API, asignadas según la matriz de liderazgo y colaboración. El seguimiento del sprint se realizó en Jira.
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/jira-sprint-1-board.jpg" alt="Sprint 1 en Jira" width="90%">
+  <p><em>Figura: User Stories del Sprint 2 en Jira. Esta vista evidencia las </em></p>
+</div>
+
+**Enlace público al
+tablero:** [Sprint 2 - Jira](https://iotech-2620.atlassian.net/jira/software/projects/SCRUM/boards/1)
+
+
+
+<table>
+<tr>
+<th colspan="8">Sprint # Sprint 2</th>
+</tr>
+<tr>
+<th colspan="2">User Story</th>
+<th colspan="6">Work-Item / Task</th>
+</tr>
+<tr>
+<th>Id</th>
+<th>Title</th>
+<th>Id</th>
+<th>Title</th>
+<th>Description</th>
+<th>Estimation (Hours)</th>
+<th>Assigned To</th>
+<th>Status (To-do / In-Process / To-Review / Done)</th>
+</tr>
+<tr><td colspan="8"><strong>Landing Page</strong></td></tr>
+<tr><td rowspan="2">US01</td><td rowspan="2">Conocer la propuesta de valor</td><td>T001</td><td>Maquetar la sección Home</td><td>Hero con el titular, la propuesta de valor, la imagen principal y el botón de llamada a la acción.</td><td>3</td><td>Huapaya Galindo, Dyron</td><td>Done</td></tr>
+<tr><td>T002</td><td>Enlazar los CTA con la aplicación web desplegada</td><td>Apuntar los botones "Get started" del sitio al frontend publicado en Firebase Hosting.</td><td>1</td><td>Quiroz Caceres, Adrian Alonso</td><td>Done</td></tr>
+<tr><td rowspan="2">US02</td><td rowspan="2">Conocer cómo funciona QualiTrack</td><td>T003</td><td>Implementar la sección Features en acordeón</td><td>Funcio­nalidades de monitoreo, alertas, trazabilidad y reportes en un acordeón con su descripción.</td><td>3</td><td>Huapaya Galindo, Dyron</td><td>Done</td></tr>
+<tr><td>T004</td><td>Incrustar el video de funcio­nalidades</td><td>Video de YouTube junto al acordeón para explicar cómo funciona QualiTrack.</td><td>1</td><td>Huapaya Galindo, Dyron</td><td>Done</td></tr>
+
+</table>
+
+#### 6.2.1.4. Development Evidence for Sprint Review
+
+En este sprint se implementó la primera versión de la Landing Page y de la Web Application de QualiTrack.
+
+- **Landing Page:** 
+- **Web Application:** 
+- **
+
+Las siguientes tablas presentan los commits de implementación de cada repositorio, ordenados por fecha, junto con la
+rama en la que se realizaron.
+
+**Landing Page**
+([IoTech-2620-8741/qualitrack-landing-page](https://github.com/IoTech-2620-8741/qualitrack-landing-page))
+
+| Repository                               | Branch                        | Commit Id | Commit Message                                                                                                                              | Commit Message Body | Committed on (Date) |
+|------------------------------------------|-------------------------------|-----------|---------------------------------------------------------------------------------------------------------------------------------------------|---------------------|---------------------|
+| Io​Tech-2620-8741/​qualitrack-landing-page | develop                       |    |  | —                   | 01/10/2026          |
+| Io​Tech-2620-8741/​qualitrack-landing-page | develop                       |    |                                                                                        | —                   | 01/10/2026          |
+| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​previous-landing-page |    |                                                         | —                   | 01/10/2026          |
+| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​previous-landing-page |    |                                                     | —                   | 01/10/2026          |
+| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​previous-landing-page |    |                                                                                  | —                   | 01/10/2026          |
+| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​previous-landing-page |    |                                                                                   | —                   | 01/10/2026          |
+| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​previous-landing-page |    |                                                                                   | —                   | 01/10/2026          |
+| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​previous-landing-page |    |                                                                                   | —                   | 01/10/2026          |
+| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​previous-landing-page |    |                                                                                   | —                   | 01/10/2026          |
+| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​team-members          |    |                                                                                   | —                   | 01/10/2026          |
+| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​team-members          |    |                                                                                   | —                   | 01/10/2026          |
+| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​team-members          |    |                                                                                   | —                   | 01/10/2026          |
+| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​team-members          |    |                                                                                   | —                   | 01/10/2026          |
+| Io​Tech-2620-8741/​qualitrack-landing-page | hotfix/​landing-page-video     |    |                                                                                   | —                   | 01/10/2026          |
+| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​landing-page          |    |                                                                                   | —                   | 08/10/2026          |
+| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​landing-page          |    |                                                                                   | —                   | 08/10/2026          |
+| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​landing-page          |    |                                                                                   | —                   | 08/10/2026          |
+| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​landing-page          |    |                                                                                   | —                   | 08/10/2026          |
+| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​landing-page          |    |                                                                                   | —                   | 08/10/2026          |
+| Io​Tech-2620-8741/​qualitrack-landing-page | release/​v1.0.0                |    |                                                                                   | —                   | 08/10/2026          |
+| Io​Tech-2620-8741/​qualitrack-landing-page | hotfix/​landing-page-video     |    |                                                                                   | —                   | 08/10/2026          |
+| Io​Tech-2620-8741/​qualitrack-landing-page | hotfix/​landing-page-video     |    |                                                                                   | —                   | 08/10/2026          |
+| Io​Tech-2620-8741/​qualitrack-landing-page | hotfix/​landing-page           |    |                                                                                   | —                   | 08/10/2026          |
+| Io​Tech-2620-8741/​qualitrack-landing-page | hotfix/​landing-page           |    |                                                                                   | —                   | 08/10/2026          |
+
+**Web Application** ([IoTech-2620-8741/qualitrack-web-app](https://github.com/IoTech-2620-8741/qualitrack-web-app))
+
+
+---
+
+#### 6.2.1.5. Testing Suite Evidence for Sprint Review
+
+
+---
+
+#### 6.2.1.6. Execution Evidence for Sprint Review
+
+En este sprint se publicó la primera versión de la Landing Page y de la Web Application. La Landing Page permite a los
+visitantes conocer la propuesta de valor, el funcionamiento, los beneficios, el equipo y los planes de QualiTrack en
+inglés o español. La Web Application permite al responsable de calidad crear su cuenta, contratar su plan y registrar su
+laboratorio; y a todo el personal supervisar las condiciones ambientales, el inventario, los equipos, los lotes y las
+alertas según su rol.
+
+La revisión del sprint verificó que un visitante pueda recorrer la Landing Page, comprender la propuesta de valor y
+llegar a la Web Application desde sus llamadas a la acción; y que, dentro de la aplicación, cada rol complete sus flujos
+principales con datos reales del laboratorio de demostración SENKA LAB, en inglés y en español.
+
+- **Landing
+  Page:** [https://iotech-2620-8741.github.io/qualitrack-landing-page/](https://iotech-2620-8741.github.io/qualitrack-landing-page/)
+- **Web Application:** [https://qualitrack-iotech.web.app](https://qualitrack-iotech.web.app)
+- **Video de Execution Evidence del Sprint 1:** [https://shorturl.at/gppVX](https://shorturl.at/gppVX)
+
+**Landing Page**
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-header.png" alt="Landing Page - Navigation bar" width="90%">
+  <p><em>Figura: Encabezado y barra de navegación de la Landing Page. Esta vista evidencia el acceso directo a las secciones Home, Features, Benefits, About Us y Plans, el selector de idioma y el botón que lleva a la Web Application.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-home.png" alt="Landing Page - Home" width="90%">
+  <p><em>Figura: Sección Home. Esta pantalla valida la comunicación inicial de la propuesta de valor, The Future of Pharmaceutical Quality Management, y presenta en tarjetas lo que ofrece QualiTrack: monitoreo IoT en tiempo real, cumplimiento BPM automatizado y registros de auditoría inmutables.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-features.png" alt="Landing Page - Features" width="90%">
+  <p><em>Figura: Sección Features. Esta evidencia muestra en un acordeón las funcionalidades clave de la plataforma, como la integración de telemetría IoT, el motor de cumplimiento BPM, las alertas instantáneas de desviación y el panel de analítica y KPI.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-benefits.png" alt="Landing Page - Benefits" width="90%">
+  <p><em>Figura: Sección Benefits. Esta vista presenta las ventajas de QualiTrack para la manufactura farmacéutica, como la reducción del tiempo de preparación de auditorías de DIGEMID y la eliminación de errores humanos en los registros críticos.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-about.png" alt="Landing Page - About Us" width="90%">
+  <p><em>Figura: Sección About Us. Esta evidencia presenta la visión de QualiTrack de digitalizar la supervisión de los procesos de manufactura y el cumplimiento de las Buenas Prácticas de Manufactura exigidas por DIGEMID, sus pilares (integración IoT, trazabilidad inmutable y cumplimiento regulatorio) y los perfiles de los integrantes del equipo de IoTech.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-plans.png" alt="Landing Page - Plans" width="90%">
+  <p><em>Figura: Sección Plans. Esta vista permite comparar los planes Standard Lab y Enterprise con su precio, periodicidad y características, alternando entre la modalidad mensual y anual.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-testimonials.png" alt="Landing Page - Testimonials" width="90%">
+  <p><em>Figura: Sección de testimonios y llamada final a la acción. Esta evidencia muestra las opiniones de responsables de calidad y producción sobre QualiTrack y el botón Get Started que lleva a la Web Application.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-footer.png" alt="Landing Page - Footer" width="90%">
+  <p><em>Figura: Footer de la Landing Page. Esta evidencia muestra el cierre de la navegación con accesos a las secciones, los datos de contacto (correo, teléfono y ubicación) y los enlaces a los Términos de Servicio y la Política de Privacidad.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-legal.png" alt="Landing Page - Terms of Service and Privacy Policy" width="90%">
+  <p><em>Figura: Páginas de Términos de Servicio y Política de Privacidad. Esta vista evidencia la información legal que el visitante puede consultar antes de contratar el servicio.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-es-mobile.png" alt="Landing Page - Spanish and mobile view" width="90%">
+  <p><em>Figura: Landing Page en español en un dispositivo móvil. Esta evidencia valida el cambio de idioma entre inglés y español y la adaptación del diseño a pantallas pequeñas en la portada, la sección de servicios y los planes.</em></p>
+</div>
+
+**Web Application**
+
+*Acceso y configuración inicial*
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-sign-in.png" alt="Web Application - Sign In" width="90%">
+  <p><em>Figura: Inicio de sesión. Esta pantalla valida el acceso del responsable de calidad, el personal operativo y los auditores con su usuario o correo, con mensajes claros cuando las credenciales no son válidas.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-sign-up.png" alt="Web Application - Sign Up" width="90%">
+  <p><em>Figura: Registro de cuenta del responsable de calidad. Esta evidencia muestra los datos que se validan antes de crear la cuenta: usuario, correo único para recuperar la contraseña y contraseña con su confirmación.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-password-recovery.png" alt="Web Application - Password recovery" width="90%">
+  <p><em>Figura: Recuperación de contraseña. Esta vista evidencia la solicitud con el usuario o el correo de la cuenta, a cuyo correo se envía un código de seis dígitos para restablecer la contraseña.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-onboarding-plans.jpg" alt="Web Application - Plan selection" width="90%">
+  <p><em>Figura: Selección del plan de suscripción. Esta evidencia muestra los planes Standard Lab y Enterprise en modalidad mensual y anual, con sus cuentas de usuario y dispositivos conectados, que el responsable de calidad elige antes de usar las funciones operativas.</em></p>
+</div>
+
+*Panel de control*
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-dashboard.jpg" alt="Web Application - Dashboard" width="90%">
+  <p><em>Figura: Panel de control del laboratorio. Esta evidencia reúne en una sola vista los equipos operativos, los lotes en proceso, las alertas abiertas, las materias primas con stock bajo, la telemetría reciente y el estado de la suscripción.</em></p>
+</div>
+
+*Laboratorio, ambientes y personal*
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-lab-profile.jpg" alt="Web Application - Laboratory profile" width="90%">
+  <p><em>Figura: Perfil del laboratorio. Esta vista muestra los datos registrados de la instalación y permite actualizarlos.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-environments.jpg" alt="Web Application - Environments" width="90%">
+  <p><em>Figura: Ambientes del laboratorio. Esta evidencia muestra el registro de ambientes y la definición de su uso (laboratorio, producción, almacén de materias primas o de producto), que determina qué se puede almacenar en cada uno.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-staff.jpg" alt="Web Application - Staff" width="90%">
+  <p><em>Figura: Personal del laboratorio. Esta pantalla muestra el registro de operarios y auditores, su cargo, su estado y la consulta de su actividad registrada.</em></p>
+</div>
+
+*Inventario de materias primas*
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-inventory-catalogue.jpg" alt="Web Application - Raw materials" width="90%">
+  <p><em>Figura: Catálogo de materias primas por ambiente. Esta vista evidencia el stock utilizable y físico de cada material y resalta los que están por debajo del stock mínimo.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-inventory-detail.jpg" alt="Web Application - Raw material detail" width="90%">
+  <p><em>Figura: Detalle de una materia prima. Esta evidencia muestra sus lotes recibidos con estado y vencimiento, su contenedor, el historial de movimientos y los lotes de producto que la consumieron.</em></p>
+</div>
+
+*Equipos y dispositivos IoT*
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-equipment-list.jpg" alt="Web Application - Equipment" width="90%">
+  <p><em>Figura: Equipos y dispositivos IoT. Esta pantalla lista los equipos del laboratorio con su ambiente y estado operativo, e identifica los dispositivos ambientales y monitores de contenedor con su estado de conexión.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-equipment-detail.jpg" alt="Web Application - Equipment detail" width="90%">
+  <p><em>Figura: Detalle de un equipo. Esta evidencia reúne sus datos generales, la reubicación entre ambientes, el registro de cambios de su estado operativo y su historial de mantenimiento con el técnico responsable.</em></p>
+</div>
+
+*Monitoreo ambiental*
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-telemetry-monitoring.jpg" alt="Web Application - Telemetry dashboard" width="90%">
+  <p><em>Figura: Monitoreo ambiental en tiempo real. Esta vista muestra las lecturas actuales de calidad de aire, temperatura, humedad y luminosidad con su estado (normal, advertencia o crítico) frente a los rangos del perfil vigente.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-telemetry-history.jpg" alt="Web Application - Telemetry history" width="90%">
+  <p><em>Figura: Historial de telemetría. Esta evidencia grafica las lecturas de un periodo de hasta 31 días junto con los rangos normal y crítico, resaltando las desviaciones.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-environmental-profiles.jpg" alt="Web Application - Environmental profiles" width="90%">
+  <p><em>Figura: Perfiles ambientales. Esta pantalla evidencia la configuración versionada de los límites normal y crítico por ambiente y por contenedor, que clasifican cada lectura como normal, advertencia o crítica.</em></p>
+</div>
+
+*Productos y lotes*
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-products.jpg" alt="Web Application - Products" width="90%">
+  <p><em>Figura: Catálogo de productos farmacéuticos por ambiente. Esta vista muestra los productos registrados que pueden fabricarse en el laboratorio.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-batches.jpg" alt="Web Application - Production batches" width="90%">
+  <p><em>Figura: Lotes de producción. Esta evidencia lista los lotes con su producto, cantidad y estado (pendiente, en proceso, liberado o rechazado).</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-batch-detail.jpg" alt="Web Application - Batch detail" width="90%">
+  <p><em>Figura: Detalle de un lote en proceso. Esta pantalla muestra el registro de consumos de materia prima desde un lote liberado de un ambiente, que descuenta el stock del inventario, y el historial de consumos del lote.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-batch-traceability.jpg" alt="Web Application - Batch traceability" width="90%">
+  <p><em>Figura: Trazabilidad de un lote liberado. Esta evidencia reúne las materias primas con sus lotes de origen, los equipos, el personal, el contenedor donde se almacenó el producto y la decisión de calidad firmada con su hash SHA-256.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-batch-release.jpg" alt="Web Application - Batch release" width="90%">
+  <p><em>Figura: Liberación de un lote. Esta vista evidencia que el responsable de calidad libera el lote con su fecha y sus notas de calidad, y que la liberación queda firmada con su usuario y ya no permite modificar el lote.</em></p>
+</div>
+
+*Alertas y avisos*
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-alerts.jpg" alt="Web Application - Deviation alerts" width="90%">
+  <p><em>Figura: Panel de alertas de desviación. Esta pantalla muestra las alertas por estado y severidad, con el ambiente, el dispositivo y la cantidad de desviaciones de cada incidente.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-alert-detail.jpg" alt="Web Application - Alert detail" width="90%">
+  <p><em>Figura: Detalle de una alerta. Esta evidencia muestra la inspección técnica de la desviación, las acciones automáticas del contenedor y las acciones para atenderla y resolverla con notas.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-notifications.jpg" alt="Web Application - Notifications" width="90%">
+  <p><em>Figura: Campana de avisos y preferencias de notificación. Esta vista evidencia los avisos de alertas y lotes con su contador de no leídos, y la elección de qué avisos llegan a la aplicación y al correo.</em></p>
+</div>
+
+*Indicadores, reportes y auditoría*
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-kpi-dashboard.jpg" alt="Web Application - Environmental summary" width="90%">
+  <p><em>Figura: Resumen ambiental. Esta pantalla muestra, para el periodo elegido (24 horas, 7 o 31 días) y por ambiente, la cantidad de lecturas, el promedio, el mínimo, el máximo y la última lectura de cada variable de los dispositivos.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-reports.jpg" alt="Web Application - Reports" width="90%">
+  <p><em>Figura: Generación de reportes. Esta evidencia muestra los reportes de lote, ambiental y de inventario en PDF, y la exportación del historial técnico y de mantenimiento de los equipos.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-audit-log.jpg" alt="Web Application - Audit log" width="90%">
+  <p><em>Figura: Registro de auditoría. Esta vista evidencia quién realizó cada acción y cuándo, con filtros por equipo, lote y periodo.</em></p>
+</div>
+
+*Perfil y suscripción*
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-profile.jpg" alt="Web Application - Profile" width="90%">
+  <p><em>Figura: Perfil del usuario. Esta pantalla muestra los datos personales y la foto de perfil, junto con la información de la cuenta (los datos de identidad y teléfono se ocultaron en la imagen).</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-billing.jpg" alt="Web Application - Billing summary" width="90%">
+  <p><em>Figura: Resumen de la suscripción. Esta evidencia muestra el plan vigente, el periodo de facturación, el historial de pagos y la opción de cancelar la renovación.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-language-es.jpg" alt="Web Application - Spanish interface" width="90%">
+  <p><em>Figura: Interfaz en español. Esta vista valida la internacionalización de la Web Application en inglés y español con el selector de idioma.</em></p>
+</div>
+
+En conjunto, estas evidencias muestran que el Sprint 1 entregó una Landing Page navegable y bilingüe que comunica la
+propuesta de valor de QualiTrack, y una Web Application desplegada e integrada con el RESTful API que cubre el ciclo
+completo del laboratorio: configuración inicial, inventario, equipos y dispositivos IoT, monitoreo ambiental,
+trazabilidad y liberación de lotes, atención de alertas y generación de reportes.
+
+#### 6.2.1.7. Services Documentation Evidence for Sprint Review
+
+La Web Application del Sprint 1 consume el RESTful API de QualiTrack, desarrollado con Spring Boot y documentado con
+OpenAPI mediante Swagger UI. La documentación agrupa las operaciones por recurso raíz y describe, para cada una, su
+propósito, parámetros, cuerpo de la petición y posibles respuestas, incluidos los errores con la estructura
+`ErrorResource {code, message, details}`. Todas las rutas comienzan con `/api/v1` y, salvo las de autenticación,
+requieren el encabezado `Authorization: Bearer <JWT>`.
+
+- **Documentación desplegada (Swagger
+  UI):** [Qualitrack Swagger Documentation](https://iotech-qualitrack-api.wonderfulocean-c1f38f8b.chilecentral.azurecontainerapps.io/swagger-ui/index.html)
+- **Documentación local:** `http://localhost:8080/swagger-ui/index.html` (especificación en `/v3/api-docs`)
+- **Repositorio:** [IoTech-2620-8741/qualitrack-platform](https://github.com/IoTech-2620-8741/qualitrack-platform)
+
+En total se documentan 124 operaciones. Las siguientes tablas las presentan por Bounded Context con su verbo HTTP, la
+sintaxis de llamada, sus parámetros y los códigos de respuesta (con el recurso devuelto en las respuestas exitosas).
+
+**IAM**
+
+| Endpoint                                            | Acción                                        | Parámetros                     | Respuestas                                     |
+|-----------------------------------------------------|-----------------------------------------------|--------------------------------|------------------------------------------------|
+| **POST** /​authentication/​password-recovery-requests | Request a password recovery                   | body: Password​Recovery​Request  | 202 (Password​Recovery​Accepted), 400            |
+| **POST** /​authentication/​password-resets            | Reset the password with the verification code | body: Password​Reset​Request     | 200 (Password​Reset​Completed), 400              |
+| **POST** /​authentication/​sign-in                    | User sign-in                                  | body: Sign​In​Resource           | 200                                            |
+| **POST** /​authentication/​sign-up                    | User sign-up                                  | body: Sign​Up​Resource           | 200                                            |
+| **GET** /roles                                      | Get roles                                     | —                              | 200 (Role​Resource[])                           |
+| **GET** /users                                      | Get users                                     | —                              | 200 (User​Resource[])                           |
+| **GET** /​users/​{user​Id}                             | Get a user                                    | userId (path)                  | 200 (User​Resource), 403, 404                   |
+| **PUT** /​users/​{user​Id}/​roles/​{role​Name}            | Assign a role to a user                       | userId (path), roleName (path) | 200 (User​Resource), 400, 404                   |
+| **GET** /users/me                                   | Get the account of the authenticated user     | —                              | 200 (User​Resource), 401                        |
+| **PUT** /users/me                                   | Update the username and the e-mail            | body: Update​Account​Request     | 200 (Authenticated​User​Resource), 400, 401, 409 |
+| **GET** /​users/​me/​onboarding                        | Get current user's onboarding state           | —                              | 200 (User​Onboarding​Resource), 401              |
+| **POST** /​users/​me/​password-changes                 | Change the password                           | body: Change​Password​Request    | 204, 400, 401                                  |
+
+**Payments & Subscriptions**
+
+| Endpoint                                                       | Acción                                | Parámetros                                    | Respuestas                                |
+|----------------------------------------------------------------|---------------------------------------|-----------------------------------------------|-------------------------------------------|
+| **GET** /​laboratories/​{laboratory​Id}/​subscriptions             | Get the subscriptions of a laboratory | laboratoryId (path), status (query, opcional) | 200 (Subscription​Resource[])              |
+| **POST** /​stripe/​webhooks                                      | Process Stripe webhook                | Stripe-Signature (query), body: string        | 200 (Stripe​Webhook​Resource)               |
+| **POST** /​subscription-checkout-sessions                       | Create subscription checkout session  | body: Create​Checkout​Session​Resource           | 200                                       |
+| **GET** /​subscription-plans                                    | Get subscription plans                | —                                             | 200 (Subscription​Plan​Resource[])          |
+| **POST** /​subscriptions/​{subscription​Id}/​cancellation-requests | Cancel the renewal of a subscription  | subscription​Id (path)                         | 201 (Subscription​Resource), 403, 404, 409 |
+| **GET** /​subscriptions/​{subscription​Id}/​payments               | Get the payments of a subscription    | subscription​Id (path)                         | 200 (Subscription​Payment​Resource[])       |
+
+**Laboratory Management**
+
+| Endpoint                                                                             | Acción                                | Parámetros                                                                     | Respuestas                                                   |
+|--------------------------------------------------------------------------------------|---------------------------------------|--------------------------------------------------------------------------------|--------------------------------------------------------------|
+| **POST** /​laboratories                                                               | Create a new laboratory               | body: Create​Laboratory​Request                                                  | 201 (Laboratory​Response), 400, 409                           |
+| **GET** /​laboratories/​{laboratory​Id}                                                 | Get laboratory by ID                  | laboratoryId (path)                                                            | 200 (Laboratory​Response), 404                                |
+| **PUT** /​laboratories/​{laboratory​Id}                                                 | Update laboratory profile             | laboratoryId (path), body: Update​Laboratory​Request                             | 200 (Laboratory​Response), 403, 404                           |
+| **GET** /​laboratories/​{laboratory​Id}/​environments                                    | List the environments of a laboratory | laboratoryId (path)                                                            | 200 (Environment​Response[]), 403, 404                        |
+| **POST** /​laboratories/​{laboratory​Id}/​environments                                   | Register an environment               | laboratoryId (path), body: Create​Environment​Request                            | 201 (Environment​Response), 400, 403, 404, 409                |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}                    | Get an environment of a laboratory    | laboratoryId (path), environment​Id (path)                                      | 200 (Environment​Response), 403, 404                          |
+| **PUT** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}                    | Update an environment                 | laboratoryId (path), environment​Id (path), body: Update​Environment​Request      | 200 (Environment​Response), 400, 403, 404, 409                |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​usage-assignments | Assign the usage of an environment    | laboratoryId (path), environment​Id (path), body: Assign​Environment​Usage​Request | 201 (Environment​Usage​Assignment​Response), 400, 403, 404, 409 |
+| **GET** /​laboratories/​{laboratory​Id}/​staff                                           | List staff                            | laboratoryId (path)                                                            | 200 (Staff​Member​Response[]), 403                             |
+| **POST** /​laboratories/​{laboratory​Id}/​staff                                          | Register a staff member               | laboratoryId (path), body: Register​Staff​Request                                | 201 (Registered​Staff​Response), 400, 403, 409                 |
+| **GET** /​laboratories/​{laboratory​Id}/​staff/​{staff​Id}                                 | Get a staff member                    | laboratoryId (path), staffId (path)                                            | 200 (Staff​Member​Response), 403, 404                          |
+| **POST** /​laboratories/​{laboratory​Id}/​staff/​{staff​Id}/​deactivations                  | Deactivate a staff member             | laboratoryId (path), staffId (path)                                            | 201 (Staff​Member​Response), 403, 404, 409                     |
+
+**Inventory Management**
+
+| Endpoint                                                                                                                                          | Acción                                                                    | Parámetros                                                                                                                               | Respuestas                                               |
+|---------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------|
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-material-batches                                                            | List the raw material lots of an environment                              | laboratoryId (path), environment​Id (path), expiration​Status (query, opcional), withinDays (query, opcional)                              | 200 (Raw​Material​Batch​Response[]), 400, 404               |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-material-imports                                                           | Import a legacy raw material into the environment                         | laboratoryId (path), environment​Id (path), body: Import​Raw​Material​Request                                                                | 201 (Raw​Material​Response), 404, 409                      |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials                                                                   | List raw materials                                                        | laboratoryId (path), environment​Id (path), stockStatus (query, opcional)                                                                 | 200 (Raw​Material​Response[]), 400, 404                    |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials                                                                  | Register a raw material                                                   | laboratoryId (path), environment​Id (path), body: Save​Raw​Material​Resource                                                                 | 201 (Raw​Material​Response), 400, 403, 404, 409            |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}                                                   | Get a raw material                                                        | laboratoryId (path), environment​Id (path), raw​Material​Id (path)                                                                          | 200 (Raw​Material​Response), 404                           |
+| **PUT** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}                                                   | Update a raw material                                                     | laboratoryId (path), environment​Id (path), raw​Material​Id (path), body: Save​Raw​Material​Resource                                           | 200 (Raw​Material​Response), 400, 404, 409                 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​batches                                           | List the lots of a raw material                                           | laboratoryId (path), environment​Id (path), raw​Material​Id (path), usable (query, opcional)                                                | 200 (Raw​Material​Batch​Response[]), 404                    |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​batches                                          | Register a received raw material lot                                      | laboratoryId (path), environment​Id (path), raw​Material​Id (path), body: Receive​Raw​Material​Batch​Resource                                   | 201 (Raw​Material​Batch​Response), 400, 404, 409            |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​batches/​{raw​Material​Batch​Id}                      | Get a raw material lot                                                    | laboratoryId (path), environment​Id (path), raw​Material​Id (path), raw​Material​Batch​Id (path)                                               | 200 (Raw​Material​Batch​Response), 404                      |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​batches/​{raw​Material​Batch​Id}/​container-assignment | Get the container of a raw material lot                                   | laboratoryId (path), environment​Id (path), raw​Material​Id (path), raw​Material​Batch​Id (path)                                               | 200 (Raw​Material​Batch​Container​Response), 404             |
+| **PUT** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​batches/​{raw​Material​Batch​Id}/​container-assignment | Store a raw material lot in a container                                   | laboratoryId (path), environment​Id (path), raw​Material​Id (path), raw​Material​Batch​Id (path), body: Assign​Raw​Material​Batch​Container​Request | 200 (Raw​Material​Batch​Container​Response), 400, 404, 409   |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​batches/​{raw​Material​Batch​Id}/​reviews             | Review a raw material lot                                                 | laboratoryId (path), environment​Id (path), raw​Material​Id (path), raw​Material​Batch​Id (path), body: Review​Raw​Material​Batch​Resource         | 201 (Raw​Material​Batch​Review​Response), 400, 403, 404, 409 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​movements                                         | List the stock and review movements of a raw material                     | laboratoryId (path), environment​Id (path), raw​Material​Id (path)                                                                          | 200 (Inventory​Movement​Resource[])                        |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​stock                                             | Get the usable stock of a raw material                                    | laboratoryId (path), environment​Id (path), raw​Material​Id (path)                                                                          | 200 (Raw​Material​Stock​Response), 404                      |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​usages                                            | List the product batches that used a raw material                         | laboratoryId (path), environment​Id (path), raw​Material​Id (path)                                                                          | 200 (Raw​Material​Usage​Response[]), 403, 404               |
+| **GET** /​laboratories/​{laboratory​Id}/​inventory/​legacy-materials                                                                                   | Preview pre-Inventory records pending explicit import into an environment | laboratoryId (path)                                                                                                                      | 200 (Legacy​Material​Resource[])                           |
+| **GET** /​laboratories/​{laboratory​Id}/​raw-materials                                                                                                |                                                                           | laboratoryId (path), lowStock (query, opcional)                                                                                          | 200 (Raw​Material​Response[])                              |
+| **GET** /​laboratories/​{laboratory​Id}/​raw-materials/​{legacy​Raw​Material​Id}/​usages                                                                   | Get material consumption history                                          | laboratoryId (path), legacy​Raw​Material​Id (path)                                                                                          | 200 (Raw​Material​Usage​Response[])                         |
+
+**Equipment Management**
+
+| Endpoint                                                                                                        | Acción                                                 | Parámetros                                                                                        | Respuestas                                         |
+|-----------------------------------------------------------------------------------------------------------------|--------------------------------------------------------|---------------------------------------------------------------------------------------------------|----------------------------------------------------|
+| **POST** /​laboratories/​{laboratory​Id}/​devices/​container-monitors                                                | Register a container monitor                           | laboratoryId (path), body: Register​Iot​Device​Request                                               | 201 (Equipment​Response), 400, 403, 409             |
+| **POST** /​laboratories/​{laboratory​Id}/​devices/​environmental-devices                                             | Register an environmental device                       | laboratoryId (path), body: Register​Iot​Device​Request                                               | 201 (Equipment​Response), 400, 403, 409             |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​container-monitors                           | Associate a container monitor with the environment     | laboratoryId (path), environment​Id (path), body: Assign​Device​Request                              | 201 (Equipment​Response), 400, 403, 404             |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​environmental-devices                        | Associate an environmental device with the environment | laboratoryId (path), environment​Id (path), body: Assign​Device​Request                              | 201 (Equipment​Response), 400, 403, 404, 409        |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​equipments                                   | Associate an equipment with the environment            | laboratoryId (path), environment​Id (path), body: Assign​Equipment​Request                           | 201 (Equipment​Response), 400, 403, 404, 409        |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​equipments/​{equipment​Id}/​maintenance-records  | List maintenance records                               | laboratoryId (path), environment​Id (path), equipmentId (path)                                     | 200 (Maintenance​Record​Response[]), 403, 404        |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​equipments/​{equipment​Id}/​maintenance-records | Register a maintenance                                 | laboratoryId (path), environment​Id (path), equipmentId (path), body: Register​Maintenance​Request   | 201 (Maintenance​Record​Response), 400, 403, 404     |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​equipments/​{equipment​Id}/​status-changes      | Register a status change                               | laboratoryId (path), environment​Id (path), equipmentId (path), body: Change​Equipment​Status​Request | 201 (Equipment​Status​Change​Response), 400, 403, 404 |
+| **GET** /​laboratories/​{laboratory​Id}/​equipments                                                                 | List equipment                                         | laboratoryId (path)                                                                               | 200 (Equipment​Response[]), 403                     |
+| **POST** /​laboratories/​{laboratory​Id}/​equipments                                                                | Register an equipment                                  | laboratoryId (path), body: Register​Equipment​Request                                               | 201 (Equipment​Response), 400, 403, 409             |
+| **GET** /​laboratories/​{laboratory​Id}/​equipments/​{equipment​Id}                                                   | Get an equipment                                       | laboratoryId (path), equipmentId (path)                                                           | 200 (Equipment​Response), 403, 404                  |
+| **GET** /​laboratories/​{laboratory​Id}/​equipments/​{equipment​Id}/​bpm-configs                                       | Get the BPM parameter ranges of an equipment           | laboratoryId (path), equipmentId (path)                                                           | 200 (Bpm​Parameter​Config​Response[])                 |
+| **GET** /​laboratories/​{laboratory​Id}/​equipments/​{equipment​Id}/​bpm-configs/​{parameter​Name}                       | Get the range of a BPM parameter of an equipment       | laboratoryId (path), equipmentId (path), parameter​Name (path)                                     | 200 (Bpm​Parameter​Config​Response), 404              |
+| **PUT** /​laboratories/​{laboratory​Id}/​equipments/​{equipment​Id}/​bpm-configs/​{parameter​Name}                       | Configure the range of a BPM parameter of an equipment | laboratoryId (path), equipmentId (path), parameter​Name (path), body: Configure​Bpm​Request          | 200 (Bpm​Parameter​Config​Response), 400, 403         |
+
+**Tracking & Telemetry**
+
+| Endpoint                                                                                                                              | Acción                                                 | Parámetros                                                                                                                         | Respuestas                                           |
+|---------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------|
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​container-monitors/​{device​Id}/​actuation-events                      | Get the actions of the container monitor               | laboratoryId (path), environment​Id (path), deviceId (path), from (query, opcional), to (query, opcional)                           | 200 (Actuation​Event[]), 400, 403, 404                |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​container-monitors/​{device​Id}/​actuation-events                     | Record an action of the container monitor              | laboratoryId (path), environment​Id (path), deviceId (path), body: Record​Actuation​Event​Request                                      | 200 (Actuation​Event), 201 (Actuation​Event), 400, 403 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​container-monitors/​{device​Id}/​environmental-profile                 | Get the environmental profile of the container monitor | laboratoryId (path), environment​Id (path), deviceId (path)                                                                         | 200 (Environmental​Profile), 403, 404                 |
+| **PUT** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​container-monitors/​{device​Id}/​environmental-profile/​actuation-rules | Save the actuation rules of the container monitor      | laboratoryId (path), environment​Id (path), deviceId (path), body: Update​Actuation​Rules​Request                                      | 200 (Environmental​Profile), 400, 403                 |
+| **PUT** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​container-monitors/​{device​Id}/​environmental-profile/​thresholds      | Save the thresholds of the container monitor           | laboratoryId (path), environment​Id (path), deviceId (path), body: Update​Thresholds​Request                                          | 200 (Environmental​Profile), 400, 403                 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​container-monitors/​{device​Id}/​telemetry-measurements                | Get the readings of the container monitor              | laboratoryId (path), environment​Id (path), deviceId (path), from (query, opcional), to (query, opcional), metric (query, opcional) | 200 (Measurement[]), 400, 403, 404                   |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​container-monitors/​{device​Id}/​telemetry-measurements               | Record a reading of the container monitor              | laboratoryId (path), environment​Id (path), deviceId (path), body: Record​Measurement​Request                                         | 200 (Measurement), 201 (Measurement), 400, 403       |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​devices/​{device​Id}/​environmental-profile                            | Get the profile the device applies                     | laboratoryId (path), environment​Id (path), deviceId (path)                                                                         | 200 (Environmental​Profile), 403, 404                 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​devices/​{device​Id}/​telemetry-status                                 | Get the connection status of a device                  | laboratoryId (path), environment​Id (path), deviceId (path)                                                                         | 200 (Device​Telemetry​Status​Response), 403, 404        |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​environmental-profile                                               | Get the environmental profile of the environment       | laboratoryId (path), environment​Id (path)                                                                                          | 200 (Environmental​Profile), 403, 404                 |
+| **PUT** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​environmental-profile/​thresholds                                    | Save the thresholds of the environment                 | laboratoryId (path), environment​Id (path), body: Update​Thresholds​Request                                                           | 200 (Environmental​Profile), 400, 403                 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​telemetry-measurements                                              | Get the readings of the environmental device           | laboratoryId (path), environment​Id (path), from (query, opcional), to (query, opcional), metric (query, opcional)                  | 200 (Measurement[]), 400, 403, 404                   |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​telemetry-measurements                                             | Record a reading of the environmental device           | laboratoryId (path), environment​Id (path), body: Record​Measurement​Request                                                          | 200 (Measurement), 201 (Measurement), 400, 403       |
+
+**Product Batch Management**
+
+| Endpoint                                                                                                                       | Acción                               | Parámetros                                                                                                           | Respuestas                                              |
+|--------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|----------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------|
+| **GET** /​laboratories/​{laboratory​Id}/​batches                                                                                   | Get laboratory batches               | laboratoryId (path)                                                                                                  | 200 (Batch​Response[]), 400                              |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products                                                     | List products                        | laboratoryId (path), environment​Id (path)                                                                            | 200 (Pharmaceutical​Product​Response[]), 403              |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products                                                    | Register a product                   | laboratoryId (path), environment​Id (path), body: Create​Product​Request                                                | 201 (Pharmaceutical​Product​Response), 400, 403, 404, 409 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}                                         | Get a product                        | laboratoryId (path), environment​Id (path), productId (path)                                                          | 200 (Pharmaceutical​Product​Response), 403, 404           |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches                                 | List product batches                 | laboratoryId (path), environment​Id (path), productId (path)                                                          | 200 (Batch​Response[]), 403, 404                         |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches                                | Register a product batch             | laboratoryId (path), environment​Id (path), productId (path), body: Create​Batch​Request                                | 201 (Batch​Response), 400, 403, 404, 409                 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}                       | Get a product batch                  | laboratoryId (path), environment​Id (path), productId (path), batchId (path)                                          | 200 (Batch​Response), 403, 404                           |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}/​container-assignment  | Get the container of a product batch | laboratoryId (path), environment​Id (path), productId (path), batchId (path)                                          | 200 (Batch​Container​Response), 403, 404                  |
+| **PUT** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}/​container-assignment  | Store a product batch in a container | laboratoryId (path), environment​Id (path), productId (path), batchId (path), body: Assign​Batch​Container​Request       | 200 (Batch​Container​Response), 400, 403, 404, 409        |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}/​equipment-usages     | Register an equipment usage          | laboratoryId (path), environment​Id (path), productId (path), batchId (path), body: Register​Equipment​Usage​Request     | 201 (Equipment​Usage​Response), 400, 403, 404, 409        |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}/​raw-material-usages  | Register a raw material usage        | laboratoryId (path), environment​Id (path), productId (path), batchId (path), body: Register​Raw​Material​Usage​Request   | 201 (Raw​Material​Usage​Response), 400, 403, 404, 409      |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}/​rejections           | Reject a product batch               | laboratoryId (path), environment​Id (path), productId (path), batchId (path), body: Reject​Batch​Request                | 201 (Batch​Rejection​Response), 400, 403, 404, 409        |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}/​releases             | Release a product batch              | laboratoryId (path), environment​Id (path), productId (path), batchId (path), body: Release​Batch​Request               | 201 (Batch​Release​Response), 400, 403, 404, 409          |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}/​staff-participations | Register a staff participation       | laboratoryId (path), environment​Id (path), productId (path), batchId (path), body: Register​Staff​Participation​Request | 201 (Staff​Participation​Response), 400, 403, 404, 409    |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}/​traceability          | Get the traceability of a batch      | laboratoryId (path), environment​Id (path), productId (path), batchId (path)                                          | 200 (Batch​Traceability​Response), 403, 404               |
+
+**Compliance & Alerting**
+
+| Endpoint                                                                            | Acción                                                        | Parámetros                                                                                                                                            | Respuestas                                                                |
+|-------------------------------------------------------------------------------------|---------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
+| **GET** /​batches/​{batch​Id}/​compliance-events                                        | Get the compliance events of a batch                          | batchId (path)                                                                                                                                        | 200 (Compliance​Event​Resource[])                                           |
+| **GET** /​deviation-alerts/​{alert​Id}                                                 | Get a deviation alert                                         | alertId (path)                                                                                                                                        | 200 (Deviation​Alert​Detail​Response), 403, 404                              |
+| **POST** /​deviation-alerts/​{alert​Id}/​acknowledgements                               | Acknowledge a deviation alert                                 | alertId (path)                                                                                                                                        | 201 (Deviation​Alert​Response), 403, 404, 409                               |
+| **POST** /​deviation-alerts/​{alert​Id}/​email-notifications                            | E-mail a critical alert to the laboratory                     | alertId (path)                                                                                                                                        | 201 (Alert​Email​Notification), 403, 404, 409, 502                          |
+| **POST** /​deviation-alerts/​{alert​Id}/​resolutions                                    | Resolve a deviation alert                                     | alertId (path), body: Resolve​Alert​Request                                                                                                             | 201 (Deviation​Alert​Response), 400, 403, 404, 409                          |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​deviation-alerts  | Get the deviation alerts of an environment                    | laboratoryId (path), environment​Id (path), status (query, opcional), severity (query, opcional), deviceId (query, opcional), active (query, opcional) | 200 (Deviation​Alert​Response[]), 400, 403, 404                             |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​deviation-alerts | Register a deviation of an environment or container           | laboratoryId (path), environment​Id (path), body: Create​Deviation​Alert​Request                                                                          | 200 (Deviation​Alert​Response), 201 (Deviation​Alert​Response), 400, 403, 404 |
+| **GET** /​laboratories/​{laboratory​Id}/​equipments/​{equipment​Id}/​compliance-events     | Get the compliance events of an equipment                     | laboratoryId (path), equipmentId (path)                                                                                                               | 200 (Compliance​Event​Resource[])                                           |
+| **GET** /​users/​me/​notification-preferences                                          | Get the notification preferences of the authenticated user    | —                                                                                                                                                     | 200 (Notification​Preference​Resource)                                      |
+| **PUT** /​users/​me/​notification-preferences                                          | Update the notification preferences of the authenticated user | body: Update​Notification​Preference​Request                                                                                                             | 200 (Notification​Preference​Resource), 400                                 |
+| **GET** /​users/​me/​notifications                                                     | Get the notifications of the authenticated user               | unread (query, opcional), limit (query, opcional)                                                                                                     | 200 (Notification[]), 400                                                 |
+| **POST** /​users/​me/​notifications/​{notification​Id}/​read-receipts                     | Mark a notification as read                                   | notification​Id (path)                                                                                                                                 | 201 (Notification), 404                                                   |
+| **POST** /​users/​me/​notifications/​read-receipts                                      | Mark every notification as read                               | —                                                                                                                                                     | 201 (Notifications​Read)                                                   |
+| **GET** /​users/​me/​notifications/​unread-count                                        | Count the unread notifications of the authenticated user      | —                                                                                                                                                     | 200 (Unread​Notifications)                                                 |
+
+**Reporting & Audit**
+
+| Endpoint                                                                                                | Acción                                         | Parámetros                                                                                         | Respuestas                                    |
+|---------------------------------------------------------------------------------------------------------|------------------------------------------------|----------------------------------------------------------------------------------------------------|-----------------------------------------------|
+| **GET** /​batches/​{batch​Id}/​audit-logs                                                                   | Get the audit log of a batch                   | batchId (path), dateFrom (query, opcional), dateTo (query, opcional)                               | 200 (Audit​Log​Entry​Resource[])                 |
+| **GET** /​batches/​{batch​Id}/​reports                                                                      | Get the reports of a batch                     | batchId (path)                                                                                     | 200 (Audit​Report​Resource[])                   |
+| **POST** /​batches/​{batch​Id}/​reports                                                                     | Generate a batch traceability report           | batchId (path), body: Generate​Batch​Report​Resource                                                  | 201 (Audit​Report​Resource), 400, 403           |
+| **POST** /​laboratories/​{laboratory​Id}/​compliance-reports                                                | Generate the environmental report of a period  | laboratoryId (path), body: Generate​Compliance​Report​Resource                                        | 201 (Audit​Report​Resource), 400, 403           |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​deviation-trends                      | Get the deviation indicators of an environment | laboratoryId (path), environment​Id (path), from (query, opcional), to (query, opcional)            | 200 (Deviation​Trend​Response[]), 400, 403, 404 |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​equipments/​{equipment​Id}/​log-reports | Generate a log report of an equipment          | laboratoryId (path), environment​Id (path), equipmentId (path), body: Export​Equipment​Log​Resource    | 201 (Audit​Report​Resource), 400, 403, 404      |
+| **GET** /​laboratories/​{laboratory​Id}/​equipments/​{equipment​Id}/​audit-logs                                | Get the audit log of an equipment              | laboratoryId (path), equipmentId (path), dateFrom (query, opcional), dateTo (query, opcional)      | 200 (Audit​Log​Entry​Resource[])                 |
+| **POST** /​laboratories/​{laboratory​Id}/​inventory/​reports                                                 | Generate the inventory report                  | laboratoryId (path), body: Generate​Inventory​Report​Request                                          | 201 (Audit​Report​Resource), 400, 403           |
+| **GET** /​laboratories/​{laboratory​Id}/​kpi-dashboards                                                     | Get the indicators of the laboratory           | laboratoryId (path), from (query, opcional), to (query, opcional), environment​Id (query, opcional) | 200 (Kpi​Dashboard​Response), 400, 403, 404     |
+| **GET** /​laboratories/​{laboratory​Id}/​reports                                                            | Get the reports generated in the laboratory    | laboratoryId (path)                                                                                | 200 (Audit​Report​Resource[])                   |
+| **GET** /​laboratories/​{laboratory​Id}/​staff/​{staff​Id}/​audit-logs                                         | Get the activity of a staff member             | laboratoryId (path), staffId (path)                                                                | 200 (Audit​Log​Entry​Resource[]), 403, 404       |
+| **GET** /​reports/​{report​Id}                                                                             | Get audit report by ID                         | reportId (path)                                                                                    | 200                                           |
+| **GET** /​reports/​{report​Id}/​content                                                                     | Download a stored report                       | reportId (path)                                                                                    | 200                                           |
+
+**Profile**
+
+| Endpoint                                                           | Acción                                       | Parámetros                          | Respuestas                   |
+|--------------------------------------------------------------------|----------------------------------------------|-------------------------------------|------------------------------|
+| **GET** /​laboratories/​{laboratory​Id}/​staff/​{staff​Id}/​profile       | Get the profile of a staff member            | laboratoryId (path), staffId (path) | 200 (Profile), 403, 404      |
+| **GET** /​laboratories/​{laboratory​Id}/​staff/​{staff​Id}/​profile/​photo | Get the photo of a staff member              | laboratoryId (path), staffId (path) | 200 (string), 403, 404       |
+| **GET** /​users/​me/​profile                                          | Get the profile of the authenticated user    | —                                   | 200 (Profile), 401           |
+| **PUT** /​users/​me/​profile                                          | Update the profile of the authenticated user | body: Update​Profile​Request          | 200 (Profile), 400, 401      |
+| **GET** /​users/​me/​profile/​photo                                    | Get the photo of the authenticated user      | —                                   | 200 (string), 404            |
+| **PUT** /​users/​me/​profile/​photo                                    | Replace the photo of the authenticated user  | body: string                        | 200 (Profile), 400, 413, 415 |
+| **DELETE** /​users/​me/​profile/​photo                                 | Remove the photo of the authenticated user   | —                                   | 204, 401                     |
+
+**Ejemplos de interacción**
+
+Inicio de sesión (`POST /api/v1/authentication/sign-in`):
+
+```json
+{
+  "username": "qa.manager@senkalab.test",
+  "password": "********"
+}
+```
+
+Respuesta `200 OK` con el usuario autenticado y su token JWT, que se envía en las siguientes peticiones:
+
+```json
+{
+  "id": 1,
+  "username": "qa.manager@senkalab.test",
+  "token": "eyJhbGciOiJIUzI1NiJ9...",
+  "roles": [
+    "ROLE_QA_MANAGER"
+  ],
+  "laboratoryId": 1,
+  "passwordChangeRequired": false
+}
+```
+
+Ambientes del laboratorio (`GET /api/v1/laboratories/1/environments`), respuesta `200 OK`:
+
+```json
+[
+  {
+    "id": 1,
+    "laboratoryId": 1,
+    "code": "ALM-MP",
+    "name": "Almacén de materias primas",
+    "description": "Recepción y almacenamiento de insumos",
+    "usage": "RAW_MATERIAL_STORAGE",
+    "usageAssignedBy": 1,
+    "usageAssignedAt": "2026-10-05T14:10:00Z"
+  }
+]
+```
+
+Mediciones de un ambiente en un periodo
+(`GET /api/v1/laboratories/1/environments/1/telemetry-measurements?from=2026-10-05T00:00:00.000Z&to=2026-10-06T00:00:00.000Z&metric=AIR_QUALITY`),
+respuesta `200 OK` con el estado evaluado por el perfil ambiental vigente:
+
+```json
+[
+  {
+    "id": 2841,
+    "deviceId": 1,
+    "environmentId": 1,
+    "metric": "AIR_QUALITY",
+    "value": 945,
+    "textValue": null,
+    "unit": "ppm",
+    "measuredAt": "2026-10-05T06:04:00Z",
+    "state": "CRITICAL",
+    "thresholdValue": 900,
+    "profileVersion": 1
+  }
+]
+```
+
+Interacción con la documentación usando datos de muestra:
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/services-documentation-evidence/swagger-ui-overview.png" alt="Swagger UI - QualiTrack API" width="90%">
+  <p><em>Figura: Documentación del RESTful API en Swagger UI. Esta vista muestra las operaciones agrupadas por recurso raíz, con su verbo HTTP, ruta y descripción.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/services-documentation-evidence/swagger-ui-sign-in.png" alt="Swagger UI - Sign In" width="90%">
+  <p><em>Figura: Operación de inicio de sesión en Swagger UI. Esta evidencia muestra su descripción, el cuerpo de la petición con el usuario y la contraseña, y la respuesta exitosa, que devuelve el usuario autenticado con su token JWT.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/services-documentation-evidence/swagger-ui-telemetry.png" alt="Swagger UI - Telemetry Measurements" width="90%">
+  <p><em>Figura: Consulta de mediciones de telemetría de un ambiente en Swagger UI. Esta evidencia muestra los parámetros del laboratorio, el ambiente, el periodo y la métrica, y las respuestas documentadas con el estado de cada lectura y los errores posibles.</em></p>
+</div>
+
+Commits relacionados con la documentación de los servicios en este sprint:
+
+
+
+#### 6.2.1.8. Software Deployment Evidence for Sprint Review
+
+En esta sección, se mostrarán las evidencias guardadas y documentadas sobre el despliegue del software que nosotros
+hemos incluido en el alcance de este primer sprint. Es importante documentar las acciones de despliegue para replicarlas
+y/o mejorarlas en los siguientes sprints.
+
+**Despliegue de la aplicación backend, incluyendo base de datos**:
+
+Nombre del repositorio en la organización: qualitrack-platform
+
+Previo a iniciar los pasos:
+
+* Para el uso del servicio SMTP con Gmail, debes tener creado una contraseña de aplicacion en tu cuenta de correo a
+  usar:
+
+1) En myaccount.google.com, buscamos **Contraseñas de aplicaciones** o entramos
+   a [Contraseñas de aplicaciones](https://myaccount.google.com/apppasswords):
+
+2) Ingresas el nombre de la aplicación, en este caso, escribimos **iotech-qualitrack**:
+
+![Previous Step 1 - Ingreso del nombre de la aplicación](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-previous-step-1.png)
+
+3) Finalmente, mostrará la contraseña para la aplicación, que nos permitirá usar la cuenta de correo para las
+   aplicaciones externas:
+
+![Previous Step 2 - Contraseña de aplicación generada](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-previous-step-2.png)
+
+**Paso 1: Registro de proveedores en Azure:**
+
+1) En [Portal de Azure](https://portal.azure.com/), buscamos en la barra de navegación **Suscripciones**:
+
+![Step 1-1 - Búsqueda en el portal de Azure](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-1-1.png)
+
+2) Seleccionamos la suscripción que tenemos:
+
+![Step 1-2 - Selección de la suscripción](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-1-2.png)
+
+3) Vamos a Configuración y después Proveedores de Recursos:
+
+![Step 1-3 - Proveedores de recursos](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-1-3.png)
+
+4) Seleccionamos los siguientes recursos: Microsoft.App, Microsoft.OperationalInsights, Microsoft.ContainerRegistry,
+   Microsoft.DBforMySQL y Microsoft.ManagedIdentity y le damos a registrar.
+
+![Step 1-4 - Registro de los proveedores de recursos](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-1-4.png)
+
+**Paso 2: Creación de grupo de recursos, identidad en GitHub y permisos:**
+
+1) Buscamos **Grupos de recursos**:
+
+![Step 2-1 - Búsqueda de grupos de recursos](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-1.png)
+
+2) Le damos a Crear grupo de recursos:
+
+![Step 2-2 - Creación del grupo de recursos](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-2.png)
+
+3) Ingresamos el nombre y la región del grupo de recursos a crear:
+
+![Step 2-3 - Nombre y región del grupo de recursos](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-3.png)
+
+4) Le damos a crear grupo de recursos:
+
+![Step 2-4 - Confirmación de creación del grupo](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-4.png)
+
+![Step 2-5 - Grupo de recursos creado](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-5.png)
+
+5) Ahora, vamos a **Identidades administradas**:
+
+![Step 2-6 - Acceso a identidades administradas](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-6.png)
+
+6) Le damos a crear, seleccionamos nuestro grupo, el nombre y la región para la identidad:
+
+![Step 2-7 - Datos de la identidad administrada](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-7.png)
+
+![Step 2-8 - Datos de la identidad administrada (región)](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-8.png)
+
+7) Creamos la identidad administrada:
+
+![Step 2-9 - Creación de la identidad administrada](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-9.png)
+
+8) Dentro de la identidad, vamos a Configuración y después Credenciales federadas:
+
+![Step 2-10 - Credenciales federadas](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-10.png)
+
+9) Agregaremos una credencial para Github Actions que nos permitirá realizar CI/CD con todos los valores que nos piden:
+
+![Step 2-11 - Credencial para GitHub Actions](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-11.png)
+
+10) Volvemos a grupos de recursos, entramos a Control de Acceso (IAM) y agregamos una asignación de roles con rol de
+    **Colaborador**, en miembros, seleccionamos la credencial dentro de la identidad administrada:
+
+![Step 2-12 - Asignación de rol Colaborador en IAM](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-12.png)
+
+![Step 2-13 - Selección de la identidad como miembro](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-13.png)
+
+**Paso 3: Registro de imagen de contenedor**
+
+1) Buscamos y entramos a **Container registries** y creamos un registro, seleccionando nuestro grupo e ingresando un
+   nombre con una región y un plan de precios y lo creamos:
+
+![Step 3-1 - Búsqueda de Container registries](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-3-1.png)
+
+![Step 3-2 - Botón Crear en Container registries](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-3-2.png)
+
+![Step 3-3 - Datos básicos del registro de contenedor](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-3-3.png)
+
+![Step 3-4 - Revisión y validación del registro de contenedor](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-3-4.png)
+
+**Paso 4: Creación de la base de datos MySQL**
+
+1) Buscamos y entramos a **Azure Database for MySQL servers**:
+
+![Step 4-1 - Búsqueda de Azure Database for MySQL](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-1.png)
+
+2) Le damos a Crear y seleccionamos la opción **Servidor flexible**:
+
+![Step 4-2 - Opción Servidor flexible](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-2.png)
+
+3) En Datos básicos, seleccionamos nuestro grupo de recursos **iotech-qualitrack-rg**, ingresamos el nombre
+   **iotech-qualitrack-mysql**, la región **Chile Central** y la versión **8.4**:
+
+![Step 4-3 - Datos básicos del servidor flexible](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-3.png)
+
+4) En Carga de trabajo, seleccionamos **Desarrollo o aficionado** y verificamos que quede el tamaño **Burstable B1ms**
+   con **20 GiB** de almacenamiento. Además, dejamos desactivada la opción de Alta disponibilidad:
+
+![Step 4-4 - Proceso, almacenamiento y alta disponibilidad](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-4.png)
+
+5) En Autenticación, seleccionamos únicamente **MySQL**, ingresamos el usuario **iotechadmin** y una contraseña segura.
+   Es importante guardar esta contraseña, ya que no se puede recuperar después:
+
+![Step 4-5 - Autenticación del servidor](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-5.png)
+
+6) En la pestaña Redes, seleccionamos como método de conectividad **Acceso público** y marcamos la opción **Permitir
+   acceso público desde cualquier servicio de Azure dentro de Azure a este servidor**, lo que permitirá que nuestra
+   Container App se conecte a la base de datos. Opcionalmente, podemos agregar nuestra IP actual si queremos conectarnos
+   desde MySQL Workbench:
+
+![Step 4-6 - Configuración de redes](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-6.png)
+
+7) Le damos a Revisar y crear, verificamos que la validación sea superada y creamos el servidor. Este proceso puede
+   tardar varios minutos:
+
+![Step 4-7 - Revisión de la configuración del servidor](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-7.png)
+
+![Step 4-8 - Implementación completada](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-8.png)
+
+8) Cuando termine el despliegue, entramos al servidor, vamos a **Bases de datos** y le damos a Agregar:
+
+![Step 4-9 - Lista de bases de datos del servidor](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-9.png)
+
+9) Ingresamos el nombre de la base de datos **iotech_qualitrack** y la guardamos:
+
+![Step 4-10 - Creación de la base de datos iotech_qualitrack](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-10.png)
+
+10) Finalmente, en **Información general**, copiamos el nombre del servidor, que termina en
+    **.mysql.database.azure.com**, ya que lo usaremos más adelante para la configuración del back-end:
+
+![Step 4-11 - Nombre del servidor en Información general](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-11.png)
+
+**Paso 5: Creación en Container Apps con imagen temporal**
+
+1) Creamos una aplicación contenedora de Container Apps, lo crearemos desde bash porque la creación mediante la GUI de
+   Azure crea una versión que no admite secretos:
+
+* Registramos las variables del nombre de grupo de recursos y región:
+
+![Step 5-1 - Variables de grupo de recursos y región](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-5-1.png)
+
+* Creamos el entorno para la aplicación de contenedores en el grupo de recursos y región:
+
+![Step 5-2 - Creación del entorno de Container Apps](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-5-2.png)
+
+![Step 5-3 - Entorno de Container Apps creado](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-5-3.png)
+
+* Creamos la aplicación de contenedores dentro del entorno creado:
+
+![Step 5-4 - Creación de la aplicación contenedora](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-5-4.png)
+
+**Paso 6: Agregación de identidad, permisos, secretos y variables**
+
+1) Para la agregación de identidad, usaremos Shell:
+
+* Obtener el ID de la identidad de la aplicación de contenedor dentro del grupo de recursos:
+
+![Step 6-1 - Obtención del ID de la identidad de la aplicación](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-6-1.png)
+
+* Asigna permisos para descargar imágenes de contenedores en el ACR:
+
+![Step 6-2 - Asignación del rol AcrPull en el registro de contenedores](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-6-2.png)
+
+* Configura la identidad administrada por el sistema de la aplicación de contenedor:
+
+![Step 6-3 - Configuración de la identidad del sistema en el registro](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-6-3.png)
+
+2) Para los secretos, ingresamos desde la aplicación de contenedor a seguridad, secretos y agregamos los secretos que
+   necesitamos:
+
+![Step 6-4 - Secretos de la aplicación contenedora](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-6-4.png)
+
+3) Configuramos la entrada en Redes, entradas y cambiamos el puerto de entrada a 8080 (el que escucha Spring Boot):
+
+![Step 6-5 - Configuración de la entrada en el puerto 8080](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-6-5.png)
+
+4) Ingresaremos las variables de entorno para la aplicación, en este caso, haremos referencia a los secretos para
+   algunas variables de entorno:
+
+![Step 6-6 - Variables de entorno de la aplicación](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-6-6.png)
+
+**Paso 7: Ingreso de secretos en el repositorio**
+
+1) Entramos en nuestro repositorio, opciones, secretos y variables y agregamos los secretos de repositorio para conexión
+   a Azure:
+
+* Los datos AZURE_SUBSCRIPTION_ID y AZURE_TENANT_ID se consiguen con este comando:
+
+```bash
+az account show --query "{tenant:tenantId, subscription:id}" -o table
+```
+
+* El AZURE_CLIENT_ID es del paso 2
+
+![Step 7-1 - Sección de secretos y variables de GitHub Actions](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-7-1.png)
+
+![Step 7-2 - Secretos de repositorio para la conexión a Azure](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-7-2.png)
+
+**Paso 8: Creación de rama en repositorio para CI-CD junto a Azure**
+
+1) Creamos una nueva rama feature para la integración de workflows:
+
+![Step 8-1 - Creación de la rama feature/ci-cd-azure](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-8-1.png)
+
+2) Creamos los archivos deploy.yml y ci.yml dentro de .github/workflows
+
+![Step 8-2 - Workflow deploy.yml](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-8-2.png)
+
+![Step 8-3 - Workflow ci.yml](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-8-3.png)
+
+3) Hacemos push a la rama feature, creamos un PR, esperamos que el test de CI termine y hacemos merge:
+
+![Step 8-4 - Pull request fusionado con el CI aprobado](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-8-4.png)
+
+* Para que funcionen correctamente los workflows creados, deben restringir los merge sin previa creación de un PR.
+
+**Paso 9: Creación de rama release versión 1.0.0**
+
+1) Creamos nuestra rama release, en la versión 1.0.0 y la pasamos a remoto:
+
+![Step 9-1 - Creación y push de la rama release/v1.0.0](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-9-1.png)
+
+2) Creamos nuestro PR hacia main:
+
+* Previo a la creación del PR, verificamos que todo lo creado en Azure funcione correctamente.
+
+![Step 9-2 - Creación del pull request hacia main](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-9-2.png)
+
+3) Esperamos a que las pruebas y el despliegue integrados en workflows terminen:
+
+![Step 9-3 - Verificaciones del pull request en curso](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-9-3.png)
+
+![Step 9-4 - Verificaciones del pull request aprobadas](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-9-4.png)
+
+4) Después de aceptar y realizar el merge a main, esperamos a que termine el workflow de despliegue hacia Azure
+   Container Apps que hemos creado:
+
+* Posteriormente, se realizó un hotfix (**hotfix/deploy-image-flag**) hacia main para corregir la construcción de la
+  imagen Docker en el workflow de despliegue. Este es el workflow que terminó correctamente:
+
+![Step 9-6 - Workflow de despliegue completado](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-9-5.png)
+
+**Paso 10: Verificaciones y pasos finales**
+
+1) Entramos a la aplicación del contenedor, dentro, entramos a revisiones y réplicas:
+
+![Step 10-1 - Revisiones y réplicas de la aplicación contenedora](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-10-1.png)
+
+2) Verificamos que podemos entrar a la documentación Swagger con el
+   link: [Qualitrack Swagger Documentation](https://iotech-qualitrack-api.wonderfulocean-c1f38f8b.chilecentral.azurecontainerapps.io/swagger-ui/index.html)
+
+![Step 10-2 - Documentación Swagger de la API desplegada](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-10-2.png)
+
+3) Verificamos la base de datos usando MySQL Workbench mediante una conexión remota y si existen las tablas:
+
+![Step 10-3 - Conexión exitosa en MySQL Workbench](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-10-3.png)
+
+![Step 10-4 - Tablas de la base de datos iotech_qualitrack](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-10-4.png)
+
+4) Etiquetamos la rama main con la nueva versión de lanzamiento:
+
+![Step 10-5 - Lista de releases del repositorio](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-10-5.png)
+
+![Step 10-6 - Creación de la release v1.0.0](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-10-6.png)
+
+![Step 10-7 - Release v1.0.0 publicada](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-10-7.png)
+
+* También eliminamos las ramas release y hotfix, cumpliendo el estándar Gitflow
+
+5) En nuestra aplicación de contenedores, en la sección aplicaciones, contenedores y variables de entorno quitamos
+   SPRING_JPA_HIBERNATE_DDL_AUTO para evitar cambios de esquema:
+
+![Step 10-8 - Variable SPRING_JPA_HIBERNATE_DDL_AUTO a eliminar](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-10-8.png)
+
+**Despliegue de la aplicación web**
+
+**Pasos previos**
+
+1) Para el despliegue en producción, cambiamos la url base de nuestra api a la desplegada para que nuestra aplicación
+   web funcione con nuestro backend en Azure:
+
+![Frontend Previous Step 1-1 - URL base de la API en environment.ts](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-previous-step-1-1.png)
+
+2) Creamos un pull request hacia develop con el cambio de la configuración de producción:
+
+![Frontend Previous Step 1-2 - Creación del pull request hacia develop](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-previous-step-1-2.png)
+
+3) Finalmente, el pull request fue fusionado en develop:
+
+![Frontend Previous Step 1-3 - Pull request fusionado](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-previous-step-1-3.png)
+
+**Paso 1: Creación de proyecto en Firebase**
+
+1) Creamos nuestro proyecto llamado **iotech-qualitrack** en Firebase:
+
+![Frontend Step 1-1 - Nombre del proyecto en Firebase](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-1-1.png)
+
+![Frontend Step 1-2 - Creación del proyecto con Google Analytics](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-1-2.png)
+
+**Paso 2: Inicializar Firebase en el repositorio**
+
+1) Desde develop, creamos una rama feature para inicializar firebase
+
+* Realizamos los siguientes comandos:
+
+```bash
+npm ci
+npx firebase-tools login
+npx firebase-tools init hosting
+```
+
+![Frontend Step 2-1 - Instalación de firebase-tools en el login](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-1.png)
+
+2) Se crean 2 archivos: .firebaserc y firebase.json:
+
+![Frontend Step 2-2 - Archivos creados](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-2.png)
+
+3) Conectamos GitHub con Firebase:
+
+![Frontend Step 2-3 - Inicialización de hosting con GitHub](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-3.png)
+
+![Frontend Step 2-4 - Inicialización de hosting con GitHub completada](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-4.png)
+
+4) Hacemos push a la rama feature y realizamos un PR a develop para el release.
+
+![Frontend Step 2-4 - Pull request hacia develop con el workflow de despliegue](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-5.png)
+
+**Paso 3: Release y despliegue a Firebase**
+
+1) Realizamos un release version 1.0.0 y realizamos un PR a main:
+
+![Frontend Step 3-1 - Creación de la rama release/v1.0.0](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-3-1.png)
+
+![Frontend Step 3-2 - Pull request del release hacia main](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-3-2.png)
+
+2) Esperamos a que el despliegue configurado en workflows termine:
+
+![Frontend Step 3-3 - Despliegue en progreso en GitHub Actions](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-3-3.png)
+
+3) Cuando ya termino, accedemos al link de nuestra aplicación web:
+
+![Frontend Step 3-4 - Despliegue completado en GitHub Actions](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-3-4.png)
+
+![Frontend Step 3-5 - Aplicación web desplegada en Firebase Hosting](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-3-5.png)
+
+**Despliegue de la Landing Page**
+
+Nombre del repositorio en la organización: qualitrack-landing-page
+
+La Landing Page es un sitio estático (`index.html` y la carpeta `public`), por lo que se publica directamente desde su
+repositorio con GitHub Pages.
+
+**Paso 1: Publicación con GitHub Pages**
+
+1) En el repositorio, vamos a Settings y después Pages. En Build and deployment seleccionamos **Deploy from a branch**,
+   la rama **main** y la carpeta **/ (root)**, y guardamos:
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-landing-deployment-step-1-1.jpg" alt="Configuración de GitHub Pages" width="90%">
+  <p><em>Figura: Configuración de GitHub Pages en el repositorio de la Landing Page. Esta vista evidencia el sitio publicado y su publicación desde la rama main y la carpeta raíz del repositorio.</em></p>
+</div>
+
+2) Con cada push a main, el workflow **pages-build-deployment** de GitHub Actions publica el sitio:
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-landing-deployment-step-1-2.jpg" alt="Workflow de publicación de la Landing Page" width="90%">
+  <p><em>Figura: Ejecuciones del workflow pages-build-deployment en GitHub Actions. Esta evidencia muestra las publicaciones de la Landing Page realizadas desde la rama main.</em></p>
+</div>
+
+**Paso 2: Verificaciones**
+
+1) Ingresamos a la Landing Page
+   en [https://iotech-2620-8741.github.io/qualitrack-landing-page/](https://iotech-2620-8741.github.io/qualitrack-landing-page/)
+   y recorremos sus secciones en inglés y en español:
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-landing-deployment-step-2-1.png" alt="Landing Page publicada" width="90%">
+  <p><em>Figura: Landing Page publicada en GitHub Pages. Esta evidencia confirma que el sitio es accesible públicamente desde la URL de la organización.</em></p>
+</div>
+
+2) Verificamos que los botones Get started y los de cada plan lleven a la Web Application publicada en Firebase Hosting:
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-landing-deployment-step-2-2.png" alt="Enlace de la Landing Page a la Web Application" width="90%">
+  <p><em>Figura: Llamada a la acción de la Landing Page abierta en la Web Application. Esta evidencia muestra la conexión entre el sitio público y la aplicación desplegada.</em></p>
+</div>
+
+#### 6.2.1.9. Team Collaboration Insights during Sprint
+
