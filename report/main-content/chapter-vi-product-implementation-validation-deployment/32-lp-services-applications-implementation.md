@@ -1900,7 +1900,19 @@ This will be confirmed when a reading taken by a physical device reaches the Edg
 
 #### 6.2.1.2. Aspect Leaders and Collaborators
 
-text
+Durante el Sprint 2 cada integrante lideró un bounded context del core del negocio en todos los productos donde aparece. Tracking & Telemetry y Compliance & Alerting tienen dos líderes cada uno por su carga de trabajo. Los contextos que no son core (IAM, Profile Management y Payments & Subscriptions) quedaron con quien ya los venía trabajando.
+
+| Team Member (Last Name, First Name) / GitHub User­name | Tracking & Telemetry  | Compliance & Alerting  | Product Batch Management  | Equipment Management  | Laboratory Management  | Inventory Management  | Reporting & Audit |
+|-------------------------------------------------------|----------------------|-------------------------------|------------------------------|------------------------------|------------------------------|----------------------------------|-------------------------------|
+| Baca Camargo, Vitaly Arturo<br>(Mr-Code-star)         | C                    | C                             | C                            | C                            | C                            | C                                | L                             |
+| Cutiri Agüero, Fabrizio Alexander<br>(Fabrizio​Cutiri) | C                    | C                             | C                            | C                            | C                            | L                                | C                             |
+| Guzmán Cabrejos, Yaku Mateo<br>(yakumateo)            | C                    | C                             | C                            | L                            | C                            | C                                | C                             |
+| Huapaya Galindo, Dyron<br>(Maine​Ma)                   | C                    | L                             | C                            | C                            | C                            | C                                | C                             |
+| Lopez Roman, Franco Mauricio<br>(Franco​Lopez00)       | C                    | C                             | L                            | C                            | C                            | C                                | C                             |
+| Montes Ramos, Henry Jaredt<br>(jahen17)               | C                    | C                             | C                            | C                            | L                            | C                                | C                             |
+| Ruiz Madrid, Billy Jake<br>(BJRM03)                   | L                    | C                             | C                            | C                            | C                            | C                                | C                             |
+| Torres Apoli­nario, Giovany Smith<br>(giovanydevv)     | C                    | L                             | C                            | C                            | C                            | C                                | C                             |
+| Quiroz Caceres, Adrian Alonso<br>(Aqc1019)            | L                    | C                             | C                            | C                            | C                            | C                                | C                             |
 
 
 
