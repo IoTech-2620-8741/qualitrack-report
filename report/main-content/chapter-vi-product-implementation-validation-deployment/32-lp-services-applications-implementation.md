@@ -1898,7 +1898,7 @@ This will be confirmed when a reading taken by a physical device reaches the Edg
 </tr>
 </table>
 
-#### 6.2.1.2. Aspect Leaders and Collaborators
+#### 6.2.2.2. Aspect Leaders and Collaborators
 
 Durante el Sprint 2 cada integrante lideró un bounded context del core del negocio en todos los productos donde aparece. Tracking & Telemetry y Compliance & Alerting tienen dos líderes cada uno por su carga de trabajo. Los contextos que no son core (IAM, Profile Management y Payments & Subscriptions) quedaron con quien ya los venía trabajando.
 
@@ -1921,7 +1921,7 @@ Donde:
 - **L (Leader):** responsable principal del aspecto.
 - **C (Collaborator):** miembro de apoyo en la implementación.
 
-#### 6.2.1.3. Sprint Backlog 2
+#### 6.2.2.3. Sprint Backlog 2
 
 El objetivo del Sprint 2 es ....
 
@@ -1961,7 +1961,7 @@ tablero:** [Sprint 2 - Jira](https://iotech-2620.atlassian.net/jira/software/pro
 
 </table>
 
-#### 6.2.1.4. Development Evidence for Sprint Review
+#### 6.2.2.4. Development Evidence for Sprint Review
 
 En este sprint se implementó la primera versión de la Landing Page y de la Web Application de QualiTrack.
 
@@ -2007,12 +2007,12 @@ rama en la que se realizaron.
 
 ---
 
-#### 6.2.1.5. Testing Suite Evidence for Sprint Review
+#### 6.2.2.5. Testing Suite Evidence for Sprint Review
 
 
 ---
 
-#### 6.2.1.6. Execution Evidence for Sprint Review
+#### 6.2.2.6. Execution Evidence for Sprint Review
 
 En este sprint se publicó la primera versión de la Landing Page y de la Web Application. La Landing Page permite a los
 visitantes conocer la propuesta de valor, el funcionamiento, los beneficios, el equipo y los planes de QualiTrack en
@@ -2253,7 +2253,7 @@ propuesta de valor de QualiTrack, y una Web Application desplegada e integrada c
 completo del laboratorio: configuración inicial, inventario, equipos y dispositivos IoT, monitoreo ambiental,
 trazabilidad y liberación de lotes, atención de alertas y generación de reportes.
 
-#### 6.2.1.7. Services Documentation Evidence for Sprint Review
+#### 6.2.2.7. Services Documentation Evidence for Sprint Review
 
 La Web Application del Sprint 1 consume el RESTful API de QualiTrack, desarrollado con Spring Boot y documentado con
 OpenAPI mediante Swagger UI. La documentación agrupa las operaciones por recurso raíz y describe, para cada una, su
@@ -2529,7 +2529,7 @@ Commits relacionados con la documentación de los servicios en este sprint:
 
 
 
-#### 6.2.1.8. Software Deployment Evidence for Sprint Review
+#### 6.2.2.8. Software Deployment Evidence for Sprint Review
 
 En esta sección, se mostrarán las evidencias guardadas y documentadas sobre el despliegue del software que nosotros
 hemos incluido en el alcance de este primer sprint. Es importante documentar las acciones de despliegue para replicarlas
@@ -2944,5 +2944,5 @@ repositorio con GitHub Pages.
   <p><em>Figura: Llamada a la acción de la Landing Page abierta en la Web Application. Esta evidencia muestra la conexión entre el sitio público y la aplicación desplegada.</em></p>
 </div>
 
-#### 6.2.1.9. Team Collaboration Insights during Sprint
+#### 6.2.2.9. Team Collaboration Insights during Sprint
 
