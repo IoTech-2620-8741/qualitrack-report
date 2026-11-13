@@ -2493,49 +2493,1394 @@ En total el sprint comprende 521 tareas y 690 horas estimadas. El estado de cada
 
 #### 6.2.2.4. Development Evidence for Sprint Review
 
-En este sprint se implementó la primera versión de la Landing Page y de la Web Application de QualiTrack.
+En este sprint el equipo pasó de la primera versión visual de QualiTrack a una solución integrada: el Cloud REST API se reorganizó siguiendo Domain-Driven Design y se extendió con los Edge Gateways, la Web Application se rediseñó y quedó conectada a todos los servicios, se construyó la primera versión de la Mobile Application y del Edge Service, y la Landing Page publicó su nueva versión.
 
-- **Landing Page:** 
-- **Web Application:** 
-- **
+- **Landing Page (v1.1.0):** se aplicó la guía de estilos de QualiTrack, se compartieron el encabezado, el pie de página y el selector de idioma entre todas las páginas, el inglés pasó a ser el idioma por defecto, el código JavaScript se organizó en módulos documentados, se actualizaron las fotos del equipo y la publicación en GitHub Pages pasó a un workflow de GitHub Actions.
+- **Web Application (v1.1.1 a v2.5.0):** se aplicaron las capas de Domain-Driven Design en cada Bounded Context, con stores por contexto y capas anticorrupción entre contextos; se agregaron validaciones de formularios y pruebas unitarias con Vitest; se rediseñaron las vistas con los componentes de la guía de estilos (encabezado común, tablas paginadas, estados vacíos y de error); se reorganizó la bandeja de alertas, los lotes de producción y los reportes; y se agregó el registro de Edge Gateways con la generación de su API key.
+- **Cloud REST API (v1.1.0 y v1.2.0):** se completó la estructura táctica de Domain-Driven Design en cada Bounded Context (fachadas, servicios externos y relaciones entre contextos), se agregaron los Edge Gateways con su API key y los endpoints con los que un Edge lee sus dispositivos IoT y envía telemetría, eventos de actuación y perfiles ambientales, se documentaron los endpoints de Tracking & Telemetry en Swagger y se registraron los pagos de renovación de las suscripciones.
+- **Mobile Application:** se construyó la primera versión con Flutter siguiendo la estructura de Domain-Driven Design de la Web Application: inicio de sesión, inicio con prioridades y últimas alertas, inventario, lotes de producción, alertas, monitoreo, reportes y auditoría, con correcciones de usabilidad y el registro de Edge Gateways.
+- **Edge API (v0.1.0 a v0.3.1):** se implementó el Edge Service con Flask, Peewee y SQLite: autenticación de los nodos ESP32 con API key, recepción de lecturas ambientales, de contenedores y de eventos de actuación, entrega de la configuración a cada nodo, sincronización con el Cloud como Edge Gateway y despliegue con Docker Compose. Sus decisiones quedaron registradas en 16 Architecture Decision Records.
+- **Embedded Applications:** el firmware de los nodos ESP32 aún no se encuentra en un repositorio de la organización, por lo que sus Maker Stories continúan en To-do en el Sprint Backlog.
 
-Las siguientes tablas presentan los commits de implementación de cada repositorio, ordenados por fecha, junto con la
-rama en la que se realizaron.
+Las siguientes tablas presentan los 1353 commits realizados en los repositorios de la organización desde el cierre del Sprint 1 (9 de octubre de 2026) hasta la revisión del Sprint 2 (13 de noviembre de 2026), ordenados por fecha, junto con la rama en la que se realizaron: 115 de la Landing Page, 581 de la Web Application, 217 del Cloud REST API, 314 de la Mobile Application y 126 del Edge API.
 
-**Landing Page**
-([IoTech-2620-8741/qualitrack-landing-page](https://github.com/IoTech-2620-8741/qualitrack-landing-page))
+**Landing Page** ([IoTech-2620-8741/qualitrack-website](https://github.com/IoTech-2620-8741/qualitrack-website))
 
-| Repository                               | Branch                        | Commit Id | Commit Message                                                                                                                              | Commit Message Body | Committed on (Date) |
-|------------------------------------------|-------------------------------|-----------|---------------------------------------------------------------------------------------------------------------------------------------------|---------------------|---------------------|
-| Io​Tech-2620-8741/​qualitrack-landing-page | develop                       |    |  | —                   | 01/10/2026          |
-| Io​Tech-2620-8741/​qualitrack-landing-page | develop                       |    |                                                                                        | —                   | 01/10/2026          |
-| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​previous-landing-page |    |                                                         | —                   | 01/10/2026          |
-| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​previous-landing-page |    |                                                     | —                   | 01/10/2026          |
-| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​previous-landing-page |    |                                                                                  | —                   | 01/10/2026          |
-| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​previous-landing-page |    |                                                                                   | —                   | 01/10/2026          |
-| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​previous-landing-page |    |                                                                                   | —                   | 01/10/2026          |
-| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​previous-landing-page |    |                                                                                   | —                   | 01/10/2026          |
-| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​previous-landing-page |    |                                                                                   | —                   | 01/10/2026          |
-| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​team-members          |    |                                                                                   | —                   | 01/10/2026          |
-| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​team-members          |    |                                                                                   | —                   | 01/10/2026          |
-| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​team-members          |    |                                                                                   | —                   | 01/10/2026          |
-| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​team-members          |    |                                                                                   | —                   | 01/10/2026          |
-| Io​Tech-2620-8741/​qualitrack-landing-page | hotfix/​landing-page-video     |    |                                                                                   | —                   | 01/10/2026          |
-| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​landing-page          |    |                                                                                   | —                   | 08/10/2026          |
-| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​landing-page          |    |                                                                                   | —                   | 08/10/2026          |
-| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​landing-page          |    |                                                                                   | —                   | 08/10/2026          |
-| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​landing-page          |    |                                                                                   | —                   | 08/10/2026          |
-| Io​Tech-2620-8741/​qualitrack-landing-page | feature/​landing-page          |    |                                                                                   | —                   | 08/10/2026          |
-| Io​Tech-2620-8741/​qualitrack-landing-page | release/​v1.0.0                |    |                                                                                   | —                   | 08/10/2026          |
-| Io​Tech-2620-8741/​qualitrack-landing-page | hotfix/​landing-page-video     |    |                                                                                   | —                   | 08/10/2026          |
-| Io​Tech-2620-8741/​qualitrack-landing-page | hotfix/​landing-page-video     |    |                                                                                   | —                   | 08/10/2026          |
-| Io​Tech-2620-8741/​qualitrack-landing-page | hotfix/​landing-page           |    |                                                                                   | —                   | 08/10/2026          |
-| Io​Tech-2620-8741/​qualitrack-landing-page | hotfix/​landing-page           |    |                                                                                   | —                   | 08/10/2026          |
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|------------|--------|-----------|----------------|---------------------|---------------------|
+| Io​Tech-2620-8741/​qualitrack-website | develop | 54da0b8 | feat​(language-switcher): add language switcher and its dependencies to privacy policy section. | — | 21/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 66354a5 | feat​(translations): add spanish and english translations for privacy policy section. | — | 21/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 1cc4050 | feat​(i18n): implements internationalization for privacy policy section. | — | 21/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 304896d | fix​(footer): remove target="_​blank" from legal links | — | 25/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​rename-translation-keys | 3e306dc | refactor​(i18n): rename translation objects in english | — | 25/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​rename-translation-keys | 7bc2850 | refactor​(i18n): rename translation objects in spanish | — | 25/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​rename-translation-keys | a97bf3a | refactor​(i18n): rename translation objects in spanish | — | 25/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​default-english-language | 5813c05 | fix​(legal): declare english as the language of the legal pages | — | 25/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​default-english-language | a2fb011 | feat​(i18n): use english as the default language | — | 25/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | d781692 | refactor​(i18n): rename offer card keys | — | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | ff138e6 | refactor​(i18n): rename features accordion keys | — | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | ab1a22d | refactor​(i18n): rename benefits card keys | — | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 139342f | refactor​(i18n): rename about section keys | — | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 7701e53 | refactor​(i18n): rename team member keys | — | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 6421c75 | refactor​(i18n): rename testimonial review keys | — | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 2bdf055 | refactor​(i18n): rename footer link keys | — | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 51e670e | refactor​(i18n): rename policy | — | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | c629121 | refactor​(i18n): rename es.json | — | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | e227890 | refactor​(main): rename keys in main | — | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 33c753d | refactor​(policies): rename keys | — | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​license-and-changelog | d9f8517 | docs​(license): add MIT license | — | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​license-and-changelog | 30b1189 | docs​(changelog): add changelog with version 1.0.0 | — | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​styles | 676d7cb | style​(website): simplify and organize css styles. | — | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​general-design | 8e1a133 | style​(design): use color tokens for text, borders and surfaces | — | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​general-design | ac30dc0 | style​(design): unify font sizes and section spacing | — | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​general-design | 5c6c087 | style​(design): make cards and buttons consistent | — | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​general-design | b9b6ef1 | style​(a11y): add visible focus and reduced motion support | — | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​general-design | eb050a1 | fix​(header): open the mobile menu from the menu button | — | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​general-design | 01e8401 | fix​(hero): replace missing background image with a gradient | — | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​general-design | a847fc4 | style​(design): alternate full-width section backgrounds | — | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​general-design | 34b3804 | style​(design): stack cta and footer on mobile | — | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | a83d7fe | feat​(tos): localize introduction and clauses 1-7 | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | deb7a37 | feat​(tos): localize clauses 8-14 and policy link | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 5e6e8d9 | feat​(tos): enable bilingual terms of service | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 98f8af8 | feat​(i18n): add English terms translations for clauses 1-7 | — | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 8783666 | feat​(i18n): add English terms translations for clauses 8-14 | — | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 4c86c22 | feat​(i18n): add Spanish terms translations for clauses 1-7 | — | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 7f3e200 | feat​(i18n): add Spanish terms translations for clauses 8-14 | Added new sections for privacy, SLA, liability, modifications, termination, jurisdiction, and contact in Spanish translations. | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 0577c16 | fix​(i18n): nest English terms clauses under tos | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​shared-header-footer | a4bcb8e | feat​(layout): add shared header and footer partials | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​shared-header-footer | 1b446a4 | fix​(header): open the mobile menu through its menu wrapper | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​shared-header-footer | 8432414 | refactor​(pages): use the shared header and footer placeholders | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​shared-header-footer | 641aaa3 | feat​(layout): load the shared header and footer from main.js | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​shared-language-switcher | f48affe | feat​(layout): add shared language switcher partial. | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​shared-language-switcher | f13f519 | feat​(layout): load the shared language switcher from main.js | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​shared-language-switcher | 21cc33b | refactor​(pages): use the shared language switcher placeholder. | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​shared-language-switcher | fcc2e05 | refactor​(public): update paths. | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​footer-refactor | e816c3b | refactor​(footer): align legal links positions and center copyright. | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​html-ids-refactor | 770c493 | refactor​(pages): align _​footer.html and _​header.html names with the naming conventions | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​html-ids-refactor | cd639e6 | refactor​(pages): align _​language-switcher.html and index.html id names with the naming conventions | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​html-ids-refactor | 8b9bc9f | refactor​(pages): align policies.html and tos.html id names with the naming conventions | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​html-ids-refactor | 9ff3c2f | refactor​(pages): align main.js and style.css id names with the naming conventions | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 64eff62 | feat: add query parameters to suscription plan buttons. | — | 29/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 6c6e83c | feat: add dynamic subscription plan link updates based on billing cycle and plan type | — | 29/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​fix-translation-keys | 30b8bcc | fix​(i18n): match about and benefits keys in index | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​fix-translation-keys | fe0aa19 | fix​(i18n): use camel​Case keys for plan prices and features heading | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​fix-translation-keys | 2b900a2 | fix​(i18n): match footer link keys with the translations | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​fix-translation-keys | df4c111 | fix​(i18n): match security keys in privacy policy | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​contributing-guide | 8e2ec72 | docs​(contributing): add contributing guide | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​fix-translation-keys | 656cab0 | fix​(footer): match default link texts with the english translation | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​fix-translation-keys | 42311ec | fix​(layout): point shared links to the home page in public | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​github-actions-deploy | e4cb989 | fix​(layout): update SITE_​ROOT path for Git​Hub Actions deployment | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​github-actions-deploy | 76e8b31 | fix​(footer): remove redundant 'public' from asset and legal link paths | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​github-actions-deploy | ba4aec5 | ci​(deploy): deploy public/​ to Git​Hub Pages with Git​Hub Actions | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​github-actions-deploy | 189bb59 | docs​(changelog): record the Git​Hub Actions deployment in unreleased | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​github-actions-deploy | 04cf45c | docs​(contributing): add the ci type, the deploy scope and the deployment section | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​github-actions-deploy | 95bd6cb | docs​(readme): document the project structure and the deployment | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​github-actions-deploy | 6bee04a | docs​(contributing): add 'contributing' to allowed scopes in commit message guidelines | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​refactor-views | 2ce9c48 | refactor​(policies): standardize visual styling and improve design consistency in the policies view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​refactor-views | 0ac2c52 | refactor​(tos): standardize visual styling and improve design consistency in the tos view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​refactor-views | 6da6a37 | refactor​(public): standardize visual styling and improve design consistency. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​refactor-views | eea41f3 | refactor​(public): standardize visual styling and improve design consistency in the header component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​refactor-views | 6afdbf3 | feat​(i18n): add translation keys. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​refactor-views | f0d9a28 | refactor​(public): improve stylesheet. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​refactor-views | cfca84d | refactor​(assets): adjust logo. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​fix-language-switcher-placeholder | 6a3b2be | refactor​(scripts): fix load shared layout function for language switcher. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​fix-language-switcher-placeholder | 1912827 | refactor​(index): remove language switcher from index. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​fix-language-switcher-placeholder | b9e2f09 | refactor: remove unnecessary div wrapper in language switcher. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​fix-language-switcher-placeholder | 53634fa | refactor: fix language switcher in header. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 2377599 | chore: update CHANGELOG for version 1.1.0 release | — | 07/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 6d4e5a9 | chore: fix version titles in CHANGELOG | Updated version numbers and added new features to the changelog. | 07/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 72ee0cf | chore: update README for version 1.1.0 release | Updated version number to 1.1.0 and revised release notes. | 07/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | e6322c3 | feat: add constants for site configuration and language support | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | fbc0857 | feat​(i18n): implement language initialization and translation functionality | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 3f114bd | feat​(dom): implement functions for partial template loading and home page URL management | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 8fbe90a | feat​(plans): implement plan selection and toggle functionality | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 69fa39a | feat​(layout): implement mobile menu setup and language switcher loading | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | c3ed8a4 | feat​(animations): add scroll reveal functionality for visible elements | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 5dc1b84 | feat​(accordion): implement accordion setup with keyboard accessibility | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | aef3d7f | feat​(a11y): implement accessibility enhancements for navigation and language buttons | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | f1e073b | refactor​(main): streamline initialization flow and modularize setup functions | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 6c38d93 | refactor​(sections): update main.js script tag to use module type | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 6fa013b | refactor​(index): update main.js script tag to use module type | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 6ba25a9 | refactor​(constants): add documentation each const | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | ab7178d | refactor​(config): document partial loading functions in dom.js | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 1396a71 | refactor​(config): document translation functions in i18n.js | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 443c4ba | refactor​(config): document shared state object | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | b39770a | refactor​(ui): document accordion functions | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 1a10e1f | refactor​(ui): document scroll reveal animation functions | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 25a964a | refactor​(ui): document mobile menu and shared layout functions | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | c568f65 | refactor​(ui): document billing toggle and plan link functions | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 65e7763 | refactor​(utils): document accessibility helpers in a11y.js | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 30cbfbd | refactor​(main): document site entry point in main.js | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 68034f7 | refactor​(layout): remove unused language switcher fetch helper | load​Shared​Layout already downloads the partial with fetch​Partial, so the helper and the null guard in insert​Language​Switcher were never used. | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | fdeeef1 | docs​(readme): describe the modular scripts structure | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 1283fa6 | docs​(contributing): describe the modular scripts structure | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | 03336f4 | feat​(website): update team member images | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | develop | ee2574b | fix​(website): update team image references | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​refactor-ui | 1f13457 | style​(site): apply the Quali​Track style guide | - Colors of the guide become tokens (--primary-color, --secondary-color, --tertiary-color, --bg-light, --white and the functional colors), used everywhere instead of literal values - Type scale of… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​refactor-ui | e0fe74a | style​(site): size the hero like the one of the web app | The title reaches 56px, the text column 55rem and the image 52rem, the same sizes as the hero of the web app, and on a desktop the hero fills the first screen with its content centered in it. Phones… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​refactor-ui | ffb9e7a | style​(site): size the header like the one of the web app | The language switcher takes the size of the one of the web app, 40px high like every control of the header, and the name of the logo goes from 24px to 22px. The phone menu keeps its wider switcher. | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​refactor-ui | 1fca71f | fix​(site): fit the page to the smallest phones | The features video and accordion kept a minimum width of 40rem, which on a 320px phone is the whole screen plus the margins of the section, so the page was laid out at 333px and the phone shrank it… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​refactor-ui | 7512c07 | feat​(site): keep Get Started in the bar on phones | On phones the call to action sits in the header between the logo and the menu button, instead of only inside the menu, which keeps the links and the language switcher. Wider screens keep the header… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​refactor-ui | bd8ebfe | Revert "feat​(site): keep Get Started in the bar on phones" | This reverts commit 7512c07d38ee72a52e76a78170606c50c0437926. | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-website | feature/​refactor-ui | 6d38399 | style​(site): center Start now when the hero stacks | On phones and tablets the hero shows the text above the image, and its call to action now sits in the middle of the screen. On a desktop it stays under the text, on the left. | 12/11/2026 |
 
 **Web Application** ([IoTech-2620-8741/qualitrack-web-app](https://github.com/IoTech-2620-8741/qualitrack-web-app))
 
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|------------|--------|-----------|----------------|---------------------|---------------------|
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​restore-i18n-translations | ec55083 | fix​(i18n): restore English translation loading | — | 10/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | release/​v1.1.1 | ab3f045 | chore​(release): bump version to 1.1.1 | — | 10/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​shared | 8e83e43 | feat​(shared): add Peruvian RUC, DNI and phone validators | Add ruc​Validator (11 digits starting with 20), dni​Validator (8 digits, not all equal) and phone​Validator (Peruvian mobile or landline, with an optional +51 prefix). The phone validator rejects… | 18/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​shared | a9b8e9c | feat​(shared): add date, email, name and code validators | Add date validators (minimum 2020-01-01, maximum, not in the future, after a reference date and date range) that accept the text of a date input and the Date of a date picker. Add today​In​Lima so that… | 18/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​laboratory | 5a11264 | fix​(laboratory): validate RUC, phone, address and staff name | Laboratory registration and profile forms now validate the RUC (11 digits starting with 20), the phone (Peruvian mobile or landline, typed characters restricted, sent as +51...), the address (not… | 18/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​shared-digits-only | 7aec84e | feat​(shared): add digits-only input directive | Add the digits​Only directive, which removes any character that is not a digit while the user types or pastes. It is meant for identifiers made only of digits, such as the RUC and the DNI. | 18/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​profile | 9ef1fc8 | fix​(profile): validate DNI, phone, name and e-mail | The personal data form now validates the DNI (8 digits, not all equal, digits only while typing), the phone (Peruvian mobile or landline, typed characters restricted, sent as +51...), the full name… | 18/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​laboratory | 0324e53 | fix​(laboratory): restrict RUC input to digits | Apply the digits​Only directive to the RUC field of the laboratory registration form, so letters, spaces and symbols are removed while typing or pasting. | 18/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​iam | fd2dc73 | fix​(iam): validate e-mail and username in sign-up | The sign-up form now rejects a blank username, limits it to 80 characters like the API, and requires the domain of the e-mail to have a dot. Both values are sent without surrounding spaces, and a new… | 18/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch | 32af14e | fix​(batch): validate dates and quantity by unit | The batch form now checks the quantity against the unit (whole numbers in units, at most three decimals otherwise, up to 999999999), accepts start dates from 2020 to one year ahead, and requires the… | 18/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​inventory | 46048e1 | fix​(inventory): validate receipt dates and stock limits | The reception form of a raw material lot now accepts reception dates from 2020 to today and expiration dates after the reception date and up to ten years ahead; the expiration is checked again when… | 18/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​equipment | b6bc208 | fix​(equipment): validate BPM range and maintenance date | The BPM configuration form now requires the minimum to be lower than the maximum, as the API does, limits the values to plus or minus one million, and limits the parameter name to 100 characters and… | 18/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ra | 2e5da63 | fix​(ra): validate report and audit date ranges | The report generator and the audit log viewer now check the period chosen with the date range picker: dates from 2020 to today in Lima, and an end that is not before the start. Reports also cannot… | 18/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​tracking | 947eb06 | fix​(tracking): validate threshold ranges and history period | The threshold editor now rejects limits outside the physical range of each metric (temperature from -100 to 150 degrees, humidity from 0 to 100, luminosity up to 100000 lux, air quality up to 10000… | 18/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | release/​v1.2.0 | 74e5271 | feat​(docs): update README with comprehensive project overview, features, technologies, and testing instructions | — | 19/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | release/​v1.2.0 | 4cd7323 | feat​(changelog): add CHANGELOG.md to document project updates and version history | — | 19/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | release/​v1.2.0 | 1ec5f60 | feat​(license): add MIT License file to the project | — | 19/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | release/​v1.2.0 | b288b58 | chore​(changelog): remove outdated version entries and clean up CHANGELOG.md | — | 19/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | release/​v1.2.0 | 9e375dc | chore​(changelog): update CHANGELOG.md with version 1.1.1 details and fixes | — | 19/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | release/​v1.2.0 | 75743fc | feat​(changelog): add project context and licensing information to CHANGELOG.md | — | 19/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | release/​v1.3.0 | 27c5390 | docs: Update CHANGELOG for version 1.2.0 changes | — | 26/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​license | 55e7664 | docs​(license): update mit license to proprietary software license | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​dependencies | 579f641 | chore​(deps): update angular core and angular cli to version 22 | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​dependencies | 6627df4 | chore​(dependencies): update angular cdk and angular material to version 22.2.4 | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​dependencies | cf4fc9f | chore​(dependencies): update ngx-translate/​core and ngx-translate/​http-loader to version 18.1.0 | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​dependencies | 83612e2 | fix​(translate): fix translate module to translate pipe | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​dependencies | 6367f98 | fix​(i18n): provide the translate service in the component specs | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ci-unit-tests | 50cce4c | ci: run the unit tests in the pull request build | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-layer-rules | 6d372a6 | refactor​(batch): move the batch path to the domain | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-layer-rules | 697a0d7 | refactor​(batch): open a batch by its identifier through the batch store | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-layer-rules | 8b5ae3d | refactor​(laboratory): read the staff member through the laboratory store | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-layer-rules | 2e045d7 | refactor​(shared): read the status of failed requests outside the views | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-layer-rules | a85268f | refactor​(subscription): resolve the view after the payment through the IAM store | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-layer-rules | cd699a2 | docs​(diagrams): keep the views away from the infrastructure | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-import-check | aec6ced | chore​(architecture): add the check of the DDD import rules | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-import-check | 2c35598 | ci: check the DDD import rules in the pull request build | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-import-check | 7c3adc8 | docs​(readme): explain how to check the DDD import rules | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-layer-rules | e52ac60 | chore​(architecture): remove the exceptions fixed in the layers | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-layer-rules | 6555a52 | chore​(architecture): check one store per bounded context | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-layer-rules | e4b9ee2 | refactor​(shared): keep the request status out of an application layer in shared | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-one-store-per-context | f62568f | refactor​(batch): keep products and raw material consumption in the batch store | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-one-store-per-context | 31fd1ea | refactor​(ca): keep the notifications of the bell in the compliance store | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-one-store-per-context | e6beef5 | chore​(architecture): remove the exceptions fixed by one store per context | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-one-store-per-context | c08c27c | refactor​(shared): provide every store in root, as in the course example | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-one-store-per-context | c5e0778 | docs​(diagrams): one store per bounded context | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-shared-without-contexts | 6bf25d5 | refactor​(shared): make the environment selector a visual component without store | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-shared-without-contexts | 5c725e1 | chore​(architecture): remove the exceptions fixed in shared | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-shared-without-contexts | 8af1801 | refactor​(ra): show the operational overview from Reporting &amp; Audit with its own models | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-shared-without-contexts | ff1b19e | docs​(diagrams): shared without contexts and the overview in Reporting &amp; Audit | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-tracking-acl | 93485df | refactor​(tracking): read devices and environments through its own anti-corruption layer | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-tracking-acl | 125b3bc | chore​(architecture): remove the exceptions fixed in tracking | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-tracking-acl | 7f3120b | docs​(diagrams): tracking with its own devices and environments | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-equipment-acl | 7400aae | refactor​(batch): read the equipment of the batches through its own model | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-equipment-acl | 7ec6c32 | refactor​(ca): name the devices of the alerts through its own model | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-equipment-acl | c60122a | refactor​(ra): read the equipment of the reports through its own model | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-equipment-acl | c4e03e0 | refactor​(inventory): read the storage containers through its own model | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-equipment-acl | 50ec1f1 | chore​(architecture): remove the exceptions fixed by the equipment ACLs | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-equipment-acl | b157317 | docs​(diagrams): equipment read through the models of each context | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-laboratory-acl | aa3ab94 | refactor​(shared): remember the environment of each area in a shared preference | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-laboratory-acl | 3f50f55 | refactor​(batch): read environments, staff and raw material lots through its own models | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-laboratory-acl | 47d9e6e | refactor​(ca): read the environments of the alerts through its own model | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-laboratory-acl | b1d4efc | refactor​(equipment): read environments and technicians through its own models | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-laboratory-acl | b879daf | refactor​(inventory): read the environments through its own model | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-laboratory-acl | 9924793 | refactor​(ra): read the environments and batches of the reports through its own models | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-laboratory-acl | 92f30f3 | chore​(architecture): remove the exceptions fixed by the laboratory and inventory ACLs | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-laboratory-acl | 75e83e2 | refactor​(laboratory): manage the environments in the laboratory store | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-laboratory-acl | fbcd4d8 | docs​(diagrams): environments, staff and lots read through the models of each context | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-laboratory-acl | 631d7e5 | docs​(changelog): add the unreleased changes since version 1.2.0 | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-profile-user-badge | 554c997 | refactor​(profile): own the toolbar identity badge | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-profile-user-badge | 6984267 | chore​(architecture): remove IAM profile dependency exception | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-profile-user-badge | 5c53079 | refactor​(iam): keep only sign-out in the session section | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-profile-user-badge | c8fbcae | docs​(diagrams): show profile and session toolbar composition | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-profile-user-badge | e228854 | docs​(changelog): record toolbar context ownership | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-staff-detail-links | 172dd05 | refactor​(laboratory): link to staff profile and activity pages | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-staff-detail-links | 06bf385 | refactor​(profile): own the staff personal profile page | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-staff-detail-links | 5499763 | refactor​(ra): own staff activity with a laboratory ACL | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-staff-detail-links | db4b5e2 | docs​(diagrams): separate staff profile and audit activity | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-staff-detail-links | cfb6593 | chore​(architecture): remove staff detail context exceptions | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-staff-detail-links | a7e8d2d | docs​(changelog): record separate staff pages | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-notification-settings | c6240ab | refactor​(ca): own notification preferences in a dedicated page | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-notification-settings | 9fb057c | refactor​(profile): link notification preferences to Alerts | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-notification-settings | c231038 | docs​(diagrams): show notification settings ownership | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-notification-settings | 3cbe40e | chore​(architecture): remove Profile notification form exception | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-notification-settings | 8b6164c | docs​(changelog): record notification settings navigation | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-material-consumptions | 3aefd55 | chore​(architecture): remove Inventory consumption exceptions | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-material-consumptions | 5ed422b | refactor​(inventory): read material consumption through an owned ACL | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-material-consumptions | 2b25c53 | docs​(diagrams): document material consumption ACL | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-material-consumptions | 1487e80 | docs​(changelog): record Inventory consumption reads | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-legacy-raw-materials | 64fa21b | refactor​(inventory): preserve legacy material details with own models | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-legacy-raw-materials | 50692a5 | chore​(architecture): remove remaining cross-context exceptions | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-legacy-raw-materials | a2e69bd | refactor​(batch): link historical materials to inventory | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-legacy-raw-materials | c3e6631 | docs​(diagrams): document legacy inventory ownership | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-legacy-raw-materials | 905eb3d | docs​(changelog): record historical inventory migration in PR 49 | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-tactical-consistency | c5b68cf | refactor​(batch): construct participation and traceability domain models | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-tactical-consistency | 5cded20 | refactor​(inventory): construct previous balance entities | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-tactical-consistency | 6664264 | refactor​(ra): normalize report failures and preserve download messages | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-tactical-consistency | 1dbaf8b | refactor​(iam): normalize recovery errors without changing messages | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-tactical-consistency | 5ab761e | refactor​(tracking): separate telemetry endpoints and assemblers | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-tactical-consistency | 50facf8 | refactor​(routing): use context route file names consistently | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-tactical-consistency | 2426f44 | docs​(diagrams): align tactical models endpoints and route sources | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ddd-tactical-consistency | baf0c82 | docs​(changelog): record tactical consistency in PR 50 | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | chore/​local-architecture-tools | 3b24e1a | chore: keep architecture checks local and remove tracked tools | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | chore/​local-architecture-tools | dbce2ae | docs​(changelog): record local architecture tooling in PR 51 | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | release/​v1.3.0 | b8d4167 | chore​(release): prepare v1.3.0 | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​view-local-styles | 4c00751 | refactor​(batch): colocate styles with each view | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​view-local-styles | 5a8e74c | refactor​(ca): give alert views and tables their own styles | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​view-local-styles | 4d5b6a2 | refactor​(equipment): isolate list and device form styles | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​view-local-styles | 1845459 | refactor​(iam): keep each authentication view stylesheet local | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​view-local-styles | 9b5e033 | refactor​(inventory): colocate material view styles | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​view-local-styles | 6544f97 | refactor​(laboratory): isolate staff detail styles | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​view-local-styles | 5ee2e35 | refactor​(profile): keep profile page styles local | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​view-local-styles | 1a47c42 | refactor​(ra): separate reporting view styles | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​view-local-styles | cdb4e30 | refactor​(tracking): separate view and editor styles | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​view-local-styles | c1d3961 | docs: document view stylesheet ownership | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​view-local-styles | 7c9731b | refactor​(shared): colocate selector styles and retire page stylesheet | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​view-local-styles | 90695cc | docs​(changelog): record local view styles | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | release/​v2.0.0 | 382b557 | chore​(release): prepare v2.0.0 | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​semantic-routes | c4dbf9a | test​(routes): cover the redirects from view-named paths to semantic routes | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​semantic-routes | 7fd25ed | docs​(diagrams): show the semantic routes of each bounded context | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​semantic-routes | e5d19d0 | refactor​(equipment): use semantic routes for equipment views | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​semantic-routes | c63ced1 | refactor​(ca): use semantic routes for alerts | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​semantic-routes | c200cf5 | refactor​(iam): send laboratory setup to /​laboratories/​new | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​semantic-routes | ec0087e | refactor​(ra): use semantic routes for reports | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​semantic-routes | d38b097 | refactor​(shared): point the side menu to the semantic routes | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​semantic-routes | 9028e60 | refactor​(profile): link back to the semantic staff routes | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​semantic-routes | c0ab9b4 | refactor​(subscription): rename the billing route | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​semantic-routes | 5aaafb2 | refactor​(tracking): rename the monitoring route | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​semantic-routes | 7d66762 | refactor​(batch): use semantic routes for batches and products | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​semantic-routes | 3c0a4f3 | refactor​(inventory): link batches through their semantic route | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​semantic-routes | 1602f0f | refactor​(laboratory): use semantic routes for laboratory and staff | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​semantic-routes | 6b4629c | test​(routes): cover the redirects from view-named paths to semantic routes | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​semantic-routes | d83ab2e | docs​(changelog): record semantic routes | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | f7e4f72 | refactor​(forms): remove Toolbar component from various forms | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 15bb998 | refactor​(forms): remove Toolbar component from various forms | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 665e34e | refactor​(app): implement composition root for cross-context projection | - App component now acts as the Composition Root, injecting Iam​Store and cross-context components. - Layout receives state via inputs and projects components (Notification​Bell, User​Profile​Badge) via… | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 182512c | refactor​(shared): decouple Layout from cross-context dependencies | - Removed imports of Iam​Store, User​Profile​Badge, User​Session​Section, and Notification​Bell. - Replaced cross-context components with &lt;ng-content&gt; projection slots. - Added @Input​() signals for… | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 767ea1e | refactor​(shared): decouple Toolbar from Iam​Store | - Removed direct dependency on Iam​Store. - Introduced is​Signed​In @Input​() to receive authentication state. - Computed brand​Link and brand​Label based on the injected input. - Ensures shared context… | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 9342e3e | refactor​(shared): decouple Home from IAM using dynamic injection | - Removed direct dependency on Authentication​Section and Toolbar. - Implemented Ng​Component​Outlet to render dynamically injected components. - Added documentation explaining the architectural… | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | ddf6aa3 | refactor​(shared): decouple Page​Not​Found from Iam​Store and Toolbar | - Removed direct dependency on Iam​Store and the Toolbar component. - Introduced is​Signed​In @Input​() to receive authentication state. - Updated template conditionals to use the new input binding. -… | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 5a57b61 | fix​(app): configure routing for decoupled shared context | - Injected Authentication​Section into Home via route data and Ng​Component​Outlet. - Removed Layout component from private routes to avoid duplicated layouts. - Updated Dashboard route configuration. -… | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | ec1a7c6 | feat​(shared): add reusable empty state and error banner components | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 5d72e3d | feat​(audit-log): add audit log table component with styling and loading state | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | c4c7996 | feat​(audit-log): add audit log filters component with styling and validation | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 83bd7ff | feat​(audit-log): add utility functions for audit log filtering and formatting | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor_​components_​audit_​low_​viewer | 7ba1576 | feat​(audit-log): enhance audit log viewer with new components and reactive language support | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | b1c5012 | feat​(audit-log): enhance audit log viewer with new components and reactive state management | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | e96acf8 | refactor​(audit-log): refactor audit log viewer to use reusable components for filters and error handling | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | cd20b73 | docs​(audit-log): improve code readability and documentation in audit log components | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 38c9c92 | refactor​(audit-log): extract filters, table and pure utils | - Created Audit​Log​Filters and Audit​Log​Table sub-components - Moved logic to audit-log-viewer.utils.ts - Added shared Empty​State and Error​Banner components - Fixed datepicker UX by making inputs… | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 989a559 | fix​(env): restore production api url in environment.ts | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | b325fad | feat​(dashboard-alerts): add alerts component with styles and functionality | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | aeba5ff | feat​(dashboard-batches): add batches component with layout and functionality | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | c6561e8 | feat​(dashboard-state): add dashboard state component with styles and functionality | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 79851bf | feat​(dashboard-subscription): add subscription section with plan details and billing information | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 4e806fd | feat​(dashboard-summary): add summary component with grid layout and card details | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 933a3de | feat​(dashboard-telemetry): add telemetry section with latest readings and chart display | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 2ca7f71 | feat​(dashboard-state): add loading and error states with retry functionality | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | f326191 | refactor​(dashboard): refactor imports to include new dashboard components | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 43f6f46 | refactor​(dashboard): replace inline components with dedicated dashboard components | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 3ca6cda | style​(dashboard-batches): enhance styles for section headers and headings | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | f4108f9 | style​(dashboard-telemetry): enhance styles for telemetry section and add responsive design | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 5eab877 | refactor​(dashboard-telemetry): enhance telemetry section with equipment filters and improved loading states | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | d2a0004 | refactor​(dashboard-state): rename files and enhance component documentation | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 3d91d20 | refactor​(dashboard): update import paths and enhance component documentation | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 2c1d144 | feat​(report-batch-card): add report batch card component with form and styling | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | e307875 | feat​(report-compliance-card): add compliance report card component with form and styling | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 31c562d | feat​(report-equipment-card): add equipment report card component with form and styling | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 29a8b52 | feat​(report-inventory-card): add inventory report card component with form and styling | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 9e8aede | refactor​(report-generator): integrate report card components and enhance report generation methods | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 698b38a | refactor​(report-generator): replace report card sections with reusable components | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | a6edba8 | refactor​(report-generator): remove unused card components and spec | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 8b807cc | refactor​(report-generator): enhance localization with additional fields and subtitles | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | e2cb2c3 | feat​(report-generator): add preview functionality for report generation | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | a69ae05 | feat​(report-generator): add report preview dialog component | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 33f8bc0 | refactor​(i18n): add localization for batch and equipment selection | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | cbb818a | feat​(report-generator): add report parameters form with localization and validation | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 6f12444 | feat​(report-generator): add report type selector component with styling and localization | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | c832ccc | feat​(report-generator): implement report generator state management with signals | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 5d3bc52 | refactor​(i18n): add generating message for report in English and Spanish | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | f532e02 | refactor​(report-generator): simplify component structure and remove unused code | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 0a1b7a4 | refactor​(report-generator): update layout and improve styling for report generation components | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-subscription-view | 92abb83 | feat​(i18n): add plans view keys for period toggle, features and banners. | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-subscription-view | c18b7d5 | style​(subscription): improve plan views. | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-subscription-view | 53dad22 | refactor​(subscription): redesign plans view with period toggle. | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 9c0b4de | docs​(report-generator): add documentation and improve structure for report generation | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-subscription-view | b1857a3 | refactor​(subscription): fix design colors. | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​shared-layout-regressions | 17adf3b | fix​(shared): lead the logo to the home page before signing in | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​shared-layout-regressions | d015e56 | fix​(shared): show a single toolbar on the about page and remove the unused toolbar | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​shared-layout-regressions | 0a286c9 | fix​(shared): open the dashboard from the not-found page when signed in | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​shared-layout-regressions | ee0f398 | refactor​(app): declare the dashboard route once and comment the routes in English | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​shared-layout-regressions | b7f7b3a | fix​(app): create the notification bell and user widgets only when they apply | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​shared-layout-regressions | ac5853e | docs​(diagrams): layout composed by the root component, without the toolbar | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​shared-layout-regressions | 46185d7 | docs​(changelog): restore Unreleased and record the changes since version 2.0.0 | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​shared-layout-regressions | 9f8b8f1 | docs​(changelog): record the icon-only view actions | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​shared-layout-regressions | ea065f7 | fix​(ca): show only the eye icon on the view detail and report preview actions | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​report-preview | 52061e7 | fix​(ra): generate a previewed report only once | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​report-preview | 953b44b | fix​(ra): download from the preview dialog and release its file | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​report-preview | 3704431 | fix​(i18n): add the close label of the dialogs and banners | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​report-preview | acf717e | fix​(ra): show again that the report was downloaded | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​report-preview | f348f8a | docs​(diagrams): report generator components and report preview | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​report-preview | d0a499b | docs​(changelog): record the report preview fix | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​audit-log-filters-import | caa54eb | fix​(ra): remove the unused icon button import of the audit log filters | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 8ee210e | feat​(i18n): add new translations for environmental summary states and hints | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 7a38e28 | feat​(environmental-profile): add Overview​Environmental​Profile entity with threshold configurations | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 92756ee | feat​(operational-overview): add conversion method for environmental profile resource | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | cccf808 | feat​(operational-overview): add environmental profile resource and threshold configuration interfaces | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 4b930d1 | feat​(operational-overview): add methods to fetch environmental profiles and container monitor profiles | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 325e181 | feat​(overview-environmental-profile): add methods to retrieve environmental and container monitor profiles | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | eae969e | feat​(kpi-dashboard): add environmental profile loading and management methods | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | c69caa8 | feat​(kpi-records): implement KPI records component with grid layout and navigation | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 1c878f2 | feat​(kpi-table): add environmental KPI table component with styling and data display | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 86d1287 | refactor​(kpi-dashboard): improve layout and styling of KPI dashboard components | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 451bfbe | feat​(kpi-summary-cards): add KPI summary cards component with grid layout and state management | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-subscription-view | 5bf2d80 | refactor​(subscription): improve payment success view. | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-subscription-view | d65c9a7 | refactor​(subscription): improve payment cancel view. | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-subscription-view | 6c7bdd8 | refactor​(subscription): improve checkout view. | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-subscription-view | e64858e | refactor​(subscription): improve billing sumary view. | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | afcd125 | refactor​(layout): group the sidebar navigation by importance | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | f6bdbc4 | fix​(routes): delete double render of the layout in the bounded contexts | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 6d86f71 | feat​(package): add chartjs-plugin-annotation dependency | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 61957a8 | feat​(deviation-chart): add deviation chart component with styling and legend | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 05f3943 | feat​(deviation-events): add deviation events component with styling and template | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 80c38e4 | feat​(deviation-kpi-cards): add KPI cards component with grid layout and data bindings | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 5af32a7 | feat​(deviation-detail-page): add detail page with layout, filters, and event listing | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | a1eafb0 | feat​(deviation-table): add deviation table component with styling and structure | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 545b574 | feat​(deviation-trend-chart): enhance trend chart with KPI cards, improved error handling, and empty state design | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 4c45251 | feat​(deviation-detail-page): add route for deviation detail page | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 8439d0a | feat​(deviation-chart): update chart legends and tooltips for localization | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 5108a6d | feat​(deviation-localization): add localization strings for deviation details and charts in English and Spanish | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 6057746 | feat​(deviation-chart): implement Deviation​Chart​Factory for chart data and options creation | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | f80aa6a | refactor​(deviation-trend-chart): simplify chart data and options creation using Deviation​Chart​Factory | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 344ac90 | docs​(changelog): add the alerts design foundation | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 204805d | feat​(ca): add alerts page header with tabs | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 59e528d | feat​(ca): add the chips of alert severity and status | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 8ca59ba | feat​(shared): add undo toast with progress bar | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 044aefb | feat​(shared): add all-environments option to environment selector | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | fe0e124 | feat​(shared): add relative time pipe and a single date format | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 82d42b8 | feat​(shared): add reusable status chip | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 5cb6c0c | feat​(shared): add design tokens | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 013f24c | refactor​(deviation-events): enhance layout and structure of events card for better readability | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | c6a42d2 | refactor​(deviation-detail-page): improve layout and functionality of filters and loading state | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 4b49d45 | refactor​(deviation-trend-chart): enhance responsiveness and layout of trend chart components | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | ec04714 | refactor​(deviation-chart): enhance chart configuration separation and improve documentation | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 42b3596 | refactor​(kpi-dashboard): adjust empty state padding for improved visual balance | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 7f8bdda | chore: sync package-lock.json with new chartjs-plugin-annotation dependency | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 8d1b7a4 | feat​(ca): defer attention registration to allow undo | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 4acf55f | feat​(ca): refresh active alerts every 30 seconds | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 40d456b | feat​(ca): redesign active alerts as a prioritized inbox | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 7274c6b | feat​(ca): add alert card with lifecycle | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 2430feb | feat​(ca): load open alerts across all environments | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 5dcd5d2 | fix​(shared): show the whole environment name in the selector | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 6c782bf | feat​(shared): add title and actions to empty state | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 9e0763e | feat​(shared): add stat filter card and action banner | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | e25c60d | feat​(ca): add alert priority order and threshold excess | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 13e6f64 | docs​(changelog): add the active alerts inbox | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 34fa0bd | test​(ca): add browser checks of the active alerts | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | dc1a1f1 | feat​(ca): add corrective action templates | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | b906096 | feat​(ca): add alert timeline | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | d4128fe | feat​(ca): add keyboard shortcuts to the inbox | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 1b7d681 | feat​(ca): resolve staff names of the alert lifecycle | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 8a48103 | feat​(shared): add side panel | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 1c27cf5 | feat​(shared): add elapsed time pipe | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 074614a | refactor​(ca): remove the life cycle bar from the alert card | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | f3e0338 | docs​(changelog): add the alert detail panel | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 43556b6 | test​(ca): add browser checks of the detail panel | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 9441b97 | refactor​(ca): replace deviation detail view with the panel | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​pre-release-review | 8a8cff8 | fix​(ra): read each environmental profile once and for the right device | The profile of a container monitor could be read from its environment when the equipment answered late, and the same profile was requested once per variable. It now waits for the equipment and asks… | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​pre-release-review | 468040b | fix​(ra): draw only the configured limits in the deviation chart | A device without a profile showed invented limits (0-10-20) as if they were real, the axis started at zero so readings below it were lost, and the lower limits were not drawn. The chart now follows… | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​pre-release-review | 31c4c84 | fix​(ra): name the device and the state in the environmental summary | The cards read a device name that does not exist, so two monitors could not be told apart, and the range labels were written in Spanish. | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​pre-release-review | 3f5ab15 | fix​(ra): remove the fixed goal of the time in range | The card always said the 95% goal was met, whatever the value, and that goal is not defined in the report. Without enough readings the time in range is shown as unknown instead of 0%. | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​pre-release-review | 765ee0a | fix​(ra): tell the limit each deviation event crossed | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​pre-release-review | a3ab5a6 | fix​(layout): keep the side menu option active with query parameters | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​pre-release-review | 21cd262 | fix​(ra): fit the report generator and the period filters on phones | The generator overflowed by 276 px at 390 px. The message of an invalid period was a missing translation key; it now tells what is wrong with the period. | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​pre-release-review | 9c7eb12 | style​(ra): write the comments in English | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​pre-release-review | 94baad0 | docs​(diagrams): alerts inbox, deviation views and shared components after v2.0.0 | Removes Deviation​Detail and the retired operations-page.css from the Compliance &amp; Alerts diagram. Validated with Plant​UML. | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​pre-release-review | 5f59936 | docs​(changelog): record the changes since v2.0.0 | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​pre-release-review | 389b9bc | docs​(changelog): place the pull request numbers before the period | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​pre-release-review | fe0e07c | fix​(ra): take the limit of each deviation event from the device profile | The platform does not keep the limits with the readings, so the events showed an empty limit against real data. | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​pre-release-review | d9113d2 | docs​(diagrams): limit of the deviation events and the alert history without the page header | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​pre-release-review | ad3e640 | fix​(ra): show the worst state of the period in the summary cards | The state only looked at the average, so a refrigerator read Normal after reaching 13.9 °C. It now compares the minimum and the maximum with the limits, as the platform evaluates a reading. | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​pre-release-review | 34e4073 | fix​(ra): follow the chosen language in the dates of the summary and the events | They always used the US format, so in Spanish 10/​5/​26 read as May 10. | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​pre-release-review | 46e44c7 | docs: record the worst state and the dates of the summary | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | release/​v2.1.0 | 1a22e1c | chore​(release): prepare v2.1.0 | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​session-and-pending | 77f2d30 | fix​(iam): send whoever has a session from the visitor pages to the dashboard | A session survives closing the browser, so the home page showed the signed-in user next to the sign-in button. The home page, sign-in, sign-up and password recovery are now only for visitors. | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​session-and-pending | de4c83e | feat​(ca): show the alert history under the page header of the alerts | The history had its own heading, while the active alerts have tabs. It also reads the environment of the address, which the tabs and the empty state of the inbox already send. | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​session-and-pending | 8a6c7ae | fix​(ca): read the alerts of a new environment as soon as it appears | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​session-and-pending | f40d380 | fix: read the environments every time a view opens | Each context kept the first list it read, so an environment created in Laboratory did not appear until the page was reloaded. The views that also show dates change in the next commit. | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​session-and-pending | e8b6fac | fix​(subscription): tell how to switch plans | The plans sent the person to Billing to change plan, and Billing back to the plans, where the buttons are disabled because the platform cannot switch an active subscription. The texts now tell the… | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​session-and-pending | 58d602c | refactor​(ra): type the components of the dashboard | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​session-and-pending | 18a5873 | fix: show every date in one format that follows the language | Most views used the US format and the time zone of the browser, so in Spanish 10/​5/​26 read as May 10. They now use date​Time and the new date​Only pipe, which keeps a calendar day as it is. These views… | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​session-and-pending | a92d7a7 | fix​(ra): fit the period buttons of the deviation indicators on small phones | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​session-and-pending | 6c7831a | test​(e2e): bring the browser checks up to the current screens | Dashboard, inventory, report generator, onboarding, Stripe catalog and responsive were written for screens and endpoints that no longer exist. The checks that create accounts through the real API… | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​session-and-pending | abee999 | docs: visitor guard, day pipe, alert history and browser checks | The README no longer describes a system test that is not in the repository. | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​session-and-pending | 9366d68 | docs​(changelog): record the session on the visitor pages and the pending work | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | release/​v2.2.0 | c0db82a | chore​(release): prepare v2.2.0 | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ca | 211e696 | feat​(ca): filter the alert history by period, chips and search | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ca | 0b754b1 | fix​(ca): count the custom period of the alert history in the days of Peru | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ca | a7a100d | fix​(ca): count the custom period of the alert history in the days of Peru | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ca | d7adf19 | feat​(ca): measure the attention and resolution times of the alert history | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ca | 2ab6cfe | feat​(ca): count the alerts of the history by week and severity | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ca | 9f25c55 | feat​(ca): read the alert history of one or every environment | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ca | cdd8cc8 | style​(ca): keep the format of the store and record the pull request | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ca | 261a40b | feat​(ca): read the alert history of one or every environment | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ca | d9f2c96 | feat​(ca): keep the filter of the alert history in the address | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ca | 10228c9 | feat​(shared): filter chip that tells how many results it leaves | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ca | 8b5185d | feat​(ca): filter the alert history with chips, pages and empty states | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ca | 1faac0b | feat​(ca): open the detail of an alert over the alert history | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ca | 69ee39c | feat​(ca): show the metrics and the weekly trend of the alert history | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ca | 3b9886f | feat​(ca): export the alert history to the report generator | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | e20a0dd | refactor​(tracking): standardize visual styling and improve design consistency in the telemetry history view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 3d99513 | refactor​(tracking): standardize visual styling and improve design consistency in the environmental profiles view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 016c865 | refactor​(tracking): standardize visual styling and improve design consistency in the environmental monitoring view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | bae829c | refactor​(tracking): standardize visual styling and improve design consistency in the threshold editor component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 8f0814a | refactor​(tracking): standardize visual styling and improve design consistency in the actuation rules editor component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 46cd5a1 | refactor​(shared): standardize visual styling and improve design consistency in the about view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 2113969 | refactor​(shared): standardize visual styling and improve design consistency in the home view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 3860861 | refactor​(shared): standardize visual styling and improve design consistency in the page not found view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 65c3f2b | refactor​(shared): standardize visual styling and improve design consistency in the action banner component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 2ec2b98 | refactor​(shared): standardize visual styling and improve design consistency in the dashboard state component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 3a1f853 | refactor​(shared): standardize visual styling and improve design consistency in the empty state component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | b65d58f | refactor​(shared): standardize visual styling and improve design consistency in the environment selector component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 8dd5721 | refactor​(shared): standardize visual styling and improve design consistency in the error banner component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 9cf0d70 | refactor​(shared): standardize visual styling and improve design consistency in the filter chip component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 419c1f6 | refactor​(shared): standardize visual styling and improve design consistency in the language switcher component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | f710bc6 | refactor​(shared): standardize visual styling and improve design consistency in the layout component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 4fec610 | refactor​(shared): standardize visual styling and improve design consistency in the side panel component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | ea0e0de | refactor​(shared): standardize visual styling and improve design consistency in the stat filter card component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | a6171fe | refactor​(shared): standardize visual styling and improve design consistency in the status chip component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 42e1fda | refactor​(shared): standardize visual styling and improve design consistency in the undo toast component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | b85b1b3 | refactor​(ra): standardize visual styling and improve design consistency in the audit log filters component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | c3b76e5 | refactor​(ra): standardize visual styling and improve design consistency in the audit log table component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 59fdc49 | refactor​(ra): standardize visual styling and improve design consistency in the dashboard alerts component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 6e4fdd9 | refactor​(ra): standardize visual styling and improve design consistency in the dashboard batches component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | ab24693 | refactor​(ra): standardize visual styling and improve design consistency in the dashboard subscription component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 9c5c986 | refactor​(ra): standardize visual styling and improve design consistency in the dashboard summary component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | f4ae4d8 | refactor​(ra): standardize visual styling and improve design consistency in the dashboard telemetry component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | bfc91c4 | refactor​(ra): standardize visual styling and improve design consistency in the deviation chart component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | d928492 | refactor​(ra): standardize visual styling and improve design consistency in the deviation events component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | a194b13 | refactor​(ra): standardize visual styling and improve design consistency in the deviation kpi cards component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 284a932 | refactor​(ra): standardize visual styling and improve design consistency in the deviation table component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | a0db915 | refactor​(ra): standardize visual styling and improve design consistency in the kpi records component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | a7ff76f | refactor​(ra): standardize visual styling and improve design consistency in the kpi summary cards component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 0445632 | refactor​(ra): standardize visual styling and improve design consistency in the kpi table component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 5d56708 | refactor​(ra): standardize visual styling and improve design consistency in the report parms form component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 6991470 | refactor​(ra): standardize visual styling and improve design consistency in the report preview dialog component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 0da49fe | refactor​(ra): standardize visual styling and improve design consistency in the report type selector component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | a396fa4 | refactor​(ra): standardize visual styling and improve design consistency in the audit log viewer view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | b1a5a50 | refactor​(ra): standardize visual styling and improve design consistency in the dashboard view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 5a107f1 | refactor​(ra): standardize visual styling and improve design consistency in the deviation detail page view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | d34aa7a | refactor​(ra): standardize visual styling and improve design consistency in the deviation trend chart view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 99408d4 | refactor​(ra): standardize visual styling and improve design consistency in the kpi dashboard view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 3ebdf20 | refactor​(ra): standardize visual styling and improve design consistency in the report generator view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | e3c5085 | refactor​(ra): standardize visual styling and improve design consistency in the staff activity view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | dec4071 | refactor​(profile): standardize visual styling and improve design consistency in the profile page view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 308842d | refactor​(profile): standardize visual styling and improve design consistency in the staff profile view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 73e29a6 | refactor​(profile): standardize visual styling and improve design consistency in the user profile badge component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | c5491be | refactor​(laboratory): standardize visual styling and improve design consistency in the environment form view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 3ae665a | refactor​(laboratory): standardize visual styling and improve design consistency in the environment list view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 7874f48 | refactor​(laboratory): standardize visual styling and improve design consistency in the lab form view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | bfe1e7d | refactor​(laboratory): standardize visual styling and improve design consistency in the lab profile view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 0aa11bc | refactor​(laboratory): standardize visual styling and improve design consistency in the staff detail view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 2eb7053 | refactor​(laboratory): standardize visual styling and improve design consistency in the staff form view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | cf6f47a | refactor​(laboratory): standardize visual styling and improve design consistency in the staff list view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 3747bef | refactor​(inventory): standardize visual styling and improve design consistency in the inventory catalogue view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 8a8156b | refactor​(inventory): standardize visual styling and improve design consistency in the inventory detail view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 250cd76 | refactor​(inventory): standardize visual styling and improve design consistency in the inventory home view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | a8e070c | refactor​(inventory): standardize visual styling and improve design consistency in the legacy material detail view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 18324a1 | refactor​(inventory): standardize visual styling and improve design consistency in the register material view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 53597c4 | refactor​(iam): standardize visual styling and improve design consistency in the change password form view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | dcf489c | refactor​(iam): standardize visual styling and improve design consistency in the onboarding view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | ed2d68d | refactor​(iam): standardize visual styling and improve design consistency in the password recovery view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 0cae9d1 | refactor​(iam): standardize visual styling and improve design consistency in the sign in form view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | e96dd4b | refactor​(iam): standardize visual styling and improve design consistency in the sign up form view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | f75c01d | refactor​(iam): standardize visual styling and improve design consistency in the authentication section component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 8e0f473 | refactor​(iam): standardize visual styling and improve design consistency in the user session section component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | c8ca29f | refactor​(equipment): standardize visual styling and improve design consistency in the bpm config view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 7308618 | refactor​(equipment): standardize visual styling and improve design consistency in the device form view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | b4bb7aa | refactor​(equipment): standardize visual styling and improve design consistency in the equipment detail view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 99d3eda | refactor​(equipment): standardize visual styling and improve design consistency in the equipment form view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | d2087af | refactor​(equipment): standardize visual styling and improve design consistency in the equipment list view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 6261856 | refactor​(equipment): standardize visual styling and improve design consistency in the maintenance form view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 9a2aaf9 | refactor​(ca): standardize visual styling and improve design consistency in the notification settings view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 8ed5dc3 | refactor​(ca): standardize visual styling and improve design consistency in the alert history view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 7c9e079 | refactor​(ca): standardize visual styling and improve design consistency in the alert dashboard view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 058481a | refactor​(ca): standardize visual styling and improve design consistency in the alert detail panel view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 50d58fe | refactor​(ca): standardize visual styling and improve design consistency in the alert card component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | e92c3d3 | refactor​(ca): standardize visual styling and improve design consistency in the alert history cards component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | b55a14f | refactor​(ca): standardize visual styling and improve design consistency in the alert resolution form component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 64b6206 | refactor​(ca): standardize visual styling and improve design consistency in the alert table component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | e7e0b2e | refactor​(ca): standardize visual styling and improve design consistency in the alert timeline component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | b60468d | refactor​(ca): standardize visual styling and improve design consistency in the alert week chart component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 12ed722 | refactor​(ca): standardize visual styling and improve design consistency in the alert page header component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 4f5c361 | refactor​(ca): standardize visual styling and improve design consistency in the notification bell component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 8b9c18e | refactor​(ca): standardize visual styling and improve design consistency in the notification preferences component. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 37f6262 | refactor​(batch): standardize visual styling and improve design consistency in the batch detail view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 3a619b3 | refactor​(batch): standardize visual styling and improve design consistency in the batch form view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | c83b3c0 | refactor​(batch): standardize visual styling and improve design consistency in the batch home view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 1109130 | refactor​(batch): standardize visual styling and improve design consistency in the batch list view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 6a2da94 | refactor​(batch): standardize visual styling and improve design consistency in the batch participants view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 46ece44 | refactor​(batch): standardize visual styling and improve design consistency in the batch redirect view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | dfedb84 | refactor​(batch): standardize visual styling and improve design consistency in the batch reject form view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 2c7cef4 | refactor​(batch): standardize visual styling and improve design consistency in the batch release form view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | f3a7a51 | refactor​(batch): standardize visual styling and improve design consistency in the batch storage view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 4906926 | refactor​(batch): standardize visual styling and improve design consistency in the batch traceability view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | fd4464e | refactor​(batch): standardize visual styling and improve design consistency in the product catalog view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 66c65ce | refactor​(batch): standardize visual styling and improve design consistency in the product detail view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | d44c8a8 | refactor​(batch): standardize visual styling and improve design consistency in the product form view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | b0fb150 | refactor​(batch): standardize visual styling and improve design consistency in the raw material usage view. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | ed7dfd3 | refactor​(assets): adjust logo. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | f22de40 | feat​(inventory): add inventory summary component | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | 0968f00 | feat​(inventory): add raw material batches table component | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | 6337924 | feat​(inventory): add raw material form component | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | adc8f21 | feat​(inventory): add receive batch form component | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | 196c016 | refactor​(inventory): refactor inventory detail view to use components | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | 2e30d7e | feat​(inventory): add batch review form component | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | 8b1ec11 | feat​(inventory): add container assignment form component | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | d19f75c | refactor​(inventory): refactor inventory detail view to use container assignment form component | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | 227eecf | feat​(inventory): add inventory movements table component | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | 5d065ab | refactor​(inventory): refactor inventory detail view to use inventory movements table component | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | bc4e570 | feat​(inventory): add legacy material history table component | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | 3baa0ba | refactor​(inventory): refactor inventory detail view to use legacy material history table component | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | 404a5cf | refactor​(inventory): remove unused styles for inventory detail view | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | d24242f | test: update the specs of the views that gained a link and an icon | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | fae9faf | fix​(laboratory): keep the actions of the staff and environment lists to quality managers | The plain tables stopped reading displayed​Columns, so operators and auditors saw actions the platform refuses to them. The empty message now spreads over the visible columns and the unused Material… | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | f8d0790 | fix​(ra): remove the cut rule at the end of the subscription section styles | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 8720bfa | fix​(shared): keep the application in Roboto | Rubik is never loaded, so the text fell back to the font of the system next to the Roboto of the Material controls. | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | b4b7dad | fix​(laboratory): project the icon of the register buttons in their content | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 7a71382 | refactor: remove what the breadcrumbs and the language check mark left unused | Also documents the refresh action of the product catalog like the rest of its class. | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | b8f5875 | refactor​(style): use the design tokens for the colors of the component styles | The redesign wrote the colors by hand and left the tokens unused. Each color with a token goes back to it, and hover, soft, heading and subtle colors get their own, so a brand color changes in one… | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 4d79356 | refactor​(style): remove the rules and custom properties that nothing uses | The --mdc-* and renamed --mat-* properties are not read by this version of Angular Material, and the removed rules need elements their own component does not have. They kept the largest stylesheets… | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 6cc7872 | fix​(ca): keep the alerts readable on phones and tablets | The title no longer splits a word at 375 px, the sort options wrap instead of hiding the last one, the export link fits a small phone and the alert table scrolls inside its own area on every width… | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 3eb2e8b | docs​(diagrams): remove the compact signal of the language switcher | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | f3a1cf0 | fix: keep the words of the product, staff and raw material tables whole on a tablet | The actions of the product catalog wrap, the staff table keeps its names readable and its last columns reachable, and the tables of a raw material scroll inside their tab. | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 025ff6c | docs​(changelog): record the redesign of the views and its review | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 2c2fb91 | docs​(changelog): name the batch context as the rest of the file | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​page-titles | 5d1c0c2 | docs​(diagrams): add the title strategy to the shared layer | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​page-titles | fdf9b1f | fix​(shared): keep the browser tab on the title of the current page | Angular only updates the title when a route defines one, and most routes did not, so the tab kept the title of the previous page. Every page route now has a title that is a translation key.… | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​page-titles | 40b9b24 | docs​(changelog): record the titles of the browser tab | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | 5fcbe5c | fix: give room to the long texts that real data showed | Long names in the alert history, the container action of a raw material and the metric of a threshold split a word. The alert table now also fits a 1366 px laptop next to the side menu. | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​alert-view-eye | 401770a | fix​(ca): show only the eye on the view action of the alert history | The action went back to the word View with the filters of the history. An eye action shows the icon alone, with its words as label and tooltip. | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​alert-view-eye | f590c72 | docs​(changelog): record the eye of the alert history | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​alert-view-eye | 50699f2 | refactor​(ca): remove the styles of the old text action of the alert table | The eye keeps its visible focus. | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | c7d9988 | feat​(inventory): add inventory material table component | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | 16f3c91 | refactor​(inventory): refactor inventory catalogue view to use inventory material table component | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | 2d87892 | feat​(inventory): add near expiry table component | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | a0d8e85 | refactor​(inventory): refactor inventory catalogue view to use near expiry table component | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | 0da9381 | feat​(inventory): add inventory filters component | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | d802717 | refactor​(inventory): refactor inventory catalogue view to use inventory filters component | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | 2eebee0 | feat​(inventory): add legacy import panel component | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | dd63b59 | refactor​(inventory): integrate legacy import panel component into inventory catalogue view | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | 0eec596 | feat​(inventory): add legacy material summary component | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | db3e628 | feat​(legacy-material): integrate legacy material summary component into legacy material detail view | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | b185333 | feat​(consumption-history): add legacy consumption history table component | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | cf07f1a | feat​(inventory): integrate legacy consumption history table component into legacy material detail view | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | 707844a | fix​(inventory): preserve success notification after data refresh | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | 7a35422 | fix​(inventory): clear state when switching environments | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | 5b2a435 | refactor​(inventory): organize inventory api endpoint dependencies | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | 8636425 | refactor​(inventory): remove unused container name method | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | d66d95c | feat​(subscription): preselect the plan chosen on the website | A guard remembers the plan and billing cycle of the link. The plans view sends an account without a subscription straight to the checkout of that plan, leaving the checkout drops the choice, and… | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 546051d | fix​(subscription): explain the conflict of an account that already has a subscription | A 409 on the checkout showed a generic English message. It now shows the already-active notice, translated, and keeps the chosen plan. | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 025b50a | docs​(changelog): record the plan preselection | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 6b6e259 | docs​(changelog): record the sign-up plan link | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 8c94bd8 | feat​(iam): keep the plan chosen on the website through sign-up | The sign-up route runs plan​Preselection​Guard before visitor​Guard, so the plan of the link is remembered even when someone who is already signed in is sent to the dashboard. | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | f698e42 | docs​(changelog): record the plan switch notice | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 463efcd | feat​(ra): inform about switching plans from the dashboard | An account with an active subscription that arrives with another plan chosen on the website sees a notice with both plans, the end of the paid period and a link to Billing. It appears once and… | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | b6c7090 | fix​(inventory): bring the redesign to the components of the views | The components came from before the redesign, and the styles of a view do not reach its components, so they would have lost the cards, the status labels and the tablet fix. Each one now has the… | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | 65f7d51 | docs​(diagrams): add the components of the inventory views | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | b0ccf30 | test​(inventory): cover the components of the views and the corrections of the store | Also removes legacy​Detail​Batch​Label, unused since the history table names its batches, and declares every endpoint of Inventory​Api before its constructor. | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | 1bbbee3 | docs​(changelog): record the components of the inventory views | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​context-boundaries | 78baa4f | fix​(inventory): stay where you went when leaving the inventory home while it loads | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​context-boundaries | 5975c46 | refactor: compose subscription with iam and ra from the root routes | The sign-up route and the dashboard imported code of subscription. The root routes now run the guard of the plan link before the pages of iam, and hand the dashboard the notice to render, as they… | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​context-boundaries | 3b7fee4 | fix​(batch): stay where you went when leaving a batch redirect while it loads | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​context-boundaries | 29d4dc7 | docs​(changelog): record the composition of subscription and the redirects | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​alert-history-dates | f914bf9 | fix​(ca): do not draw centuries of weeks in the alert history, and ignore days that do not exist | The browser reports a date with every digit of its year, so typing one asked the weekly chart for 95,178 weeks. A period longer than about two years now starts at its oldest alert. An impossible day… | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​alert-history-dates | 0aa37fd | fix​(ca): say that the report does not follow the chips of the alert history | A date being typed no longer leaves a step per digit in the browser history, and the size of a page in the text under the table comes from its constant. | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​alert-history-dates | 6848dd7 | docs​(ca): add the alert history as it is to the diagrams | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​alert-history-dates | 9fee1d4 | docs​(changelog): record the fixes of the alert history | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch-redesign | 09da53a | feat​(batch): keep the staff names in the batch store | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch-redesign | 4770b89 | feat​(batch): add status chips, list filters and timeline builder | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch-redesign | 6172bed | feat​(batch): add indicator, filter, table, status and timeline components | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch-redesign | 1d20f47 | feat​(batch): redesign the batch list with indicators, filters, sorting and pagination | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch-redesign | 768c0a0 | feat​(batch): redesign the batch detail heading and summary | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch-redesign | fa0ad4f | feat​(batch): show the decision, timeline and record tables in the traceability | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch-redesign | fc0da99 | feat​(i18n): add the texts of the batch redesign | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​inventory | 31b3a02 | fix​(inventory): normalize raw material search | — | 06/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​inventory | df28bcf | fix​(inventory): prevent stale filter responses | — | 06/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​inventory | 1cb4460 | fix​(inventory): fix refresh active catalogue filters | — | 06/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​inventory | d80a7a8 | feat​(inventory): add inventory catalogue stats component | — | 06/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​inventory | ca4b610 | refactor​(inventory): integrate stats component into inventory catalogue view | — | 06/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​inventory | c878b2f | refactor​(inventory): extract home page template | — | 06/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch-redesign | 688ad2f | feat​(batch): filter the batch list by text, environment and a start date range | — | 07/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​batch-redesign | 257fd1c | style​(batch): widen the usage environment and lighten the detail text | — | 07/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​batch-inventory-review | 982d1b8 | fix​(inventory): say the low stock and the lots near expiry are loading | Since the low-stock filter turns on before its answer arrives, the catalogue said "No materials match this view." until then, and the near-expiry panel said that no lot expires soon. The store now… | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​batch-inventory-review | a4add6a | test​(inventory): cover the request guards, the reload and the catalogue stats | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​batch-inventory-review | 205d028 | fix​(batch): give the product and environment the whole width of the summary on a phone | Two columns of about 140 px cut the names in the middle of a word, such as PROD-SOL-01. | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​batch-inventory-review | a197ac8 | fix​(batch): open the start date calendar from anywhere on the field | On an empty field the label covers the read-only days, so a click on it did nothing; only the icon or Alt+Down opened the calendar. | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​batch-inventory-review | 2ca6038 | feat​(batch): choose the order of the batch list on a phone | The cards of a phone hide the headers that sort the table, so two lists above them choose the column and the direction. They share the order of the headers. | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​batch-inventory-review | 9933011 | docs​(diagrams): add the batch list components and the inventory request guards | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​batch-inventory-review | f2d68a3 | docs​(changelog): record the batch redesign, the inventory catalogue and their review fixes | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​retired-stylesheet-diagrams | c3d2c4c | docs​(diagrams): drop the retired shared stylesheet from laboratory and profile | operations-page.css was removed in #54; Staff​Detail and Profile​Page own their styles through style​Url. The laboratory diagram only drew the dependency, so Plant​UML made an undeclared Operations​Page… | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​plans-current-plan | fc817ae | docs​(diagrams): add the current plan of the plans view | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​plans-current-plan | 30c3244 | fix​(subscription): keep the notice icon of the plans view whole | The icon of the already-active notice shrank in its flex row: 19 px at 800 px, 8 px at 375 px and 6 px at 320 px. | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​plans-current-plan | 343d4e4 | fix​(subscription): mark the paid plan and lead the other plans to Billing | While the laboratory pays for a plan, the backend refuses another checkout, so the plans view disabled every Get button. After the redesign they looked like ordinary grey buttons that did nothing,… | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​plans-current-plan | 03fb1af | docs​(changelog): record the current plan of the plans view | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | release/​v2.3.0 | 5e73a07 | chore​(release): prepare v2.3.0 | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​billing-period-start | 5a57ad3 | fix​(subscription): name the start of the current period in the billing summary | The billing summary showed current​Period​Start as "Started At", so after the renewal of 2026-11-04 the subscription of SENKA LAB, paid since 2026-10-04, seemed to have started that day. | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​billing-period-start | 78036ac | docs​(changelog): record the label of the current period | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | release/​v2.4.0 | 52d7025 | chore​(release): prepare v2.4.0 | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​select-batch-redesign | 4919024 | feat​(shared): add an inline appearance to the environment selector | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​select-batch-redesign | 1721a29 | style​(batch): show the environment under the product catalog title | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​select-batch-redesign | 88e403b | style: show the environment under the title in inventory, tracking and reports | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​select-batch-redesign | 6982508 | style​(ca): show the environment under the alerts title | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​select-batch-redesign | d9df161 | style: add more space between the page title and the environment selector | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​inventory | c93aed6 | refactor​(inventory): organize catalogue and near-expiry views into tabs | — | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​inventory | 4e49d4b | style​(inventory): improve catalogue tabs layout and responsiveness | — | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​inventory | 1eb4f2d | test​(inventory): update catalogue tests for tab navigation | — | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​equipment-environment-views | 9a0e666 | feat​(equipment): add edge gateway and coverage support to the API and store | — | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​equipment-environment-views | c96b6ce | docs​(equipment): update frontend diagram and changelog | — | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​equipment-environment-views | 5124917 | feat​(equipment): add edge gateway and environment texts in en and es | — | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​equipment-environment-views | acb75e1 | feat​(equipment): register edge gateways and issue their API key | — | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​equipment-environment-views | e06f942 | feat​(equipment): add environment equipment view and list filters | — | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​equipment-environment-views | c89c346 | fix​(equipment): polish edge gateway views after local testing | — | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​equipment-environment-views | 1fa981b | fix​(equipment): hide BPM limits in the edge gateway detail | — | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | abf7e39 | style​(ui): unify forms, header and empty states across the app | - Load Roboto 600/​700 so bold text is no longer synthesized by the browser - Give every header control the same 40px height and a compact language switcher - Show the logo in the mobile toolbar when… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | 96996ad | feat​(shared): add the shared table style and paginator | - Move the table format of the production batches to the global styles: card, muted uppercase headers, roomy rows and one card per row on phones - Add paginate​() and app-table-paginator: ten rows per… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | bca6cbf | refactor​(ca): page the alert history with the shared paginator | The alert table shows ten alerts per page with the shared paginator, which replaces the history pager of 25 alerts and its texts. The page is no longer read from the address. | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | 3873e37 | refactor​(batch): give the batch tables the shared format and paginator | Products, product batches, participants, traceability and raw material usage use the shared table card and show ten rows per page. Their local table rules, now global, are removed. | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | b1363b4 | refactor​(equipment): give the equipment tables the shared format and paginator | The equipment list and the gateways, devices and equipment of an environment show ten rows per page with the shared table card. | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | 152f925 | refactor​(laboratory): give the environment and staff tables the shared format | The environments and the staff of the laboratory show ten rows per page with the shared table card and paginator. | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | b7a7223 | refactor​(inventory): give the inventory tables the shared format and paginator | Materials, movements, receipts, near-expiry lots and the legacy histories show ten rows per page with the shared table card. | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | 4d55dc7 | refactor​(subscription): give the payments table the shared format and paginator | The payments of the billing summary show ten rows per page with the shared table card and the field names for the phone cards. | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | 5d21a80 | refactor​(ra): give the report tables the shared format and paginator | The audit log, deviation, KPI and staff activity tables use the shared table card and show ten rows per page. The Material tables get the field names for the phone cards, and their local header and… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | e9a4e34 | refactor​(tracking): give the telemetry history tables the shared format | The readings and the actions of a device show ten rows per page with the shared table card and paginator. | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | 4a7e511 | style​(ui): stretch the environment selector to the full width on phones | - The inline environment selector takes the whole width on phones, like the buttons under it, with the chevron at the end - Its width no longer comes from the name, so a long name is cut instead of… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | 21b32b2 | feat​(ca): redesign the inbox of active alerts as compact rows | - The alerts are compact rows grouped by severity, each with the reading drawn against its limit, how long it has been open, who has it and one main action; notifying and the detail move to a menu -… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | 7e7fa29 | feat​(ca): guide the alert detail through its next step | - The detail shows only the step the alert is in: registering attention while nobody has it, then the corrective action - Notifying moves next to "View conditions" among the secondary actions - The… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | c4a60c7 | feat​(ca): lighten the alert history filters and table | - The period and the search stay in sight; severity, status and origin wait behind "More filters", which counts the ones in use and opens by itself when an address brings them - The table goes from… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | c5904d6 | fix​(ca): wrap the inbox chips on phones | The chips scrolled sideways on a phone and hid the last ones; they now wrap to a second line so every filter is in sight. | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | 1b7cd78 | test​(ca): update the alerts browser test to the redesigned module | - Read the urgent count from the red chip instead of the banner, and check the groups by severity - Open an alert from the title of its row, and tell who has it from the owner of the row - Check the… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | fd4e7b4 | fix​(ca): drop the tab count and the order by environment of one environment | - The tab of the active alerts no longer shows how many there are; the chips of the inbox already count them - With one environment chosen, the inbox stops offering to order by environment and orders… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | a4ded1f | style​(ui): give every page the same container and heading buttons | - Inventory, reports, alerts and the report generator use the container of the rest of the pages: 1200px wide with 32px 24px 48px around it, so the title starts in the same place on every page - The… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | 9e0650d | style​(ui): give every heading the same structure | - Each page heading is the icon and the title, its description, then the environment it shows; deviation indicators, telemetry, monitoring and the environmental profiles put the description first now… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | cb853a3 | style​(ui): give every register button the same look | - Every form that registers something ends with the same green Register button with the save icon: equipment, Io​T devices, Edge Gateways, staff and raw materials join products, batches, environments… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | bf31831 | feat​(shared): add the shared page header and list toolbar, starting with alerts | - app-page-header: the icon and the title, with only the time of the last update and the refresh button next to it, and the operations of the module as tabs under it - app-list-toolbar: the context… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | 920d2da | feat​(batch): give products and batches the shared header and toolbar | - Products and batches are the two tabs of the module, instead of buttons that lead from one to the other - Batches: the environment in the first row; the batches of each status as chips with their… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | ee0b4a5 | feat​(equipment): give the equipment list the shared header and toolbar | - The environment and the three ways to register in the first row - The kinds of equipment and the equipment in maintenance or out of service as chips with their counts, which replace the summary… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | 072872d | feat​(inventory): give the inventory the shared header and toolbar | The catalogue and the near expiry list become tabs of the header, next to the refresh. The toolbar holds the environment with Previous balances and New material at its right end, then the All /​ Low… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | ad11785 | feat​(laboratory): give the laboratory pages the shared header and toolbar | Profile, Environments and Staff become tabs of one header with the refresh next to the title. Environments get Register environment at the right end, usage chips with their counts and a search by… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | 32582d8 | feat​(tracking): give the tracking pages the shared header and toolbar | Monitoring, History and Profiles become tabs of one header with the refresh next to the title. The environment sits in the toolbar of each page, and the device, metric and period of the history query… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | fd07311 | fix​(shared): keep long page titles whole on phones | The time of the last update folds into two short lines and the title gets a little smaller under 420px, so words like Environmental no longer break or run under the time. Below 360px the time moves… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | 1c608a5 | feat​(reports): give the reports pages the shared header and toolbar | Summary, Deviations, New report and Audit log become tabs of one header with the refresh next to the title. The environment sits in the toolbar, the periods become chips in its foldable row, and the… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | a6a289c | fix​(shared): make the toolbar search a search field | Screen readers now announce it as a search box, and the browser's own clear button is hidden because the field already has its ×. The alerts browser checks open the foldable filter row instead of the… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | cc18e01 | style​(alerts): put the history search on the left, under the filters | The chip groups fill the filter row, so the search drops to a line of its own; it now starts on the left like the groups above it. | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | 1bfb346 | fix​(reports): hide View last 31 days when the summary already shows them | The empty summary offered to widen the period even when 31 days was the period chosen, so the button did nothing. | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | cd3b163 | feat​(shared): show the subtitle of each page right under its title | The page header takes a subtitle​Key and shows it between the title and the tabs. Environments, staff, batches, tracking, reports, the report generator and the alert preferences use it instead of a… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | 6b1fced | style​(laboratory): align the register icon and give Save the same look | The save icon of Register in the staff and laboratory forms sat inside a wrapper, so Material could not place it next to the text and it showed crooked. Save Changes of the laboratory profile gets… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | d774cc5 | style​(home): keep the text and the image together on wide screens | The hero spread over the whole width with the image pushed to the right edge, so the gap between them grew with the screen. Both now sit in a centered band of at most 1280px, and the extra width… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | 5bec886 | test​(reports): provide the router to the audit log viewer spec | The page now opens with the shared header, whose tabs are router links, so the component needs Activated​Route. The CI unit tests failed on it. | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | b204fd5 | style​(ui): use Rubik, the typeface of the style guide | The Quali​Track style guide sets Rubik from Light to Extra​Bold for the platform, as the website already uses. The page, the Material theme and the font loaded from Google Fonts switch from Roboto to… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | 13c984b | style​(home): make the hero image float like the one of the website | The image rises 10px and back every 3 seconds, the same animation as the website, and stays still for people who prefer reduced motion. | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | 8f5def5 | style​(layout): keep the logo apart from the name on phones | The space between the logo and the name dropped from 12px to 8px under 768px, so they looked stuck together; it now stays at 12px, like the header of the website. | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | 72ad322 | style​(alerts): drop the live dot from the page header | The active alerts said Live with a green dot next to the refresh. The header now says only when the data was updated, like every other page; environments that could not be read keep their own message… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​develop-review | ca042c6 | fix​(shared): keep words whole in the tables and let a wide table scroll | The shared table style of #105 let every cell break anywhere, so the browser shrank short columns below their words: at 1366 px the equipment status read "Operationa\|l", the staff access "Operato\|r"… | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​develop-review | 0f2a581 | fix​(equipment): read the Edge Gateway API key status only as a quality manager | The platform answers the API key status only to quality managers and administrators, but the detail of an Edge Gateway asked for it with every role: operators and auditors got a 403 and a card saying… | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​develop-review | cc86a08 | fix​(ca): keep the alert gauge right with negative temperatures | The gauge compared the absolute values of the reading and the limit, so a freezer at -10 °C with a maximum of -15 °C showed its fill before the mark, as if the limit had not been passed. The scale… | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​develop-review | c969baa | fix​(equipment): list the devices of an environment when its coverage cannot be read | The environment view read its equipment and its Edge Gateway coverage together, so a failure of the coverage alone left only an error: against the deployed platform, which does not have the coverage… | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​develop-review | 768fa97 | test: follow the Register button of the material form and say how to run the alerts checks | - The inventory browser test looked for a Save button, but #105 named the main button of the material registration Register like every other form, so the test stopped at it. It now uses… | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​develop-review | 0a6f303 | refactor​(shared): remove the stat filter card that no view uses | Since #105 the alert inbox and the batch indicators use Filter​Chip, so Stat​Filter​Card, its styles and its spec were left without any user. | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​develop-review | 352e56a | fix​(i18n): shorten the alert and equipment search placeholders so they show whole | At 1366 px the search of the active alerts had 176-183 px for "Search device or variable" /​ "Buscar dispositivo o variable" (187 and 212 px), and the equipment search 272 px for "Search by name,… | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​develop-review | d69655b | docs​(diagrams): bring the frontend diagrams up to date with #101-#106 | - shared: Page​Header with Page​Tab, List​Toolbar, Table​Paginator with Table​Page and paginate​(), Setup​Notice, group​Error​Matcher​(), the inline appearance of Environment​Selector and the tone of… | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​develop-review | 375840b | docs​(changelog): record #101-#106 and the fixes of the review | The Unreleased section only had the Edge Gateway entries of #103, without their PR number. It now records the inline environment selector (#101), the inventory tabs (#102), the shared header,… | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | release/​v2.5.0 | 9dbe564 | refactor​(components): remove unused kpi-records component | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | release/​v2.5.0 | 21770d5 | refactor​(report-params-form): enhance layout and styling for improved usability | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | release/​v2.5.0 | cd07ce1 | refactor​(kpi-dashboard): remove unused kpi-records component and clean up template | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | release/​v2.5.0 | d5c0543 | refactor​(kpi-dashboard): adjust loading and error padding for improved layout | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | release/​v2.5.0 | 0caca76 | refactor​(report-generator): simplify styles by removing padding and borders | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​reports-empty-states | 5f14022 | chore​(i18n): remove the texts of the laboratory records section | #108 took the laboratory records (equipment, batches and open alerts) out of the environmental summary; its eleven texts are no longer used. | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​reports-empty-states | d448d8a | fix​(ra): keep the loading and empty states of the reports on screen | #108 gave the loading and the empty states of the environmental summary and of the deviation indicators 250 to 360 px of padding. At 1366x768 and on phones the message and the spinner were left below… | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​reports-empty-states | f63742b | docs​(ra): remove the laboratory records component from the frontend diagram | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​reports-empty-states | 2785568 | docs​(changelog): record #108 and #109 | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | release/​v2.5.0 | a55b409 | chore​(release): prepare v2.5.0 | — | 13/11/2026 |
 
----
+**Cloud REST API (Backend)** ([IoTech-2620-8741/qualitrack-platform](https://github.com/IoTech-2620-8741/qualitrack-platform))
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|------------|--------|-----------|----------------|---------------------|---------------------|
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ca | 3c8febd | refactor​(ca): use the compliance clock in Ca​Command​Service​Impl | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ca | c348649 | test​(ca): cover deviation alert command handling | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ca | 6df850e | refactor​(ca): date compliance events with the shared clock | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ca | 1dc34a5 | refactor​(ca): use imports instead of qualified names | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ca | 5d07cf0 | feat​(ca): add email preference check | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ca | 181c0a3 | feat​(ca): add reject resolution notes longer than 500 characters | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ca | b3b98e8 | test​(ca): add test Alert​Lifecycle | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ca | aa45907 | feat​(ca): add create deviation alert | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ca | bd451f6 | test​(ca): add test from deviation alert | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ca | 6bad689 | feat​(ca): add keep invalid deviation events from failing telemetry ingestion | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ca | eb2125c | feat​(ca): add Deviation alert in persistence | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ca | 8f045e9 | feat​(ca): add rest in interface | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | docs/​changelog-and-license | 6122e75 | docs​(readme): link the changelog and the license | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | docs/​changelog-and-license | 450c28f | docs​(changelog): add the history of the platform since version 0.1.0 | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | docs/​changelog-and-license | 5cea025 | docs​(license): add the Quali​Track proprietary software license | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | docs/​changelog-and-license | 9870abe | docs​(changelog): record the changelog and license pull request | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-ra-facades | 9491079 | feat​(batch): share batches and their recorded material uses through the facade | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-ra-facades | 3551c67 | feat​(equipment): share the laboratory equipment and the equipment log through the facade | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-ra-facades | 73301f1 | feat​(laboratory): share the laboratory name through the facade | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-ra-facades | 3e937f0 | feat​(ca): share the alerts of a batch and of a set of devices through the facade | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-ra-facades | 29a514d | refactor​(ra): read batches, equipment, alerts and laboratory names through their facades | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-ra-facades | c37f38c | docs​(diagrams): reporting reads operational data through the facades | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-ra-facades | 3e5907c | docs​(changelog): reporting reads operational data through the facades | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-external-services | 65633f1 | refactor​(batch): read container names through the equipment ACL service | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-external-services | 0b488bd | refactor​(inventory): read legacy raw materials and container names through its ACL services | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-external-services | 9df52b2 | refactor​(laboratory): create the laboratory through the IAM and subscription ACL services | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-external-services | 035a9fe | refactor​(subscription): lock the account through an IAM ACL service in the Stripe webhook | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-external-services | 0bfb82f | refactor​(tracking): translate the equipment devices into its own model | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-external-services | 7236283 | refactor​(ra): read usernames and environments through its ACL services | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-external-services | 9c8841f | docs​(diagrams): facades used only through the ACL services | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-external-services | 7e1cc54 | docs​(changelog): facades used only through the ACL services | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-inverted-relations | 515805e | refactor​(inventory): stop validating product batches through the Batch facade | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-inverted-relations | 46086c2 | refactor​(batch): lock and check the batch before Inventory consumes the lot | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-inverted-relations | 0522a20 | refactor​(laboratory): remove the unused compliance ACL service; CA listens to the low stock event | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-inverted-relations | 6da4fa2 | refactor​(ca): remove the low stock method of the facade, replaced by the integration event | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-inverted-relations | 59b5676 | feat​(laboratory): rename the staff member of an account through the facade | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-inverted-relations | b2babd3 | refactor​(profile): rename the staff member through the Laboratory facade instead of an event | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-inverted-relations | ee3e1aa | docs​(diagrams): relations in the direction of the context map | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-inverted-relations | 03af4bd | docs​(changelog): relations in the direction of the context map | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-iam-onboarding | 9faa13b | refactor​(iam): read the subscription access through an ACL service and stop checking the laboratory | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-iam-onboarding | 0021003 | docs​(diagrams): IAM onboarding through its subscription ACL service | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-iam-onboarding | 4b8860d | docs​(changelog): IAM onboarding through its subscription ACL service | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-tactical-consistency | a19f23c | feat​(shared): expose the laboratory of the current user | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-tactical-consistency | 8d79925 | refactor​(iam): controllers read the current user through the shared port | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-tactical-consistency | 7e1b54b | refactor​(subscription): the checkout reads the current user through the shared port | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-tactical-consistency | 608148f | refactor​(laboratory): the onboarding returns a Result and reads the current user through the shared port | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-tactical-consistency | 5aad40e | refactor​(inventory): the legacy import returns a Result | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-tactical-consistency | 7efab2e | refactor​(inventory): name the JPA entities *Persistence​Entity | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-tactical-consistency | a189143 | refactor​(ra): event handlers use the audit command service and the facade takes the action as text | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-tactical-consistency | 90f5d58 | refactor​(ca): facade as an interface implemented in application/​acl | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-tactical-consistency | a68ad68 | refactor​(iam): facade as an interface implemented in application/​acl | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-tactical-consistency | ef695f6 | refactor​(profile): facade as an interface implemented in application/​acl | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-tactical-consistency | 42c00b2 | refactor​(subscription): facade as an interface implemented in application/​acl; plan code as text | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-tactical-consistency | 4adb16d | feat​(shared): error messages in Spanish for Accept-Language: es | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-tactical-consistency | 0dd14f2 | docs​(diagrams): tactical consistency of the bounded contexts | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-tactical-consistency | 833562b | docs​(changelog): tactical consistency of the bounded contexts | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​env-example | bae9930 | docs: add .env.example with the environment variables of the API | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​env-example | e26e111 | docs​(changelog): add .env.example | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-tests-by-package | 074bd9c | test: organize the tests by bounded context and layer | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-tests-by-package | 9b41d45 | docs​(changelog): tests organized by bounded context and layer | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | 5acb779 | feat​(inventory): add rest annotations of inventory controller | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​password-recovery-attempts-lock | a543e33 | test​(iam): reproduce the password recovery attempts race | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​password-recovery-attempts-lock | 656146e | fix​(iam): lock the password recovery while counting failed attempts | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​password-recovery-attempts-lock | f465568 | docs​(changelog): password recovery attempts lock | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | 2da7676 | feat​(inventory): update raw material command contracts | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | 1f8e48a | feat​(inventory): specify inventory query contracts | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | a0656d1 | feat​(inventory): add inventory persistence contracts | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | fba4f57 | refactor​(inventory): refactor usable stock method of raw material aggregate | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | bed764e | refactor​(inventory): refactor methods for change status and quality review of raw material batch aggregate | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | 3879786 | refactor​(inventory): update inventory context facade service | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | 56e4f1f | refactor​(inventory): refactor imports of receive raw material batch command | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | 746bf87 | refactor​(inventory): refactor imports of review raw material batch command | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | b118e1b | refactor​(inventory): refactor imports of save raw material command | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | 340f4c0 | doc​(inventory): add documentation for commands | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | 5d481b6 | refactor​(inventory): refactor imports of inventory external laboratory service | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | fc1c293 | refactor​(inventory): update imports for inventory import service implementation | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | 5acccab | refactor​(inventory): update imports for inventory receipt persistence entity | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | eed299d | refactor​(inventory): update summary method to use reference date for stock calculations | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | 7f8f5a4 | refactor​(inventory): extract review decision logic into separate method | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | 8393966 | refactor​(inventory): simplify expiration filter logic in inventory query service implementation | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | a40b6f4 | refactor​(inventory): simplify legacy opening balance date calculation | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | release/​v1.1.0 | c6200d3 | docs​(changelog): REST API tests RUC range | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | release/​v1.1.0 | 8e7092b | test​(shared): give the REST API tests their own RUC range | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | f522fba | refactor​(inventory): organize inventory query service imports | — | 06/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | 8ae97d6 | refactor​(inventory): refactor stock summary and expiry rules | — | 06/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | 9080196 | refactor​(inventory): refactor persistence assemblers | — | 06/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | e1b1c6c | refactor​(inventory): add repository method overrides | — | 06/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | 48604e9 | refactor​(inventory): simplify text validation in inventory command service implementation. | — | 06/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | b092c3f | refactor​(inventory): add inventory query service overrides | — | 06/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | 1b9fcbd | refactor​(inventory): organize query interface imports | — | 06/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | b70501c | refactor​(inventory): replace persistence repository wildcard imports | — | 06/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | b764b41 | refactor​(inventory): extract container assignment mapping | — | 06/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​batch | d590e76 | test​(batch): cover the batch commands, decisions and storage | — | 07/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​batch | bcfffee | test​(batch): cover the laboratory batch list, invalid requests and rejected traceability | — | 07/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​batch | d7e6264 | docs​(batch): document the laboratory batch list | — | 07/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​equipment-environment-devices | 35bd2b0 | feat​(equipment): list the equipment of an environment for its edge | GET /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​equipments returns the equipment of one environment, and ?iot=true keeps only its Io​T devices, so the Edge reads its own nodes instead of… | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​equipment-environment-devices | 20f4ef5 | feat​(equipment): query the equipment located in an environment | Adds Get​Equipment​By​Environment​Id​Query with an optional Io​T-only filter and checks through the Laboratory ACL that the environment belongs to the laboratory. | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​equipment-environment-devices | a0eff4a | docs​(changelog): environment equipment list and equipment docs | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​equipment-environment-devices | e96b6ba | docs​(equipment): document the value objects, converters and tenant lookup | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​equipment-environment-devices | 104f6f3 | test​(equipment): cover the equipment list of an environment | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | fix/​backend-review | 6aeb1be | refactor​(inventory): remove the ignored Swagger tag and keep the getter annotation on its own line | Root​Resource​Tag​Customizer replaces the tags of every operation with the root resource of its path, so the Inventory Management tag of Inventory​Controller never reached Swagger UI. | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | fix/​backend-review | a51e27b | docs​(changelog): record the inventory changes and number the latest entries | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | fix/​backend-review | 50fb04c | docs​(diagrams): add the environment equipment list and the locked password recovery | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | fix/​renewal-payments | dd74b86 | docs​(diagrams): add the Stripe webhook service and the renewal payments | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | fix/​renewal-payments | f26ddfb | fix​(subscription): record the payment of each renewal from invoice.paid | Only the checkout recorded a payment. Stripe charges every later period through an invoice, and the webhook only listened to customer.subscription.updated, which moves the period but carries no… | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | fix/​renewal-payments | 1c0aa55 | docs​(changelog): record the payments of the renewals | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | release/​v1.1.0 | 7d87fc6 | chore​(release): prepare v1.1.0 | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​edge-gateway | 2216ae7 | feat​(equipment): register edge gateways and enforce environment uniqueness | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​edge-gateway | f1e0330 | feat​(equipment): expose edge gateway registration api | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​edge-gateway | 4278844 | feat​(equipment): expose edge gateway identity through facade | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​edge-gateway | c537dac | feat​(iam): persist edge gateway api key hashes | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​edge-gateway | 426b68d | feat​(iam): implement edge gateway api key service | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​edge-gateway | e6e4b95 | feat​(iam): expose edge gateway api key endpoint | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​edge-gateway | 020c727 | feat​(iam): validate edge gateway api key credentials | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​edge-gateway | 8784264 | feat​(iam): add edge gateway api key authentication filter | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​edge-gateway | 52099c2 | feat​(iam): secure edge gateway routes | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​edge-gateway | 6c2639c | feat​(equipment): expose gateway assigned iot devices | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​edge-gateway | 93e9184 | feat​(tracking): ingest telemetry from authenticated edge gateways | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​edge-gateway | 4b54a17 | feat​(tracking): support edge gateway profile and actuation synchronization | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​equipment-edge-gateway-capacity | fa5d519 | feat​(iam): report whether an edge gateway has an API key | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​equipment-edge-gateway-capacity | ebb5e77 | feat​(equipment): distribute environment devices among edge gateways | An Edge Gateway serves 15 Io​T devices at most. The devices of an environment are taken by identifier among its Gateways, and the coverage endpoint tells how many are left without one. | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​equipment-edge-gateway-capacity | 8926998 | docs​(equipment): record edge gateways in changelog and backend diagram | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​equipment-edge-gateway-capacity | 700138c | test​(equipment): cover edge gateway allocation, device registry and coverage | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​equipment-edge-gateway-capacity | d792515 | feat​(equipment): allow several edge gateways per environment | Locating a second Edge Gateway in an environment no longer answers 409: the devices beyond the first 15 go to the next Gateway. | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ca | e196282 | fix​(ca): keep the compliance facade as the interface from develop | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | fb8dbd6 | feat​(tracking): add the device connection value object | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | bfa0c35 | feat​(tracking): add the actuation result value object | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | ba3a0e9 | feat​(tracking): add the actuation action value object | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 31e389b | feat​(tracking): add the environmental threshold value object | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 4f0d975 | feat​(tracking): add the environmental state value object | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 4172229 | feat​(tracking): add the monitored metric value object | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | cc51794 | feat​(tracking): add the monitored device value object | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | a8bfd31 | feat​(tracking): add the expected communication period value object | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 660a128 | feat​(tracking): add the measurement entity | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | ee7c828 | feat​(tracking): add the actuation event entity | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | c2338f9 | feat​(tracking): add the profile scope value object | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 29ac15c | feat​(tracking): add the record actuation event command | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 7b47be8 | feat​(tracking): add the environmental profile aggregate | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 439030b | feat​(tracking): add the update actuation rules command | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 7ee4fcd | feat​(tracking): add the shared argument checks of the commands | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 31b0efc | feat​(tracking): add the record measurement command | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 61d7543 | feat​(tracking): add the update environment thresholds command | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | f3703e5 | feat​(tracking): add the update container monitor thresholds command | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | ec4536f | feat​(tracking): add the get device connection query | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 2a5458a | feat​(tracking): add the get container monitor profile query | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 3d7c51f | feat​(tracking): add the get actuation events query | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | dd14cd2 | feat​(tracking): add the get environment profile query | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 53a46b2 | feat​(tracking): add the get device profile query | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 70f9dff | feat​(tracking): add the environmental condition normalized domain event | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 61c5d69 | feat​(tracking): add the get measurements query | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | df05cee | feat​(tracking): add the measurement recorded domain event | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 572ce65 | feat​(tracking): add the environmental profile updated domain event | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | cd4a31b | feat​(tracking): add the environmental deviation detected domain event | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 3c9ef6a | feat​(tracking): add the measurement repository | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | ef4355f | feat​(tracking): add the environmental profile repository | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 5131ef1 | feat​(tracking): add the actuation event repository | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | fix/​develop-review | 1d7be4e | refactor: remove the Swagger tags that the root resource customizer overrides | Root​Resource​Tag​Customizer gives every operation the tag of its root resource (/​api/​v1/​{root}), so the @Tag annotations added by #30, #31 and #33 on ten controllers never reached the Open​API document.… | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | fix/​develop-review | 9391c48 | fix​(iam): read the Edge Gateways through an IAM anti-corruption service | Edge​Gateway​Api​Key​Service and Edge​Gateway​Authentication​Service called the Equipment facade directly and used its Edge​Gateway​Reference, the only two breaks of the rule that a context reads another one… | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | fix/​develop-review | 89cb95b | fix​(equipment): give the devices of an environment only to its operational Edge Gateways | The distribution of #31 counted every Edge Gateway of the environment, so a Gateway in maintenance or out of service kept its 15 devices: the coverage said they were served while that Gateway cannot… | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | fix/​develop-review | 5ac5f1f | fix​(tracking): let an Edge Gateway synchronize only the devices it serves | Since #31 an environment may have several Edge Gateways and each one reads only its share of the devices (15 at most) from its registry, but the telemetry, actuation and profile endpoints of the Edge… | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | fix/​develop-review | ab11b91 | docs​(migrations): create the Edge Gateway API keys and the alert indexes on the deployed database | The production profile keeps ddl-auto=none, and #30 and #33 added a table and two indexes that only Hibernate created in development: once deployed, issuing an API key and authenticating an Edge… | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | fix/​develop-review | 0fd0e51 | docs​(diagrams): add the Edge Gateways to the IAM, equipment and tracking diagrams | - IAM backend: Edge​Gateway​Api​Key​Service, Edge​Gateway​Authentication​Service, Iam​External​Equipment​Service with Edge​Gateway​Identity, Edge​Gateway​Api​Key​Store and its JPA adapter, the API key filter of the… | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | fix/​develop-review | 2ea428a | docs​(changelog): record #31, #33 and the fixes of the review | The Unreleased section had the entries of #30 and #31 without the number of #31, and nothing of #33. It now records the alert changes of #33, the migration to run before the release, the distribution… | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 5780dcf | feat​(tracking): add the tracking configuration | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 1bb6aae | feat​(tracking): add the actuation rule embeddable | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 185b8c3 | feat​(tracking): add the actuation event persistence entity | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 844443b | feat​(tracking): add the threshold embeddable | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 737ad6c | feat​(tracking): add the measurement persistence entity | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | b5831d9 | feat​(tracking): add the environmental profile persistence entity | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 66f40d7 | feat​(tracking): add the environmental profile persistence repository | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 9f4238a | feat​(tracking): add the actuation event persistence repository | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 205b2e5 | feat​(tracking): add the actuation event persistence assembler | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 089b8c4 | feat​(tracking): add the measurement persistence repository | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 7ee75ad | feat​(tracking): add the measurement persistence assembler | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | fc3fa3d | feat​(tracking): add the environmental profile persistence assembler | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 089b7dd | feat​(tracking): add the JPA adapter of the measurement repository | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 6e1d07a | feat​(tracking): add the JPA adapter of the environmental profile repository | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 77786b2 | feat​(tracking): add the JPA adapter of the actuation event repository | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 69573e3 | feat​(tracking): add the tracking command service | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 660a49f | feat​(tracking): add the equipment anti-corruption service of tracking | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 714c45e | feat​(tracking): add the tracking query service implementation | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | d6a20df | feat​(tracking): add the tracking command service implementation | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | e971012 | feat​(tracking): add the tracking query service | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | cdc13e7 | feat​(tracking): add the environmental deviation detected event handler | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | b67c624 | feat​(tracking): add the environmental condition normalized event handler | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 41c9461 | feat​(tracking): add the tracking context facade implementation | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 93550d7 | feat​(tracking): add the measurement recorded event handler | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 7a7dfdd | feat​(tracking): add the environmental profile updated event handler | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 2be6378 | feat​(tracking): add the environmental condition normalized integration event | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 7e0984c | feat​(tracking): add the tracking context facade | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 5460049 | feat​(tracking): add the environmental profile updated integration event | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 3ba5c28 | feat​(tracking): add the environmental deviation detected integration event | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | fa71f53 | feat​(tracking): add the actuation event resource | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 298c125 | feat​(tracking): add the measurement recorded integration event | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | c67990a | feat​(tracking): add the measurement resource | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 3ec4a9f | feat​(tracking): add the environmental profile resource | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 83a2fa2 | feat​(tracking): add the record measurement resource | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | f533d2d | feat​(tracking): add the record actuation event resource | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 76e1545 | feat​(tracking): add the update thresholds resource | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | cf9652d | feat​(tracking): add the update actuation rules resource | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | e12ee11 | feat​(tracking): add the environmental profile command from resource assembler | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 2d72676 | feat​(tracking): add the actuation event resource from entity assembler | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 6bcc121 | feat​(tracking): add the record actuation event command from resource assembler | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 35719a6 | feat​(tracking): add the measurement resource from entity assembler | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | ea9a833 | feat​(tracking): add the environmental profile resource from entity assembler | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 2f671b7 | feat​(tracking): add the telemetry response assembler | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | fd51e0b | feat​(tracking): add the record measurement command from resource assembler | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 5354e81 | feat​(tracking): add the container monitor telemetry controller | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 6e25538 | feat​(tracking): add the parsing of the tracking request values | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 22b04b6 | feat​(tracking): add the edge gateway telemetry controller | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 712d863 | feat​(tracking): add the edge gateway profiles controller | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 1bf460a | feat​(tracking): add the device tracking controller | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 49f75cd | feat​(tracking): add the environment telemetry controller | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 0865e40 | docs​(diagrams): add the edge gateway controllers to the tracking backend diagram | The command service, not the telemetry controllers, depends on the current user. | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | fix/​untrack-migration-script | 8136231 | docs​(migrations): keep the migration script out of version control | Migration scripts are run by hand in My​SQL Workbench and stay in the git-ignored docs/​database/​migrations folder. Remove docs/​migrations and the README, CHANGELOG and IAM database diagram references… | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | release/​v1.2.0 | 963fc43 | chore​(release): prepare v1.2.0 | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | release/​v1.2.0 | 4f103ec | docs​(changelog): record #36 | — | 13/11/2026 |
+
+**Mobile Application** ([IoTech-2620-8741/qualitrack-mobile-application](https://github.com/IoTech-2620-8741/qualitrack-mobile-application))
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|------------|--------|-----------|----------------|---------------------|---------------------|
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 1c2d1e9 | feat​(audit): add reporting entities for KPI metrics and audit logs | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 88503a5 | feat​(audit): implement Reporting​Repository interface for KPI and audit log retrieval | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 7bcf188 | feat​(audit): add sorting functions for audit reports and logs | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 1e1a2a2 | refactor​(audit): rename reporting_​infrastructure.dart to reporting_​dtos.dart and update imports | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | b79c5e1 | feat​(audit): add Reporting​Remote​Data​Source for fetching KPI dashboards and audit logs | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | a13ee99 | feat​(audit): implement Reporting​Repository​Impl for KPI and audit log retrieval | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 78573d3 | feat​(audit): refactor reporting queries to use new sorting functions and update imports | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | fbde3a2 | feat​(audit): refactor Reports​Bloc to use Reporting​Facade​Service for data loading | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 9e093ed | refactor​(audit): rename reports_​page.dart and update imports for reporting entities | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 4a6da1a | feat​(audit): add Reporting​Facade​Service for loading reports data and handling KPI retrieval | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 1098e0c | feat​(audit): update dependency injection for Reports​Bloc and refactor imports for reporting entities | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | b8b7988 | refactor​(audit): update import for reporting repository in mocks.dart | — | 28/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​batch | 5be1153 | refactor​(batch): split domain into entities, interfaces and logic | — | 31/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​batch | e253428 | refactor​(batch): replace use cases with Batch​Facade​Service | — | 31/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​batch | 0190e9f | refactor​(batch): add Batch​Api as the public entry point of the context | — | 31/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​batch | 3b1aeb9 | refactor​(batch): split infrastructure into data sources, models and repositories | — | 31/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​batch | 7911b61 | refactor​(batch): split blocs into event, state and bloc files | — | 31/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​batch | 4bf37b4 | refactor​(batch): rename pages to screens | — | 31/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​batch | eaf7be2 | refactor​(batch): extract Batch​Card into its own widget | — | 31/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​batch | c7f2dfe | refactor​(app): wire the restructured batch context in DI and router | — | 31/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​batch | fd7ba72 | refactor​(command-center): read batches through Batch​Api | — | 31/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 05b171e | test​(batch): adapt test suite to the restructured batch context | Point imports at the new entities, interface, logic and infrastructure files, exercise Batch​Facade​Service instead of the removed use case classes, and test Batch​List​Bloc and Batch​Detail​Bloc with the… | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 0832913 | ci: remove the build and distribute APK workflow | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 6298942 | ci: run flutter analyze and test on feature pull requests into develop | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 2d98c8b | refactor​(profile): type bloc failures with Failure.from | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | ada4895 | refactor​(laboratory): type bloc failures with Failure.from | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 8472c0a | refactor​(inventory): type bloc failures with Failure.from | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | cd3e72e | refactor​(iam): type bloc failures with Failure.from | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | d9bef9f | refactor​(equipment): type bloc failures with Failure.from | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 28baff3 | refactor​(compliance): type bloc failures with Failure.from | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 61c7841 | refactor​(command-center): type bloc failures with Failure.from | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | eddc80c | refactor​(batch): type bloc failures with Failure.from | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 2fcd5f5 | refactor​(shared): type Section failures with Failure.from | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | c67da63 | refactor​(shared): add Failure.from so presentation can type errors without infrastructure | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 6719f23 | refactor​(tracking): type bloc failures with Failure.from | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | aa4f239 | refactor​(subscription): type bloc failures with Failure.from | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 0eda5bd | refactor​(reporting): type bloc failures with Failure.from | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 782da93 | refactor​(equipment): consume other contexts through their api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 5ea4dbf | refactor​(compliance): consume other contexts through their api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | eac35c2 | refactor​(command-center): consume other contexts through their api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 03b0e65 | refactor​(batch): consume other contexts through their api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 1681b32 | refactor​(batch): expose batch labels through the api entry point | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | f5d6c9a | refactor​(profile): add api entry point for other bounded contexts | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | a0d1c7e | refactor​(iam): add api entry point for other bounded contexts | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 598c943 | refactor​(subscription): add api entry point for other bounded contexts | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | d2c2d7c | refactor​(inventory): add api entry point for other bounded contexts | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 8d15219 | refactor​(reporting): add api entry point for other bounded contexts | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | f125093 | refactor​(compliance): add api entry point for other bounded contexts | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 4b15f26 | refactor​(tracking): add api entry point for other bounded contexts | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | ee1be5f | refactor​(equipment): add api entry point for other bounded contexts | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | e4b1d8a | refactor​(laboratory): add api entry point for other bounded contexts | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 175bde9 | refactor​(tracking): consume other contexts through their api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 3b0d3df | refactor​(reporting): consume other contexts through their api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 5e747b8 | refactor​(profile): consume other contexts through their api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 85f5d53 | refactor​(inventory): consume other contexts through their api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 54cebbe | refactor​(app): keep presentation out of the context api entry points | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 1875cc8 | refactor​(command-center): receive other contexts' widgets from the composition root | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 7ac84b7 | refactor​(equipment): use shared connection badge and labels | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 7947e6f | refactor​(reporting): use shared labels and time in range tone | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 5b2ce0f | refactor​(compliance): use shared labels for variables and actuations | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 326b060 | refactor​(tracking): use shared labels and expose Device​Connection.reachable | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | a621095 | refactor​(shared): add code-keyed metric and actuation labels and a neutral connection badge | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 6382868 | refactor​(shared): move the theme from app to shared presentation | Every presentation layer uses it, so it belongs to the shared code and nothing outside app/​ needs to import app/​ any more. | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 03bb2b8 | refactor​(iam): make Session​Controller independent from Flutter | Application code depends only on the domain. The router adapts the session listeners to its Listenable in app/​. | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 0501d6f | docs​(architecture): document the dependency rules enforced by the test | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 6d3490c | test​(architecture): fail when a file breaks the layer or bounded-context rules | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 3829f35 | docs: refer to common instead of shared | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 2d01d48 | refactor​(common): rename the shared folder to common | Follows the naming of the Flutter DDD guide. Imports, the l10n generator and the architecture test point at lib/​common. | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 6560a7e | refactor​(i18n): rename the l10n folders and the generator | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | dac4181 | docs: refer to i18n instead of l10n | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 26d6c5a | refactor​(i18n): rename the context getter and local variables | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | c9356e4 | test​(profile): adapt tests to the restructured profile | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 363cd46 | refactor​(app): wire the restructured profile in DI and router | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 7ea9679 | refactor​(profile): rename page to screen and use the facade in blocs | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 2fd4ec9 | refactor​(profile): split infrastructure into data provider, model and repository | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 2c79d97 | refactor​(profile): replace use case classes with Profile​Facade​Service | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | bc7cda3 | refactor​(profile): split domain into entities, interface and logic | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | b14d38e | test​(subscription): adapt tests to the restructured subscription | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 2c53412 | refactor​(app): wire the restructured subscription in DI and router | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | fbb5888 | refactor​(subscription): rename page to screen and use the facade in the bloc | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | fafa1e4 | refactor​(subscription): expose the billing overview through Subscription​Api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 36f9d12 | refactor​(subscription): split infrastructure into data provider, models and repository | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | e9181a1 | refactor​(subscription): replace billing queries with Subscription​Facade​Service | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 1cdd2f5 | refactor​(subscription): split domain into entities, interface and logic | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | c0e7fd7 | test​(laboratory): adapt tests to the restructured laboratory | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | c814823 | refactor​(app): wire the restructured laboratory in DI and router | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 485045f | refactor​(tracking): read the laboratory through Laboratory​Api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | f698cce | refactor​(reporting): read the laboratory through Laboratory​Api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | b9b4223 | refactor​(profile): read the laboratory through Laboratory​Api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | f8da5ac | refactor​(inventory): read the laboratory through Laboratory​Api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | bdb4bde | refactor​(equipment): read the laboratory through Laboratory​Api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | f1880ed | refactor​(compliance): read the laboratory through Laboratory​Api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 8bcd46d | refactor​(command-center): read the laboratory through Laboratory​Api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | f86e88f | refactor​(batch): read the laboratory through Laboratory​Api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | e412cf5 | refactor​(laboratory): rename page to screen and use the facade in the bloc | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | a9ca88b | refactor​(laboratory): expose Laboratory​Api as the context entry point | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 1bda55f | refactor​(laboratory): split infrastructure into data provider, models and repository | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | e596ad6 | refactor​(laboratory): replace queries with Laboratory​Facade​Service | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | ea6a855 | refactor​(laboratory): split domain into entities, interface and logic | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 07ae276 | test​(inventory): adapt tests to the restructured inventory | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | cca3bed | refactor​(app): wire the restructured inventory in DI and router | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 88a5f20 | refactor​(inventory): rename pages to screens and use the facade in the blocs | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 6f1c1f2 | refactor​(inventory): expose the materials through Inventory​Api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 74cce31 | refactor​(inventory): split infrastructure into data provider, models and repository | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 28d9aed | refactor​(inventory): replace queries with Inventory​Facade​Service | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | a40a0b8 | refactor​(inventory): split domain into entities, interface and logic | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | a787c27 | test​(equipment): adapt tests to the restructured equipment | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | e487d1e | refactor​(app): wire the restructured equipment in DI and router | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 3345b54 | refactor​(tracking): read the equipment through Equipment​Api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | d383d8c | refactor​(reporting): read the equipment through Equipment​Api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | fcf6e8b | refactor​(compliance): read the equipment through Equipment​Api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 2ca0641 | refactor​(command-center): read the equipment through Equipment​Api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 8e0745d | refactor​(equipment): rename pages to screens and use the facade in the blocs | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | c2b8acb | refactor​(equipment): expose Equipment​Api as the context entry point | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | f2615a8 | refactor​(equipment): split infrastructure into data provider, models and repository | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 20d8c04 | refactor​(equipment): replace queries with Equipment​Facade​Service | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | aa80ec0 | refactor​(equipment): split domain into entities, interface and logic | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​inventory | 0ea45d3 | feat​(inventory): add inventory material card widget | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​inventory | e2af921 | refactor​(inventory): integrate material card widget into inventory page | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 4b5332b | test​(tracking): adapt tests to the restructured tracking | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 10f2fb6 | refactor​(app): wire the restructured tracking in DI and router | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 2823c4f | refactor​(equipment): read device connections through Telemetry​Api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 9cc88a4 | refactor​(command-center): read device connections through Telemetry​Api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 1429e4d | refactor​(tracking): rename pages to screens and use the facade in the blocs | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | cdbd296 | refactor​(tracking): expose Telemetry​Api as the context entry point | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 9edf90e | refactor​(tracking): split infrastructure into data provider, models and repository | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 5128c1b | refactor​(tracking): replace queries with Telemetry​Facade​Service | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 9071a68 | refactor​(tracking): split domain into entities, interface and logic | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | f49e116 | test​(compliance): adapt tests to the restructured compliance | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | eef143e | refactor​(app): wire the restructured compliance in DI and router | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | e4d09d3 | refactor​(equipment): read alerts and events through Compliance​Api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 5a65c3b | refactor​(command-center): read alerts and events through Compliance​Api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 0e40157 | refactor​(batch): read alerts and events through Compliance​Api | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | aa97c23 | refactor​(compliance): rename pages to screens and use the facade in the blocs | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 5cfcb48 | refactor​(compliance): expose Compliance​Api as the context entry point | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 86b157f | refactor​(compliance): split infrastructure into data provider, models and repositories | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 64fb441 | refactor​(compliance): replace queries with Compliance​Facade​Service | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | e71ac2a | refactor​(compliance): split domain into entities, interfaces and logic | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | d05dac5 | test​(compliance): use a single repository mock | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 80c5454 | refactor​(app): register a single compliance repository | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 81f54a5 | refactor​(compliance): serve alerts and notifications from a single repository | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 474b793 | refactor​(compliance): merge the alerts and notifications contracts into one interface | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​inventory | 56ae4c9 | feat​(inventory): add inventory receipt item widget | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​inventory | b938e1c | refactor​(inventory): integrate inventory receipt item widget into material detail page. | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 8fa2d6a | test​(iam): adapt tests to the restructured iam | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 670f6be | refactor​(app): wire the restructured iam in DI and router | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | fb5e588 | refactor​(iam): rename pages to screens and use the facade in the blocs | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | f7570c8 | refactor​(iam): point the api entry point at the entities | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 123a14d | refactor​(iam): split infrastructure into data providers, models and a single repository | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 1eb75de | refactor​(iam): replace use case classes with Iam​Facade​Service | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | b4c44c3 | refactor​(iam): split domain into entities, interface and logic | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | fbddbfe | docs​(readme): document the layout, contributing flow and the manual APK distribution | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 292f707 | docs​(architecture): describe the final context structure, api entry points and how to add a feature | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | e7d489a | feat​(l10n): add localized strings for health metrics, dashboard tabs, and measurement history | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | ff28c22 | feat​(reporting): add Deviation​Severity enum and trend mapping extension | The extension provides a `severity` getter on `Deviation​Trend` to categorize trends as critical, warning, on-track, or no-data based on reading counts. | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | c7acc9a | feat​(reporting): add sorting functionality for Deviation​Trend by severity and other criteria | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | cbc5074 | feat​(reporting): enhance reporting facade with sorting and aggregation methods for trends and measurements | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 2ce8656 | feat​(reporting): add asynchronous loading and sorting of deviation trends by severity | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | e880ef7 | feat​(reporting): implement Reporting​Api for fetching audit logs and report history | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | c9b116c | feat​(localization): add new localization strings for health metrics and report history | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | fba7dfd | feat​(badge): add danger tone to Badge​Tone enum with corresponding colors and icon | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | d9bbe26 | feat​(reporting): add Deviations​Tab widget for displaying trend data with loading and empty state handling | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 2a312ff | feat​(reporting): add History​Tab widget for displaying report history with loading and empty state handling | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 544218c | feat​(reporting): add Measurements​Tab widget for displaying measurement data with loading and empty state handling | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | a221017 | feat​(reporting): add Empty​State​View widget for displaying customizable empty states | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | f17673c | feat​(reporting): add Environment​Header widget for displaying environment names | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 581d147 | feat​(reporting): add History​Row widget for displaying individual report details | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 53821e4 | feat​(reporting): add Info​Banner widget for displaying informational messages | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | f5424c6 | feat​(reporting): add Measurement​Row widget for displaying measurement summaries | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 5f49f92 | feat​(reporting): add Modern​Card widget for displaying content with a modern design | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 556748c | feat​(reporting): add Modern​Filter​Chip and Modern​Filter​Chip​Bar for enhanced filtering options | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | a3891a6 | feat​(reporting): add Period​Filter widget for selecting report periods | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 62b5a2c | feat​(reporting): add report labels for periods and types | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 1d53da9 | feat​(reporting): add See​More​Button widget for enhanced user interaction | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 6b4b838 | feat​(reporting): add severity tone handling and trend direction icons | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 152bcb6 | feat​(reporting): add Swipe​Hint widget for user guidance | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 223f85e | feat​(reporting): add Tab​Bar​Header​Delegate for customizable tab bar headers | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 4cce90f | feat​(reporting): add Trend​Row widget for displaying deviation trends | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 89fe9a4 | feat​(reporting): add All​Deviations​Page, All​Measurements​Page, and All​Reports​Page for comprehensive reporting | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 52378ae | refactor​(reporting): refactor Reports​Page to use Tab​Bar for navigation and enhance UI components | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 9f4ed02 | fix​(reporting): update tone calculation in equipment detail page to use severity-based tone | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 90d1b5c | feat​(reporting): integrate Reporting​Api into dependency injection for enhanced reporting capabilities | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 1a0abaa | docs​(reporting): add dartdoc and refactor reporting bounded context | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 5a56bdb | refactor​(l10n): rename localization directory from l10n to i18n | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | dd70750 | docs​(architecture): reporting follows the same structure as the other contexts | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | cee4dcb | test​(reporting): cover the audit trail and trend ordering through the facade | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | e355f22 | refactor​(app): wire the restructured reporting in DI and router | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 5f9569f | refactor​(batch): read audit logs and trends through Reporting​Api | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | b31a642 | refactor​(reporting): rename pages to screens and use the reporting service in the bloc | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | fedb296 | refactor​(reporting): replace the queries with the facade and expose Reporting​Api | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 1f3436c | refactor​(reporting): replace the DTOs with models and the data source with a data provider and repository | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | 2ffae36 | refactor​(reporting): move the repository contract to domain/​interfaces and the rules into a mixin | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​inventory | 5b933c9 | feat​(inventory): add inventory movement item widget | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​inventory | 7268279 | refactor​(inventory): integrate inventory movement item widget into material detail page | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​inventory | fe07411 | feat​(inventory): add material usage item widget | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​inventory | 0ba7b34 | refactor​(inventory): integrate material usage item widget into material detail page. | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​inventory | 0c894a5 | refactore​(inventory): remove unused import in material detail page | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​inventory | 9eb31d4 | feat​(inventory): add material stock summary widget | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​inventory | 36acc99 | refactor​(inventory): integrate material stock summary widget into material detail page. | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​inventory | 8950716 | feat​(inventory): add inventory filter bar widget | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​inventory | 5401e76 | refactor​(inventory): integrate inventory filter bar widget into inventory page | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​inventory | b85fa1c | feat​(inventory): add inventory low stock banner widget | — | 06/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​inventory | 8088c86 | refactor​(inventory): integrate low stock banner widget into inventory screen. | — | 06/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​inventory | 47a2ba5 | refactor​(inventory): remove unused imports | — | 06/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​inventory | df14561 | feat​(inventory): add inventory stock quantities widget. | — | 06/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​inventory | 621d901 | refactor​(inventory): integrate stock quantities widget in material card and material stock summary screens. | — | 06/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​batch-redesign | 50baacf | feat​(i18n): add the texts of the batch redesign | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​batch-redesign | ac80105 | feat​(batch): show the batch history as one readable timeline | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​batch-redesign | 66b9e1e | feat​(batch): filter the batch list with its status counters | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​batch-redesign | ec75a71 | feat​(batch): clean up the batch detail and date decisions from the batch start | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​batch-redesign | e4a446f | test​(batch): expect the newest batch first after clearing the filters | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | c0383f0 | feat​(i18n): add the texts of the mobile redesign. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 7103cc3 | refactor​(common): align the color tokens with the qualitrack palette. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 1b166a6 | refactor​(common): use rubik and navy titles in the typography. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | db18dfd | feat​(common): style buttons, tabs, navigation bar and cards with material 3 expressive. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | fd52928 | feat​(common): keep every list draggable so pull-to-refresh always works. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | f16e379 | feat​(common): add a card with ripple and press scale feedback. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 825a516 | feat​(common): add the m3 toggle button and toggle bar. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | bc3ddeb | feat​(common): add the m3 search bar with back and clear actions. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 7cb58b7 | feat​(common): add the m3 fab menu. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 5fe0691 | feat​(common): add the compact filter summary card. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 2b26cc2 | feat​(common): add M3 secondary tabs. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 3e5daad | refactor​(common): add App​Bar​Title and Detail​List and show sections as mobile groups. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 1ab2c6a | feat​(common): add pull-to-refresh to Remote​State​View. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 839d89a | refactor​(common): make the Section​Card title optional. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | d58bd71 | refactor​(app): keep the navigation bar on every screen and order the tabs like the Web menu. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | d3988c7 | refactor​(app): build the navigation tabs from the router branches. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | ab31b6f | feat​(app): group the More menu like the Web menu and rename it to screen. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 09fce4a | feat​(command-center): expose the most urgent alert and the offline devices. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 03c876c | feat​(command-center): show a no-scroll home ordered like the Web menu. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 50d3725 | feat​(batch): filter batches from a FAB menu with a summary card. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | fb62f22 | refactor​(batch): show each batch as a list item. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | f783151 | feat​(batch): summarize the batch cycle and decide from a fixed bottom bar. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 6603676 | refactor​(batch): use the alert icon for compliance events in the history. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | a96222d | feat​(compliance): search alerts by variable, device or area | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | c9d5109 | feat​(compliance): filter alerts from a FAB menu with search and a summary card. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | f5ebf89 | refactor​(compliance): show the alert detail as detail rows with pull-to-refresh. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 61500c8 | refactor​(compliance): connected severity selector and pull-to-refresh in preferences. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 3874412 | refactor​(compliance): show each alert as a mobile list item. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | ee138ae | feat​(equipment): count the equipment of each filter. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | eaba97d | feat​(equipment): filter equipment from a FAB menu with a summary card. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 23e84eb | refactor​(equipment): detail rows, title in the app bar and history in secondary tabs. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | a917648 | refactor​(inventory): remove the filter bar and the low stock banner. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | e33b83f | feat​(inventory): filter materials from a FAB menu with a summary card. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 784087c | refactor​(inventory): title in the app bar and lots, movements and usages in secondary tabs. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 6e2bf91 | refactor​(inventory): show each material as a mobile list item. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | e2ae005 | feat​(inventory): show the usable stock as a bar against the minimum. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | bc2d859 | refactor​(laboratory): product titles in the app bar and detail rows. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 844a3a6 | refactor​(profile): show the profile as detail rows with pull-to-refresh. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | df3dfbe | refactor​(subscription): title in the app bar and detail rows. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | a912df4 | refactor​(reporting): primary tabs with icons and a left-aligned title. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 93909aa | refactor​(reporting): toggle filters and a left-aligned title in all deviations. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | bb75fc2 | refactor​(reporting): left-aligned title in all measurements. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | b7c289d | refactor​(reporting): left-aligned title in all reports. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | f612539 | refactor​(reporting): use the palette tokens in the history tab. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 162fca4 | refactor​(reporting): use the palette tokens in the measurements tab. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | b7e4ffa | refactor​(reporting): use the theme shape in the empty state action. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 1b0e2e2 | refactor​(reporting): use the palette and spacing tokens in the history row. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | ad25e0b | refactor​(reporting): use the brand container in the info banner. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 87cbaee | refactor​(reporting): use the palette and spacing tokens in the measurement row. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | ba062e2 | refactor​(reporting): borderless cards without shadow like the rest of the app. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 0dd8599 | refactor​(reporting): build the filter chips on the M3 toggle button. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 2b04f95 | feat​(reporting): choose the period with a connected button group. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | d6762a2 | refactor​(reporting): use the palette tokens in the swipe hint. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 7d2eb63 | refactor​(reporting): full-width pinned primary tabs. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 7e67040 | refactor​(reporting): use the state tones in the trend row. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | d72da8f | refactor​(tracking): title in the app bar and pull-to-refresh instead of buttons. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | adba7b3 | refactor​(tracking): title in the app bar and pull-to-refresh in the history. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 23f43e7 | refactor​(batch): adapt the batch list tests to the FAB menu. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 594dcf1 | refactor​(compliance): adapt the alerts tests to the FAB menu, search and mobile cards. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | c92f21c | feat​(app): test that the navigation tabs follow the router branches. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 3b56c44 | feat​(app): test the More sections and the confirmed sign out. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 65a4203 | feat​(command-center): test that the home fits every screen without scrolling. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | a81b9cd | feat​(batch): test the decision bar of the batch detail. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 3de03fe | feat​(equipment): test the equipment FAB menu. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | c996239 | feat​(inventory): test the inventory FAB menu. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​compliance | 9774f29 | fix​(compliance): name alerts the same way on every screen | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​compliance | 7d059e1 | refactor​(compliance): show the most important data first in the alert detail | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​compliance | 100e730 | refactor​(compliance): keep the alert review actions in a bottom bar | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​compliance | e387f67 | refactor​(compliance): title the alert detail and link the device and batch as rows | — | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​compliance | a442f26 | fix​(compliance): use the alert icon and the shared title in notifications | — | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​compliance | 5b70758 | refactor​(compliance): mark unread notifications with a single cue | — | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​compliance | 3b1d009 | feat​(compliance): read each alert card as one accessible label | — | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​ihc-corrections | 925a53b | feat​(app): keep the app in portrait, except the telemetry history | The Report (Mobile Style Guidelines) lays the app out for portrait and lets only the telemetry history chart turn to landscape. Nothing locked the orientation, so in landscape the Home shrank to 30%… | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​ihc-corrections | 66f1d7e | feat​(app): order the tabs like the Report and open equipment from More | The Report (Mobile Style Guidelines) defines the bottom bar as Home, Telemetry, Alerts, Batches and More, with equipment and inventory in More. The app had Home, Batches, Equipment, Telemetry and… | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​ihc-corrections | 696ec76 | feat​(command-center): show the four home cards by importance, without shrinking them | The Home followed the order of the Web menu with five cards (batches, equipment and telemetry, the most urgent alert, inventory), and avoided scrolling by scaling the whole panel down when it did not… | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​ihc-corrections | d3f7788 | fix​(reporting): keep the period on screen when an earlier answer arrives late | Picking a period and then another one let the slower answer of the first replace the second: with 31 days selected, the screen showed the data of 7 days. The BLo​C now numbers its requests and ignores… | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​ihc-corrections | 55fd103 | docs: describe the navigation, the Home and the orientation of the app | architecture.md explains the tabs of the Report, the icon of each section, when a link opens a tab or pushes a screen, the Home rule and the portrait orientation, and points to the real place of… | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​ihc-corrections | 1c0a1dc | refactor​(i18n): remove the texts no screen uses | 34 keys of strings.tsv were used by no screen any more, most of them left by the redesign of the screens and by the new Home (for example recent​Batches, key​Operational​Metrics, home​Batches,… | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​home-latest-alerts | e1bcc76 | feat​(command-center): keep the home cards at their height and list the latest alerts below | On a tall phone (411x914 dp) the four cards shared the whole height and grew to about 360 dp each, with their content floating in empty space. | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​home-latest-alerts | 1d146f6 | ci: pin Flutter 3.44.3 so a new stable release does not fail every PR | The workflow installed the latest stable, and Flutter 3.50.0 (released after the last green run) deprecates package:flutter/​material.dart in favour of package:material_​ui. flutter analyze then… | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​equipment-edge-gateway | d700cba | feat​(equipment): name and filter edge gateways and hide their BPM limits | — | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​home-priorities | c7cfaaa | feat​(command-center): show the home as a status strip and four rows to review by importance | — | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​home-priorities | 1ff2062 | fix​(command-center): capitalize the devices online label of the home | — | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-ui | 2049fb7 | feat​(i18n): add the texts for error titles, elapsed times and the sign-in hint | - error​Title* name the cause of a failure ("No connection", "Access restricted"...); the generic title now says "The information could not be loaded" instead of "Something went wrong". - time​Just​Now,… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-ui | 45bbf5e | feat​(common): title the error views by the cause of the failure | The error view no longer says "Something went wrong": its title and icon name what happened (no connection, no response, access restricted, not found, service unavailable), and the message below… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-ui | 4c852f0 | feat​(tracking): make the telemetry readings and devices readable at a glance | - A reading out of range takes the tint of its state and its figure the text tone of that state; screen readers also hear the state. - The time of each reading and of the last communication reads as… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-ui | a89efcc | feat​(app): put what matters first and drop empty content in the detail screens | - Equipment detail: for an Io​T device, the connection status and the deviation indicators come before the general information (model, serial, firmware). - Alert detail: the resolution notes card… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-ui | 63d2f41 | test: cover the error titles by cause and the elapsed times | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-ui | 41935b5 | feat​(app): open the More tab on its menu when coming from another tab | The tabs keep where they were left, and tapping the current tab goes back to its start. More is a menu of unrelated sections, so it now always opens on the menu instead of the section seen last,… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-ui | 4688e6f | feat​(command-center): give the Home a sober, current and less noisy look | - The app bar title is the laboratory, with the role and how long ago the figures were loaded below it ("Updated 5 min ago", counting every minute); the greeting is gone and the user is the avatar of… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-ui | 37c62fb | feat​(app): put the Alerts tab right after Home | The bottom bar is ordered by importance: Home, Alerts, Telemetry, Batches, More. Alerts are what a QA user acts on first, so they sit next to Home, as on the Home cards. | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-ui | dcdaef4 | feat​(common): add the texts and building blocks for the screen review | - code​Label names backend status, cycle and type codes in the language of the app (ACTIVE, MONTHLY, PREVENTIVE...), and humanizes the ones it does not know instead of showing them raw;… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-ui | a55d93a | feat​(app): make the lists and details consistent and drop repeated or empty content | - Below the minimum stock is amber across Inventory, as on the Home. - Alert, batch, material and product cards show a chevron, as equipment and More already did. - Alert cards and notifications show… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-ui | 7c4831b | feat​(app): show backend codes translated instead of raw | Billing (status, cycle, payments), equipment detail (maintenance, events, audit), inventory movements (lot status) and the batch history name their codes with code​Label instead of… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-ui | 07b1141 | feat​(reporting): show only what applies to each tab and match the app's cards | - The period filter is left out on the History tab, which does not depend on it. - The empty state offers "See last 31 days" only when another period is selected. - The Deviations tab shows its count… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-ui | 240100a | feat​(profile): change the photo from the avatar and confirm signing out | - A camera button on the avatar picks a photo, or offers to change or remove it, so the name sits right under the photo. - The full name row is shown only when it is missing; the heading already has… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-ui | d0fa2b5 | feat​(tracking): keep every device in sight and one message without readings | - The device chips wrap onto more lines instead of scrolling sideways, so the selected one is always visible. - Without readings, one notice replaces the empty chart, deviations and actions sections… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-ui | d3a3765 | test: cover the translated backend codes and the amber low stock | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-ui | ae99fff | fix​(app): show the Quali​Track logo on the About screen | About showed a generic shield icon; it now uses Quali​Track​Logo, the same image as the sign-in, splash and password screens. | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-ui | ab80a96 | feat​(app): say how current the Alerts and Batches lists are | Once loaded, the app bar subtitle of both lists reads "Updated 2 min ago", as on the Home and Telemetry, counting every minute. | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-ui | 7babed2 | feat​(compliance): undo "mark all as read" before it reaches the server | The notices show as read at once and a snackbar offers Undo for 5 seconds. The server is told only when it closes without undo, or when the screen is left before; the server has no way to mark… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-ui | e147d8b | feat​(tracking): shade the normal range on the chart and add a help sheet | - The normal range is a green band instead of two dashed lines, so a reading in or out of it shows at a glance; the critical limits stay dashed red lines, and the legend uses the band colour. - The… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-ui | c33f05c | feat​(common): remember when data was loaded and keep elapsed times counting | - Remote​State.loaded​At: the time of the last successful load, kept while loading, refreshing or failing; not part of equality. - Minute​Ticker rebuilds its child every minute, so "Updated 2 min ago"… | 12/11/2026 |
+
+**Edge API (Edge Service)** ([IoTech-2620-8741/qualitrack-edge-service](https://github.com/IoTech-2620-8741/qualitrack-edge-service))
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|------------|--------|-----------|----------------|---------------------|---------------------|
+| Io​Tech-2620-8741/​qualitrack-edge-service | develop | 735035f | chore: scaffold edge service project structure | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​iam | f86bd86 | feat​(iam): add credential | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​iam | 5015118 | feat​(iam): update enums | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​iam | dd9b540 | feat​(iam): delete services | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​iam | f0fb12e | feat​(iam): update entities | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​iam | afbf57f | feat​(iam): update name | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​iam | 4044804 | feat​(iam): add repositories | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​iam | 7d0f74a | feat​(iam): add configuration database | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​iam | 9df9f7f | feat​(iam): add models | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​iam | 095c160 | feat​(iam): update models | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​iam | 4bd46f5 | feat​(iam): update variables from Device in entities | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​iam | 0c4ef47 | feat​(iam): add repositories in infrastructure | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​iam | f366647 | feat​(iam): update the names of the attributes in the entities | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​iam | 08cd501 | feat​(iam): add coments of attributes | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​iam | b22a127 | feat​(iam): add services in application | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​iam | 5fe4e68 | feat​(iam):update files ignore | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​iam | 68811b9 | feat​(iam): add config | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​iam | 46528c0 | feat​(iam): add services in interfaces | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​iam | 7da810f | feat​(iam): add .env-example | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​iam | b48dd31 | feat​(iam): update app | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​repository-base | 68fd9d3 | chore: keep the iam, tracking and shared bounded contexts | Alerts are evaluated in the cloud, so the Edge has no Compliance &amp; Alerting context; the empty ca scaffold is removed and shared becomes a regular package. | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​repository-base | 58ac0cd | chore: rename requeriments.txt to requirements.txt | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​repository-base | 934c1d1 | chore: ignore local databases and bytecode | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​repository-base | d130400 | refactor​(iam): align device types and texts with the cloud registry | Device​Type uses ENVIRONMENTAL_​DEVICE and CONTAINER_​MONITOR, the values of the cloud platform. The device identifier is the sensor​External​Id the cloud registers for the Edge (ENV-001), not the MAC… | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​repository-base | a49dbc1 | docs: add the README and the Quali​Track proprietary license | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​repository-base | 121bd57 | ci: run the unit tests on pull requests | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​repository-base | 38bb34e | test​(iam): cover the device aggregate, the configuration and the authentication endpoint | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​repository-base | daf4d35 | docs​(changelog): add the changelog with the repository base (#1) | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​device-sign-in | 7488cbf | feat​(iam): register devices with a generated API key, rotate it and list devices | register_​device and rotate_​api_​key generate a random key and return it once with the device; the Edge stores only its verifier. list_​devices returns the registered devices by identity. | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​device-sign-in | 680d49c | feat​(iam): sign in devices at /​api/​v1/​auth/​sign-in (TS53, TS54) | The route of the Report replaces /​api/​v1/​iam/​authentications, which no device calls yet. The response also carries the device type, so the environmental device and the container monitor can confirm… | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​device-sign-in | 5ac46d4 | docs: document the device sign-in and the devices commands | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​device-sign-in | 8555f01 | feat​(iam): add the flask devices commands to register, rotate, revoke and list nodes | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​device-sign-in | 6899b9d | docs​(changelog): add the device sign-in and the devices commands (#2) | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​cloud-connection | eb387a7 | feat​(shared): add the background cloud synchronization thread | One daemon thread runs the synchronization tasks every CLOUD_​SYNC_​INTERVAL_​SECONDS with its own database connection; a failed task is logged and retried in the next cycle. | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​cloud-connection | 58735cb | feat​(shared): add the cloud settings and the authenticated cloud session | The Edge signs in to the Quali​Track Cloud REST API with the account of an operator (report 5.6), sends its JWT as a Bearer token and signs in again once when the cloud answers 401. Unreachable… | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​cloud-connection | 6dd847c | feat​(tracking): keep a local copy of the cloud device registry | Monitored​Device keeps the laboratory, environment and cloud identifier of each node the cloud registers with a sensor​External​Id. Cloud​Device​Registry​Gateway reads the equipment of the laboratory and… | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​cloud-connection | e84cd14 | docs: document the connection with the cloud and the cloud commands | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​cloud-connection | 480578b | feat​(tracking): add the flask cloud commands and start the synchronization with the service | flask cloud sync reads the registry now and flask cloud devices lists the local copy. python app.py starts the background synchronization; flask commands never start it. | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​cloud-connection | f555262 | docs​(changelog): add the connection with the cloud and the device registry (#3) | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​telemetry-reception | c4dd833 | feat​(tracking): store readings and actions once in SQLite | A node, metric and measurement time identify a reading, and a node, action and time an action, as in the cloud. A retry returns the stored record; a retry with different data raises Telemetry​Conflict… | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​telemetry-reception | a8d8ef3 | feat​(tracking): model readings and actuation events with their synchronization status | Telemetry​Reading is one metric a node measured at a moment and Actuation​Event an action of a container monitor, both PENDING until the cloud accepts them (TS60). They apply the rules of the cloud:… | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​telemetry-reception | 63c4372 | feat​(tracking): accept telemetry of nodes authenticated through the IAM anti-corruption layer | Iam​Anti​Corruption​Layer translates IAM's authentication into Tracking's own Reporting​Device. Telemetry​Application​Service checks that the node type sends the telemetry, creates one pending reading per… | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​telemetry-reception | f422b71 | docs: document the reception of readings and actions | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​telemetry-reception | eaf21c2 | feat​(tracking): receive readings and actions at the routes of the report (TS55, TS56, TS57) | POST /​api/​v1/​monitoring/​environment-readings and /​api/​v1/​monitoring/​container-readings take the metrics a node measured at one moment; POST /​api/​v1/​control/​actuation-events takes an action of a… | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​telemetry-reception | 2661a93 | docs​(changelog): add the reception of readings and actuation events (#4) | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​cloud-synchronization | 4f7e66d | feat​(tracking): give pending records the answer of the cloud | A pending reading or action becomes SYNCED or REJECTED; once answered it cannot change again. The repositories load the pending records oldest first after a cursor and save their synchronization… | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​cloud-synchronization | 0aef75f | feat​(tracking): send readings and actions to the routes of the cloud | Cloud​Telemetry​Gateway builds the nested routes of the cloud from the registry of each node: telemetry-measurements of the environment for the environmental device, and telemetry-measurements and… | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​cloud-synchronization | 2b20fc2 | docs: document the synchronization of the pending telemetry | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​cloud-synchronization | ba8219f | feat​(tracking): synchronize the pending telemetry with the cloud (TS61, TS62, TS63) | Telemetry​Synchronization​Application​Service sends the pending readings and actions oldest first, in batches. Records of a node the registry does not place in an environment stay pending, and an… | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​cloud-synchronization | e7adf5d | docs​(changelog): add the synchronization of the pending telemetry (#5) | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​profile-configuration | 6ad7472 | feat​(tracking): model the environmental profile a node applies | Environmental​Profile keeps the version, the thresholds and the actuation rules a node applies, with the rules of the cloud: each side of a threshold has its normal and critical limit, the critical… | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​profile-configuration | a5407b9 | feat​(tracking): copy the profile of each node from the cloud (TS64) | Cloud​Profile​Gateway reads the profile of the environment or the container monitor of each node placed in an environment. Environmental​Profile​Application​Service replaces the local copy only when every… | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​profile-configuration | e8f5104 | feat​(tracking): keep a local copy of the profiles in SQLite | The environmental_​profiles table stores the thresholds and rules as JSON; replace_​all makes the copy equal to the profiles the cloud has now in one transaction. | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​profile-configuration | 8011f0c | docs: document the profiles and the configuration of the nodes | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​profile-configuration | 598d2fb | feat​(tracking): hand each node its configuration (TS58, TS59) | GET /​api/​v1/​configurations/​{device​Id} returns the thresholds, actuation rules and profile version of the node that presents its API key, or 404 while the Edge has no profile for it. The background… | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​profile-configuration | 6835391 | docs​(changelog): add the profiles and the configuration of the nodes (#6) | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​docker-deployment | d4ea9b2 | feat: run the Edge with Docker Compose on the local station | The service qualitrack-edge runs the Edge REST API on Gunicorn without root and keeps the SQLite database in the qualitrack-data volume, as the report describes the deployment (4.1.3.4).… | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​docker-deployment | baed028 | feat: serve the Edge with Gunicorn | wsgi.py is the entry point of Gunicorn: it creates the application and starts the background cloud synchronization in the worker process. gunicorn.conf.py runs one worker, as SQLite and the… | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​docker-deployment | f4a2df3 | docs: document the deployment on the local station | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​docker-deployment | 866ca5f | test: close the test database before removing its folder | Windows cannot delete the SQLite file while a connection keeps it open. | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​docker-deployment | 5916ecd | ci: check the compose service and build the image for arm64 | The docker job starts docker-compose.yml, registers a node with the devices command, signs it in, receives a reading and checks that it survives the recreation of the container. The docker-arm64 job… | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​docker-deployment | 60ad95f | docs​(changelog): add the deployment on the local station (#7) | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​documentation | f9a6010 | docs: add the architecture decision records | ADR-0001 to ADR-0010: bounded contexts, SQLite with Peewee, API key per request, registration with commands, operator account in the cloud, registry and profiles in Tracking, background… | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​documentation | b63c9fe | docs: add the class diagram of the bounded contexts | Plant​UML diagram of IAM, Tracking and the shared infrastructure with their layers, protocols, implementations, the anti-corruption layer, the cloud gateways and the composition of the application. | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​documentation | 34dd746 | docs: add the technical stories TS53-TS64 with their traceability matrix | The Edge stories of the report with Gherkin acceptance criteria that describe the implemented behavior, and a Requirements Traceability Matrix to the classes and functions that implement each one. | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​documentation | 7425aac | docs: link the technical stories and the documentation from the README | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​documentation | 98a2880 | docs​(changelog): add the project documentation (#8) | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | release/​v1.0.0 | e4bf29f | docs​(changelog): release 1.0.0 | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | release/​v0.1.0 | 3ce1176 | docs​(changelog): number the first release 0.1.0 | The first release of the Edge is 0.1.0 instead of 1.0.0. | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​local-node-registry | 0aa5cac | docs: document that the Edge keeps only its own nodes | README, TS64 scenarios and traceability, ADR-0011 and the class diagram. | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​local-node-registry | a8cfb43 | feat​(tracking): keep only the nodes registered in this Edge from the cloud registry | The cloud lists the equipment of the whole laboratory, which may have nodes in environments other stations serve. The device registry now keeps only the nodes registered in this Edge with flask… | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​local-node-registry | 2cd9218 | docs​(changelog): keep only the nodes registered in this Edge (#14) | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | release/​v0.2.0 | 3389ea2 | docs​(changelog): release 0.2.0 | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​synced-telemetry-retention | 3e266a7 | feat​(config): add the retention days of the synchronized telemetry | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​synced-telemetry-retention | ae5e010 | feat​(tracking): purge the synchronized and rejected telemetry once it is old | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​synced-telemetry-retention | 0c5d088 | docs​(changelog): retention of the telemetry | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​synced-telemetry-retention | 128baf2 | docs: document the retention of the telemetry (ADR-0012) | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​tracking | 42a4262 | fix​(tracking): reject malformed cloud equipment lists | — | 07/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​tracking | e723f7b | fix​(tracking): handle invalid cloud profile responses | — | 07/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​tracking | 0747fbf | refactor​(tracking): update purge logic to retry failed telemetry cleanup | — | 07/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​tracking | 57e23df | test​(tracking): add retry logic for purge after repository failure | — | 07/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​tracking | ea481b6 | test​(tracking): add tests for rejecting malformed equipment lists and preserving local devices | — | 07/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​tracking | 0e6ec25 | refactor​(tracking): extract cloud telemetry payload builders" | — | 07/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​tracking | 1ea758e | test​(tracking): add retry logic for actuation after cloud outage | — | 07/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​environment-device-registry | 6e00e09 | docs​(changelog): registry per environment | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​environment-device-registry | aeea9af | docs: record the registry per environment (ADR-0013) | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​environment-device-registry | 76de5e8 | feat​(tracking): read only the iot devices of the station environments | With CLOUD_​ENVIRONMENT_​IDS set, the device registry asks the cloud for /​environments/​{environment​Id}/​equipments?iot=true of each environment instead of the equipment of the whole laboratory. The Edge… | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​environment-device-registry | fe3c3f1 | feat​(config): add the optional environments of the station | CLOUD_​ENVIRONMENT_​IDS lists the cloud environments the station serves, as a comma-separated list of positive integers; empty keeps the whole laboratory. | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​edge-integration | 475ae01 | refactor​(cloud): replace operator jwt with gateway api key | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​edge-integration | 6a39725 | feat​(cloud): fetch edge gateway assigned iot devices | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​edge-integration | 9068726 | feat​(iam): bridge cloud device enrollment to local iam | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​edge-integration | df9ea42 | feat​(tracking): cache and authorize cloud iot devices | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​edge-integration | 5e75a41 | feat​(tracking): expose iot device enrollment endpoint | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​edge-integration | 8f403d3 | refactor​(cloud): synchronize telemetry via gateway api | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​edge-integration | 5053926 | refactor​(cloud): fetch environmental profiles through gateway api | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​edge-integration | f983758 | refactor​(cloud): synchronize actuation events through gateway api | — | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​edge-integration | c5447c4 | refactor​(cloud): simplify cloud device registry gateway initialization | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​edge-integration | ec80c8d | fix​(config): validate gateway credentials and enforce HTTPS in production | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​edge-integration | 6571b98 | test​(edge): update cloud session tests for api key authentication | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​edge-integration | e8df9d3 | test​(tracking): align device registry tests with gateway endpoints | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​edge-integration | 0a51726 | test​(tracking): update profile tests for gateway endpoints | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​edge-integration | e30680e | test​(tracking): update telemetry tests for gateway routes | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​edge-integration | f563f64 | test​(edge): update http integration tests for gateway authentication | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​retire-cloud-environment-ids | 5271e77 | docs​(adr): record edge gateway authentication in ADR-0014 | Supersedes ADR-0005 and ADR-0013, amends ADR-0011 and updates the README, the class diagram and the changelog. | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​retire-cloud-environment-ids | 15c567e | refactor​(config): retire the CLOUD_​ENVIRONMENT_​IDS setting | The Edge reads its devices from the cloud as an Edge Gateway, so the setting was no longer used. | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | release/​v0.3.0 | bf54ee3 | refactor​(sync): add the sync context with the telemetry synchronization | Move the synchronization of the pending readings and actions, their purge, the telemetry gateway and the cloud commands out of Tracking. Sync reads the domain and the repositories of Tracking;… | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | release/​v0.3.0 | 0b27e55 | refactor​(sync): move the profile synchronization to the sync context | Sync copies the profiles from the cloud with the new Profile​Synchronization​Application​Service; Tracking keeps handing each node the profile it applies. | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | release/​v0.3.0 | 14002ee | test​(sync): check that tracking does not depend on sync | — | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | release/​v0.3.0 | 57a18c6 | docs​(changelog): sync context | — | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | release/​v0.3.0 | 57e2841 | refactor​(sync): move the cloud registry to the sync context | Monitored​Device, its repository, the registry service and its gateway are the cloud route of each node, so Sync owns them, together with the enrollment of the nodes the cached registry authorizes… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | release/​v0.3.0 | 7f142f6 | docs: record the sync context (ADR-0015) | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​sync-iam | 01c383d | refactor​(sync): remove the unused route helpers of the telemetry gateway | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​sync-iam | d1e979d | refactor​(iam): remove the unused is_​encoded check | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | release/​v0.3.0 | 96e74bc | docs​(stories): align the synchronization stories with the edge gateway | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | release/​v0.3.0 | 2f89ee3 | docs: document the gateway session and the enrollment endpoint | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | release/​v0.3.0 | 2ca2a27 | docs​(changelog): release 0.3.0 | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | fix/​sync-tracking-repositories | 9860b90 | docs​(sync): describe the registry of the edge gateway in the docstrings | Since ADR-0014 the registry caches every Io​T device the cloud assigns to this Edge Gateway, also before it is registered in the Edge; the docstrings still described the registry of the laboratory… | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | fix/​sync-tracking-repositories | 3d177bf | refactor​(sync): receive the repositories of tracking from create_​app | ADR-0015 makes Sync a conformist of Tracking that uses its entities and repository contracts. The telemetry and profile synchronization services still built the Peewee repositories of Tracking as… | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | fix/​sync-tracking-repositories | ff56831 | docs​(changelog): record #28 | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | release/​v0.3.1 | b3e94c6 | docs​(changelog): release 0.3.1 | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | fix/​edge-audit-findings | 13f6ce0 | refactor​(sync): require the registry repository and drop unused methods | Device​Registry​Application​Service no longer builds Monitored​Device​Repository from the application layer; create_​app already passes it, as for the other Sync services (ADR-0015). find_​monitored_​device… | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | fix/​edge-audit-findings | 68aa200 | fix​(iam): refuse a second registration of the same node | register_​device checked that the node did not exist and then saved it with an insert-or-update, so `flask devices register` and `POST /​api/​v1/​devices/​enroll` running at the same time both answered… | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | fix/​edge-audit-findings | 3c896fb | perf​(iam): verify the API keys of the nodes with SHA-256 | Every reading, action and configuration request checked the key with PBKDF2 at 310,000 iterations, tens of milliseconds on the Raspberry Pi, and the sign-in let anyone on the local network keep the… | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | fix/​edge-audit-findings | 9ef7c0c | perf​(sync): send pending records in parallel and filter waiting ones in SQL | The synchronization sent one record at a time and waited for each answer, so with 15 nodes every 10 s it fell behind as soon as a request took more than about 220 ms. Records are now sent four at a… | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | fix/​edge-audit-findings | 3ae059b | feat​(shared): log how long each synchronization cycle takes | The scheduler logs the time of every task and of the whole cycle, and warns when a cycle takes longer than CLOUD_​SYNC_​INTERVAL_​SECONDS, so a station that falls behind the cloud shows it in its logs. | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | fix/​edge-audit-findings | 81469ef | docs​(changelog): record the fixes of the edge service audit | — | 13/11/2026 |
 
 #### 6.2.2.5. Testing Suite Evidence for Sprint Review
 
