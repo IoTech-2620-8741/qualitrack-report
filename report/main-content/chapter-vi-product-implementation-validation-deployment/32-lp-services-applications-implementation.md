@@ -1806,22 +1806,25 @@ implementó cada funcionalidad. Como oportunidad de mejora, el equipo se propone
 uniforme a lo largo del sprint y publicar en main con mayor frecuencia, evitando concentrar la integración del trabajo
 en los días previos a la entrega.
 
-### 6.2.1. Sprint 2
+### 6.2.2. Sprint 2
 
-En esta sección se detalla el proceso de trabajo realizado por el equipo durante el primer sprint del proyecto
-QualiTrack.
+En esta sección se detalla el proceso de trabajo realizado por el equipo durante el segundo sprint del proyecto QualiTrack.
+
+Este sprint se centra en llevar QualiTrack de una primera versión visual a una solución IoT integrada de punta a punta. Para ello se construye la primera versión del backend (Cloud REST API), del Edge API, de las Embedded Apps de ambos dispositivos y de la aplicación móvil, junto con la segunda versión de la Landing Page y de la aplicación web, que pasa a consumir los servicios reales del backend.
+
+A diferencia del Sprint 1, el trabajo se organiza por bounded context: cada integrante es responsable de un contexto del core del negocio en todos los productos donde ese contexto aparece (backend, web, móvil, edge o embedded).
 
 
+#### 6.2.2.1. Sprint Planning 2
 
+La reunión de Sprint Planning 2 se realizó al cierre del Sprint 1, con la participación de los nueve integrantes del equipo. Antes de definir el nuevo alcance, el equipo revisó lo entregado en el Sprint 1 y las observaciones recibidas, y a partir de esa revisión acordó los cambios en la forma de trabajo para esta iteración.
 
-#### 6.2.1.1. Sprint Planning 2
-
-text
+En la siguiente tabla se resumen los datos de la reunión, el resumen del sprint anterior, el objetivo del Sprint 2 y los story points comprometidos.
 
 <table>
 <tr>
 <td>Sprint #</td>
-<td>Sprint 1</td>
+<td>Sprint 2</td>
 </tr>
 <tr>
 <td colspan="2"><strong>Sprint Planning Background</strong></td>
@@ -1848,11 +1851,23 @@ text
 </tr>
 <tr>
 <td>Sprint 1 Review Summary</td>
-<td></td>
+<td>In Sprint 1 the team completed all 101 planned user stories (190 story points), split into 182 tasks and 561 hours of work. The Landing Page was delivered and deployed on GitHub Pages, and the first version of the Web App was deployed on Firebase Hosting, with the screens for the business bounded contexts. An initial backend was also published on Azure with MySQL and a CI/CD pipeline.
+
+The instructor pointed out that the Web App had only been verified manually and that the backend was an incomplete demo version, so its technical stories are treated as pending work for this sprint.</td>
 </tr>
 <tr>
 <td>Sprint 1 Retrospective Summary</td>
-<td></td>
+<td>What went well: the use of GitFlow and Conventional Commits, splitting the work by screens, and the early deployment of the Landing Page and the Web App.
+
+
+
+
+What to improve: the Web App had no automated tests, the backend did not cover every bounded context, the Edge used an operator's account instead of its own credentials, and the physical prototype of the devices had not been built.
+
+
+
+
+Actions for Sprint 2: organize the work by bounded context so that each owner connects their context end to end, add tests to the Web App services, give each device its own credentials with the Edge, agree on the Edge–Cloud JSON contract at the start of the sprint, and merge into develop at least twice a week.</td>
 </tr>
 <tr>
 <td colspan="2"><strong>Sprint Goal & User Stories</strong></td>
@@ -1860,16 +1875,26 @@ text
 <tr>
 <td>Sprint 2 Goal</td>
 <td>
+Our focus is on building the first integrated version of QualiTrack: the Cloud REST API with the business bounded contexts, the Edge API receiving telemetry from the devices, the Embedded Apps for the Environment Monitor and the Container Monitor, and the first version of the Mobile App. At the same time, the Web App and the Landing Page move to a new version connected to the real services.
 
+
+
+
+We believe it delivers to quality managers the ability to supervise the environmental conditions of their laboratories and containers in real time, receive alerts when a reading goes out of range and check traceability from the web or mobile app, while operational staff get devices that react locally to a deviation.
+
+
+
+
+This will be confirmed when a reading taken by a physical device reaches the Edge, is synchronized with the backend and is shown in the Web App and the Mobile App, and when an out-of-range reading generates an alert that the quality manager can see.
 </td>
 </tr>
 <tr>
 <td>Sprint 2 Velocity</td>
-<td>190</td>
+<td>219</td>
 </tr>
 <tr>
 <td>Sum of Story Points</td>
-<td>190</td>
+<td>219</td>
 </tr>
 </table>
 
@@ -1877,17 +1902,7 @@ text
 
 text
 
-| Team Member (Last Name, First Name) / GitHub User­name | Aspect:  | Aspect:  | Aspect:  | Aspect:  | Aspect:  | Aspect:  | Aspect:  |
-|-------------------------------------------------------|----------------------|-------------------------------|------------------------------|------------------------------|------------------------------|----------------------------------|-------------------------------|
-| Baca Camargo, Vitaly Arturo<br>(Mr-Code-star)         | C                    | C                             | C                            | C                            | C                            | C                                | C                             |
-| Cutiri Agüero, Fabrizio Alexander<br>(Fabrizio​Cutiri) | C                    | C                             | L                            | C                            | C                            | L                                | C                             |
-| Guzmán Cabrejos, Yaku Mateo<br>(yakumateo)            | C                    | C                             | C                            | L                            | C                            | C                                | C                             |
-| Huapaya Galindo, Dyron<br>(Maine​Ma)                   | L                    | C                             | C                            | C                            | C                            | C                                | C                             |
-| Lopez Roman, Franco Mauricio<br>(Franco​Lopez00)       | C                    | C                             | C                            | C                            | C                            | C                                | L                             |
-| Montes Ramos, Henry Jaredt<br>(jahen17)               | C                    | C                             | C                            | C                            | C                            | C                                | C                             |
-| Ruiz Madrid, Billy Jake<br>(BJRM03)                   | C                    | L                             | C                            | C                            | C                            | C                                | C                             |
-| Torres Apoli­nario, Giovany Smith<br>(giovanydevv)     | C                    | C                             | C                            | C                            | L                            | C                                | C                             |
-| Quiroz Caceres, Adrian Alonso<br>(Aqc1019)            | C                    | C                             | C                            | C                            | C                            | C                                | C                             |
+
 
 Donde:
 
@@ -1896,10 +1911,7 @@ Donde:
 
 #### 6.2.1.3. Sprint Backlog 2
 
-El objetivo del Sprint 1 es desplegar la primera versión de la Landing Page y de la Web Application de QualiTrack. Para
-ello se seleccionaron 101 User Stories (190 Story Points): 11 de la Landing Page (17 Story Points) y 90 de la Web
-Application (173 Story Points). Cada User Story se descompuso en tareas de implementación de la vista y de integración
-con el RESTful API, asignadas según la matriz de liderazgo y colaboración. El seguimiento del sprint se realizó en Jira.
+El objetivo del Sprint 2 es ....
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/jira-sprint-1-board.jpg" alt="Sprint 1 en Jira" width="90%">
