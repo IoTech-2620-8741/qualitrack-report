@@ -4355,279 +4355,391 @@ trazabilidad y liberación de lotes, atención de alertas y generación de repor
 
 #### 6.2.2.7. Services Documentation Evidence for Sprint Review
 
-La Web Application del Sprint 1 consume el RESTful API de QualiTrack, desarrollado con Spring Boot y documentado con
-OpenAPI mediante Swagger UI. La documentación agrupa las operaciones por recurso raíz y describe, para cada una, su
-propósito, parámetros, cuerpo de la petición y posibles respuestas, incluidos los errores con la estructura
-`ErrorResource {code, message, details}`. Todas las rutas comienzan con `/api/v1` y, salvo las de autenticación,
-requieren el encabezado `Authorization: Bearer <JWT>`.
+En el Sprint 2 el Cloud REST API quedó documentado con OpenAPI en su totalidad y se documentó por primera vez la integración con el Edge. La documentación desplegada en Swagger UI describe 133 operaciones, 9 de ellas nuevas en este sprint: el registro de Edge Gateways y la emisión de su API key, la cobertura de los Edge Gateways de cada ambiente, los equipos de un ambiente y los cuatro endpoints con los que un Edge Gateway lee sus dispositivos IoT y envía la telemetría, los eventos de actuación y los perfiles ambientales. Además, los endpoints de Tracking & Telemetry y del Edge Gateway documentan cada campo con su descripción y un ejemplo, y sus respuestas con los códigos posibles. Las rutas del Cloud comienzan con `/api/v1`; las del Edge Gateway se autentican con el encabezado `X-API-Key` y el resto, salvo la autenticación y el webhook de Stripe, con `Authorization: Bearer <JWT>`. Los errores usan la estructura `ErrorResource {code, message, details}`.
 
-- **Documentación desplegada (Swagger
-  UI):** [Qualitrack Swagger Documentation](https://iotech-qualitrack-api.wonderfulocean-c1f38f8b.chilecentral.azurecontainerapps.io/swagger-ui/index.html)
-- **Documentación local:** `http://localhost:8080/swagger-ui/index.html` (especificación en `/v3/api-docs`)
-- **Repositorio:** [IoTech-2620-8741/qualitrack-platform](https://github.com/IoTech-2620-8741/qualitrack-platform)
+El Edge API, que reciben los nodos ESP32 en la red local de cada instalación, documenta sus rutas, encabezados, cuerpos y respuestas en el README y en los docstrings de su capa de interfaces, y sus decisiones en los Architecture Decision Records del repositorio.
 
-En total se documentan 124 operaciones. Las siguientes tablas las presentan por Bounded Context con su verbo HTTP, la
-sintaxis de llamada, sus parámetros y los códigos de respuesta (con el recurso devuelto en las respuestas exitosas).
+- **Documentación desplegada del Cloud REST API (Swagger UI):** [QualiTrack Swagger Documentation](https://iotech-qualitrack-api.wonderfulocean-c1f38f8b.chilecentral.azurecontainerapps.io/swagger-ui/index.html)
+- **Especificación OpenAPI:** `/v3/api-docs` del mismo servidor; en local `http://localhost:8080/swagger-ui/index.html`
+- **Repositorio del Cloud REST API:** [IoTech-2620-8741/qualitrack-platform](https://github.com/IoTech-2620-8741/qualitrack-platform)
+- **Documentación del Edge API:** [README](https://github.com/IoTech-2620-8741/qualitrack-edge-service#readme) y [Architecture Decision Records](https://github.com/IoTech-2620-8741/qualitrack-edge-service/blob/develop/docs/adrs.md) de [IoTech-2620-8741/qualitrack-edge-service](https://github.com/IoTech-2620-8741/qualitrack-edge-service)
 
-**IAM**
+Las siguientes tablas presentan las operaciones del Cloud REST API por Bounded Context, con su verbo HTTP, la sintaxis de llamada, sus parámetros y los códigos de respuesta (con el recurso devuelto en las respuestas exitosas). Las operaciones agregadas en este sprint se marcan como *(nuevo)*.
 
-| Endpoint                                            | Acción                                        | Parámetros                     | Respuestas                                     |
-|-----------------------------------------------------|-----------------------------------------------|--------------------------------|------------------------------------------------|
-| **POST** /​authentication/​password-recovery-requests | Request a password recovery                   | body: Password​Recovery​Request  | 202 (Password​Recovery​Accepted), 400            |
-| **POST** /​authentication/​password-resets            | Reset the password with the verification code | body: Password​Reset​Request     | 200 (Password​Reset​Completed), 400              |
-| **POST** /​authentication/​sign-in                    | User sign-in                                  | body: Sign​In​Resource           | 200                                            |
-| **POST** /​authentication/​sign-up                    | User sign-up                                  | body: Sign​Up​Resource           | 200                                            |
-| **GET** /roles                                      | Get roles                                     | —                              | 200 (Role​Resource[])                           |
-| **GET** /users                                      | Get users                                     | —                              | 200 (User​Resource[])                           |
-| **GET** /​users/​{user​Id}                             | Get a user                                    | userId (path)                  | 200 (User​Resource), 403, 404                   |
-| **PUT** /​users/​{user​Id}/​roles/​{role​Name}            | Assign a role to a user                       | userId (path), roleName (path) | 200 (User​Resource), 400, 404                   |
-| **GET** /users/me                                   | Get the account of the authenticated user     | —                              | 200 (User​Resource), 401                        |
-| **PUT** /users/me                                   | Update the username and the e-mail            | body: Update​Account​Request     | 200 (Authenticated​User​Resource), 400, 401, 409 |
-| **GET** /​users/​me/​onboarding                        | Get current user's onboarding state           | —                              | 200 (User​Onboarding​Resource), 401              |
-| **POST** /​users/​me/​password-changes                 | Change the password                           | body: Change​Password​Request    | 204, 400, 401                                  |
+**Edge Gateways**
 
-**Payments & Subscriptions**
-
-| Endpoint                                                       | Acción                                | Parámetros                                    | Respuestas                                |
-|----------------------------------------------------------------|---------------------------------------|-----------------------------------------------|-------------------------------------------|
-| **GET** /​laboratories/​{laboratory​Id}/​subscriptions             | Get the subscriptions of a laboratory | laboratoryId (path), status (query, opcional) | 200 (Subscription​Resource[])              |
-| **POST** /​stripe/​webhooks                                      | Process Stripe webhook                | Stripe-Signature (query), body: string        | 200 (Stripe​Webhook​Resource)               |
-| **POST** /​subscription-checkout-sessions                       | Create subscription checkout session  | body: Create​Checkout​Session​Resource           | 200                                       |
-| **GET** /​subscription-plans                                    | Get subscription plans                | —                                             | 200 (Subscription​Plan​Resource[])          |
-| **POST** /​subscriptions/​{subscription​Id}/​cancellation-requests | Cancel the renewal of a subscription  | subscription​Id (path)                         | 201 (Subscription​Resource), 403, 404, 409 |
-| **GET** /​subscriptions/​{subscription​Id}/​payments               | Get the payments of a subscription    | subscription​Id (path)                         | 200 (Subscription​Payment​Resource[])       |
-
-**Laboratory Management**
-
-| Endpoint                                                                             | Acción                                | Parámetros                                                                     | Respuestas                                                   |
-|--------------------------------------------------------------------------------------|---------------------------------------|--------------------------------------------------------------------------------|--------------------------------------------------------------|
-| **POST** /​laboratories                                                               | Create a new laboratory               | body: Create​Laboratory​Request                                                  | 201 (Laboratory​Response), 400, 409                           |
-| **GET** /​laboratories/​{laboratory​Id}                                                 | Get laboratory by ID                  | laboratoryId (path)                                                            | 200 (Laboratory​Response), 404                                |
-| **PUT** /​laboratories/​{laboratory​Id}                                                 | Update laboratory profile             | laboratoryId (path), body: Update​Laboratory​Request                             | 200 (Laboratory​Response), 403, 404                           |
-| **GET** /​laboratories/​{laboratory​Id}/​environments                                    | List the environments of a laboratory | laboratoryId (path)                                                            | 200 (Environment​Response[]), 403, 404                        |
-| **POST** /​laboratories/​{laboratory​Id}/​environments                                   | Register an environment               | laboratoryId (path), body: Create​Environment​Request                            | 201 (Environment​Response), 400, 403, 404, 409                |
-| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}                    | Get an environment of a laboratory    | laboratoryId (path), environment​Id (path)                                      | 200 (Environment​Response), 403, 404                          |
-| **PUT** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}                    | Update an environment                 | laboratoryId (path), environment​Id (path), body: Update​Environment​Request      | 200 (Environment​Response), 400, 403, 404, 409                |
-| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​usage-assignments | Assign the usage of an environment    | laboratoryId (path), environment​Id (path), body: Assign​Environment​Usage​Request | 201 (Environment​Usage​Assignment​Response), 400, 403, 404, 409 |
-| **GET** /​laboratories/​{laboratory​Id}/​staff                                           | List staff                            | laboratoryId (path)                                                            | 200 (Staff​Member​Response[]), 403                             |
-| **POST** /​laboratories/​{laboratory​Id}/​staff                                          | Register a staff member               | laboratoryId (path), body: Register​Staff​Request                                | 201 (Registered​Staff​Response), 400, 403, 409                 |
-| **GET** /​laboratories/​{laboratory​Id}/​staff/​{staff​Id}                                 | Get a staff member                    | laboratoryId (path), staffId (path)                                            | 200 (Staff​Member​Response), 403, 404                          |
-| **POST** /​laboratories/​{laboratory​Id}/​staff/​{staff​Id}/​deactivations                  | Deactivate a staff member             | laboratoryId (path), staffId (path)                                            | 201 (Staff​Member​Response), 403, 404, 409                     |
-
-**Inventory Management**
-
-| Endpoint                                                                                                                                          | Acción                                                                    | Parámetros                                                                                                                               | Respuestas                                               |
-|---------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------|
-| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-material-batches                                                            | List the raw material lots of an environment                              | laboratoryId (path), environment​Id (path), expiration​Status (query, opcional), withinDays (query, opcional)                              | 200 (Raw​Material​Batch​Response[]), 400, 404               |
-| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-material-imports                                                           | Import a legacy raw material into the environment                         | laboratoryId (path), environment​Id (path), body: Import​Raw​Material​Request                                                                | 201 (Raw​Material​Response), 404, 409                      |
-| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials                                                                   | List raw materials                                                        | laboratoryId (path), environment​Id (path), stockStatus (query, opcional)                                                                 | 200 (Raw​Material​Response[]), 400, 404                    |
-| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials                                                                  | Register a raw material                                                   | laboratoryId (path), environment​Id (path), body: Save​Raw​Material​Resource                                                                 | 201 (Raw​Material​Response), 400, 403, 404, 409            |
-| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}                                                   | Get a raw material                                                        | laboratoryId (path), environment​Id (path), raw​Material​Id (path)                                                                          | 200 (Raw​Material​Response), 404                           |
-| **PUT** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}                                                   | Update a raw material                                                     | laboratoryId (path), environment​Id (path), raw​Material​Id (path), body: Save​Raw​Material​Resource                                           | 200 (Raw​Material​Response), 400, 404, 409                 |
-| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​batches                                           | List the lots of a raw material                                           | laboratoryId (path), environment​Id (path), raw​Material​Id (path), usable (query, opcional)                                                | 200 (Raw​Material​Batch​Response[]), 404                    |
-| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​batches                                          | Register a received raw material lot                                      | laboratoryId (path), environment​Id (path), raw​Material​Id (path), body: Receive​Raw​Material​Batch​Resource                                   | 201 (Raw​Material​Batch​Response), 400, 404, 409            |
-| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​batches/​{raw​Material​Batch​Id}                      | Get a raw material lot                                                    | laboratoryId (path), environment​Id (path), raw​Material​Id (path), raw​Material​Batch​Id (path)                                               | 200 (Raw​Material​Batch​Response), 404                      |
-| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​batches/​{raw​Material​Batch​Id}/​container-assignment | Get the container of a raw material lot                                   | laboratoryId (path), environment​Id (path), raw​Material​Id (path), raw​Material​Batch​Id (path)                                               | 200 (Raw​Material​Batch​Container​Response), 404             |
-| **PUT** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​batches/​{raw​Material​Batch​Id}/​container-assignment | Store a raw material lot in a container                                   | laboratoryId (path), environment​Id (path), raw​Material​Id (path), raw​Material​Batch​Id (path), body: Assign​Raw​Material​Batch​Container​Request | 200 (Raw​Material​Batch​Container​Response), 400, 404, 409   |
-| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​batches/​{raw​Material​Batch​Id}/​reviews             | Review a raw material lot                                                 | laboratoryId (path), environment​Id (path), raw​Material​Id (path), raw​Material​Batch​Id (path), body: Review​Raw​Material​Batch​Resource         | 201 (Raw​Material​Batch​Review​Response), 400, 403, 404, 409 |
-| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​movements                                         | List the stock and review movements of a raw material                     | laboratoryId (path), environment​Id (path), raw​Material​Id (path)                                                                          | 200 (Inventory​Movement​Resource[])                        |
-| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​stock                                             | Get the usable stock of a raw material                                    | laboratoryId (path), environment​Id (path), raw​Material​Id (path)                                                                          | 200 (Raw​Material​Stock​Response), 404                      |
-| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​usages                                            | List the product batches that used a raw material                         | laboratoryId (path), environment​Id (path), raw​Material​Id (path)                                                                          | 200 (Raw​Material​Usage​Response[]), 403, 404               |
-| **GET** /​laboratories/​{laboratory​Id}/​inventory/​legacy-materials                                                                                   | Preview pre-Inventory records pending explicit import into an environment | laboratoryId (path)                                                                                                                      | 200 (Legacy​Material​Resource[])                           |
-| **GET** /​laboratories/​{laboratory​Id}/​raw-materials                                                                                                |                                                                           | laboratoryId (path), lowStock (query, opcional)                                                                                          | 200 (Raw​Material​Response[])                              |
-| **GET** /​laboratories/​{laboratory​Id}/​raw-materials/​{legacy​Raw​Material​Id}/​usages                                                                   | Get material consumption history                                          | laboratoryId (path), legacy​Raw​Material​Id (path)                                                                                          | 200 (Raw​Material​Usage​Response[])                         |
-
-**Equipment Management**
-
-| Endpoint                                                                                                        | Acción                                                 | Parámetros                                                                                        | Respuestas                                         |
-|-----------------------------------------------------------------------------------------------------------------|--------------------------------------------------------|---------------------------------------------------------------------------------------------------|----------------------------------------------------|
-| **POST** /​laboratories/​{laboratory​Id}/​devices/​container-monitors                                                | Register a container monitor                           | laboratoryId (path), body: Register​Iot​Device​Request                                               | 201 (Equipment​Response), 400, 403, 409             |
-| **POST** /​laboratories/​{laboratory​Id}/​devices/​environmental-devices                                             | Register an environmental device                       | laboratoryId (path), body: Register​Iot​Device​Request                                               | 201 (Equipment​Response), 400, 403, 409             |
-| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​container-monitors                           | Associate a container monitor with the environment     | laboratoryId (path), environment​Id (path), body: Assign​Device​Request                              | 201 (Equipment​Response), 400, 403, 404             |
-| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​environmental-devices                        | Associate an environmental device with the environment | laboratoryId (path), environment​Id (path), body: Assign​Device​Request                              | 201 (Equipment​Response), 400, 403, 404, 409        |
-| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​equipments                                   | Associate an equipment with the environment            | laboratoryId (path), environment​Id (path), body: Assign​Equipment​Request                           | 201 (Equipment​Response), 400, 403, 404, 409        |
-| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​equipments/​{equipment​Id}/​maintenance-records  | List maintenance records                               | laboratoryId (path), environment​Id (path), equipmentId (path)                                     | 200 (Maintenance​Record​Response[]), 403, 404        |
-| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​equipments/​{equipment​Id}/​maintenance-records | Register a maintenance                                 | laboratoryId (path), environment​Id (path), equipmentId (path), body: Register​Maintenance​Request   | 201 (Maintenance​Record​Response), 400, 403, 404     |
-| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​equipments/​{equipment​Id}/​status-changes      | Register a status change                               | laboratoryId (path), environment​Id (path), equipmentId (path), body: Change​Equipment​Status​Request | 201 (Equipment​Status​Change​Response), 400, 403, 404 |
-| **GET** /​laboratories/​{laboratory​Id}/​equipments                                                                 | List equipment                                         | laboratoryId (path)                                                                               | 200 (Equipment​Response[]), 403                     |
-| **POST** /​laboratories/​{laboratory​Id}/​equipments                                                                | Register an equipment                                  | laboratoryId (path), body: Register​Equipment​Request                                               | 201 (Equipment​Response), 400, 403, 409             |
-| **GET** /​laboratories/​{laboratory​Id}/​equipments/​{equipment​Id}                                                   | Get an equipment                                       | laboratoryId (path), equipmentId (path)                                                           | 200 (Equipment​Response), 403, 404                  |
-| **GET** /​laboratories/​{laboratory​Id}/​equipments/​{equipment​Id}/​bpm-configs                                       | Get the BPM parameter ranges of an equipment           | laboratoryId (path), equipmentId (path)                                                           | 200 (Bpm​Parameter​Config​Response[])                 |
-| **GET** /​laboratories/​{laboratory​Id}/​equipments/​{equipment​Id}/​bpm-configs/​{parameter​Name}                       | Get the range of a BPM parameter of an equipment       | laboratoryId (path), equipmentId (path), parameter​Name (path)                                     | 200 (Bpm​Parameter​Config​Response), 404              |
-| **PUT** /​laboratories/​{laboratory​Id}/​equipments/​{equipment​Id}/​bpm-configs/​{parameter​Name}                       | Configure the range of a BPM parameter of an equipment | laboratoryId (path), equipmentId (path), parameter​Name (path), body: Configure​Bpm​Request          | 200 (Bpm​Parameter​Config​Response), 400, 403         |
-
-**Tracking & Telemetry**
-
-| Endpoint                                                                                                                              | Acción                                                 | Parámetros                                                                                                                         | Respuestas                                           |
-|---------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------|
-| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​container-monitors/​{device​Id}/​actuation-events                      | Get the actions of the container monitor               | laboratoryId (path), environment​Id (path), deviceId (path), from (query, opcional), to (query, opcional)                           | 200 (Actuation​Event[]), 400, 403, 404                |
-| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​container-monitors/​{device​Id}/​actuation-events                     | Record an action of the container monitor              | laboratoryId (path), environment​Id (path), deviceId (path), body: Record​Actuation​Event​Request                                      | 200 (Actuation​Event), 201 (Actuation​Event), 400, 403 |
-| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​container-monitors/​{device​Id}/​environmental-profile                 | Get the environmental profile of the container monitor | laboratoryId (path), environment​Id (path), deviceId (path)                                                                         | 200 (Environmental​Profile), 403, 404                 |
-| **PUT** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​container-monitors/​{device​Id}/​environmental-profile/​actuation-rules | Save the actuation rules of the container monitor      | laboratoryId (path), environment​Id (path), deviceId (path), body: Update​Actuation​Rules​Request                                      | 200 (Environmental​Profile), 400, 403                 |
-| **PUT** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​container-monitors/​{device​Id}/​environmental-profile/​thresholds      | Save the thresholds of the container monitor           | laboratoryId (path), environment​Id (path), deviceId (path), body: Update​Thresholds​Request                                          | 200 (Environmental​Profile), 400, 403                 |
-| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​container-monitors/​{device​Id}/​telemetry-measurements                | Get the readings of the container monitor              | laboratoryId (path), environment​Id (path), deviceId (path), from (query, opcional), to (query, opcional), metric (query, opcional) | 200 (Measurement[]), 400, 403, 404                   |
-| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​container-monitors/​{device​Id}/​telemetry-measurements               | Record a reading of the container monitor              | laboratoryId (path), environment​Id (path), deviceId (path), body: Record​Measurement​Request                                         | 200 (Measurement), 201 (Measurement), 400, 403       |
-| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​devices/​{device​Id}/​environmental-profile                            | Get the profile the device applies                     | laboratoryId (path), environment​Id (path), deviceId (path)                                                                         | 200 (Environmental​Profile), 403, 404                 |
-| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​devices/​{device​Id}/​telemetry-status                                 | Get the connection status of a device                  | laboratoryId (path), environment​Id (path), deviceId (path)                                                                         | 200 (Device​Telemetry​Status​Response), 403, 404        |
-| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​environmental-profile                                               | Get the environmental profile of the environment       | laboratoryId (path), environment​Id (path)                                                                                          | 200 (Environmental​Profile), 403, 404                 |
-| **PUT** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​environmental-profile/​thresholds                                    | Save the thresholds of the environment                 | laboratoryId (path), environment​Id (path), body: Update​Thresholds​Request                                                           | 200 (Environmental​Profile), 400, 403                 |
-| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​telemetry-measurements                                              | Get the readings of the environmental device           | laboratoryId (path), environment​Id (path), from (query, opcional), to (query, opcional), metric (query, opcional)                  | 200 (Measurement[]), 400, 403, 404                   |
-| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​telemetry-measurements                                             | Record a reading of the environmental device           | laboratoryId (path), environment​Id (path), body: Record​Measurement​Request                                                          | 200 (Measurement), 201 (Measurement), 400, 403       |
-
-**Product Batch Management**
-
-| Endpoint                                                                                                                       | Acción                               | Parámetros                                                                                                           | Respuestas                                              |
-|--------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|----------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------|
-| **GET** /​laboratories/​{laboratory​Id}/​batches                                                                                   | Get laboratory batches               | laboratoryId (path)                                                                                                  | 200 (Batch​Response[]), 400                              |
-| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products                                                     | List products                        | laboratoryId (path), environment​Id (path)                                                                            | 200 (Pharmaceutical​Product​Response[]), 403              |
-| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products                                                    | Register a product                   | laboratoryId (path), environment​Id (path), body: Create​Product​Request                                                | 201 (Pharmaceutical​Product​Response), 400, 403, 404, 409 |
-| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}                                         | Get a product                        | laboratoryId (path), environment​Id (path), productId (path)                                                          | 200 (Pharmaceutical​Product​Response), 403, 404           |
-| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches                                 | List product batches                 | laboratoryId (path), environment​Id (path), productId (path)                                                          | 200 (Batch​Response[]), 403, 404                         |
-| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches                                | Register a product batch             | laboratoryId (path), environment​Id (path), productId (path), body: Create​Batch​Request                                | 201 (Batch​Response), 400, 403, 404, 409                 |
-| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}                       | Get a product batch                  | laboratoryId (path), environment​Id (path), productId (path), batchId (path)                                          | 200 (Batch​Response), 403, 404                           |
-| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}/​container-assignment  | Get the container of a product batch | laboratoryId (path), environment​Id (path), productId (path), batchId (path)                                          | 200 (Batch​Container​Response), 403, 404                  |
-| **PUT** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}/​container-assignment  | Store a product batch in a container | laboratoryId (path), environment​Id (path), productId (path), batchId (path), body: Assign​Batch​Container​Request       | 200 (Batch​Container​Response), 400, 403, 404, 409        |
-| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}/​equipment-usages     | Register an equipment usage          | laboratoryId (path), environment​Id (path), productId (path), batchId (path), body: Register​Equipment​Usage​Request     | 201 (Equipment​Usage​Response), 400, 403, 404, 409        |
-| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}/​raw-material-usages  | Register a raw material usage        | laboratoryId (path), environment​Id (path), productId (path), batchId (path), body: Register​Raw​Material​Usage​Request   | 201 (Raw​Material​Usage​Response), 400, 403, 404, 409      |
-| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}/​rejections           | Reject a product batch               | laboratoryId (path), environment​Id (path), productId (path), batchId (path), body: Reject​Batch​Request                | 201 (Batch​Rejection​Response), 400, 403, 404, 409        |
-| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}/​releases             | Release a product batch              | laboratoryId (path), environment​Id (path), productId (path), batchId (path), body: Release​Batch​Request               | 201 (Batch​Release​Response), 400, 403, 404, 409          |
-| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}/​staff-participations | Register a staff participation       | laboratoryId (path), environment​Id (path), productId (path), batchId (path), body: Register​Staff​Participation​Request | 201 (Staff​Participation​Response), 400, 403, 404, 409    |
-| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}/​traceability          | Get the traceability of a batch      | laboratoryId (path), environment​Id (path), productId (path), batchId (path)                                          | 200 (Batch​Traceability​Response), 403, 404               |
+| Endpoint | Acción | Parámetros | Respuestas |
+|----------|--------|------------|------------|
+| **GET** /​edge-gateways/​{device​Id}/​iot-devices | Get Edge Gateway IoT devices *(nuevo)* | X-API-Key (header), device​Id (path) | 200 (Edge​Gateway​Iot​Device[]), 401, 403 |
+| **POST** /​edge-gateways/​{gateway​Id}/​iot-devices/​{iot​Device​Id}/​actuation-events | Record Edge Gateway actuation event *(nuevo)* | X-API-Key (header), gateway​Id (path), iot​Device​Id (path), body: Record​Actuation​Event​Request | 200 (Actuation​Event), 201 (Actuation​Event), 400, 401, 403 |
+| **GET** /​edge-gateways/​{gateway​Id}/​iot-devices/​{iot​Device​Id}/​environmental-profile | Get IoT environmental profile *(nuevo)* | X-API-Key (header), gateway​Id (path), iot​Device​Id (path) | 200 (Environmental​Profile), 401, 403, 404 |
+| **POST** /​edge-gateways/​{gateway​Id}/​iot-devices/​{iot​Device​Id}/​telemetry-measurements | Record IoT telemetry from an Edge Gateway *(nuevo)* | X-API-Key (header), gateway​Id (path), iot​Device​Id (path), body: Record​Measurement​Request | 200 (Measurement), 201 (Measurement), 400, 401, 403 |
 
 **Compliance & Alerting**
 
-| Endpoint                                                                            | Acción                                                        | Parámetros                                                                                                                                            | Respuestas                                                                |
-|-------------------------------------------------------------------------------------|---------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
-| **GET** /​batches/​{batch​Id}/​compliance-events                                        | Get the compliance events of a batch                          | batchId (path)                                                                                                                                        | 200 (Compliance​Event​Resource[])                                           |
-| **GET** /​deviation-alerts/​{alert​Id}                                                 | Get a deviation alert                                         | alertId (path)                                                                                                                                        | 200 (Deviation​Alert​Detail​Response), 403, 404                              |
-| **POST** /​deviation-alerts/​{alert​Id}/​acknowledgements                               | Acknowledge a deviation alert                                 | alertId (path)                                                                                                                                        | 201 (Deviation​Alert​Response), 403, 404, 409                               |
-| **POST** /​deviation-alerts/​{alert​Id}/​email-notifications                            | E-mail a critical alert to the laboratory                     | alertId (path)                                                                                                                                        | 201 (Alert​Email​Notification), 403, 404, 409, 502                          |
-| **POST** /​deviation-alerts/​{alert​Id}/​resolutions                                    | Resolve a deviation alert                                     | alertId (path), body: Resolve​Alert​Request                                                                                                             | 201 (Deviation​Alert​Response), 400, 403, 404, 409                          |
-| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​deviation-alerts  | Get the deviation alerts of an environment                    | laboratoryId (path), environment​Id (path), status (query, opcional), severity (query, opcional), deviceId (query, opcional), active (query, opcional) | 200 (Deviation​Alert​Response[]), 400, 403, 404                             |
-| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​deviation-alerts | Register a deviation of an environment or container           | laboratoryId (path), environment​Id (path), body: Create​Deviation​Alert​Request                                                                          | 200 (Deviation​Alert​Response), 201 (Deviation​Alert​Response), 400, 403, 404 |
-| **GET** /​laboratories/​{laboratory​Id}/​equipments/​{equipment​Id}/​compliance-events     | Get the compliance events of an equipment                     | laboratoryId (path), equipmentId (path)                                                                                                               | 200 (Compliance​Event​Resource[])                                           |
-| **GET** /​users/​me/​notification-preferences                                          | Get the notification preferences of the authenticated user    | —                                                                                                                                                     | 200 (Notification​Preference​Resource)                                      |
-| **PUT** /​users/​me/​notification-preferences                                          | Update the notification preferences of the authenticated user | body: Update​Notification​Preference​Request                                                                                                             | 200 (Notification​Preference​Resource), 400                                 |
-| **GET** /​users/​me/​notifications                                                     | Get the notifications of the authenticated user               | unread (query, opcional), limit (query, opcional)                                                                                                     | 200 (Notification[]), 400                                                 |
-| **POST** /​users/​me/​notifications/​{notification​Id}/​read-receipts                     | Mark a notification as read                                   | notification​Id (path)                                                                                                                                 | 201 (Notification), 404                                                   |
-| **POST** /​users/​me/​notifications/​read-receipts                                      | Mark every notification as read                               | —                                                                                                                                                     | 201 (Notifications​Read)                                                   |
-| **GET** /​users/​me/​notifications/​unread-count                                        | Count the unread notifications of the authenticated user      | —                                                                                                                                                     | 200 (Unread​Notifications)                                                 |
+| Endpoint | Acción | Parámetros | Respuestas |
+|----------|--------|------------|------------|
+| **GET** /​batches/​{batch​Id}/​compliance-events | Get the compliance events of a batch | batch​Id (path) | 200 (Compliance​Event​Resource[]), 403 |
+| **GET** /​deviation-alerts/​{alert​Id} | Get a deviation alert | alert​Id (path) | 200 (Deviation​Alert​Detail​Response), 403, 404 |
+| **POST** /​deviation-alerts/​{alert​Id}/​acknowledgements | Acknowledge a deviation alert | alert​Id (path) | 201 (Deviation​Alert​Response), 403, 404, 409 |
+| **POST** /​deviation-alerts/​{alert​Id}/​email-notifications | E-mail a critical alert to the laboratory | alert​Id (path) | 201 (Alert​Email​Notification), 403, 404, 409, 502 |
+| **POST** /​deviation-alerts/​{alert​Id}/​resolutions | Resolve a deviation alert | alert​Id (path), body: Resolve​Alert​Request | 201 (Deviation​Alert​Response), 400, 403, 404, 409 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​deviation-alerts | Get the deviation alerts of an environment | laboratory​Id (path), environment​Id (path), status (query, opcional), severity (query, opcional), device​Id (query, opcional), active (query, opcional) | 200 (Deviation​Alert​Response[]), 400, 403, 404 |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​deviation-alerts | Register a deviation of an environment or container | laboratory​Id (path), environment​Id (path), body: Create​Deviation​Alert​Request | 200 (Deviation​Alert​Response), 201 (Deviation​Alert​Response), 400, 403, 404 |
+| **GET** /​laboratories/​{laboratory​Id}/​equipments/​{equipment​Id}/​compliance-events | Get the compliance events of an equipment | laboratory​Id (path), equipment​Id (path) | 200 (Compliance​Event​Resource[]), 403 |
+| **GET** /​users/​me/​notification-preferences | Get the notification preferences of the authenticated user | — | 200 (Notification​Preference​Resource) |
+| **PUT** /​users/​me/​notification-preferences | Update the notification preferences of the authenticated user | body: Update​Notification​Preference​Request | 200 (Notification​Preference​Resource), 400 |
+| **GET** /​users/​me/​notifications | Get the notifications of the authenticated user | unread (query, opcional), limit (query, opcional) | 200 (Notification[]), 400 |
+| **POST** /​users/​me/​notifications/​{notification​Id}/​read-receipts | Mark a notification as read | notification​Id (path) | 201 (Notification), 404 |
+| **POST** /​users/​me/​notifications/​read-receipts | Mark every notification as read | — | 201 (Notifications​Read) |
+| **GET** /​users/​me/​notifications/​unread-count | Count the unread notifications of the authenticated user | — | 200 (Unread​Notifications) |
+
+**Profile Management**
+
+| Endpoint | Acción | Parámetros | Respuestas |
+|----------|--------|------------|------------|
+| **GET** /​laboratories/​{laboratory​Id}/​staff/​{staff​Id}/​profile | Get the profile of a staff member | laboratory​Id (path), staff​Id (path) | 200 (Profile), 403, 404 |
+| **GET** /​laboratories/​{laboratory​Id}/​staff/​{staff​Id}/​profile/​photo | Get the photo of a staff member | laboratory​Id (path), staff​Id (path) | 200, 403, 404 |
+| **GET** /​users/​me/​profile | Get the profile of the authenticated user | — | 200 (Profile), 401 |
+| **PUT** /​users/​me/​profile | Update the profile of the authenticated user | body: Update​Profile​Request | 200 (Profile), 400, 401 |
+| **GET** /​users/​me/​profile/​photo | Get the photo of the authenticated user | — | 200, 404 |
+| **PUT** /​users/​me/​profile/​photo | Replace the photo of the authenticated user | — | 200 (Profile), 400, 413, 415 |
+| **DELETE** /​users/​me/​profile/​photo | Remove the photo of the authenticated user | — | 204, 401 |
+
+**Identity & Access Management**
+
+| Endpoint | Acción | Parámetros | Respuestas |
+|----------|--------|------------|------------|
+| **POST** /​authentication/​password-recovery-requests | Request a password recovery | body: Password​Recovery​Request | 202 (Password​Recovery​Accepted), 400 |
+| **POST** /​authentication/​password-resets | Reset the password with the verification code | body: Password​Reset​Request | 200 (Password​Reset​Completed), 400 |
+| **POST** /​authentication/​sign-in | User sign-in | body: Sign​In​Resource | 200 |
+| **POST** /​authentication/​sign-up | User sign-up | body: Sign​Up​Resource | 200 |
+| **GET** /​roles | Get roles | — | 200 (Role​Resource[]) |
+| **GET** /​users | Get users | — | 200 (User​Resource[]) |
+| **GET** /​users/​{user​Id} | Get a user | user​Id (path) | 200 (User​Resource), 403, 404 |
+| **PUT** /​users/​{user​Id}/​roles/​{role​Name} | Assign a role to a user | user​Id (path), role​Name (path) | 200 (User​Resource), 400, 404 |
+| **GET** /​users/​me | Get the account of the authenticated user | — | 200 (User​Resource), 401 |
+| **PUT** /​users/​me | Update the username and the e-mail | body: Update​Account​Request | 200 (Authenticated​User​Resource), 400, 401, 409 |
+| **GET** /​users/​me/​onboarding | Get current user's onboarding state | — | 200 (User​Onboarding​Resource), 401 |
+| **POST** /​users/​me/​password-changes | Change the password | body: Change​Password​Request | 204, 400, 401 |
+
+**Payments & Subscriptions**
+
+| Endpoint | Acción | Parámetros | Respuestas |
+|----------|--------|------------|------------|
+| **GET** /​laboratories/​{laboratory​Id}/​subscriptions | Get the subscriptions of a laboratory | laboratory​Id (path), status (query, opcional) | 200 (Subscription​Resource[]) |
+| **POST** /​stripe/​webhooks | Process Stripe webhook | Stripe-Signature (header) | 200 (Stripe​Webhook​Resource) |
+| **POST** /​subscription-checkout-sessions | Create subscription checkout session | body: Create​Checkout​Session​Resource | 200 |
+| **GET** /​subscription-plans | Get subscription plans | — | 200 (Subscription​Plan​Resource[]) |
+| **POST** /​subscriptions/​{subscription​Id}/​cancellation-requests | Cancel the renewal of a subscription | subscription​Id (path) | 201 (Subscription​Resource), 403, 404, 409 |
+| **GET** /​subscriptions/​{subscription​Id}/​payments | Get the payments of a subscription | subscription​Id (path) | 200 (Subscription​Payment​Resource[]) |
 
 **Reporting & Audit**
 
-| Endpoint                                                                                                | Acción                                         | Parámetros                                                                                         | Respuestas                                    |
-|---------------------------------------------------------------------------------------------------------|------------------------------------------------|----------------------------------------------------------------------------------------------------|-----------------------------------------------|
-| **GET** /​batches/​{batch​Id}/​audit-logs                                                                   | Get the audit log of a batch                   | batchId (path), dateFrom (query, opcional), dateTo (query, opcional)                               | 200 (Audit​Log​Entry​Resource[])                 |
-| **GET** /​batches/​{batch​Id}/​reports                                                                      | Get the reports of a batch                     | batchId (path)                                                                                     | 200 (Audit​Report​Resource[])                   |
-| **POST** /​batches/​{batch​Id}/​reports                                                                     | Generate a batch traceability report           | batchId (path), body: Generate​Batch​Report​Resource                                                  | 201 (Audit​Report​Resource), 400, 403           |
-| **POST** /​laboratories/​{laboratory​Id}/​compliance-reports                                                | Generate the environmental report of a period  | laboratoryId (path), body: Generate​Compliance​Report​Resource                                        | 201 (Audit​Report​Resource), 400, 403           |
-| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​deviation-trends                      | Get the deviation indicators of an environment | laboratoryId (path), environment​Id (path), from (query, opcional), to (query, opcional)            | 200 (Deviation​Trend​Response[]), 400, 403, 404 |
-| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​equipments/​{equipment​Id}/​log-reports | Generate a log report of an equipment          | laboratoryId (path), environment​Id (path), equipmentId (path), body: Export​Equipment​Log​Resource    | 201 (Audit​Report​Resource), 400, 403, 404      |
-| **GET** /​laboratories/​{laboratory​Id}/​equipments/​{equipment​Id}/​audit-logs                                | Get the audit log of an equipment              | laboratoryId (path), equipmentId (path), dateFrom (query, opcional), dateTo (query, opcional)      | 200 (Audit​Log​Entry​Resource[])                 |
-| **POST** /​laboratories/​{laboratory​Id}/​inventory/​reports                                                 | Generate the inventory report                  | laboratoryId (path), body: Generate​Inventory​Report​Request                                          | 201 (Audit​Report​Resource), 400, 403           |
-| **GET** /​laboratories/​{laboratory​Id}/​kpi-dashboards                                                     | Get the indicators of the laboratory           | laboratoryId (path), from (query, opcional), to (query, opcional), environment​Id (query, opcional) | 200 (Kpi​Dashboard​Response), 400, 403, 404     |
-| **GET** /​laboratories/​{laboratory​Id}/​reports                                                            | Get the reports generated in the laboratory    | laboratoryId (path)                                                                                | 200 (Audit​Report​Resource[])                   |
-| **GET** /​laboratories/​{laboratory​Id}/​staff/​{staff​Id}/​audit-logs                                         | Get the activity of a staff member             | laboratoryId (path), staffId (path)                                                                | 200 (Audit​Log​Entry​Resource[]), 403, 404       |
-| **GET** /​reports/​{report​Id}                                                                             | Get audit report by ID                         | reportId (path)                                                                                    | 200                                           |
-| **GET** /​reports/​{report​Id}/​content                                                                     | Download a stored report                       | reportId (path)                                                                                    | 200                                           |
+| Endpoint | Acción | Parámetros | Respuestas |
+|----------|--------|------------|------------|
+| **GET** /​batches/​{batch​Id}/​audit-logs | Get the audit log of a batch | batch​Id (path), date​From (query, opcional), date​To (query, opcional) | 200 (Audit​Log​Entry​Resource[]) |
+| **GET** /​batches/​{batch​Id}/​reports | Get the reports of a batch | batch​Id (path) | 200 (Audit​Report​Resource[]) |
+| **POST** /​batches/​{batch​Id}/​reports | Generate a batch traceability report | batch​Id (path), body: Generate​Batch​Report​Resource | 201 (Audit​Report​Resource), 400, 403 |
+| **POST** /​laboratories/​{laboratory​Id}/​compliance-reports | Generate the environmental report of a period | laboratory​Id (path), body: Generate​Compliance​Report​Resource | 201 (Audit​Report​Resource), 400, 403 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​deviation-trends | Get the deviation indicators of an environment | laboratory​Id (path), environment​Id (path), from (query, opcional), to (query, opcional) | 200 (Deviation​Trend​Response[]), 400, 403, 404 |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​equipments/​{equipment​Id}/​log-reports | Generate a log report of an equipment | laboratory​Id (path), environment​Id (path), equipment​Id (path), body: Export​Equipment​Log​Resource | 201 (Audit​Report​Resource), 400, 403, 404 |
+| **GET** /​laboratories/​{laboratory​Id}/​equipments/​{equipment​Id}/​audit-logs | Get the audit log of an equipment | laboratory​Id (path), equipment​Id (path), date​From (query, opcional), date​To (query, opcional) | 200 (Audit​Log​Entry​Resource[]) |
+| **POST** /​laboratories/​{laboratory​Id}/​inventory/​reports | Generate the inventory report | laboratory​Id (path), body: Generate​Inventory​Report​Request | 201 (Audit​Report​Resource), 400, 403 |
+| **GET** /​laboratories/​{laboratory​Id}/​kpi-dashboards | Get the indicators of the laboratory | laboratory​Id (path), from (query, opcional), to (query, opcional), environment​Id (query, opcional) | 200 (Kpi​Dashboard​Response), 400, 403, 404 |
+| **GET** /​laboratories/​{laboratory​Id}/​reports | Get the reports generated in the laboratory | laboratory​Id (path) | 200 (Audit​Report​Resource[]) |
+| **GET** /​laboratories/​{laboratory​Id}/​staff/​{staff​Id}/​audit-logs | Get the activity of a staff member | laboratory​Id (path), staff​Id (path) | 200 (Audit​Log​Entry​Resource[]), 403, 404 |
+| **GET** /​reports/​{report​Id} | Get audit report by ID | report​Id (path) | 200 |
+| **GET** /​reports/​{report​Id}/​content | Download a stored report | report​Id (path) | 200 |
 
-**Profile**
+**Tracking & Telemetry**
 
-| Endpoint                                                           | Acción                                       | Parámetros                          | Respuestas                   |
-|--------------------------------------------------------------------|----------------------------------------------|-------------------------------------|------------------------------|
-| **GET** /​laboratories/​{laboratory​Id}/​staff/​{staff​Id}/​profile       | Get the profile of a staff member            | laboratoryId (path), staffId (path) | 200 (Profile), 403, 404      |
-| **GET** /​laboratories/​{laboratory​Id}/​staff/​{staff​Id}/​profile/​photo | Get the photo of a staff member              | laboratoryId (path), staffId (path) | 200 (string), 403, 404       |
-| **GET** /​users/​me/​profile                                          | Get the profile of the authenticated user    | —                                   | 200 (Profile), 401           |
-| **PUT** /​users/​me/​profile                                          | Update the profile of the authenticated user | body: Update​Profile​Request          | 200 (Profile), 400, 401      |
-| **GET** /​users/​me/​profile/​photo                                    | Get the photo of the authenticated user      | —                                   | 200 (string), 404            |
-| **PUT** /​users/​me/​profile/​photo                                    | Replace the photo of the authenticated user  | body: string                        | 200 (Profile), 400, 413, 415 |
-| **DELETE** /​users/​me/​profile/​photo                                 | Remove the photo of the authenticated user   | —                                   | 204, 401                     |
+| Endpoint | Acción | Parámetros | Respuestas |
+|----------|--------|------------|------------|
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​container-monitors/​{device​Id}/​actuation-events | Get the actions of the container monitor | laboratory​Id (path), environment​Id (path), device​Id (path), from (query, opcional), to (query, opcional) | 200 (Actuation​Event[]), 400, 403, 404 |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​container-monitors/​{device​Id}/​actuation-events | Record an action of the container monitor | laboratory​Id (path), environment​Id (path), device​Id (path), body: Record​Actuation​Event​Request | 200 (Actuation​Event), 201 (Actuation​Event), 400, 403 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​container-monitors/​{device​Id}/​environmental-profile | Get the environmental profile of the container monitor | laboratory​Id (path), environment​Id (path), device​Id (path) | 200 (Environmental​Profile), 403, 404 |
+| **PUT** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​container-monitors/​{device​Id}/​environmental-profile/​actuation-rules | Save the actuation rules of the container monitor | laboratory​Id (path), environment​Id (path), device​Id (path), body: Update​Actuation​Rules​Request | 200 (Environmental​Profile), 400, 403 |
+| **PUT** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​container-monitors/​{device​Id}/​environmental-profile/​thresholds | Save the thresholds of the container monitor | laboratory​Id (path), environment​Id (path), device​Id (path), body: Update​Thresholds​Request | 200 (Environmental​Profile), 400, 403 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​container-monitors/​{device​Id}/​telemetry-measurements | Get the readings of the container monitor | laboratory​Id (path), environment​Id (path), device​Id (path), from (query, opcional), to (query, opcional), metric (query, opcional) | 200 (Measurement[]), 400, 403, 404 |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​container-monitors/​{device​Id}/​telemetry-measurements | Record a reading of the container monitor | laboratory​Id (path), environment​Id (path), device​Id (path), body: Record​Measurement​Request | 200 (Measurement), 201 (Measurement), 400, 403 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​devices/​{device​Id}/​environmental-profile | Get the profile the device applies | laboratory​Id (path), environment​Id (path), device​Id (path) | 200 (Environmental​Profile), 403, 404 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​devices/​{device​Id}/​telemetry-status | Get the connection status of a device | laboratory​Id (path), environment​Id (path), device​Id (path) | 200 (Device​Telemetry​Status​Response), 403, 404 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​environmental-profile | Get the environmental profile of the environment | laboratory​Id (path), environment​Id (path) | 200 (Environmental​Profile), 403, 404 |
+| **PUT** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​environmental-profile/​thresholds | Save the thresholds of the environment | laboratory​Id (path), environment​Id (path), body: Update​Thresholds​Request | 200 (Environmental​Profile), 400, 403 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​telemetry-measurements | Get the readings of the environmental device | laboratory​Id (path), environment​Id (path), from (query, opcional), to (query, opcional), metric (query, opcional) | 200 (Measurement[]), 400, 403, 404 |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​telemetry-measurements | Record a reading of the environmental device | laboratory​Id (path), environment​Id (path), body: Record​Measurement​Request | 200 (Measurement), 201 (Measurement), 400, 403 |
 
-**Ejemplos de interacción**
+**Product Batch Management**
 
-Inicio de sesión (`POST /api/v1/authentication/sign-in`):
+| Endpoint | Acción | Parámetros | Respuestas |
+|----------|--------|------------|------------|
+| **GET** /​laboratories/​{laboratory​Id}/​batches | List laboratory batches | laboratory​Id (path) | 200 (Batch​Response[]), 400, 403 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products | List products | laboratory​Id (path), environment​Id (path) | 200 (Pharmaceutical​Product​Response[]), 403 |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products | Register a product | laboratory​Id (path), environment​Id (path), body: Create​Product​Request | 201 (Pharmaceutical​Product​Response), 400, 403, 404, 409 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id} | Get a product | laboratory​Id (path), environment​Id (path), product​Id (path) | 200 (Pharmaceutical​Product​Response), 403, 404 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches | List product batches | laboratory​Id (path), environment​Id (path), product​Id (path) | 200 (Batch​Response[]), 403, 404 |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches | Register a product batch | laboratory​Id (path), environment​Id (path), product​Id (path), body: Create​Batch​Request | 201 (Batch​Response), 400, 403, 404, 409 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id} | Get a product batch | laboratory​Id (path), environment​Id (path), product​Id (path), batch​Id (path) | 200 (Batch​Response), 403, 404 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}/​container-assignment | Get the container of a product batch | laboratory​Id (path), environment​Id (path), product​Id (path), batch​Id (path) | 200 (Batch​Container​Response), 403, 404 |
+| **PUT** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}/​container-assignment | Store a product batch in a container | laboratory​Id (path), environment​Id (path), product​Id (path), batch​Id (path), body: Assign​Batch​Container​Request | 200 (Batch​Container​Response), 400, 403, 404, 409 |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}/​equipment-usages | Register an equipment usage | laboratory​Id (path), environment​Id (path), product​Id (path), batch​Id (path), body: Register​Equipment​Usage​Request | 201 (Equipment​Usage​Response), 400, 403, 404, 409 |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}/​raw-material-usages | Register a raw material usage | laboratory​Id (path), environment​Id (path), product​Id (path), batch​Id (path), body: Register​Raw​Material​Usage​Request | 201 (Raw​Material​Usage​Response), 400, 403, 404, 409 |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}/​rejections | Reject a product batch | laboratory​Id (path), environment​Id (path), product​Id (path), batch​Id (path), body: Reject​Batch​Request | 201 (Batch​Rejection​Response), 400, 403, 404, 409 |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}/​releases | Release a product batch | laboratory​Id (path), environment​Id (path), product​Id (path), batch​Id (path), body: Release​Batch​Request | 201 (Batch​Release​Response), 400, 403, 404, 409 |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}/​staff-participations | Register a staff participation | laboratory​Id (path), environment​Id (path), product​Id (path), batch​Id (path), body: Register​Staff​Participation​Request | 201 (Staff​Participation​Response), 400, 403, 404, 409 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}/​traceability | Get the traceability of a batch | laboratory​Id (path), environment​Id (path), product​Id (path), batch​Id (path) | 200 (Batch​Traceability​Response), 403, 404 |
 
-```json
-{
-  "username": "qa.manager@senkalab.test",
-  "password": "********"
-}
+**Inventory Management**
+
+| Endpoint | Acción | Parámetros | Respuestas |
+|----------|--------|------------|------------|
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-material-batches | List the raw material lots of an environment | laboratory​Id (path), environment​Id (path), expiration​Status (query, opcional), within​Days (query, opcional) | 200 (Raw​Material​Batch​Response[]), 400, 404 |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-material-imports | Import a legacy raw material into the environment | laboratory​Id (path), environment​Id (path), body: Import​Raw​Material​Request | 201 (Raw​Material​Response), 404, 409 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials | List raw materials | laboratory​Id (path), environment​Id (path), stock​Status (query, opcional) | 200 (Raw​Material​Response[]), 400, 404 |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials | Register a raw material | laboratory​Id (path), environment​Id (path), body: Save​Raw​Material​Resource | 201 (Raw​Material​Response), 400, 403, 404, 409 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id} | Get a raw material | laboratory​Id (path), environment​Id (path), raw​Material​Id (path) | 200 (Raw​Material​Response), 404 |
+| **PUT** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id} | Update a raw material | laboratory​Id (path), environment​Id (path), raw​Material​Id (path), body: Save​Raw​Material​Resource | 200 (Raw​Material​Response), 400, 404, 409 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​batches | List the lots of a raw material | laboratory​Id (path), environment​Id (path), raw​Material​Id (path), usable (query, opcional) | 200 (Raw​Material​Batch​Response[]), 404 |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​batches | Register a received raw material lot | laboratory​Id (path), environment​Id (path), raw​Material​Id (path), body: Receive​Raw​Material​Batch​Resource | 201 (Raw​Material​Batch​Response), 400, 404, 409 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​batches/​{raw​Material​Batch​Id} | Get a raw material lot | laboratory​Id (path), environment​Id (path), raw​Material​Id (path), raw​Material​Batch​Id (path) | 200 (Raw​Material​Batch​Response), 404 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​batches/​{raw​Material​Batch​Id}/​container-assignment | Get the container of a raw material lot | laboratory​Id (path), environment​Id (path), raw​Material​Id (path), raw​Material​Batch​Id (path) | 200 (Raw​Material​Batch​Container​Response), 404 |
+| **PUT** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​batches/​{raw​Material​Batch​Id}/​container-assignment | Store a raw material lot in a container | laboratory​Id (path), environment​Id (path), raw​Material​Id (path), raw​Material​Batch​Id (path), body: Assign​Raw​Material​Batch​Container​Request | 200 (Raw​Material​Batch​Container​Response), 400, 404, 409 |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​batches/​{raw​Material​Batch​Id}/​reviews | Review a raw material lot | laboratory​Id (path), environment​Id (path), raw​Material​Id (path), raw​Material​Batch​Id (path), body: Review​Raw​Material​Batch​Resource | 201 (Raw​Material​Batch​Review​Response), 400, 403, 404, 409 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​movements | List the stock and review movements of a raw material | laboratory​Id (path), environment​Id (path), raw​Material​Id (path) | 200 (Inventory​Movement​Resource[]) |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​stock | Get the usable stock of a raw material | laboratory​Id (path), environment​Id (path), raw​Material​Id (path) | 200 (Raw​Material​Stock​Response), 404 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​raw-materials/​{raw​Material​Id}/​usages | List the product batches that used a raw material | laboratory​Id (path), environment​Id (path), raw​Material​Id (path) | 200 (Raw​Material​Usage​Response[]), 403, 404 |
+| **GET** /​laboratories/​{laboratory​Id}/​inventory/​legacy-materials | Preview pre-Inventory records pending explicit import into an environment | laboratory​Id (path) | 200 (Legacy​Material​Resource[]), 400, 401, 403 |
+| **GET** /​laboratories/​{laboratory​Id}/​raw-materials | getRawMaterials_1 | laboratory​Id (path), low​Stock (query, opcional) | 200 (Raw​Material​Response[]) |
+| **GET** /​laboratories/​{laboratory​Id}/​raw-materials/​{legacy​Raw​Material​Id}/​usages | Get material consumption history | laboratory​Id (path), legacy​Raw​Material​Id (path) | 200 (Raw​Material​Usage​Response[]) |
+
+**Equipment Management**
+
+| Endpoint | Acción | Parámetros | Respuestas |
+|----------|--------|------------|------------|
+| **POST** /​laboratories/​{laboratory​Id}/​devices/​container-monitors | Register a container monitor | laboratory​Id (path), body: Register​Iot​Device​Request | 201 (Equipment​Response), 400, 403, 409 |
+| **POST** /​laboratories/​{laboratory​Id}/​devices/​environmental-devices | Register an environmental device | laboratory​Id (path), body: Register​Iot​Device​Request | 201 (Equipment​Response), 400, 403, 409 |
+| **POST** /​laboratories/​{laboratory​Id}/​edge-gateways | Register an Edge Gateway *(nuevo)* | laboratory​Id (path), body: Register​Edge​Gateway​Request | 201 (Equipment​Response), 400, 401, 403, 404, 409 |
+| **GET** /​laboratories/​{laboratory​Id}/​edge-gateways/​{equipment​Id}/​api-key | Get Edge Gateway API key status *(nuevo)* | laboratory​Id (path), equipment​Id (path) | 200 (Edge​Gateway​Api​Key​Status), 401, 403, 404 |
+| **POST** /​laboratories/​{laboratory​Id}/​edge-gateways/​{equipment​Id}/​api-key | Generate Edge Gateway API key *(nuevo)* | laboratory​Id (path), equipment​Id (path) | 201 (Issued​Edge​Gateway​Api​Key), 401, 403, 404, 409 |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​container-monitors | Associate a container monitor with the environment | laboratory​Id (path), environment​Id (path), body: Assign​Device​Request | 201 (Equipment​Response), 400, 403, 404 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​edge-gateway-coverage | Get the Edge Gateway coverage of the environment *(nuevo)* | laboratory​Id (path), environment​Id (path) | 200 (Edge​Gateway​Coverage), 403 |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​environmental-devices | Associate an environmental device with the environment | laboratory​Id (path), environment​Id (path), body: Assign​Device​Request | 201 (Equipment​Response), 400, 403, 404, 409 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​equipments | List equipment of the environment *(nuevo)* | laboratory​Id (path), environment​Id (path), iot (query, opcional) | 200 (Equipment​Response[]), 403 |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​equipments | Associate an equipment with the environment | laboratory​Id (path), environment​Id (path), body: Assign​Equipment​Request | 201 (Equipment​Response), 400, 403, 404, 409 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​equipments/​{equipment​Id}/​maintenance-records | List maintenance records | laboratory​Id (path), environment​Id (path), equipment​Id (path) | 200 (Maintenance​Record​Response[]), 403, 404 |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​equipments/​{equipment​Id}/​maintenance-records | Register a maintenance | laboratory​Id (path), environment​Id (path), equipment​Id (path), body: Register​Maintenance​Request | 201 (Maintenance​Record​Response), 400, 403, 404 |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​equipments/​{equipment​Id}/​status-changes | Register a status change | laboratory​Id (path), environment​Id (path), equipment​Id (path), body: Change​Equipment​Status​Request | 201 (Equipment​Status​Change​Response), 400, 403, 404 |
+| **GET** /​laboratories/​{laboratory​Id}/​equipments | List equipment | laboratory​Id (path) | 200 (Equipment​Response[]), 403 |
+| **POST** /​laboratories/​{laboratory​Id}/​equipments | Register an equipment | laboratory​Id (path), body: Register​Equipment​Request | 201 (Equipment​Response), 400, 403, 409 |
+| **GET** /​laboratories/​{laboratory​Id}/​equipments/​{equipment​Id} | Get an equipment | laboratory​Id (path), equipment​Id (path) | 200 (Equipment​Response), 403, 404 |
+| **GET** /​laboratories/​{laboratory​Id}/​equipments/​{equipment​Id}/​bpm-configs | Get the BPM parameter ranges of an equipment | laboratory​Id (path), equipment​Id (path) | 200 (Bpm​Parameter​Config​Response[]) |
+| **GET** /​laboratories/​{laboratory​Id}/​equipments/​{equipment​Id}/​bpm-configs/​{parameter​Name} | Get the range of a BPM parameter of an equipment | laboratory​Id (path), equipment​Id (path), parameter​Name (path) | 200 (Bpm​Parameter​Config​Response), 404 |
+| **PUT** /​laboratories/​{laboratory​Id}/​equipments/​{equipment​Id}/​bpm-configs/​{parameter​Name} | Configure the range of a BPM parameter of an equipment | laboratory​Id (path), equipment​Id (path), parameter​Name (path), body: Configure​Bpm​Request | 200 (Bpm​Parameter​Config​Response), 400, 403 |
+
+**Laboratory Management**
+
+| Endpoint | Acción | Parámetros | Respuestas |
+|----------|--------|------------|------------|
+| **POST** /​laboratories | Create a new laboratory | body: Create​Laboratory​Request | 201 (Laboratory​Response), 400, 409 |
+| **GET** /​laboratories/​{laboratory​Id} | Get laboratory by ID | laboratory​Id (path) | 200 (Laboratory​Response), 404 |
+| **PUT** /​laboratories/​{laboratory​Id} | Update laboratory profile | laboratory​Id (path), body: Update​Laboratory​Request | 200 (Laboratory​Response), 403, 404 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments | List the environments of a laboratory | laboratory​Id (path) | 200 (Environment​Response[]), 403, 404 |
+| **POST** /​laboratories/​{laboratory​Id}/​environments | Register an environment | laboratory​Id (path), body: Create​Environment​Request | 201 (Environment​Response), 400, 403, 404, 409 |
+| **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id} | Get an environment of a laboratory | laboratory​Id (path), environment​Id (path) | 200 (Environment​Response), 403, 404 |
+| **PUT** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id} | Update an environment | laboratory​Id (path), environment​Id (path), body: Update​Environment​Request | 200 (Environment​Response), 400, 403, 404, 409 |
+| **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​usage-assignments | Assign the usage of an environment | laboratory​Id (path), environment​Id (path), body: Assign​Environment​Usage​Request | 201 (Environment​Usage​Assignment​Response), 400, 403, 404, 409 |
+| **GET** /​laboratories/​{laboratory​Id}/​staff | List staff | laboratory​Id (path) | 200 (Staff​Member​Response[]), 403 |
+| **POST** /​laboratories/​{laboratory​Id}/​staff | Register a staff member | laboratory​Id (path), body: Register​Staff​Request | 201 (Registered​Staff​Response), 400, 403, 409 |
+| **GET** /​laboratories/​{laboratory​Id}/​staff/​{staff​Id} | Get a staff member | laboratory​Id (path), staff​Id (path) | 200 (Staff​Member​Response), 403, 404 |
+| **POST** /​laboratories/​{laboratory​Id}/​staff/​{staff​Id}/​deactivations | Deactivate a staff member | laboratory​Id (path), staff​Id (path) | 201 (Staff​Member​Response), 403, 404, 409 |
+
+**Edge API** (`http://<estación local>:5000`)
+
+| Endpoint | Acción | Parámetros | Respuestas |
+|----------|--------|------------|------------|
+| **POST** /​api/​v1/​auth/​sign-in | Autenticar un nodo ESP32 | X-API-Key (header), body: device_​id | 200 (identidad y tipo del nodo), 400, 401, 415 |
+| **POST** /​api/​v1/​monitoring/​environment-readings | Recibir la calidad de aire y el movimiento del Monitor de Ambiente | X-API-Key (header), body: device_​id, measured_​at, air_​quality, motion, profile_​version | 201 (lecturas guardadas), 200 (reintento idéntico), 400, 401, 403, 409, 415 |
+| **POST** /​api/​v1/​monitoring/​container-readings | Recibir temperatura, humedad, luminosidad y etiqueta RFID de un Monitor de Contenedor | X-API-Key (header), body: device_​id, measured_​at, temperature, humidity, luminosity, rfid_​tag, profile_​version | 201, 200, 400, 401, 403, 409, 415 |
+| **POST** /​api/​v1/​control/​actuation-events | Recibir una acción ejecutada por un Monitor de Contenedor | X-API-Key (header), body: device_​id, action, trigger_​metric, trigger_​state, result, occurred_​at, profile_​version | 201 (evento guardado), 200, 400, 401, 403, 409, 415 |
+| **GET** /​api/​v1/​configurations/​{device​Id} | Entregar al nodo el perfil ambiental que aplica | device_​id (path), X-API-Key (header) | 200 (umbrales, reglas de actuación y versión del perfil), 401, 404 |
+| **POST** /​api/​v1/​devices/​enroll | Enrolar un nodo autorizado por el Cloud (solo en desarrollo) | body: device_​id, device_​type | 201 (API key del nodo, una sola vez), 400, 403, 409, 415 |
+
+**Ejemplos de llamadas y respuestas**
+
+1) Un Edge Gateway consulta los dispositivos IoT que atiende. El Edge envía el identificador del Gateway en la ruta y su API key en el encabezado; el Cloud responde con los dispositivos del ambiente del Gateway (hasta 15), con los identificadores que el Edge usa para sincronizar.
+
+```http
+GET /api/v1/edge-gateways/EDGE-001/iot-devices
+X-API-Key: <API key del Edge Gateway>
 ```
-
-Respuesta `200 OK` con el usuario autenticado y su token JWT, que se envía en las siguientes peticiones:
-
-```json
-{
-  "id": 1,
-  "username": "qa.manager@senkalab.test",
-  "token": "eyJhbGciOiJIUzI1NiJ9...",
-  "roles": [
-    "ROLE_QA_MANAGER"
-  ],
-  "laboratoryId": 1,
-  "passwordChangeRequired": false
-}
-```
-
-Ambientes del laboratorio (`GET /api/v1/laboratories/1/environments`), respuesta `200 OK`:
 
 ```json
 [
   {
-    "id": 1,
+    "id": 21,
     "laboratoryId": 1,
-    "code": "ALM-MP",
-    "name": "Almacén de materias primas",
-    "description": "Recepción y almacenamiento de insumos",
-    "usage": "RAW_MATERIAL_STORAGE",
-    "usageAssignedBy": 1,
-    "usageAssignedAt": "2026-10-05T14:10:00Z"
+    "environmentId": 3,
+    "name": "Environmental Monitor",
+    "sensorExternalId": "ENV-001",
+    "deviceType": "ENVIRONMENTAL_DEVICE",
+    "status": "OPERATIONAL"
   }
 ]
 ```
 
-Mediciones de un ambiente en un periodo
-(`GET /api/v1/laboratories/1/environments/1/telemetry-measurements?from=2026-10-05T00:00:00.000Z&to=2026-10-06T00:00:00.000Z&metric=AIR_QUALITY`),
-respuesta `200 OK` con el estado evaluado por el perfil ambiental vigente:
+2) El Edge Gateway sincroniza una lectura de un dispositivo. El Cloud la evalúa con el perfil ambiental vigente y responde `201` con la medición registrada y su estado; si la misma lectura llega de nuevo responde `200` con la ya guardada, y si el dispositivo no pertenece al Gateway responde `403`.
+
+```http
+POST /api/v1/edge-gateways/EDGE-001/iot-devices/21/telemetry-measurements
+X-API-Key: <API key del Edge Gateway>
+Content-Type: application/json
+```
 
 ```json
-[
-  {
-    "id": 2841,
-    "deviceId": 1,
-    "environmentId": 1,
-    "metric": "AIR_QUALITY",
-    "value": 945,
-    "textValue": null,
-    "unit": "ppm",
-    "measuredAt": "2026-10-05T06:04:00Z",
-    "state": "CRITICAL",
-    "thresholdValue": 900,
-    "profileVersion": 1
-  }
-]
+{
+  "metric": "TEMPERATURE",
+  "value": 21.5,
+  "textValue": "E200-3412-0001",
+  "measuredAt": "2026-10-03T15:00:00Z",
+  "profileVersion": 3
+}
 ```
 
-Interacción con la documentación usando datos de muestra:
+```json
+{
+  "id": 120,
+  "deviceId": 7,
+  "environmentId": 3,
+  "metric": "TEMPERATURE",
+  "value": 21.5,
+  "textValue": "…",
+  "unit": "°C",
+  "measuredAt": "…",
+  "state": "…",
+  "thresholdValue": 1,
+  "profileVersion": 1
+}
+```
+
+3) Un Monitor de Ambiente envía al Edge API las métricas medidas en un momento. El Edge valida su API key, aplica las reglas del perfil y guarda las lecturas como pendientes de sincronización; responde `201` con las lecturas guardadas o `200` ante un reintento idéntico.
+
+```http
+POST /api/v1/monitoring/environment-readings
+X-API-Key: <API key del nodo>
+Content-Type: application/json
+```
+
+```json
+{
+  "device_id": "ENV-001",
+  "measured_at": "2026-11-13T15:00:00Z",
+  "air_quality": 412.5,
+  "motion": false,
+  "profile_version": 3
+}
+```
+
+```json
+{
+  "device_id": "ENV-001",
+  "measured_at": "2026-11-13T15:00:00Z",
+  "profile_version": 3,
+  "readings": [
+    {
+      "id": 1,
+      "metric": "AIR_QUALITY",
+      "value": 412.5,
+      "text_value": null,
+      "sync_status": "PENDING"
+    },
+    {
+      "id": 2,
+      "metric": "MOTION",
+      "value": 0,
+      "text_value": null,
+      "sync_status": "PENDING"
+    }
+  ]
+}
+```
+
+Las siguientes capturas muestran la documentación desplegada con los datos de ejemplo de las operaciones agregadas en este sprint.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/services-documentation-evidence/swagger-ui-overview.png" alt="Swagger UI - QualiTrack API" width="90%">
-  <p><em>Figura: Documentación del RESTful API en Swagger UI. Esta vista muestra las operaciones agrupadas por recurso raíz, con su verbo HTTP, ruta y descripción.</em></p>
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/services-documentation-evidence/swagger-edge-gateways.png" alt="Swagger UI - Edge Gateways" width="90%">
+  <p><em>Figura: Operaciones del Edge Gateway en Swagger UI. Esta evidencia muestra el grupo Edge Gateways con los endpoints con los que el Edge lee sus dispositivos IoT y envía telemetría, eventos de actuación y perfiles ambientales, autenticados con el encabezado X-API-Key.</em></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/services-documentation-evidence/swagger-ui-sign-in.png" alt="Swagger UI - Sign In" width="90%">
-  <p><em>Figura: Operación de inicio de sesión en Swagger UI. Esta evidencia muestra su descripción, el cuerpo de la petición con el usuario y la contraseña, y la respuesta exitosa, que devuelve el usuario autenticado con su token JWT.</em></p>
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/services-documentation-evidence/swagger-edge-telemetry.png" alt="Swagger UI - Telemetría del Edge Gateway" width="90%">
+  <p><em>Figura: Detalle del registro de telemetría de un Edge Gateway en Swagger UI. Esta evidencia muestra los parámetros, el cuerpo de ejemplo de la lectura y las respuestas 200, 201, 400, 401 y 403 documentadas.</em></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/services-documentation-evidence/swagger-ui-telemetry.png" alt="Swagger UI - Telemetry Measurements" width="90%">
-  <p><em>Figura: Consulta de mediciones de telemetría de un ambiente en Swagger UI. Esta evidencia muestra los parámetros del laboratorio, el ambiente, el periodo y la métrica, y las respuestas documentadas con el estado de cada lectura y los errores posibles.</em></p>
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/services-documentation-evidence/swagger-edge-gateway-api-key.png" alt="Swagger UI - API key del Edge Gateway" width="90%">
+  <p><em>Figura: Registro de un Edge Gateway y emisión de su API key en Swagger UI. Esta evidencia muestra las operaciones del laboratorio con las que el responsable de calidad registra el Gateway y genera la API key que se entrega una sola vez.</em></p>
 </div>
 
-Commits relacionados con la documentación de los servicios en este sprint:
+Commits relacionados con la documentación de los servicios en este sprint (48):
 
+**qualitrack-platform**
 
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|------------|--------|-----------|----------------|---------------------|---------------------|
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​env-example | bae9930 | docs: add .env.example with the environment variables of the API | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​env-example | e26e111 | docs​(changelog): add .env.example | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​inventory | 340f4c0 | doc​(inventory): add documentation for commands | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​batch | d7e6264 | docs​(batch): document the laboratory batch list | — | 07/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​equipment-environment-devices | e96b6ba | docs​(equipment): document the value objects, converters and tenant lookup | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | fix/​backend-review | 6aeb1be | refactor​(inventory): remove the ignored Swagger tag and keep the getter annotation on its own line | Root​Resource​Tag​Customizer replaces the tags of every operation with the root resource of its path, so the Inventory Management tag of Inventory​Controller never reached Swagger UI. | 09/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​equipment-edge-gateway-capacity | 8926998 | docs​(equipment): record edge gateways in changelog and backend diagram | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | fix/​develop-review | 1d7be4e | refactor: remove the Swagger tags that the root resource customizer overrides | Root​Resource​Tag​Customizer gives every operation the tag of its root resource (/​api/​v1/​{root}), so the @Tag annotations added by #30, #31 and #33 on ten controllers never reached the Open​API document.… | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | fa71f53 | feat​(tracking): add the actuation event resource | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | c67990a | feat​(tracking): add the measurement resource | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 3ec4a9f | feat​(tracking): add the environmental profile resource | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 83a2fa2 | feat​(tracking): add the record measurement resource | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | f533d2d | feat​(tracking): add the record actuation event resource | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 76e1545 | feat​(tracking): add the update thresholds resource | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | cf9652d | feat​(tracking): add the update actuation rules resource | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | e12ee11 | feat​(tracking): add the environmental profile command from resource assembler | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 2d72676 | feat​(tracking): add the actuation event resource from entity assembler | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 6bcc121 | feat​(tracking): add the record actuation event command from resource assembler | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 35719a6 | feat​(tracking): add the measurement resource from entity assembler | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | ea9a833 | feat​(tracking): add the environmental profile resource from entity assembler | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 2f671b7 | feat​(tracking): add the telemetry response assembler | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | fd51e0b | feat​(tracking): add the record measurement command from resource assembler | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 5354e81 | feat​(tracking): add the container monitor telemetry controller | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 6e25538 | feat​(tracking): add the parsing of the tracking request values | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 22b04b6 | feat​(tracking): add the edge gateway telemetry controller | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 712d863 | feat​(tracking): add the edge gateway profiles controller | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 1bf460a | feat​(tracking): add the device tracking controller | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 49f75cd | feat​(tracking): add the environment telemetry controller | — | 13/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​tracking | 0865e40 | docs​(diagrams): add the edge gateway controllers to the tracking backend diagram | The command service, not the telemetry controllers, depends on the current user. | 13/11/2026 |
+
+**qualitrack-edge-service**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|------------|--------|-----------|----------------|---------------------|---------------------|
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​repository-base | a49dbc1 | docs: add the README and the Quali​Track proprietary license | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​device-sign-in | 5ac46d4 | docs: document the device sign-in and the devices commands | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​cloud-connection | e84cd14 | docs: document the connection with the cloud and the cloud commands | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​telemetry-reception | f422b71 | docs: document the reception of readings and actions | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​cloud-synchronization | 2b20fc2 | docs: document the synchronization of the pending telemetry | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​profile-configuration | 8011f0c | docs: document the profiles and the configuration of the nodes | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​docker-deployment | f4a2df3 | docs: document the deployment on the local station | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​documentation | f9a6010 | docs: add the architecture decision records | ADR-0001 to ADR-0010: bounded contexts, SQLite with Peewee, API key per request, registration with commands, operator account in the cloud, registry and profiles in Tracking, background… | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​documentation | b63c9fe | docs: add the class diagram of the bounded contexts | Plant​UML diagram of IAM, Tracking and the shared infrastructure with their layers, protocols, implementations, the anti-corruption layer, the cloud gateways and the composition of the application. | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​documentation | 34dd746 | docs: add the technical stories TS53-TS64 with their traceability matrix | The Edge stories of the report with Gherkin acceptance criteria that describe the implemented behavior, and a Requirements Traceability Matrix to the classes and functions that implement each one. | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​documentation | 7425aac | docs: link the technical stories and the documentation from the README | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​local-node-registry | 0aa5cac | docs: document that the Edge keeps only its own nodes | README, TS64 scenarios and traceability, ADR-0011 and the class diagram. | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​synced-telemetry-retention | 128baf2 | docs: document the retention of the telemetry (ADR-0012) | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​environment-device-registry | aeea9af | docs: record the registry per environment (ADR-0013) | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​retire-cloud-environment-ids | 5271e77 | docs​(adr): record edge gateway authentication in ADR-0014 | Supersedes ADR-0005 and ADR-0013, amends ADR-0011 and updates the README, the class diagram and the changelog. | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | release/​v0.3.0 | 7f142f6 | docs: record the sync context (ADR-0015) | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | release/​v0.3.0 | 96e74bc | docs​(stories): align the synchronization stories with the edge gateway | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | release/​v0.3.0 | 2f89ee3 | docs: document the gateway session and the enrollment endpoint | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | fix/​sync-tracking-repositories | 9860b90 | docs​(sync): describe the registry of the edge gateway in the docstrings | Since ADR-0014 the registry caches every Io​T device the cloud assigns to this Edge Gateway, also before it is registered in the Edge; the docstrings still described the registry of the laboratory… | 13/11/2026 |
 
 #### 6.2.2.8. Software Deployment Evidence for Sprint Review
 
