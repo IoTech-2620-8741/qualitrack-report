@@ -3884,8 +3884,233 @@ Las siguientes tablas presentan los 1353 commits realizados en los repositorios 
 
 #### 6.2.2.5. Testing Suite Evidence for Sprint Review
 
+En el Sprint 2 cada producto de código cuenta con una suite de pruebas automatizadas que se ejecuta en GitHub Actions en cada pull request hacia develop y main, de modo que ningún cambio se integra si alguna prueba falla. Al cierre del sprint las cuatro suites se encuentran aprobadas:
 
----
+| Producto | Repositorio | Herramientas | Archivos de prueba | Pruebas ejecutadas en CI |
+|----------|-------------|--------------|--------------------|--------------------------|
+| Cloud REST API | [qualitrack-platform](https://github.com/IoTech-2620-8741/qualitrack-platform/tree/develop/src/test/java/com/iotech/qualitrack/platform) | JUnit 5, Spring Boot Test, MockMvc | 44 clases | 229 |
+| Web Application | [qualitrack-web-app](https://github.com/IoTech-2620-8741/qualitrack-web-app/tree/develop/src/app) | Vitest con Angular TestBed | 128 archivos `.spec.ts` | 870 |
+| Mobile Application | [qualitrack-mobile-application](https://github.com/IoTech-2620-8741/qualitrack-mobile-application/tree/develop/test) | flutter_test, bloc_test | 18 archivos | 174 |
+| Edge API | [qualitrack-edge-service](https://github.com/IoTech-2620-8741/qualitrack-edge-service/tree/develop/tests) | unittest de Python | 17 módulos | 127 |
+
+En el Cloud REST API las pruebas unitarias verifican las reglas del dominio de cada Bounded Context sin levantar Spring, y las pruebas de integración ejercitan los endpoints con MockMvc sobre una base de datos de prueba, comprobando los códigos HTTP, los recursos devueltos y los permisos por rol. En la Web Application las pruebas verifican los assemblers, servicios, stores, validadores y componentes de cada Bounded Context. En la Mobile Application verifican el dominio, los casos de uso, la infraestructura HTTP, los BLoC, las pantallas y las reglas de dependencia entre capas. En el Edge API verifican la autenticación de los nodos, la recepción de lecturas y eventos, la entrega de la configuración y la sincronización con el Cloud usando dispositivos simulados. En este sprint no se elaboraron pruebas de aceptación BDD con archivos `.feature`; los escenarios de aceptación de cada Technical Story se verifican con las pruebas de integración de su endpoint.
+
+**Cloud REST API.** La siguiente tabla relaciona cada clase de prueba con su tipo, su Bounded Context, los comportamientos que verifica (con el número de métodos de prueba) y las Technical Stories del sprint que soporta. En total la suite tiene 221 métodos de prueba; con los casos de las pruebas parametrizadas Maven ejecuta 229.
+
+| Clase de prueba | Tipo | Bounded Context | Comportamientos verificados (métodos de prueba) | Technical Stories relacionadas |
+|-----------------|------|-----------------|-------------------------------------------------|--------------------------------|
+| Qualitrack​Platform​Application​Tests | Integración | Shared | context loads (1) | Todas (TS05) |
+| Stock​Rollback​Tests | Integración | Product Batch Management | a failed usage write rolls back the inventory consumption (1) | TS68–TS80 |
+| Batch​Command​Tests | Unitaria | Product Batch Management | new batches are trimmed and counted in units by default; new batches need their place a number a positive quantity and an iso start date; releases and rejections need an iso date and their text (3) | TS68–TS80 |
+| Batch​Lifecycle​Tests | Unitaria | Product Batch Management | the first raw material consumption starts a pending batch; closed batches are not started again; new batches start pending with the product of their environment; (+3 más) (6) | TS68–TS80 |
+| Product​Batch​Integration​Tests | Integración | Product Batch Management | quality manager registers lists and reads products of an environment; product codes and names are unique in the laboratory only; only quality roles register products and other laboratories cannot read them; (+8 más) (11) | TS68–TS80 |
+| Compliance​Scope​Tests | Unitaria | Compliance & Alerting | matching numeric ids do not mix events from different resource types (1) | TS81–TS84, TS87–TS88 |
+| Ca​Command​Service​Impl​Test | Unitaria | Compliance & Alerting | a first deviation opens a new alert; a worse deviation escalates the open alert; a repeated deviation is recorded without publishing events; (+4 más) (7) | TS81–TS84, TS87–TS88 |
+| Notification​Domain​Tests | Unitaria | Compliance & Alerting | preferences decide which notices reach the bell and the email; a notification is read once and alert notices carry their severity (2) | TS81–TS84, TS87–TS88 |
+| Compliance​Alerts​Integration​Tests | Integración | Compliance & Alerting | an incident detected by tracking is one alert with its actions until it is resolved; deviations confirmed through the api open or join the alert of their device (2) | TS81–TS84, TS87–TS88 |
+| Alert​Lifecycle​Commands​Test | Unitaria | Compliance & Alerting | acknowledge requires alert and user; resolve requires notes; condition normalized uppercases the parameter; (+3 más) (6) | TS81–TS84, TS87–TS88 |
+| Create​Deviation​Alert​Command​Test | Unitaria | Compliance & Alerting | normalizes parameter name and unit; accepts a missing device to use the environmental device; rejects missing or invalid identifiers; (+4 más) (7) | TS81–TS84, TS87–TS88 |
+| Equipment​Domain​Tests | Unitaria | Equipment Management | iot device is an equipment with type and identity; equipment is located only in environments of its laboratory; status change keeps the history and rejects the current status (3) | TS37–TS48 |
+| Edge​Gateway​Allocation​Tests | Unitaria | Equipment Management | environment without gateways leaves every device uncovered; one gateway serves up to fifteen devices; devices beyond the capacity of the only gateway are uncovered; (+5 más) (8) | TS37–TS48 |
+| Equipment​Integration​Tests | Integración | Equipment Management | quality manager registers and lists equipment of the laboratory; equipment is located in an environment of the same laboratory; status changes are traceable and rejected when not allowed; (+7 más) (10) | TS37–TS48 |
+| Account​Recovery​Domain​Tests | Unitaria | Identity & Access Management | the code expires after fifteen minutes and is used once; five wrong codes revoke the recovery; a new code waits one minute and replaces the previous one; (+3 más) (6) | TS01–TS08 |
+| Staff​Credentials​Email​Tests | Integración | Identity & Access Management | credentials are emailed to the staff member; a failed delivery leaves the temporary password for the quality manager (2) | TS01–TS08 |
+| Account​Recovery​Integration​Tests | Integración | Identity & Access Management | sign up requires a unique email; the password is reset with the code sent to the email; the answer does not reveal which accounts exist; (+3 más) (6) | TS01–TS08 |
+| Onboarding​Integration​Tests | Integración | Identity & Access Management | account must pay then create laboratory and cannot create twice; expired and unverified subscriptions do not unlock the api; account cannot register in another laboratory or self assign administrator; (+11 más) (14) | TS01–TS08 |
+| Inventory​Domain​Tests | Unitaria | Inventory Management | receipt requires review and preserves received quantity after consumption; rejects overdraft without changing stock; rejects different units without conversion; (+12 más) (15) | TS26–TS36 |
+| Inventory​Persistence​Tests | Integración | Inventory Management | only quality reviewer in same laboratory can release; simultaneous retries record only one consumption; quarantine review consumption and affected batch history persist; (+7 más) (10) | TS26–TS36 |
+| Container​Assignment​Integration​Tests | Integración | Inventory Management | raw material lots are stored in containers of their raw material storage environment; product batches are stored in containers of product storage environments (2) | TS26–TS36 |
+| Environment​Inventory​Integration​Tests | Integración | Inventory Management | quality manager registers raw materials and reviews their lots; low stock and near expiry filters identify materials and lots; raw materials are scoped to their environment and laboratory; (+2 más) (5) | TS26–TS36 |
+| Environment​Domain​Tests | Unitaria | Laboratory Management | registration normalizes code and starts without usage; registration rejects missing or oversized data; usage can change but not be reassigned to the same value; (+1 más) (4) | TS15–TS25 |
+| Environment​Integration​Tests | Integración | Laboratory Management | quality manager registers lists updates and classifies environments; environments of another laboratory are not available; laboratory operator can consult but not change environments (3) | TS15–TS25 |
+| Staff​Account​Integration​Tests | Integración | Laboratory Management | registered staff signs in with temporary credentials and must change the password; only quality managers register staff and emails are unique; staff cannot manage the subscription and auditors only consult; (+2 más) (5) | TS15–TS25 |
+| Profile​Domain​Tests | Unitaria | Profile Management | personal data is validated and blank optional values are cleared; the profile tells when the name changed; only real images up to two megabytes are accepted as photos (3) | TS100–TS102 |
+| Profile​And​Notification​Integration​Tests | Integración | Profile Management | each person keeps a profile that the quality manager sees in the staff list; a person changes the username and email of the account with the current password; the laboratory is notified of what others do with its alerts and batches (3) | TS100–TS102 |
+| Reporting​Tests | Unitaria | Reporting & Audit | empty repository produces no invented metric or health score; counts use only the requested laboratory records; unresolved alerts are counted only for the equipment of the laboratory; (+5 más) (8) | TS91–TS92 |
+| Batch​Report​Pdf​Tests | Unitaria | Reporting & Audit | empty deviations produce a short record without fabricated scores; included alerts produce counts charts and traceable details; excluded alerts are not leaked into summary or details; (+1 más) (4) | TS91–TS92 |
+| Period​Report​Tests | Unitaria | Reporting & Audit | environmental pdf shows indicators alerts actions and method; inventory pdf shows stock lots expiration and containers; inventory csv has one column per value; (+5 más) (8) | TS91–TS92 |
+| Reporting​Indicators​Integration​Tests | Integración | Reporting & Audit | indicators summarize the readings of the period with time in range and deviations; the environmental report combines indicators alerts and actions of each environment; the inventory report lists raw materials lots and quantities; (+1 más) (4) | TS91–TS92 |
+| Stock​Unit​Tests | Unitaria | Shared | accepts unit aliases but never implicitly converts mass to volume; registration does not round stock or allow fractional countable units (2) | Todas (TS05) |
+| Open​Api​Documentation​Tests | Integración | Shared | groups every operation by the first segment after the api version (1) | Todas (TS05) |
+| Error​Message​Localization​Tests | Unitaria | Shared | spanish requests receive the general message in spanish and keep the details; english requests keep the message of the error even on a spanish machine (2) | Todas (TS05) |
+| Rest​Api​Integration​Tests | Integración | Shared | alerts are acknowledged and resolved as sub resources by the authenticated user; bpm parameter ranges are resources of the equipment identified by their name; created laboratories and users answer with their location (3) | Todas (TS05) |
+| Stripe​Webhook​Tests | Unitaria | Payments & Subscriptions | unpaid checkout never grants access; paid checkout waits for active stripe subscription; active paid checkout persists subscription and payment without laboratory; (+9 más) (12) | TS09–TS14 |
+| Subscription​Payment​Recording​Tests | Unitaria | Payments & Subscriptions | a payment needs a checkout session or a provider payment; a renewal is recorded next to the other payments without checkout session; the same invoice is not recorded twice (3) | TS09–TS14 |
+| Subscription​Plan​Seed​Integration​Tests | Integración | Payments & Subscriptions | startup creates the catalog plans only once; stored plans are not changed and a taken stripe price is not reused (2) | TS09–TS14 |
+| Subscription​Access​Tests | Unitaria | Payments & Subscriptions | active future period allows access before laboratory creation; expired or unknown periods never grant access; cancelled or unpaid subscription does not grant access; (+3 más) (6) | TS09–TS14 |
+| Subscription​Plan​Tests | Unitaria | Payments & Subscriptions | preserves finite equipment allowances; represents unlimited equipment without an invented numeric limit; rejects negative equipment limits; (+2 más) (5) | TS09–TS14 |
+| Stripe​Webhook​Controller​Tests | Unitaria | Payments & Subscriptions | paid invoice records the renewal; events without a valid signature are refused (2) | TS09–TS14 |
+| Tracking​Query​Tests | Unitaria | Tracking & Telemetry | an action of the device also counts as communication; device requires review when silent for longer than the expected period (2) | TS49–TS52, TS65–TS67 |
+| Environmental​Profile​Tests | Unitaria | Tracking & Telemetry | a value is normal inside the normal range warning up to the critical limits and critical beyond; contradictory or incomplete limits are rejected; an environment only configures the metrics of its environmental device; (+3 más) (6) | TS49–TS52, TS65–TS67 |
+| Tracking​Integration​Tests | Integración | Tracking & Telemetry | a quality manager configures the air quality of an environment with its environmental device; a container monitor has thresholds and actuation rules that need them; readings are evaluated and the deviations of an incident share one alert; (+2 más) (5) | TS49–TS52, TS65–TS67 |
+
+**Edge API.** Cada módulo de prueba simula el Monitor de Ambiente, el Monitor de Contenedor o el Cloud según el caso, con una base SQLite temporal. Las Technical Stories TS60–TS64 de sincronización estaban planificadas para el Sprint 3 y se adelantaron en este sprint.
+
+| Módulo de prueba | Comportamientos verificados (pruebas) | Technical Stories relacionadas |
+|------------------|---------------------------------------|--------------------------------|
+| test_​api | signs in registered device with its type; rejects invalid device credentials; rejects missing api key; (+5 más) (8) | TS53–TS59 |
+| test_​cli | registered container monitor signs in with the key shown once; rejects duplicate registration and unknown type; rotated key replaces the previous one; (+2 más) (5) | TS53, TS54 |
+| test_​cloud_​http | the sync command sends what the nodes sent to the edge; reads the registry over http with the gateway api key; the sync command reports rejected credentials (3) | TS61–TS64 |
+| test_​cloud_​session | sends api key on every request without sign in; rejects invalid or forbidden gateway credentials; reports an unreachable or failing cloud; (+2 más) (5) | TS61–TS64 |
+| test_​config | loads selected dotenv and process environment overrides it; production defaults are secure; requires settings to be defined in file or process environment; (+8 más) (11) | — |
+| test_​iam_​application | registers device with a random key kept only as a verifier; rejects a second registration of the same device; rotation and revocation change which key is accepted; (+2 más) (5) | TS53, TS54 |
+| test_​iam_​domain | encoded verifier round trips without disclosing secret; new verifiers are a sha256 digest of the key; still accepts the pbkdf2 verifiers stored before; (+7 más) (10) | TS53, TS54 |
+| test_​iam_​registration | the second registration is refused and the first key keeps working (1) | TS53, TS54 |
+| test_​sync_​boundary | tracking does not depend on sync; sync uses the model of tracking but not its infrastructure (2) | — |
+| test_​sync_​profiles | translates the profile the node applies; a node without profile has none and other answers stop; copies the profiles of placed nodes and drops the rest; (+2 más) (5) | TS64 |
+| test_​sync_​registry | normalizes the synchronization time to utc; rejects invalid cloud registrations; translates the iot devices of the gateway; (+15 más) (18) | TS64 |
+| test_​sync_​telemetry | only a pending record takes the answer of the cloud; sends environmental readings to the environment route; sends container readings and actions to the container monitor route; (+11 más) (14) | TS61–TS63 |
+| test_​tracking_​domain | normalizes to utc and accepts the clock tolerance; rejects naive and future times; profile version is a non negative integer; (+8 más) (11) | TS55–TS57 |
+| test_​tracking_​pending | reads only the pending records of the given nodes; counts the pending records of the other nodes (2) | TS60 |
+| test_​tracking_​profiles | accepts open sides and the rules of the cloud; rejects thresholds the cloud would reject; rejects rules that do not start a response; (+5 más) (8) | TS58, TS59 |
+| test_​tracking_​telemetry | translates iam authentication to the tracking concept; creates one pending reading per metric received now; rejects unknown nodes other types and empty readings; (+12 más) (15) | TS55–TS57 |
+| test_​wsgi | the production server starts the synchronization; the development reloader starts it only in the serving process; nothing starts while the synchronization is disabled; (+1 más) (4) | — |
+
+**Web Application.** Las pruebas se agrupan por Bounded Context, siguiendo la estructura de carpetas de la aplicación.
+
+| Bounded Context | Archivos | Pruebas | Comportamientos verificados (ejemplos) |
+|-----------------|----------|---------|----------------------------------------|
+| Compliance & Alerting | 19 | 180 | joins the open alerts of every environment; reads only the chosen environment; names the environment that failed without hiding the alerts of the others; (+177 más) |
+| Shared | 26 | 118 | reads the status of the errors of the API endpoints; reads the status of the HTTP errors, 0 when the server could not be reached; returns null for errors that did not come from a request; (+115 más) |
+| Inventory Management | 23 | 72 | warns for observed and rejected receipts and deduplicates production batches; removes the warning when the receipt is released and retains unlinked legacy consumption; keeps an empty material with historical consumption, labels and unrecorded balances; (+69 más) |
+| Reporting & Audit | 13 | 52 | sorts activity newest first without mutating the API result; cancels stale activity and clears previous data when the staff changes; shows an error without retaining another staff member on failure; (+49 más) |
+| Product Batch Management | 17 | 48 | tells process equipment from IoT devices; is usable only while it is operational; can be assigned to a batch while active, with an account and not an auditor; (+45 más) |
+| Payments & Subscriptions | 4 | 26 | asks nothing when no plan was chosen; finds the switch to another plan, and spends the choice; takes the same plan with another billing cycle as a different plan; (+23 más) |
+| Equipment Management | 7 | 14 | accepts valid data, including negative limits; does not send a range where the minimum is not lower than the maximum; sends a valid configuration; (+11 más) |
+| Profile Management | 3 | 13 | shows the initials and full name when the profile has no photo; shows the photo instead of the initials when one is available; opens and loads the profile when onboarding becomes ready; (+10 más) |
+| Tracking & Telemetry | 4 | 13 | follows only environmental devices and container monitors; translates the equipment into a device of Tracking; retains failed actuation events and the unfiltered period query; (+10 más) |
+| Identity & Access Management | 5 | 12 | opens the page to visitors; sends whoever already has a session to the dashboard, instead of offering to sign in; sends visitors to sign in, remembering where they were going; (+9 más) |
+| Laboratory Management | 5 | 9 | redirects the old material URL to Inventory while preserving the identifier; offers the quality manager the edition and the usage of each environment; lets the other roles only consult the environments; (+6 más) |
+| Rutas de la aplicación | 2 | 7 | keeps the plan of the link even when the visitor is already signed in and is sent to the dashboard; keeps the plan of the link for a visitor who stays on the sign-up page; keeps the plan of a link followed from another page of IAM; (+4 más) |
+
+**Mobile Application.** Las pruebas siguen las capas de la aplicación Flutter; la prueba de arquitectura verifica que cada Bounded Context solo se comunique con otro a través de su API.
+
+| Archivo de prueba | Capa | Comportamientos verificados (pruebas) |
+|-------------------|------|---------------------------------------|
+| application/​use_​cases_​test.dart | application | sign in trims the username and stores the session; sign in rejects empty credentials without calling the backend; restore clears an expired session; (+22 más) (25) |
+| architecture/​architecture_​test.dart | architecture | the layer rules hold in lib/; rejects what the guide forbids; accepts what the guide allows (3) |
+| domain/​batch_​decision_​day_​test.dart | domain | a decision cannot be dated before the batch started; a batch that starts later can still be decided today; without a start date the calendar goes back five years (3) |
+| domain/​domain_​test.dart | domain | reads exp claim and detects expiration; malformed token has no expiration but empty token is expired; parses every backend role, including the auditor; (+27 más) (30) |
+| infrastructure/​infrastructure_​test.dart | infrastructure | normalizes the base url to /api/v1; maps HTTP statuses and QualiTrack ErrorResource; detects onboarding requirement, including the password change; (+17 más) (20) |
+| presentation/​batch_​detail_​test.dart | presentation | quality managers decide from a fixed bar while the batch awaits review; no decision bar once the batch is released; other roles read the batch without the decision bar (3) |
+| presentation/​batch_​history_​test.dart | presentation | reads the name and values of an event recorded by the backend; ignores text with another shape; joins the audit log and the compliance events, newest first, each decision once; (+3 más) (6) |
+| presentation/​batch_​list_​test.dart | presentation | clearing the filters shows every batch and empties the search; the FAB menu filters by status and lists each count; the summary card shows the status in use and how many batches match; (+1 más) (4) |
+| presentation/​bloc_​test.dart | presentation | no stored session → unauthenticated; ready onboarding → authenticated; temporary password → password change, then authenticated once changed; (+20 más) (23) |
+| presentation/​equipment_​list_​test.dart | presentation | filters through a FAB menu that fits a small phone; names an Edge Gateway instead of showing its type code; the Edge Gateways filter keeps only the gateways (3) |
+| presentation/​inventory_​screen_​test.dart | presentation | filters the stock through a FAB menu with a summary card (1) |
+| presentation/​more_​screen_​test.dart | presentation | groups the destinations in sections without overflow; hides the administration section from other roles; signs out with the profile button, only after confirming (3) |
+| presentation/​navigation_​test.dart | presentation | the app router has the tabs by importance, alerts right after Home; each tab of the bar opens its own branch; content tabs keep where they were left; More always opens on its menu; (+1 más) (4) |
+| presentation/​reports_​bloc_​test.dart | presentation | a slow answer of the period picked before never replaces the period on screen; nor does its failure; the latest period is shown when its answer arrives last; (+1 más) (4) |
+| presentation/​router_​and_​l10n_​test.dart | presentation | protected routes require a session; authenticated users leave public routes; a temporary password confines the user to the password change; (+6 más) (9) |
+| widget/​home_​layout_​test.dart | widget | Home shows the four cards on a without scrolling; the cards keep their own height and the latest alerts fill the rest; without open alerts the latest alerts are left out, not repeated; (+4 más) (7) |
+| widget/​orientation_​test.dart | widget | only the screen inside LandscapeAllowed may turn, while it is the visible one; the app is laid out for portrait (2) |
+| widget/​widgets_​test.dart | widget | validates required fields and has no sign-up entry; submits credentials and toggles password visibility; shows backend errors and is localized in Spanish; (+19 más) (22) |
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/testing-evidence/backend-tests-ci.png" alt="Pruebas del Cloud REST API en GitHub Actions" width="90%">
+  <p><em>Figura: Ejecución de la suite del Cloud REST API en GitHub Actions. Esta evidencia muestra el workflow de integración continua del pull request de la versión 1.2.0, que ejecuta con Maven las 229 pruebas unitarias y de integración, todas aprobadas.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/testing-evidence/web-tests-ci.png" alt="Pruebas de la Web Application en GitHub Actions" width="90%">
+  <p><em>Figura: Ejecución de la suite de la Web Application en GitHub Actions. Esta evidencia muestra los 128 archivos y las 870 pruebas de Vitest aprobados antes de compilar la versión 2.5.0.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/testing-evidence/mobile-tests-ci.png" alt="Pruebas de la Mobile Application en GitHub Actions" width="90%">
+  <p><em>Figura: Ejecución de la suite de la Mobile Application en GitHub Actions. Esta evidencia muestra el análisis estático sin observaciones y las 174 pruebas de Flutter aprobadas.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/testing-evidence/edge-tests-ci.png" alt="Pruebas del Edge API en GitHub Actions" width="90%">
+  <p><em>Figura: Ejecución de la suite del Edge API en GitHub Actions. Esta evidencia muestra las 127 pruebas de unittest aprobadas y la construcción de las imágenes Docker para amd64 y arm64.</em></p>
+</div>
+
+Commits relacionados con las pruebas en este sprint (64):
+
+**qualitrack-web-app**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|------------|--------|-----------|----------------|---------------------|---------------------|
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​dependencies | 6367f98 | fix​(i18n): provide the translate service in the component specs | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​ci-unit-tests | 50cce4c | ci: run the unit tests in the pull request build | — | 27/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​semantic-routes | c4dbf9a | test​(routes): cover the redirects from view-named paths to semantic routes | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​semantic-routes | 6b4629c | test​(routes): cover the redirects from view-named paths to semantic routes | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | a6edba8 | refactor​(report-generator): remove unused card components and spec | — | 01/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 34fa0bd | test​(ca): add browser checks of the active alerts | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | develop | 43556b6 | test​(ca): add browser checks of the detail panel | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​session-and-pending | 6c7831a | test​(e2e): bring the browser checks up to the current screens | Dashboard, inventory, report generator, onboarding, Stripe catalog and responsive were written for screens and endpoints that no longer exist. The checks that create accounts through the real API… | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​refactor-views-review | d24242f | test: update the specs of the views that gained a link and an icon | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​inventory-review | b0ccf30 | test​(inventory): cover the components of the views and the corrections of the store | Also removes legacy​Detail​Batch​Label, unused since the history table names its batches, and declares every endpoint of Inventory​Api before its constructor. | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​batch-inventory-review | a4add6a | test​(inventory): cover the request guards, the reload and the catalogue stats | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​inventory | 1eb4f2d | test​(inventory): update catalogue tests for tab navigation | — | 11/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | 1b7cd78 | test​(ca): update the alerts browser test to the redesigned module | - Read the urgent count from the red chip instead of the banner, and check the groups by severity - Open an alert from the title of its row, and tell who has it from the owner of the row - Check the… | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | feature/​refactor-ui | 5bec886 | test​(reports): provide the router to the audit log viewer spec | The page now opens with the shared header, whose tabs are router links, so the component needs Activated​Route. The CI unit tests failed on it. | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-web-app | fix/​develop-review | 768fa97 | test: follow the Register button of the material form and say how to run the alerts checks | - The inventory browser test looked for a Save button, but #105 named the main button of the material registration Register like every other form, so the test stopped at it. It now uses… | 13/11/2026 |
+
+**qualitrack-platform**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|------------|--------|-----------|----------------|---------------------|---------------------|
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ca | c348649 | test​(ca): cover deviation alert command handling | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ca | b3b98e8 | test​(ca): add test Alert​Lifecycle | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ca | bd451f6 | test​(ca): add test from deviation alert | — | 30/10/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-tests-by-package | 074bd9c | test: organize the tests by bounded context and layer | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​ddd-tests-by-package | 9b41d45 | docs​(changelog): tests organized by bounded context and layer | — | 02/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​password-recovery-attempts-lock | a543e33 | test​(iam): reproduce the password recovery attempts race | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | release/​v1.1.0 | c6200d3 | docs​(changelog): REST API tests RUC range | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | release/​v1.1.0 | 8e7092b | test​(shared): give the REST API tests their own RUC range | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​batch | d590e76 | test​(batch): cover the batch commands, decisions and storage | — | 07/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​batch | bcfffee | test​(batch): cover the laboratory batch list, invalid requests and rejected traceability | — | 07/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​equipment-environment-devices | 104f6f3 | test​(equipment): cover the equipment list of an environment | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-platform | feature/​equipment-edge-gateway-capacity | 700138c | test​(equipment): cover edge gateway allocation, device registry and coverage | — | 10/11/2026 |
+
+**qualitrack-mobile-application**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|------------|--------|-----------|----------------|---------------------|---------------------|
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 05b171e | test​(batch): adapt test suite to the restructured batch context | Point imports at the new entities, interface, logic and infrastructure files, exercise Batch​Facade​Service instead of the removed use case classes, and test Batch​List​Bloc and Batch​Detail​Bloc with the… | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 6298942 | ci: run flutter analyze and test on feature pull requests into develop | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 0501d6f | docs​(architecture): document the dependency rules enforced by the test | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 6d3490c | test​(architecture): fail when a file breaks the layer or bounded-context rules | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | c9356e4 | test​(profile): adapt tests to the restructured profile | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | b14d38e | test​(subscription): adapt tests to the restructured subscription | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | c0e7fd7 | test​(laboratory): adapt tests to the restructured laboratory | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 07ae276 | test​(inventory): adapt tests to the restructured inventory | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | a787c27 | test​(equipment): adapt tests to the restructured equipment | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 4b5332b | test​(tracking): adapt tests to the restructured tracking | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | f49e116 | test​(compliance): adapt tests to the restructured compliance | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | d05dac5 | test​(compliance): use a single repository mock | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | develop | 8fa2d6a | test​(iam): adapt tests to the restructured iam | — | 04/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​repoting_​audit | cee4dcb | test​(reporting): cover the audit trail and trend ordering through the facade | — | 05/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​batch-redesign | e4a446f | test​(batch): expect the newest batch first after clearing the filters | — | 08/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 23f43e7 | refactor​(batch): adapt the batch list tests to the FAB menu. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 594dcf1 | refactor​(compliance): adapt the alerts tests to the FAB menu, search and mobile cards. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | c92f21c | feat​(app): test that the navigation tabs follow the router branches. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 3b56c44 | feat​(app): test the More sections and the confirmed sign out. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 65a4203 | feat​(command-center): test that the home fits every screen without scrolling. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | a81b9cd | feat​(batch): test the decision bar of the batch detail. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | 3de03fe | feat​(equipment): test the equipment FAB menu. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | c996239 | feat​(inventory): test the inventory FAB menu. | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-ui | 63d2f41 | test: cover the error titles by cause and the elapsed times | — | 12/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-ui | d3a3765 | test: cover the translated backend codes and the amber low stock | — | 12/11/2026 |
+
+**qualitrack-edge-service**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|------------|--------|-----------|----------------|---------------------|---------------------|
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​repository-base | 121bd57 | ci: run the unit tests on pull requests | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​repository-base | 38bb34e | test​(iam): cover the device aggregate, the configuration and the authentication endpoint | — | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​docker-deployment | 866ca5f | test: close the test database before removing its folder | Windows cannot delete the SQLite file while a connection keeps it open. | 03/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​tracking | 57e23df | test​(tracking): add retry logic for purge after repository failure | — | 07/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​tracking | ea481b6 | test​(tracking): add tests for rejecting malformed equipment lists and preserving local devices | — | 07/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​tracking | 1ea758e | test​(tracking): add retry logic for actuation after cloud outage | — | 07/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​edge-integration | 6571b98 | test​(edge): update cloud session tests for api key authentication | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​edge-integration | e8df9d3 | test​(tracking): align device registry tests with gateway endpoints | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​edge-integration | 0a51726 | test​(tracking): update profile tests for gateway endpoints | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​edge-integration | e30680e | test​(tracking): update telemetry tests for gateway routes | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | feature/​edge-integration | f563f64 | test​(edge): update http integration tests for gateway authentication | — | 10/11/2026 |
+| Io​Tech-2620-8741/​qualitrack-edge-service | release/​v0.3.0 | 14002ee | test​(sync): check that tracking does not depend on sync | — | 11/11/2026 |
 
 #### 6.2.2.6. Execution Evidence for Sprint Review
 
