@@ -4748,417 +4748,51 @@ Commits relacionados con la documentación de los servicios en este sprint (48):
 
 #### 6.2.2.8. Software Deployment Evidence for Sprint Review
 
-En esta sección, se mostrarán las evidencias guardadas y documentadas sobre el despliegue del software que nosotros
-hemos incluido en el alcance de este primer sprint. Es importante documentar las acciones de despliegue para replicarlas
-y/o mejorarlas en los siguientes sprints.
-
-**Despliegue de la aplicación backend, incluyendo base de datos**:
-
-Nombre del repositorio en la organización: qualitrack-platform
-
-Previo a iniciar los pasos:
-
-* Para el uso del servicio SMTP con Gmail, debes tener creado una contraseña de aplicacion en tu cuenta de correo a
-  usar:
-
-1) En myaccount.google.com, buscamos **Contraseñas de aplicaciones** o entramos
-   a [Contraseñas de aplicaciones](https://myaccount.google.com/apppasswords):
-
-2) Ingresas el nombre de la aplicación, en este caso, escribimos **iotech-qualitrack**:
-
-![Previous Step 1 - Ingreso del nombre de la aplicación](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-previous-step-1.png)
-
-3) Finalmente, mostrará la contraseña para la aplicación, que nos permitirá usar la cuenta de correo para las
-   aplicaciones externas:
-
-![Previous Step 2 - Contraseña de aplicación generada](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-previous-step-2.png)
-
-**Paso 1: Registro de proveedores en Azure:**
-
-1) En [Portal de Azure](https://portal.azure.com/), buscamos en la barra de navegación **Suscripciones**:
-
-![Step 1-1 - Búsqueda en el portal de Azure](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-1-1.png)
-
-2) Seleccionamos la suscripción que tenemos:
-
-![Step 1-2 - Selección de la suscripción](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-1-2.png)
-
-3) Vamos a Configuración y después Proveedores de Recursos:
-
-![Step 1-3 - Proveedores de recursos](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-1-3.png)
-
-4) Seleccionamos los siguientes recursos: Microsoft.App, Microsoft.OperationalInsights, Microsoft.ContainerRegistry,
-   Microsoft.DBforMySQL y Microsoft.ManagedIdentity y le damos a registrar.
-
-![Step 1-4 - Registro de los proveedores de recursos](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-1-4.png)
-
-**Paso 2: Creación de grupo de recursos, identidad en GitHub y permisos:**
-
-1) Buscamos **Grupos de recursos**:
-
-![Step 2-1 - Búsqueda de grupos de recursos](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-1.png)
-
-2) Le damos a Crear grupo de recursos:
-
-![Step 2-2 - Creación del grupo de recursos](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-2.png)
-
-3) Ingresamos el nombre y la región del grupo de recursos a crear:
-
-![Step 2-3 - Nombre y región del grupo de recursos](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-3.png)
-
-4) Le damos a crear grupo de recursos:
-
-![Step 2-4 - Confirmación de creación del grupo](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-4.png)
-
-![Step 2-5 - Grupo de recursos creado](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-5.png)
-
-5) Ahora, vamos a **Identidades administradas**:
-
-![Step 2-6 - Acceso a identidades administradas](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-6.png)
-
-6) Le damos a crear, seleccionamos nuestro grupo, el nombre y la región para la identidad:
-
-![Step 2-7 - Datos de la identidad administrada](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-7.png)
-
-![Step 2-8 - Datos de la identidad administrada (región)](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-8.png)
-
-7) Creamos la identidad administrada:
-
-![Step 2-9 - Creación de la identidad administrada](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-9.png)
-
-8) Dentro de la identidad, vamos a Configuración y después Credenciales federadas:
-
-![Step 2-10 - Credenciales federadas](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-10.png)
-
-9) Agregaremos una credencial para Github Actions que nos permitirá realizar CI/CD con todos los valores que nos piden:
-
-![Step 2-11 - Credencial para GitHub Actions](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-11.png)
-
-10) Volvemos a grupos de recursos, entramos a Control de Acceso (IAM) y agregamos una asignación de roles con rol de
-    **Colaborador**, en miembros, seleccionamos la credencial dentro de la identidad administrada:
-
-![Step 2-12 - Asignación de rol Colaborador en IAM](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-12.png)
-
-![Step 2-13 - Selección de la identidad como miembro](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-13.png)
-
-**Paso 3: Registro de imagen de contenedor**
-
-1) Buscamos y entramos a **Container registries** y creamos un registro, seleccionando nuestro grupo e ingresando un
-   nombre con una región y un plan de precios y lo creamos:
-
-![Step 3-1 - Búsqueda de Container registries](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-3-1.png)
-
-![Step 3-2 - Botón Crear en Container registries](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-3-2.png)
-
-![Step 3-3 - Datos básicos del registro de contenedor](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-3-3.png)
-
-![Step 3-4 - Revisión y validación del registro de contenedor](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-3-4.png)
-
-**Paso 4: Creación de la base de datos MySQL**
-
-1) Buscamos y entramos a **Azure Database for MySQL servers**:
-
-![Step 4-1 - Búsqueda de Azure Database for MySQL](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-1.png)
-
-2) Le damos a Crear y seleccionamos la opción **Servidor flexible**:
-
-![Step 4-2 - Opción Servidor flexible](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-2.png)
-
-3) En Datos básicos, seleccionamos nuestro grupo de recursos **iotech-qualitrack-rg**, ingresamos el nombre
-   **iotech-qualitrack-mysql**, la región **Chile Central** y la versión **8.4**:
-
-![Step 4-3 - Datos básicos del servidor flexible](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-3.png)
-
-4) En Carga de trabajo, seleccionamos **Desarrollo o aficionado** y verificamos que quede el tamaño **Burstable B1ms**
-   con **20 GiB** de almacenamiento. Además, dejamos desactivada la opción de Alta disponibilidad:
-
-![Step 4-4 - Proceso, almacenamiento y alta disponibilidad](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-4.png)
-
-5) En Autenticación, seleccionamos únicamente **MySQL**, ingresamos el usuario **iotechadmin** y una contraseña segura.
-   Es importante guardar esta contraseña, ya que no se puede recuperar después:
-
-![Step 4-5 - Autenticación del servidor](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-5.png)
-
-6) En la pestaña Redes, seleccionamos como método de conectividad **Acceso público** y marcamos la opción **Permitir
-   acceso público desde cualquier servicio de Azure dentro de Azure a este servidor**, lo que permitirá que nuestra
-   Container App se conecte a la base de datos. Opcionalmente, podemos agregar nuestra IP actual si queremos conectarnos
-   desde MySQL Workbench:
-
-![Step 4-6 - Configuración de redes](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-6.png)
-
-7) Le damos a Revisar y crear, verificamos que la validación sea superada y creamos el servidor. Este proceso puede
-   tardar varios minutos:
-
-![Step 4-7 - Revisión de la configuración del servidor](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-7.png)
-
-![Step 4-8 - Implementación completada](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-8.png)
-
-8) Cuando termine el despliegue, entramos al servidor, vamos a **Bases de datos** y le damos a Agregar:
-
-![Step 4-9 - Lista de bases de datos del servidor](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-9.png)
-
-9) Ingresamos el nombre de la base de datos **iotech_qualitrack** y la guardamos:
-
-![Step 4-10 - Creación de la base de datos iotech_qualitrack](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-10.png)
-
-10) Finalmente, en **Información general**, copiamos el nombre del servidor, que termina en
-    **.mysql.database.azure.com**, ya que lo usaremos más adelante para la configuración del back-end:
-
-![Step 4-11 - Nombre del servidor en Información general](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-11.png)
-
-**Paso 5: Creación en Container Apps con imagen temporal**
-
-1) Creamos una aplicación contenedora de Container Apps, lo crearemos desde bash porque la creación mediante la GUI de
-   Azure crea una versión que no admite secretos:
-
-* Registramos las variables del nombre de grupo de recursos y región:
-
-![Step 5-1 - Variables de grupo de recursos y región](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-5-1.png)
-
-* Creamos el entorno para la aplicación de contenedores en el grupo de recursos y región:
-
-![Step 5-2 - Creación del entorno de Container Apps](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-5-2.png)
-
-![Step 5-3 - Entorno de Container Apps creado](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-5-3.png)
-
-* Creamos la aplicación de contenedores dentro del entorno creado:
-
-![Step 5-4 - Creación de la aplicación contenedora](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-5-4.png)
-
-**Paso 6: Agregación de identidad, permisos, secretos y variables**
-
-1) Para la agregación de identidad, usaremos Shell:
-
-* Obtener el ID de la identidad de la aplicación de contenedor dentro del grupo de recursos:
-
-![Step 6-1 - Obtención del ID de la identidad de la aplicación](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-6-1.png)
-
-* Asigna permisos para descargar imágenes de contenedores en el ACR:
-
-![Step 6-2 - Asignación del rol AcrPull en el registro de contenedores](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-6-2.png)
-
-* Configura la identidad administrada por el sistema de la aplicación de contenedor:
-
-![Step 6-3 - Configuración de la identidad del sistema en el registro](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-6-3.png)
-
-2) Para los secretos, ingresamos desde la aplicación de contenedor a seguridad, secretos y agregamos los secretos que
-   necesitamos:
-
-![Step 6-4 - Secretos de la aplicación contenedora](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-6-4.png)
-
-3) Configuramos la entrada en Redes, entradas y cambiamos el puerto de entrada a 8080 (el que escucha Spring Boot):
-
-![Step 6-5 - Configuración de la entrada en el puerto 8080](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-6-5.png)
-
-4) Ingresaremos las variables de entorno para la aplicación, en este caso, haremos referencia a los secretos para
-   algunas variables de entorno:
-
-![Step 6-6 - Variables de entorno de la aplicación](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-6-6.png)
-
-**Paso 7: Ingreso de secretos en el repositorio**
-
-1) Entramos en nuestro repositorio, opciones, secretos y variables y agregamos los secretos de repositorio para conexión
-   a Azure:
-
-* Los datos AZURE_SUBSCRIPTION_ID y AZURE_TENANT_ID se consiguen con este comando:
-
-```bash
-az account show --query "{tenant:tenantId, subscription:id}" -o table
-```
-
-* El AZURE_CLIENT_ID es del paso 2
-
-![Step 7-1 - Sección de secretos y variables de GitHub Actions](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-7-1.png)
-
-![Step 7-2 - Secretos de repositorio para la conexión a Azure](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-7-2.png)
-
-**Paso 8: Creación de rama en repositorio para CI-CD junto a Azure**
-
-1) Creamos una nueva rama feature para la integración de workflows:
-
-![Step 8-1 - Creación de la rama feature/ci-cd-azure](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-8-1.png)
-
-2) Creamos los archivos deploy.yml y ci.yml dentro de .github/workflows
-
-![Step 8-2 - Workflow deploy.yml](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-8-2.png)
-
-![Step 8-3 - Workflow ci.yml](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-8-3.png)
-
-3) Hacemos push a la rama feature, creamos un PR, esperamos que el test de CI termine y hacemos merge:
-
-![Step 8-4 - Pull request fusionado con el CI aprobado](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-8-4.png)
-
-* Para que funcionen correctamente los workflows creados, deben restringir los merge sin previa creación de un PR.
-
-**Paso 9: Creación de rama release versión 1.0.0**
-
-1) Creamos nuestra rama release, en la versión 1.0.0 y la pasamos a remoto:
-
-![Step 9-1 - Creación y push de la rama release/v1.0.0](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-9-1.png)
-
-2) Creamos nuestro PR hacia main:
-
-* Previo a la creación del PR, verificamos que todo lo creado en Azure funcione correctamente.
-
-![Step 9-2 - Creación del pull request hacia main](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-9-2.png)
-
-3) Esperamos a que las pruebas y el despliegue integrados en workflows terminen:
-
-![Step 9-3 - Verificaciones del pull request en curso](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-9-3.png)
-
-![Step 9-4 - Verificaciones del pull request aprobadas](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-9-4.png)
-
-4) Después de aceptar y realizar el merge a main, esperamos a que termine el workflow de despliegue hacia Azure
-   Container Apps que hemos creado:
-
-* Posteriormente, se realizó un hotfix (**hotfix/deploy-image-flag**) hacia main para corregir la construcción de la
-  imagen Docker en el workflow de despliegue. Este es el workflow que terminó correctamente:
-
-![Step 9-6 - Workflow de despliegue completado](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-9-5.png)
-
-**Paso 10: Verificaciones y pasos finales**
-
-1) Entramos a la aplicación del contenedor, dentro, entramos a revisiones y réplicas:
-
-![Step 10-1 - Revisiones y réplicas de la aplicación contenedora](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-10-1.png)
-
-2) Verificamos que podemos entrar a la documentación Swagger con el
-   link: [Qualitrack Swagger Documentation](https://iotech-qualitrack-api.wonderfulocean-c1f38f8b.chilecentral.azurecontainerapps.io/swagger-ui/index.html)
-
-![Step 10-2 - Documentación Swagger de la API desplegada](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-10-2.png)
-
-3) Verificamos la base de datos usando MySQL Workbench mediante una conexión remota y si existen las tablas:
-
-![Step 10-3 - Conexión exitosa en MySQL Workbench](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-10-3.png)
-
-![Step 10-4 - Tablas de la base de datos iotech_qualitrack](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-10-4.png)
-
-4) Etiquetamos la rama main con la nueva versión de lanzamiento:
-
-![Step 10-5 - Lista de releases del repositorio](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-10-5.png)
-
-![Step 10-6 - Creación de la release v1.0.0](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-10-6.png)
-
-![Step 10-7 - Release v1.0.0 publicada](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-10-7.png)
-
-* También eliminamos las ramas release y hotfix, cumpliendo el estándar Gitflow
-
-5) En nuestra aplicación de contenedores, en la sección aplicaciones, contenedores y variables de entorno quitamos
-   SPRING_JPA_HIBERNATE_DDL_AUTO para evitar cambios de esquema:
-
-![Step 10-8 - Variable SPRING_JPA_HIBERNATE_DDL_AUTO a eliminar](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-10-8.png)
-
-**Despliegue de la aplicación web**
-
-**Pasos previos**
-
-1) Para el despliegue en producción, cambiamos la url base de nuestra api a la desplegada para que nuestra aplicación
-   web funcione con nuestro backend en Azure:
-
-![Frontend Previous Step 1-1 - URL base de la API en environment.ts](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-previous-step-1-1.png)
-
-2) Creamos un pull request hacia develop con el cambio de la configuración de producción:
-
-![Frontend Previous Step 1-2 - Creación del pull request hacia develop](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-previous-step-1-2.png)
-
-3) Finalmente, el pull request fue fusionado en develop:
-
-![Frontend Previous Step 1-3 - Pull request fusionado](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-previous-step-1-3.png)
-
-**Paso 1: Creación de proyecto en Firebase**
-
-1) Creamos nuestro proyecto llamado **iotech-qualitrack** en Firebase:
-
-![Frontend Step 1-1 - Nombre del proyecto en Firebase](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-1-1.png)
-
-![Frontend Step 1-2 - Creación del proyecto con Google Analytics](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-1-2.png)
-
-**Paso 2: Inicializar Firebase en el repositorio**
-
-1) Desde develop, creamos una rama feature para inicializar firebase
-
-* Realizamos los siguientes comandos:
-
-```bash
-npm ci
-npx firebase-tools login
-npx firebase-tools init hosting
-```
-
-![Frontend Step 2-1 - Instalación de firebase-tools en el login](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-1.png)
-
-2) Se crean 2 archivos: .firebaserc y firebase.json:
-
-![Frontend Step 2-2 - Archivos creados](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-2.png)
-
-3) Conectamos GitHub con Firebase:
-
-![Frontend Step 2-3 - Inicialización de hosting con GitHub](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-3.png)
-
-![Frontend Step 2-4 - Inicialización de hosting con GitHub completada](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-4.png)
-
-4) Hacemos push a la rama feature y realizamos un PR a develop para el release.
-
-![Frontend Step 2-4 - Pull request hacia develop con el workflow de despliegue](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-5.png)
-
-**Paso 3: Release y despliegue a Firebase**
-
-1) Realizamos un release version 1.0.0 y realizamos un PR a main:
-
-![Frontend Step 3-1 - Creación de la rama release/v1.0.0](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-3-1.png)
-
-![Frontend Step 3-2 - Pull request del release hacia main](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-3-2.png)
-
-2) Esperamos a que el despliegue configurado en workflows termine:
-
-![Frontend Step 3-3 - Despliegue en progreso en GitHub Actions](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-3-3.png)
-
-3) Cuando ya termino, accedemos al link de nuestra aplicación web:
-
-![Frontend Step 3-4 - Despliegue completado en GitHub Actions](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-3-4.png)
-
-![Frontend Step 3-5 - Aplicación web desplegada en Firebase Hosting](../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-3-5.png)
-
-**Despliegue de la Landing Page**
-
-Nombre del repositorio en la organización: qualitrack-landing-page
-
-La Landing Page es un sitio estático (`index.html` y la carpeta `public`), por lo que se publica directamente desde su
-repositorio con GitHub Pages.
-
-**Paso 1: Publicación con GitHub Pages**
-
-1) En el repositorio, vamos a Settings y después Pages. En Build and deployment seleccionamos **Deploy from a branch**,
-   la rama **main** y la carpeta **/ (root)**, y guardamos:
+En el Sprint 2 cada producto se publica de forma automática al integrar una versión en la rama `main`: la Landing Page en GitHub Pages, la Web Application en Firebase Hosting y el Cloud REST API en Azure Container Apps, cada uno con su workflow de GitHub Actions. Las ramas `develop` y `main` de los repositorios de código están protegidas por reglas que exigen un pull request con las pruebas de integración continua aprobadas, y cada versión se publica con su etiqueta y su GitHub Release. El Edge Service se despliega con Docker Compose en la estación local de cada instalación, y su workflow verifica ese despliegue en cada pull request.
+
+| Producto | Versión desplegada | Destino | Mecanismo |
+|----------|--------------------|---------|-----------|
+| Landing Page | v1.1.0 | GitHub Pages | Workflow `Deploy to GitHub Pages` al integrar en `main` |
+| Web Application | v2.5.0 | Firebase Hosting | Workflow `Deploy to Firebase Hosting on merge` al integrar en `main` |
+| Cloud REST API | v1.2.0 | Azure Container Apps y Azure Database for MySQL | Workflow `Deploy to Azure Container Apps` al integrar en `main` |
+| Edge Service | v0.3.1 | Estación local (Raspberry Pi 4) | Docker Compose con Gunicorn; imagen arm64 construida en CI |
+| Mobile Application | develop | Android | APK compilado con Flutter apuntando al Cloud REST API |
+
+**Despliegue del Cloud REST API.** El pipeline creado en el Sprint 1 ejecuta las pruebas con Maven, construye la imagen Docker en Azure Container Registry y actualiza la revisión de Azure Container Apps. En este sprint se publicaron con él las versiones 1.1.0 y 1.2.0. Como la base de datos de producción usa `ddl-auto=none`, antes de publicar la versión 1.2.0 se creó en ella la tabla de las API keys de los Edge Gateways y dos índices de las alertas de desviación, con un script que se ejecuta una sola vez y termina con una consulta de verificación.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-landing-deployment-step-1-1.jpg" alt="Configuración de GitHub Pages" width="90%">
-  <p><em>Figura: Configuración de GitHub Pages en el repositorio de la Landing Page. Esta vista evidencia el sitio publicado y su publicación desde la rama main y la carpeta raíz del repositorio.</em></p>
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/backend-azure-deploy.jpg" alt="Despliegue del Cloud REST API en Azure" width="90%">
+  <p><em>Figura: Workflow de despliegue del Cloud REST API en GitHub Actions. Esta evidencia muestra la ejecución que publicó la versión 1.2.0 al integrar su pull request en main: las pruebas con Maven, el inicio de sesión en Azure, la publicación de la imagen en Azure Container Registry y la actualización de Azure Container Apps.</em></p>
 </div>
 
-2) Con cada push a main, el workflow **pages-build-deployment** de GitHub Actions publica el sitio:
+**Despliegue de la Web Application.** Cada versión integrada en `main` se compila con `npm ci && npm run build` y se publica en el sitio `qualitrack-iotech` de Firebase Hosting. En este sprint se publicaron las versiones 1.1.1 a 2.5.0.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-landing-deployment-step-1-2.jpg" alt="Workflow de publicación de la Landing Page" width="90%">
-  <p><em>Figura: Ejecuciones del workflow pages-build-deployment en GitHub Actions. Esta evidencia muestra las publicaciones de la Landing Page realizadas desde la rama main.</em></p>
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/web-firebase-deploy.jpg" alt="Despliegue de la Web Application en Firebase Hosting" width="90%">
+  <p><em>Figura: Workflow de despliegue de la Web Application en GitHub Actions. Esta evidencia muestra la publicación de la versión 2.5.0 en el sitio de producción de Firebase Hosting, con el resultado success y la URL https://qualitrack-iotech.web.app.</em></p>
 </div>
 
-**Paso 2: Verificaciones**
-
-1) Ingresamos a la Landing Page
-   en [https://iotech-2620-8741.github.io/qualitrack-landing-page/](https://iotech-2620-8741.github.io/qualitrack-landing-page/)
-   y recorremos sus secciones en inglés y en español:
+**Despliegue de la Landing Page.** En este sprint la Landing Page pasó de la publicación desde una rama a un workflow de GitHub Actions que sube la carpeta `public/` como artefacto y la despliega en GitHub Pages, de modo que el sitio se sirve desde la URL raíz del repositorio.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-landing-deployment-step-2-1.png" alt="Landing Page publicada" width="90%">
-  <p><em>Figura: Landing Page publicada en GitHub Pages. Esta evidencia confirma que el sitio es accesible públicamente desde la URL de la organización.</em></p>
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/website-pages-deploy.jpg" alt="Despliegue de la Landing Page en GitHub Pages" width="90%">
+  <p><em>Figura: Workflow de despliegue de la Landing Page en GitHub Actions. Esta evidencia muestra la configuración de Pages, la carga de public/ como sitio y el despliegue de la versión 1.1.0 reportado como exitoso.</em></p>
 </div>
 
-2) Verificamos que los botones Get started y los de cada plan lleven a la Web Application publicada en Firebase Hosting:
+**Despliegue del Edge Service.** El Edge Service se ejecuta en la estación local de cada instalación, una Raspberry Pi 4 con Docker Engine, mediante `docker-compose.yml`, que levanta el servicio `qualitrack-edge` con Gunicorn y conserva la base SQLite en el volumen `qualitrack-data`. Los pasos de despliegue son:
+
+1. Copiar `.env.production` con el identificador del Edge Gateway (`CLOUD_DEVICE_ID`), su API key (`CLOUD_API_KEY`), la URL del Cloud REST API y `CLOUD_SYNC_ENABLED=true`.
+2. Levantar el servicio con `docker compose up -d --build`.
+3. Registrar cada nodo ESP32 con `flask --app app devices register <id> <tipo>`, que entrega la API key del nodo una sola vez.
+4. Sincronizar con el Cloud con `flask --app app cloud sync`, que lee los dispositivos IoT del Gateway, entrega sus perfiles a los nodos y envía la telemetría pendiente.
+
+El workflow de integración continua reproduce este despliegue en cada pull request: levanta el servicio con Docker Compose, registra un nodo, verifica su autenticación y la recepción de una lectura, reinicia el contenedor y comprueba que la lectura pendiente se conserva en el volumen. Además construye la imagen para la arquitectura arm64 de la Raspberry Pi 4.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-landing-deployment-step-2-2.png" alt="Enlace de la Landing Page a la Web Application" width="90%">
-  <p><em>Figura: Llamada a la acción de la Landing Page abierta en la Web Application. Esta evidencia muestra la conexión entre el sitio público y la aplicación desplegada.</em></p>
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/edge-docker-smoke-test.jpg" alt="Despliegue del Edge Service con Docker Compose" width="90%">
+  <p><em>Figura: Prueba del despliegue del Edge Service en GitHub Actions. Esta evidencia muestra el registro de un Monitor de Contenedor, su autenticación con respuesta 200, la recepción de una lectura con respuesta 201 y el reinicio del servicio con Docker Compose conservando la lectura pendiente de sincronización.</em></p>
 </div>
+
+**Mobile Application.** La primera versión se compila con `flutter build apk --dart-define=API_BASE_URL=<URL del Cloud REST API>` y se instala en dispositivos Android, donde consume el Cloud REST API desplegado en Azure. Su workflow de integración continua ejecuta el análisis estático y las pruebas en cada pull request hacia `develop`. La distribución del APK mediante Firebase App Distribution forma parte del spike SP10 y queda para el siguiente sprint, junto con la publicación de su primera versión en `main`.
 
 #### 6.2.2.9. Team Collaboration Insights during Sprint
