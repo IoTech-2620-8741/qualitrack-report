@@ -1902,7 +1902,7 @@ This will be confirmed when a reading taken by a physical device reaches the Edg
 
 Durante el Sprint 2 cada integrante lideró un bounded context del core del negocio en todos los productos donde aparece. Tracking & Telemetry y Compliance & Alerting tienen dos líderes cada uno por su carga de trabajo. Los contextos que no son core (IAM, Profile Management y Payments & Subscriptions) quedaron con quien ya los venía trabajando.
 
-| Team Member (Last Name, First Name) / GitHub User­name | Tracking & Telemetry  | Compliance & Alerting  | Product Batch Management  | Equipment Management  | Laboratory Management  | Inventory Management  | Reporting & Audit |
+| Team Member (Last Name, First Name) / GitHub User­name | Tracking & Tele­metry  | Com­pliance & Alert­ing  | Product Batch Manage­ment  | Equip­ment Manage­ment  | Labor­atory Manage­ment  | Inven­tory Manage­ment  | Report­ing & Audit |
 |-------------------------------------------------------|----------------------|-------------------------------|------------------------------|------------------------------|------------------------------|----------------------------------|-------------------------------|
 | Baca Camargo, Vitaly Arturo<br>(Mr-Code-star)         | C                    | C                             | C                            | C                            | C                            | C                                | L                             |
 | Cutiri Agüero, Fabrizio Alexander<br>(Fabrizio​Cutiri) | C                    | C                             | C                            | C                            | C                            | L                                | C                             |
