@@ -1934,7 +1934,7 @@ Cada historia se descompuso en tareas según el producto donde se implementa: la
 
 **Enlace público al tablero:** [QT Sprint 2 - Jira](https://iotech-2620.atlassian.net/jira/software/projects/QT/boards/68/backlog)
 
-En total el sprint comprende 521 tareas y 690 horas estimadas. El estado de cada tarea corresponde a lo implementado en los repositorios al cierre del sprint: 435 tareas se encuentran en Done, 2 en In-Process y 84 en To-do. Las tareas pendientes corresponden a las Embedded Applications, cuyo firmware aún no se encuentra en un repositorio de la organización, a las pruebas de concepto de los spikes de hardware y de Firebase, y al caché local y la distribución de la Mobile Application.
+En total el sprint comprende 521 tareas y 690 horas estimadas. El estado de cada tarea corresponde a lo implementado en los repositorios al cierre del sprint: 435 tareas se encuentran en Done, 2 en In-Process y 84 en To-do. Las tareas pendientes corresponden a las Embedded Applications, cuyo firmware aún no se encuentra en un repositorio de la organización, a las pruebas de concepto y el registro de la decisión de los spikes de hardware y de Firebase, y al caché local y la distribución de la Mobile Application.
 
 <table>
 <tr>
@@ -4114,244 +4114,80 @@ Commits relacionados con las pruebas en este sprint (64):
 
 #### 6.2.2.6. Execution Evidence for Sprint Review
 
-En este sprint se publicó la primera versión de la Landing Page y de la Web Application. La Landing Page permite a los
-visitantes conocer la propuesta de valor, el funcionamiento, los beneficios, el equipo y los planes de QualiTrack en
-inglés o español. La Web Application permite al responsable de calidad crear su cuenta, contratar su plan y registrar su
-laboratorio; y a todo el personal supervisar las condiciones ambientales, el inventario, los equipos, los lotes y las
-alertas según su rol.
+En este sprint QualiTrack pasó a funcionar como una solución integrada. La Landing Page publicó su nueva versión con la guía de estilos de la marca. La Web Application, en su versión 2.5.0, consume todos los servicios del Cloud REST API desplegado en Azure: el responsable de calidad supervisa las alertas de todos los ambientes desde una bandeja priorizada, configura los perfiles ambientales de ambientes y contenedores, sigue la trazabilidad de cada lote hasta su decisión de calidad, controla el inventario por ambiente, registra los Edge Gateways de cada ambiente y genera los reportes para auditoría. La Mobile Application ofrece en Android las consultas principales para el personal en planta, y el Edge Service recibe en la red local las lecturas de los nodos ESP32, aplica el perfil ambiental y las sincroniza con el Cloud como Edge Gateway.
 
-La revisión del sprint verificó que un visitante pueda recorrer la Landing Page, comprender la propuesta de valor y
-llegar a la Web Application desde sus llamadas a la acción; y que, dentro de la aplicación, cada rol complete sus flujos
-principales con datos reales del laboratorio de demostración SENKA LAB, en inglés y en español.
+La revisión del sprint verificó estos flujos con los datos del laboratorio de demostración SENKA LAB en el entorno desplegado, y el flujo del Edge con dispositivos simulados en las pruebas automatizadas y en el despliegue con Docker Compose. Las Embedded Applications de los nodos ESP32 quedan pendientes para el siguiente sprint.
 
-- **Landing
-  Page:** [https://iotech-2620-8741.github.io/qualitrack-landing-page/](https://iotech-2620-8741.github.io/qualitrack-landing-page/)
+- **Landing Page:** [https://iotech-2620-8741.github.io/qualitrack-website/](https://iotech-2620-8741.github.io/qualitrack-website/)
 - **Web Application:** [https://qualitrack-iotech.web.app](https://qualitrack-iotech.web.app)
-- **Video de Execution Evidence del Sprint 1:** [https://shorturl.at/gppVX](https://shorturl.at/gppVX)
+- **Cloud REST API (Swagger UI):** [QualiTrack Swagger Documentation](https://iotech-qualitrack-api.wonderfulocean-c1f38f8b.chilecentral.azurecontainerapps.io/swagger-ui/index.html)
+- **Mobile Application:** [IoTech-2620-8741/qualitrack-mobile-application](https://github.com/IoTech-2620-8741/qualitrack-mobile-application)
+- **Edge Service:** [IoTech-2620-8741/qualitrack-edge-service](https://github.com/IoTech-2620-8741/qualitrack-edge-service)
+- **Video de Execution Evidence del Sprint 2:** *(enlace pendiente de publicación)*
 
 **Landing Page**
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-header.png" alt="Landing Page - Navigation bar" width="90%">
-  <p><em>Figura: Encabezado y barra de navegación de la Landing Page. Esta vista evidencia el acceso directo a las secciones Home, Features, Benefits, About Us y Plans, el selector de idioma y el botón que lleva a la Web Application.</em></p>
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/landing-home.jpg" alt="Landing Page - Home" width="90%">
+  <p><em>Figura: Sección principal de la nueva versión de la Landing Page. Esta vista evidencia la guía de estilos de QualiTrack aplicada al sitio, con el encabezado compartido, el selector de idioma y la llamada a la acción hacia la Web Application.</em></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-home.png" alt="Landing Page - Home" width="90%">
-  <p><em>Figura: Sección Home. Esta pantalla valida la comunicación inicial de la propuesta de valor, The Future of Pharmaceutical Quality Management, y presenta en tarjetas lo que ofrece QualiTrack: monitoreo IoT en tiempo real, cumplimiento BPM automatizado y registros de auditoría inmutables.</em></p>
-</div>
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-features.png" alt="Landing Page - Features" width="90%">
-  <p><em>Figura: Sección Features. Esta evidencia muestra en un acordeón las funcionalidades clave de la plataforma, como la integración de telemetría IoT, el motor de cumplimiento BPM, las alertas instantáneas de desviación y el panel de analítica y KPI.</em></p>
-</div>
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-benefits.png" alt="Landing Page - Benefits" width="90%">
-  <p><em>Figura: Sección Benefits. Esta vista presenta las ventajas de QualiTrack para la manufactura farmacéutica, como la reducción del tiempo de preparación de auditorías de DIGEMID y la eliminación de errores humanos en los registros críticos.</em></p>
-</div>
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-about.png" alt="Landing Page - About Us" width="90%">
-  <p><em>Figura: Sección About Us. Esta evidencia presenta la visión de QualiTrack de digitalizar la supervisión de los procesos de manufactura y el cumplimiento de las Buenas Prácticas de Manufactura exigidas por DIGEMID, sus pilares (integración IoT, trazabilidad inmutable y cumplimiento regulatorio) y los perfiles de los integrantes del equipo de IoTech.</em></p>
-</div>
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-plans.png" alt="Landing Page - Plans" width="90%">
-  <p><em>Figura: Sección Plans. Esta vista permite comparar los planes Standard Lab y Enterprise con su precio, periodicidad y características, alternando entre la modalidad mensual y anual.</em></p>
-</div>
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-testimonials.png" alt="Landing Page - Testimonials" width="90%">
-  <p><em>Figura: Sección de testimonios y llamada final a la acción. Esta evidencia muestra las opiniones de responsables de calidad y producción sobre QualiTrack y el botón Get Started que lleva a la Web Application.</em></p>
-</div>
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-footer.png" alt="Landing Page - Footer" width="90%">
-  <p><em>Figura: Footer de la Landing Page. Esta evidencia muestra el cierre de la navegación con accesos a las secciones, los datos de contacto (correo, teléfono y ubicación) y los enlaces a los Términos de Servicio y la Política de Privacidad.</em></p>
-</div>
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-legal.png" alt="Landing Page - Terms of Service and Privacy Policy" width="90%">
-  <p><em>Figura: Páginas de Términos de Servicio y Política de Privacidad. Esta vista evidencia la información legal que el visitante puede consultar antes de contratar el servicio.</em></p>
-</div>
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-es-mobile.png" alt="Landing Page - Spanish and mobile view" width="90%">
-  <p><em>Figura: Landing Page en español en un dispositivo móvil. Esta evidencia valida el cambio de idioma entre inglés y español y la adaptación del diseño a pantallas pequeñas en la portada, la sección de servicios y los planes.</em></p>
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/landing-plans.jpg" alt="Landing Page - Plans" width="90%">
+  <p><em>Figura: Planes de suscripción en la Landing Page. Esta vista evidencia la comparación de los planes Standard Lab y Enterprise con el cambio entre facturación mensual y anual.</em></p>
 </div>
 
 **Web Application**
 
-*Acceso y configuración inicial*
-
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-sign-in.png" alt="Web Application - Sign In" width="90%">
-  <p><em>Figura: Inicio de sesión. Esta pantalla valida el acceso del responsable de calidad, el personal operativo y los auditores con su usuario o correo, con mensajes claros cuando las credenciales no son válidas.</em></p>
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/web-dashboard.jpg" alt="Web Application - Dashboard" width="90%">
+  <p><em>Figura: Panel de control de SENKA LAB. Esta vista evidencia los indicadores del laboratorio (equipos, lotes en curso, alertas abiertas y materiales con stock bajo), la telemetría por equipo y el resumen de la suscripción, todos obtenidos del Cloud REST API.</em></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-sign-up.png" alt="Web Application - Sign Up" width="90%">
-  <p><em>Figura: Registro de cuenta del responsable de calidad. Esta evidencia muestra los datos que se validan antes de crear la cuenta: usuario, correo único para recuperar la contraseña y contraseña con su confirmación.</em></p>
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/web-alerts.jpg" alt="Web Application - Compliance alerts" width="90%">
+  <p><em>Figura: Bandeja de alertas de cumplimiento. Esta vista evidencia las alertas críticas de todos los ambientes priorizadas por severidad, con la lectura que superó el límite, su atención por el personal y las acciones para registrar la atención o resolverla.</em></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-password-recovery.png" alt="Web Application - Password recovery" width="90%">
-  <p><em>Figura: Recuperación de contraseña. Esta vista evidencia la solicitud con el usuario o el correo de la cuenta, a cuyo correo se envía un código de seis dígitos para restablecer la contraseña.</em></p>
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/web-environmental-profiles.jpg" alt="Web Application - Environmental profiles" width="90%">
+  <p><em>Figura: Perfil ambiental de un contenedor de la cámara de cadena de frío. Esta vista evidencia los umbrales normal y crítico de temperatura y humedad, con su versión, que el Edge entrega a los dispositivos.</em></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-onboarding-plans.jpg" alt="Web Application - Plan selection" width="90%">
-  <p><em>Figura: Selección del plan de suscripción. Esta evidencia muestra los planes Standard Lab y Enterprise en modalidad mensual y anual, con sus cuentas de usuario y dispositivos conectados, que el responsable de calidad elige antes de usar las funciones operativas.</em></p>
-</div>
-
-*Panel de control*
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-dashboard.jpg" alt="Web Application - Dashboard" width="90%">
-  <p><em>Figura: Panel de control del laboratorio. Esta evidencia reúne en una sola vista los equipos operativos, los lotes en proceso, las alertas abiertas, las materias primas con stock bajo, la telemetría reciente y el estado de la suscripción.</em></p>
-</div>
-
-*Laboratorio, ambientes y personal*
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-lab-profile.jpg" alt="Web Application - Laboratory profile" width="90%">
-  <p><em>Figura: Perfil del laboratorio. Esta vista muestra los datos registrados de la instalación y permite actualizarlos.</em></p>
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/web-batches.jpg" alt="Web Application - Production batches" width="90%">
+  <p><em>Figura: Lotes de producción del laboratorio. Esta vista evidencia los indicadores por estado que también filtran la lista, la búsqueda y la tabla paginada con el producto, la cantidad, la fecha de inicio y el estado de cada lote.</em></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-environments.jpg" alt="Web Application - Environments" width="90%">
-  <p><em>Figura: Ambientes del laboratorio. Esta evidencia muestra el registro de ambientes y la definición de su uso (laboratorio, producción, almacén de materias primas o de producto), que determina qué se puede almacenar en cada uno.</em></p>
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/web-batch-traceability.jpg" alt="Web Application - Batch traceability" width="90%">
+  <p><em>Figura: Trazabilidad de un lote liberado. Esta vista evidencia el resumen de materias primas, equipos, personal y contenedor del lote, la decisión de calidad firmada con SHA-256 y la línea de tiempo de su fabricación.</em></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-staff.jpg" alt="Web Application - Staff" width="90%">
-  <p><em>Figura: Personal del laboratorio. Esta pantalla muestra el registro de operarios y auditores, su cargo, su estado y la consulta de su actividad registrada.</em></p>
-</div>
-
-*Inventario de materias primas*
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-inventory-catalogue.jpg" alt="Web Application - Raw materials" width="90%">
-  <p><em>Figura: Catálogo de materias primas por ambiente. Esta vista evidencia el stock utilizable y físico de cada material y resalta los que están por debajo del stock mínimo.</em></p>
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/web-inventory.jpg" alt="Web Application - Inventory" width="90%">
+  <p><em>Figura: Catálogo de materias primas del almacén. Esta vista evidencia el stock utilizable, el balance físico y el stock mínimo de cada material, con el filtro de materiales con stock bajo.</em></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-inventory-detail.jpg" alt="Web Application - Raw material detail" width="90%">
-  <p><em>Figura: Detalle de una materia prima. Esta evidencia muestra sus lotes recibidos con estado y vencimiento, su contenedor, el historial de movimientos y los lotes de producto que la consumieron.</em></p>
-</div>
-
-*Equipos y dispositivos IoT*
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-equipment-list.jpg" alt="Web Application - Equipment" width="90%">
-  <p><em>Figura: Equipos y dispositivos IoT. Esta pantalla lista los equipos del laboratorio con su ambiente y estado operativo, e identifica los dispositivos ambientales y monitores de contenedor con su estado de conexión.</em></p>
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/web-equipment.jpg" alt="Web Application - Equipment" width="90%">
+  <p><em>Figura: Catálogo de equipos del laboratorio. Esta vista evidencia los equipos de proceso, los dispositivos IoT y los Edge Gateways con sus filtros, y las acciones para registrar cada uno.</em></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-equipment-detail.jpg" alt="Web Application - Equipment detail" width="90%">
-  <p><em>Figura: Detalle de un equipo. Esta evidencia reúne sus datos generales, la reubicación entre ambientes, el registro de cambios de su estado operativo y su historial de mantenimiento con el técnico responsable.</em></p>
-</div>
-
-*Monitoreo ambiental*
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-telemetry-monitoring.jpg" alt="Web Application - Telemetry dashboard" width="90%">
-  <p><em>Figura: Monitoreo ambiental en tiempo real. Esta vista muestra las lecturas actuales de calidad de aire, temperatura, humedad y luminosidad con su estado (normal, advertencia o crítico) frente a los rangos del perfil vigente.</em></p>
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/web-environment-edge-gateways.jpg" alt="Web Application - Edge Gateways of an environment" width="90%">
+  <p><em>Figura: Cobertura de Edge Gateways de un ambiente. Esta vista evidencia los Edge Gateways, los dispositivos IoT y los equipos del ambiente, y advierte cuántos dispositivos aún no tienen un Edge Gateway que envíe sus lecturas a QualiTrack.</em></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-telemetry-history.jpg" alt="Web Application - Telemetry history" width="90%">
-  <p><em>Figura: Historial de telemetría. Esta evidencia grafica las lecturas de un periodo de hasta 31 días junto con los rangos normal y crítico, resaltando las desviaciones.</em></p>
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/web-register-edge-gateway.jpg" alt="Web Application - Register Edge Gateway" width="90%">
+  <p><em>Figura: Registro de un Edge Gateway. Esta vista evidencia el formulario con el identificador que el Edge usa junto con su API key para conectarse al Cloud, el modelo Raspberry Pi 4 y el ambiente donde se instala.</em></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-environmental-profiles.jpg" alt="Web Application - Environmental profiles" width="90%">
-  <p><em>Figura: Perfiles ambientales. Esta pantalla evidencia la configuración versionada de los límites normal y crítico por ambiente y por contenedor, que clasifican cada lectura como normal, advertencia o crítica.</em></p>
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/web-report-generator.jpg" alt="Web Application - Report generator" width="90%">
+  <p><em>Figura: Generador de reportes y documentos. Esta vista evidencia los reportes de lote, ambiental e inventario, con sus parámetros, el periodo y el formato PDF o CSV para auditoría.</em></p>
 </div>
-
-*Productos y lotes*
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-products.jpg" alt="Web Application - Products" width="90%">
-  <p><em>Figura: Catálogo de productos farmacéuticos por ambiente. Esta vista muestra los productos registrados que pueden fabricarse en el laboratorio.</em></p>
-</div>
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-batches.jpg" alt="Web Application - Production batches" width="90%">
-  <p><em>Figura: Lotes de producción. Esta evidencia lista los lotes con su producto, cantidad y estado (pendiente, en proceso, liberado o rechazado).</em></p>
-</div>
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-batch-detail.jpg" alt="Web Application - Batch detail" width="90%">
-  <p><em>Figura: Detalle de un lote en proceso. Esta pantalla muestra el registro de consumos de materia prima desde un lote liberado de un ambiente, que descuenta el stock del inventario, y el historial de consumos del lote.</em></p>
-</div>
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-batch-traceability.jpg" alt="Web Application - Batch traceability" width="90%">
-  <p><em>Figura: Trazabilidad de un lote liberado. Esta evidencia reúne las materias primas con sus lotes de origen, los equipos, el personal, el contenedor donde se almacenó el producto y la decisión de calidad firmada con su hash SHA-256.</em></p>
-</div>
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-batch-release.jpg" alt="Web Application - Batch release" width="90%">
-  <p><em>Figura: Liberación de un lote. Esta vista evidencia que el responsable de calidad libera el lote con su fecha y sus notas de calidad, y que la liberación queda firmada con su usuario y ya no permite modificar el lote.</em></p>
-</div>
-
-*Alertas y avisos*
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-alerts.jpg" alt="Web Application - Deviation alerts" width="90%">
-  <p><em>Figura: Panel de alertas de desviación. Esta pantalla muestra las alertas por estado y severidad, con el ambiente, el dispositivo y la cantidad de desviaciones de cada incidente.</em></p>
-</div>
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-alert-detail.jpg" alt="Web Application - Alert detail" width="90%">
-  <p><em>Figura: Detalle de una alerta. Esta evidencia muestra la inspección técnica de la desviación, las acciones automáticas del contenedor y las acciones para atenderla y resolverla con notas.</em></p>
-</div>
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-notifications.jpg" alt="Web Application - Notifications" width="90%">
-  <p><em>Figura: Campana de avisos y preferencias de notificación. Esta vista evidencia los avisos de alertas y lotes con su contador de no leídos, y la elección de qué avisos llegan a la aplicación y al correo.</em></p>
-</div>
-
-*Indicadores, reportes y auditoría*
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-kpi-dashboard.jpg" alt="Web Application - Environmental summary" width="90%">
-  <p><em>Figura: Resumen ambiental. Esta pantalla muestra, para el periodo elegido (24 horas, 7 o 31 días) y por ambiente, la cantidad de lecturas, el promedio, el mínimo, el máximo y la última lectura de cada variable de los dispositivos.</em></p>
-</div>
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-reports.jpg" alt="Web Application - Reports" width="90%">
-  <p><em>Figura: Generación de reportes. Esta evidencia muestra los reportes de lote, ambiental y de inventario en PDF, y la exportación del historial técnico y de mantenimiento de los equipos.</em></p>
-</div>
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-audit-log.jpg" alt="Web Application - Audit log" width="90%">
-  <p><em>Figura: Registro de auditoría. Esta vista evidencia quién realizó cada acción y cuándo, con filtros por equipo, lote y periodo.</em></p>
-</div>
-
-*Perfil y suscripción*
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-profile.jpg" alt="Web Application - Profile" width="90%">
-  <p><em>Figura: Perfil del usuario. Esta pantalla muestra los datos personales y la foto de perfil, junto con la información de la cuenta (los datos de identidad y teléfono se ocultaron en la imagen).</em></p>
-</div>
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-billing.jpg" alt="Web Application - Billing summary" width="90%">
-  <p><em>Figura: Resumen de la suscripción. Esta evidencia muestra el plan vigente, el periodo de facturación, el historial de pagos y la opción de cancelar la renovación.</em></p>
-</div>
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-language-es.jpg" alt="Web Application - Spanish interface" width="90%">
-  <p><em>Figura: Interfaz en español. Esta vista valida la internacionalización de la Web Application en inglés y español con el selector de idioma.</em></p>
-</div>
-
-En conjunto, estas evidencias muestran que el Sprint 1 entregó una Landing Page navegable y bilingüe que comunica la
-propuesta de valor de QualiTrack, y una Web Application desplegada e integrada con el RESTful API que cubre el ciclo
-completo del laboratorio: configuración inicial, inventario, equipos y dispositivos IoT, monitoreo ambiental,
-trazabilidad y liberación de lotes, atención de alertas y generación de reportes.
 
 #### 6.2.2.7. Services Documentation Evidence for Sprint Review
 
