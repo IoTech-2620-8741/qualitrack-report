@@ -4007,23 +4007,23 @@ En el Cloud REST API las pruebas unitarias verifican las reglas del dominio de c
 | widget/​widgets_​test.dart | widget | validates required fields and has no sign-up entry; submits credentials and toggles password visibility; shows backend errors and is localized in Spanish; (+19 más) (22) |
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-2/testing-evidence/backend-tests-ci.png" alt="Pruebas del Cloud REST API en GitHub Actions" width="90%">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/testing-evidence/backend-tests-ci.jpg" alt="Pruebas del Cloud REST API en GitHub Actions" width="90%">
   <p><em>Figura: Ejecución de la suite del Cloud REST API en GitHub Actions. Esta evidencia muestra el workflow de integración continua del pull request de la versión 1.2.0, que ejecuta con Maven las 229 pruebas unitarias y de integración, todas aprobadas.</em></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-2/testing-evidence/web-tests-ci.png" alt="Pruebas de la Web Application en GitHub Actions" width="90%">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/testing-evidence/web-tests-ci.jpg" alt="Pruebas de la Web Application en GitHub Actions" width="90%">
   <p><em>Figura: Ejecución de la suite de la Web Application en GitHub Actions. Esta evidencia muestra los 128 archivos y las 870 pruebas de Vitest aprobados antes de compilar la versión 2.5.0.</em></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-2/testing-evidence/mobile-tests-ci.png" alt="Pruebas de la Mobile Application en GitHub Actions" width="90%">
-  <p><em>Figura: Ejecución de la suite de la Mobile Application en GitHub Actions. Esta evidencia muestra el análisis estático sin observaciones y las 174 pruebas de Flutter aprobadas.</em></p>
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/testing-evidence/mobile-tests-ci.jpg" alt="Pruebas de la Mobile Application en GitHub Actions" width="90%">
+  <p><em>Figura: Ejecución de la suite de la Mobile Application en GitHub Actions. Esta evidencia muestra las 174 pruebas de Flutter aprobadas en el pull request de la rama feature/refactor-ui, después del análisis estático con flutter analyze.</em></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-2/testing-evidence/edge-tests-ci.png" alt="Pruebas del Edge API en GitHub Actions" width="90%">
-  <p><em>Figura: Ejecución de la suite del Edge API en GitHub Actions. Esta evidencia muestra las 127 pruebas de unittest aprobadas y la construcción de las imágenes Docker para amd64 y arm64.</em></p>
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/testing-evidence/edge-tests-ci.jpg" alt="Pruebas del Edge API en GitHub Actions" width="90%">
+  <p><em>Figura: Ejecución de la suite del Edge API en GitHub Actions. Esta evidencia muestra las 127 pruebas de unittest aprobadas y, en la lista de jobs, la prueba del despliegue con Docker Compose (docker) y la imagen para la Raspberry Pi 4 (docker-arm64) también aprobadas.</em></p>
 </div>
 
 Commits relacionados con las pruebas en este sprint (64):
@@ -4667,17 +4667,22 @@ Content-Type: application/json
 Las siguientes capturas muestran la documentación desplegada con los datos de ejemplo de las operaciones agregadas en este sprint.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-2/services-documentation-evidence/swagger-edge-gateways.png" alt="Swagger UI - Edge Gateways" width="90%">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/services-documentation-evidence/swagger-edge-gateways.jpg" alt="Swagger UI - Edge Gateways" width="90%">
   <p><em>Figura: Operaciones del Edge Gateway en Swagger UI. Esta evidencia muestra el grupo Edge Gateways con los endpoints con los que el Edge lee sus dispositivos IoT y envía telemetría, eventos de actuación y perfiles ambientales, autenticados con el encabezado X-API-Key.</em></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-2/services-documentation-evidence/swagger-edge-telemetry.png" alt="Swagger UI - Telemetría del Edge Gateway" width="90%">
-  <p><em>Figura: Detalle del registro de telemetría de un Edge Gateway en Swagger UI. Esta evidencia muestra los parámetros, el cuerpo de ejemplo de la lectura y las respuestas 200, 201, 400, 401 y 403 documentadas.</em></p>
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/services-documentation-evidence/swagger-edge-telemetry.jpg" alt="Swagger UI - Telemetría del Edge Gateway" width="90%">
+  <p><em>Figura: Detalle del registro de telemetría de un Edge Gateway en Swagger UI. Esta evidencia muestra la descripción de la operación, los parámetros con el encabezado X-API-Key y el cuerpo de ejemplo de una lectura de temperatura.</em></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-2/services-documentation-evidence/swagger-edge-gateway-api-key.png" alt="Swagger UI - API key del Edge Gateway" width="90%">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/services-documentation-evidence/swagger-edge-telemetry-responses.jpg" alt="Swagger UI - Respuestas de la telemetría del Edge Gateway" width="90%">
+  <p><em>Figura: Respuestas documentadas del registro de telemetría en Swagger UI. Esta evidencia muestra el ejemplo de la medición devuelta con su estado y valor de umbral, tanto para una lectura ya recibida (200) como para una nueva (201).</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/services-documentation-evidence/swagger-edge-gateway-api-key.jpg" alt="Swagger UI - API key del Edge Gateway" width="90%">
   <p><em>Figura: Registro de un Edge Gateway y emisión de su API key en Swagger UI. Esta evidencia muestra las operaciones del laboratorio con las que el responsable de calidad registra el Gateway y genera la API key que se entrega una sola vez.</em></p>
 </div>
 
