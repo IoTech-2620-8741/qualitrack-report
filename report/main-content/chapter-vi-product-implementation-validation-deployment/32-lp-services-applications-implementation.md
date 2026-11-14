@@ -4796,3 +4796,42 @@ El workflow de integración continua reproduce este despliegue en cada pull requ
 **Mobile Application.** La primera versión se compila con `flutter build apk --dart-define=API_BASE_URL=<URL del Cloud REST API>` y se instala en dispositivos Android, donde consume el Cloud REST API desplegado en Azure. Su workflow de integración continua ejecuta el análisis estático y las pruebas en cada pull request hacia `develop`. La distribución del APK mediante Firebase App Distribution forma parte del spike SP10 y queda para el siguiente sprint, junto con la publicación de su primera versión en `main`.
 
 #### 6.2.2.9. Team Collaboration Insights during Sprint
+
+Durante el Sprint 2 el equipo mantuvo GitFlow y Conventional Commits, y reforzó la integración del trabajo: cada funcionalidad se desarrolló en una rama `feature/*` o `fix/*` creada desde `develop` y se integró mediante un pull request que exige las pruebas de integración continua aprobadas. Las versiones se publicaron en `main` con ramas `release/*`, su etiqueta y su GitHub Release, y luego se sincronizaron con `develop`. Cada Bounded Context tuvo un responsable en todos los productos donde aparece, según la matriz de liderazgo y colaboración.
+
+**Landing Page.** En la nueva versión de la Landing Page participaron Baca Camargo, Vitaly Arturo; Cutiri Agüero, Fabrizio Alexander; Guzmán Cabrejos, Yaku Mateo; Huapaya Galindo, Dyron; Lopez Roman, Franco Mauricio; Montes Ramos, Henry Jaredt; Quiroz Caceres, Adrian Alonso; Ruiz Madrid, Billy Jake y Torres Apolinario, Giovany Smith, con el encabezado y el selector de idioma compartidos, la internacionalización, la documentación de los scripts, las fotos del equipo, la guía de estilos y el despliegue con GitHub Actions.
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-website.jpg" alt="GitHub Insights - Landing Page" width="90%">
+  <p><em>Figura: Analíticos de contribución del repositorio de la Landing Page en GitHub Insights. Esta evidencia muestra los commits integrados en main durante el sprint y los integrantes que los realizaron.</em></p>
+</div>
+
+**Web Application.** En la Web Application participaron Baca Camargo, Vitaly Arturo; Cutiri Agüero, Fabrizio Alexander; Guzmán Cabrejos, Yaku Mateo; Huapaya Galindo, Dyron; Lopez Roman, Franco Mauricio; Quiroz Caceres, Adrian Alonso; Ruiz Madrid, Billy Jake y Torres Apolinario, Giovany Smith. El trabajo se organizó en pull requests por Bounded Context: la aplicación de las capas de Domain-Driven Design, las validaciones y pruebas, el rediseño de las vistas con la guía de estilos y la integración de los Edge Gateways.
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-web-app.jpg" alt="GitHub Insights - Web Application" width="90%">
+  <p><em>Figura: Analíticos de contribución del repositorio de la Web Application en GitHub Insights. Esta evidencia muestra los commits integrados en main durante el sprint, concentrados en las semanas del rediseño y de la integración con los servicios.</em></p>
+</div>
+
+**Cloud REST API.** En el Cloud REST API participaron Cutiri Agüero, Fabrizio Alexander; Guzmán Cabrejos, Yaku Mateo; Huapaya Galindo, Dyron; Lopez Roman, Franco Mauricio; Quiroz Caceres, Adrian Alonso; Ruiz Madrid, Billy Jake y Torres Apolinario, Giovany Smith, con la estructura táctica de cada Bounded Context, los Edge Gateways, la documentación de Tracking & Telemetry en Swagger y los pagos de renovación.
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-platform.jpg" alt="GitHub Insights - Cloud REST API" width="90%">
+  <p><em>Figura: Analíticos de contribución del repositorio del Cloud REST API en GitHub Insights. Esta evidencia muestra los commits integrados en main con las versiones 1.1.0 y 1.2.0.</em></p>
+</div>
+
+**Mobile Application.** En la Mobile Application participaron Baca Camargo, Vitaly Arturo; Cutiri Agüero, Fabrizio Alexander; Guzmán Cabrejos, Yaku Mateo; Huapaya Galindo, Dyron; Lopez Roman, Franco Mauricio; Quiroz Caceres, Adrian Alonso; Ruiz Madrid, Billy Jake y Torres Apolinario, Giovany Smith. Como su primera versión del sprint aún no se publica en `main`, sus analíticos de contribución todavía no reflejan este trabajo; la evidencia es la lista de pull requests integrados en `develop`.
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/mobile-merged-pull-requests.jpg" alt="Pull requests de la Mobile Application" width="90%">
+  <p><em>Figura: Pull requests integrados en develop en el repositorio de la Mobile Application. Esta evidencia muestra el trabajo de varios integrantes en las pantallas, los Bounded Contexts y las correcciones de usabilidad, cada uno con su verificación de integración continua.</em></p>
+</div>
+
+**Edge Service.** En el Edge Service participaron Cutiri Agüero, Fabrizio Alexander; Guzmán Cabrejos, Yaku Mateo; Huapaya Galindo, Dyron; Quiroz Caceres, Adrian Alonso; Ruiz Madrid, Billy Jake y Torres Apolinario, Giovany Smith, con la autenticación de los nodos, la recepción de telemetría, la sincronización con el Cloud, el despliegue con Docker Compose y las correcciones de su auditoría.
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-edge-service.jpg" alt="GitHub Insights - Edge Service" width="90%">
+  <p><em>Figura: Analíticos de contribución del repositorio del Edge Service en GitHub Insights. Esta evidencia muestra los commits integrados en main con las versiones 0.1.0 a 0.3.1.</em></p>
+</div>
+
+**Interpretación.** En total el equipo realizó 1353 commits en el sprint, frente a los 322 del Sprint 1, y el trabajo se integró de forma continua mediante pull requests revisados por la integración continua, en lugar de concentrarse en los días previos a la entrega como en el sprint anterior. Los commits se distribuyeron entre el 26 de octubre y el 13 de noviembre, con su mayor actividad en la semana del 2 de noviembre, cuando se integró la estructura de Domain-Driven Design en la Web Application y en la Mobile Application, y los productos nuevos (Edge Service y Mobile Application) reunieron a varios integrantes. Como oportunidades de mejora, el equipo se propone publicar la Mobile Application en `main` para que sus contribuciones se reflejen en los analíticos, incorporar a las Embedded Applications a los integrantes con menos participación en los repositorios de código y actualizar el estado de las tareas en Jira al mismo ritmo que los pull requests.
