@@ -4189,6 +4189,20 @@ La revisión del sprint verificó estos flujos con los datos del laboratorio de 
   <p><em>Figura: Generador de reportes y documentos. Esta vista evidencia los reportes de lote, ambiental e inventario, con sus parámetros, el periodo y el formato PDF o CSV para auditoría.</em></p>
 </div>
 
+**Mobile Application**
+
+La primera versión de la Mobile Application se ejecutó en Android conectada al Cloud REST API desplegado, con la cuenta del responsable de calidad de SENKA LAB.
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/mobile-home-alerts-telemetry.jpg" alt="Mobile Application - Home, alerts and telemetry" width="90%">
+  <p><em>Figura: Inicio, alertas y telemetría en la Mobile Application. Esta vista evidencia el resumen del laboratorio con las alertas abiertas, los dispositivos que requieren revisión, los lotes por liberar y los materiales bajo el mínimo; la lista de alertas de cumplimiento con su estado de atención; y el estado de conexión y las lecturas de un dispositivo.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/mobile-batches-inventory.jpg" alt="Mobile Application - Batches and inventory" width="90%">
+  <p><em>Figura: Lotes de producción e inventario en la Mobile Application. Esta vista evidencia la lista de lotes con su estado, el detalle de un lote con su ciclo y las acciones de liberación o rechazo del responsable de calidad, y el inventario de materias primas con su stock utilizable, físico y mínimo.</em></p>
+</div>
+
 #### 6.2.2.7. Services Documentation Evidence for Sprint Review
 
 En el Sprint 2 el Cloud REST API quedó documentado con OpenAPI en su totalidad y se documentó por primera vez la integración con el Edge. La documentación desplegada en Swagger UI describe 133 operaciones, 9 de ellas nuevas en este sprint: el registro de Edge Gateways y la emisión de su API key, la cobertura de los Edge Gateways de cada ambiente, los equipos de un ambiente y los cuatro endpoints con los que un Edge Gateway lee sus dispositivos IoT y envía la telemetría, los eventos de actuación y los perfiles ambientales. Además, los endpoints de Tracking & Telemetry y del Edge Gateway documentan cada campo con su descripción y un ejemplo, y sus respuestas con los códigos posibles. Las rutas del Cloud comienzan con `/api/v1`; las del Edge Gateway se autentican con el encabezado `X-API-Key` y el resto, salvo la autenticación y el webhook de Stripe, con `Authorization: Bearer <JWT>`. Los errores usan la estructura `ErrorResource {code, message, details}`.
