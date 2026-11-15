@@ -118,6 +118,82 @@ Se realizaron entrevistas con representantes de los segmentos objetivo del proye
 
 ### 6.3.2 Registro de Entrevista
 
+A continuación, se presenta el registro correspondiente a las entrevistas realizadas con representantes de los segmentos de responsables de calidad y personal operativo quienes participaron en la validación de la aplicación web, aplicación móvil y dispositivo de la plataforma Qualitrack. El objetivo fue evaluar la claridad del mensaje, la propuesta de valor y la percepción de utilidad de la propuesta desde la perspectiva los segmentos responsables de calidad y personal operativo de los laboratorios.
+
+#### Segmento 1: Responsables de calidad y supervisión
+
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #1<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Ricardo</td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>Melendrez</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>33 años</td>
+        </tr>
+        <tr>
+            <td>Ubicacion</td>
+            <td>Chilca - Cañete</td>
+        </tr>
+         <tr>
+            <td>Fecha de entrevista</td>
+            <td>14 de noviembre de 2026</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td style="text-align: left;">
+                <div align="center"><img src="../../assets/img/main-content/chapter-vi/interviews-validation/Ricardo Melendrez.png" width="700"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>
+            <a href="https://shorturl.at/Nt7Pn" target="_blank">
+                https://shorturl.at/Nt7Pn
+            </a>
+            </td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td>0:00 min</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td>5:00 min</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>
+                Durante la sesión, se presentaron los componentes principales de la solución IoTech a Ricardo Meléndrez, analista de control de calidad de productos farmacéuticos que trabaja en el área de estabilidades de un laboratorio, para evaluar su percepción sobre los dispositivos de monitoreo (Monitor de Ambiente y Monitor de Contenedor) y sus plataformas web y móvil. En su trabajo supervisa principalmente las condiciones de temperatura y humedad en áreas como físico-químico, pesaje e instrumentación, donde los valores deben mantenerse dentro de los parámetros establecidos para evitar alteraciones en los análisis. La entrevista, dirigida por [nombre del entrevistador], tuvo como objetivo validar la experiencia de usuario, la percepción de valor de las funcionalidades y la facilidad de uso de la plataforma.
+
+En la evaluación de los dispositivos, el entrevistado entendió el contenedor como un equipo que crea y conserva un ambiente de temperatura y humedad, y lo ubicó en zonas aisladas de almacenaje, de poco tránsito y con acceso esporádico. Su principal inquietud fue la capacidad: indicó que en la industria farmacéutica los volúmenes son grandes (aproximadamente 100 frascos de 100 ml por lote, o entre 10 y 30 frascos en presentaciones de medio litro o un litro) y que el registro ante DIGEMID exige como mínimo 3 lotes. Consideró que las dimensiones presentadas no serían las adecuadas y preguntó por la capacidad interna frente a la externa, aunque reconoció que farmacéuticas pequeñas podrían manejar cantidades menores. No manifestó incomodidad con ninguna acción automática de los devices.
+
+Respecto a la plataforma web, valoró el dashboard como una pantalla que permite saber en pocos segundos si el laboratorio está bien, gracias al gráfico y a las alertas, y se sintió bastante seguro de iniciar su turno revisando solo esa vista. Comprendió los cuatro cuadros de resumen después de la presentación. Como mejora, sugirió diferenciar por colores (amarillo o rojo) en el gráfico cuando la temperatura se acerque al límite o salga de especificación. Prefirió las tarjetas del Resumen Ambiental frente a la tabla y el gráfico de picos frente al promedio de 31 días, para identificar la fecha exacta en que salió de especificación. El gráfico de desviaciones se entendió sin explicación y le generó mucha seguridad para tomar decisiones. Además, se sintió seguro configurando por sí mismo los perfiles ambientales.
+
+En el generador de reportes, indicó que usaría el reporte ambiental y de inventario en formato PDF, con periodicidad semanal o quincenal, y sugirió incluir un gráfico de picos. Consideró que la plataforma ahorraría tiempo frente a sus formatos físicos y archivos Excel, tanto por la descarga de reportes como por su carácter visual. El historial de alertas le pareció completo y valoró de forma positiva que algunos equipos corrijan el problema de forma autónoma. Ante una auditoría, se sentiría seguro y presentaría el reporte PDF impreso, para evitar que el auditor ingrese a la plataforma y solicite información de otros equipos o fechas.
+
+La respuesta hacia la versión móvil fue favorable. Destacó que el inicio le brinda información sobre alertas y dispositivos en línea, lo que le permite saber si un contenedor o cabina está fuera de especificación y avisar a mantenimiento. Indicó que reemplazaría su método actual, que depende de una pantalla fija en el trabajo, y que no necesita más información en el detalle de una alerta, pues usaría principalmente las críticas abiertas. Para marcar una alerta como resuelta, requeriría una revisión física del contenedor. Ante un lote ya liberado o una auditoría, usaría solo los reportes en PDF, y para liberar o rechazar un lote solo necesitaría verificar que la temperatura y la humedad no hayan salido de especificación durante todo el periodo de almacenamiento. En cuanto al uso, empleará la computadora en horario laboral y el celular fuera de él, para monitorear cada cierto tiempo.
+
+Finalmente, el entrevistado destacó como lo más gustado el carácter visual, gráfico e intuitivo de ambas plataformas. Se sentiría seguro usándolas todos los días sin una capacitación larga y no manifestó desconfianza. Para confiar en las lecturas y reemplazar sus registros manuales, sugirió realizar demos de la plataforma durante un tiempo. Señaló que instalaría los dispositivos primero en el almacén y en las cabinas de estabilidades por ser áreas críticas, y que la única barrera posible sería el costo. Se confirmó que el mayor valor percibido de la solución es tener la información a la mano y de manera rápida para tomar decisiones. La validación de las dimensiones y capacidad del contenedor, la incorporación de alertas por color y del gráfico de picos en los reportes, y la confirmación física para el cierre de alertas se identificaron como las principales oportunidades para fortalecer la solución.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+#### Segmento 2: Personal operativo de laboratorios y almacenes
+
+
 ### 6.3.3 Evaluaciones según Heuristica
 
 #### 6.3.3.1. Evaluación a la aplicación web
