@@ -31,11 +31,11 @@ de estilos para las interfaces físicas de los dispositivos IoT (colores, patron
 
 | Parámetro                                       | Definición y Requisitos Técnicos                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |-------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Configuración de Elementos**                  | **Monitor de Ambiente (1 por ambiente):** 1 ESP32. <br>Sensores: 1 sensor de movimiento (PIR) y 1 sensor MQ-135. <br>Actuadores: 1 anillo LED de 16 píxeles (Adafruit 12 NeoPixel Ring) y 1 buzzer.<br>**Monitor de Contenedor (varios por ambiente):** 1 ESP32 por contenedor; <br>Sensores: 1 sensor de temperatura y humedad (DHT11), 1 Sensor de luz (BH1750) y lector RFID (RC522); <br>Actuadores: 1 ventilador (con transistor 2N2222), 1 servo de cierre, 1 LED RGB, 1 buzzer y 1 pantalla OLED de 0.96". |
+| **Configuración de Elementos**                  | **Monitor de Ambiente (1 por ambiente):** 1 ESP32. <br>Sensores: 1 sensor de movimiento (PIR) y 1 sensor MQ-135. <br>Actuadores: 1 LED RGB de cátodo común (con una resistencia de 220 Ω por color) y 1 buzzer.<br>**Monitor de Contenedor (varios por ambiente):** 1 ESP32 por contenedor; <br>Sensores: 1 sensor de temperatura y humedad (DHT11), 1 Sensor de luz (BH1750) y lector RFID (RC522); <br>Actuadores: 1 ventilador (con transistor 2N2222), 1 servo de cierre, 1 LED RGB, 1 buzzer y 1 pantalla OLED de 0.96". |
 | **Incertidumbre Objetivo (Target Uncertainty)** | **Sensor de temperatura:** ±2 °C en 0–50 °C.<br>**Sensor de humedad:** ±5 % HR.<br>**Sensor de Luz:** Resolución de 1 lux y ±20 % típico.<br>**Calidad de aire:** Lectura indicativa para tendencias y umbrales; no es una medición metrológica certificada.<br>**Sensor de Movimiento:** Detección binaria de presencia.                                                                                                                                                                                         |
 | **Precisión del Actuador**                      | Servo con dos posiciones (abierto y cerrado) con error de ±5°. Ventilador con encendido y apagado y histéresis. Patrones de LED y buzzer con temporización de ±50 ms. La pantalla OLED se actualiza en ≤ 1 s tras un cambio de estado.                                                                                                                                                                                                                                                                            |
-| **Interfaces Digitales**                        | ADC de 12 bits (MQ-135), GPIO digital (PIR, transistor del ventilador, buzzer), bus de un solo hilo (DHT y anillo LED), I2C (OLED y BH1750), SPI (RC522) y PWM (servo).                                                                                                                                                                                                                                                                                                                                           |
-| **Capacidad de Procesamiento Local**            | ESP32 de doble núcleo a 240 MHz con 520 KB de SRAM. Funciones requeridas en el firmware: 1) promedio móvil (ventana deslizante) para atenuar ruido; 2) evaluación de las reglas del perfil con histéresis; 3) validación de la etiqueta RFID; 4) patrones de LED y buzzer no bloqueantes; 5) envío de lecturas con la hora de medición. Tiempo de procesamiento local requerido: < 100 ms.                                                                                                                        |
+| **Interfaces Digitales**                        | ADC de 12 bits (MQ-135), GPIO digital (PIR, transistor del ventilador, buzzer), bus de un solo hilo (DHT), I2C (OLED y BH1750), SPI (RC522) y PWM (servo y LED RGB).                                                                                                                                                                                                                                                                                                                                              |
+| **Capacidad de Procesamiento Local**            | ESP32 de doble núcleo a 240 MHz con 520 KB de SRAM. Funciones requeridas en el firmware: 1) calibración del MQ-135 en aire limpio y promedio móvil (ventana deslizante) de la luz para atenuar ruido; 2) evaluación de las reglas del perfil con histéresis; 3) validación de la etiqueta RFID; 4) patrones de LED y buzzer no bloqueantes; 5) envío de lecturas con la hora de medición. Tiempo de procesamiento local requerido: < 100 ms.                                                                      |
 
 #### Paso 4: Definición de requisitos para la capa de intercambio de datos
 
@@ -96,7 +96,7 @@ de estilos para las interfaces físicas de los dispositivos IoT (colores, patron
 | **Temperatura y humedad** | Sensor digital DHT11                                              | Salida de un solo hilo, económico y suficiente para rangos de laboratorio (±2 °C y ±5 % HR). Si la cadena de frío exige mayor exactitud, se reemplaza por un DHT22 sin cambiar el cableado.                                             |
 | **Luz**                   | Sensor BH1750                                                     | Salida digital I2C con resolución de 1 lux, adecuada para detectar aperturas o exposición a luz en el contenedor.                                                                                                                       |
 | **Identificación**        | Lector RFID RC522                                                 | Lee etiquetas de 13.56 MHz a corta distancia por SPI. Permite controlar quién abre cada contenedor.                                                                                                                                     |
-| **Interfaz Local**        | Pantalla OLED SSD1306, LED RGB, anillo LED de 16 píxeles y buzzer | La OLED muestra el estado y los valores en el contenedor. El LED RGB y el anillo LED comunican el estado de un vistazo y el buzzer refuerza las alertas críticas.                                                                       |
+| **Interfaz Local**        | Pantalla OLED SSD1306, LED RGB y buzzer                           | La OLED muestra el estado y los valores en el contenedor. El LED RGB de cada nodo comunica el estado de un vistazo y el buzzer refuerza las alertas.                                                                                    |
 | **Actuación**             | Servo SG90 y ventilador de 5 V con transistor 2N2222              | El servo abre o cierra el contenedor. El ventilador se conmuta con el transistor desde un GPIO (resistencia de base de 1 kΩ), ya que el pin no puede alimentarlo directamente.                                                          |
 
 #### Paso 9: Elección del microcontrolador y transceptores de radio del dispositivo
@@ -110,12 +110,12 @@ de estilos para las interfaces físicas de los dispositivos IoT (colores, patron
 
 | Nombre del Algoritmo                     | Responsabilidad y Lógica                                                                                                                                                                                       | Nivel de Ubicación  |
 |------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
-| **Filtrado por Promedio Móvil**          | Atenúa el ruido de las lecturas analógicas (MQ-135) y de luz con una ventana de N muestras (N = 10): `Valor filtrado = (1/N) · Σ Sᵢ`.                                                                          | Nodo (ESP32)        |
+| **Filtrado por Promedio Móvil**          | Atenúa el ruido de las lecturas de luz (BH1750) con una ventana de N muestras (N = 10): `Valor filtrado = (1/N) · Σ Sᵢ`. En el MQ-135, el ruido lo absorben la calibración de R0 y la histéresis.              | Nodo (ESP32)        |
 | **Normalización de Variables**           | Convierte la salida del DHT en °C y % HR validando su checksum, y la del BH1750 en lux. Descarta lecturas corruptas.                                                                                           | Nodo (ESP32)        |
-| **Estimación de Calidad de Aire**        | Convierte el voltaje del MQ-135 (tras el divisor) en una lectura indicativa en ppm con una curva de calibración (relación Rs/R0).                                                                              | Nodo (ESP32)        |
-| **Evaluación de Reglas con Histéresis**  | Compara cada lectura con los rangos del perfil y aplica la regla *métrica + estado → acción*: `WARNING` activa el ventilador y `CRITICAL` suma el buzzer. La histéresis evita encendidos y apagados continuos. | Nodo (ESP32)        |
+| **Estimación de Calidad de Aire**        | Convierte el voltaje del MQ-135 (tras el divisor) en una lectura indicativa en ppm con una curva de calibración (relación Rs/R0). R0 se obtiene al encender el nodo, promediando las muestras de 30 s en aire limpio. | Nodo (ESP32)        |
+| **Evaluación de Reglas con Histéresis**  | Compara cada lectura con los rangos del perfil y aplica la regla *métrica + estado → acción*: `WARNING` activa el ventilador y `CRITICAL` suma el buzzer. La histéresis evita encendidos y apagados continuos. En el Monitor de Ambiente, el estado se muestra en el LED RGB y el buzzer suena una vez en `WARNING` y cada 2 s en `CRITICAL`, con una histéresis de 20 ppm. | Nodo (ESP32)        |
 | **Control de Acceso RFID**               | Lee el UID de la etiqueta, lo valida contra la lista de autorizados y decide si el servo abre, por cuánto tiempo y qué señal local muestra.                                                                    | Nodo (ESP32)        |
-| **Máquina de Estados de Señales**        | Genera de forma no bloqueante los patrones de LED, anillo y buzzer según el estado del sistema.                                                                                                                | Nodo (ESP32)        |
+| **Máquina de Estados de Señales**        | Genera de forma no bloqueante los patrones del LED RGB y del buzzer según el estado del sistema.                                                                                                               | Nodo (ESP32)        |
 | **Buffer y Reenvío (Store-and-Forward)** | Guarda las lecturas y acciones pendientes y las reenvía sin duplicar (mismo dispositivo, métrica y momento). Descarga el perfil vigente y lo propaga a los nodos.                                              | Edge (Raspberry Pi) |
 | **Evaluación de Estado y Alertas**       | Clasifica cada lectura como `NORMAL`, `WARNING` o `CRITICAL`, abre una alerta por incidente, la escala si pasa a crítica y registra la normalización.                                                          | Nube (Backend)      |
 | **Verificación de Conexión**             | Marca el dispositivo como *Conectado* si hubo una lectura o acción en los últimos 5 minutos; si no, *Requiere revisión*.                                                                                       | Nube (Backend)      |
@@ -150,7 +150,7 @@ de estilos para las interfaces físicas de los dispositivos IoT (colores, patron
 
 | Módulo de Interfaz                     | Plataformas de Visualización                | Elementos Clave de la UI                                                                                       | Justificación Funcional                                                                              |
 |----------------------------------------|---------------------------------------------|----------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
-| **Señalización Física**                | Anillo LED, LED RGB, buzzer y pantalla OLED | Colores y patrones por estado (verde, amarillo, rojo, azul), sonido de alerta y valores con estado en la OLED. | Permite al Operario conocer el estado de un vistazo, incluso con poca luz y sin abrir la aplicación. |
+| **Señalización Física**                | LED RGB, buzzer y pantalla OLED             | Colores por estado (verde `NORMAL`, amarillo `WARNING` y rojo `CRITICAL`; azul mientras el Monitor de Ambiente calibra y morado si falla su sensor), sonido de alerta y valores con estado en la OLED. | Permite al Operario conocer el estado de un vistazo, incluso con poca luz y sin abrir la aplicación. |
 | **Telemetry Dashboard**                | Aplicación móvil y web                      | Tarjetas por métrica con estado y rangos; gráfico de 24 h con selectores de métrica y rango.                   | Muestra la última lectura y la tendencia frente a los rangos normal y crítico.                       |
 | **Alertas y Campanita**                | Aplicación móvil y web                      | Lista de alertas con severidad y estado, acciones *Atender* y *Resolver*, contador de avisos.                  | Concentra la atención de incidentes y deja trazabilidad de quién actuó.                              |
 | **Gestión de Dispositivos y Perfiles** | Aplicación web                              | Registro de dispositivos IoT, estado *Conectado* o *Requiere revisión*, edición de perfiles ambientales.       | Permite configurar el sistema sin intervenir el firmware.                                            |
@@ -164,7 +164,7 @@ componentes utilizados y cómo se conectan con el ESP32 de cada nodo.
 **Diseño del circuito:**
 
 En la siguiente imagen, elaborada en Cirkit Designer, se muestran los dos nodos de la solución. A la izquierda, el
-**Monitor de Ambiente** (PIR, MQ-135, buzzer y anillo LED). A la derecha, el **Monitor de Contenedor** (OLED, BH1750,
+**Monitor de Ambiente** (PIR, MQ-135, buzzer y LED RGB). A la derecha, el **Monitor de Contenedor** (OLED, BH1750,
 RC522, DHT, servo, ventilador con transistor, LED RGB y buzzer).
 
 <div align="center">
@@ -173,12 +173,12 @@ RC522, DHT, servo, ventilador con transistor, LED RGB y buzzer).
 
 **Conexiones del Monitor de Ambiente:**
 
-| Componente               | Pin del componente | Conexión en el ESP32          | Observación                                                                          |
-|--------------------------|--------------------|-------------------------------|--------------------------------------------------------------------------------------|
-| Sensor PIR               | VCC / D / GND      | 3V3 / GPIO 27 / GND           | Salida digital de presencia.                                                         |
-| MQ-135                   | VCC / AO / GND     | 5V / GPIO 34 / GND            | AO pasa por un divisor de 2.2 kΩ y 3.3 kΩ a tierra (≈ 3.0 V). DO queda sin conexión. |
-| Buzzer                   | + / −              | GPIO 25 / GND                 | Sonido de alerta.                                                                    |
-| Anillo LED de 16 píxeles | 5V / DIN / GND     | 5V / GPIO 4 (con 470 Ω) / GND | La resistencia protege la línea de datos.                                            |
+| Componente             | Pin del componente | Conexión en el ESP32                        | Observación                                                                          |
+|------------------------|--------------------|---------------------------------------------|--------------------------------------------------------------------------------------|
+| Sensor PIR             | VCC / D / GND      | 3V3 / GPIO 27 / GND                         | Salida digital de presencia.                                                         |
+| MQ-135                 | VCC / AO / GND     | 5V / GPIO 34 / GND                          | AO pasa por un divisor de 2.2 kΩ y 3.3 kΩ a tierra (≈ 3.0 V). DO queda sin conexión. |
+| Buzzer                 | + / −              | GPIO 25 / GND                               | Sonido de alerta.                                                                    |
+| LED RGB (cátodo común) | R / G / B / GND    | GPIO 4 / 16 / 17 (con 220 Ω cada uno) / GND | Señal de estado del ambiente.                                                        |
 
 **Conexiones del Monitor de Contenedor:**
 
@@ -201,25 +201,25 @@ por Wi-Fi o Ethernet.
 
 * Los pines GPIO 2, 12 y 15 son *strapping pins* del ESP32: deben estar en un nivel definido durante el arranque. Si el
   RC522 o el transistor causan problemas al iniciar, se pueden mover a otros GPIO libres (por ejemplo, GPIO 14 o 27).
-* El anillo LED a máximo brillo puede consumir cerca de 1 A. Se recomienda limitar el brillo y usar una fuente de al
-  menos 2 A.
+* Cada color del LED RGB consume menos de 10 mA con su resistencia de 220 Ω, dentro de lo que entrega un GPIO del
+  ESP32, por lo que el Monitor de Ambiente funciona con la fuente USB de 1 A.
 * El servo y el ventilador se alimentan desde el pin de 5 V del ESP32; si hay reinicios, se deben usar una fuente
   suficiente y un condensador de desacople.
 
 **Diseño físico:**
 
 El Monitor de Ambiente se plantea como una carcasa compacta de montaje en pared o techo, con el sensor PIR al centro
-rodeado por el anillo LED de estado, aberturas de ventilación laterales para el MQ-135 y la rejilla del buzzer en la
+y el LED RGB de estado a su lado, aberturas de ventilación laterales para el MQ-135 y la rejilla del buzzer en la
 parte inferior. El Monitor de Contenedor se plantea como un módulo para montar sobre o junto al contenedor, con la
 pantalla OLED al frente, la zona del lector RFID junto al indicador del servo, el LED de estado en la parte superior y
 una rejilla de aire para el ventilador. La alimentación USB de 5 V se ubica en un lateral de cada carcasa.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/iot-designs/environment-monitor-circuit.png" alt="Diseño físico del Monitor de Ambiente" width="900px"/>
+  <img src="../../assets/img/main-content/chapter-v/iot-designs/environment-monitor-circuit.png" alt="Circuito del Monitor de Ambiente en Cirkit Designer" width="900px"/>
 </div>
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/iot-designs/container-monitor-circuit.png" alt="Diseño físico del Monitor de Contenedor" width="900px"/>
+  <img src="../../assets/img/main-content/chapter-v/iot-designs/container-monitor-circuit.png" alt="Circuito del Monitor de Contenedor en Cirkit Designer" width="900px"/>
 </div>
 
 ### Flujos de interacción de los dispositivos IoT
