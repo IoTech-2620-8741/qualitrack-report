@@ -118,6 +118,10 @@ Se realizaron entrevistas con representantes de los segmentos objetivo del proye
 
 ### 6.3.2 Registro de Entrevista
 
+A continuación, se presenta el registro correspondiente a las entrevistas realizadas con representantes de los segmentos de responsables de calidad y personal operativo quienes participaron en la validación de la aplicación web, aplicación móvil y dispositivo de la plataforma Qualitrack. El objetivo fue evaluar la claridad del mensaje, la propuesta de valor y la percepción de utilidad de la propuesta desde la perspectiva los segmentos responsables de calidad y personal operativo de los laboratorios.
+
+
+
 ### 6.3.3 Evaluaciones según Heuristica
 
 #### 6.3.3.1. Evaluación a la aplicación web
