@@ -338,7 +338,7 @@ Estos lineamientos aplican a los componentes de la capa Embedded:
 
 **Diseño Físico**
 
-- **Forma**: carcasa compacta de perfil bajo, con el sensor de movimiento al centro y un anillo LED a su alrededor,
+- **Forma**: carcasa compacta de perfil bajo, con el sensor de movimiento al centro y un LED RGB de estado a su lado,
   visible desde cualquier punto del ambiente.
 - **Ventilación**: aberturas laterales para el sensor de calidad de aire, sin exponer la electrónica.
 - **Buzzer**: rejilla en la parte inferior de la cara frontal.
