@@ -347,24 +347,26 @@ Estos lineamientos aplican a los componentes de la capa Embedded:
 
 **Indicador LED de Estado**
 
-| Estado del Sistema       | Color LED | Patrón                 | Descripción                                      |
-|--------------------------|-----------|------------------------|--------------------------------------------------|
-| **Operación normal**     | Verde     | Pulso lento            | Calidad de aire dentro del rango normal.         |
-| **Advertencia**          | Amarillo  | Parpadeo lento         | Calidad de aire fuera del rango normal.          |
-| **Alerta crítica**       | Rojo      | Parpadeo rápido        | Calidad de aire fuera del rango crítico.         |
-| **Requiere revisión**    | Rojo      | Sólido fijo            | Sin lectura en 5 minutos. Revisar red o energía. |
-| **Movimiento detectado** | Azul      | Destello breve         | Presencia registrada como lectura, sin alerta.   |
-| **Vinculación al Edge**  | Azul      | Pulso suave y continuo | Emparejando con el gateway Edge.                 |
+| Estado del Sistema   | Color LED | Patrón | Descripción                                                                                      |
+|----------------------|-----------|--------|--------------------------------------------------------------------------------------------------|
+| **Calibración**      | Azul      | Fijo   | Primeros 30 s tras el encendido: el sensor de calidad de aire mide su referencia en aire limpio. |
+| **Operación normal** | Verde     | Fijo   | Calidad de aire dentro del rango normal.                                                         |
+| **Advertencia**      | Amarillo  | Fijo   | Calidad de aire fuera del rango normal.                                                          |
+| **Alerta crítica**   | Rojo      | Fijo   | Calidad de aire fuera del rango crítico.                                                         |
+| **Falla del sensor** | Morado    | Fijo   | El sensor de calidad de aire no responde. Revisar su conexión.                                   |
+
+> El color se mantiene fijo mientras dura el estado y no depende de la red: sin conexión con el Edge, el nodo sigue
+> evaluando la calidad de aire. El movimiento no cambia el color, se registra como lectura. *Requiere revisión* lo
+> calcula la nube cuando no llegan lecturas en 5 minutos y se muestra en las aplicaciones web y móvil.
 
 **Buzzer**
 
-| Evento                      | Patrón de sonido                       |
-|-----------------------------|----------------------------------------|
-| Operación normal            | Silencio                               |
-| Advertencia (`WARNING`)     | Silencio                               |
-| Alerta crítica (`CRITICAL`) | Pitido corto repetido                  |
-| Vinculación exitosa         | Un pitido largo de 500 ms              |
-| Silenciado desde la app     | Buzzer apagado; el LED continúa activo |
+| Evento                         | Patrón de sonido                                   |
+|--------------------------------|----------------------------------------------------|
+| Operación normal               | Silencio                                           |
+| Advertencia (`WARNING`)        | Un pitido de 200 ms al entrar en el estado         |
+| Alerta crítica (`CRITICAL`)    | Un tono de 500 ms cada 2 s mientras dura el estado |
+| Calibración y falla del sensor | Silencio; el LED indica el estado                  |
 
 > El sonido debe ser audible en el ambiente sin interferir con la operación del laboratorio.
 
