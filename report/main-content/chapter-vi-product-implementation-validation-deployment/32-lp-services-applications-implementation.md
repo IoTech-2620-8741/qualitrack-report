@@ -4598,7 +4598,7 @@ Commits relacionados con la documentación de los servicios en este sprint (48):
 
 #### 6.2.2.8. Software Deployment Evidence for Sprint Review
 
-En el Sprint 2 cada producto se publica de forma automática al integrar una versión en la rama `main`: la Landing Page en GitHub Pages, la Web Application en Firebase Hosting y el Cloud REST API en Azure Container Apps, cada uno con su workflow de GitHub Actions. Las ramas `develop` y `main` de los repositorios de código están protegidas por reglas que exigen un pull request con las pruebas de integración continua aprobadas, y cada versión se publica con su etiqueta y su GitHub Release. El Edge Service se despliega con Docker Compose en la estación local de cada instalación, y su workflow verifica ese despliegue en cada pull request.
+En el Sprint 2 cada producto se publica de forma automática al integrar una versión en la rama `main`: la Landing Page en GitHub Pages, la Web Application en Firebase Hosting y el Cloud REST API en Azure Container Apps, cada uno con su workflow de GitHub Actions. La Mobile Application se distribuye a los testers mediante Firebase App Distribution al publicar la etiqueta de cada versión estable. Las ramas `develop` y `main` de los repositorios de código están protegidas por reglas que exigen un pull request con las pruebas de integración continua aprobadas, y cada versión se publica con su etiqueta y su GitHub Release. El Edge Service se despliega con Docker Compose en la estación local de cada instalación, y su workflow verifica ese despliegue en cada pull request.
 
 | Producto | Versión desplegada | Destino | Mecanismo |
 |----------|--------------------|---------|-----------|
@@ -4606,7 +4606,7 @@ En el Sprint 2 cada producto se publica de forma automática al integrar una ver
 | Web Application | v2.5.0 | Firebase Hosting | Workflow `Deploy to Firebase Hosting on merge` al integrar en `main` |
 | Cloud REST API | v1.2.0 | Azure Container Apps y Azure Database for MySQL | Workflow `Deploy to Azure Container Apps` al integrar en `main` |
 | Edge Service | v0.3.1 | Estación local (Raspberry Pi 4) | Docker Compose con Gunicorn; imagen arm64 construida en CI |
-| Mobile Application | develop | Android | APK compilado con Flutter apuntando al Cloud REST API |
+| Mobile Application | v1.0.0 | Firebase App Distribution (Android) | Workflow `Build APK and distribute` al publicar una etiqueta `vX.Y.Z` en `main` |
 
 **Despliegue del Cloud REST API.** El pipeline creado en el Sprint 1 ejecuta las pruebas con Maven, construye la imagen Docker en Azure Container Registry y actualiza la revisión de Azure Container Apps. En este sprint se publicaron con él las versiones 1.1.0 y 1.2.0. Como la base de datos de producción usa `ddl-auto=none`, antes de publicar la versión 1.2.0 se creó en ella la tabla de las API keys de los Edge Gateways y dos índices de las alertas de desviación, con un script que se ejecuta una sola vez y termina con una consulta de verificación.
 
@@ -4643,7 +4643,137 @@ El workflow de integración continua reproduce este despliegue en cada pull requ
   <p><em>Figura: Prueba del despliegue del Edge Service en GitHub Actions. Esta evidencia muestra el registro de un Monitor de Contenedor, su autenticación con respuesta 200, la recepción de una lectura con respuesta 201 y el reinicio del servicio con Docker Compose conservando la lectura pendiente de sincronización.</em></p>
 </div>
 
-**Mobile Application.** La primera versión se compila con `flutter build apk --dart-define=API_BASE_URL=<URL del Cloud REST API>` y se instala en dispositivos Android, donde consume el Cloud REST API desplegado en Azure. Su workflow de integración continua ejecuta el análisis estático y las pruebas en cada pull request hacia `develop`. La distribución del APK mediante Firebase App Distribution forma parte del spike SP10 y queda para el siguiente sprint, junto con la publicación de su primera versión en `main`.
+**Despliegue de la Mobile Application:**
+
+Nombre del repositorio en la organización: qualitrack-mobile-application
+
+En este sprint se publicó la primera versión estable de la Mobile Application, la 1.0.0. Cada versión se compila como APK de Android con Flutter, apuntando al Cloud REST API desplegado en Azure, y se distribuye a los testers del equipo con Firebase App Distribution. La distribución la realiza el workflow `Build APK and distribute` de GitHub Actions cada vez que se publica en `main` una etiqueta estable `vX.Y.Z`. Se usa el proyecto de Firebase `qualitrack-iotech`, el mismo que se creó en el Sprint 1 para publicar la Web Application en Firebase Hosting.
+
+**Paso 1: Registro de la aplicación Android en Firebase:**
+
+1) En la [consola de Firebase](https://console.firebase.google.com/), entramos al proyecto `qualitrack-iotech`, vamos a Configuración del proyecto y le damos a **Agregar app** → **Android**. Ingresamos el nombre del paquete `com.iotech.qualitrack_mobile`, que es el `applicationId` de la aplicación Flutter, y el alias **QualiTrack**, y le damos a **Registrar app**:
+
+![Step 1-1 - Registro de la app Android en Firebase](../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-1-1.jpg)
+
+2) La aplicación queda registrada en **Tus apps**. Copiamos su **ID de la app** (`1:107206539121:android:...`), que el workflow usa para indicar a qué aplicación se sube cada versión:
+
+![Step 1-2 - App Android registrada y su ID](../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-1-2.jpg)
+
+**Paso 2: Activación de Firebase App Distribution y grupo de testers:**
+
+1) En el menú lateral entramos a **App Distribution**, le damos a **Comenzar** para activarlo y vamos a la pestaña **Verificadores y grupos**:
+
+![Step 2-1 - Verificadores y grupos de App Distribution](../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-2-1.jpg)
+
+2) Le damos a **Agregar grupo** y escribimos el nombre **qa-testers**, que es el grupo al que el workflow envía cada versión:
+
+![Step 2-2 - Creación del grupo qa-testers](../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-2-2.jpg)
+
+3) El grupo queda creado con el alias `qa-testers`:
+
+![Step 2-3 - Grupo qa-testers creado](../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-2-3.jpg)
+
+4) Con el grupo seleccionado, le damos a **Agregar verificador** e ingresamos uno por uno los correos de los integrantes del equipo, hasta tener los 10 testers del grupo:
+
+![Step 2-4 - Grupo qa-testers con 10 testers](../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-2-4.jpg)
+
+**Paso 3: Cuenta de servicio en Google Cloud:**
+
+1) En la [consola de Google Cloud](https://console.cloud.google.com/) del proyecto `qualitrack-iotech`, vamos a **IAM y administración** → **Cuentas de servicio** y creamos la cuenta `github-app-distribution`. Luego, en **IAM** → **Otorgar acceso**, le asignamos el rol **Administrador de Firebase App Distribution**, el único permiso que necesita para subir versiones:
+
+![Step 3-1 - Cuenta de servicio con el rol de App Distribution](../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-3-1.jpg)
+
+2) En **Cuentas de servicio** → `github-app-distribution` → **Claves**, creamos una clave en formato JSON. Esta clave es una credencial, por lo que no se muestra en el informe: se guarda solo como secret de GitHub en el siguiente paso.
+
+**Paso 4: Secrets y variable del repositorio en GitHub:**
+
+1) En el repositorio `qualitrack-mobile-application`, vamos a **Settings** → **Secrets and variables** → **Actions** y creamos los secrets `FIREBASE_APP_ID`, con el ID de la app del Paso 1, y `FIREBASE_SERVICE_ACCOUNT`, con el contenido de la clave JSON del Paso 3. También se pueden crear con GitHub CLI:
+
+```bash
+gh secret set FIREBASE_APP_ID
+gh secret set FIREBASE_SERVICE_ACCOUNT < clave.json
+```
+
+![Step 4-1 - Secrets del repositorio](../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-4-1.jpg)
+
+2) En la pestaña **Variables** creamos `API_BASE_URL` con la URL del Cloud REST API desplegado en Azure Container Apps, que se inyecta en el APK al compilarlo:
+
+```bash
+gh variable set API_BASE_URL --body "<URL del Cloud REST API>"
+```
+
+![Step 4-2 - Variable API_BASE_URL del repositorio](../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-4-2.jpg)
+
+**Paso 5: Workflow de compilación y distribución:**
+
+1) Agregamos el workflow `.github/workflows/build-and-distribute-apk.yml`, llamado **Build APK and distribute**. Se ejecuta al publicar una etiqueta estable `vX.Y.Z` (las etiquetas de pre-release como `v1.0.0-rc.1` se ignoran) o de forma manual, y realiza los siguientes pasos: verifica que la etiqueta coincida con la versión de `pubspec.yaml`, instala Java 17 y Flutter 3.44.3, ejecuta `flutter analyze` y `flutter test`, compila el APK con `flutter build apk --release --dart-define=API_BASE_URL=...`, lo guarda como artefacto y lo envía al grupo `qa-testers` de Firebase App Distribution con la acción `wzieba/Firebase-Distribution-Github-Action`:
+
+![Step 5-1 - Archivo del workflow Build APK and distribute](../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-5-1.jpg)
+
+2) El workflow se integró a `develop` mediante el pull request #34 (`feature/apk-distribution`):
+
+![Step 5-2 - Pull request 34 integrado en develop](../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-5-2.jpg)
+
+3) La integración continua del pull request #34 pasó correctamente:
+
+![Step 5-3 - Integración continua del pull request 34](../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-5-3.jpg)
+
+4) Con el pull request #35 (`feature/stable-release-tags`) se limitó el disparador a las etiquetas de versiones estables:
+
+![Step 5-4 - Pull request 35 integrado en develop](../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-5-4.jpg)
+
+5) La integración continua del pull request #35 también pasó correctamente:
+
+![Step 5-5 - Integración continua del pull request 35](../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-5-5.jpg)
+
+**Paso 6: Release 1.0.0 con GitFlow:**
+
+1) Creamos la rama `release/1.0.0` desde `develop`. Como `pubspec.yaml` ya tenía la versión `1.0.0+1`, no fue necesario un commit de versión:
+
+```bash
+git switch -c release/1.0.0 develop
+git push -u origin release/1.0.0
+```
+
+![Step 6-1 - Rama release/1.0.0 creada](../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-6-1.jpg)
+
+2) Abrimos el pull request #36 de `release/1.0.0` hacia `main`, con el título `chore(release): 1.0.0`:
+
+![Step 6-2 - Pull request 36 de release hacia main](../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-6-2.jpg)
+
+3) Integramos el pull request #36 en `main`:
+
+![Step 6-3 - Pull request 36 integrado en main](../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-6-3.jpg)
+
+4) Creamos la etiqueta `v1.0.0` sobre el merge commit de `main` y la publicamos. Este push dispara el workflow de despliegue:
+
+```bash
+git switch main && git pull
+git tag -a v1.0.0 -m "Version 1.0.0"
+git push origin v1.0.0
+```
+
+![Step 6-4 - Etiqueta v1.0.0](../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-6-4.jpg)
+
+5) Publicamos el GitHub Release **Version 1.0.0** a partir de la etiqueta:
+
+![Step 6-5 - GitHub Release v1.0.0](../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-6-5.jpg)
+
+6) Finalmente, integramos `main` de vuelta en `develop` con el pull request #37 (`chore(release): merge main back into develop after v1.0.0`) y eliminamos la rama `release/1.0.0`:
+
+![Step 6-6 - Pull request 37 de main hacia develop](../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-6-6.jpg)
+
+**Paso 7: Distribución y verificación del despliegue:**
+
+1) En Firebase App Distribution, en la pestaña **Versiones**, aparece la versión **1.0.0 (1)** con las notas `v1.0.0` y los 10 testers del grupo `qa-testers` invitados, que reciben el enlace de descarga del APK por correo:
+
+![Step 7-1 - Versión 1.0.0 en Firebase App Distribution](../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-7-1.jpg)
+
+2) El run #55 del workflow **Build APK and distribute**, disparado por la etiqueta `v1.0.0`, terminó correctamente en 5 minutos y 57 segundos, con todos sus pasos aprobados, incluidos **Build release APK** y **Distribute to testers**:
+
+![Step 7-2 - Pipeline Build APK and distribute en GitHub Actions](../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-7-2.jpg)
+
+**Enlaces:** [Release v1.0.0](https://github.com/IoTech-2620-8741/qualitrack-mobile-application/releases/tag/v1.0.0) · [Pull request #36](https://github.com/IoTech-2620-8741/qualitrack-mobile-application/pull/36) · [Pull request #37](https://github.com/IoTech-2620-8741/qualitrack-mobile-application/pull/37) · [Run de despliegue](https://github.com/IoTech-2620-8741/qualitrack-mobile-application/actions/runs/43673221461)
 
 #### 6.2.2.9. Team Collaboration Insights during Sprint
 
