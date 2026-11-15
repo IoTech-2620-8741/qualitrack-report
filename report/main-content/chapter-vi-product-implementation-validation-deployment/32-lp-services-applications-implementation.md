@@ -4123,7 +4123,7 @@ La revisión del sprint verificó estos flujos con los datos del laboratorio de 
 - **Cloud REST API (Swagger UI):** [QualiTrack Swagger Documentation](https://iotech-qualitrack-api.wonderfulocean-c1f38f8b.chilecentral.azurecontainerapps.io/swagger-ui/index.html)
 - **Mobile Application:** [IoTech-2620-8741/qualitrack-mobile-application](https://github.com/IoTech-2620-8741/qualitrack-mobile-application)
 - **Edge Service:** [IoTech-2620-8741/qualitrack-edge-service](https://github.com/IoTech-2620-8741/qualitrack-edge-service)
-- **Video de Execution Evidence del Sprint 2:** *(enlace pendiente de publicación)*
+- **Video de Execution Evidence del Sprint 2:** [https://shorturl.at/WYVjY](https://shorturl.at/WYVjY)
 
 **Landing Page**
 
