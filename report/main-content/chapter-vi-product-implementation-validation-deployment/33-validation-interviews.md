@@ -159,7 +159,9 @@ A continuación, se presenta el registro correspondiente a las entrevistas reali
         <tr>
             <td>Link</td>
             <td>
-            <a href="" target="_blank"></a>
+            <a href="https://shorturl.at/Nt7Pn" target="_blank">
+                https://shorturl.at/Nt7Pn
+            </a>
             </td>
         </tr>
         <tr>
