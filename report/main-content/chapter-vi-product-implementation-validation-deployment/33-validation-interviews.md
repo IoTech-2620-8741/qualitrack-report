@@ -191,8 +191,262 @@ Finalmente, el entrevistado destacó como lo más gustado el carácter visual, g
     </tbody>
 </table>
 
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #2<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Melsy</td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>Medina Saravia</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>25 años</td>
+        </tr>
+        <tr>
+            <td>Ubicacion</td>
+            <td>Ate</td>
+        </tr>
+        <tr>
+            <td>Fecha de entrevista</td>
+            <td>Por completar</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td>Por completar</td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>Por completar</td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td>Por completar</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td>Por completar</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>Por completar</td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #3<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Mario</td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>Baca</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>40 años</td>
+        </tr>
+        <tr>
+            <td>Ubicacion</td>
+            <td>São Paulo, Brasil</td>
+        </tr>
+        <tr>
+            <td>Fecha de entrevista</td>
+            <td>Por completar</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td>Por completar</td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>Por completar</td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td>Por completar</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td>Por completar</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>Por completar</td>
+        </tr>
+    </tbody>
+</table>
+
 #### Segmento 2: Personal operativo de laboratorios y almacenes
 
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #1<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>César</td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>Agüero</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>38 años</td>
+        </tr>
+        <tr>
+            <td>Ubicacion</td>
+            <td>Cercado de Lima</td>
+        </tr>
+        <tr>
+            <td>Fecha de entrevista</td>
+            <td>Por completar</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td>Por completar</td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>Por completar</td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td>Por completar</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td>Por completar</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>Por completar</td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #2<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Liz</td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>Aliaga</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>45 años</td>
+        </tr>
+        <tr>
+            <td>Ubicacion</td>
+            <td>Jesús Maria</td>
+        </tr>
+        <tr>
+            <td>Fecha de entrevista</td>
+            <td>Por completar</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td>Por completar</td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>Por completar</td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td>Por completar</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td>Por completar</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>Por completar</td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #3<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Ohmar</td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>Chavez</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>42 años</td>
+        </tr>
+        <tr>
+            <td>Ubicacion</td>
+            <td>San Isidro</td>
+        </tr>
+        <tr>
+            <td>Fecha de entrevista</td>
+            <td>Por completar</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td>Por completar</td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>Por completar</td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td>Por completar</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td>Por completar</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>Por completar</td>
+        </tr>
+    </tbody>
+</table>
 
 ### 6.3.3 Evaluaciones según Heuristica
 
