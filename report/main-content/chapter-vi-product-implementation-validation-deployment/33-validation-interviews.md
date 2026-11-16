@@ -153,7 +153,7 @@ A continuación, se presenta el registro correspondiente a las entrevistas reali
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../../assets/img/main-content/chapter-vi/interviews-validation/Ricardo Melendrez.png" width="100%"></div>
+                <div align="center"><img src="../../assets/img/main-content/chapter-vi/interviews-validation/ricardo-melendrez.png" width="100%"></div>
             </td>
         </tr>
         <tr>
