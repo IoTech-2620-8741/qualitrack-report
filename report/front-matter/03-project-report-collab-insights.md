@@ -120,4 +120,64 @@ El siguiente gráfico muestra la ramificación del repositorio durante la fase T
 
 *Figura: Network Graph del repositorio qualitrack-report durante el TB1.*
 
+<div style="page-break-after: always;"></div>
+
+---
+
+### Reporte de colaboración de la entrega del AV2
+
+Durante esta tercera etapa de elaboración del informe, correspondiente al AV2, el equipo IoTech completó el Capítulo VI con el Sprint 2: su planificación, el Sprint Backlog del QT Sprint 2 de Jira y las evidencias de desarrollo, pruebas, ejecución, documentación de servicios, despliegue y colaboración de los siete repositorios de la solución. Además, incorporó las entrevistas de validación con las evaluaciones heurísticas de la aplicación web y de la aplicación móvil, el video del producto, y actualizó el diseño de los dispositivos IoT del Capítulo V según el firmware construido. Al cierre, el contenido se integró en la rama principal con el release v2.1.0 del repositorio.
+
+El trabajo se realizó de manera iterativa, evidenciado en los commits del repositorio, donde cada integrante contribuyó en distintas secciones mediante ramas de feature por sección que se integraron en develop con pull requests.
+
+**Billy Jake Ruiz Madrid**
+
+Billy documentó el Sprint 2 en el Capítulo VI: el Sprint Backlog a partir del QT Sprint 2 de Jira y las evidencias de desarrollo, pruebas, ejecución, documentación de servicios, despliegue y colaboración de los siete repositorios, incluidas las Embedded Applications, el Cloud REST API en Swagger UI y los Contributors y Network graph de cada producto. En el Capítulo V, actualizó la sección IoT Device Design y la guía de estilos con los dispositivos tal como se construyeron (el LED RGB del Monitor de Ambiente, el DHT22 a 3V3 y el comportamiento del Monitor de Contenedor), con sus circuitos, flujos e infografías, y publicó el release v2.1.0 del informe.
+
+**Vitaly Baca Camargo Arturo**
+
+Vitaly desarrolló la sección Validation Interviews con su propósito, la selección de participantes y las preguntas para los responsables de calidad, el personal operativo y la aplicación móvil, y documentó la entrevista de validación con Ricardo Meléndez con su tabla, su evidencia y su enlace. Además, agregó la sección Video About-the-Product con la presentación del video de QualiTrack y su evidencia.
+
+**Fabrizio Alexander Cutiri Agüero**
+
+Fabrizio actualizó el diagrama de despliegue de la sección Software Deployment Configuration del Capítulo VI y retiró su versión anterior.
+
+**Dyron Huapaya Galindo**
+
+Dyron desarrolló las evaluaciones según heurísticas de la aplicación web y de la aplicación móvil, con las tareas de usabilidad, la escala de severidad y sus capturas. También documentó paso a paso el despliegue de la Mobile Application del Sprint 2 con Firebase App Distribution, agregó el enlace del video de la evidencia de ejecución, actualizó el historial de versiones y la tabla de contenidos del Capítulo VI, y aprobó el pull request del release v2.1.0.
+
+**Henry Jaredt Montes Ramos**
+
+Henry actualizó los mock-ups de la Landing Page en la sección Landing Page UI Design del Capítulo V.
+
+**Yaku Mateo Guzmán Cabrejos**
+
+Yaku no registró commits en el repositorio del informe durante el AV2. Su aporte del periodo se concentró en el Bounded Context Equipment Management de la Web Application, el Cloud REST API y la Mobile Application, y en la configuración del Edge Service, trabajo que el informe documenta en las evidencias del Sprint 2.
+
+**Giovany Smith Torres Apolinario**
+
+Giovany preparó la estructura del Sprint 2 en el Capítulo VI y desarrolló el Sprint Planning 2 y la matriz Aspect Leaders and Collaborators del sprint.
+
+**Franco Mauricio López Roman**
+
+Franco agregó las preguntas de las entrevistas de validación dirigidas al personal operativo de laboratorios y almacenes.
+
+**Adrian Alonso Quiroz Caceres**
+
+Adrian no registró commits en el repositorio del informe durante el AV2. Su aporte se concentró en los productos: la reorganización por Bounded Context de la Web Application y de la Mobile Application, el contexto Tracking & Telemetry del Cloud REST API, la sincronización del Edge Service y la primera versión del firmware del Monitor de Contenedor, que el informe documenta en el Sprint 2.
+
+A continuación se presenta el resumen de actividad del repositorio del informe correspondiente al periodo del 15 de octubre al 15 de noviembre de 2026, el cual abarca el desarrollo de la entrega AV2.
+
+![Commits AV2 - Pulse del repositorio](../assets/img/front-matter/commits-insights-av2.png)
+
+*Figura: Contribuciones por miembro del equipo IoTech durante el AV2.*
+
+**Ramificación del proyecto usando GitFlow:**
+
+El siguiente gráfico muestra la ramificación del repositorio durante la fase AV2. Se observan las ramas de feature que se integran en develop mediante pull requests, entre ellas la rama del Sprint 2 (en verde), y la rama release/v2.1.0, que se integra en main y luego regresa a develop, evidenciando el flujo GitFlow del equipo.
+
+![Network Graph AV2](../assets/img/front-matter/network-graph-insights-av2.png)
+
+*Figura: Network Graph del repositorio qualitrack-report durante el AV2.*
+
 ---
