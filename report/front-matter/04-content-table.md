@@ -185,3 +185,11 @@
             - [6.3.3.1. Evaluación a la aplicación web](docs/chapter-vi.md#6331-evaluación-a-la-aplicación-web)
             - [6.3.3.2. Evaluación a la aplicación móvil](docs/chapter-vi.md#6332-evaluación-a-la-aplicación-móvil)
     - [6.4 Video About-The-Product](docs/chapter-vi.md#64-video-about-the-product)
+
+- [Conclusiones](../end-of-report/97-conclusions.md#conclusiones)
+    - [Conclusiones y recomendaciones](../end-of-report/97-conclusions.md#conclusiones-y-recomendaciones)
+    - [Video About-the-Team](../end-of-report/97-conclusions.md#video-about-the-team)
+
+- [Bibliografía](../end-of-report/98-bibliography.md#bibliografía)
+
+- [Anexos](../end-of-report/99-annexes.md#anexos)

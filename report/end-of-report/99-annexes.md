@@ -125,3 +125,39 @@
     </tr>
   </tbody>
 </table>
+
+<h4>Anexo C: Videos About-the-Team y About-the-Product</h4>
+
+<p>
+  Videos de presentación del equipo IoTech y del producto QualiTrack.
+</p>
+
+<table border="1" cellpadding="4" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Video</th>
+      <th>Plataforma</th>
+      <th>URL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Video About-the-Team</strong></td>
+      <td>YouTube</td>
+      <td>
+        <a href="https://www.youtube.com/watch?v=cLEM02VVPHw">
+          https://www.youtube.com/watch?v=cLEM02VVPHw
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Video About-the-Product</strong></td>
+      <td>YouTube</td>
+      <td>
+        <a href="https://www.youtube.com/watch?v=pD8I8iiFkXQ&amp;t=11s">
+          https://www.youtube.com/watch?v=pD8I8iiFkXQ&amp;t=11s
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
