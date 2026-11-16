@@ -581,7 +581,7 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 La vista *Production Batches* lista, filtra y pagina los lotes, pero no ofrece ningún botón para crear uno. El único botón principal lleva a *Pharmaceutical products*; para crear un lote el usuario debe ir al catálogo de productos, elegir el ambiente, abrir el producto y recién ahí pulsar *New Batch*. Quien entra a la vista de lotes con la intención de registrar un lote no encuentra la acción donde la espera.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/batches-list-without-create.jpg" alt="Vista de lotes de producción sin acción para crear un lote" width="100%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/batches-list-without-create.jpg" alt="Vista de lotes de producción sin acción para crear un lote" width="75%">
 </p>
 
 **Recomendación:**
@@ -599,7 +599,7 @@ Agregar un botón *New Batch* en la cabecera de *Production Batches* que permita
 Al pulsar *Release Batch* o *Reject Batch* se abre una pantalla aparte que solo contiene la fecha y un campo de notas. No se muestra el número de lote, el producto, la cantidad ni las especificaciones de calidad, y el enlace de retorno dice únicamente *Batch Detail*. La liberación es una decisión firmada e irreversible ("the batch can no longer be modified"), por lo que el responsable de calidad debe recordar de memoria qué lote estaba revisando. En el formulario de rechazo, además, no se advierte que la acción sea definitiva.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/release-batch-form.jpg" alt="Formulario de liberación sin datos del lote" width="100%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/release-batch-form.jpg" alt="Formulario de liberación sin datos del lote" width="75%">
 </p>
 
 **Recomendación:**
@@ -617,7 +617,7 @@ Mostrar en ambos formularios un resumen del lote (número, producto, cantidad, a
 En *BPM Parameter Config* los campos *Parameter Name* y *Unit* son cajas de texto sin lista de opciones, sugerencias ni ejemplos. El usuario puede escribir "Temperatura", "Temperature" o "Temp." y "°C" o "C" para la misma variable, lo que genera parámetros que no coinciden con las variables que reporta la telemetría. La pantalla tampoco indica a qué equipo pertenece el parámetro que se está creando.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/bpm-parameter-form.jpg" alt="Formulario de parámetro BPM con campos de texto libre" width="100%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/bpm-parameter-form.jpg" alt="Formulario de parámetro BPM con campos de texto libre" width="75%">
 </p>
 
 **Recomendación:**
@@ -635,7 +635,7 @@ Reemplazar el nombre por una lista de las variables que el sistema monitorea (te
 La pestaña *BPM Config* del equipo lista cada parámetro con su rango (por ejemplo "Temperatura 121 - 134 °C"), pero las filas no presentan ninguna acción visible para corregir un rango mal ingresado ni para retirar un parámetro. Si el usuario se equivoca al registrar un límite, no tiene una salida evidente para deshacer el error.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/bpm-config-tab.jpg" alt="Pestaña BPM Config sin acciones sobre los parámetros" width="100%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/bpm-config-tab.jpg" alt="Pestaña BPM Config sin acciones sobre los parámetros" width="75%">
 </p>
 
 **Recomendación:**
@@ -653,7 +653,7 @@ Agregar en cada fila las acciones *Editar* y *Eliminar* (esta última con confir
 En la pestaña *BPM Config* el botón principal muestra el texto "+ Parameter Name", que es la etiqueta de un campo y no una acción. El usuario debe deducir por el ícono "+" que ese botón sirve para agregar un parámetro.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/bpm-config-tab.jpg" alt="Botón rotulado como " width="100%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/bpm-config-tab.jpg" alt="Botón rotulado como " width="75%">
 </p>
 
 **Recomendación:**
@@ -671,7 +671,7 @@ Cambiar el rótulo a "Add parameter" / "Agregar parámetro", siguiendo el patró
 La misma acción de crear un registro recibe rótulos diferentes según la pantalla: *Save Changes* al crear un equipo o un parámetro BPM (aunque no se está modificando nada), *Save* en materia prima, *Register* en producto, lote y personal, y *Register device* en dispositivo IoT. Ocurre lo mismo entre el menú y las pantallas: el menú dice *Register Equipment* y la pantalla se titula *New Equipment*; el menú dice *Register Staff Member* y el botón de la lista dice *Add Staff*.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/equipment-form.jpg" alt="Formulario de nuevo equipo con el botón " width="100%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/equipment-form.jpg" alt="Formulario de nuevo equipo con el botón " width="75%">
 </p>
 
 **Recomendación:**
@@ -689,7 +689,7 @@ Definir un único verbo para la creación (por ejemplo *Register*) y reservar *S
 En el generador de reportes los botones *Generate PDF* y de vista previa aparecen deshabilitados hasta que se elige un periodo, pero la pantalla no señala qué dato falta; el botón de vista previa es además un ícono sin texto. Lo mismo sucede con *Save Changes* en el registro de equipo, *Register device* en dispositivo IoT y *Move* / *Register change* en el detalle del equipo.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/report-generator-disabled.jpg" alt="Generador de reportes con los botones deshabilitados" width="100%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/report-generator-disabled.jpg" alt="Generador de reportes con los botones deshabilitados" width="75%">
 </p>
 
 **Recomendación:**
@@ -707,7 +707,7 @@ Mostrar junto al botón un mensaje breve con el requisito pendiente (por ejemplo
 El campo *MAC address or serial number* muestra un ejemplo ("24:6F:28:AA:10:01") pero acepta cualquier texto: en el catálogo existe un dispositivo registrado con "20.7B.30.33.Z5.99", valor que no corresponde a una dirección MAC. Además, los textos de ayuda mencionan "the identity Edge uses to recognise it", un término de la arquitectura interna que el responsable de calidad no tiene por qué conocer.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/iot-device-form.jpg" alt="Formulario de registro de dispositivo IoT" width="100%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/iot-device-form.jpg" alt="Formulario de registro de dispositivo IoT" width="75%">
 </p>
 
 **Recomendación:**
@@ -725,7 +725,7 @@ Separar MAC y número de serie en campos distintos, aplicar una máscara de entr
 El formulario *New Equipment* solo solicita nombre, tipo, modelo y serie, aunque el catálogo muestra el ambiente como columna principal; el usuario debe guardar, abrir el detalle y usar la sección *Location* para asignarlo. En esa sección el selector *Environment* se muestra vacío incluso cuando el equipo ya tiene un ambiente asignado, de modo que el usuario debe mirar la cabecera para recordar dónde está el equipo antes de moverlo.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/equipment-detail-environment.jpg" alt="Detalle de equipo con el selector de ambiente vacío" width="100%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/equipment-detail-environment.jpg" alt="Detalle de equipo con el selector de ambiente vacío" width="75%">
 </p>
 
 **Recomendación:**
@@ -743,7 +743,7 @@ Incluir el ambiente como campo del formulario de registro y, en el detalle, most
 La tabla de materias primas presenta dos cantidades por material (*Usable stock* y *Physical balance*) sin ninguna ayuda que explique por qué difieren; por ejemplo, "Agua purificada" figura con 0 L utilizables y 7 L de saldo físico. El botón *Previous balances* tampoco deja claro qué operación realiza. Un usuario nuevo no puede interpretar el indicador *Low usable stock* sin esa información.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/inventory-stock-columns.jpg" alt="Tabla de inventario con las columnas de stock" width="100%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/inventory-stock-columns.jpg" alt="Tabla de inventario con las columnas de stock" width="75%">
 </p>
 
 **Recomendación:**
@@ -761,7 +761,7 @@ Agregar un ícono de ayuda en cada encabezado con una definición corta (por eje
 En una pantalla de 1024 px de ancho la tabla *Personnel Management* no muestra las columnas de estado laboral ni de acciones, que quedan fuera del área visible. La única acción por fila es un ícono sin etiqueta para desactivar a la persona, y la lista no tiene búsqueda ni filtros, a diferencia de equipos, inventario y lotes.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/staff-table.jpg" alt="Tabla de personal cortada a la derecha" width="100%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/staff-table.jpg" alt="Tabla de personal cortada a la derecha" width="75%">
 </p>
 
 **Recomendación:**
@@ -779,7 +779,7 @@ Reducir el ancho de las columnas o apilar el correo bajo el nombre para que esta
 La tarjeta *Subscription & Billing* indica "Plan equipment limit: 5" mientras que el indicador superior del mismo dashboard muestra 14 equipos registrados. La pantalla no explica si el límite ya fue superado, si los dispositivos IoT no cuentan o si el dato está desactualizado, lo que resta confianza a la información mostrada.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/dashboard-plan-limit.jpg" alt="Dashboard con 14 equipos y un límite de plan de 5" width="100%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/dashboard-plan-limit.jpg" alt="Dashboard con 14 equipos y un límite de plan de 5" width="75%">
 </p>
 
 **Recomendación:**
@@ -797,7 +797,7 @@ Mostrar el uso frente al límite (por ejemplo "7 de 5 equipos") con una adverten
 Al cargar una pantalla interna por su URL o al recargarla (por ejemplo el detalle de un equipo, el registro de dispositivo IoT o la liberación de un lote), el contenido se dibuja debajo del menú lateral durante varios segundos: los títulos y las etiquetas de los campos aparecen cortados por la izquierda hasta que el diseño se reacomoda.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/equipment-detail-environment.jpg" alt="Contenido cortado por el menú lateral tras cargar la pantalla" width="100%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/equipment-detail-environment.jpg" alt="Contenido cortado por el menú lateral tras cargar la pantalla" width="75%">
 </p>
 
 **Recomendación:**
@@ -815,7 +815,7 @@ Reservar el ancho del menú lateral desde el primer renderizado, de modo que el 
 En el formulario *Create Production Batch*, el texto de ayuda del campo *Batch Number* ("Unique in the laboratory, for example PB-2026-001") ocupa dos líneas y se monta sobre la etiqueta del campo *Quantity*, dejando ambos textos ilegibles.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/batch-form-overlap.png" alt="Texto de ayuda superpuesto con la etiqueta del campo siguiente" width="100%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/batch-form-overlap.png" alt="Texto de ayuda superpuesto con la etiqueta del campo siguiente" width="75%">
 </p>
 
 **Recomendación:**
@@ -903,7 +903,7 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 En *Inventario de Materias Primas* el nombre de cada material se trunca a una sola línea porque comparte la fila con la etiqueta de estado: se lee "Amoxicilina trihidr…", "Cápsula de gelatin…" o "Estearato de magn…". En un catálogo farmacéutico varios materiales comparten el inicio del nombre y solo se distinguen por la concentración o la presentación, de modo que el usuario puede confundir un material con otro sin abrir cada ficha.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/inventory.jpg" alt="Inventario con los nombres de materiales cortados" width="62%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/inventory.jpg" alt="Inventario con los nombres de materiales cortados" width="40%">
 </p>
 
 **Recomendación:**
@@ -921,7 +921,7 @@ Permitir que el nombre ocupe dos líneas y mover la etiqueta de estado debajo de
 La pestaña *Alertas* ordena por fecha: las dos alertas con estado "Reconocida" aparecen primero y las dos críticas "Sin resolver", que nadie ha atendido, quedan al final. La tarjeta "Últimas alertas" del inicio repite el mismo criterio y muestra una alerta ya reconocida. El usuario que abre la app para atender lo urgente debe recorrer la lista para encontrarlo.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/alerts-list.jpg" alt="Lista de alertas ordenada por fecha" width="62%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/alerts-list.jpg" alt="Lista de alertas ordenada por fecha" width="40%">
 </p>
 
 **Recomendación:**
@@ -939,7 +939,7 @@ Ordenar por defecto según prioridad (primero las críticas sin resolver) y ofre
 Cada tarjeta de la lista de lotes muestra a la vez la etiqueta de estado ("Pendiente" o "En progreso") y el texto "En espera de liberación QA", y la tarjeta *Lotes* del inicio cuenta 6 lotes "en espera de liberación QA". Un lote pendiente todavía no ha consumido materia prima y uno en progreso sigue en fabricación, por lo que ninguno está realmente esperando la decisión de calidad. Los dos mensajes se contradicen y el indicador del inicio pierde significado.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/batches-list.jpg" alt="Lotes pendientes rotulados como en espera de liberación" width="62%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/batches-list.jpg" alt="Lotes pendientes rotulados como en espera de liberación" width="40%">
 </p>
 
 **Recomendación:**
@@ -957,7 +957,7 @@ Mostrar "En espera de liberación QA" solo cuando el lote terminó su fabricaci�
 Con la app en español, las cantidades se muestran como "100 units" o "40.000 units" en lotes, inventario y trazabilidad; el tipo de equipo aparece como "Centrifuge"; y los mantenimientos se listan como "Preventive" y "Calibration". El resto de la pantalla está traducido, por lo que estos valores se perciben como errores.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/equipment-detail.jpg" alt="Detalle de equipo con tipos de mantenimiento en inglés" width="62%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/equipment-detail.jpg" alt="Detalle de equipo con tipos de mantenimiento en inglés" width="40%">
 </p>
 
 **Recomendación:**
@@ -975,7 +975,7 @@ Traducir las unidades, los tipos de equipo y los tipos de mantenimiento con el m
 La cabecera del detalle de la alerta #9 muestra "5 oct 2026 0:14" sin ningún rótulo, mientras que la sección *Inspección técnica* indica "Primera detección: 4 oct 2026 19:04". El usuario no puede saber si la fecha de la cabecera es la apertura, la última desviación o la última actualización, y la lista de alertas usa esa misma fecha sin explicarla.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/alert-detail.jpg" alt="Detalle de alerta con dos fechas distintas" width="62%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/alert-detail.jpg" alt="Detalle de alerta con dos fechas distintas" width="40%">
 </p>
 
 **Recomendación:**
@@ -993,7 +993,7 @@ Rotular la fecha de la cabecera (por ejemplo "Última desviación") y mostrar ju
 En la app móvil la acción se llama "Reconocer" y los estados son "Reconocida" y "Sin resolver". En QualiTrack Web, también en español, la misma acción se llama "Registrar atención" y los estados son "En atención" y "Sin atender". Un responsable de calidad que usa ambas plataformas debe aprender dos vocabularios para el mismo flujo.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/alert-detail.jpg" alt="Acción " width="62%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/alert-detail.jpg" alt="Acción " width="40%">
 </p>
 
 **Recomendación:**
@@ -1011,7 +1011,7 @@ Acordar un único término por acción y por estado y aplicarlo en las dos plata
 Las tarjetas de alerta muestran un ícono de flechas seguido de un número ("⇄ 5") que corresponde a la cantidad de desviaciones, pero nada lo indica. El botón flotante de filtros es solo un ícono, y la pantalla de telemetría tiene en la esquina superior derecha un ícono sin etiqueta que abre el registro de lecturas.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/alerts-list.jpg" alt="Tarjetas de alerta con el contador sin etiqueta" width="62%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/alerts-list.jpg" alt="Tarjetas de alerta con el contador sin etiqueta" width="40%">
 </p>
 
 **Recomendación:**
@@ -1029,7 +1029,7 @@ Acompañar el contador con su unidad ("5 desviaciones"), agregar texto al botón
 En las listas de equipos, inventario, lotes y alertas, el botón flotante de filtros queda encima de la última tarjeta visible. En equipos oculta la etiqueta "Monitor de contenedor" y en inventario tapa la etiqueta "Bajo el mínimo", que es justamente el dato que el usuario busca.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/equipment-list.jpg" alt="Botón de filtros sobre una tarjeta de equipo" width="62%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/equipment-list.jpg" alt="Botón de filtros sobre una tarjeta de equipo" width="40%">
 </p>
 
 **Recomendación:**
@@ -1047,7 +1047,7 @@ Ubicar el filtro junto al buscador en la parte superior, o reservar un margen in
 A 375 px de ancho se cortan el subtítulo de telemetría ("Datos sensoriales y monitoreo de parámetros en t…"), el selector de dispositivo ("Contenedor MP-A1 · Almacén de …"), el buscador de lotes ("Buscar por número de lote o produ…"), la ubicación en las tarjetas de alerta ("Almacén de producto ter…") y la pestaña "Mantenimien" del detalle de equipo. En el selector de dispositivo el texto cortado es el ambiente, necesario para distinguir dos monitores con nombres parecidos.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/telemetry.jpg" alt="Panel de telemetría con textos cortados" width="62%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/telemetry.jpg" alt="Panel de telemetría con textos cortados" width="40%">
 </p>
 
 **Recomendación:**
@@ -1065,7 +1065,7 @@ Acortar los subtítulos y marcadores de posición, mostrar el ambiente en una se
 El inicio informa "0/7 dispositivos en línea" y "Requiere revisión 7", y el panel de telemetría muestra "Requiere revisión" con la última comunicación de hace un mes y el mensaje "El dispositivo no envió lecturas en las últimas 24 horas". En ningún punto se explica la causa probable ni el siguiente paso (revisar energía, red o contactar a mantenimiento). También aparece "Perfil versión 2", un dato interno sin significado para el usuario.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/home.jpg" alt="Inicio con los 7 dispositivos en " width="62%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/home.jpg" alt="Inicio con los 7 dispositivos en " width="40%">
 </p>
 
 **Recomendación:**
@@ -1083,7 +1083,7 @@ Agregar al estado una explicación corta con la causa probable y la acción suge
 La pantalla *Iniciar sesión* solo tiene usuario, contraseña y el texto "Las cuentas se crean y administran en QualiTrack Web". No existe la opción "¿Olvidaste tu contraseña?" que sí ofrece la versión web, por lo que un operario que olvida su contraseña en planta queda bloqueado sin una indicación de cómo recuperarla.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/sign-in.jpg" alt="Pantalla de inicio de sesión sin recuperación de contraseña" width="62%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/sign-in.jpg" alt="Pantalla de inicio de sesión sin recuperación de contraseña" width="40%">
 </p>
 
 **Recomendación:**
