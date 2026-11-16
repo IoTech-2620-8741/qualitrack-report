@@ -5095,51 +5095,111 @@ git push origin v1.0.0
 
 Durante el Sprint 2 el equipo mantuvo GitFlow y Conventional Commits, y reforzó la integración del trabajo: cada funcionalidad se desarrolló en una rama `feature/*` o `fix/*` creada desde `develop` y se integró mediante un pull request que exige las pruebas de integración continua aprobadas. Las versiones se publicaron en `main` con ramas `release/*`, su etiqueta y su GitHub Release, y luego se sincronizaron con `develop`. Cada Bounded Context tuvo un responsable en todos los productos donde aparece, según la matriz de liderazgo y colaboración.
 
-**Landing Page.** En la nueva versión de la Landing Page participaron Baca Camargo, Vitaly Arturo; Cutiri Agüero, Fabrizio Alexander; Guzmán Cabrejos, Yaku Mateo; Huapaya Galindo, Dyron; Lopez Roman, Franco Mauricio; Montes Ramos, Henry Jaredt; Quiroz Caceres, Adrian Alonso; Ruiz Madrid, Billy Jake y Torres Apolinario, Giovany Smith, con el encabezado y el selector de idioma compartidos, la internacionalización, la documentación de los scripts, las fotos del equipo, la guía de estilos y el despliegue con GitHub Actions.
+**Landing Page** ([IoTech-2620-8741/qualitrack-website](https://github.com/IoTech-2620-8741/qualitrack-website))
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-website.jpg" alt="GitHub Insights - Landing Page" width="90%">
-  <p><em>Figura: Analíticos de contribución del repositorio de la Landing Page en GitHub Insights. Esta evidencia muestra los commits integrados en main durante el sprint y los integrantes que los realizaron.</em></p>
-</div>
-
-**Web Application.** En la Web Application participaron Baca Camargo, Vitaly Arturo; Cutiri Agüero, Fabrizio Alexander; Guzmán Cabrejos, Yaku Mateo; Huapaya Galindo, Dyron; Lopez Roman, Franco Mauricio; Quiroz Caceres, Adrian Alonso; Ruiz Madrid, Billy Jake y Torres Apolinario, Giovany Smith. El trabajo se organizó en pull requests por Bounded Context: la aplicación de las capas de Domain-Driven Design, las validaciones y pruebas, el rediseño de las vistas con la guía de estilos y la integración de los Edge Gateways.
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-web-app.jpg" alt="GitHub Insights - Web Application" width="90%">
-  <p><em>Figura: Analíticos de contribución del repositorio de la Web Application en GitHub Insights. Esta evidencia muestra los commits integrados en main durante el sprint, concentrados en las semanas del rediseño y de la integración con los servicios.</em></p>
-</div>
-
-**Cloud REST API.** En el Cloud REST API participaron Cutiri Agüero, Fabrizio Alexander; Guzmán Cabrejos, Yaku Mateo; Huapaya Galindo, Dyron; Lopez Roman, Franco Mauricio; Quiroz Caceres, Adrian Alonso; Ruiz Madrid, Billy Jake y Torres Apolinario, Giovany Smith, con la estructura táctica de cada Bounded Context, los Edge Gateways, la documentación de Tracking & Telemetry en Swagger y los pagos de renovación.
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-platform.jpg" alt="GitHub Insights - Cloud REST API" width="90%">
-  <p><em>Figura: Analíticos de contribución del repositorio del Cloud REST API en GitHub Insights. Esta evidencia muestra los commits integrados en main con las versiones 1.1.0 y 1.2.0.</em></p>
-</div>
-
-**Mobile Application.** En la Mobile Application participaron Baca Camargo, Vitaly Arturo; Cutiri Agüero, Fabrizio Alexander; Guzmán Cabrejos, Yaku Mateo; Huapaya Galindo, Dyron; Lopez Roman, Franco Mauricio; Quiroz Caceres, Adrian Alonso; Ruiz Madrid, Billy Jake y Torres Apolinario, Giovany Smith. Su versión 1.0.0 se publicó en `main` al cierre del sprint, por lo que sus analíticos de contribución recién empiezan a reflejar este trabajo; la evidencia es la lista de pull requests integrados en `develop`.
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/mobile-merged-pull-requests.jpg" alt="Pull requests de la Mobile Application" width="90%">
-  <p><em>Figura: Pull requests integrados en develop en el repositorio de la Mobile Application. Esta evidencia muestra el trabajo de varios integrantes en las pantallas, los Bounded Contexts y las correcciones de usabilidad, cada uno con su verificación de integración continua.</em></p>
-</div>
-
-**Edge Service.** En el Edge Service participaron Baca Camargo, Vitaly Arturo; Cutiri Agüero, Fabrizio Alexander; Guzmán Cabrejos, Yaku Mateo; Huapaya Galindo, Dyron; Lopez Roman, Franco Mauricio; Montes Ramos, Henry Jaredt; Quiroz Caceres, Adrian Alonso; Ruiz Madrid, Billy Jake y Torres Apolinario, Giovany Smith, con la autenticación de los nodos, la recepción de telemetría, la sincronización con el Cloud, el despliegue con Docker Compose las correcciones de su auditoría y, al cierre del sprint, la documentación de sus pruebas, la validación de la URL del Cloud, el endpoint de salud y la API key de los nodos como token Bearer de la versión 0.4.0.
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-edge-service.jpg" alt="GitHub Insights - Edge Service" width="90%">
-  <p><em>Figura: Analíticos de contribución del repositorio del Edge Service en GitHub Insights. Esta evidencia muestra los commits integrados en main con las versiones 0.1.0 a 0.3.1.</em></p>
-</div>
-
-**Embedded Applications.** Los repositorios del firmware se crearon al cierre del sprint, el 14 de noviembre, y siguieron el mismo GitFlow con pull requests hacia `develop`. En el Monitor de Ambiente participaron Ruiz Madrid, Billy Jake, con el firmware sobre el Modest IoT Nano Framework, su simulación en Wokwi y las versiones 0.1.0 a 0.4.0, y Huapaya Galindo, Dyron, con las pruebas en el host y el workflow de integración continua. En el Monitor de Contenedor participaron Quiroz Caceres, Adrian Alonso, con la primera versión del firmware, y Ruiz Madrid, Billy Jake, con su revisión como un único sketch, su simulación en Wokwi y la versión 0.1.0.
-
-<div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/embedded-environment-monitor-pull-requests.jpg" alt="Pull requests de la Embedded Application del Monitor de Ambiente" width="90%">
-  <p><em>Figura: Pull requests integrados en el repositorio de la Embedded Application del Monitor de Ambiente. Esta evidencia muestra el trabajo de dos integrantes, desde el uso de la librería del framework y el sketch único hasta las pruebas en el host, cada uno con su verificación de integración continua cuando ya existía.</em></p>
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-contributors-website-1.jpg" alt="GitHub Contributors - Landing Page" width="90%">
+  <p><em>Figura: Contribuidores del repositorio de la Landing Page en GitHub Insights. Esta evidencia muestra los commits por semana integrados en main y los integrantes con más commits.</em></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/embedded-container-monitor-pull-requests.jpg" alt="Pull requests de la Embedded Application del Monitor de Contenedor" width="90%">
-  <p><em>Figura: Pull request integrado en el repositorio de la Embedded Application del Monitor de Contenedor. Esta evidencia muestra la integración en develop de la rama de firmware de un integrante, revisada y completada por otro como un único sketch del framework.</em></p>
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-contributors-website-2.jpg" alt="GitHub Contributors - Landing Page (continuación)" width="90%">
+  <p><em>Figura: Contribuidores del repositorio de la Landing Page en GitHub Insights (continuación). Esta evidencia muestra los demás integrantes con sus commits integrados en main.</em></p>
 </div>
 
-**Interpretación.** En total el equipo realizó 1541 commits en el sprint, frente a los 322 del Sprint 1, y el trabajo se integró de forma continua mediante pull requests revisados por la integración continua, en lugar de concentrarse en los días previos a la entrega como en el sprint anterior. Los commits se distribuyeron entre el 26 de octubre y el 15 de noviembre, con su mayor actividad en la semana del 2 de noviembre, cuando se integró la estructura de Domain-Driven Design en la Web Application y en la Mobile Application, y los productos nuevos (Edge Service y Mobile Application) reunieron a varios integrantes; entre el 14 y el 15 de noviembre se completaron las Embedded Applications de los dos nodos y se publicaron las versiones finales del sprint. Como oportunidades de mejora, el equipo se propone agregar pruebas automatizadas a la Embedded Application del Monitor de Contenedor, involucrar más a los integrantes con menos participación en los repositorios de código y actualizar el estado de las tareas en Jira al mismo ritmo que los pull requests.
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-network-website.jpg" alt="GitHub Network graph - Landing Page" width="90%">
+  <p><em>Figura: Network graph del repositorio de la Landing Page. Esta evidencia muestra el flujo de GitFlow en los commits más recientes: las ramas de trabajo que se integran en develop y las versiones que pasan de develop a main.</em></p>
+</div>
+
+**Web Application** ([IoTech-2620-8741/qualitrack-web-app](https://github.com/IoTech-2620-8741/qualitrack-web-app))
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-contributors-web-app-1.jpg" alt="GitHub Contributors - Web Application" width="90%">
+  <p><em>Figura: Contribuidores del repositorio de la Web Application en GitHub Insights. Esta evidencia muestra los commits por semana integrados en main y los integrantes con más commits.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-contributors-web-app-2.jpg" alt="GitHub Contributors - Web Application (continuación)" width="90%">
+  <p><em>Figura: Contribuidores del repositorio de la Web Application en GitHub Insights (continuación). Esta evidencia muestra los demás integrantes con sus commits integrados en main.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-network-web-app.jpg" alt="GitHub Network graph - Web Application" width="90%">
+  <p><em>Figura: Network graph del repositorio de la Web Application. Esta evidencia muestra el flujo de GitFlow en los commits más recientes: las ramas de trabajo que se integran en develop y las versiones que pasan de develop a main.</em></p>
+</div>
+
+**Cloud REST API** ([IoTech-2620-8741/qualitrack-platform](https://github.com/IoTech-2620-8741/qualitrack-platform))
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-contributors-platform-1.jpg" alt="GitHub Contributors - Cloud REST API" width="90%">
+  <p><em>Figura: Contribuidores del repositorio de el Cloud REST API en GitHub Insights. Esta evidencia muestra los commits por semana integrados en main y los integrantes con más commits.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-contributors-platform-2.jpg" alt="GitHub Contributors - Cloud REST API (continuación)" width="90%">
+  <p><em>Figura: Contribuidores del repositorio de el Cloud REST API en GitHub Insights (continuación). Esta evidencia muestra los demás integrantes con sus commits integrados en main.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-network-platform.jpg" alt="GitHub Network graph - Cloud REST API" width="90%">
+  <p><em>Figura: Network graph del repositorio de el Cloud REST API. Esta evidencia muestra el flujo de GitFlow en los commits más recientes: las ramas de trabajo que se integran en develop y las versiones que pasan de develop a main.</em></p>
+</div>
+
+**Mobile Application** ([IoTech-2620-8741/qualitrack-mobile-application](https://github.com/IoTech-2620-8741/qualitrack-mobile-application))
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-contributors-mobile-application-1.jpg" alt="GitHub Contributors - Mobile Application" width="90%">
+  <p><em>Figura: Contribuidores del repositorio de la Mobile Application en GitHub Insights. Esta evidencia muestra los commits por semana integrados en main y los integrantes con más commits.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-contributors-mobile-application-2.jpg" alt="GitHub Contributors - Mobile Application (continuación)" width="90%">
+  <p><em>Figura: Contribuidores del repositorio de la Mobile Application en GitHub Insights (continuación). Esta evidencia muestra los demás integrantes con sus commits integrados en main.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-network-mobile-application.jpg" alt="GitHub Network graph - Mobile Application" width="90%">
+  <p><em>Figura: Network graph del repositorio de la Mobile Application. Esta evidencia muestra el flujo de GitFlow en los commits más recientes: las ramas de trabajo que se integran en develop y las versiones que pasan de develop a main.</em></p>
+</div>
+
+**Edge Service** ([IoTech-2620-8741/qualitrack-edge-service](https://github.com/IoTech-2620-8741/qualitrack-edge-service))
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-contributors-edge-service-1.jpg" alt="GitHub Contributors - Edge Service" width="90%">
+  <p><em>Figura: Contribuidores del repositorio de el Edge Service en GitHub Insights. Esta evidencia muestra los commits por semana integrados en main y los integrantes con más commits.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-contributors-edge-service-2.jpg" alt="GitHub Contributors - Edge Service (continuación)" width="90%">
+  <p><em>Figura: Contribuidores del repositorio de el Edge Service en GitHub Insights (continuación). Esta evidencia muestra los demás integrantes con sus commits integrados en main.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-network-edge-service.jpg" alt="GitHub Network graph - Edge Service" width="90%">
+  <p><em>Figura: Network graph del repositorio de el Edge Service. Esta evidencia muestra el flujo de GitFlow en los commits más recientes: las ramas de trabajo que se integran en develop y las versiones que pasan de develop a main.</em></p>
+</div>
+
+**Embedded Application (Environment Monitor)** ([IoTech-2620-8741/qualitrack-embedded-environment-monitor](https://github.com/IoTech-2620-8741/qualitrack-embedded-environment-monitor))
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-contributors-embedded-environment-monitor.jpg" alt="GitHub Contributors - Embedded Application (Environment Monitor)" width="90%">
+  <p><em>Figura: Contribuidores del repositorio de la Embedded Application del Monitor de Ambiente en GitHub Insights. Esta evidencia muestra los commits por semana integrados en main y los integrantes que los realizaron.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-network-embedded-environment-monitor.jpg" alt="GitHub Network graph - Embedded Application (Environment Monitor)" width="90%">
+  <p><em>Figura: Network graph del repositorio de la Embedded Application del Monitor de Ambiente. Esta evidencia muestra el flujo de GitFlow en los commits más recientes: las ramas de trabajo que se integran en develop y las versiones que pasan de develop a main.</em></p>
+</div>
+
+**Embedded Application (Container Monitor)** ([IoTech-2620-8741/qualitrack-embedded-container-monitor](https://github.com/IoTech-2620-8741/qualitrack-embedded-container-monitor))
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-contributors-embedded-container-monitor.jpg" alt="GitHub Contributors - Embedded Application (Container Monitor)" width="90%">
+  <p><em>Figura: Contribuidores del repositorio de la Embedded Application del Monitor de Contenedor en GitHub Insights. Esta evidencia muestra los commits por semana integrados en main y los integrantes que los realizaron.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-network-embedded-container-monitor.jpg" alt="GitHub Network graph - Embedded Application (Container Monitor)" width="90%">
+  <p><em>Figura: Network graph del repositorio de la Embedded Application del Monitor de Contenedor. Esta evidencia muestra el flujo de GitFlow en los commits más recientes: las ramas de trabajo que se integran en develop y las versiones que pasan de develop a main.</em></p>
+</div>
