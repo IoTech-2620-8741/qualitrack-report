@@ -145,8 +145,8 @@
       <td><strong>Video About-the-Team</strong></td>
       <td>YouTube</td>
       <td>
-        <a href="https://www.youtube.com/watch?v=cLEM02VVPHw">
-          https://www.youtube.com/watch?v=cLEM02VVPHw
+        <a href="https://youtu.be/cLEM02VVPHw">
+          https://youtu.be/cLEM02VVPHw
         </a>
       </td>
     </tr>
@@ -154,8 +154,8 @@
       <td><strong>Video About-the-Product</strong></td>
       <td>YouTube</td>
       <td>
-        <a href="https://www.youtube.com/watch?v=pD8I8iiFkXQ&amp;t=11s">
-          https://www.youtube.com/watch?v=pD8I8iiFkXQ&amp;t=11s
+        <a href="https://youtu.be/pD8I8iiFkXQ">
+          https://youtu.be/pD8I8iiFkXQ
         </a>
       </td>
     </tr>
