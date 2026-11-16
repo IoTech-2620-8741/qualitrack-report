@@ -4082,7 +4082,7 @@ Las siguientes tablas presentan los 1541 commits realizados en los repositorios 
 
 #### 6.2.2.5. Testing Suite Evidence for Sprint Review
 
-En el Sprint 2 cada producto de código cuenta con una suite de pruebas automatizadas que se ejecuta en GitHub Actions en cada pull request hacia develop y main, de modo que ningún cambio se integra si alguna prueba falla. Al cierre del sprint las cuatro suites se encuentran aprobadas:
+En el Sprint 2 cada producto de código, salvo la Embedded Application del Monitor de Contenedor, cuenta con una suite de pruebas automatizadas que se ejecuta en GitHub Actions en cada pull request hacia develop y main, de modo que ningún cambio se integra si alguna prueba falla. Al cierre del sprint las cinco suites se encuentran aprobadas:
 
 | Producto | Repositorio | Herramientas | Archivos de prueba | Pruebas ejecutadas en CI |
 |----------|-------------|--------------|--------------------|--------------------------|
@@ -4090,8 +4090,11 @@ En el Sprint 2 cada producto de código cuenta con una suite de pruebas automati
 | Web Application | [qualitrack-web-app](https://github.com/IoTech-2620-8741/qualitrack-web-app/tree/develop/src/app) | Vitest con Angular TestBed | 128 archivos `.spec.ts` | 870 |
 | Mobile Application | [qualitrack-mobile-application](https://github.com/IoTech-2620-8741/qualitrack-mobile-application/tree/develop/test) | flutter_test, bloc_test | 18 archivos | 174 |
 | Edge API | [qualitrack-edge-service](https://github.com/IoTech-2620-8741/qualitrack-edge-service/tree/develop/tests) | unittest de Python | 17 módulos | 127 |
+| Embedded Application (Environment Monitor) | [qualitrack-embedded-environment-monitor](https://github.com/IoTech-2620-8741/qualitrack-embedded-environment-monitor/tree/develop/tests) | Pruebas en el host con g++ y fakes del Modest IoT Nano Framework | 3 suites | 23 |
 
 En el Cloud REST API las pruebas unitarias verifican las reglas del dominio de cada Bounded Context sin levantar Spring, y las pruebas de integración ejercitan los endpoints con MockMvc sobre una base de datos de prueba, comprobando los códigos HTTP, los recursos devueltos y los permisos por rol. En la Web Application las pruebas verifican los assemblers, servicios, stores, validadores y componentes de cada Bounded Context. En la Mobile Application verifican el dominio, los casos de uso, la infraestructura HTTP, los BLoC, las pantallas y las reglas de dependencia entre capas. En el Edge API verifican la autenticación de los nodos, la recepción de lecturas y eventos, la entrega de la configuración y la sincronización con el Cloud usando dispositivos simulados. En este sprint no se elaboraron pruebas de aceptación BDD con archivos `.feature`; los escenarios de aceptación de cada Technical Story se verifican con las pruebas de integración de su endpoint.
+
+En la Embedded Application del Monitor de Ambiente cada suite compila el sketch real contra versiones simuladas (fakes) del Modest IoT Nano Framework y de Arduino, y verifica sin el ESP32 los estados de la calidad de aire, el LED RGB, el buzzer y las llamadas al Edge; el mismo workflow compila el sketch para el ESP32 DevKit v1 con arduino-cli. La Embedded Application del Monitor de Contenedor todavía no tiene pruebas automatizadas: se verificó compilándola con arduino-cli sin advertencias y ejecutando en Wokwi los cambios de estado de la temperatura con su histéresis, la ventilación y el enfriamiento, el control de acceso con etiquetas autorizadas y denegadas, el reconocimiento de la alarma y el promedio móvil de la luz.
 
 **Cloud REST API.** La siguiente tabla relaciona cada clase de prueba con su tipo, su Bounded Context, los comportamientos que verifica (con el número de métodos de prueba) y las Technical Stories del sprint que soporta. En total la suite tiene 221 métodos de prueba; con los casos de las pruebas parametrizadas Maven ejecuta 229.
 
@@ -4204,6 +4207,14 @@ En el Cloud REST API las pruebas unitarias verifican las reglas del dominio de c
 | widget/​orientation_​test.dart | widget | only the screen inside LandscapeAllowed may turn, while it is the visible one; the app is laid out for portrait (2) |
 | widget/​widgets_​test.dart | widget | validates required fields and has no sign-up entry; submits credentials and toggles password visibility; shows backend errors and is localized in Spanish; (+19 más) (22) |
 
+**Embedded Application (Environment Monitor).** Cada suite es un programa que compila el sketch con los fakes del framework y se ejecuta en el host.
+
+| Suite | Comportamientos verificados (pruebas) | Historias relacionadas |
+|-------|---------------------------------------|------------------------|
+| AirQualityAlarm | calibration turns the led from blue to green; air quality is not classified during calibration; warning turns the led yellow with a single beep; (+3 más) (6) | MS01, MS03, MS04 |
+| EdgeConfiguration | setup sends the api key as a bearer token; sign in posts the device id; a rejected sign in is retried every thirty seconds; (+6 más) (9) | MS14, MS15 |
+| EdgeReadings | calibration sends the first reading; a change of state is sent at once; the air quality is sent every minute; (+5 más) (8) | MS02, MS05, MS14 |
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/testing-evidence/backend-tests-ci.jpg" alt="Pruebas del Cloud REST API en GitHub Actions" width="90%">
   <p><em>Figura: Ejecución de la suite del Cloud REST API en GitHub Actions. Esta evidencia muestra el workflow de integración continua del pull request de la versión 1.2.0, que ejecuta con Maven las 229 pruebas unitarias y de integración, todas aprobadas.</em></p>
@@ -4224,7 +4235,12 @@ En el Cloud REST API las pruebas unitarias verifican las reglas del dominio de c
   <p><em>Figura: Ejecución de la suite del Edge API en GitHub Actions. Esta evidencia muestra las 127 pruebas de unittest aprobadas y, en la lista de jobs, la prueba del despliegue con Docker Compose (docker) y la imagen para la Raspberry Pi 4 (docker-arm64) también aprobadas.</em></p>
 </div>
 
-Commits relacionados con las pruebas en este sprint (64):
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/testing-evidence/embedded-tests-ci.jpg" alt="Pruebas de la Embedded Application del Monitor de Ambiente en GitHub Actions" width="90%">
+  <p><em>Figura: Ejecución de la suite de la Embedded Application del Monitor de Ambiente en GitHub Actions. Esta evidencia muestra el workflow CI de la versión 0.4.0 en develop, con el job de pruebas en el host (3 suites y 23 pruebas aprobadas) y la compilación del sketch para el ESP32 DevKit v1, ambos aprobados.</em></p>
+</div>
+
+Commits relacionados con las pruebas en este sprint (93):
 
 **qualitrack-web-app**
 
@@ -4292,6 +4308,8 @@ Commits relacionados con las pruebas en este sprint (64):
 | Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-screens | c996239 | feat​(inventory): test the inventory FAB menu. | — | 10/11/2026 |
 | Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-ui | 63d2f41 | test: cover the error titles by cause and the elapsed times | — | 12/11/2026 |
 | Io​Tech-2620-8741/​qualitrack-mobile-application | feature/​refactor-ui | d3a3765 | test: cover the translated backend codes and the amber low stock | — | 12/11/2026 |
+| IoTech-2620-8741/qualitrack-mobile-application | feature/home-priorities | da34487 | test(command-center): cover an admin who is also an operator | With several roles the highest one decides the Home: an admin who also works as an operator sees the whole panel, not the operator's. | 14/11/2026 |
+| IoTech-2620-8741/qualitrack-mobile-application | feature/home-priorities | 600d9c3 | test(i18n): keep the separators the Home wraps its texts at | The Home breaks the critical banner only after ': ' and a row detail only at ' · '. A translation without them would let those texts wrap anywhere, so a test now checks that every language keeps them. | 14/11/2026 |
 
 **qualitrack-edge-service**
 
@@ -4309,6 +4327,38 @@ Commits relacionados con las pruebas en este sprint (64):
 | Io​Tech-2620-8741/​qualitrack-edge-service | feature/​edge-integration | e30680e | test​(tracking): update telemetry tests for gateway routes | — | 10/11/2026 |
 | Io​Tech-2620-8741/​qualitrack-edge-service | feature/​edge-integration | f563f64 | test​(edge): update http integration tests for gateway authentication | — | 10/11/2026 |
 | Io​Tech-2620-8741/​qualitrack-edge-service | release/​v0.3.0 | 14002ee | test​(sync): check that tracking does not depend on sync | — | 11/11/2026 |
+| IoTech-2620-8741/qualitrack-edge-service | feature/health | 0917b0d | ci: check the health of the Edge in the image and in the compose test | — | 13/11/2026 |
+| IoTech-2620-8741/qualitrack-edge-service | feature/cloud-api-url-validation | 6891d4e | test(edge): cover cloud API URL validation | — | 14/11/2026 |
+| IoTech-2620-8741/qualitrack-edge-service | develop | d15ba0d | feat(test): enhance IamApiTestCase with detailed docstrings for authentication tests | — | 14/11/2026 |
+| IoTech-2620-8741/qualitrack-edge-service | develop | 277acfd | feat(test): add detailed docstrings to DevicesCliTestCase for clarity on authentication command tests | — | 14/11/2026 |
+| IoTech-2620-8741/qualitrack-edge-service | develop | fc17eb3 | feat(test): add detailed docstrings to CloudSessionTestCase for clarity on authentication tests | — | 14/11/2026 |
+| IoTech-2620-8741/qualitrack-edge-service | develop | 2709152 | feat(test): add detailed docstrings to LoadConfigTestCase for clarity on environment settings validation | — | 14/11/2026 |
+| IoTech-2620-8741/qualitrack-edge-service | develop | c5168d9 | feat(test): add detailed docstrings to EdgeHealthCheckTestCase, DatabaseAvailableTestCase, and HealthApiTestCase for clarity on health checks | — | 14/11/2026 |
+| IoTech-2620-8741/qualitrack-edge-service | develop | a0a2234 | feat(test): add detailed docstrings to AuthApplicationServiceTestCase for clarity on device identity management | — | 14/11/2026 |
+| IoTech-2620-8741/qualitrack-edge-service | develop | 872e387 | feat(test): add detailed docstrings to ApiCredentialTestCase and DeviceAggregateTestCase for clarity on credential management and device lifecycle | — | 14/11/2026 |
+| IoTech-2620-8741/qualitrack-edge-service | develop | 57e777c | feat(test): enhance docstring for DeviceRegistrationRaceTestCase to clarify race condition handling in device registration | — | 14/11/2026 |
+| IoTech-2620-8741/qualitrack-edge-service | develop | 4bdf84f | feat(test): enhance docstring for ContextDependencyTestCase to clarify dependency rules between bounded contexts | — | 14/11/2026 |
+| IoTech-2620-8741/qualitrack-edge-service | develop | 374127b | feat(test): add detailed docstrings to CloudProfileGatewayTestCase and ProfileSynchronizationApplicationServiceTestCase for clarity on profile translation and synchronization | — | 14/11/2026 |
+| IoTech-2620-8741/qualitrack-edge-service | develop | 350a913 | feat(test): add detailed docstrings to MonitoredDeviceTestCase, CloudDeviceRegistryGatewayTestCase, DeviceRegistryApplicationServiceTestCase, CloudSyncSchedulerTestCase, and CloudCliTestCase for clarity on device synchronization and registry management | — | 14/11/2026 |
+| IoTech-2620-8741/qualitrack-edge-service | develop | 2aeef8f | feat(test): add detailed docstrings to SynchronizedTestCase, CloudTelemetryGatewayTestCase, TelemetrySynchronizationApplicationServiceTestCase, and PurgeTestCase for clarity on synchronization and telemetry processes | — | 14/11/2026 |
+| IoTech-2620-8741/qualitrack-edge-service | develop | 9f6ba2b | feat(test): add detailed docstrings to ObservationTimeTestCase, TelemetryReadingTestCase, and ActuationEventTestCase for clarity on time normalization, telemetry reading rules, and actuation event handling | — | 14/11/2026 |
+| IoTech-2620-8741/qualitrack-edge-service | develop | 90097ae | feat(test): enhance docstring for PendingRecordsRepositoryTestCase to clarify pending record filtering and validation methods | — | 14/11/2026 |
+| IoTech-2620-8741/qualitrack-edge-service | develop | 1d95723 | feat(test): add detailed docstrings to ProfileDomainTestCase, EnvironmentalProfileApplicationServiceTestCase, and ConfigurationApiTestCase for clarity on profile validation and configuration handling | — | 14/11/2026 |
+| IoTech-2620-8741/qualitrack-edge-service | develop | 7bd499b | feat(test): add detailed docstrings to IamAntiCorruptionLayerTestCase, TelemetryApplicationServiceTestCase, and TelemetryRepositoryTestCase for clarity on authentication, reading recording, and persistence rules | — | 14/11/2026 |
+| IoTech-2620-8741/qualitrack-edge-service | develop | 4666d17 | feat(test): add detailed docstrings to StartCloudSyncTestCase and WsgiModuleTestCase for clarity on synchronization behavior and WSGI module exposure | — | 14/11/2026 |
+| IoTech-2620-8741/qualitrack-edge-service | feature/cloud-api-url-validation | 96f8965 | test(edge): reject out-of-range cloud API ports | — | 14/11/2026 |
+| IoTech-2620-8741/qualitrack-edge-service | fix/cloud-api-url-validation-review | a5d73e3 | style(config): write the URL check comment in English and space its test like the others | Review of #34: the comment of the CLOUD_API_URL port check is in English like the rest of the code, and the test of the invalid cloud URLs gets its docstring and the blank lines of PEP 8. No behavior… | 15/11/2026 |
+
+**qualitrack-embedded-environment-monitor**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|------------|--------|-----------|----------------|---------------------|---------------------|
+| IoTech-2620-8741/qualitrack-embedded-environment-monitor | feature/tests | 2839bc5 | test: add the host test harness of the Environment Monitor | — | 15/11/2026 |
+| IoTech-2620-8741/qualitrack-embedded-environment-monitor | feature/tests | 2354f36 | test: cover the air quality states, the LED and the buzzer | — | 15/11/2026 |
+| IoTech-2620-8741/qualitrack-embedded-environment-monitor | feature/tests | 648877b | test: cover the readings sent to the Edge | — | 15/11/2026 |
+| IoTech-2620-8741/qualitrack-embedded-environment-monitor | feature/tests | fa470fd | test: cover the sign-in and the profile read from the Edge | — | 15/11/2026 |
+| IoTech-2620-8741/qualitrack-embedded-environment-monitor | feature/tests | f841682 | ci: run the host tests and compile the sketch | — | 15/11/2026 |
+| IoTech-2620-8741/qualitrack-embedded-environment-monitor | feature/tests | a7b23ee | test: check that the air quality is sent every minute and not sooner | — | 15/11/2026 |
 
 #### 6.2.2.6. Execution Evidence for Sprint Review
 
