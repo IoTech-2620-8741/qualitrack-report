@@ -17,8 +17,8 @@ Authors:
 - U202214864 - Quiroz Caceres, Adrian Alonso
 
 
-Date: November 15th, 2026
-Version: 2.1.0
+Date: November 16th, 2026
+Version: 3.0.0
 
 ## QualiTrack
 
