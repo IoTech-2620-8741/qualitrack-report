@@ -146,10 +146,6 @@ A continuación, se presenta el registro correspondiente a las entrevistas reali
             <td>Ubicacion</td>
             <td>Chilca - Cañete</td>
         </tr>
-         <tr>
-            <td>Fecha de entrevista</td>
-            <td>14 de noviembre de 2026</td>
-        </tr>
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
