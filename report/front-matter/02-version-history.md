@@ -54,3 +54,4 @@
 | 2.1.13 | 15/11/2026 | Ruiz Madrid, Billy Jake | Se actualizó la sección ABET - EAC - Student Outcome 5 con las acciones realizadas por cada integrante y las conclusiones del equipo durante el AV2. |
 | 2.1.14 | 15/11/2026 | Huapaya Galindo, Dyron | Se reemplazaron por capturas en tema claro las evidencias de Firebase y Google Cloud del despliegue de la Mobile Application en el Software Deployment Evidence del Sprint 2. |
 | 2.1.15 | 15/11/2026 | Ruiz Madrid, Billy Jake | Se agregaron las conclusiones y recomendaciones del AV2, con los resultados del Sprint 2, la validación con usuarios y los pasos pendientes para el Sprint 3. |
+| 2.1.16 | 15/11/2026 | Huapaya Galindo, Dyron | Se agregaron al Registro de Entrevista de la sección Validation Interviews las tablas de los entrevistados del Capítulo II que faltaban, con sus datos personales y los campos de la entrevista de validación por completar. |
