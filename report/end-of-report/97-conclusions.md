@@ -32,13 +32,58 @@ En el **Sprint 1** el equipo completó 101 User Stories (190 Story Points) y 182
 
 ## Video About-the-Team
 
-El video About-the-Team presenta al equipo **IoTech**, responsable del desarrollo de **QualiTrack**. A continuación
-se muestra su portada y el enlace para verlo en YouTube.
-
-<p align="center">
+<div align="center">
   <a href="https://www.youtube.com/watch?v=cLEM02VVPHw">
     <img src="../assets/img/end-of-report/video-about-the-team.jpg" alt="Video About-the-Team de IoTech" width="100%">
   </a>
-</p>
+</div>
 
-**Enlace del video:** [https://www.youtube.com/watch?v=cLEM02VVPHw](https://www.youtube.com/watch?v=cLEM02VVPHw)
+<br>
+
+El video About the Team presenta al equipo **IoTech** y el aporte de cada integrante al desarrollo de **QualiTrack**
+durante el Sprint 2. Tiene una duración de 10 minutos y 11 segundos, está en formato Full HD (1920 × 1080) y su
+narración está en español.
+
+Cada integrante aparece identificado con su nombre y explica, en primera persona, en qué productos trabajó y qué
+construyó:
+
+1. **Ruiz Madrid, Billy Jake.** Unificó el encabezado y el pie de página de la Landing Page y dejó el inglés como idioma
+   por defecto. Organizó cada Bounded Context de la aplicación web según Domain-Driven Design, corrigió los módulos de
+   alertas y reportes y completó la misma estructura en el backend, conectando los contextos mediante fachadas y capas
+   ACL. Publicó las correcciones de usabilidad de la aplicación móvil y programó el firmware del Monitor de Ambiente
+   (calidad de aire y movimiento, LED RGB y buzzer), probado en Wokwi. Destaca que en IoT el acuerdo entre capas debe
+   ser exacto, porque un solo dato mal enviado hace que se rechace una lectura.
+2. **Baca Camargo, Vitaly Arturo.** Participó como desarrollador frontend y UX: investigó a los usuarios mediante
+   entrevistas y el análisis de competidores, diseñó las interfaces en Figma y organizó los diseños web y móvil por
+   flujos de usuario, con sus escenarios exitosos y alternativos. También compartió prototipos para validar la
+   navegación antes de implementarla.
+3. **Cutiri Agüero, Fabrizio Alexander.** Se encargó del Bounded Context Inventory Management en la aplicación móvil, la
+   aplicación web y el backend (registro de lotes de materia prima y su consumo en la producción de lotes). Configuró la
+   autenticación del Edge Service y creó los endpoints del backend para que el Edge genere su API key, obtenga sus
+   dispositivos IoT y registre sus mediciones. Además, actualizó el frontend de Angular 21 a Angular 22 y refactorizó los
+   estilos de la Landing Page.
+4. **Lopez Roman, Franco Mauricio.** Trabajó el Bounded Context Product Batch Management en la aplicación web, la
+   aplicación móvil y el Edge Service: vistas de lotes, filtros por rango de fechas y componentes compartidos. Diseñó
+   flujos de tareas en Figma y guió las entrevistas de validación con operadores de laboratorio.
+5. **Torres Apolinario, Giovany Smith.** Desarrolló junto con Dyron Huapaya el Bounded Context Compliance: en el backend,
+   las alertas de cumplimiento y su historial. Mejoró la presentación de los datos en la aplicación web y los títulos de
+   las pantallas de la aplicación móvil, desarrolló la parte inicial del Edge Service y su conexión con la nube, y apoyó
+   el diseño de la aplicación embebida en Wokwi.
+6. **Montes Ramos, Henry Jaredt.** En el Edge Service mejoró la validación de la URL de conexión con la API en la nube
+   (protocolo, host y puerto) y añadió pruebas para rechazar direcciones mal formadas. En la aplicación web agregó pruebas
+   del manejo centralizado de errores del API. Actualizó las imágenes del equipo en la Landing Page y en el reporte, y
+   revisó las correcciones pendientes de la aplicación móvil.
+7. **Huapaya Galindo, Dyron.** Contribuyó con mejoras en los repositorios del reporte, el sitio web, la aplicación web, el
+   backend y la aplicación móvil, organizadas por objetivos del Sprint 2, y lideró el despliegue de la aplicación web, el
+   backend y la aplicación móvil.
+8. **Guzmán Cabrejos, Yaku Mateo.** Trabajó el Bounded Context Equipment Management (equipos de laboratorio y
+   dispositivos IoT de cada ambiente) en el backend, el Edge Service, la aplicación web y la aplicación móvil. También se
+   encargó de IAM y Profiles en la aplicación web y de la arquitectura de la solución en el modelo C4.
+9. **Quiroz Caceres, Adrian Alonso.** Cierra el video con su presentación.
+
+En su intervención, Yaku Guzmán resume además la forma de trabajo del equipo: coordinar antes de modificar el trabajo
+de un compañero y revisar los cambios entre todos antes de integrarlos, lo que permitió avanzar en paralelo y cumplir
+los objetivos de cada sprint. Como aprendizaje del curso, destaca haber construido una solución IoT completa, desde el
+sensor hasta la nube, en un equipo de nueve personas.
+
+[Ver el video About-the-Team](https://www.youtube.com/watch?v=cLEM02VVPHw)
