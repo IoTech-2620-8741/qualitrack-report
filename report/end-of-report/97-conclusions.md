@@ -93,8 +93,9 @@ construyó:
 8. **Guzmán Cabrejos, Yaku Mateo.** Trabajó el Bounded Context Equipment Management (equipos de laboratorio y
    dispositivos IoT de cada ambiente) en el backend, el Edge Service, la aplicación web y la aplicación móvil. También se
    encargó de IAM y Profiles en la aplicación web y de la arquitectura de la solución en el modelo C4.
-9. **Quiroz Caceres, Adrian Alonso.** Cierra el video con su presentación.
-
+9. **Quiroz Caceres, Adrian Alonso.** Rediseñó las interfaces de la aplicación web y de la aplicación móvil, y apoyó al
+   resto del equipo en el desarrollo de los demás Bounded Contexts.
+   
 En su intervención, Yaku Guzmán resume además la forma de trabajo del equipo: coordinar antes de modificar el trabajo
 de un compañero y revisar los cambios entre todos antes de integrarlos, lo que permitió avanzar en paralelo y cumplir
 los objetivos de cada sprint. Como aprendizaje del curso, destaca haber construido una solución IoT completa, desde el
