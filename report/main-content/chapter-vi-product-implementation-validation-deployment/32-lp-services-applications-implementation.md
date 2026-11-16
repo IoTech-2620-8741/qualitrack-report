@@ -4967,11 +4967,11 @@ En este sprint se publicó la primera versión estable de la Mobile Application,
 
 **Paso 1: Registro de la aplicación Android en Firebase:**
 
-1) En la [consola de Firebase](https://console.firebase.google.com/), entramos al proyecto `qualitrack-iotech`, vamos a Configuración del proyecto y le damos a **Agregar app** → **Android**. Ingresamos el nombre del paquete `com.iotech.qualitrack_mobile`, que es el `applicationId` de la aplicación Flutter, y el alias **QualiTrack**, y le damos a **Registrar app**:
+1) En la [consola de Firebase](https://console.firebase.google.com/), entramos al proyecto `qualitrack-iotech`, vamos a Configuración del proyecto, le damos a **Agregar app** y elegimos la plataforma **Android**:
 
-![Step 1-1 - Registro de la app Android en Firebase](../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-1-1.jpg)
+![Step 1-1 - Selección de la plataforma Android en Firebase](../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-1-1.jpg)
 
-2) La aplicación queda registrada en **Tus apps**. Copiamos su **ID de la app** (`1:107206539121:android:...`), que el workflow usa para indicar a qué aplicación se sube cada versión:
+2) Ingresamos el nombre del paquete `com.iotech.qualitrack_mobile`, que es el `applicationId` de la aplicación Flutter, y el alias **QualiTrack**, y le damos a **Registrar app**. La aplicación queda registrada en **Tus apps**. Copiamos su **ID de la app** (`1:107206539121:android:...`), que el workflow usa para indicar a qué aplicación se sube cada versión:
 
 ![Step 1-2 - App Android registrada y su ID](../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-1-2.jpg)
 
