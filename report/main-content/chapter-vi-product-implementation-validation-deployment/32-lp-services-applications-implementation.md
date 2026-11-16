@@ -4439,6 +4439,25 @@ La revisión del sprint verificó estos flujos con los datos del laboratorio de 
   <p><em>Figura: Generador de reportes y documentos. Esta vista evidencia los reportes de lote, ambiental e inventario, con sus parámetros, el periodo y el formato PDF o CSV para auditoría.</em></p>
 </div>
 
+**Cloud REST API**
+
+El Cloud REST API se ejecuta en Azure Container Apps con la versión 1.2.0, y su documentación interactiva en Swagger UI se sirve desde el mismo despliegue. Sus 133 operaciones se agrupan por el recurso raíz de la ruta; la mayoría exige el token JWT de la sesión, que se ingresa con el botón Authorize, y los endpoints del Edge Gateway usan su API key.
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/backend-swagger-overview.jpg" alt="Cloud REST API - Swagger UI" width="90%">
+  <p><em>Figura: Swagger UI del Cloud REST API desplegado en Azure. Esta vista evidencia la versión 1.0.0 de la especificación OpenAPI 3.1 de Qualitrack Platform, el servidor de Azure Container Apps donde se ejecutan las llamadas, el botón Authorize para el token de la sesión y los grupos de operaciones por recurso raíz.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/backend-swagger-laboratories.jpg" alt="Cloud REST API - Laboratories operations" width="90%">
+  <p><em>Figura: Operaciones del grupo Laboratories en Swagger UI. Esta vista evidencia las rutas anidadas bajo el laboratorio (equipos, rangos BPM, ambientes, materias primas, lotes y su asignación a contenedores), que reúnen 91 de las 133 operaciones y mantienen cada recurso dentro del laboratorio de la sesión.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/backend-swagger-deviation-alerts.jpg" alt="Cloud REST API - Deviation Alerts operations" width="90%">
+  <p><em>Figura: Operaciones del grupo Deviation Alerts en Swagger UI. Esta vista evidencia la consulta de una alerta y sus acciones como sub-recursos: la atención (acknowledgements), la resolución (resolutions) y el envío por correo de una alerta crítica al laboratorio (email-notifications).</em></p>
+</div>
+
 **Mobile Application**
 
 La primera versión de la Mobile Application se ejecutó en Android conectada al Cloud REST API desplegado, con la cuenta del responsable de calidad de SENKA LAB.
