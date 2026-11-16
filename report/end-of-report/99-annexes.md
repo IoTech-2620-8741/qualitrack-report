@@ -145,8 +145,8 @@
       <td><strong>Video About-the-Team</strong></td>
       <td>YouTube</td>
       <td>
-        <a href="https://youtu.be/cLEM02VVPHw">
-          https://youtu.be/cLEM02VVPHw
+        <a href="https://shorturl.at/vze0n">
+          https://shorturl.at/vze0n
         </a>
       </td>
     </tr>
@@ -154,8 +154,8 @@
       <td><strong>Video About-the-Product</strong></td>
       <td>YouTube</td>
       <td>
-        <a href="https://youtu.be/pD8I8iiFkXQ">
-          https://youtu.be/pD8I8iiFkXQ
+        <a href="https://shorturl.at/FzLPB">
+          https://shorturl.at/FzLPB
         </a>
       </td>
     </tr>

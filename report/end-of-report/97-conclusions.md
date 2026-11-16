@@ -47,7 +47,7 @@ La solución también se contrastó con usuarios. La entrevista de validación c
 ## Video About-the-Team
 
 <div align="center">
-  <a href="https://youtu.be/cLEM02VVPHw">
+  <a href="https://shorturl.at/vze0n">
     <img src="../assets/img/end-of-report/video-about-the-team.jpg" alt="Video About-the-Team de IoTech" width="100%">
   </a>
 </div>
@@ -100,4 +100,4 @@ de un compañero y revisar los cambios entre todos antes de integrarlos, lo que 
 los objetivos de cada sprint. Como aprendizaje del curso, destaca haber construido una solución IoT completa, desde el
 sensor hasta la nube, en un equipo de nueve personas.
 
-**Enlace del video About-the-Team:** [https://youtu.be/cLEM02VVPHw](https://youtu.be/cLEM02VVPHw)
+**Enlace del video About-the-Team:** [https://shorturl.at/vze0n](https://shorturl.at/vze0n)
