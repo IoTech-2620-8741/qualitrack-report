@@ -11,6 +11,12 @@ En esta etapa el diseño de QualiTrack se trasladó a productos desplegados. El 
 
 En el **Sprint 1** el equipo completó 101 User Stories (190 Story Points) y 182 tareas. Se publicó la **Landing Page** en GitHub Pages y la **Web Application** en Firebase Hosting, integrada con el **RESTful API** desplegado en Azure Container Apps con su base de datos en Azure Database for MySQL, documentado con Swagger y desplegado de forma continua con GitHub Actions. Con ello, los responsables de calidad, operarios y auditores ya pueden registrar su laboratorio, supervisar las condiciones ambientales, controlar materiales y lotes y atender alertas desde una aplicación desplegada, lo que confirma la viabilidad de la arquitectura definida en el Capítulo IV.
 
+**AV2:**
+
+En esta etapa QualiTrack incorporó la capa IoT y conectó sus aplicaciones a servicios reales. En el **Sprint 2** el equipo completó 115 User Stories (219 Story Points) y 521 tareas, organizando el trabajo por Bounded Context. Se desarrollaron las **Embedded Applications** del **Monitor de Ambiente** y del **Monitor de Contenedor** sobre el ModestIoT Nano Framework, simuladas en Wokwi, que reaccionan localmente ante una desviación y envían sus lecturas al **Edge Service**, preparado para la estación local con Docker Compose. El Edge autentica a cada dispositivo con su propia API key, le entrega su perfil y sincroniza las lecturas con el **Cloud REST API**, desplegado en Azure con todos los Bounded Contexts del negocio. Sobre esos servicios se publicaron la **Web Application** 2.5.0 en Firebase Hosting y la primera versión estable de la **Mobile Application**, distribuida con Firebase App Distribution, y cinco de los productos cuentan con suites de pruebas automatizadas que se ejecutan en GitHub Actions, con más de 1 400 pruebas.
+
+La solución también se contrastó con usuarios. La entrevista de validación con un analista de control de calidad confirmó que el mayor valor percibido es tener la información a la mano para decidir con rapidez, y señaló como oportunidades la capacidad del contenedor, las alertas por color y el gráfico de picos en los reportes. Las evaluaciones heurísticas identificaron 14 problemas en la aplicación web y 11 en la aplicación móvil, y el **Capítulo V** se actualizó con el diseño de los dispositivos tal como se construyeron. Con ello se obtuvo la primera versión integrada de QualiTrack; queda pendiente comprobarla con los dispositivos físicos, ya que en este sprint los nodos se validaron en simulación.
+
  ## Recomendaciones
 
 **AV1:**
@@ -29,6 +35,14 @@ En el **Sprint 1** el equipo completó 101 User Stories (190 Story Points) y 182
 - Incorporar **pruebas automatizadas** de la Web Application, que en el Sprint 1 se verificó de forma manual, para complementar la suite del RESTful API.
 - Realizar las **entrevistas de validación** y las evaluaciones heurísticas con usuarios de ambos segmentos, y ajustar el Product Backlog según sus resultados.
 - Mantener alineados el diseño (Capítulos IV y V) y la implementación a medida que se agreguen el Edge, los dispositivos y la aplicación móvil.
+
+**AV2:**
+
+- Construir el **prototipo físico** de los dos dispositivos e instalar el Edge Service en la Raspberry Pi 4 para comprobar el flujo completo con dispositivos reales, desde la lectura del sensor hasta la Web Application y la Mobile Application.
+- Corregir los problemas de severidad 3 de las **evaluaciones heurísticas** (cuatro en la aplicación web y uno en la móvil) y unificar los nombres de los estados y acciones entre ambas aplicaciones.
+- Completar las **entrevistas de validación** con el personal operativo de laboratorios y almacenes, y validar con usuarios la capacidad del contenedor, las alertas por color y el gráfico de picos en los reportes.
+- Agregar pruebas automatizadas a la Embedded Application del **Monitor de Contenedor**, como las del Monitor de Ambiente, y pruebas de aceptación de las User Stories.
+- Mantener alineados el diseño de los Capítulos IV y V, la implementación y los contratos entre los dispositivos, el Edge y la nube durante el Sprint 3.
 
 ## Video About-the-Team
 
