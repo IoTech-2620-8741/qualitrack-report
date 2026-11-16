@@ -4477,6 +4477,7 @@ El Edge API, que reciben los nodos ESP32 en la red local de cada instalación, d
 - **Especificación OpenAPI:** `/v3/api-docs` del mismo servidor; en local `http://localhost:8080/swagger-ui/index.html`
 - **Repositorio del Cloud REST API:** [IoTech-2620-8741/qualitrack-platform](https://github.com/IoTech-2620-8741/qualitrack-platform)
 - **Documentación del Edge API:** [README](https://github.com/IoTech-2620-8741/qualitrack-edge-service#readme) y [Architecture Decision Records](https://github.com/IoTech-2620-8741/qualitrack-edge-service/blob/develop/docs/adrs.md) de [IoTech-2620-8741/qualitrack-edge-service](https://github.com/IoTech-2620-8741/qualitrack-edge-service)
+- **Contrato de los nodos con el Edge API:** README de [qualitrack-embedded-environment-monitor](https://github.com/IoTech-2620-8741/qualitrack-embedded-environment-monitor#readme) y de [qualitrack-embedded-container-monitor](https://github.com/IoTech-2620-8741/qualitrack-embedded-container-monitor#readme)
 
 Las siguientes tablas presentan las operaciones del Cloud REST API por Bounded Context, con su verbo HTTP, la sintaxis de llamada, sus parámetros y los códigos de respuesta (con el recurso devuelto en las respuestas exitosas). Las operaciones agregadas en este sprint se marcan como *(nuevo)*.
 
@@ -4670,6 +4671,8 @@ Las siguientes tablas presentan las operaciones del Cloud REST API por Bounded C
 
 **Edge API** (`http://<estación local>:5000`)
 
+Desde la versión 0.4.0 cada nodo puede enviar su API key en el encabezado `X-API-Key` o como `Authorization: Bearer <API key>` (ADR-0018). Las Embedded Applications usan esta segunda forma, porque el `HttpGatewayClient` del Modest IoT Nano Framework solo envía el encabezado Authorization.
+
 | Endpoint | Acción | Parámetros | Respuestas |
 |----------|--------|------------|------------|
 | **POST** /​api/​v1/​auth/​sign-in | Autenticar un nodo ESP32 | X-API-Key (header), body: device_​id | 200 (identidad y tipo del nodo), 400, 401, 415 |
@@ -4678,6 +4681,7 @@ Las siguientes tablas presentan las operaciones del Cloud REST API por Bounded C
 | **POST** /​api/​v1/​control/​actuation-events | Recibir una acción ejecutada por un Monitor de Contenedor | X-API-Key (header), body: device_​id, action, trigger_​metric, trigger_​state, result, occurred_​at, profile_​version | 201 (evento guardado), 200, 400, 401, 403, 409, 415 |
 | **GET** /​api/​v1/​configurations/​{device​Id} | Entregar al nodo el perfil ambiental que aplica | device_​id (path), X-API-Key (header) | 200 (umbrales, reglas de actuación y versión del perfil), 401, 404 |
 | **POST** /​api/​v1/​devices/​enroll | Enrolar un nodo autorizado por el Cloud (solo en desarrollo) | body: device_​id, device_​type | 201 (API key del nodo, una sola vez), 400, 403, 409, 415 |
+| **GET** /api/v1/health | Informar si el Edge puede atender a los nodos *(nuevo)* | — | 200 (`ok`, o `degraded` mientras falla la sincronización con el Cloud), 503 (`unavailable` si no puede leer su base de datos) |
 
 **Ejemplos de llamadas y respuestas**
 
