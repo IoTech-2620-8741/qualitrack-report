@@ -152,7 +152,7 @@ Henry actualizó los mock-ups de la Landing Page en la sección Landing Page UI 
 
 **Yaku Mateo Guzmán Cabrejos**
 
-Yaku no registró commits en el repositorio del informe durante el AV2. Su aporte del periodo se concentró en el Bounded Context Equipment Management de la Web Application, el Cloud REST API y la Mobile Application, y en la configuración del Edge Service, trabajo que el informe documenta en las evidencias del Sprint 2.
+Yaku desarrolló el Bounded Context Equipment Management en la Web Application, el Cloud REST API y la Mobile Application, y trabajó en la configuración del Edge Service; este trabajo se documenta en las evidencias del Sprint 2 del Capítulo VI.
 
 **Giovany Smith Torres Apolinario**
 
@@ -164,11 +164,11 @@ Franco agregó las preguntas de las entrevistas de validación dirigidas al pers
 
 **Adrian Alonso Quiroz Caceres**
 
-Adrian no registró commits en el repositorio del informe durante el AV2. Su aporte se concentró en los productos: la reorganización por Bounded Context de la Web Application y de la Mobile Application, el contexto Tracking & Telemetry del Cloud REST API, la sincronización del Edge Service y la primera versión del firmware del Monitor de Contenedor, que el informe documenta en el Sprint 2.
+Adrian reorganizó por Bounded Context la Web Application y la Mobile Application, desarrolló el contexto Tracking & Telemetry del Cloud REST API, mejoró la sincronización del Edge Service y construyó la primera versión del firmware del Monitor de Contenedor; este trabajo se documenta en las evidencias del Sprint 2 del Capítulo VI.
 
-A continuación se presenta el resumen de actividad del repositorio del informe correspondiente al periodo del 15 de octubre al 15 de noviembre de 2026, el cual abarca el desarrollo de la entrega AV2.
+A continuación se presenta el gráfico de colaboración que representa la cantidad de commits realizados por cada miembro del equipo en el repositorio del informe durante el periodo del 15 de octubre al 15 de noviembre de 2026, el cual abarca el desarrollo de la entrega AV2.
 
-![Commits AV2 - Pulse del repositorio](../assets/img/front-matter/commits-insights-av2.png)
+![Commits AV2 - Contributors del repositorio](../assets/img/front-matter/commits-insights-av2.png)
 
 *Figura: Contribuciones por miembro del equipo IoTech durante el AV2.*
 
