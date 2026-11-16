@@ -1110,4 +1110,4 @@ El video comienza planteando el problema: en un laboratorio farmacéutico, la ca
 
 El video cierra con los tres beneficios principales del producto: cumplimiento de BPM, reducción de errores humanos y trazabilidad total. Su objetivo es comunicar, en menos de un minuto, qué problema resuelve QualiTrack, cómo funcionan sus dispositivos y su plataforma, y qué valor aporta a un laboratorio.
 
-[Ver el video About-The-Product](https://youtu.be/pD8I8iiFkXQ?si=FyAmgIjk9ySbif4L)
+**Enlace del video About-the-Product:** [https://shorturl.at/FzLPB](https://shorturl.at/FzLPB)
