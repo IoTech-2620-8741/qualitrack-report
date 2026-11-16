@@ -51,6 +51,25 @@
       </td>
     </tr>
   </tbody>
+<tbody>
+    <tr>
+      <td rowspan="2"><strong>Video de Exposición AV2</strong></td>
+      <td>YouTube</td>
+      <td>
+        <a href="https://shorturl.at/1vcJK">
+          [https://shorturl.at/1vcJK]
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>Microsoft Stream</td>
+      <td>
+        <a href="https://shorturl.at/fCfe6">
+          [https://shorturl.at/fCfe6]
+        </a>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 <h4>Anexo B: Enlaces de Despliegue y Repositorios</h4>
@@ -120,6 +139,74 @@
       <td>
         <a href="https://github.com/IoTech-2620-8741/qualitrack-platform">
           https://github.com/IoTech-2620-8741/qualitrack-platform
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Repositorio Mobile Application</strong></td>
+      <td>
+        <a href="https://github.com/IoTech-2620-8741/qualitrack-mobile-application">
+          https://github.com/IoTech-2620-8741/qualitrack-mobile-application
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Repositorio Edge Service</strong></td>
+      <td>
+        <a href="https://github.com/IoTech-2620-8741/qualitrack-edge-service">
+          https://github.com/IoTech-2620-8741/qualitrack-edge-service
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Repositorio Embedded Environment Monitor</strong></td>
+      <td>
+        <a href="https://github.com/IoTech-2620-8741/qualitrack-embedded-environment-monitor">
+          https://github.com/IoTech-2620-8741/qualitrack-embedded-environment-monitor
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Repositorio Embedded Container Monitor</strong></td>
+      <td>
+        <a href="https://github.com/IoTech-2620-8741/qualitrack-embedded-container-monitor">
+          https://github.com/IoTech-2620-8741/qualitrack-embedded-container-monitor
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Anexo C: Videos About-the-Team y About-the-Product</h4>
+
+<p>
+  Videos de presentación del equipo IoTech y del producto QualiTrack.
+</p>
+
+<table border="1" cellpadding="4" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Video</th>
+      <th>Plataforma</th>
+      <th>URL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Video About-the-Team</strong></td>
+      <td>YouTube</td>
+      <td>
+        <a href="https://shorturl.at/vze0n">
+          https://shorturl.at/vze0n
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Video About-the-Product</strong></td>
+      <td>YouTube</td>
+      <td>
+        <a href="https://shorturl.at/FzLPB">
+          https://shorturl.at/FzLPB
         </a>
       </td>
     </tr>

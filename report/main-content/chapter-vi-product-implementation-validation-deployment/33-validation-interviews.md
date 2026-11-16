@@ -146,14 +146,10 @@ A continuación, se presenta el registro correspondiente a las entrevistas reali
             <td>Ubicacion</td>
             <td>Chilca - Cañete</td>
         </tr>
-         <tr>
-            <td>Fecha de entrevista</td>
-            <td>14 de noviembre de 2026</td>
-        </tr>
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../../assets/img/main-content/chapter-vi/interviews-validation/Ricardo Melendrez.png" width="700"></div>
+                <div align="center"><img src="../../assets/img/main-content/chapter-vi/interviews-validation/ricardo-melendrez.png" width="100%"></div>
             </td>
         </tr>
         <tr>
@@ -191,8 +187,312 @@ Finalmente, el entrevistado destacó como lo más gustado el carácter visual, g
     </tbody>
 </table>
 
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #2<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Melsy</td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>Medina Saravia</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>25 años</td>
+        </tr>
+        <tr>
+            <td>Distrito</td>
+            <td>Ate</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td style="text-align: left;">
+                <div ><img src="../../assets/img/main-content/chapter-ii/interviews/mesly-medina-saravia.png" width="100%"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>
+            <a href="https://shorturl.at/9TYgY" target="_blank">
+                https://shorturl.at/9TYgY
+            </a>
+        </td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td>00:00 min</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td>5:00 min</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>
+          Missli Medina Sarabia es supervisora de calidad de productos farmacéuticos en Hyc Pharma. Su principal responsabilidad es asegurar que los procesos de manufactura cumplan con los estándares de calidad, especialmente respecto a las condiciones ambientales de las diferentes áreas y salas. La empresa controla principalmente temperatura, humedad y presión diferencial, cuyos rangos dependen del medicamento y de los procedimientos establecidos. Actualmente, el monitoreo se realiza mediante registros manuales y formatos específicos para cada área. Durante la manufactura, las mediciones se realizan aproximadamente cada tres horas, mientras que las áreas que no están en uso cuentan con horarios específicos. También utilizan una guía de producción física y una guía virtual para gestionar la información. Uno de los principales problemas identificados es el registro manual, ya que los operarios pueden completar las mediciones posteriormente, generando dudas sobre la exactitud de los datos. Cuando se presenta una condición fuera de rango, se considera una desviación ambiental y se comunica a la supervisora de calidad, quien puede detener el proceso mientras se verifica la causa y, si es necesario, interviene mantenimiento. Una vez corregida la situación, la supervisora determina si el proceso puede continuar. Finalmente, destaca la importancia de conservar registros históricos para auditorías y de que el personal conozca los horarios de registro, los parámetros establecidos y el factor de corrección de los termohigrómetros.
+                Características adicionales:
+                - Utiliza PDAs (tablet de trabajo) y celulares de trabajo
+                - Navegador preferido: Google Chrome
+                - Canales de comunicación: Whatsapp, sms y email 
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #3<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Mario</td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>Baca</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>40 años</td>
+        </tr>
+   <tr>
+    <td>Ubicación</td>
+    <td>São Paulo, Brasil</td>
+</tr>
+        <tr>
+            <td>Evidencia</td>
+            <td style="text-align: left;">
+                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/mario-baca.png" width="100%"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td><a href="https://shorturl.at/9TYgY" target="_blank">
+                https://shorturl.at/9TYgY
+            </a>
+            </td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td>5:02 min</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td>9:48 min</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>
+Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagnostics Center Brazil, São Paulo, Brasil. Sus principales responsabilidades están relacionadas con la supervisión de las condiciones ambientales y el cumplimiento de los parámetros establecidos en las diferentes áreas del laboratorio. Las áreas que requieren mayor control son almacenamiento, producción, acondicionamiento y espacios donde se mantienen productos pendientes de evaluación. Se monitorean principalmente temperatura y humedad, y en determinadas áreas también presión diferencial, utilizando termohigrómetros y equipos de medición. Los valores aceptables dependen de las características del producto y de los procedimientos definidos para cada área. Actualmente, las mediciones se registran mediante formatos de control y archivos Excel, lo que genera una importante carga de trabajo manual y dificulta consultar la información al encontrarse distribuida en diferentes registros. Cuando se detecta una condición fuera de rango, primero se confirma la medición y luego se evalúa su impacto; dependiendo de la situación, se puede detener temporalmente la actividad, investigar la causa y aplicar las medidas correspondientes antes de continuar. Estas situaciones se consideran desviaciones y su prioridad depende del impacto y duración. El responsable de calidad verifica que la condición haya sido corregida y que se conserve información sobre el valor encontrado, rango permitido, fecha, hora, área afectada y acciones realizadas. Para auditorías se consultan principalmente los registros históricos de las áreas y las desviaciones ocurridas. El principal problema identificado es la revisión manual de registros y archivos Excel, además del riesgo de que algunas mediciones sean registradas posteriormente, generando dudas sobre la exactitud de los datos.
+                Características adicionales:
+                - Utiliza CPU con windows 10, celular android
+                - Navegador preferido: Google Chrome
+                - Canales de comunicación: Whatsapp, llamadas telefónicas y email  
+            </td>
+        </tr>
+    </tbody>
+</table>
+
 #### Segmento 2: Personal operativo de laboratorios y almacenes
 
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #1<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td> César  </td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>Agüero</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>38 años</td>
+        </tr>
+        <tr>
+            <td>Distrito</td>
+            <td>Cercado de Lima</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td style="text-align: left;">
+                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/cesar-aguero.png" width="100%"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>
+                <a href="https://shorturl.at/9TYgY" target="_blank">
+                    https://shorturl.at/9TYgY
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td>14:52 min</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td>19:58 min</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>
+                César Agüero, de 38 años con 14 años de experiencia en farmacéutica, es Country Manager de Barat Ceronat Vaccines (transnacional de origen indio) con responsabilidad sobre 4 países: Perú, Bolivia, Chile y Honduras. Gestiona aspectos comerciales, operativos, regulatorios, financieros, de marketing, ventas y legales.
+                Utiliza múltiples dispositivos en Microsoft Teams como canal oficial, aunque identifica un problema crítico: falta de seguimiento efectivo de acuerdos de reuniones y pérdida de trazabilidad en responsabilidades.
+                El flujo productivo comienza con recepción de materias primas en almacén especializado bajo condiciones específicas con monitoreo continuo. Opera líneas de sólidos y líquidos estériles, algunas automatizadas y otras semi-automatizadas. Incluye controles de calidad en cada etapa: liberación de tanda, envasado, rotulado y control final. Los sistemas utilizados son: Data Master File que centraliza información de materias primas con certificados y especificaciones en repositorio digital, y Sistema virtual de gestión de producción basado en Buenas Prácticas de Manufactura con integrity, visibilidad 360, trazabilidad total. Completamente digitalizado desde el año anterior, eliminando progresivamente el papel.
+                La compañía no puede cambiar de materia prima ni proveedor: existe un proceso obligatorio previo de selección y calificación que incluye inspección, auditoría y verificación de licencias. Solo trabaja con fabricantes licenciados. Cada materia prima se identifica por lote y código de recepción con unidades de medida estandarizadas. Si hay problema en recepción, se rechaza completamente sin registrar. El sistema rastrea exactamente qué materias primas específicas fueron utilizadas en cada fabricación. Si posteriormente se detecta un problema, es posible identificar todos los productos y fabricaciones afectadas para acciones correctivas precisas.
+                Cada producto se verifica contra especificaciones aprobadas con tests obligatorios según farmacopea o parámetros críticos internos. Se fabrica solo cuando hay pedido y se libera inmediatamente para despacho, sin inventario. La información consultada más frecuentemente es sobre disponibilidad de materias primas, especialmente aquellas de un único fabricante mundial. Para personal nuevo, es absolutamente obligatorio conocer GMP; sin esto, no se ubicará en el contexto. La compañía usa señalización visual explícita porque prefiere comunicación visual clara sobre avisos escritos.
+                Características adicionales:
+                - Utiliza una CPU, una laptop Dell, celular iphone y una iPad
+                - Navegador preferido: Microsoft Edge
+                - Canales de comunicación: microsoft teams, Outlook corporativo  
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #2<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Liz</td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>Aliaga</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>45 años</td>
+        </tr>
+        <tr>
+            <td>Distrito</td>
+            <td>Jesús Maria</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td style="text-align: left;">
+                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/liz-aliaga.png" width="100%"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>
+                <a href="https://shorturl.at/9TYgY" target="_blank">
+                    https://shorturl.at/9TYgY
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td>19:59 min</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td>24:40 min</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>
+                Liz Aliaga, de 45 años y 20 años de experiencia en sector farmacéutico, trabaja en un hospital público de Jesús María, Lima, a cargo de 1,900 medicamentos. Sus tres responsabilidades principales son: velar que el paciente reciba medicamentos efectivos y seguros, mantener medicamentos en condiciones adecuadas según normativa regulatoria, garantizar correcta administración como bienes del Estado. A diferencia de laboratorios de producción, no recibe materias primas sino medicamentos terminados con certificado. Los medicamentos llegan por licitación y compras institucionales a través de 26 farmacias del hospital. Utiliza computadoras, tablas de control, termómetros, hidroxicóticos y cadenas de frío. Comunica por correos electrónicos y teléfono (WhatsApp no oficial). Reporta no tener dificultades ni frustraciones.
+                Cada medicamento ingresa con documentación completa: ficha técnica, buenas prácticas de manufactura, certificados del país de origen, registro de Dijaní, y controles de la empresa productora. Liz verifica cumplimiento de todos requisitos según normativa. Para diferenciar recepciones del mismo medicamento, utiliza sistema "FIFO Peso": si recibe lote hoy, es el primero a distribuir; si llega otro mañana, entra en segundo lugar. Información de proveedor, fechas y estado viene determinada por procesos de compra y licitación donde se especifica cuándo ingresa, qué documentación trae y qué requisitos cumple. Todos los productos tienen mismos requisitos estandarizados.
+                Liz realiza checklist riguroso: si encuentra envase dañado, caja humedecida, blisters con comprimidos partidos o con cambio de color, devuelve todo el lote. Para cantidades grandes, utiliza sistemas de muestreo: toma una cajita de cada lado. Si identifica problema, devuelve toda remesa. Medicamentos rechazados se registran en libro con lote, fecha y código. Si proveedor reenvía, debe ser con otro lote diferente, también registrado. Garantiza trazabilidad completa: problema con lote específico nunca vuelve a ser aceptado.
+                Información de medicamentos consultada frecuentemente: estabilidad, protección de luz, cadena de frío. Valida detalles como "si producto es oxidado, solo reconstituyese en cloruro para mantener estabilidad". Como usuario del hospital, no necesita conocer toda cadena de personal de producción. Lo que valida es información en documentos y caja: farmacéutico que produjo y director técnico que aseguró calidad. En plantas de producción: químicos farmacéuticos certifican insumos, producción, control de calidad, más director técnico.
+                Características adicionales:
+                - Utiliza computadoras, laptops corporativas con windows 11, celular android y tablets
+                - Navegador preferido: Microsoft Edge
+                - Canales de comunicación: microsoft temas y outlook corporativo
+           </td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #3<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Ohmar</td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>Chavez</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>42 años</td>
+        </tr>
+        <tr>
+            <td>Distrito</td>
+            <td>San Isidro</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td style="text-align: left;">
+                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/ohmar-chavez.png" width="100%"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>
+                <a href="https://shorturl.at/9TYgY" target="_blank">
+                    https://shorturl.at/9TYgY
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td>24:43 min</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td>30:20 min s</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>
+                Omar Chávez, de 42 años y 15 años de experiencia, es formulador de Investigación y Desarrollo en un laboratorio. Su principal responsabilidad es desarrollo de productos nuevos, desde conceptualización hasta viabilidad comercial. Su mayor frustración es cuando un desarrollo no es transferible a lote comercial. Utiliza computadoras, celulares, tablets, radio y RPC para comunicaciones. Utiliza SAP como sistema de gestión. Su trabajo es fundamental en etapa inicial del ciclo de vida del medicamento, validando que productos puedan escalar a producción comercial.
+                El proceso sigue secuencia rigurosa: análisis de formulación estándar, ensayos para verificar estabilidad y características físico-químicas y farmacotécnicas, verificación analítica, estresamiento para garantizar estabilidad en forma y nivel físico-químico, generación de pilotos, estudios de estabilidad acelerada y largo plazo, tras validación, entrada a fabricación comercial. Diseñado para garantizar que solo productos con estabilidad y viabilidad demostradas lleguen a producción. Todo es respaldado en Buenas Prácticas de Manufactura.
+                Materias primas se identifican por codificación interna (know-how confidencial). Unidades de medida varían: kilogramos, gramos, litros, onzas, unidades, frascos según empresa y producto. Antes de usar materia prima: requisito mínimo es certificado de análisis. Dependiendo empresa/insumo, también solicitan: ficha técnica, ficha de seguridad, certificado de metales pesados, ruta de síntesis, MOA, ROT, ruta de análisis. Algunas empresas solo necesitan COA para iniciar desarrollo. Materias primas con problemas entran a "desmedro".
+                Todo equipo debe cumplir calificación: instalación, operación y desempeño. Nomenclatura de equipos es propia de cada empresa. Área de mantenimiento garantiza condiciones óptimas durante tiempo. Información de equipos permite trazabilidad: software logueado en tiempo real, voucher de registro temporal, huella digital. Si equipo falla durante fabricación, proceso se detiene por completo; no puede continuarse sin garantizar 100% óptimo. Falla detectada después de fabricación: no hay remedio posible.
+                Toda etapa de manufactura es documentada: desde dispensación hasta producto final. Se mantiene registro de todo personal participante, obligatorio GMP. Estados de productos varían según empresa. Flujo es secuencial pero simultáneo entre áreas: dispensación, fabricación, control de calidad interactúan en orden lógico sin predominio. Para personal nuevo: GMP es requisito fundamental. Industria es altamente especializada con múltiples subáreas. Químicos farmacéuticos requieren expertise específica en su subárea especializada.
+                Características adicionales:
+                - Utiliza computadora con windows 10, celular y tablet
+                - Navegador preferido: Google Chrome
+                - Canales de comunicación: microsoft teams, email, whatsapp y RPC
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 ### 6.3.3 Evaluaciones según Heuristica
 
@@ -281,7 +581,7 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 La vista *Production Batches* lista, filtra y pagina los lotes, pero no ofrece ningún botón para crear uno. El único botón principal lleva a *Pharmaceutical products*; para crear un lote el usuario debe ir al catálogo de productos, elegir el ambiente, abrir el producto y recién ahí pulsar *New Batch*. Quien entra a la vista de lotes con la intención de registrar un lote no encuentra la acción donde la espera.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/batches-list-without-create.jpg" alt="Vista de lotes de producción sin acción para crear un lote" width="90%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/batches-list-without-create.jpg" alt="Vista de lotes de producción sin acción para crear un lote" width="100%">
 </p>
 
 **Recomendación:**
@@ -299,7 +599,7 @@ Agregar un botón *New Batch* en la cabecera de *Production Batches* que permita
 Al pulsar *Release Batch* o *Reject Batch* se abre una pantalla aparte que solo contiene la fecha y un campo de notas. No se muestra el número de lote, el producto, la cantidad ni las especificaciones de calidad, y el enlace de retorno dice únicamente *Batch Detail*. La liberación es una decisión firmada e irreversible ("the batch can no longer be modified"), por lo que el responsable de calidad debe recordar de memoria qué lote estaba revisando. En el formulario de rechazo, además, no se advierte que la acción sea definitiva.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/release-batch-form.jpg" alt="Formulario de liberación sin datos del lote" width="90%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/release-batch-form.jpg" alt="Formulario de liberación sin datos del lote" width="100%">
 </p>
 
 **Recomendación:**
@@ -317,7 +617,7 @@ Mostrar en ambos formularios un resumen del lote (número, producto, cantidad, a
 En *BPM Parameter Config* los campos *Parameter Name* y *Unit* son cajas de texto sin lista de opciones, sugerencias ni ejemplos. El usuario puede escribir "Temperatura", "Temperature" o "Temp." y "°C" o "C" para la misma variable, lo que genera parámetros que no coinciden con las variables que reporta la telemetría. La pantalla tampoco indica a qué equipo pertenece el parámetro que se está creando.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/bpm-parameter-form.jpg" alt="Formulario de parámetro BPM con campos de texto libre" width="90%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/bpm-parameter-form.jpg" alt="Formulario de parámetro BPM con campos de texto libre" width="100%">
 </p>
 
 **Recomendación:**
@@ -335,7 +635,7 @@ Reemplazar el nombre por una lista de las variables que el sistema monitorea (te
 La pestaña *BPM Config* del equipo lista cada parámetro con su rango (por ejemplo "Temperatura 121 - 134 °C"), pero las filas no presentan ninguna acción visible para corregir un rango mal ingresado ni para retirar un parámetro. Si el usuario se equivoca al registrar un límite, no tiene una salida evidente para deshacer el error.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/bpm-config-tab.jpg" alt="Pestaña BPM Config sin acciones sobre los parámetros" width="90%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/bpm-config-tab.jpg" alt="Pestaña BPM Config sin acciones sobre los parámetros" width="100%">
 </p>
 
 **Recomendación:**
@@ -353,7 +653,7 @@ Agregar en cada fila las acciones *Editar* y *Eliminar* (esta última con confir
 En la pestaña *BPM Config* el botón principal muestra el texto "+ Parameter Name", que es la etiqueta de un campo y no una acción. El usuario debe deducir por el ícono "+" que ese botón sirve para agregar un parámetro.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/bpm-config-tab.jpg" alt="Botón rotulado como "Parameter Name"" width="90%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/bpm-config-tab.jpg" alt="Botón rotulado como " width="100%">
 </p>
 
 **Recomendación:**
@@ -371,7 +671,7 @@ Cambiar el rótulo a "Add parameter" / "Agregar parámetro", siguiendo el patró
 La misma acción de crear un registro recibe rótulos diferentes según la pantalla: *Save Changes* al crear un equipo o un parámetro BPM (aunque no se está modificando nada), *Save* en materia prima, *Register* en producto, lote y personal, y *Register device* en dispositivo IoT. Ocurre lo mismo entre el menú y las pantallas: el menú dice *Register Equipment* y la pantalla se titula *New Equipment*; el menú dice *Register Staff Member* y el botón de la lista dice *Add Staff*.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/equipment-form.jpg" alt="Formulario de nuevo equipo con el botón "Save Changes"" width="90%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/equipment-form.jpg" alt="Formulario de nuevo equipo con el botón " width="100%">
 </p>
 
 **Recomendación:**
@@ -389,7 +689,7 @@ Definir un único verbo para la creación (por ejemplo *Register*) y reservar *S
 En el generador de reportes los botones *Generate PDF* y de vista previa aparecen deshabilitados hasta que se elige un periodo, pero la pantalla no señala qué dato falta; el botón de vista previa es además un ícono sin texto. Lo mismo sucede con *Save Changes* en el registro de equipo, *Register device* en dispositivo IoT y *Move* / *Register change* en el detalle del equipo.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/report-generator-disabled.jpg" alt="Generador de reportes con los botones deshabilitados" width="90%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/report-generator-disabled.jpg" alt="Generador de reportes con los botones deshabilitados" width="100%">
 </p>
 
 **Recomendación:**
@@ -407,7 +707,7 @@ Mostrar junto al botón un mensaje breve con el requisito pendiente (por ejemplo
 El campo *MAC address or serial number* muestra un ejemplo ("24:6F:28:AA:10:01") pero acepta cualquier texto: en el catálogo existe un dispositivo registrado con "20.7B.30.33.Z5.99", valor que no corresponde a una dirección MAC. Además, los textos de ayuda mencionan "the identity Edge uses to recognise it", un término de la arquitectura interna que el responsable de calidad no tiene por qué conocer.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/iot-device-form.jpg" alt="Formulario de registro de dispositivo IoT" width="90%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/iot-device-form.jpg" alt="Formulario de registro de dispositivo IoT" width="100%">
 </p>
 
 **Recomendación:**
@@ -425,7 +725,7 @@ Separar MAC y número de serie en campos distintos, aplicar una máscara de entr
 El formulario *New Equipment* solo solicita nombre, tipo, modelo y serie, aunque el catálogo muestra el ambiente como columna principal; el usuario debe guardar, abrir el detalle y usar la sección *Location* para asignarlo. En esa sección el selector *Environment* se muestra vacío incluso cuando el equipo ya tiene un ambiente asignado, de modo que el usuario debe mirar la cabecera para recordar dónde está el equipo antes de moverlo.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/equipment-detail-environment.jpg" alt="Detalle de equipo con el selector de ambiente vacío" width="90%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/equipment-detail-environment.jpg" alt="Detalle de equipo con el selector de ambiente vacío" width="100%">
 </p>
 
 **Recomendación:**
@@ -443,7 +743,7 @@ Incluir el ambiente como campo del formulario de registro y, en el detalle, most
 La tabla de materias primas presenta dos cantidades por material (*Usable stock* y *Physical balance*) sin ninguna ayuda que explique por qué difieren; por ejemplo, "Agua purificada" figura con 0 L utilizables y 7 L de saldo físico. El botón *Previous balances* tampoco deja claro qué operación realiza. Un usuario nuevo no puede interpretar el indicador *Low usable stock* sin esa información.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/inventory-stock-columns.jpg" alt="Tabla de inventario con las columnas de stock" width="90%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/inventory-stock-columns.jpg" alt="Tabla de inventario con las columnas de stock" width="100%">
 </p>
 
 **Recomendación:**
@@ -461,7 +761,7 @@ Agregar un ícono de ayuda en cada encabezado con una definición corta (por eje
 En una pantalla de 1024 px de ancho la tabla *Personnel Management* no muestra las columnas de estado laboral ni de acciones, que quedan fuera del área visible. La única acción por fila es un ícono sin etiqueta para desactivar a la persona, y la lista no tiene búsqueda ni filtros, a diferencia de equipos, inventario y lotes.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/staff-table.jpg" alt="Tabla de personal cortada a la derecha" width="90%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/staff-table.jpg" alt="Tabla de personal cortada a la derecha" width="100%">
 </p>
 
 **Recomendación:**
@@ -479,7 +779,7 @@ Reducir el ancho de las columnas o apilar el correo bajo el nombre para que esta
 La tarjeta *Subscription & Billing* indica "Plan equipment limit: 5" mientras que el indicador superior del mismo dashboard muestra 14 equipos registrados. La pantalla no explica si el límite ya fue superado, si los dispositivos IoT no cuentan o si el dato está desactualizado, lo que resta confianza a la información mostrada.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/dashboard-plan-limit.jpg" alt="Dashboard con 14 equipos y un límite de plan de 5" width="90%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/dashboard-plan-limit.jpg" alt="Dashboard con 14 equipos y un límite de plan de 5" width="100%">
 </p>
 
 **Recomendación:**
@@ -497,7 +797,7 @@ Mostrar el uso frente al límite (por ejemplo "7 de 5 equipos") con una adverten
 Al cargar una pantalla interna por su URL o al recargarla (por ejemplo el detalle de un equipo, el registro de dispositivo IoT o la liberación de un lote), el contenido se dibuja debajo del menú lateral durante varios segundos: los títulos y las etiquetas de los campos aparecen cortados por la izquierda hasta que el diseño se reacomoda.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/equipment-detail-environment.jpg" alt="Contenido cortado por el menú lateral tras cargar la pantalla" width="90%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/equipment-detail-environment.jpg" alt="Contenido cortado por el menú lateral tras cargar la pantalla" width="100%">
 </p>
 
 **Recomendación:**
@@ -515,7 +815,7 @@ Reservar el ancho del menú lateral desde el primer renderizado, de modo que el 
 En el formulario *Create Production Batch*, el texto de ayuda del campo *Batch Number* ("Unique in the laboratory, for example PB-2026-001") ocupa dos líneas y se monta sobre la etiqueta del campo *Quantity*, dejando ambos textos ilegibles.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/batch-form-overlap.png" alt="Texto de ayuda superpuesto con la etiqueta del campo siguiente" width="90%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/batch-form-overlap.png" alt="Texto de ayuda superpuesto con la etiqueta del campo siguiente" width="100%">
 </p>
 
 **Recomendación:**
@@ -603,7 +903,7 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 En *Inventario de Materias Primas* el nombre de cada material se trunca a una sola línea porque comparte la fila con la etiqueta de estado: se lee "Amoxicilina trihidr…", "Cápsula de gelatin…" o "Estearato de magn…". En un catálogo farmacéutico varios materiales comparten el inicio del nombre y solo se distinguen por la concentración o la presentación, de modo que el usuario puede confundir un material con otro sin abrir cada ficha.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/inventory.jpg" alt="Inventario con los nombres de materiales cortados" width="40%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/inventory.jpg" alt="Inventario con los nombres de materiales cortados" width="62%">
 </p>
 
 **Recomendación:**
@@ -621,7 +921,7 @@ Permitir que el nombre ocupe dos líneas y mover la etiqueta de estado debajo de
 La pestaña *Alertas* ordena por fecha: las dos alertas con estado "Reconocida" aparecen primero y las dos críticas "Sin resolver", que nadie ha atendido, quedan al final. La tarjeta "Últimas alertas" del inicio repite el mismo criterio y muestra una alerta ya reconocida. El usuario que abre la app para atender lo urgente debe recorrer la lista para encontrarlo.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/alerts-list.jpg" alt="Lista de alertas ordenada por fecha" width="40%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/alerts-list.jpg" alt="Lista de alertas ordenada por fecha" width="62%">
 </p>
 
 **Recomendación:**
@@ -639,7 +939,7 @@ Ordenar por defecto según prioridad (primero las críticas sin resolver) y ofre
 Cada tarjeta de la lista de lotes muestra a la vez la etiqueta de estado ("Pendiente" o "En progreso") y el texto "En espera de liberación QA", y la tarjeta *Lotes* del inicio cuenta 6 lotes "en espera de liberación QA". Un lote pendiente todavía no ha consumido materia prima y uno en progreso sigue en fabricación, por lo que ninguno está realmente esperando la decisión de calidad. Los dos mensajes se contradicen y el indicador del inicio pierde significado.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/batches-list.jpg" alt="Lotes pendientes rotulados como en espera de liberación" width="40%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/batches-list.jpg" alt="Lotes pendientes rotulados como en espera de liberación" width="62%">
 </p>
 
 **Recomendación:**
@@ -657,7 +957,7 @@ Mostrar "En espera de liberación QA" solo cuando el lote terminó su fabricaci�
 Con la app en español, las cantidades se muestran como "100 units" o "40.000 units" en lotes, inventario y trazabilidad; el tipo de equipo aparece como "Centrifuge"; y los mantenimientos se listan como "Preventive" y "Calibration". El resto de la pantalla está traducido, por lo que estos valores se perciben como errores.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/equipment-detail.jpg" alt="Detalle de equipo con tipos de mantenimiento en inglés" width="40%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/equipment-detail.jpg" alt="Detalle de equipo con tipos de mantenimiento en inglés" width="62%">
 </p>
 
 **Recomendación:**
@@ -675,7 +975,7 @@ Traducir las unidades, los tipos de equipo y los tipos de mantenimiento con el m
 La cabecera del detalle de la alerta #9 muestra "5 oct 2026 0:14" sin ningún rótulo, mientras que la sección *Inspección técnica* indica "Primera detección: 4 oct 2026 19:04". El usuario no puede saber si la fecha de la cabecera es la apertura, la última desviación o la última actualización, y la lista de alertas usa esa misma fecha sin explicarla.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/alert-detail.jpg" alt="Detalle de alerta con dos fechas distintas" width="40%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/alert-detail.jpg" alt="Detalle de alerta con dos fechas distintas" width="62%">
 </p>
 
 **Recomendación:**
@@ -693,7 +993,7 @@ Rotular la fecha de la cabecera (por ejemplo "Última desviación") y mostrar ju
 En la app móvil la acción se llama "Reconocer" y los estados son "Reconocida" y "Sin resolver". En QualiTrack Web, también en español, la misma acción se llama "Registrar atención" y los estados son "En atención" y "Sin atender". Un responsable de calidad que usa ambas plataformas debe aprender dos vocabularios para el mismo flujo.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/alert-detail.jpg" alt="Acción "Reconocer" en el detalle de alerta móvil" width="40%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/alert-detail.jpg" alt="Acción " width="62%">
 </p>
 
 **Recomendación:**
@@ -711,7 +1011,7 @@ Acordar un único término por acción y por estado y aplicarlo en las dos plata
 Las tarjetas de alerta muestran un ícono de flechas seguido de un número ("⇄ 5") que corresponde a la cantidad de desviaciones, pero nada lo indica. El botón flotante de filtros es solo un ícono, y la pantalla de telemetría tiene en la esquina superior derecha un ícono sin etiqueta que abre el registro de lecturas.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/alerts-list.jpg" alt="Tarjetas de alerta con el contador sin etiqueta" width="40%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/alerts-list.jpg" alt="Tarjetas de alerta con el contador sin etiqueta" width="62%">
 </p>
 
 **Recomendación:**
@@ -729,7 +1029,7 @@ Acompañar el contador con su unidad ("5 desviaciones"), agregar texto al botón
 En las listas de equipos, inventario, lotes y alertas, el botón flotante de filtros queda encima de la última tarjeta visible. En equipos oculta la etiqueta "Monitor de contenedor" y en inventario tapa la etiqueta "Bajo el mínimo", que es justamente el dato que el usuario busca.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/equipment-list.jpg" alt="Botón de filtros sobre una tarjeta de equipo" width="40%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/equipment-list.jpg" alt="Botón de filtros sobre una tarjeta de equipo" width="62%">
 </p>
 
 **Recomendación:**
@@ -747,7 +1047,7 @@ Ubicar el filtro junto al buscador en la parte superior, o reservar un margen in
 A 375 px de ancho se cortan el subtítulo de telemetría ("Datos sensoriales y monitoreo de parámetros en t…"), el selector de dispositivo ("Contenedor MP-A1 · Almacén de …"), el buscador de lotes ("Buscar por número de lote o produ…"), la ubicación en las tarjetas de alerta ("Almacén de producto ter…") y la pestaña "Mantenimien" del detalle de equipo. En el selector de dispositivo el texto cortado es el ambiente, necesario para distinguir dos monitores con nombres parecidos.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/telemetry.jpg" alt="Panel de telemetría con textos cortados" width="40%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/telemetry.jpg" alt="Panel de telemetría con textos cortados" width="62%">
 </p>
 
 **Recomendación:**
@@ -765,7 +1065,7 @@ Acortar los subtítulos y marcadores de posición, mostrar el ambiente en una se
 El inicio informa "0/7 dispositivos en línea" y "Requiere revisión 7", y el panel de telemetría muestra "Requiere revisión" con la última comunicación de hace un mes y el mensaje "El dispositivo no envió lecturas en las últimas 24 horas". En ningún punto se explica la causa probable ni el siguiente paso (revisar energía, red o contactar a mantenimiento). También aparece "Perfil versión 2", un dato interno sin significado para el usuario.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/home.jpg" alt="Inicio con los 7 dispositivos en "Requiere revisión"" width="40%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/home.jpg" alt="Inicio con los 7 dispositivos en " width="62%">
 </p>
 
 **Recomendación:**
@@ -783,7 +1083,7 @@ Agregar al estado una explicación corta con la causa probable y la acción suge
 La pantalla *Iniciar sesión* solo tiene usuario, contraseña y el texto "Las cuentas se crean y administran en QualiTrack Web". No existe la opción "¿Olvidaste tu contraseña?" que sí ofrece la versión web, por lo que un operario que olvida su contraseña en planta queda bloqueado sin una indicación de cómo recuperarla.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/sign-in.jpg" alt="Pantalla de inicio de sesión sin recuperación de contraseña" width="40%">
+  <img src="../../assets/img/main-content/chapter-vi/heuristic-evaluation/mobile/sign-in.jpg" alt="Pantalla de inicio de sesión sin recuperación de contraseña" width="62%">
 </p>
 
 **Recomendación:**
@@ -793,7 +1093,7 @@ Agregar un enlace de recuperación que abra el flujo de la web o, como mínimo, 
 ## 6.4 Video About-The-Product
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/video-about-product/video-about-product.png" width=800>
+  <img src="../../assets/img/main-content/chapter-vi/video-about-product/video-about-product.png" width="100%">
 </div>
 
 <br>
@@ -810,4 +1110,4 @@ El video comienza planteando el problema: en un laboratorio farmacéutico, la ca
 
 El video cierra con los tres beneficios principales del producto: cumplimiento de BPM, reducción de errores humanos y trazabilidad total. Su objetivo es comunicar, en menos de un minuto, qué problema resuelve QualiTrack, cómo funcionan sus dispositivos y su plataforma, y qué valor aporta a un laboratorio.
 
-[Ver el video About-The-Product](https://youtu.be/pD8I8iiFkXQ?si=FyAmgIjk9ySbif4L)
+**Enlace del video About-the-Product:** [https://shorturl.at/FzLPB](https://shorturl.at/FzLPB)

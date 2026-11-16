@@ -19,7 +19,7 @@ supervisión, la toma de decisiones y la preparación ante auditorías.
 
 <div style="page-break-after: always;"></div>
 
-<img src="../../assets/img/main-content/chapter-ii/user-persona/user-persona-segment-1.png" alt="Diego Ramirez - User Person 1" style="width: 100%; height: 95vh; object-fit: contain; display: block;"/>
+<img src="../../assets/img/main-content/chapter-ii/user-persona/user-persona-segment-1-part-1.png" alt="Diego Ramirez - User Person 1" width="100%"><img src="../../assets/img/main-content/chapter-ii/user-persona/user-persona-segment-1-part-2.png" alt="Diego Ramirez - User Person 1" width="100%">
 
 <div style="page-break-after: always;"></div>
 
@@ -36,7 +36,7 @@ auditorías.
 
 <div style="page-break-after: always;"></div>
 
-<img src="../../assets/img/main-content/chapter-ii/user-persona/user-persona-segment-2.png" alt="Alberto García - User Person 2" style="width: 100%; height: 95vh; object-fit: contain; display: block;"/>
+<img src="../../assets/img/main-content/chapter-ii/user-persona/user-persona-segment-2-part-1.png" alt="Alberto García - User Person 2" width="100%"><img src="../../assets/img/main-content/chapter-ii/user-persona/user-persona-segment-2-part-2.png" alt="Alberto García - User Person 2" width="100%">
 
 <div style="page-break-after: always;"></div>
 
@@ -161,29 +161,29 @@ etapas, puntos de contacto, dificultades y emociones que atraviesa cada usuario 
 
 **Segmento 1: Responsables de calidad y supervisión**
 
-<img src="../../assets/img/main-content/chapter-ii/user-journey-mapping/diego-ramirez-user-journey-mapping-1.png" alt="Diego Ramirez - User Journey Mapping (1/3)" style="width: 100%; height: 85vh; object-fit: contain; display: block;"/>
+<img src="../../assets/img/main-content/chapter-ii/user-journey-mapping/diego-ramirez-user-journey-mapping-1.png" alt="Diego Ramirez - User Journey Mapping (1/3)" width="93%">
 
 <div style="page-break-after: always;"></div>
 
-<img src="../../assets/img/main-content/chapter-ii/user-journey-mapping/diego-ramirez-user-journey-mapping-2.png" alt="Diego Ramirez - User Journey Mapping (2/3)" style="width: 100%; height: 95vh; object-fit: contain; display: block;"/>
+<img src="../../assets/img/main-content/chapter-ii/user-journey-mapping/diego-ramirez-user-journey-mapping-2.png" alt="Diego Ramirez - User Journey Mapping (2/3)" width="89%">
 
 <div style="page-break-after: always;"></div>
 
-<img src="../../assets/img/main-content/chapter-ii/user-journey-mapping/diego-ramirez-user-journey-mapping-3.png" alt="Diego Ramirez - User Journey Mapping (3/3)" style="width: 100%; height: 95vh; object-fit: contain; display: block;"/>
+<img src="../../assets/img/main-content/chapter-ii/user-journey-mapping/diego-ramirez-user-journey-mapping-3.png" alt="Diego Ramirez - User Journey Mapping (3/3)" width="94%">
 
 <div style="page-break-after: always;"></div>
 
 **Segmento 2: Personal operativo de laboratorios y almacenes**
 
-<img src="../../assets/img/main-content/chapter-ii/user-journey-mapping/alberto-garcia-user-journey-mapping-1.png" alt="Alberto García - User Journey Mapping (1/3)" style="width: 100%; height: 85vh; object-fit: contain; display: block;"/>
+<img src="../../assets/img/main-content/chapter-ii/user-journey-mapping/alberto-garcia-user-journey-mapping-1.png" alt="Alberto García - User Journey Mapping (1/3)" width="87%">
 
 <div style="page-break-after: always;"></div>
 
-<img src="../../assets/img/main-content/chapter-ii/user-journey-mapping/alberto-garcia-user-journey-mapping-2.png" alt="Alberto García - User Journey Mapping (2/3)" style="width: 100%; height: 95vh; object-fit: contain; display: block;"/>
+<img src="../../assets/img/main-content/chapter-ii/user-journey-mapping/alberto-garcia-user-journey-mapping-2.png" alt="Alberto García - User Journey Mapping (2/3)" width="94%">
 
 <div style="page-break-after: always;"></div>
 
-<img src="../../assets/img/main-content/chapter-ii/user-journey-mapping/alberto-garcia-user-journey-mapping-3.png" alt="Alberto García - User Journey Mapping (3/3)" style="width: 100%; height: 95vh; object-fit: contain; display: block;"/>
+<img src="../../assets/img/main-content/chapter-ii/user-journey-mapping/alberto-garcia-user-journey-mapping-3.png" alt="Alberto García - User Journey Mapping (3/3)" width="90%">
 
 <div style="page-break-after: always;"></div>
 
@@ -199,10 +199,10 @@ hacia sus necesidades reales.
 
 **Segmento 1: Responsables de calidad y supervisión**
 
-<img src="../../assets/img/main-content/chapter-ii/empathy-mapping/empathy-map-segment-1.png" alt="Diego Ramirez - Empathy Map 1" style="width: 100%; height: 85vh; object-fit: contain; display: block;"/>
+<img src="../../assets/img/main-content/chapter-ii/empathy-mapping/empathy-map-segment-1-part-1.png" alt="Diego Ramirez - Empathy Map 1" width="100%"><img src="../../assets/img/main-content/chapter-ii/empathy-mapping/empathy-map-segment-1-part-2.png" alt="Diego Ramirez - Empathy Map 1" width="100%">
 
 <div style="page-break-after: always;"></div>
 
 **Segmento 2: Personal operativo de laboratorios y almacenes**
 
-<img src="../../assets/img/main-content/chapter-ii/empathy-mapping/empathy-map-segment-2.png" alt="Alberto Garcia - Empathy Map 2" style="width: 100%; height: 85vh; object-fit: contain; display: block;"/>
+<img src="../../assets/img/main-content/chapter-ii/empathy-mapping/empathy-map-segment-2-part-1.png" alt="Alberto Garcia - Empathy Map 2" width="100%"><img src="../../assets/img/main-content/chapter-ii/empathy-mapping/empathy-map-segment-2-part-2.png" alt="Alberto Garcia - Empathy Map 2" width="100%">
