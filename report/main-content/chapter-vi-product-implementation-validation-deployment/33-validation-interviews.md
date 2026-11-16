@@ -212,32 +212,40 @@ Finalmente, el entrevistado destacó como lo más gustado el carácter visual, g
             <td>25 años</td>
         </tr>
         <tr>
-            <td>Ubicacion</td>
+            <td>Distrito</td>
             <td>Ate</td>
         </tr>
         <tr>
-            <td>Fecha de entrevista</td>
-            <td>Por completar</td>
-        </tr>
-        <tr>
             <td>Evidencia</td>
-            <td>Por completar</td>
+            <td style="text-align: left;">
+                <div ><img src="../../assets/img/main-content/chapter-ii/interviews/mesly-medina-saravia.png" width="100%"></div>
+            </td>
         </tr>
         <tr>
             <td>Link</td>
-            <td>Por completar</td>
+            <td>
+            <a href="https://shorturl.at/9TYgY" target="_blank">
+                https://shorturl.at/9TYgY
+            </a>
+        </td>
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td>Por completar</td>
+            <td>00:00 min</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td>Por completar</td>
+            <td>5:00 min</td>
         </tr>
         <tr>
             <td>Resumen</td>
-            <td>Por completar</td>
+            <td>
+          Missli Medina Sarabia es supervisora de calidad de productos farmacéuticos en Hyc Pharma. Su principal responsabilidad es asegurar que los procesos de manufactura cumplan con los estándares de calidad, especialmente respecto a las condiciones ambientales de las diferentes áreas y salas. La empresa controla principalmente temperatura, humedad y presión diferencial, cuyos rangos dependen del medicamento y de los procedimientos establecidos. Actualmente, el monitoreo se realiza mediante registros manuales y formatos específicos para cada área. Durante la manufactura, las mediciones se realizan aproximadamente cada tres horas, mientras que las áreas que no están en uso cuentan con horarios específicos. También utilizan una guía de producción física y una guía virtual para gestionar la información. Uno de los principales problemas identificados es el registro manual, ya que los operarios pueden completar las mediciones posteriormente, generando dudas sobre la exactitud de los datos. Cuando se presenta una condición fuera de rango, se considera una desviación ambiental y se comunica a la supervisora de calidad, quien puede detener el proceso mientras se verifica la causa y, si es necesario, interviene mantenimiento. Una vez corregida la situación, la supervisora determina si el proceso puede continuar. Finalmente, destaca la importancia de conservar registros históricos para auditorías y de que el personal conozca los horarios de registro, los parámetros establecidos y el factor de corrección de los termohigrómetros.
+                Características adicionales:
+                - Utiliza PDAs (tablet de trabajo) y celulares de trabajo
+                - Navegador preferido: Google Chrome
+                - Canales de comunicación: Whatsapp, sms y email 
+            </td>
         </tr>
     </tbody>
 </table>
@@ -262,33 +270,40 @@ Finalmente, el entrevistado destacó como lo más gustado el carácter visual, g
             <td>Edad</td>
             <td>40 años</td>
         </tr>
-        <tr>
-            <td>Ubicacion</td>
-            <td>São Paulo, Brasil</td>
-        </tr>
-        <tr>
-            <td>Fecha de entrevista</td>
-            <td>Por completar</td>
-        </tr>
+   <tr>
+    <td>Ubicación</td>
+    <td>São Paulo, Brasil</td>
+</tr>
         <tr>
             <td>Evidencia</td>
-            <td>Por completar</td>
+            <td style="text-align: left;">
+                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/mario-baca.png" width="100%"></div>
+            </td>
         </tr>
         <tr>
             <td>Link</td>
-            <td>Por completar</td>
+            <td><a href="https://shorturl.at/9TYgY" target="_blank">
+                https://shorturl.at/9TYgY
+            </a>
+            </td>
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td>Por completar</td>
+            <td>5:02 min</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td>Por completar</td>
+            <td>9:48 min</td>
         </tr>
         <tr>
             <td>Resumen</td>
-            <td>Por completar</td>
+            <td>
+Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagnostics Center Brazil, São Paulo, Brasil. Sus principales responsabilidades están relacionadas con la supervisión de las condiciones ambientales y el cumplimiento de los parámetros establecidos en las diferentes áreas del laboratorio. Las áreas que requieren mayor control son almacenamiento, producción, acondicionamiento y espacios donde se mantienen productos pendientes de evaluación. Se monitorean principalmente temperatura y humedad, y en determinadas áreas también presión diferencial, utilizando termohigrómetros y equipos de medición. Los valores aceptables dependen de las características del producto y de los procedimientos definidos para cada área. Actualmente, las mediciones se registran mediante formatos de control y archivos Excel, lo que genera una importante carga de trabajo manual y dificulta consultar la información al encontrarse distribuida en diferentes registros. Cuando se detecta una condición fuera de rango, primero se confirma la medición y luego se evalúa su impacto; dependiendo de la situación, se puede detener temporalmente la actividad, investigar la causa y aplicar las medidas correspondientes antes de continuar. Estas situaciones se consideran desviaciones y su prioridad depende del impacto y duración. El responsable de calidad verifica que la condición haya sido corregida y que se conserve información sobre el valor encontrado, rango permitido, fecha, hora, área afectada y acciones realizadas. Para auditorías se consultan principalmente los registros históricos de las áreas y las desviaciones ocurridas. El principal problema identificado es la revisión manual de registros y archivos Excel, además del riesgo de que algunas mediciones sean registradas posteriormente, generando dudas sobre la exactitud de los datos.
+                Características adicionales:
+                - Utiliza CPU con windows 10, celular android
+                - Navegador preferido: Google Chrome
+                - Canales de comunicación: Whatsapp, llamadas telefónicas y email  
+            </td>
         </tr>
     </tbody>
 </table>
@@ -305,7 +320,7 @@ Finalmente, el entrevistado destacó como lo más gustado el carácter visual, g
     <tbody>
         <tr>
             <td>Nombre</td>
-            <td>César</td>
+            <td> César  </td>
         </tr>
         <tr>
             <td>Apellidos</td>
@@ -316,32 +331,44 @@ Finalmente, el entrevistado destacó como lo más gustado el carácter visual, g
             <td>38 años</td>
         </tr>
         <tr>
-            <td>Ubicacion</td>
+            <td>Distrito</td>
             <td>Cercado de Lima</td>
         </tr>
         <tr>
-            <td>Fecha de entrevista</td>
-            <td>Por completar</td>
-        </tr>
-        <tr>
             <td>Evidencia</td>
-            <td>Por completar</td>
+            <td style="text-align: left;">
+                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/cesar-aguero.png" width="100%"></div>
+            </td>
         </tr>
         <tr>
             <td>Link</td>
-            <td>Por completar</td>
+            <td>
+                <a href="https://shorturl.at/9TYgY" target="_blank">
+                    https://shorturl.at/9TYgY
+                </a>
+            </td>
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td>Por completar</td>
+            <td>14:52 min</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td>Por completar</td>
+            <td>19:58 min</td>
         </tr>
         <tr>
             <td>Resumen</td>
-            <td>Por completar</td>
+            <td>
+                César Agüero, de 38 años con 14 años de experiencia en farmacéutica, es Country Manager de Barat Ceronat Vaccines (transnacional de origen indio) con responsabilidad sobre 4 países: Perú, Bolivia, Chile y Honduras. Gestiona aspectos comerciales, operativos, regulatorios, financieros, de marketing, ventas y legales.
+                Utiliza múltiples dispositivos en Microsoft Teams como canal oficial, aunque identifica un problema crítico: falta de seguimiento efectivo de acuerdos de reuniones y pérdida de trazabilidad en responsabilidades.
+                El flujo productivo comienza con recepción de materias primas en almacén especializado bajo condiciones específicas con monitoreo continuo. Opera líneas de sólidos y líquidos estériles, algunas automatizadas y otras semi-automatizadas. Incluye controles de calidad en cada etapa: liberación de tanda, envasado, rotulado y control final. Los sistemas utilizados son: Data Master File que centraliza información de materias primas con certificados y especificaciones en repositorio digital, y Sistema virtual de gestión de producción basado en Buenas Prácticas de Manufactura con integrity, visibilidad 360, trazabilidad total. Completamente digitalizado desde el año anterior, eliminando progresivamente el papel.
+                La compañía no puede cambiar de materia prima ni proveedor: existe un proceso obligatorio previo de selección y calificación que incluye inspección, auditoría y verificación de licencias. Solo trabaja con fabricantes licenciados. Cada materia prima se identifica por lote y código de recepción con unidades de medida estandarizadas. Si hay problema en recepción, se rechaza completamente sin registrar. El sistema rastrea exactamente qué materias primas específicas fueron utilizadas en cada fabricación. Si posteriormente se detecta un problema, es posible identificar todos los productos y fabricaciones afectadas para acciones correctivas precisas.
+                Cada producto se verifica contra especificaciones aprobadas con tests obligatorios según farmacopea o parámetros críticos internos. Se fabrica solo cuando hay pedido y se libera inmediatamente para despacho, sin inventario. La información consultada más frecuentemente es sobre disponibilidad de materias primas, especialmente aquellas de un único fabricante mundial. Para personal nuevo, es absolutamente obligatorio conocer GMP; sin esto, no se ubicará en el contexto. La compañía usa señalización visual explícita porque prefiere comunicación visual clara sobre avisos escritos.
+                Características adicionales:
+                - Utiliza una CPU, una laptop Dell, celular iphone y una iPad
+                - Navegador preferido: Microsoft Edge
+                - Canales de comunicación: microsoft teams, Outlook corporativo  
+            </td>
         </tr>
     </tbody>
 </table>
@@ -367,32 +394,43 @@ Finalmente, el entrevistado destacó como lo más gustado el carácter visual, g
             <td>45 años</td>
         </tr>
         <tr>
-            <td>Ubicacion</td>
+            <td>Distrito</td>
             <td>Jesús Maria</td>
         </tr>
         <tr>
-            <td>Fecha de entrevista</td>
-            <td>Por completar</td>
-        </tr>
-        <tr>
             <td>Evidencia</td>
-            <td>Por completar</td>
+            <td style="text-align: left;">
+                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/liz-aliaga.png" width="100%"></div>
+            </td>
         </tr>
         <tr>
             <td>Link</td>
-            <td>Por completar</td>
+            <td>
+                <a href="https://shorturl.at/9TYgY" target="_blank">
+                    https://shorturl.at/9TYgY
+                </a>
+            </td>
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td>Por completar</td>
+            <td>19:59 min</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td>Por completar</td>
+            <td>24:40 min</td>
         </tr>
         <tr>
             <td>Resumen</td>
-            <td>Por completar</td>
+            <td>
+                Liz Aliaga, de 45 años y 20 años de experiencia en sector farmacéutico, trabaja en un hospital público de Jesús María, Lima, a cargo de 1,900 medicamentos. Sus tres responsabilidades principales son: velar que el paciente reciba medicamentos efectivos y seguros, mantener medicamentos en condiciones adecuadas según normativa regulatoria, garantizar correcta administración como bienes del Estado. A diferencia de laboratorios de producción, no recibe materias primas sino medicamentos terminados con certificado. Los medicamentos llegan por licitación y compras institucionales a través de 26 farmacias del hospital. Utiliza computadoras, tablas de control, termómetros, hidroxicóticos y cadenas de frío. Comunica por correos electrónicos y teléfono (WhatsApp no oficial). Reporta no tener dificultades ni frustraciones.
+                Cada medicamento ingresa con documentación completa: ficha técnica, buenas prácticas de manufactura, certificados del país de origen, registro de Dijaní, y controles de la empresa productora. Liz verifica cumplimiento de todos requisitos según normativa. Para diferenciar recepciones del mismo medicamento, utiliza sistema "FIFO Peso": si recibe lote hoy, es el primero a distribuir; si llega otro mañana, entra en segundo lugar. Información de proveedor, fechas y estado viene determinada por procesos de compra y licitación donde se especifica cuándo ingresa, qué documentación trae y qué requisitos cumple. Todos los productos tienen mismos requisitos estandarizados.
+                Liz realiza checklist riguroso: si encuentra envase dañado, caja humedecida, blisters con comprimidos partidos o con cambio de color, devuelve todo el lote. Para cantidades grandes, utiliza sistemas de muestreo: toma una cajita de cada lado. Si identifica problema, devuelve toda remesa. Medicamentos rechazados se registran en libro con lote, fecha y código. Si proveedor reenvía, debe ser con otro lote diferente, también registrado. Garantiza trazabilidad completa: problema con lote específico nunca vuelve a ser aceptado.
+                Información de medicamentos consultada frecuentemente: estabilidad, protección de luz, cadena de frío. Valida detalles como "si producto es oxidado, solo reconstituyese en cloruro para mantener estabilidad". Como usuario del hospital, no necesita conocer toda cadena de personal de producción. Lo que valida es información en documentos y caja: farmacéutico que produjo y director técnico que aseguró calidad. En plantas de producción: químicos farmacéuticos certifican insumos, producción, control de calidad, más director técnico.
+                Características adicionales:
+                - Utiliza computadoras, laptops corporativas con windows 11, celular android y tablets
+                - Navegador preferido: Microsoft Edge
+                - Canales de comunicación: microsoft temas y outlook corporativo
+           </td>
         </tr>
     </tbody>
 </table>
@@ -418,32 +456,44 @@ Finalmente, el entrevistado destacó como lo más gustado el carácter visual, g
             <td>42 años</td>
         </tr>
         <tr>
-            <td>Ubicacion</td>
+            <td>Distrito</td>
             <td>San Isidro</td>
         </tr>
         <tr>
-            <td>Fecha de entrevista</td>
-            <td>Por completar</td>
-        </tr>
-        <tr>
             <td>Evidencia</td>
-            <td>Por completar</td>
+            <td style="text-align: left;">
+                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/ohmar-chavez.png" width="100%"></div>
+            </td>
         </tr>
         <tr>
             <td>Link</td>
-            <td>Por completar</td>
+            <td>
+                <a href="https://shorturl.at/9TYgY" target="_blank">
+                    https://shorturl.at/9TYgY
+                </a>
+            </td>
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td>Por completar</td>
+            <td>24:43 min</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td>Por completar</td>
+            <td>30:20 min s</td>
         </tr>
         <tr>
             <td>Resumen</td>
-            <td>Por completar</td>
+            <td>
+                Omar Chávez, de 42 años y 15 años de experiencia, es formulador de Investigación y Desarrollo en un laboratorio. Su principal responsabilidad es desarrollo de productos nuevos, desde conceptualización hasta viabilidad comercial. Su mayor frustración es cuando un desarrollo no es transferible a lote comercial. Utiliza computadoras, celulares, tablets, radio y RPC para comunicaciones. Utiliza SAP como sistema de gestión. Su trabajo es fundamental en etapa inicial del ciclo de vida del medicamento, validando que productos puedan escalar a producción comercial.
+                El proceso sigue secuencia rigurosa: análisis de formulación estándar, ensayos para verificar estabilidad y características físico-químicas y farmacotécnicas, verificación analítica, estresamiento para garantizar estabilidad en forma y nivel físico-químico, generación de pilotos, estudios de estabilidad acelerada y largo plazo, tras validación, entrada a fabricación comercial. Diseñado para garantizar que solo productos con estabilidad y viabilidad demostradas lleguen a producción. Todo es respaldado en Buenas Prácticas de Manufactura.
+                Materias primas se identifican por codificación interna (know-how confidencial). Unidades de medida varían: kilogramos, gramos, litros, onzas, unidades, frascos según empresa y producto. Antes de usar materia prima: requisito mínimo es certificado de análisis. Dependiendo empresa/insumo, también solicitan: ficha técnica, ficha de seguridad, certificado de metales pesados, ruta de síntesis, MOA, ROT, ruta de análisis. Algunas empresas solo necesitan COA para iniciar desarrollo. Materias primas con problemas entran a "desmedro".
+                Todo equipo debe cumplir calificación: instalación, operación y desempeño. Nomenclatura de equipos es propia de cada empresa. Área de mantenimiento garantiza condiciones óptimas durante tiempo. Información de equipos permite trazabilidad: software logueado en tiempo real, voucher de registro temporal, huella digital. Si equipo falla durante fabricación, proceso se detiene por completo; no puede continuarse sin garantizar 100% óptimo. Falla detectada después de fabricación: no hay remedio posible.
+                Toda etapa de manufactura es documentada: desde dispensación hasta producto final. Se mantiene registro de todo personal participante, obligatorio GMP. Estados de productos varían según empresa. Flujo es secuencial pero simultáneo entre áreas: dispensación, fabricación, control de calidad interactúan en orden lógico sin predominio. Para personal nuevo: GMP es requisito fundamental. Industria es altamente especializada con múltiples subáreas. Químicos farmacéuticos requieren expertise específica en su subárea especializada.
+                Características adicionales:
+                - Utiliza computadora con windows 10, celular y tablet
+                - Navegador preferido: Google Chrome
+                - Canales de comunicación: microsoft teams, email, whatsapp y RPC
+            </td>
         </tr>
     </tbody>
 </table>
