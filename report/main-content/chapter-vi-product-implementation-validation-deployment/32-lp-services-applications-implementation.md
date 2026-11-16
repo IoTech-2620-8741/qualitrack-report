@@ -4866,15 +4866,17 @@ Commits relacionados con la documentación de los servicios en este sprint (48):
 
 #### 6.2.2.8. Software Deployment Evidence for Sprint Review
 
-En el Sprint 2 cada producto se publica de forma automática al integrar una versión en la rama `main`: la Landing Page en GitHub Pages, la Web Application en Firebase Hosting y el Cloud REST API en Azure Container Apps, cada uno con su workflow de GitHub Actions. La Mobile Application se distribuye a los testers mediante Firebase App Distribution al publicar la etiqueta de cada versión estable. Las ramas `develop` y `main` de los repositorios de código están protegidas por reglas que exigen un pull request con las pruebas de integración continua aprobadas, y cada versión se publica con su etiqueta y su GitHub Release. El Edge Service se despliega con Docker Compose en la estación local de cada instalación, y su workflow verifica ese despliegue en cada pull request.
+En el Sprint 2 cada producto se publica de forma automática al integrar una versión en la rama `main`: la Landing Page en GitHub Pages, la Web Application en Firebase Hosting y el Cloud REST API en Azure Container Apps, cada uno con su workflow de GitHub Actions. La Mobile Application se distribuye a los testers mediante Firebase App Distribution al publicar la etiqueta de cada versión estable. Las Embedded Applications se publican como GitHub Releases y se cargan en cada ESP32 con Arduino IDE. Las ramas `develop` y `main` de los repositorios de código, salvo los de las Embedded Applications, están protegidas por reglas que exigen un pull request con las pruebas de integración continua aprobadas, y cada versión se publica con su etiqueta y su GitHub Release. El Edge Service se despliega con Docker Compose en la estación local de cada instalación, y su workflow verifica ese despliegue en cada pull request.
 
 | Producto | Versión desplegada | Destino | Mecanismo |
 |----------|--------------------|---------|-----------|
-| Landing Page | v1.1.0 | GitHub Pages | Workflow `Deploy to GitHub Pages` al integrar en `main` |
+| Landing Page | v2.0.0 | GitHub Pages | Workflow `Deploy to GitHub Pages` al integrar en `main` |
 | Web Application | v2.5.0 | Firebase Hosting | Workflow `Deploy to Firebase Hosting on merge` al integrar en `main` |
 | Cloud REST API | v1.2.0 | Azure Container Apps y Azure Database for MySQL | Workflow `Deploy to Azure Container Apps` al integrar en `main` |
-| Edge Service | v0.3.1 | Estación local (Raspberry Pi 4) | Docker Compose con Gunicorn; imagen arm64 construida en CI |
+| Edge Service | v0.4.0 | Estación local (Raspberry Pi 4) | Docker Compose con Gunicorn; imagen arm64 construida en CI |
 | Mobile Application | v1.0.0 | Firebase App Distribution (Android) | Workflow `Build APK and distribute` al publicar una etiqueta `vX.Y.Z` en `main` |
+| Embedded Application (Environment Monitor) | v0.4.0 | ESP32 DevKit v1 de cada ambiente; simulación en Wokwi | Carga del sketch con Arduino IDE o arduino-cli; GitHub Release por versión |
+| Embedded Application (Container Monitor) | v0.1.0 | ESP32 DevKit v1 de cada contenedor; simulación en Wokwi | Carga del sketch con Arduino IDE o arduino-cli; GitHub Release por versión |
 
 **Despliegue del Cloud REST API.** El pipeline creado en el Sprint 1 ejecuta las pruebas con Maven, construye la imagen Docker en Azure Container Registry y actualiza la revisión de Azure Container Apps. En este sprint se publicaron con él las versiones 1.1.0 y 1.2.0. Como la base de datos de producción usa `ddl-auto=none`, antes de publicar la versión 1.2.0 se creó en ella la tabla de las API keys de los Edge Gateways y dos índices de las alertas de desviación, con un script que se ejecuta una sola vez y termina con una consulta de verificación.
 
@@ -4890,7 +4892,7 @@ En el Sprint 2 cada producto se publica de forma automática al integrar una ver
   <p><em>Figura: Workflow de despliegue de la Web Application en GitHub Actions. Esta evidencia muestra la publicación de la versión 2.5.0 en el sitio de producción de Firebase Hosting, con el resultado success y la URL https://qualitrack-iotech.web.app.</em></p>
 </div>
 
-**Despliegue de la Landing Page.** En este sprint la Landing Page pasó de la publicación desde una rama a un workflow de GitHub Actions que sube la carpeta `public/` como artefacto y la despliega en GitHub Pages, de modo que el sitio se sirve desde la URL raíz del repositorio.
+**Despliegue de la Landing Page.** En este sprint la Landing Page pasó de la publicación desde una rama a un workflow de GitHub Actions que sube la carpeta `public/` como artefacto y la despliega en GitHub Pages, de modo que el sitio se sirve desde la URL raíz del repositorio. Al cierre del sprint el mismo workflow publicó la versión 2.0.0, con la sección de dispositivos IoT y los videos del producto y del equipo.
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/website-pages-deploy.jpg" alt="Despliegue de la Landing Page en GitHub Pages" width="90%">
@@ -4910,6 +4912,33 @@ El workflow de integración continua reproduce este despliegue en cada pull requ
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/edge-docker-smoke-test.jpg" alt="Despliegue del Edge Service con Docker Compose" width="90%">
   <p><em>Figura: Prueba del despliegue del Edge Service en GitHub Actions. Esta evidencia muestra el registro de un Monitor de Contenedor, su autenticación con respuesta 200, la recepción de una lectura con respuesta 201 y el reinicio del servicio con Docker Compose conservando la lectura pendiente de sincronización.</em></p>
 </div>
+
+Al cierre del sprint se publicó la versión 0.4.0 del Edge Service. Su imagen Docker consulta cada 30 segundos el nuevo endpoint `GET /api/v1/health`, de modo que `docker compose ps` muestra el contenedor como `healthy` o `unhealthy` (ADR-0017), y los nodos pueden enviar su API key como token Bearer, como lo hacen las Embedded Applications (ADR-0018).
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/edge-release-v0.4.0.jpg" alt="GitHub Release v0.4.0 del Edge Service" width="90%">
+  <p><em>Figura: GitHub Release de la versión 0.4.0 del Edge Service. Esta evidencia muestra la versión integrada en main con su etiqueta, que agrega el endpoint de salud y la API key de los nodos como token Bearer.</em></p>
+</div>
+
+**Despliegue de las Embedded Applications.** El firmware de cada nodo es un único sketch de Arduino sobre el Modest IoT Nano Framework v1.0.0, que se carga en el ESP32 DevKit v1 de cada ambiente o contenedor. Los pasos de despliegue son:
+
+1. Instalar en Arduino IDE el core ESP32 de Espressif (3.x) y, desde el Library Manager, la librería `Modest-IoT-Nano-Framework` 1.0.0, que instala también ArduinoJson y MQTT.
+2. Copiar `secrets.example.h` como `secrets.h` (ignorado por Git) con la red Wi-Fi, la URL del Edge, el identificador del nodo y la API key que el Edge le entregó al registrarlo con `flask --app app devices register`; en el Monitor de Contenedor, también las etiquetas RFID del personal autorizado.
+3. Abrir `EnvironmentMonitor.ino` o `ContainerMonitor.ino`, elegir la placa "ESP32 Dev Module" y cargar el sketch (o compilarlo y cargarlo con `arduino-cli compile --fqbn esp32:esp32:esp32 --upload`).
+
+Cada versión se cierra con GitFlow: la rama `release/vX.Y.Z` fecha el CHANGELOG, se integra en `main` con una etiqueta anotada y en `develop`, y se publica su GitHub Release. En este sprint se publicaron las versiones 0.1.0 a 0.4.0 del Monitor de Ambiente y la 0.1.0 del Monitor de Contenedor. Además, cada nodo tiene un proyecto publicado en Wokwi con los mismos archivos del repositorio, que permite ejecutar el firmware con su circuito sin el hardware, y el workflow del Monitor de Ambiente compila el sketch para el ESP32 en cada pull request.
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/embedded-environment-monitor-releases.jpg" alt="GitHub Releases de la Embedded Application del Monitor de Ambiente" width="90%">
+  <p><em>Figura: Versiones publicadas de la Embedded Application del Monitor de Ambiente. Esta evidencia muestra las GitHub Releases 0.1.0 a 0.4.0, cada una con su etiqueta sobre el merge de su versión en main.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/embedded-container-monitor-release.jpg" alt="GitHub Release v0.1.0 de la Embedded Application del Monitor de Contenedor" width="90%">
+  <p><em>Figura: Primera versión publicada de la Embedded Application del Monitor de Contenedor. Esta evidencia muestra la GitHub Release 0.1.0 con su etiqueta sobre el merge de la versión en main.</em></p>
+</div>
+
+**Enlaces:** [Releases del Monitor de Ambiente](https://github.com/IoTech-2620-8741/qualitrack-embedded-environment-monitor/releases) · [Release v0.1.0 del Monitor de Contenedor](https://github.com/IoTech-2620-8741/qualitrack-embedded-container-monitor/releases/tag/v0.1.0) · [Wokwi del Monitor de Ambiente](https://wokwi.com/projects/480697842499374081) · [Wokwi del Monitor de Contenedor](https://wokwi.com/projects/480802699328400385)
 
 **Despliegue de la Mobile Application:**
 
