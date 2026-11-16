@@ -54,7 +54,7 @@ posterior digitalización.
   actualización del inventario.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/tools-used.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/tools-used.png" width="100%">
 </div>
 
 Con el fin de mantener la consistencia y facilitar la interpretación del modelo, el equipo definió una convención de
@@ -69,7 +69,7 @@ relevante que ya ocurrió dentro del dominio y se expresa en tiempo pasado. En e
 eventos se representaron mediante tarjetas de color naranja.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/events.jpg">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/events.jpg" width="100%">
 </div>
 
 Entre los eventos identificados se encuentran:
@@ -124,7 +124,7 @@ Los eventos fueron organizados en secuencias horizontales, conectando aquellos q
 manteniendo separados los flujos que ocurren de manera independiente.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/time-line-1.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/time-line-1.png" width="85%">
 </div>
 
 Se organizaron los eventos del IAM y Payments & Subscriptions en secuencias temporales, mostrando el orden en que
@@ -132,7 +132,7 @@ ocurren dentro de cada flujo. Se identificaron procesos independientes, como el 
 recuperación de contraseña y la gestión de suscripciones y pagos.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/time-line-2.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/time-line-2.png" width="100%">
 </div>
 
 Se organizaron los eventos del Reporting & Audit según su secuencia. El flujo principal parte de la solicitud de
@@ -141,7 +141,7 @@ auditoría. También se ubicaron como procesos independientes la generación de 
 exportación del registro de equipos, el cálculo del dashboard de KPIs y el cálculo de tendencias de desviaciones.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/time-line-3.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/time-line-3.png" width="100%">
 </div>
 
 Se organizaron los eventos del Product Batch Management. El flujo inicia con la creación y comienzo del lote, seguido
@@ -149,7 +149,7 @@ del registro del producto farmacéutico y del uso de materias primas. Luego, tra
 evaluado y puede continuar por dos caminos: Batch Released o Batch Rejected.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/time-line-4.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/time-line-4.png" width="98%">
 </div>
 
 El flujo principal muestra la creación, reconocimiento y resolución de una alerta. También se presentan procesos
@@ -158,7 +158,7 @@ de notificación y los eventos de cumplimiento asociados a la liberación o rech
 notificación al supervisor de calidad.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/time-line-5.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/time-line-5.png" width="100%">
 </div>
 
 El flujo inicia con el registro de la materia prima, la recepción del lote y su evaluación, que puede resultar en su
@@ -167,7 +167,7 @@ y registrando el movimiento correspondiente. A partir de la actualización del i
 nivel bajo de stock.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/time-line-6.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/time-line-6.png" width="100%">
 </div>
 
 El flujo parte del registro de una medición de telemetría, a partir del cual se generan diferentes acciones: registrar
@@ -175,7 +175,7 @@ el punto histórico, revisar la medición, detectar anomalías y actualizar el e
 del estado se mantiene como un proceso independiente.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/time-line-7.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/time-line-7.png" width="100%">
 </div>
 
 En esta imagen se organizaron los eventos en tres flujos principales. El primero corresponde al registro y actualización
@@ -185,7 +185,7 @@ temperatura, calidad del aire, humedad y luminosidad. Finalmente, el tercer fluj
 el establecimiento de su membresía en el laboratorio y su posterior desactivación.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/time-line-8.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/time-line-8.png" width="100%">
 </div>
 
 El flujo inicia con el registro del equipo, seguido de la vinculación del sensor y la configuración de sus parámetros
@@ -240,7 +240,7 @@ completar el comportamiento del sistema. En el tablero se representaron mediante
 rosa.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/paint-point-1.jpg">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/paint-point-1.jpg" width="100%">
 </div>
 
 El Pain Point identificado en este flujo se relaciona con las validaciones necesarias para determinar si un lote de
@@ -248,7 +248,7 @@ materia prima debe ser aceptado o rechazado después de su recepción. La pregun
 considerarse antes de actualizar el inventario con una materia prima aceptada.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/paint-point-2.jpg">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/paint-point-2.jpg" width="100%">
 </div>
 
 El Pain Point identificado en este flujo se relaciona con qué información debe mostrarse en la telemetría. Esto permite
@@ -256,35 +256,35 @@ definir los datos que se presentarán a partir de las mediciones registradas y q
 almacenados en el historial, utilizados para detectar anomalías y actualizar el estado de la telemetría.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/paint-point-3.jpg">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/paint-point-3-part-1.jpg" width="100%"><img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/paint-point-3-part-2.jpg" width="100%">
 </div>
 
 El Pain Point identificado en este flujo se relaciona con cómo se resolverá una alerta después de que ha sido creada y
 reconocida. Esto permite definir el proceso necesario para llevar una alerta hasta su resolución.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/paint-point-4.jpg">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/paint-point-4.jpg" width="100%">
 </div>
 
 El Pain Point identificado en este flujo se relaciona con qué validaciones deben realizarse para determinar si un lote
 puede ser liberado o debe ser rechazado después de completar su fabricación y evaluar el lote.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/paint-point-5.jpg">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/paint-point-5.jpg" width="100%">
 </div>
 
 El Pain Point identificado en este flujo se relaciona con determinar qué información adicional debe incluirse al generar
 un reporte de auditoría, a partir de la consulta de los registros históricos y la información solicitada por el auditor.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/paint-point-6.jpg">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/paint-point-6.jpg" width="100%">
 </div>
 
 El Pain Point identificado en este flujo se relaciona con definir los medios disponibles para enviar el código de
 verificación durante la recuperación de contraseña.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/paint-point-7.jpg">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/paint-point-7.jpg" width="100%">
 </div>
 
 El Pain Point identificado en este flujo se relaciona con verificar si un sensor ya se encuentra vinculado a otro equipo
@@ -320,7 +320,7 @@ responsabilidad dentro de los flujos del sistema. Para su representación se uti
 sobre los eventos seleccionados.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/pivotal-points-1.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/pivotal-points-1.png" width="100%">
 </div>
 
 En el flujo de gestión de usuarios se identificaron como Pivotal Events User Registered, Role User Assigned, User
@@ -330,7 +330,7 @@ Verification Code Sent no se considera un Pivotal Event, ya que corresponde a un
 recuperación de contraseña y no representa un cambio significativo de estado.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/pivotal-points-2.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/pivotal-points-2-part-1.png" width="100%"><img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/pivotal-points-2-part-2.png" width="100%">
 </div>
 
 En el flujo de suscripciones y pagos se identificaron como Pivotal Events Checkout Created, Payment Received,
@@ -339,7 +339,7 @@ contratación y en el estado de la suscripción. Por otro lado, Plan Selected y 
 Pivotal Events, ya que corresponden a acciones dentro del flujo que no representan un cambio significativo de estado.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/pivotal-points-3.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/pivotal-points-3-part-1.png" width="100%"><img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/pivotal-points-3-part-2.png" width="100%">
 </div>
 
 En el flujo de auditoría y generación de información se identificaron como Pivotal Events Audit Information Requested,
@@ -349,7 +349,7 @@ relevante para auditorías, seguimiento y análisis. Por otro lado, Historical R
 Event, ya que corresponde a una actividad intermedia dentro del proceso de generación del reporte de auditoría.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/pivotal-points-4.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/pivotal-points-4.png" width="100%">
 </div>
 
 En el flujo de fabricación y gestión de lotes se identificaron como Pivotal Events Batch Created, Manufacturing
@@ -359,7 +359,7 @@ Started, Pharmaceutical Product Registered y Raw Material Usage Registered no se
 corresponden a actividades intermedias dentro del proceso.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/pivotal-points-5.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/pivotal-points-5-part-1.png" width="100%"><img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/pivotal-points-5-part-2.png" width="100%">
 </div>
 
 En el flujo de gestión de alertas y cumplimiento se identificaron como Pivotal Events Alert Created, Alert Resolved, Low
@@ -370,7 +370,7 @@ Quality Supervisor Notified no se consideran Pivotal Events, ya que corresponden
 intermedios del proceso.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/pivotal-points-6.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/pivotal-points-6.png" width="100%">
 </div>
 
 En el flujo de gestión de materias primas e inventario se identificaron como Pivotal Events Raw Material Registered, Raw
@@ -381,7 +381,7 @@ Recorded no se consideran Pivotal Events, ya que corresponden a actividades de r
 proceso.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/pivotal-points-7.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/pivotal-points-7.png" width="88%">
 </div>
 
 En el flujo de monitoreo de telemetría se identificaron como Pivotal Events Telemetry Measurement Recorded, Telemetry
@@ -390,7 +390,7 @@ información de telemetría. Por otro lado, Measurement Reviewed, Telemetry Hist
 Updated corresponden a procesos de consulta, almacenamiento o actualización derivados de la medición registrada.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/pivotal-points-8.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/pivotal-points-8.png" width="100%">
 </div>
 
 En el flujo de gestión de laboratorios se identificaron como Pivotal Events Laboratory Registered, Environment
@@ -401,7 +401,7 @@ Environment Updated no se consideran Pivotal Events, ya que corresponden a actua
 dentro de estos procesos.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/pivotal-points-9.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/pivotal-points-9.png" width="93%">
 </div>
 
 En el flujo de gestión de equipos se identificaron como Pivotal Events Equipment Registered, Sensor Linked, Measurement
@@ -437,7 +437,7 @@ corresponde, produce como resultado un evento de dominio. Para su representació
 ubicadas antes del evento que generan.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/command-1.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/command-1.png" width="100%">
 </div>
 
 En esta etapa se identificaron los comandos asociados a las principales acciones del flujo de gestión de usuarios. Cada
@@ -456,7 +456,7 @@ el sistema.
 | **Reset Password**         | Password Changed         | Permite establecer una nueva contraseña una vez que el proceso de recuperación ha sido validado correctamente.                      |
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/command-2.png" width="500">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/command-2.png" width="100%">
 </div>
 
 Se identificaron los comandos relacionados con la selección del plan, la creación del checkout, el procesamiento del
@@ -472,7 +472,7 @@ producido en el estado de la suscripción.
 | **Update Subscription** | Subscription Updated  | Permite modificar la configuración o condiciones de una suscripción existente.         |
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/command-3.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/command-3.png" width="100%">
 </div>
 
 Se identificaron los comandos relacionados con la consulta de información histórica, generación de reportes, exportación
@@ -491,7 +491,7 @@ realizada dentro del contexto de auditoría y generación de información.
 | **Calculate Deviation Trend**  | Deviation Trend Calculated  | Permite calcular la tendencia de las desviaciones registradas para facilitar su análisis histórico.           |
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/command-4.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/command-4.png" width="100%">
 </div>
 
 Se identificaron los comandos relacionados con la creación y evaluación de lotes, el registro del producto farmacéutico
@@ -509,7 +509,7 @@ determinar su liberación o rechazo, generando el evento correspondiente en cada
 | **Reject Batch**                    | Batch Rejected                    | Permite rechazar el lote cuando no cumple con las condiciones requeridas para su aprobación.                 |
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/command-5.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/command-5.png" width="100%">
 </div>
 
 Se identificaron los comandos relacionados con la detección y gestión de eventos de cumplimiento, creación,
@@ -531,7 +531,7 @@ calidad.
 | **Notify Quality Supervisor**               | Quality Supervisor Notified               | Permite notificar al supervisor de calidad cuando una situación requiere su atención.                              |
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/command-6.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/command-6.png" width="100%">
 </div>
 
 Se identificaron los comandos relacionados con el registro, recepción, aceptación y rechazo de materias primas, así como
@@ -552,7 +552,7 @@ inventario para mantener la trazabilidad de las operaciones realizadas.
 | **Record Inventory Movement**    | Inventory Movement Recorded   | Permite registrar el movimiento realizado sobre una materia prima para mantener su historial de operaciones. |
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/command-7.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/command-7.png" width="100%">
 </div>
 
 Se identificaron los comandos relacionados con el registro y revisión de las mediciones de telemetría. Además, se
@@ -568,7 +568,7 @@ partir de las mediciones registradas.
 | **Update Telemetry Status**        | Telemetry Status Updated         | Permite actualizar el estado actual de la telemetría de acuerdo con la información registrada. |
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/command-8.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/command-8.png" width="100%">
 </div>
 
 Se identificaron los comandos relacionados con el registro y actualización del laboratorio, sus ambientes y boxes,
@@ -587,7 +587,7 @@ del personal cuando deja de formar parte del laboratorio.
 | **Deactivate Staff Member**         | Staff Member Deactivated          | Permite desactivar la participación de un miembro del personal dentro del laboratorio.                          |
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/command-9.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/command-9.png" width="100%">
 </div>
 
 Se identificaron los comandos relacionados con el registro y mantenimiento de los equipos, la vinculación de sensores y
@@ -620,7 +620,7 @@ representadas mediante tarjetas de color lila, corresponden a reglas automática
 eventos y desencadenan nuevas acciones dentro del sistema.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/politica-actores-1.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/politica-actores-1.png" width="100%">
 </div>
 
 Se identificaron los actores y las políticas que intervienen en el flujo de gestión de usuarios. El Visitante participa
@@ -631,7 +631,7 @@ un código de verificación, este es validado y finalmente se realiza el cambio 
 política que indica que, después del registro del usuario, debe realizarse la selección de un plan de suscripción.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/politica-actores-2.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/politica-actores-2.png" width="100%">
 </div>
 
 Se identificaron los actores y las políticas relacionadas con la gestión de suscripciones. El Usuario participa en la
@@ -641,7 +641,7 @@ activada. Como política, se establece que cuando la suscripción es activada, s
 Asimismo, el usuario puede actualizar o cancelar su suscripción según corresponda.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/politica-actores-3.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/politica-actores-3.png" width="100%">
 </div>
 
 Se identificaron los actores y las políticas relacionadas con la auditoría y generación de información. El Auditor
@@ -650,7 +650,7 @@ históricos, generación de reportes, exportación de registros de equipos y cá
 solicitan.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/politica-actores-4.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/politica-actores-4.png" width="100%">
 </div>
 
 En esta etapa se identificaron los actores y las políticas relacionadas con la gestión de lotes. El Lab Technician
@@ -661,7 +661,7 @@ mientras que ante un rechazo también se genere el reporte correspondiente. Adem
 definir las validaciones necesarias para determinar si un lote puede ser liberado o rechazado.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/politica-actores-5.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/politica-actores-5.png" width="100%">
 </div>
 
 En esta etapa se identificaron los actores y las políticas relacionadas con la gestión de alertas y cumplimiento. El Lab
@@ -671,7 +671,7 @@ de cumplimiento, bajo stock y vencimiento de calibraciones. También se consider
 rechazo de lotes y la notificación al Quality Supervisor.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/politica-actores-6.jpg">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/politica-actores-6.jpg" width="100%">
 </div>
 
 En esta etapa se identificaron los actores y las políticas relacionadas con la gestión de materias primas e inventario.
@@ -682,7 +682,7 @@ ser consumida para la producción y retirarse del box cuando sea necesario. Como
 materia prima es aceptada, puede registrarse su uso para la producción de un producto farmacéutico.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/politica-actores-7.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/politica-actores-7.png" width="100%">
 </div>
 
 En esta etapa se identificaron los actores y las políticas relacionadas con el monitoreo de telemetría. El flujo parte
@@ -692,7 +692,7 @@ del historial de telemetría, se puede generar un reporte de auditoría, y que c
 telemetría, se debe crear una alerta.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/politica-actores-8.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/politica-actores-8.png" width="100%">
 </div>
 
 En esta etapa se identificaron los actores y las políticas relacionadas con la gestión del laboratorio. El Quality
@@ -706,7 +706,7 @@ puede almacenar materia prima en él. Asimismo, cuando se registra un ambiente, 
 la fabricación del producto farmacéutico.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/politica-actores-9.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/politica-actores-9.png" width="100%">
 </div>
 
 En esta etapa se identificaron los actores y las políticas relacionadas con la gestión de equipos. El Lab Technician
@@ -768,7 +768,7 @@ información que los actores consultan antes de ejecutar determinados comandos. 
 verde y permiten disponer de la información necesaria para realizar una acción dentro de cada bounded context.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/read-modal-1.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/read-modal-1.png" width="100%">
 </div>
 
 Se identificaron tres Read Models principales que representan la información presentada al usuario durante los procesos
@@ -778,7 +778,7 @@ realizar la autenticación. Finalmente, el Password Recovery Form permite al usu
 recuperación de su contraseña, incluyendo la verificación necesaria antes de establecer una nueva contraseña.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/read-modal-2.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/read-modal-2.png" width="100%">
 </div>
 
 Se identificaron tres Read Models principales que permiten al usuario consultar la información necesaria para gestionar
@@ -788,7 +788,7 @@ de suscripción. Finalmente, Current Subscription muestra la información corres
 usuario, permitiendo consultar su estado y gestionar acciones posteriores, como su actualización o cancelación.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/read-modal-3.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/read-modal-3.png" width="100%">
 </div>
 
 Se identificaron tres Read Models principales que permiten consultar la información necesaria durante la gestión de los
@@ -798,7 +798,7 @@ proceso de producción. Finalmente, Batch Evaluation presenta la información ne
 de acuerdo con las validaciones correspondientes, si este debe ser liberado o rechazado.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/read-modal-4.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/read-modal-4.png" width="100%">
 </div>
 
 Se identificaron dos Read Models principales. Alert Details permite consultar la información asociada a una alerta,
@@ -807,7 +807,7 @@ permite al usuario consultar las preferencias configuradas para la recepción de
 alertas.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/read-modal-5.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/read-modal-5.png" width="100%">
 </div>
 
 Se identificaron tres Read Models principales. Raw Material Form permite consultar y proporcionar la información
@@ -817,14 +817,14 @@ Finalmente, Available Box permite consultar las materias primas disponibles alma
 proporcionando la información necesaria para realizar su almacenamiento, retiro o consumo.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/read-modal-6.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/read-modal-6.png" width="100%">
 </div>
 
 Se identificó el Read Model Details Measurement Dashboard, que permite consultar y visualizar información detallada
 sobre las mediciones de telemetría registradas por el sistema como luminosidad, temperatura, humedad y etc.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/read-modal-7.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/read-modal-7.png" width="100%">
 </div>
 
 Se identificaron siete Read Models que permiten consultar la información necesaria para gestionar la estructura y los
@@ -836,7 +836,7 @@ caja y Staff Registration Form facilita el registro del personal del laboratorio
 consultar la información del personal asociado al laboratorio.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/read-modal-8.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/read-modal-8.png" width="100%">
 </div>
 
 Se identificaron varios Read Models orientados a consultar la información necesaria para administrar los equipos e
@@ -894,8 +894,8 @@ El octavo paso consistió en incorporar al modelo los sistemas externos. Estos s
 rosado y corresponden a servicios externos al dominio propio que participan en los flujos de negocio.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/system-externs-1.png">
-    <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/system-externs-2.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/system-externs-1.png" width="100%">
+    <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/system-externs-2.png" width="100%">
 </div>
 
 El equipo identificó dos sistemas externos:
@@ -914,8 +914,8 @@ comandos, eventos, read models y políticas correspondientes. Los agregados se r
 mayor tamaño y constituyen la unidad de consistencia del dominio.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/aggregate-1-1.png">
-    <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/aggregate-1-2.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/aggregate-1-1.png" width="100%">
+    <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/aggregate-1-2.png" width="100%">
 </div>
 
 El Aggregate User se identificó porque concentra las operaciones y eventos relacionados con la gestión de la identidad
@@ -924,7 +924,7 @@ información del usuario bajo una única raíz de consistencia y controlar de ma
 con su ciclo de vida.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/aggregate-2.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/aggregate-2.png" width="100%">
 </div>
 
 Los Aggregates Plan, Payment y Subscription se identificaron porque cada uno concentra un conjunto de operaciones y
@@ -933,7 +933,7 @@ información y las reglas asociadas a la selección de planes, el procesamiento 
 suscripción, evitando mezclar responsabilidades diferentes dentro de un mismo Aggregate.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/aggregate-3.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/aggregate-3.png" width="100%">
 </div>
 
 El Aggregate Audit Report se identificó porque reúne las operaciones relacionadas con la consulta de información
@@ -943,7 +943,7 @@ indicadores clave, mientras que Deviation Trend mantiene separada la responsabil
 desviaciones.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/aggregate-4.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/aggregate-4.png" width="100%">
 </div>
 
 El Aggregate Batch se identificó porque concentra las operaciones y eventos relacionados con el ciclo de vida de un lote
@@ -953,7 +953,7 @@ reglas, por lo que mantener estas operaciones bajo el Aggregate Batch permite ge
 y la trazabilidad del lote.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/aggregate-5.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/aggregate-5.png" width="100%">
 </div>
 
 El Aggregate Deviation Alert se identificó porque concentra las operaciones relacionadas con el ciclo de vida de las
@@ -961,7 +961,7 @@ alertas de cumplimiento, desde su creación y reconocimiento hasta su resolució
 información necesaria para atender una alerta y mantener su estado actualizado.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/aggregate-6.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/aggregate-6.png" width="100%">
 </div>
 
 El Aggregate Raw Material se identificó porque concentra las operaciones relacionadas con la gestión de la materia prima
@@ -971,7 +971,7 @@ aceptación o rechazo, manteniendo separada la información del lote respecto a 
 inventario.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/aggregate-7.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/aggregate-7.png" width="100%">
 </div>
 
 El Aggregate Equipment Telemetry se identificó porque concentra las operaciones relacionadas con la recepción, registro
@@ -982,8 +982,8 @@ permite gestionar de forma consistente el historial de mediciones y la detecció
 
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/aggregate-8-1.png">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/aggregate-8-2.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/aggregate-8-1.png" width="100%">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/aggregate-8-2.png" width="100%">
 </div>
 
 El Aggregate Laboratory se identifica porque concentra la información principal del laboratorio y permite gestionar su
@@ -995,7 +995,7 @@ parámetros de medición. Finalmente, StaffMember se establece para gestionar al
 incluyendo su registro, membresía y desactivación.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/aggregate-9.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/aggregate-9.png" width="100%">
 </div>
 
 El Aggregate Equipment se identifica porque concentra la información y las operaciones relacionadas con la gestión de
@@ -1034,7 +1034,7 @@ responsabilidad principal de cada grupo. Como resultado, se definieron los sigui
 - Reporting & Audit
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/strategic-level-event-storming-3.png">
+  <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/strategic-level-event-storming-3.png" width="100%">
 </div>
 
 Durante la implementación del Sprint 1 se incorporó un décimo Bounded Context, **Profile Management**. Surgió al separar
@@ -1051,7 +1051,7 @@ cómo se relacionan entre sí mediante eventos y políticas.
 
 **Bounded context: Identity and Access Management**
 
-<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/iam.jpg"> </div>
+<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/iam.jpg" width="100%"> </div>
 
 El Bounded Context de Identity and Access Management (IAM) es responsable de la identidad de las personas que
 interactúan con Qualitrack, incluyendo su registro, autenticación, asignación de roles y recuperación de contraseña. Su
@@ -1080,7 +1080,7 @@ cambio de contraseña.
 
 **Bounded context: Subscriptions and Payments**
 
-<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/subscription-and-payments.jpg"> </div>
+<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/subscription-and-payments.jpg" width="100%"> </div>
 
 El Bounded Context de Payments & Subscriptions gestiona el modelo de negocio de Qualitrack: la selección de planes, el
 procesamiento de los pagos y el ciclo de vida de las suscripciones. Está compuesto por tres agregados (**Plan**,
@@ -1106,7 +1106,7 @@ un pago confirmado.
 
 **Bounded context: Tracking and Telemetry**
 
-<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/tracking-telemetry.jpg"> </div>
+<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/tracking-telemetry.jpg" width="100%"> </div>
 
 El Bounded Context de Tracking & Telemetry es responsable de recibir, registrar y dar seguimiento a las mediciones
 ambientales generadas por los sensores vinculados a los equipos del laboratorio, como temperatura, humedad, calidad del
@@ -1142,7 +1142,7 @@ indica que aún debía definirse qué datos se presentarían en el dashboard a p
 
 **Bounded context: Reporting & Audit**
 
-<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/reporting-audit.jpg"> </div>
+<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/reporting-audit.jpg" width="100%"> </div>
 
 El Bounded Context de Reporting & Audit es responsable de consolidar la información generada por los demás contextos de
 Qualitrack y ponerla a disposición para auditorías, seguimiento y análisis, mediante reportes, exportaciones e
@@ -1175,7 +1175,7 @@ auditoría a partir de los registros históricos consultados y la información s
 
 **Bounded context: Product Batch Management**
 
-<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/product-batch-management.jpg"> </div>
+<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/product-batch-management.jpg" width="100%"> </div>
 
 El Bounded Context de Product Batch Management es responsable de gestionar el ciclo de vida de los lotes de producción
 farmacéutica en Qualitrack, desde su creación hasta la decisión final de liberarlos o rechazarlos, garantizando su
@@ -1215,7 +1215,7 @@ indica que aún debía definirse qué criterios y validaciones determinan si un 
 
 **Bounded context: Compliance & Alerting**
 
-<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/compliance-alerting.jpg"> </div>
+<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/compliance-alerting.jpg" width="100%"> </div>
 
 El Bounded Context de Compliance & Alerting es responsable de detectar, notificar y dar seguimiento a las situaciones
 que requieren atención dentro de Qualitrack, como desviaciones ambientales, fallas de equipos, bajo stock de materias
@@ -1255,7 +1255,7 @@ debía definirse el proceso necesario para llevar una alerta desde su reconocimi
 
 **Bounded context: Equipment Management**
 
-<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/general-view-equipment.jpg"> </div>
+<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/general-view-equipment.jpg" width="100%"> </div>
 
 El Bounded Context de Equipment Management es responsable de gestionar los equipos e instrumentos de medición del
 laboratorio, incluyendo su registro, la vinculación de sensores, la configuración de parámetros, la calibración, el
@@ -1267,7 +1267,7 @@ Whenever Maintenance Registered Then Detect Compliance Event (hacia Compliance &
 
 * **Equipment**
 
-<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/equipment.jpg"> </div>
+<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/equipment.jpg" width="100%"> </div>
 
 El agregado Equipment concentra el ciclo de vida del equipo. El Lab Technician ejecuta el comando Register Equipment
 desde el read model Equipment Registration Form, lo que produce el evento Equipment Registered, y luego Link Sensor
@@ -1282,7 +1282,7 @@ cómo verificar que un sensor no esté vinculado a otro equipo antes de asociarl
 
 * **Maintenance Record**
 
-<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/maintenance-record.jpg"> </div>
+<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/maintenance-record.jpg" width="100%"> </div>
 
 El agregado MaintenanceRecord conserva el historial de mantenimientos de los equipos. El Lab Technician consulta el read
 model Equipment Maintenance History y ejecuta el comando Register Maintenance, que produce el evento Maintenance
@@ -1292,7 +1292,7 @@ sobrecargar las reglas de configuración y estado del equipo.
 
 **Bounded context: Inventory Management**
 
-<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/general-view-inventory-management.jpg"> </div>
+<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/general-view-inventory-management.jpg" width="100%"> </div>
 
 El Bounded Context de Inventory Management es responsable de gestionar las materias primas del laboratorio, desde su
 registro y recepción hasta su almacenamiento, consumo y control de existencias. Su modelo se organiza alrededor de dos
@@ -1305,7 +1305,7 @@ or reject raw material lot?", que indica que debían definirse los criterios par
 
 * **Raw Material**
 
-<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/raw-material.jpg"> </div>
+<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/raw-material.jpg" width="100%"> </div>
 
 El agregado RawMaterial concentra el registro, almacenamiento y control de existencias de la materia prima. El Lab
 Technician consulta el read model Raw Material Form y ejecuta el comando Register Raw Material, que produce el evento
@@ -1317,7 +1317,7 @@ Management mediante la política Whenever Box Registered Then Store Raw Material
 
 * **Raw Material Batch**
 
-<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/raw-material-batch.jpg"> </div>
+<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/raw-material-batch.jpg" width="100%"> </div>
 
 El agregado RawMaterialBatch gestiona el ciclo de vida del lote recibido. El Lab Technician ejecuta Register Supplier
 Receipt (Supplier Receipt Registered) y Receive Raw Material Lot (Raw Material Lot Received). Luego, con el read model
@@ -1328,7 +1328,7 @@ cantidad utilizada.
 
 **Bounded context: Laboratory Management**
 
-<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/general-view-laboratory-management.jpg"> </div>
+<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/general-view-laboratory-management.jpg" width="100%"> </div>
 
 El Bounded Context de Laboratory Management es responsable de gestionar la estructura física y organizativa del
 laboratorio dentro de Qualitrack: el laboratorio, sus ambientes, los boxes donde se almacenan y monitorean los productos
@@ -1342,7 +1342,7 @@ medición para ambientes y boxes (hacia Equipment Management).
 
 * **Box**
 
-<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/box.jpg"> </div>
+<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/box.jpg" width="100%"> </div>
 
 El agregado Box gestiona los contenedores de productos farmacéuticos asociados a un ambiente. El Quality Supervisor
 consulta el read model Box Registration Form y ejecuta el comando Register Box, que produce el evento Box Registered.
@@ -1353,7 +1353,7 @@ monitorearán las condiciones del box.
 
 * **Environment**
 
-<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/environment.jpg"> </div>
+<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/environment.jpg" width="100%"> </div>
 
 El agregado Environment controla los ambientes o áreas del laboratorio. El Quality Supervisor consulta el read model
 Environment Registration Form y ejecuta el comando Register Environment, que produce el evento Environment Registered.
@@ -1365,7 +1365,7 @@ Equipment Management para dotar al ambiente de los equipos de medición necesari
 
 * **Laboratory**
 
-<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/laboratory.jpg"> </div>
+<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/laboratory.jpg" width="100%"> </div>
 
 El agregado Laboratory concentra la información principal del laboratorio. El Quality Supervisor consulta el read model
 Laboratory Registration Form y ejecuta el comando Register Laboratory, que produce el evento Laboratory Registered.
@@ -1375,7 +1375,7 @@ laboratorio.
 
 * **Staff Member**
 
-<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/staff-member.jpg"> </div>
+<div align="center"> <img src="../../assets/img/main-content/chapter-iv/strategic-level-event-storming/staff-member.jpg" width="100%"> </div>
 
 El agregado StaffMember administra al personal del laboratorio. El Quality Supervisor consulta el read model Staff
 Registration Form y ejecuta el comando Register Staff Member, que produce el evento Staff Member Registered. Luego, con
@@ -1446,7 +1446,7 @@ Compliance & Alerting no almacena ni interpreta datos de equipos ni de ambientes
 referencia hacia Equipment Management y Laboratory Management, conservando la autoridad de cada contexto sobre su propio
 modelo.
 
-![Domain Message Flow - Environmental deviation detected and alert reviewed](../../assets/img/main-content/chapter-iv/domain-message-flows/domain-message-flow-1.png)
+<p align="center"><img src="../../assets/img/main-content/chapter-iv/domain-message-flows/domain-message-flow-1.png" alt="Domain Message Flow - Environmental deviation detected and alert reviewed" width="100%"></p>
 
 ##### Scenario 2: Manufacturing a product batch with raw-material traceability
 
@@ -1468,7 +1468,7 @@ sostener la trazabilidad exigida por el negocio.
 Product Batch Management se mantiene como fuente de verdad de la trazabilidad del lote fabricado, mientras que la
 disponibilidad y el descuento de materias primas permanecen bajo la autoridad de Inventory Management.
 
-![Domain Message Flow - Manufacturing a product batch with raw-material traceability](../../assets/img/main-content/chapter-iv/domain-message-flows/domain-message-flow-2.png)
+<p align="center"><img src="../../assets/img/main-content/chapter-iv/domain-message-flows/domain-message-flow-2.png" alt="Domain Message Flow - Manufacturing a product batch with raw-material traceability" width="100%"></p>
 
 ##### Scenario 3: Onboarding, subscription payment and laboratory registration
 
@@ -1490,7 +1490,7 @@ la activación de la suscripción y el alta del laboratorio.
 Stripe se modela como sistema externo y la confirmación del pago ingresa al dominio como un evento, evitando que
 Payments & Subscriptions dependa de la disponibilidad síncrona del proveedor.
 
-![Domain Message Flow - Onboarding, subscription payment and laboratory registration](../../assets/img/main-content/chapter-iv/domain-message-flows/domain-message-flow-3.png)
+<p align="center"><img src="../../assets/img/main-content/chapter-iv/domain-message-flows/domain-message-flow-3.png" alt="Domain Message Flow - Onboarding, subscription payment and laboratory registration" width="100%"></p>
 
 ##### Scenario 4: Building the compliance report for a regulatory audit
 
@@ -1513,7 +1513,7 @@ Bounded Contexts sin ser propietario de ninguno de sus modelos.
 Todas las interacciones de este escenario son queries: Reporting & Audit únicamente lee información y la traduce a
 indicadores y evidencia de auditoría, lo que confirma su clasificación como contexto de soporte analítico.
 
-![Domain Message Flow - Building the compliance report for a regulatory audit](../../assets/img/main-content/chapter-iv/domain-message-flows/domain-message-flow-4.png)
+<p align="center"><img src="../../assets/img/main-content/chapter-iv/domain-message-flows/domain-message-flow-4.png" alt="Domain Message Flow - Building the compliance report for a regulatory audit" width="100%"></p>
 
 ##### Scenario 5: Receiving a raw material lot and raising a low-stock alert
 
@@ -1535,7 +1535,7 @@ generación automática de una alerta cuando el stock cae por debajo del mínimo
 La cuarentena o liberación de un lote de materia prima permanece dentro de Inventory Management, mientras que el ciclo
 de vida de la alerta generada es responsabilidad exclusiva de Compliance & Alerting.
 
-![Domain Message Flow - Receiving a raw material lot and raising a low-stock alert](../../assets/img/main-content/chapter-iv/domain-message-flows/domain-message-flow-5.png)
+<p align="center"><img src="../../assets/img/main-content/chapter-iv/domain-message-flows/domain-message-flow-5.png" alt="Domain Message Flow - Receiving a raw material lot and raising a low-stock alert" width="100%"></p>
 
 ##### Scenario 6: Equipment maintenance and calibration expiry
 
@@ -1557,7 +1557,7 @@ como el uso de esa información por parte de la fabricación y la auditoría.
 Equipment Management conserva la autoridad sobre el estado y la calibración de los equipos; tanto Product Batch
 Management como Reporting & Audit consumen esa información mediante queries explícitas, sin replicar el modelo.
 
-![Domain Message Flow - Equipment maintenance and calibration expiry](../../assets/img/main-content/chapter-iv/domain-message-flows/domain-message-flow-6.png)
+<p align="center"><img src="../../assets/img/main-content/chapter-iv/domain-message-flows/domain-message-flow-6.png" alt="Domain Message Flow - Equipment maintenance and calibration expiry" width="100%"></p>
 
 El modelado de estos seis escenarios permitió verificar que los Bounded Contexts definidos son suficientes para resolver
 los casos de negocio de QualiTrack y que las colaboraciones entre ellos pueden expresarse mediante contratos explícitos.
@@ -1603,7 +1603,7 @@ trazabilidad.
 Cada `ProductBatch` puede relacionarse con las materias primas, equipos, laboratorio y personal involucrado durante el
 proceso de fabricación, manteniendo separadas las responsabilidades pertenecientes a dichos dominios.
 
-![Bounded Context Canvas - Product Batch Management](../../assets/img/main-content/chapter-iv/bounded-context-canvases/bc-product-batch-management.png)
+<p align="center"><img src="../../assets/img/main-content/chapter-iv/bounded-context-canvases/bc-product-batch-management.png" alt="Bounded Context Canvas - Product Batch Management" width="100%"></p>
 
 ##### Tracking & Telemetry Context - Canvas
 
@@ -1613,7 +1613,7 @@ actuaciones asociadas a los dispositivos IoT.
 Este contexto representa el estado físico observado dentro de los ambientes mediante conceptos como `Measurement`,
 `Environmental Profile`, estados `NORMAL`, `WARNING` o `CRITICAL` y `ActuationEvent`.
 
-![Bounded Context Canvas - Tracking & Telemetry](../../assets/img/main-content/chapter-iv/bounded-context-canvases/bc-tracking-telemetry.png)
+<p align="center"><img src="../../assets/img/main-content/chapter-iv/bounded-context-canvases/bc-tracking-telemetry.png" alt="Bounded Context Canvas - Tracking & Telemetry" width="100%"></p>
 
 ##### Compliance & Alerting Context - Canvas
 
@@ -1625,7 +1625,7 @@ El contexto transforma información proveniente de otros dominios en conceptos p
 De esta manera se mantiene separada la detección física de una condición respecto de su evaluación, seguimiento y
 resolución.
 
-![Bounded Context Canvas - Compliance & Alerting](../../assets/img/main-content/chapter-iv/bounded-context-canvases/bc-compliance-alerting.png)
+<p align="center"><img src="../../assets/img/main-content/chapter-iv/bounded-context-canvases/bc-compliance-alerting.png" alt="Bounded Context Canvas - Compliance & Alerting" width="100%"></p>
 
 ##### Inventory Management Context - Canvas
 
@@ -1635,7 +1635,7 @@ asociados con los lotes de materia prima.
 Este contexto constituye la fuente de verdad respecto a la disponibilidad y estado de los materiales utilizados durante
 los procesos de fabricación.
 
-![Bounded Context Canvas - Inventory Management](../../assets/img/main-content/chapter-iv/bounded-context-canvases/bc-inventory-management.png)
+<p align="center"><img src="../../assets/img/main-content/chapter-iv/bounded-context-canvases/bc-inventory-management.png" alt="Bounded Context Canvas - Inventory Management" width="100%"></p>
 
 ##### Laboratory Management Context - Canvas
 
@@ -1645,7 +1645,7 @@ organización mediante conceptos como `Laboratory Membership`.
 Este contexto proporciona la estructura organizacional utilizada como referencia por otros dominios sin transferirles la
 responsabilidad de administrar laboratorios y ambientes.
 
-![Bounded Context Canvas - Laboratory Management](../../assets/img/main-content/chapter-iv/bounded-context-canvases/bc-laboratory-management.png)
+<p align="center"><img src="../../assets/img/main-content/chapter-iv/bounded-context-canvases/bc-laboratory-management.png" alt="Bounded Context Canvas - Laboratory Management" width="100%"></p>
 
 ##### Equipment Management Context - Canvas
 
@@ -1655,7 +1655,7 @@ incluyendo su identidad, ubicación y estado operativo.
 Otros Bounded Contexts utilizan referencias de los equipos cuando requieren relacionarlos con procesos de telemetría,
 fabricación o reporting, sin asumir la responsabilidad de administrar dichos activos.
 
-![Bounded Context Canvas - Equipment Management](../../assets/img/main-content/chapter-iv/bounded-context-canvases/bc-equipment-management.png)
+<p align="center"><img src="../../assets/img/main-content/chapter-iv/bounded-context-canvases/bc-equipment-management.png" alt="Bounded Context Canvas - Equipment Management" width="100%"></p>
 
 ##### Payments & Subscriptions Context - Canvas
 
@@ -1665,7 +1665,7 @@ entre los usuarios u organizaciones y QualiTrack.
 Este contexto mantiene separadas las reglas comerciales de las responsabilidades operativas del laboratorio y actúa como
 fuente de verdad respecto al estado de las suscripciones.
 
-![Bounded Context Canvas - Payments & Subscriptions](../../assets/img/main-content/chapter-iv/bounded-context-canvases/bc-payments-subscriptions.png)
+<p align="center"><img src="../../assets/img/main-content/chapter-iv/bounded-context-canvases/bc-payments-subscriptions.png" alt="Bounded Context Canvas - Payments & Subscriptions" width="100%"></p>
 
 ##### Reporting & Audit Context - Canvas
 
@@ -1676,7 +1676,7 @@ Consume información proveniente de distintos Bounded Contexts y la transforma e
 `Audit Record`, `Traceability View`, `KPI` y `Environmental Metrics`, sin convertirse en una segunda fuente de verdad de
 los datos operativos.
 
-![Bounded Context Canvas - Reporting & Audit](../../assets/img/main-content/chapter-iv/bounded-context-canvases/bc-reporting-audit.png)
+<p align="center"><img src="../../assets/img/main-content/chapter-iv/bounded-context-canvases/bc-reporting-audit.png" alt="Bounded Context Canvas - Reporting & Audit" width="100%"></p>
 
 ##### Identity & Access Management (IAM) Context - Canvas
 
@@ -1688,7 +1688,7 @@ respecto de los modelos específicos utilizados por los demás dominios.
 Otros Bounded Contexts utilizan únicamente referencias como `UserId` para identificar usuarios sin incorporar
 directamente las entidades internas de IAM.
 
-![Bounded Context Canvas - Identity & Access Management](../../assets/img/main-content/chapter-iv/bounded-context-canvases/bc-iam.png)
+<p align="center"><img src="../../assets/img/main-content/chapter-iv/bounded-context-canvases/bc-iam.png" alt="Bounded Context Canvas - Identity & Access Management" width="100%"></p>
 
 ##### Profile Management Context - Canvas
 

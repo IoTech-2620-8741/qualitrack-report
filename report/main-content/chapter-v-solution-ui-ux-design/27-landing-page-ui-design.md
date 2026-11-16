@@ -18,7 +18,7 @@ Us, mientras que el área principal ofrece una visión concisa del producto, aco
 y cumplimiento regulatorio que distingue a QualiTrack.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/landing-page-wireframes/hero-section-landing-wireframe.png" alt="Wireframe de navegación y Hero">
+  <img src="../../assets/img/main-content/chapter-v/landing-page-wireframes/hero-section-landing-wireframe.png" alt="Wireframe de navegación y Hero" width="100%">
 </div>
 
 **Services**
@@ -28,7 +28,7 @@ Audit Trails y Digital Batch Management. Cada servicio se presenta con un icono 
 haciendo que nuestra oferta sea fácil de entender y visualmente accesible.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/landing-page-wireframes/what-we-offer-section-landing-wireframe.png" alt="Wireframe de servicios What We Offer">
+  <img src="../../assets/img/main-content/chapter-v/landing-page-wireframes/what-we-offer-section-landing-wireframe.png" alt="Wireframe de servicios What We Offer" width="100%">
 </div>
 
 **Acerca de la aplicación (About the Platform):**
@@ -39,7 +39,7 @@ beneficios clave como captura automática de telemetría, alertas en tiempo real
 DIGEMID.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/landing-page-wireframes/benefits-section-landing-wireframe.png" alt="Wireframe de beneficios (utilizado en About the Platform)">
+  <img src="../../assets/img/main-content/chapter-v/landing-page-wireframes/benefits-section-landing-wireframe.png" alt="Wireframe de beneficios (utilizado en About the Platform)" width="100%">
 </div>
 
 **Sobre el Equipo (Our Team):**
@@ -49,7 +49,7 @@ miembros, mostramos a las personas dedicadas a este proyecto, construyendo confi
 visitantes.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/landing-page-wireframes/our-team-landing-wireframe.png" alt="Wireframede Our Team">
+  <img src="../../assets/img/main-content/chapter-v/landing-page-wireframes/our-team-landing-wireframe.png" alt="Wireframede Our Team" width="100%">
 </div>
 
 <br>
@@ -62,7 +62,7 @@ adapte a sus necesidades, ya sea para un laboratorio mediano o para una instituc
 tarifas mensuales y anuales, junto con la indicación del ahorro asociado, facilita una elección más informada.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/landing-page-wireframes/plans-section-landing-wireframe.png" alt="Wireframe de planes">
+  <img src="../../assets/img/main-content/chapter-v/landing-page-wireframes/plans-section-landing-wireframe.png" alt="Wireframe de planes" width="100%">
 </div>
 
 **Fotter**
@@ -72,7 +72,7 @@ y "Privacy Policy", además de detalles de contacto (correo electrónico, teléf
 acceso rápido a la información sin saturar la interfaz, ofreciendo un cierre limpio y funcional a la página.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/landing-page-wireframes/footer-section-landing-wireframe.png" alt="Wireframe del pie de página">
+  <img src="../../assets/img/main-content/chapter-v/landing-page-wireframes/footer-section-landing-wireframe.png" alt="Wireframe del pie de página" width="100%">
 </div>
 
 Este wireframe sienta las bases para un diseño visual que no solo se ve bien, sino que también guía al usuario de manera
@@ -90,7 +90,7 @@ superior permite acceder de forma fluida a todas las secciones de la página, pr
 intuitiva.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/landing-page-mock-ups/hero-section-landing.png" alt="Mock-up de Hero">
+  <img src="../../assets/img/main-content/chapter-v/landing-page-mock-ups/hero-section-landing.png" alt="Mock-up de Hero" width="100%">
 </div>
 
 **What We Offer**
@@ -101,7 +101,7 @@ Traceability' o 'Regulatory Compliance', lo que permite a los usuarios entender 
 plataforma y los tipos de soluciones que ofrecemos para la gestión de calidad farmacéutica.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/landing-page-mock-ups/what-we-offer-section-landing.png" alt="Mock-up de What We Offer">
+  <img src="../../assets/img/main-content/chapter-v/landing-page-mock-ups/what-we-offer-section-landing.png" alt="Mock-up de What We Offer" width="100%">
 </div>
 
 **Features**
@@ -112,7 +112,7 @@ les ofrece una vista visual de la plataforma en acción. Esto combina informaci�
 dinámico.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/landing-page-mock-ups/features-section-landing.png" alt="Mock-up de Features">
+  <img src="../../assets/img/main-content/chapter-v/landing-page-mock-ups/features-section-landing.png" alt="Mock-up de Features" width="100%">
 </div>
 
 **Benefits**
@@ -123,7 +123,7 @@ para auditorías regulatorias y aumenta la integridad y trazabilidad de los dato
 como para entidades de salud pública.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/landing-page-mock-ups/benefits-section-landing.png" alt="Mock-up de Benefits">
+  <img src="../../assets/img/main-content/chapter-v/landing-page-mock-ups/benefits-section-landing.png" alt="Mock-up de Benefits" width="100%">
 </div>
 
 **About Us**
@@ -134,7 +134,7 @@ e integridad de datos que nos impulsan. Un video o imagen animada acompaña el t
 manera visualmente atractiva y moderna.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/landing-page-mock-ups/about-us-section-landing.png" alt="Mock-up de About Us">
+  <img src="../../assets/img/main-content/chapter-v/landing-page-mock-ups/about-us-section-landing.png" alt="Mock-up de About Us" width="100%">
 </div>
 
 **Our Team**
@@ -144,8 +144,8 @@ foto, el nombre, el cargo y una breve biografía de cada miembro. El diseño de 
 brinda un aspecto organizado y profesional, permitiendo a los usuarios conocer al equipo de desarrollo.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/landing-page-mock-ups/our-team-section-landing-1.png" alt="Mock-up de Our Team">
-  <img src="../../assets/img/main-content/chapter-v/landing-page-mock-ups/our-team-section-landing-2.png" alt="Mock-up de Our Team">
+  <img src="../../assets/img/main-content/chapter-v/landing-page-mock-ups/our-team-section-landing-1-part-1.png" alt="Mock-up de Our Team" width="100%"><img src="../../assets/img/main-content/chapter-v/landing-page-mock-ups/our-team-section-landing-1-part-2.png" alt="Mock-up de Our Team" width="100%">
+  <img src="../../assets/img/main-content/chapter-v/landing-page-mock-ups/our-team-section-landing-2.png" alt="Mock-up de Our Team" width="100%">
 </div>
 
 **Plans**
@@ -155,7 +155,7 @@ En la sección de "Plans", ofrecemos los detalles de nuestros planes de precios.
 diseño permite un fácil cambio entre planes mensuales y anuales, facilitando la elección del plan adecuado.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/landing-page-mock-ups/plans-section-landing.png" alt="Mock-up de Plans">
+  <img src="../../assets/img/main-content/chapter-v/landing-page-mock-ups/plans-section-landing.png" alt="Mock-up de Plans" width="100%">
 </div>
 
 **Footer**
@@ -165,5 +165,5 @@ a los usuarios a unirse a nuestra comunidad. El logo de QualiTrack, enlaces de c
 de autor se encuentran aquí, asegurando que toda la información relevante esté fácilmente accesible para los usuarios.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/landing-page-mock-ups/footer-section-landing.png" alt="Mock-up de Footer">
+  <img src="../../assets/img/main-content/chapter-v/landing-page-mock-ups/footer-section-landing.png" alt="Mock-up de Footer" width="100%">
 </div>

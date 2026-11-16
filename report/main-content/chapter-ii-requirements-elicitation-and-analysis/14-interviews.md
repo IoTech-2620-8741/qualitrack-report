@@ -180,7 +180,7 @@ conclusiones. Este registro sirve como evidencia para orientar las decisiones de
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div ><img src="../../assets/img/main-content/chapter-ii/interviews/mesly-medina-saravia.png" width="700"></div>
+                <div ><img src="../../assets/img/main-content/chapter-ii/interviews/mesly-medina-saravia.png" width="100%"></div>
             </td>
         </tr>
         <tr>
@@ -239,7 +239,7 @@ conclusiones. Este registro sirve como evidencia para orientar las decisiones de
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/mario-baca.png" width="700"></div>
+                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/mario-baca.png" width="100%"></div>
             </td>
         </tr>
         <tr>
@@ -299,7 +299,7 @@ Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagno
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/ricardo-melendrez.png" width="700"></div>
+                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/ricardo-melendrez.png" width="100%"></div>
             </td>
         </tr>
         <tr>
@@ -360,7 +360,7 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/cesar-aguero.png" width="700"></div>
+                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/cesar-aguero.png" width="100%"></div>
             </td>
         </tr>
         <tr>
@@ -425,7 +425,7 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/liz-aliaga.png" width="700"></div>
+                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/liz-aliaga.png" width="100%"></div>
             </td>
         </tr>
         <tr>
@@ -487,7 +487,7 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/ohmar-chavez.png" width="700"></div>
+                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/ohmar-chavez.png" width="100%"></div>
             </td>
         </tr>
         <tr>
@@ -554,7 +554,7 @@ parámetros establecidos, detectar oportunamente las desviaciones y disponer de 
 y toma de decisiones.
 
 <br>
-<div align="center"><img src="../../assets/img/main-content/chapter-ii/interview-analysis/quality-managers-charts-image.png" width="900"></div>
+<div align="center"><img src="../../assets/img/main-content/chapter-ii/interview-analysis/quality-managers-charts-image.png" width="100%"></div>
 <br>
 
 <div style="page-break-after: always;"></div>
@@ -582,7 +582,7 @@ materiales durante sus procesos, aunque las necesidades y dificultades varían d
 que se desempeña cada entrevistado.
 
 <br>
-<div align="center"><img src="../../assets/img/main-content/chapter-ii/interview-analysis/operational-staff-charts-image.png" width="850"></div>
+<div align="center"><img src="../../assets/img/main-content/chapter-ii/interview-analysis/operational-staff-charts-image.png" width="100%"></div>
 <br>
 
 <div style="page-break-after: always;"></div>
@@ -595,7 +595,7 @@ dispositivos, sistemas operativos y navegadores utilizados durante las actividad
 ##### **Uso de dispositivos**
 
 <div align="center">
-    <img src="../../assets/img/main-content/chapter-ii/interview-analysis/analis-de-dispositivos.png" width=600>
+    <img src="../../assets/img/main-content/chapter-ii/interview-analysis/analis-de-dispositivos.png" width="100%">
 </div>
 
 <br>
@@ -666,7 +666,7 @@ El análisis de las entrevistas muestra que los participantes utilizan principal
 digitales para coordinar actividades dentro de sus organizaciones. Los canales identificados fueron.
 
 <div align="center">
-    <img src="../../assets/img/main-content/chapter-ii/interview-analysis/analisis-de-canales-de-comunicacion.png" width=700>
+    <img src="../../assets/img/main-content/chapter-ii/interview-analysis/analisis-de-canales-de-comunicacion.png" width="100%">
 </div>
 
 Los canales presentan diferencias según el contexto laboral. Mario utiliza comunicación presencial, llamadas y WhatsApp

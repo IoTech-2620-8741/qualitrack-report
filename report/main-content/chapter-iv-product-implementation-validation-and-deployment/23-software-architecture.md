@@ -13,7 +13,7 @@ Diagram, esta vista no se restringe a los elementos conectados directamente con 
 y relaciones del entorno del laboratorio farmacéutico que explican cómo se realiza hoy el control de condiciones
 ambientales y qué dependencias forman parte del panorama operativo, aun cuando no pasen por la plataforma.
 
-![C4 - System Landscape](../../assets/img/main-content/chapter-iv/c4/c4-system-landscape.png)
+<p align="center"><img src="../../assets/img/main-content/chapter-iv/c4/c4-system-landscape.png" alt="C4 - System Landscape" width="100%"></p>
 
 ##### Personas del ecosistema:
 
@@ -52,7 +52,7 @@ La vista **System Context** centra la representación en QualiTrack Platform com
 personas y los sistemas externos que mantienen una relación directa con él. Su propósito es delimitar la frontera del
 sistema y las responsabilidades que quedan fuera de ella, sin exponer decisiones de tecnología interna.
 
-![C4 - System Context](../../assets/img/main-content/chapter-iv/c4/c4-system-context.png)
+<p align="center"><img src="../../assets/img/main-content/chapter-iv/c4/c4-system-context.png" alt="C4 - System Context" width="100%"></p>
 
 **Relaciones con las personas:**
 
@@ -84,7 +84,7 @@ distribución de responsabilidades entre ellas, las decisiones principales de te
 comunicación. Siguiendo la definición de C4, un contenedor es una unidad ejecutable o almacén de datos desplegable por
 separado, no un contenedor de Docker.
 
-![C4 - Container](../../assets/img/main-content/chapter-iv/c4/c4-containers.png)
+<p align="center"><img src="../../assets/img/main-content/chapter-iv/c4/c4-containers.png" alt="C4 - Container" width="100%"></p>
 
 **Productos web:**
 
@@ -149,7 +149,7 @@ La vista **Deployment** muestra cómo las instancias de los contenedores descrit
 infraestructura de ejecución del entorno **Production**, cubriendo tres planos: la sede farmacéutica del cliente, la
 infraestructura cloud (backend, base de datos y hosting de los productos web) y los dispositivos del usuario.
 
-![C4 - Deployment](../../assets/img/main-content/chapter-iv/c4/c4-deployment-production.png)
+<p align="center"><img src="../../assets/img/main-content/chapter-iv/c4/c4-deployment-production.png" alt="C4 - Deployment" width="100%"></p>
 
 **Pharmaceutical Facility** — sede del laboratorio o almacén cliente, sobre red local Ethernet / WiFi:
 

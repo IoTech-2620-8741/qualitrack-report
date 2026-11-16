@@ -28,7 +28,7 @@ mediante telemetría IoT. Y finalmente la tipografía del logo el nombre divide 
 tecnológico para la calidad y el verde de cumplimiento para la trazabilidad.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-v/style-guidelines/qualitrack.png" alt="QualiTrack Logo" width="350px" height="auto"/>
+  <img src="../../assets/img/main-content/chapter-v/style-guidelines/qualitrack.png" alt="QualiTrack Logo" width="100%">
 </p>
 
 **Typography**
@@ -47,7 +47,7 @@ La jerarquía tipográfica se establece de la siguiente manera para garantizar c
 * **Botones y etiquetas (span):** 1.4rem (aprox. 14px) a 1.8rem (aprox. 18px).
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-v/style-guidelines/stylefont.png" alt="Rubik Typography Guide" width="500px" height="auto"/>
+  <img src="../../assets/img/main-content/chapter-v/style-guidelines/stylefont.png" alt="Rubik Typography Guide" width="100%">
 </p>
 
 Esta distribución garantiza un contraste óptimo entre el texto y el fondo, superando un ratio mínimo de 4.5:1 según las
@@ -78,7 +78,7 @@ tecnológico y control. Se ha distribuido en tres categorías principales:
 * **Advertencia:** Amarillo (#FFC107) para notificaciones y avisos importantes.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-v/style-guidelines/color-pallete.png" alt="QualiTrack Color Palette" width="800px" height="auto"/>
+  <img src="../../assets/img/main-content/chapter-v/style-guidelines/color-pallete.png" alt="QualiTrack Color Palette" width="100%">
 </p>
 
 Esta combinación cromática refleja los valores de nuestra marca y busca transmitir al público (laboratorios e
@@ -338,11 +338,16 @@ Estos lineamientos aplican a los componentes de la capa Embedded:
 
 **Diseño Físico**
 
-- **Forma**: carcasa compacta de perfil bajo, con el sensor de movimiento al centro y un LED RGB de estado a su lado,
-  visible desde cualquier punto del ambiente.
-- **Ventilación**: aberturas laterales para el sensor de calidad de aire, sin exponer la electrónica.
-- **Buzzer**: rejilla en la parte inferior de la cara frontal.
-- **Material**: plástico ABS blanco, fácil de limpiar con desinfectantes de uso en laboratorio.
+- **Forma**: carcasa cuadrada de perfil bajo, de 110 × 110 mm y 56 mm de profundidad, con el lente del sensor de
+  movimiento al centro y el LED RGB de estado sobre él, visible desde cualquier punto del ambiente.
+- **LED de estado**: dentro de un tubo guía de luz con difusor opalino, que crea un resplandor circular suave y legible
+  a distancia sin deslumbrar.
+- **Ventilación**: rejillas frontales a ambos lados y aberturas laterales para el sensor de calidad de aire, sin exponer
+  la electrónica.
+- **Buzzer**: perforaciones en la parte inferior de la cara frontal.
+- **Alimentación**: entrada USB-C de 5 V en la cara inferior.
+- **Instalación**: placa de montaje en pared o techo, a unos 2,2 m de altura.
+- **Material**: plástico ABS, fácil de limpiar con desinfectantes de uso en laboratorio.
 - **Identificación**: etiqueta con el ID del dispositivo y el código del ambiente asignado.
 
 **Indicador LED de Estado**
@@ -376,9 +381,14 @@ El nodo no tiene botones: se enciende al conectarlo a la alimentación USB, cali
 30 s y después funciona sin intervención del personal, que sigue su estado en el LED, el buzzer y las aplicaciones web y
 móvil.
 
-**Imágen del dispositivo**
+**Imagen del dispositivo**
 
-![Monitor de Ambiente](../../assets/img/main-content/chapter-v/style-guidelines/environment-monitor.png)
+La infografía resume los lineamientos del Monitor de Ambiente. Muestra la cara frontal con el LED RGB en su difusor,
+el sensor de movimiento, el sensor de aire y el buzzer, junto con los estados del LED, los eventos del buzzer, las
+especificaciones y el recorrido de una lectura hasta convertirse en alerta. Su diseño físico detallado se presenta en la
+sección 5.6.
+
+<p align="center"><img src="../../assets/img/main-content/chapter-v/style-guidelines/environment-monitor.png" alt="Monitor de Ambiente" width="100%"></p>
 
 **Dispositivo 2 — Monitor de Contenedor**
 
@@ -386,7 +396,7 @@ móvil.
 
 | Atributo          | Detalle                                                                                                              |
 |-------------------|----------------------------------------------------------------------------------------------------------------------|
-| Tipo              | Dispositivo ESP32 montado sobre o junto al contenedor                                                                |
+| Tipo              | Gabinete IoT con ESP32 integrado para lotes de fármacos y materias primas                                            |
 | Ubicación         | Varios por ambiente; uno por contenedor monitoreado (cadena de frío, almacén de materias primas, producto terminado) |
 | Función principal | Medir temperatura, humedad y luz; leer etiquetas RFID; ejecutar acciones automáticas                                 |
 | Modo de operación | Continuo; los actuadores responden a las reglas del perfil ambiental                                                 |
@@ -394,12 +404,17 @@ móvil.
 
 **Diseño Físico**
 
-- **Pantalla**: display OLED en la cara frontal, a la altura de la vista.
-- **Lector RFID**: zona delimitada junto a la pantalla, con ícono de ondas.
-- **Servo de cierre**: indicador de candado junto al lector RFID.
-- **Salida de aire**: rejilla inferior para ventilación/enfriamiento.
-- **LED de estado**: en la parte superior del dispositivo.
-- **Material**: carcasa resistente a desinfectantes y a la humedad propia de cámaras frías.
+- **Forma**: gabinete de 450 × 450 × 600 mm con puerta frontal y tres bandejas perforadas y extraíbles para viales y
+  cajas de lote.
+- **Panel del marco**: junto a la puerta, reúne la pantalla OLED, el lector RFID (con ícono de
+  ondas) y el buzzer, para leer el estado y acercar la tarjeta en un mismo punto.
+- **Cierre**: puerta con burlete de sellado y pestillo movido por el servo; solo abre con una etiqueta autorizada.
+- **LED de estado**: en el marco superior del gabinete.
+- **Ventilación**: ventilador de 5 V en un lateral y rejilla de salida de aire en el lado opuesto.
+- **Electrónica**: compartimento sellado sobre el gabinete, con tapa de ABS para no bloquear la señal Wi-Fi del ESP32 y
+  entrada USB-C de 5 V.
+- **Material**: acero inoxidable con aislamiento de poliuretano, resistente a desinfectantes y a la humedad propia de
+  cámaras frías.
 
 **Indicador LED de Estado**
 
@@ -460,9 +475,14 @@ Jerarquía de información:
 El nodo no tiene botones: se enciende al conectarlo a la alimentación USB, y el personal interactúa con él acercando su
 etiqueta RFID al lector, que abre el contenedor y, en `CRITICAL`, reconoce la alarma local.
 
-**Imágen del dispositivo**
+**Imagen del dispositivo**
 
-![Monitor de Contenedor](../../assets/img/main-content/chapter-v/style-guidelines/container-monitor.png)
+La infografía resume los lineamientos del Monitor de Contenedor en una sola lámina. Muestra el gabinete con la
+ubicación de cada elemento de interfaz (LED, pantalla OLED, lector RFID, buzzer, cerradura, ventilador y rejilla) y la
+tabla de estados del LED con su color y patrón. Incluye además las especificaciones, las acciones automáticas y la
+jerarquía de la pantalla OLED. Su diseño físico detallado se presenta en la sección 5.6.
+
+<p align="center"><img src="../../assets/img/main-content/chapter-v/style-guidelines/container-monitor.png" alt="Monitor de Contenedor" width="100%"></p>
 
 **Edge Device**
 

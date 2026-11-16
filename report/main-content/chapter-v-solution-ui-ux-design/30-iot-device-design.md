@@ -168,7 +168,7 @@ En la siguiente imagen, elaborada en Cirkit Designer, se muestran los dos nodos 
 RC522, DHT, servo, ventilador con transistor, LED RGB y buzzer).
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/iot-designs/qualitrack-circuit.png" alt="Circuito de los dispositivos IoT en Cirkit Designer" width="900px"/>
+  <img src="../../assets/img/main-content/chapter-v/iot-designs/qualitrack-circuit.png" alt="Circuito de los dispositivos IoT en Cirkit Designer" width="100%">
 </div>
 
 **Conexiones del Monitor de Ambiente:**
@@ -206,21 +206,130 @@ por Wi-Fi o Ethernet.
 * El servo y el ventilador se alimentan desde el pin de 5 V del ESP32; si hay reinicios, se deben usar una fuente
   suficiente y un condensador de desacople.
 
+**Circuito de cada nodo:**
+
+Las siguientes imágenes separan el circuito de cada nodo para leer con más detalle sus conexiones. En el Monitor de
+Ambiente, el PIR y el MQ-135 son las entradas y el LED RGB y el buzzer las salidas locales. En el Monitor de Contenedor
+se distinguen los tres buses: I2C, compartido por la pantalla OLED y el BH1750; SPI, del lector RC522; y un solo hilo,
+del DHT22. Los actuadores van conectados a pines de salida: el servo por PWM y el ventilador a través del 2N2222.
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-v/iot-designs/environment-monitor-circuit.png" alt="Circuito del Monitor de Ambiente en Cirkit Designer" width="100%">
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-v/iot-designs/container-monitor-circuit.png" alt="Circuito del Monitor de Contenedor en Cirkit Designer" width="100%">
+</div>
+
 **Diseño físico:**
 
-El Monitor de Ambiente se plantea como una carcasa compacta de montaje en pared o techo, con el sensor PIR al centro
-y el LED RGB de estado a su lado, aberturas de ventilación laterales para el MQ-135 y la rejilla del buzzer en la
-parte inferior. El Monitor de Contenedor se plantea como un módulo para montar sobre o junto al contenedor, con la
-pantalla OLED al frente, la zona del lector RFID junto al indicador del servo, el LED de estado en la parte superior y
-una rejilla de aire para el ventilador. La alimentación USB de 5 V se ubica en un lateral de cada carcasa.
+El diseño físico traslada el circuito a un objeto que el personal del laboratorio puede instalar, limpiar y leer de un
+vistazo. Cada dispositivo se presenta con un boceto de sus vistas (con medidas y ubicación de uso) y una vista
+explosionada que muestra cómo se arman sus piezas. El Monitor de Contenedor se presenta además con su plano general de
+conjunto.
+
+**Monitor de Ambiente**
+
+El Monitor de Ambiente es una carcasa cuadrada de ABS de 110 × 110 mm y 56 mm de profundidad (45 mm sin la placa de
+montaje). Se instala uno por ambiente, en pared o techo, a unos 2,2 m de altura, para que el sensor PIR cubra la zona de
+trabajo y el LED se vea desde cualquier punto de la sala.
+
+La cara frontal reúne todo lo que el personal necesita ver u oír:
+
+* **LED RGB con difusor opalino**, en la parte superior: el difusor suaviza la luz en un halo circular, de modo que el
+  estado (`NORMAL`, `WARNING`, `CRITICAL`) se reconoce de lejos sin deslumbrar.
+* **Lente PIR**, al centro: un domo que amplía el campo de detección de movimiento del sensor.
+* **Rejillas de aire** a ambos lados y **ventilación lateral**: dejan que el aire del ambiente llegue al MQ-135, sin
+  exponer la electrónica.
+* **Perforaciones del buzzer**, en la parte inferior: el sonido de alerta sale al ambiente sin abrir la carcasa.
+
+La entrada de 5 V por USB-C está en la cara inferior de la carcasa.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/iot-designs/environment-monitor-circuit.png" alt="Circuito del Monitor de Ambiente en Cirkit Designer" width="900px"/>
+  <img src="../../assets/img/main-content/chapter-v/iot-designs/environment-monitor-sketch.jpg" alt="Boceto del Monitor de Ambiente: vistas, medidas e instalación" width="100%">
 </div>
 
+La vista explosionada muestra el orden de montaje de arriba hacia abajo:
+
+1. **Difusor opalino** y **tubo guía de luz**, que llevan la luz del LED RGB de la placa hasta la cara frontal.
+2. **Tapa frontal**, con las aberturas del PIR, del aire y del buzzer.
+3. **Lente Fresnel** del PIR, alineada con el sensor de la placa.
+4. **Placa del circuito**, con el MQ-135, el sensor PIR, el LED RGB y el buzzer, conectada al **ESP32** por cables.
+5. **Base posterior**, que aloja la placa y la entrada USB-C.
+6. **Placa de montaje a pared**, que se fija primero y sobre la que se encaja el dispositivo.
+
+Separar la placa de montaje permite retirar el dispositivo para mantenimiento o recalibración del MQ-135 sin volver a
+perforar la pared.
+
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/iot-designs/container-monitor-circuit.png" alt="Circuito del Monitor de Contenedor en Cirkit Designer" width="900px"/>
+  <img src="../../assets/img/main-content/chapter-v/iot-designs/environment-monitor-exploded-view.jpg" alt="Vista explosionada del Monitor de Ambiente" width="100%">
 </div>
+
+**Monitor de Contenedor**
+
+El Monitor de Contenedor no es un módulo que se pega a un mueble: es el propio contenedor. Se diseña como un gabinete
+de 450 × 450 × 600 mm, de acero inoxidable con aislamiento de poliuretano (PU), para guardar viales y cajas de lote de
+fármacos y materias primas en almacenes y laboratorios. Así, los sensores miden exactamente el aire en el que están los
+lotes, y el acceso queda controlado por la propia puerta.
+
+Sus partes principales son:
+
+* **Puerta con burlete** y **cerradura con servo**: el burlete sella la cámara para mantener la temperatura y la
+  humedad; el servo SG90 mueve un pestillo que solo se abre con una etiqueta RFID autorizada.
+* **Panel del marco**, junto a la puerta: reúne la **pantalla OLED**, el **lector RFID** y el **buzzer**, para que el
+  operario lea el estado y acerque su tarjeta en el mismo punto.
+* **LED de estado**, en el marco superior del gabinete.
+* **Tres bandejas perforadas** y extraíbles: dejan circular el aire entre los lotes y facilitan la carga y la limpieza.
+* **Ventilador de 5 V** en un lateral y **rejilla de salida de aire** en el lado opuesto: renuevan el aire de la cámara
+  cuando la temperatura pasa a `WARNING`.
+* **Compartimento electrónico sellado** sobre el gabinete, con **tapa de ABS**: aísla el ESP32 y la placa de conexiones
+  de la cámara, y la tapa de plástico evita que el acero bloquee la señal Wi-Fi.
+* **Entrada USB-C de 5 V** en la parte superior trasera.
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-v/iot-designs/container-monitor-sketch.jpg" alt="Boceto del Monitor de Contenedor: vistas, bandeja e instalación" width="100%">
+</div>
+
+La vista explosionada muestra cómo se reparten los componentes. La electrónica de control (ESP32, placa de conexiones y
+entrada USB-C) queda arriba, en el compartimento sellado. Desde ahí, el cableado baja por el interior hasta los
+sensores: el **BH1750** y el sensor de temperatura y humedad, ubicados entre las bandejas para medir donde están los
+lotes. También llega a los elementos del panel del marco (**OLED**, **RC522** y **buzzer**), al **servo** del pestillo y
+al **ventilador** con su rejilla.
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-v/iot-designs/container-monitor-exploded-view.jpg" alt="Vista explosionada del Monitor de Contenedor" width="100%">
+</div>
+
+**Plano general de conjunto del Monitor de Contenedor**
+
+El plano reúne en una lámina A3 apaisada, a escala 1:5, la vista isométrica explosionada, la vista frontal con la puerta
+abierta, el corte lateral con el flujo de aire y el detalle del compartimento electrónico. Se acompaña de la leyenda de
+componentes, los elementos estructurales, la asignación de pines del ESP32 y el flujo de datos: contenedor (ESP32) →
+Wi-Fi → Edge (Raspberry Pi) → nube QualiTrack → aplicaciones web y móvil.
+
+El diseño pasó por dos iteraciones:
+
+* **Prototipo v1** (10/11/2026): proponía enfriar la cámara con un **módulo Peltier** con disipadores y una compuerta de
+  ventilación movida por el servo, alimentados con una fuente de 12 V / 5 V y un módulo de relés. Esto exigía una fuente
+  de 220 VAC dentro del gabinete y una etapa de potencia aparte.
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-v/iot-designs/container-monitor-blueprint-v1.jpg" alt="Plano general del Monitor de Contenedor, prototipo v1" width="100%">
+</div>
+
+* **Prototipo v2** (15/11/2026): se ajustó al firmware construido. Todo el circuito funciona a 5 V / 3,3 V desde una
+  sola entrada USB-C (2 A); el ventilador se conmuta con un transistor 2N2222 en lugar de relés; el servo SG90 traba la
+  puerta en lugar de mover una compuerta; y el panel del marco incorpora la pantalla OLED, el lector RFID y el buzzer.
+  El enfriamiento se representa con la ventilación del gabinete, lo que simplifica la alimentación y deja un prototipo
+  que se puede armar y simular en Wokwi.
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-v/iot-designs/container-monitor-blueprint-v2.jpg" alt="Plano general del Monitor de Contenedor, prototipo v2" width="100%">
+</div>
+
+La asignación de pines del plano v2 coincide con la tabla de conexiones de esta sección (DHT22 en GPIO 15, I2C en
+GPIO 21 / 22, RC522 en GPIO 5 / 2 y 18 / 23 / 19, servo en GPIO 13, ventilador en GPIO 12, buzzer en GPIO 25 y LED RGB
+en GPIO 4 / 16 / 17).
 
 ### Flujos de interacción de los dispositivos IoT
 
@@ -234,7 +343,7 @@ Describe la puesta en marcha: el operador instala el dispositivo, lo conecta a l
 componentes y se vincula con el Edge, que registra el nodo y lo reenvía a la nube.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/iot-designs/installation-flow.png" alt="Flujo 1: Instalación y encendido" width="900px"/>
+  <img src="../../assets/img/main-content/chapter-v/iot-designs/installation-flow.png" alt="Flujo 1: Instalación y encendido" width="100%">
 </div>
 
 **Flujo 2: Monitoreo normal del entorno**
@@ -243,7 +352,7 @@ Representa el funcionamiento habitual: los sensores miden, el ESP32 filtra y env
 con el perfil vigente y la aplicación muestra el estado. Si el estado no es normal, se abre o escala una alerta.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/iot-designs/normal-monitoring-flow.png" alt="Flujo 2: Monitoreo normal" width="900px"/>
+  <img src="../../assets/img/main-content/chapter-v/iot-designs/normal-monitoring-flow.png" alt="Flujo 2: Monitoreo normal" width="100%">
 </div>
 
 **Flujo 3: Acción automática por desviación en el contenedor**
@@ -253,7 +362,7 @@ Muestra cómo el Monitor de Contenedor reacciona cuando una métrica sale del ra
 la acción al Edge con su causa y su resultado, y la nube abre la alerta para que el personal la atienda.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/iot-designs/automatic-action-flow.png" alt="Flujo 3: Acción automática" width="900px"/>
+  <img src="../../assets/img/main-content/chapter-v/iot-designs/automatic-action-flow.png" alt="Flujo 3: Acción automática" width="100%">
 </div>
 
 **Flujo 4: Control de acceso por RFID**
@@ -263,5 +372,5 @@ autorizadas del nodo y, según el resultado, abre el servo por 10 segundos con s
 cerrado con señal roja y buzzer. La lectura de la etiqueta se envía al Edge, que la registra en la nube.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/iot-designs/rfid-access-flow.png" alt="Flujo 4: Acceso por RFID" width="900px"/>
+  <img src="../../assets/img/main-content/chapter-v/iot-designs/rfid-access-flow.png" alt="Flujo 4: Acceso por RFID" width="100%">
 </div>

@@ -1010,5 +1010,5 @@ componentes IoT de la solución. El diagrama permite visualizar de forma general
 despliegue actual y previsto de QualiTrack.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-diagram.png"  height="600">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-diagram.png" width="100%">
 </div>

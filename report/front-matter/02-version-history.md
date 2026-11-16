@@ -53,3 +53,4 @@
 | 2.1.12 | 15/11/2026 | Ruiz Madrid, Billy Jake | Se desarrolló el reporte de colaboración de la entrega del AV2 en Project Report Collaboration Insights, con el aporte de cada integrante, los Contributors del repositorio del informe y su Network Graph. |
 | 2.1.13 | 15/11/2026 | Ruiz Madrid, Billy Jake | Se actualizó la sección ABET - EAC - Student Outcome 5 con las acciones realizadas por cada integrante y las conclusiones del equipo durante el AV2. |
 | 2.1.14 | 15/11/2026 | Huapaya Galindo, Dyron | Se reemplazaron por capturas en tema claro las evidencias de Firebase y Google Cloud del despliegue de la Mobile Application en el Software Deployment Evidence del Sprint 2. |
+| 2.1.15 | 15/11/2026 | Ruiz Madrid, Billy Jake | Se agregaron las conclusiones y recomendaciones del AV2, con los resultados del Sprint 2, la validación con usuarios y los pasos pendientes para el Sprint 3. |
