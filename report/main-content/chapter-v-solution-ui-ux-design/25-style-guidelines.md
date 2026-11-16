@@ -370,9 +370,11 @@ Estos lineamientos aplican a los componentes de la capa Embedded:
 
 > El sonido debe ser audible en el ambiente sin interferir con la operación del laboratorio.
 
-**Botón Físico**
+**Interacción**
 
-Un único botón lateral, con función exclusiva de encender/apagar (presión larga de 3 segundos).
+El nodo no tiene botones: se enciende al conectarlo a la alimentación USB, calibra el sensor de calidad de aire durante
+30 s y después funciona sin intervención del personal, que sigue su estado en el LED, el buzzer y las aplicaciones web y
+móvil.
 
 **Imágen del dispositivo**
 
