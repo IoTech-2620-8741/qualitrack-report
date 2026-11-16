@@ -370,9 +370,11 @@ Estos lineamientos aplican a los componentes de la capa Embedded:
 
 > El sonido debe ser audible en el ambiente sin interferir con la operación del laboratorio.
 
-**Botón Físico**
+**Interacción**
 
-Un único botón lateral, con función exclusiva de encender/apagar (presión larga de 3 segundos).
+El nodo no tiene botones: se enciende al conectarlo a la alimentación USB, calibra el sensor de calidad de aire durante
+30 s y después funciona sin intervención del personal, que sigue su estado en el LED, el buzzer y las aplicaciones web y
+móvil.
 
 **Imágen del dispositivo**
 
@@ -401,43 +403,62 @@ Un único botón lateral, con función exclusiva de encender/apagar (presión la
 
 **Indicador LED de Estado**
 
-| Estado del Sistema      | Color LED | Patrón                 | Descripción                                          |
-|-------------------------|-----------|------------------------|------------------------------------------------------|
-| **Operación normal**    | Verde     | Pulso lento            | Temperatura, humedad y luz dentro del rango normal.  |
-| **Advertencia**         | Amarillo  | Parpadeo lento         | Fuera del rango normal. Se activa la ventilación.    |
-| **Alerta crítica**      | Rojo      | Parpadeo rápido        | Fuera del rango crítico. Se activa el enfriamiento.  |
-| **Requiere revisión**   | Rojo      | Sólido fijo            | Sin lectura en 5 minutos. Revisar red o energía.     |
-| **Acceso autorizado**   | Verde     | Sólido 2 segundos      | Etiqueta RFID válida; el servo abre el contenedor.   |
-| **Acceso denegado**     | Rojo      | 3 destellos            | Etiqueta RFID no válida; el servo permanece cerrado. |
-| **Vinculación al Edge** | Azul      | Pulso suave y continuo | Emparejando con el gateway Edge.                     |
+| Estado del Sistema      | Color LED | Patrón                 | Descripción                                                                              |
+|-------------------------|-----------|------------------------|------------------------------------------------------------------------------------------|
+| **Operación normal**    | Verde     | Pulso lento            | Temperatura, humedad y luz dentro del rango normal.                                      |
+| **Advertencia**         | Amarillo  | Parpadeo lento         | Fuera del rango normal. Se activa la ventilación.                                        |
+| **Alerta crítica**      | Rojo      | Parpadeo rápido        | Fuera del rango crítico. Se activa el enfriamiento.                                      |
+| **Requiere revisión**   | Rojo      | Sólido fijo            | Sin respuesta del Edge en 5 minutos o un sensor en falla. Revisar red, energía o sensor. |
+| **Acceso autorizado**   | Verde     | Sólido 2 segundos      | Etiqueta RFID válida; el servo abre el contenedor por 10 segundos.                       |
+| **Acceso denegado**     | Rojo      | 3 destellos            | Etiqueta RFID no válida; el servo permanece cerrado.                                     |
+| **Vinculación al Edge** | Azul      | Pulso suave y continuo | El Edge todavía no aceptó al nodo.                                                       |
+
+> Una alerta crítica tiene prioridad sobre la señal de revisión, y esta sobre una advertencia. Los patrones de acceso
+> se muestran sobre el estado y luego el LED vuelve a él. El color no depende de la red: sin el Edge, el nodo sigue
+> evaluando sus lecturas con el último perfil recibido o con su perfil por defecto.
 
 **Acciones Automáticas**
 
-| Evento                     | Acción             |
-|----------------------------|--------------------|
-| Temperatura en `WARNING`   | Ventilación        |
-| Temperatura en `CRITICAL`  | Enfriamiento       |
-| RFID autorizado            | El servo abre      |
-| Fin del tiempo de apertura | El servo cierra    |
-| Lectura vuelve a `NORMAL`  | Se apaga la acción |
+| Evento                            | Acción                                 |
+|-----------------------------------|----------------------------------------|
+| Temperatura en `WARNING`          | Ventilación                            |
+| Temperatura en `CRITICAL`         | Enfriamiento, además de la ventilación |
+| RFID autorizado                   | El servo abre                          |
+| RFID no autorizado                | El servo permanece cerrado             |
+| Fin del tiempo de apertura (10 s) | El servo cierra                        |
+| Lectura vuelve a `NORMAL`         | Se apaga la acción                     |
 
-> Las reglas (métrica + estado → acción) se definen en el perfil ambiental del monitor. El Edge descarga el perfil
-> vigente y reporta cada acción con su causa y resultado (ejecutada o fallida). Se recomienda aplicar histéresis para
-> evitar encendidos y apagados continuos.
+> Las reglas (métrica + estado → acción) se definen en el perfil ambiental del monitor; una regla de `WARNING` sigue
+> activa en `CRITICAL`. El Edge entrega el perfil vigente y el nodo reporta cada acción con su causa y resultado
+> (ejecutada o fallida). Una métrica vuelve a un estado mejor solo cuando entra en su rango con un margen de 0.5 °C,
+> 2 % HR o 10 lux, para no encender y apagar las acciones alrededor de un límite. Mientras el Edge no le entrega un
+> perfil, el nodo usa uno por defecto (`NORMAL` de 15 a 25 °C, de 30 a 60 % HR y hasta 200 lux).
+
+**Buzzer**
+
+| Evento                      | Patrón de sonido                                                                 |
+|-----------------------------|----------------------------------------------------------------------------------|
+| Operación normal            | Silencio                                                                         |
+| Advertencia (`WARNING`)     | Un pitido de 200 ms al entrar en el estado                                       |
+| Alerta crítica (`CRITICAL`) | Un tono de 500 ms cada 2 s, hasta que una etiqueta autorizada reconoce la alarma |
+| Acceso autorizado           | Un pitido corto de 120 ms                                                        |
+| Acceso denegado             | Un tono grave de 800 ms                                                          |
 
 **Pantalla OLED**
 
 Jerarquía de información:
 
-1. **Identificador del contenedor** y ambiente (ej. `CONT-A01 · ALM-MP`).
-2. **Temperatura, humedad y luz**, cada una con su valor, unidad y estado (`NORMAL` / `WARNING` / `CRITICAL`).
-3. **Acción activa** (ventilación o enfriamiento) y **estado del servo** (abierto / cerrado).
-4. **Conectividad** con el Edge (`ONLINE` / `OFFLINE`).
-   Mensajes temporales (3 s): `ACCESO AUTORIZADO`, `ACCESO DENEGADO`.
+1. **Identificador del contenedor** y su estado general (ej. `CNT-001  NORMAL`).
+2. **Temperatura, humedad y luz**, cada una con su valor, unidad y estado (`NORMAL` / `WARNING` / `CRITICAL`, o
+   `FAULT` si su sensor falla).
+3. **Acción activa** (`AUTO`, `VENTILATION`, `COOLING` o `VENT+COOL`) y **estado del cierre** (`LOCKED` / `OPEN`).
+4. **Conectividad** con el Edge (`ONLINE`, `LINKING` u `OFFLINE`) y `ALARM ACK` cuando el personal reconoció la alarma.
+   Mensajes temporales (3 s): `ACCESS GRANTED` o `ACCESS DENIED`, con el UID de la etiqueta.
 
-**Botón Físico**
+**Interacción**
 
-Un único botón lateral, con función exclusiva de encender/apagar (presión larga de 3 segundos).
+El nodo no tiene botones: se enciende al conectarlo a la alimentación USB, y el personal interactúa con él acercando su
+etiqueta RFID al lector, que abre el contenedor y, en `CRITICAL`, reconoce la alarma local.
 
 **Imágen del dispositivo**
 
