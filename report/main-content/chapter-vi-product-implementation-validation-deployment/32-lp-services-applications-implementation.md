@@ -4362,15 +4362,17 @@ Commits relacionados con las pruebas en este sprint (93):
 
 #### 6.2.2.6. Execution Evidence for Sprint Review
 
-En este sprint QualiTrack pasó a funcionar como una solución integrada. La Landing Page publicó su nueva versión con la guía de estilos de la marca. La Web Application, en su versión 2.5.0, consume todos los servicios del Cloud REST API desplegado en Azure: el responsable de calidad supervisa las alertas de todos los ambientes desde una bandeja priorizada, configura los perfiles ambientales de ambientes y contenedores, sigue la trazabilidad de cada lote hasta su decisión de calidad, controla el inventario por ambiente, registra los Edge Gateways de cada ambiente y genera los reportes para auditoría. La Mobile Application ofrece en Android las consultas principales para el personal en planta, y el Edge Service recibe en la red local las lecturas de los nodos ESP32, aplica el perfil ambiental y las sincroniza con el Cloud como Edge Gateway.
+En este sprint QualiTrack pasó a funcionar como una solución integrada. La Landing Page publicó su nueva versión con la guía de estilos de la marca. La Web Application, en su versión 2.5.0, consume todos los servicios del Cloud REST API desplegado en Azure: el responsable de calidad supervisa las alertas de todos los ambientes desde una bandeja priorizada, configura los perfiles ambientales de ambientes y contenedores, sigue la trazabilidad de cada lote hasta su decisión de calidad, controla el inventario por ambiente, registra los Edge Gateways de cada ambiente y genera los reportes para auditoría. La Mobile Application ofrece en Android las consultas principales para el personal en planta, y el Edge Service recibe en la red local las lecturas de los nodos ESP32, aplica el perfil ambiental y las sincroniza con el Cloud como Edge Gateway. Las Embedded Applications de los dos nodos ESP32 se ejecutan con su circuito en el simulador Wokwi: el Monitor de Ambiente clasifica la calidad de aire y la señaliza con el LED RGB y el buzzer, y el Monitor de Contenedor aplica las reglas de ventilación y enfriamiento, controla el acceso con RFID y muestra sus datos en la pantalla OLED.
 
-La revisión del sprint verificó estos flujos con los datos del laboratorio de demostración SENKA LAB en el entorno desplegado, y el flujo del Edge con dispositivos simulados en las pruebas automatizadas y en el despliegue con Docker Compose.
+La revisión del sprint verificó estos flujos con los datos del laboratorio de demostración SENKA LAB en el entorno desplegado, y el flujo del Edge con dispositivos simulados en las pruebas automatizadas y en el despliegue con Docker Compose, y el firmware de los nodos en sus proyectos publicados de Wokwi, que se conectan a internet por la red Wokwi-GUEST pero no alcanzan la red local del Edge.
 
 - **Landing Page:** [https://iotech-2620-8741.github.io/qualitrack-website/](https://iotech-2620-8741.github.io/qualitrack-website/)
 - **Web Application:** [https://qualitrack-iotech.web.app](https://qualitrack-iotech.web.app)
 - **Cloud REST API (Swagger UI):** [QualiTrack Swagger Documentation](https://iotech-qualitrack-api.wonderfulocean-c1f38f8b.chilecentral.azurecontainerapps.io/swagger-ui/index.html)
 - **Mobile Application:** [IoTech-2620-8741/qualitrack-mobile-application](https://github.com/IoTech-2620-8741/qualitrack-mobile-application)
 - **Edge Service:** [IoTech-2620-8741/qualitrack-edge-service](https://github.com/IoTech-2620-8741/qualitrack-edge-service)
+- **Embedded Application del Monitor de Ambiente:** [IoTech-2620-8741/qualitrack-embedded-environment-monitor](https://github.com/IoTech-2620-8741/qualitrack-embedded-environment-monitor) · [proyecto en Wokwi](https://wokwi.com/projects/480697842499374081)
+- **Embedded Application del Monitor de Contenedor:** [IoTech-2620-8741/qualitrack-embedded-container-monitor](https://github.com/IoTech-2620-8741/qualitrack-embedded-container-monitor) · [proyecto en Wokwi](https://wokwi.com/projects/480802699328400385)
 - **Video de Execution Evidence del Sprint 2:** [https://shorturl.at/WYVjY](https://shorturl.at/WYVjY)
 
 **Landing Page**
@@ -4449,6 +4451,20 @@ La primera versión de la Mobile Application se ejecutó en Android conectada al
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/mobile-batches-inventory.jpg" alt="Mobile Application - Batches and inventory" width="90%">
   <p><em>Figura: Lotes de producción e inventario en la Mobile Application. Esta vista evidencia la lista de lotes con su estado, el detalle de un lote con su ciclo y las acciones de liberación o rechazo del responsable de calidad, y el inventario de materias primas con su stock utilizable, físico y mínimo.</em></p>
+</div>
+
+**Embedded Applications**
+
+El firmware de cada nodo se ejecutó en su proyecto publicado de Wokwi, con el mismo sketch del repositorio y el circuito de la sección 5.6. Los sensores se movieron desde los controles del simulador, y el monitor serial muestra lo que el nodo decide y lo que envía al Edge.
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/embedded-environment-monitor-wokwi.jpg" alt="Embedded Application - Environment Monitor in Wokwi" width="90%">
+  <p><em>Figura: Monitor de Ambiente en ejecución en Wokwi. Esta vista evidencia el sketch EnvironmentMonitor.ino sobre el Modest IoT Nano Framework: tras calibrar el MQ-135 en 408.4 ppm, una concentración de 1104.7 ppm lleva la calidad de aire de NORMAL a CRITICAL, el LED RGB cambia a rojo y el nodo intenta enviar la lectura al Edge.</em></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/embedded-container-monitor-wokwi.jpg" alt="Embedded Application - Container Monitor in Wokwi" width="90%">
+  <p><em>Figura: Monitor de Contenedor en ejecución en Wokwi. Esta vista evidencia el sketch ContainerMonitor.ino: a 27 °C la temperatura pasa de NORMAL a WARNING, el LED RGB cambia a amarillo, se enciende la ventilación (el LED azul representa el ventilador) y el nodo registra la acción VENTILATION_ON con su causa. En el recuadro, la pantalla OLED ampliada muestra el contenedor, sus tres métricas con su estado, la acción, el cierre y el enlace con el Edge.</em></p>
 </div>
 
 #### 6.2.2.7. Services Documentation Evidence for Sprint Review
