@@ -6,7 +6,7 @@ donde se usa el prototipo y las interacciones con el prototipo se basan en los U
 **Prototipo de la aplicación web**
 <div align="center">
 
-<img src="../../assets/img/main-content/chapter-v/prototypes/web-prototype.png" width=700>
+<img src="../../assets/img/main-content/chapter-v/prototypes/web-prototype.png" width="100%">
 
 </div>
 
@@ -16,7 +16,7 @@ Link del video: https://bit.ly/4yGwGTr
 
 <div align="center">
 
-<img src="../../assets/img/main-content/chapter-v/prototypes/mobile-prototype.png" width=700>
+<img src="../../assets/img/main-content/chapter-v/prototypes/mobile-prototype.png" width="100%">
 
 </div>
 

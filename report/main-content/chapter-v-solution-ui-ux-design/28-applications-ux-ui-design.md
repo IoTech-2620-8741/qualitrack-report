@@ -29,7 +29,7 @@ equipos, alertas, trazabilidad y procesos de calidad.
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-wireframes/dashboard.png" width=600>
+  <img src="../../assets/img/main-content/chapter-v/web-application-wireframes/dashboard.png" width="100%">
 
 </div>
 
@@ -42,7 +42,7 @@ variaciones y posibles desviaciones respecto a los parámetros establecidos.
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-wireframes/environmental-deviation.png" width=600>
+  <img src="../../assets/img/main-content/chapter-v/web-application-wireframes/environmental-deviation.png" width="100%">
 
 </div>
 
@@ -55,7 +55,7 @@ procesos de calidad y trazabilidad.
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-wireframes/equipment-list.png" width=600>
+  <img src="../../assets/img/main-content/chapter-v/web-application-wireframes/equipment-list.png" width="100%">
 
 </div>
 
@@ -68,7 +68,7 @@ dentro de las operaciones del laboratorio.
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-wireframes/raw-material-catalog.png" width=600>
+  <img src="../../assets/img/main-content/chapter-v/web-application-wireframes/raw-material-catalog.png" width="100%">
 
 </div>
 
@@ -81,7 +81,7 @@ seguimiento del proceso productivo y manteniendo la trazabilidad de los insumos 
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-wireframes/products.png" width=600>
+  <img src="../../assets/img/main-content/chapter-v/web-application-wireframes/products.png" width="100%">
 
 </div>
 
@@ -96,7 +96,7 @@ determinados aspectos de su cuenta.
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-wireframes/profile.png" width=600>
+  <img src="../../assets/img/main-content/chapter-v/web-application-wireframes/profile.png" width="100%">
 
 </div>
 
@@ -109,7 +109,7 @@ información registrada.
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-wireframes/laboratory-profile.png" width=600>
+  <img src="../../assets/img/main-content/chapter-v/web-application-wireframes/laboratory-profile.png" width="100%">
 
 </div>
 
@@ -122,7 +122,7 @@ monitoreo ambiental y los contenedores inteligentes, que permiten controlar par�
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-wireframes/register-iot-equipment-environmental-devices-or-containers.png" width=600>
+  <img src="../../assets/img/main-content/chapter-v/web-application-wireframes/register-iot-equipment-environmental-devices-or-containers.png" width="100%">
 
 </div>
 
@@ -135,7 +135,7 @@ registro, facilitando su organización y asociación con los procesos de monitor
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-wireframes/laboratory-environment-list.png" width=600>
+  <img src="../../assets/img/main-content/chapter-v/web-application-wireframes/laboratory-environment-list.png" width="100%">
 
 </div>
 
@@ -148,7 +148,7 @@ alternativa que mejor se adapte a las necesidades de la organización.
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-wireframes/subscriptions.png" width=600>
+  <img src="../../assets/img/main-content/chapter-v/web-application-wireframes/subscriptions.png" width="100%">
 
 </div>
 
@@ -166,7 +166,7 @@ inventario eficiente y ágil mediante una navegación simplificada.
 para acceso estándar mediante credenciales o inicio de sesión único (SSO) corporativo.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-sign-in.png"  height="600">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-sign-in.png" width="68%">
 </div>
 
 **Registro de Usuario**
@@ -175,7 +175,7 @@ para acceso estándar mediante credenciales o inicio de sesión único (SSO) cor
 para la creación de credenciales mediante correo.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-sign-up.png"  height="600">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-sign-up.png" width="68%">
 </div>
 
 **Dashboard de Monitoreo General**
@@ -184,7 +184,7 @@ para la creación de credenciales mediante correo.
 contenedores, ambientes, alertas y metricas.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-dashboard.png"  height="600">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-dashboard-part-1.png" width="48%" align="top"><img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-dashboard-part-2.png" width="48%" align="top">
 </div>
 
 **Dashboard Risk Overview**
@@ -193,7 +193,7 @@ contenedores, ambientes, alertas y metricas.
 registradas por los equipos.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-dashboard-view-all.png"  height="600">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-dashboard-view-all.png" width="65%">
 </div>
 
 **Dashboard de telemetría**
@@ -202,7 +202,7 @@ registradas por los equipos.
 seleccionado: estado de conexión con su latencia, las anomalías detectadas y la gráfica del perfil de temperatura.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-telemetry.png"  height="600">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-telemetry-part-1.png" width="48%" align="top"><img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-telemetry-part-2.png" width="48%" align="top">
 </div>
 
 **Data Log de telemetria**
@@ -211,7 +211,7 @@ seleccionado: estado de conexión con su latencia, las anomalías detectadas y l
 de fechas, que identifica en cada entrada el parámetro, la fecha y hora.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-telemetry-datalog.png"  height="600">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-telemetry-datalog.png" width="57%">
 </div>
 
 **Alertas de cumplimiento**
@@ -220,7 +220,7 @@ de fechas, que identifica en cada entrada el parámetro, la fecha y hora.
 desviaciones críticas, el filtrado de incidentes por estado.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-compliance-alerts.png"  height="600">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-compliance-alerts.png" width="59%">
 </div>
 
 **Alertas críticas y desviaciones**
@@ -229,7 +229,7 @@ desviaciones críticas, el filtrado de incidentes por estado.
 almacenamiento y el lote afectados.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-compliance-alerts-details.png"  height="600">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-compliance-alerts-details.png" width="68%">
 </div>
 
 **Manejo de lotes**
@@ -238,7 +238,7 @@ almacenamiento y el lote afectados.
 liberados, pendientes y rechazados.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-batch-management.png"  height="600">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-batch-management.png" width="56%">
 </div>
 
 **Información general de Lote**
@@ -247,7 +247,7 @@ liberados, pendientes y rechazados.
 rechazados.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-batch-general-info.png"  height="600">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-batch-general-info.png" width="59%">
 </div>
 
 **Materiales del Lote**
@@ -255,7 +255,7 @@ rechazados.
 **Descripción:** Esquema de estructura de los materiales usados para la creación de los lotes.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-batch-material-used.png"  height="600">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-batch-material-used.png" width="65%">
 </div>
 
 **Confirmación de Lote**
@@ -263,7 +263,7 @@ rechazados.
 **Descripción:** Esquema de estructura de la pantalla de confirmación o rechazo de los lotes.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-batch-status.png"  height="600">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-batch-status.png" width="59%">
 </div>
 
 **Manejo de Productos**
@@ -272,7 +272,7 @@ rechazados.
 nombre, las especificaciones BPM.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-product-management.png"  height="600">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-product-management.png" width="53%">
 </div>
 
 **Registro de Productos**
@@ -280,7 +280,7 @@ nombre, las especificaciones BPM.
 **Descripción:** Esquema de estructura del formulario de registro de productos farmacéuticos.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-product-register.png"  height="600">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-product-register.png" width="53%">
 </div>
 
 **Inventario de Material Primas**
@@ -289,7 +289,7 @@ nombre, las especificaciones BPM.
 umbral mínimo.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-inventory-management.png"  height="600">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-inventory-management.png" width="61%">
 </div>
 
 **Registro de Materia Prima**
@@ -297,7 +297,7 @@ umbral mínimo.
 **Descripción:** Esquema de estructura del formulario de registro de materias primas.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-inventory-register.png"  height="600">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-inventory-register.png" width="61%">
 </div>
 
 **Facturación de suscripción**
@@ -306,7 +306,7 @@ umbral mínimo.
 estado y periodo, las opciones para cambiar de plan o cancelarla.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-subscription-payment.png"  height="600">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-subscription-payment.png" width="59%">
 </div>
 
 **Planes de suscripción**
@@ -315,7 +315,7 @@ estado y periodo, las opciones para cambiar de plan o cancelarla.
 Enterprise y Standard Lab según su precio.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-subscription-plans.png"  height="600">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-subscription-plans-part-1.png" width="48%" align="top"><img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-subscription-plans-part-2.png" width="48%" align="top">
 </div>
 
 ### 5.4.2. Applications Wireflow Diagrams
@@ -326,7 +326,7 @@ las metas del usuario (User Goal) con la aplicación y cómo las consiguen.
 **- Task Flow 1:** Registro de un nuevo usuario y activación de su suscripción
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/task-flow-diagrams/task-flow-1.png"  alt="task flow 1">
+  <img src="../../assets/img/main-content/chapter-v/task-flow-diagrams/task-flow-1.png" alt="task flow 1" width="100%">
 </div>
 
 #### Pasos del Task Flow 1:
@@ -375,7 +375,7 @@ comenzar a configurar la plataforma.
 mi laboratorio, para que la información registrada en QualiTrack esté vigente.
 
 <p align="center">
-  <img src="../../assets/img/main-content/chapter-v/wireflow-diagrams/wireflow-2.png"/>
+  <img src="../../assets/img/main-content/chapter-v/wireflow-diagrams/wireflow-2.png" width="100%">
 </p>
 
 El responsable de calidad inicia sesión con sus credenciales y llega al Dashboard, donde ve el resumen de lotes,
@@ -768,7 +768,7 @@ permitiendo al responsable de calidad consultar rápidamente los principales asp
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/dashboard.png" width=760>
+  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/dashboard.png" width="100%">
 
 </div>
 
@@ -782,7 +782,7 @@ alerta para facilitar su seguimiento y revisión.
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/alert-history.png" width=760>
+  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/alert-history.png" width="100%">
 
 </div>
 
@@ -796,7 +796,7 @@ laboratorio.
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/store-product-batch-in-container.png" width=760>
+  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/store-product-batch-in-container.png" width="100%">
 
 </div>
 
@@ -809,7 +809,7 @@ los rangos de referencia para el control y seguimiento de las mediciones para lo
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/bpm-configuration.png" width=760>
+  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/bpm-configuration.png" width="100%">
 
 </div>
 
@@ -822,7 +822,7 @@ regulaciones aplicables a la organización. Finalmente, incorpora la acción par
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/create-laboratory.png" width=760>
+  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/create-laboratory.png" width="100%">
 
 </div>
 
@@ -835,7 +835,7 @@ posteriormente continuar con su seguimiento y gestión dentro del proceso de fab
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/create-product-batch.png" width=760>
+  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/create-product-batch.png" width="100%">
 
 </div>
 
@@ -848,7 +848,7 @@ parámetros correspondientes antes de generar o exportar el documento en formato
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/pdf-report-generator.png" width=760>
+  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/pdf-report-generator.png" width="100%">
 
 </div>
 
@@ -863,7 +863,7 @@ el periodo seleccionado.
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/deviation-indicators.png" width=760>
+  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/deviation-indicators.png" width="100%">
 
 </div>
 
@@ -876,7 +876,7 @@ perfil.
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/laboratory-profile.png" width=760>
+  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/laboratory-profile.png" width="100%">
 
 </div>
 
@@ -891,7 +891,7 @@ del laboratorio.
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/environment-list.png" width=760>
+  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/environment-list.png" width="100%">
 
 </div>
 
@@ -905,7 +905,7 @@ facilitando el control y seguimiento de los insumos utilizados en los procesos d
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/raw-material-list.png" width=760>
+  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/raw-material-list.png" width="100%">
 
 </div>
 
@@ -918,7 +918,7 @@ de consulta de registros y reportes sin modificarlos.
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/register-staff.png" width=760>
+  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/register-staff.png" width="100%">
 
 </div>
 
@@ -932,7 +932,7 @@ agregar nuevos miembros del personal.
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/staff-list.png" width=760>
+  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/staff-list.png" width="100%">
 
 </div>
 
@@ -945,7 +945,7 @@ acceso a los lotes de producción y el registro de nuevos productos.
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/pharmaceutical-product-list.png" width=760>
+  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/pharmaceutical-product-list.png" width="100%">
 
 </div>
 
@@ -959,7 +959,7 @@ recepciones, editar la materia prima y gestionar el almacenamiento de los lotes 
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/reception-list.png" width=760>
+  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/reception-list.png" width="100%">
 
 </div>
 
@@ -972,7 +972,7 @@ dispositivos IoT y mantener actualizado su estado.
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/device-list.png" width=760>
+  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/device-list.png" width="100%">
 
 </div>
 
@@ -986,7 +986,7 @@ de las condiciones monitoreadas.
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/environmental-monitoring.png" width=760>
+  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/environmental-monitoring.png" width="100%">
 
 </div>
 
@@ -999,7 +999,7 @@ control de las cantidades recibidas dentro del inventario.
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/raw-material-movement.png" width=760>
+  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/raw-material-movement.png" width="100%">
 
 </div>
 
@@ -1012,7 +1012,7 @@ registrar los mantenimientos que ellos mismos realizaron, manteniendo la trazabi
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/register-technical-activity.png" width=760>
+  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/register-technical-activity.png" width="100%">
 
 </div>
 
@@ -1025,7 +1025,7 @@ dispositivos IoT dentro del laboratorio.
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/register-environments.png" width=760>
+  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/register-environments.png" width="100%">
 
 </div>
 
@@ -1037,7 +1037,7 @@ un control adecuado de las materias primas y facilitar la identificación de aqu
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/register-raw-material.png" width=760>
+  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/register-raw-material.png" width="100%">
 
 </div>
 
@@ -1050,7 +1050,7 @@ el producto quede registrado con la información necesaria para su gestión y co
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/register-product.png" width=760>
+  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/register-product.png" width="100%">
 
 </div>
 
@@ -1062,7 +1062,7 @@ Device para monitorear las condiciones dentro de un contenedor.
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/register-iot-devices.png" width=760>
+  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/register-iot-devices.png" width="100%">
 
 </div>
 
@@ -1077,7 +1077,7 @@ calidad del aire, movimiento, humedad, luminosidad y temperatura.
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/environment-summary.png" width=760>
+  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/environment-summary.png" width="100%">
 
 </div>
 
@@ -1090,7 +1090,7 @@ cantidad de usuarios, dispositivos IoT conectados y funcionalidades disponibles.
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/subscription.png" width=760>
+  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/subscription.png" width="100%">
 
 </div>
 
@@ -1102,7 +1102,7 @@ para consultar la información.
 
 <div align="center">
 
-  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/telemetry-history.png" width=760>
+  <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/telemetry-history.png" width="100%">
 
 </div>
 
@@ -1114,7 +1114,7 @@ para consultar la información.
 como QA Manager / Supervisor o como Lab Operator.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-login.png" alt="Pantalla de inicio de sesión de la aplicación móvil" height="400">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-login.png" alt="Pantalla de inicio de sesión de la aplicación móvil" width="62%">
 </div>
 
 **Registro de QA Manager**
@@ -1123,7 +1123,7 @@ como QA Manager / Supervisor o como Lab Operator.
 farmacéuticos, con usuario, contraseña y confirmación de contraseña.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-register-qa-manager.png" alt="Formulario de registro de cuenta QA Manager" height="400">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-register-qa-manager.png" alt="Formulario de registro de cuenta QA Manager" width="65%">
 </div>
 
 **Registro de Lab Operator**
@@ -1132,7 +1132,7 @@ farmacéuticos, con usuario, contraseña y confirmación de contraseña.
 acceso directo al inicio de sesión.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-register-operator.png" alt="Formulario de registro de cuenta Lab Operator" height="400">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-register-operator.png" alt="Formulario de registro de cuenta Lab Operator" width="65%">
 </div>
 
 **Menú de navegación lateral**
@@ -1141,7 +1141,7 @@ acceso directo al inicio de sesión.
 aplicación y el acceso para sincronizar la telemetría.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-burger-menu.png" alt="Menú lateral con los módulos principales de la aplicación" height="400">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-burger-menu.png" alt="Menú lateral con los módulos principales de la aplicación" width="59%">
 </div>
 
 **Dashboard general**
@@ -1150,7 +1150,7 @@ aplicación y el acceso para sincronizar la telemetría.
 primas, el estado de la telemetría en vivo, la distribución de recursos y los riesgos pendientes.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-general-dashboard.png" alt="Dashboard general con métricas operativas y riesgos" height="400">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-general-dashboard-part-1.png" alt="Dashboard general con métricas operativas y riesgos" width="48%" align="top"><img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-general-dashboard-part-2.png" alt="Dashboard general con métricas operativas y riesgos" width="48%" align="top">
 </div>
 
 **Alertas críticas del dashboard**
@@ -1159,7 +1159,7 @@ primas, el estado de la telemetría en vivo, la distribución de recursos y los 
 sensor, lote afectado, valor registrado y umbral BPM, con acciones para investigar, reconocer o consultar el audit log.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-general-dashboard-view-all.png" alt="Ventana emergente de alertas críticas y desviaciones" height="400">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-general-dashboard-view-all.png" alt="Ventana emergente de alertas críticas y desviaciones" width="65%">
 </div>
 
 **Dashboard de telemetría**
@@ -1168,7 +1168,7 @@ sensor, lote afectado, valor registrado y umbral BPM, con acciones para investig
 detectadas, el perfil de temperatura y las lecturas actuales de temperatura, calidad de aire y humedad.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-telemetry-dashboard.png" alt="Dashboard de telemetría en tiempo real" height="400">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-telemetry-dashboard-part-1.png" alt="Dashboard de telemetría en tiempo real" width="48%" align="top"><img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-telemetry-dashboard-part-2.png" alt="Dashboard de telemetría en tiempo real" width="48%" align="top">
 </div>
 
 **Data log de telemetría**
@@ -1177,7 +1177,7 @@ detectadas, el perfil de temperatura y las lecturas actuales de temperatura, cal
 mediciones normales de las desviaciones BPM.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-telemetry-datalog.png" alt="Historial de lecturas de sensores con desviaciones BPM" height="400">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-telemetry-datalog.png" alt="Historial de lecturas de sensores con desviaciones BPM" width="57%">
 </div>
 
 **Alertas de cumplimiento**
@@ -1186,7 +1186,7 @@ mediciones normales de las desviaciones BPM.
 resolver y desviaciones críticas, filtros por estado y la opción de reconocer todas las alertas.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-compliance-alerts.png" alt="Centro de alertas de cumplimiento BPM" height="400">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-compliance-alerts.png" alt="Centro de alertas de cumplimiento BPM" width="47%">
 </div>
 
 **Detalle de desviación sin resolver**
@@ -1195,7 +1195,7 @@ resolver y desviaciones críticas, filtros por estado y la opción de reconocer 
 umbral y equipo, y solicita notas de resolución para marcarla como resuelta.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-compliance-alerts-unresolved.png" alt="Detalle de una desviación pendiente de resolución" height="400">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-compliance-alerts-unresolved.png" alt="Detalle de una desviación pendiente de resolución" width="47%">
 </div>
 
 **Detalle de desviación resuelta**
@@ -1204,7 +1204,7 @@ umbral y equipo, y solicita notas de resolución para marcarla como resuelta.
 la acción correctiva aplicada.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-compliance-alerts-resolved.png" alt="Detalle de una desviación resuelta con sus notas de resolución" height="400">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-compliance-alerts-resolved.png" alt="Detalle de una desviación resuelta con sus notas de resolución" width="53%">
 </div>
 
 **Lotes de producción**
@@ -1213,7 +1213,7 @@ la acción correctiva aplicada.
 aprobarse o rechazarse directamente desde su tarjeta.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-production-batches.png" alt="Listado de lotes de producción por estado" height="400">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-production-batches.png" alt="Listado de lotes de producción por estado" width="59%">
 </div>
 
 **Detalle de lote pendiente**
@@ -1222,7 +1222,7 @@ aprobarse o rechazarse directamente desde su tarjeta.
 revisión.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-production-batches-pending.png" alt="Detalle de un lote pendiente de aprobación" height="400">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-production-batches-pending.png" alt="Detalle de un lote pendiente de aprobación" width="59%">
 </div>
 
 **Detalle de lote liberado**
@@ -1231,7 +1231,7 @@ revisión.
 de inicio y las notas BPM.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-production-batches-release.png" alt="Detalle de un lote liberado" height="400">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-production-batches-release.png" alt="Detalle de un lote liberado" width="59%">
 </div>
 
 **Detalle de lote rechazado**
@@ -1239,7 +1239,7 @@ de inicio y las notas BPM.
 **Descripción:** Ventana con la información general de un lote rechazado y las notas BPM que sustentan la decisión.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-production-batches-reject.png" alt="Detalle de un lote rechazado" height="400">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-production-batches-reject.png" alt="Detalle de un lote rechazado" width="65%">
 </div>
 
 **Materias primas utilizadas**
@@ -1248,7 +1248,7 @@ de inicio y las notas BPM.
 fecha de uso, como soporte de la trazabilidad.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-production-batches-materials-used.png" alt="Historial de materias primas utilizadas en el lote" height="400">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-production-batches-materials-used.png" alt="Historial de materias primas utilizadas en el lote" width="65%">
 </div>
 
 **Confirmación de liberación de lote**
@@ -1257,7 +1257,7 @@ fecha de uso, como soporte de la trazabilidad.
 verificación de calidad antes de confirmar la decisión.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-production-batches-confirm-release.png" alt="Formulario de liberación de lote conforme a BPM" height="400">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-production-batches-confirm-release.png" alt="Formulario de liberación de lote conforme a BPM" width="65%">
 </div>
 
 **Confirmación de rechazo de lote**
@@ -1266,7 +1266,7 @@ verificación de calidad antes de confirmar la decisión.
 rechazo, obligatorio según las Buenas Prácticas de Manufactura.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-production-batches-confirm-reject.png" alt="Formulario de rechazo de lote no conforme" height="400">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-production-batches-confirm-reject.png" alt="Formulario de rechazo de lote no conforme" width="68%">
 </div>
 
 **Catálogo de productos farmacéuticos**
@@ -1275,7 +1275,7 @@ rechazo, obligatorio según las Buenas Prácticas de Manufactura.
 registrar un nuevo producto.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-pharmaceutical-product.png" alt="Catálogo de productos farmacéuticos registrados" height="400">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-pharmaceutical-product.png" alt="Catálogo de productos farmacéuticos registrados" width="62%">
 </div>
 
 **Registro de producto farmacéutico**
@@ -1284,7 +1284,7 @@ registrar un nuevo producto.
 especificaciones de calidad BPM.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-pharmaceutical-register.png" alt="Formulario de registro de producto farmacéutico" height="400">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-pharmaceutical-register.png" alt="Formulario de registro de producto farmacéutico" width="59%">
 </div>
 
 **Inventario de materias primas**
@@ -1293,7 +1293,7 @@ especificaciones de calidad BPM.
 alerta de materiales por debajo del umbral mínimo.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-inventory-materials.png" alt="Inventario de materias primas con alerta de stock bajo" height="400">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-inventory-materials.png" alt="Inventario de materias primas con alerta de stock bajo" width="59%">
 </div>
 
 **Registro de materia prima**
@@ -1302,7 +1302,7 @@ alerta de materiales por debajo del umbral mínimo.
 inicial, unidad de medida y umbral mínimo de stock.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-inventory-register.png" alt="Formulario de registro de materia prima" height="400">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-inventory-register.png" alt="Formulario de registro de materia prima" width="59%">
 </div>
 
 **Planes de suscripción mensual**
@@ -1311,7 +1311,7 @@ inicial, unidad de medida y umbral mínimo de stock.
 precio, los usuarios, los registros de equipos y los beneficios incluidos.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-subscription-plans-month.png" alt="Planes de suscripción con facturación mensual" height="400">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-subscription-plans-month-part-1.png" alt="Planes de suscripción con facturación mensual" width="48%" align="top"><img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-subscription-plans-month-part-2.png" alt="Planes de suscripción con facturación mensual" width="48%" align="top">
 </div>
 
 **Planes de suscripción anual**
@@ -1320,7 +1320,7 @@ precio, los usuarios, los registros de equipos y los beneficios incluidos.
 actualiza el precio de cada plan.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-subscription-plans-year.png" alt="Planes de suscripción con facturación anual" height="400">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-subscription-plans-year-part-1.png" alt="Planes de suscripción con facturación anual" width="48%" align="top"><img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-subscription-plans-year-part-2.png" alt="Planes de suscripción con facturación anual" width="48%" align="top">
 </div>
 
 **Resumen de facturación**
@@ -1329,7 +1329,7 @@ actualiza el precio de cada plan.
 con el historial de pagos procesados por Stripe y la descarga de recibos en PDF.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-subscription-payment.png" alt="Resumen de la suscripción activa e historial de pagos" height="400">
+  <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-subscription-payment.png" alt="Resumen de la suscripción activa e historial de pagos" width="68%">
 </div>
 
 ### 5.4.4. Applications User Flow Diagrams.
@@ -1365,7 +1365,7 @@ Finalmente, el laboratorio queda registrado y el usuario es dirigido al Dashboar
 QualiTrack.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/happy-path/register-user.png" alt="Planes de suscripción con facturación anual" height="400">
+  <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/happy-path/register-user.png" alt="Planes de suscripción con facturación anual" width="100%">
 </div>
 
 **Unhappy Path**
@@ -1376,7 +1376,7 @@ muestra el mensaje: “The username or the e-mail is already registered.”
 
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/unhappy-path/register-user-error.png" alt="Planes de suscripción con facturación anual" height="400">
+  <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/unhappy-path/register-user-error.png" alt="Planes de suscripción con facturación anual" width="100%">
 </div>
 
 ---
@@ -1403,7 +1403,7 @@ que la información requerida haya sido ingresada correctamente.
 Si la validación es exitosa, el producto es registrado y aparece en el listado de Pharmaceutical Products.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/happy-path/register-products-requires-environment-first.png" alt="Planes de suscripción con facturación anual" height="400">
+  <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/happy-path/register-products-requires-environment-first.png" alt="Planes de suscripción con facturación anual" width="100%">
 </div>
 
 
@@ -1414,7 +1414,7 @@ Al seleccionar Register, QualiTrack valida el código ingresado y detecta el err
 Supervisor debe corregir la información del producto.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/unhappy-path/register-user-error.png" alt="Planes de suscripción con facturación anual" height="400">
+  <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/unhappy-path/register-user-error.png" alt="Planes de suscripción con facturación anual" width="100%">
 </div>
 
 ---
@@ -1441,7 +1441,7 @@ Una vez disponible la materia prima, el técnico de laboratorio la agrega al lot
 registrada en el detalle del lote, permitiendo mantener la trazabilidad de los materiales utilizados.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/happy-path/associate-raw-materials-to-batch.png" alt="Planes de suscripción con facturación anual" height="400">
+  <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/happy-path/associate-raw-materials-to-batch.png" alt="Planes de suscripción con facturación anual" width="100%">
 </div>
 
 **Unhappy Path**
@@ -1452,7 +1452,7 @@ Al intentar registrar el lote, QualiTrack valida el código y evita completar el
 corregida.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/unhappy-path/register-product-batch.png" alt="Planes de suscripción con facturación anual" height="400">
+  <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/unhappy-path/register-product-batch.png" alt="Planes de suscripción con facturación anual" width="100%">
 </div>
 
 ---
@@ -1481,7 +1481,7 @@ QualiTrack valida la información y, si los datos son correctos, registra al nue
 vuelve al listado de Staff, donde aparece el nuevo trabajador registrado.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/happy-path/register-staff.png" alt="Planes de suscripción con facturación anual" height="400">
+  <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/happy-path/register-staff.png" alt="Planes de suscripción con facturación anual" width="100%">
 </div>
 
 **Unhappy Path**
@@ -1493,7 +1493,7 @@ account with this e-mail.”
 El registro no se completa. El supervisor debe ingresar un correo diferente y volver a realizar el registro.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/unhappy-path/register-staff-without-sale-error.png" alt="Planes de suscripción con facturación anual" height="400">
+  <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/unhappy-path/register-staff-without-sale-error.png" alt="Planes de suscripción con facturación anual" width="100%">
 </div>
 
 ---
@@ -1527,7 +1527,7 @@ Al seleccionar Save, QualiTrack detecta que el código ya está registrado y mue
 El registro no se completa. El administrador debe modificar el código e intentar guardar nuevamente.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/happy-path/associate-raw-materials-to-batch.png" alt="Planes de suscripción con facturación anual" height="400">
+  <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/happy-path/associate-raw-materials-to-batch.png" alt="Planes de suscripción con facturación anual" width="100%">
 </div>
 
 **Unhappy Path**
@@ -1539,7 +1539,7 @@ Al seleccionar Save, QualiTrack detecta que el código ya está registrado y mue
 El registro no se completa. El administrador debe modificar el código e intentar guardar nuevamente.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/unhappy-path/register-raw-material-error.png" alt="Planes de suscripción con facturación anual" height="400">
+  <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/unhappy-path/register-raw-material-error.png" alt="Planes de suscripción con facturación anual" width="100%">
 </div>
 
 ---
@@ -1566,7 +1566,7 @@ QualiTrack valida los datos ingresados. Si la información es válida y el códi
 previamente, el ambiente se registra correctamente y aparece en el listado de Environments.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/happy-path/register-environments.png" alt="Planes de suscripción con facturación anual" height="400">
+  <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/happy-path/register-environments.png" alt="Planes de suscripción con facturación anual" width="100%">
 </div>
 
 
@@ -1577,5 +1577,5 @@ mostrando un mensaje de error en el formulario.
 El supervisor debe corregir los datos ingresados y volver a seleccionar Register.
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/unhappy-path/register-environment-error.png" alt="Planes de suscripción con facturación anual" height="400">
+  <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/unhappy-path/register-environment-error.png" alt="Planes de suscripción con facturación anual" width="100%">
 </div>

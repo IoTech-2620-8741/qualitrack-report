@@ -9,7 +9,7 @@ de pantalla de cada paso realizado para diagramar el Big Picture Event Storming 
 **Step 1 - Free Exploracion**
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/events-as-is.png" alt ="Big Picture" width=700>
+  <img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/events-as-is.png" alt="Big Picture" width="100%">
 </div>
 
 En esta primera etapa, el equipo realizó una exploración libre de los eventos relevantes del dominio. Los eventos fueron
@@ -36,7 +36,7 @@ Como resultado de esta organización, se establecieron los siguientes ocho flujo
 a) **Environmental Monitoring and Control**
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/enviromental-monitoring-control.png" alt ="Flow 1" width=700>
+  <img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/enviromental-monitoring-control.png" alt="Flow 1" width="100%">
 </div>
 
 <br>
@@ -63,7 +63,7 @@ fuera de rango.
 b) **Environmental Deviation Management**
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/enviromental-deviation-management.png" alt ="Flow 2" width=700>
+  <img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/enviromental-deviation-management.png" alt="Flow 2" width="100%">
 </div>
 
 <br>
@@ -94,7 +94,7 @@ vuelto a los parámetros establecidos.
 c) **Product Development and Production**
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/product-development-and-production.png" alt ="Flow 2" width=700>
+  <img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/product-development-and-production.png" alt="Flow 2" width="100%">
 </div>
 
 <br>
@@ -121,7 +121,7 @@ aceptación del lote, sin asumir todavía una solución tecnológica
 d) **Raw Material Management**
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/raw-material-management.png" alt ="Flow 2" width=700>
+  <img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/raw-material-management.png" alt="Flow 2" width="100%">
 </div>
 
 <br>
@@ -151,7 +151,7 @@ e) **Quality Records and Audits**
 
 
 <div align="center">
-  <img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/quality-records-and-audits.png" alt ="Flow 2" width=700>
+  <img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/quality-records-and-audits.png" alt="Flow 2" width="100%">
 </div>
 
 <br>
@@ -168,7 +168,7 @@ registros de calidad requeridos.
 f) **Incoming Inspection and Acceptance**
 
 <div align="center">
-<img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/incoming-inspection-and-acceptance.png" alt ="Incoming Inspection and Acceptance" width=700>
+<img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/incoming-inspection-and-acceptance.png" alt="Incoming Inspection and Acceptance" width="100%">
 </div>
 
 <br>
@@ -195,7 +195,7 @@ distribuida en distintos medios y formatos.
 g) **Product Development and Viability**
 
 <div align="center">
-<img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/product-development-and-viability.png" alt ="Product Development and Viability" width=700>
+<img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/product-development-and-viability.png" alt="Product Development and Viability" width="100%">
 </div>
 
 <br>
@@ -225,7 +225,7 @@ a los equipos y al costo se conocen en etapas avanzadas del desarrollo.
 h) **Distribution and Supply Monitoring**
 
 <div align="center">
-<img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/distribution-and-supply-monitoring.png" alt ="Product Development and Viability" width=700>
+<img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/distribution-and-supply-monitoring.png" alt="Product Development and Viability" width="100%">
 </div>
 
 <br>

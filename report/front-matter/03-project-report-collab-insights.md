@@ -46,7 +46,7 @@ Franco guió el análisis de las entrevistas correspondientes al segmento de per
 
 A continuación se presentan los gráficos de colaboración que representan la cantidad de commits realizados por cada miembro del equipo en el repositorio del informe.
 
-![Commits AV1 - Gráfico 1](../assets/img/front-matter/commits-insights-av1.png)
+<p align="center"><img src="../assets/img/front-matter/commits-insights-av1.png" alt="Commits AV1 - Gráfico 1" width="85%"></p>
 
 *Figura: Contribuciones por miembro del equipo IoTech durante el AV1.*
 
@@ -56,7 +56,7 @@ El siguiente gráfico muestra la ramificación del repositorio y las visitas
 registradas durante la fase AV1, evidenciando el flujo de trabajo colaborativo
 del equipo.
 
-![Network Graph AV1](../assets/img/front-matter/network-graph-insights-av1.png)
+<p align="center"><img src="../assets/img/front-matter/network-graph-insights-av1.png" alt="Network Graph AV1" width="100%"></p>
 
 *Figura: Network Graph del repositorio qualitrack-report durante el AV1.*
 
@@ -108,7 +108,7 @@ Adrian se incorporó al equipo y se registró como nuevo integrante en la carát
 
 A continuación se presenta el resumen de actividad del repositorio del informe correspondiente al periodo del 8 de septiembre al 8 de octubre de 2026, el cual abarca el desarrollo de la entrega TB1.
 
-![Commits TB1 - Pulse del repositorio](../assets/img/front-matter/commits-insights-tb1.png)
+<p align="center"><img src="../assets/img/front-matter/commits-insights-tb1.png" alt="Commits TB1 - Pulse del repositorio" width="100%"></p>
 
 *Figura: Contribuciones por miembro del equipo IoTech durante el TB1.*
 
@@ -116,7 +116,7 @@ A continuación se presenta el resumen de actividad del repositorio del informe 
 
 El siguiente gráfico muestra la ramificación del repositorio durante la fase TB1. Se observa la rama principal (en morado) de la que parten varias ramas de feature, cada una con sus commits, que luego se integran nuevamente mediante merges, evidenciando el flujo de trabajo colaborativo del equipo.
 
-![Network Graph TB1](../assets/img/front-matter/network-graph-insights-tb1.png)
+<p align="center"><img src="../assets/img/front-matter/network-graph-insights-tb1.png" alt="Network Graph TB1" width="100%"></p>
 
 *Figura: Network Graph del repositorio qualitrack-report durante el TB1.*
 
@@ -168,7 +168,7 @@ Adrian reorganizó por Bounded Context la Web Application y la Mobile Applicatio
 
 A continuación se presenta el gráfico de colaboración que representa la cantidad de commits realizados por cada miembro del equipo en el repositorio del informe durante el periodo del 15 de octubre al 15 de noviembre de 2026, el cual abarca el desarrollo de la entrega AV2.
 
-![Commits AV2 - Contributors del repositorio](../assets/img/front-matter/commits-insights-av2.png)
+<p align="center"><img src="../assets/img/front-matter/commits-insights-av2.png" alt="Commits AV2 - Contributors del repositorio" width="89%"></p>
 
 *Figura: Contribuciones por miembro del equipo IoTech durante el AV2.*
 
@@ -176,7 +176,7 @@ A continuación se presenta el gráfico de colaboración que representa la canti
 
 El siguiente gráfico muestra la ramificación del repositorio durante la fase AV2. Se observan las ramas de feature que se integran en develop mediante pull requests, entre ellas la rama del Sprint 2 (en verde), y la rama release/v2.1.0, que se integra en main y luego regresa a develop, evidenciando el flujo GitFlow del equipo.
 
-![Network Graph AV2](../assets/img/front-matter/network-graph-insights-av2.png)
+<p align="center"><img src="../assets/img/front-matter/network-graph-insights-av2.png" alt="Network Graph AV2" width="100%"></p>
 
 *Figura: Network Graph del repositorio qualitrack-report durante el AV2.*
 

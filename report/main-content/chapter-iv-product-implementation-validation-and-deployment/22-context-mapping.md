@@ -50,7 +50,7 @@ Alerting utiliza esta información para iniciar y administrar el ciclo de vida d
 
 La alternativa plantea integrar ambas responsabilidades dentro de un único Bounded Context.
 
-![Candidate Context Map 1 - Tracking & Telemetry and Compliance & Alerting](../../assets/img/main-content/chapter-iv/context-mapping/candidate-context-map-1.png)
+<p align="center"><img src="../../assets/img/main-content/chapter-iv/context-mapping/candidate-context-map-1.png" alt="Candidate Context Map 1 - Tracking & Telemetry and Compliance & Alerting" width="100%"></p>
 
 La principal ventaja de esta alternativa sería reducir las comunicaciones necesarias entre ambos contextos, debido a que
 la detección de una condición ambiental y la gestión de la alerta asociada podrían realizarse dentro del mismo límite.
@@ -75,7 +75,7 @@ Context?
 Esta alternativa se consideró debido a que los procesos de fabricación necesitan conocer las materias primas y
 `RawMaterialBatch` disponibles, además de registrar las cantidades utilizadas durante la producción.
 
-![Candidate Context Map 2 - Inventory Management and Product Batch Management](../../assets/img/main-content/chapter-iv/context-mapping/candidate-context-map-2.png)
+<p align="center"><img src="../../assets/img/main-content/chapter-iv/context-mapping/candidate-context-map-2.png" alt="Candidate Context Map 2 - Inventory Management and Product Batch Management" width="100%"></p>
 
 La integración permitiría simplificar inicialmente determinadas operaciones relacionadas con el consumo de materias
 primas, debido a que el inventario y los lotes fabricados formarían parte del mismo modelo.
@@ -102,7 +102,7 @@ mecanismos de reporting, indicadores, información histórica y auditoría.
 Por ejemplo, Inventory Management podría generar sus propios reportes de inventario, Tracking & Telemetry sus métricas
 históricas y Equipment Management sus propios reportes relacionados con los equipos.
 
-![Candidate Context Map 3 - Distributed Reporting and Audit](../../assets/img/main-content/chapter-iv/context-mapping/candidate-context-map-3.png)
+<p align="center"><img src="../../assets/img/main-content/chapter-iv/context-mapping/candidate-context-map-3-part-1.png" alt="Candidate Context Map 3 - Distributed Reporting and Audit" width="100%"><img src="../../assets/img/main-content/chapter-iv/context-mapping/candidate-context-map-3-part-2.png" alt="Candidate Context Map 3 - Distributed Reporting and Audit" width="100%"></p>
 
 La principal ventaja de esta alternativa sería reducir la dependencia hacia un Bounded Context especializado en
 reporting y auditoría.
@@ -148,7 +148,7 @@ para colaborar con los demás contextos.
 Las relaciones se representan mediante las direcciones **Upstream (U)** y **Downstream (D)**, junto con los patrones
 **Customer/Supplier** y **Anti-Corruption Layer (ACL)**.
 
-![Selected Context Map - QualiTrack](../../assets/img/main-content/chapter-iv/context-mapping/selected-context-map.png)
+<p align="center"><img src="../../assets/img/main-content/chapter-iv/context-mapping/selected-context-map.png" alt="Selected Context Map - QualiTrack" width="100%"></p>
 
 El Context Map seleccionado está conformado por:
 

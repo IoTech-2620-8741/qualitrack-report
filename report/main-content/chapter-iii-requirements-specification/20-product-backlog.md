@@ -252,7 +252,7 @@ historia se utilizan Story Points de 1, 2 y 3.
 
 **Evidencia del Product Backlog:**
 
-![Product Backlog QualiTrack](../../assets/img/main-content/chapter-iii/jira-product-backlog.jpg)
+<p align="center"><img src="../../assets/img/main-content/chapter-iii/jira-product-backlog.jpg" alt="Product Backlog QualiTrack" width="100%"></p>
 
 **Enlace público al Product
 Backlog:** [https://shorturl.at/Zq2mP](https://iotech-2620.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?atlOrigin=eyJpIjoiMzRhZDg1MzEwMzliNGNjYThlNTcyMDMzNWI0MzUyYTciLCJwIjoiaiJ9)
