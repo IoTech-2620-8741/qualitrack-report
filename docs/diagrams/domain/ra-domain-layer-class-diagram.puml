@@ -89,6 +89,18 @@ package "ra.domain.model.valueobjects" {
     + lastMeasuredAt: Instant
     + {static} summarize(environmentId, readings): List<MeasurementSummary>
   }
+
+  class ReportDocument <<record>> {
+    + reportId: Long
+    + format: ReportFormat
+    + content: byte[]
+  }
+
+  class ReportEnvironment <<record>> {
+    + id: Long
+    + code: String
+    + name: String
+  }
 }
 MeasurementSummary ..> EnvironmentalReading
 
@@ -112,6 +124,13 @@ package "ra.domain.model.queries" {
     + period: ReportingPeriod
   }
   class GetAuditLogQuery <<record>>
+  class GetStaffActivityQuery <<record>> {
+    + laboratoryId: Long
+    + staffId: Long
+  }
+  class GetReportDocumentByIdQuery <<record>> {
+    + reportId: Long
+  }
   class GetAuditReportByIdQuery <<record>>
   class GetAuditReportsByLaboratoryIdQuery <<record>>
   class GetAuditReportsByBatchIdQuery <<record>>
@@ -244,6 +263,11 @@ package "ra.domain.repositories" {
     + findAllByDateRange(dateFrom: String, dateTo: String): List<AuditLogEntry>
     + save(auditLogEntry: AuditLogEntry): AuditLogEntry
     + existsById(id: Long): boolean
+  }
+
+  interface ReportDocumentRepository {
+    + save(document: ReportDocument): void
+    + findByReportId(reportId: Long): Optional<ReportDocument>
   }
 
   interface AuditReportRepository {

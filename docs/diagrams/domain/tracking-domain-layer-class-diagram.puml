@@ -17,7 +17,7 @@ package "tracking.domain.model.valueobjects" {
     MOTION (event, ENVIRONMENTAL_DEVICE)
     TEMPERATURE (°C, CONTAINER_MONITOR)
     HUMIDITY (%RH, CONTAINER_MONITOR)
-    LUMINOSITY (lux, CONTAINER_MONITOR)
+    LUMINOSITY (lux, ENVIRONMENTAL_DEVICE, CONTAINER_MONITOR)
     RFID_TAG (tag, CONTAINER_MONITOR)
     + unit(): String
     + hasThresholds(): boolean
@@ -86,6 +86,12 @@ package "tracking.domain.model.valueobjects" {
     + value: Duration
   }
 
+  class MonitoredDevice <<record>> {
+    + id: Long
+    + deviceType: String
+    + isContainerMonitor(): boolean
+  }
+
   class DeviceConnection <<record>> {
     + deviceId: Long
     + lastCommunicationAt: Instant
@@ -131,7 +137,7 @@ EnvironmentalProfile --> ProfileScope
 EnvironmentalProfile *-- EnvironmentalThreshold
 EnvironmentalProfile *-- ActuationRule
 note right of EnvironmentalProfile
-  ENVIRONMENT: air quality thresholds of the environmental device (TS42).
+  ENVIRONMENT: air quality and luminosity thresholds of the environmental device (TS42).
   CONTAINER_MONITOR: temperature, humidity (TS43) and luminosity (TS44)
   thresholds and actuation rules (TS45). Every change increases the version.
 end note
@@ -180,7 +186,6 @@ package "tracking.domain.model.commands" {
     + laboratoryId: Long
     + environmentId: Long
     + thresholds: List<EnvironmentalThreshold>
-    + userId: Long
   }
 
   class UpdateContainerMonitorThresholdsCommand <<record>> {
@@ -188,7 +193,6 @@ package "tracking.domain.model.commands" {
     + environmentId: Long
     + deviceId: Long
     + thresholds: List<EnvironmentalThreshold>
-    + userId: Long
   }
 
   class UpdateActuationRulesCommand <<record>> {
@@ -196,7 +200,6 @@ package "tracking.domain.model.commands" {
     + environmentId: Long
     + deviceId: Long
     + rules: List<ActuationRule>
-    + userId: Long
   }
 
   class RecordMeasurementCommand <<record>> {

@@ -1,0 +1,296 @@
+@startuml subscription-domain-layer-class-diagram
+
+title QualiTrack - Payments & Subscriptions - Domain Layer Class Diagram
+
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+package "shared" <<External>> {
+  abstract class AbstractDomainAggregateRoot
+}
+
+package "subscription.domain.model.valueobjects" {
+  enum PlanCode {
+    FREE
+    BASIC
+    PROFESSIONAL
+    ENTERPRISE
+  }
+
+  enum BillingCycle {
+    MONTHLY
+    YEARLY
+  }
+
+  enum SubscriptionStatus {
+    ACTIVE
+    INACTIVE
+    PENDING_PAYMENT
+    CANCELLED
+    EXPIRED
+  }
+
+  enum PaymentProvider {
+    STRIPE
+    MOCK
+  }
+
+  enum PaymentStatus {
+    PENDING
+    PAID
+    FAILED
+    CANCELLED
+    REFUNDED
+  }
+
+  class Money <<record>> {
+    + amount: BigDecimal
+    + currency: String
+    + {static} zero(currency: String): Money
+  }
+
+  class SubscriptionPlanCatalog <<record>> {
+    + plans: List<SubscriptionPlan>
+  }
+}
+
+package "subscription.domain.model.aggregates" {
+  class Subscription {
+    - id: Long
+    - userId: Long
+    - laboratoryId: Long
+    - planCode: PlanCode
+    - billingCycle: BillingCycle
+    - status: SubscriptionStatus
+    - stripeCustomerId: String
+    - stripeSubscriptionId: String
+    - stripeCheckoutSessionId: String
+    - currentPeriodStart: String
+    - currentPeriodEnd: String
+    - cancelledAt: String
+    - cancelledBy: Long
+    - cancelAtPeriodEnd: boolean
+    + {static} activate(command: ActivateSubscriptionCommand): Subscription
+    + cancelRenewal(cancelledBy: Long, cancelledAt: String): void
+    + isActive(): boolean
+    + grantsAccess(): boolean
+    + assignLaboratory(laboratoryId: Long): void
+    + updatePeriod(start: String, end: String): void
+    + synchronizeStatus(status: SubscriptionStatus): void
+    + synchronizeRenewal(cancelAtPeriodEnd: boolean, at: String): void
+  }
+}
+Subscription --|> AbstractDomainAggregateRoot
+Subscription --> PlanCode
+Subscription --> BillingCycle
+Subscription --> SubscriptionStatus
+note right of Subscription
+  Access lasts while the subscription is ACTIVE and its current
+  period has not ended. Cancelling the renewal keeps the access
+  until currentPeriodEnd (cancelAtPeriodEnd).
+end note
+
+package "subscription.domain.model.entities" {
+  class SubscriptionPlan {
+    - id: Long
+    - code: PlanCode
+    - name: String
+    - description: String
+    - price: Money
+    - billingCycle: BillingCycle
+    - stripePriceId: String
+    - maxUsers: Integer
+    - maxEquipment: Integer
+    - active: Boolean
+    + {static} offer(code, name, description, price, billingCycle, stripePriceId, maxUsers, maxEquipment): SubscriptionPlan
+    + isSelectable(): boolean
+  }
+
+  class SubscriptionPayment {
+    - id: Long
+    - subscriptionId: Long
+    - provider: PaymentProvider
+    - providerPaymentId: String
+    - stripeCheckoutSessionId: String
+    - amount: Money
+    - status: PaymentStatus
+    - paidAt: String
+    + {static} stripePayment(subscriptionId, providerPaymentId, stripeCheckoutSessionId, amount, status, paidAt): SubscriptionPayment
+    + isPaid(): boolean
+  }
+}
+SubscriptionPlan --> PlanCode
+SubscriptionPlan --> BillingCycle
+SubscriptionPlan *-- Money
+SubscriptionPayment --> PaymentProvider
+SubscriptionPayment --> PaymentStatus
+SubscriptionPayment *-- Money
+SubscriptionPlanCatalog o-- SubscriptionPlan
+note bottom of SubscriptionPayment
+  providerPaymentId: payment of the checkout or invoice of a
+  renewal (invoice.paid). Each one is recorded once.
+end note
+
+package "subscription.domain.model.commands" {
+  class CreateCheckoutSessionCommand <<record>> {
+    + userId: Long
+    + laboratoryId: Long
+    + planCode: PlanCode
+    + billingCycle: BillingCycle
+    + successUrl: String
+    + cancelUrl: String
+  }
+
+  class ActivateSubscriptionCommand <<record>> {
+    + userId: Long
+    + laboratoryId: Long
+    + planCode: PlanCode
+    + billingCycle: BillingCycle
+    + stripeCustomerId: String
+    + stripeSubscriptionId: String
+    + stripeCheckoutSessionId: String
+    + currentPeriodStart: String
+    + currentPeriodEnd: String
+  }
+
+  class CancelSubscriptionCommand <<record>> {
+    + subscriptionId: Long
+    + cancelledBy: Long
+  }
+
+  class RecordStripePaymentCommand <<record>> {
+    + subscriptionId: Long
+    + providerPaymentId: String
+    + stripeCheckoutSessionId: String
+    + amount: BigDecimal
+    + currency: String
+    + status: PaymentStatus
+    + paidAt: String
+  }
+
+  class SeedSubscriptionPlansCommand <<record>> {
+    + catalog: SubscriptionPlanCatalog
+  }
+}
+note bottom of RecordStripePaymentCommand
+  Requires the checkout session or the provider payment
+  (the invoice of a renewal has no checkout session).
+end note
+
+package "subscription.domain.model.queries" {
+  class GetSubscriptionPlansQuery <<record>>
+
+  class GetSubscriptionByIdQuery <<record>> {
+    + subscriptionId: Long
+  }
+
+  class GetActiveSubscriptionByLaboratoryIdQuery <<record>> {
+    + laboratoryId: Long
+  }
+
+  class GetActiveSubscriptionByUserIdQuery <<record>> {
+    + userId: Long
+  }
+
+  class GetBillingSummaryByLaboratoryIdQuery <<record>> {
+    + laboratoryId: Long
+  }
+
+  class GetPaymentsBySubscriptionIdQuery <<record>> {
+    + subscriptionId: Long
+  }
+
+  class GetSubscriptionByStripeCheckoutSessionIdQuery <<record>> {
+    + stripeCheckoutSessionId: String
+  }
+}
+
+package "subscription.domain.model.events" {
+  class CheckoutSessionCreatedEvent <<record>> {
+    + userId: Long
+    + laboratoryId: Long
+    + planCode: PlanCode
+    + billingCycle: BillingCycle
+    + stripeCheckoutSessionId: String
+    + checkoutUrl: String
+  }
+
+  class SubscriptionActivatedEvent <<record>> {
+    + subscriptionId: Long
+    + userId: Long
+    + laboratoryId: Long
+    + planCode: PlanCode
+    + billingCycle: BillingCycle
+    + stripeCustomerId: String
+    + stripeSubscriptionId: String
+    + {static} from(subscription: Subscription): SubscriptionActivatedEvent
+  }
+
+  class SubscriptionCancelledEvent <<record>> {
+    + subscriptionId: Long
+    + userId: Long
+    + laboratoryId: Long
+    + cancelledBy: Long
+    + cancelledAt: String
+    + {static} from(subscription: Subscription): SubscriptionCancelledEvent
+  }
+
+  class SubscriptionPaymentRecordedEvent <<record>> {
+    + paymentId: Long
+    + subscriptionId: Long
+    + providerPaymentId: String
+    + stripeCheckoutSessionId: String
+    + amount: BigDecimal
+    + currency: String
+    + status: PaymentStatus
+    + {static} from(payment: SubscriptionPayment): SubscriptionPaymentRecordedEvent
+  }
+}
+
+package "subscription.domain.repositories" {
+  interface SubscriptionRepository {
+    + findById(id: Long): Optional<Subscription>
+    + findActiveByLaboratoryId(laboratoryId: Long): Optional<Subscription>
+    + findActiveByUserId(userId: Long): Optional<Subscription>
+    + findByStripeCheckoutSessionId(stripeCheckoutSessionId: String): Optional<Subscription>
+    + findByStripeSubscriptionId(stripeSubscriptionId: String): Optional<Subscription>
+    + findAllByLaboratoryId(laboratoryId: Long): List<Subscription>
+    + save(subscription: Subscription): Subscription
+    + existsById(id: Long): boolean
+  }
+
+  interface SubscriptionPlanRepository {
+    + findAll(): List<SubscriptionPlan>
+    + findAllActive(): List<SubscriptionPlan>
+    + findById(id: Long): Optional<SubscriptionPlan>
+    + findByCodeAndBillingCycle(code: PlanCode, billingCycle: BillingCycle): Optional<SubscriptionPlan>
+    + findByStripePriceId(stripePriceId: String): Optional<SubscriptionPlan>
+    + save(plan: SubscriptionPlan): SubscriptionPlan
+    + existsById(id: Long): boolean
+  }
+
+  interface SubscriptionPaymentRepository {
+    + findById(id: Long): Optional<SubscriptionPayment>
+    + findByProviderPaymentId(providerPaymentId: String): Optional<SubscriptionPayment>
+    + findByStripeCheckoutSessionId(stripeCheckoutSessionId: String): Optional<SubscriptionPayment>
+    + findAllBySubscriptionId(subscriptionId: Long): List<SubscriptionPayment>
+    + save(payment: SubscriptionPayment): SubscriptionPayment
+    + existsById(id: Long): boolean
+  }
+}
+SubscriptionRepository --> Subscription
+SubscriptionPlanRepository --> SubscriptionPlan
+SubscriptionPaymentRepository --> SubscriptionPayment
+
+package "subscription.domain.exceptions" {
+  class SubscriptionNotFoundException
+  class ActiveSubscriptionNotFoundException
+  class SubscriptionPlanNotFoundException
+  class SubscriptionPaymentNotFoundException
+  class InvalidSubscriptionStateException
+  class StripeCheckoutSessionCreationException
+}
+
+@enduml

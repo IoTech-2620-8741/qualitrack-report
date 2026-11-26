@@ -31,6 +31,14 @@ package "ca.domain.model.valueobjects" {
     + {static} fromDeviceType(deviceType: String): AlertOrigin
   }
 
+  enum ComplianceEventSubject {
+    EQUIPMENT
+    BATCH
+    RAW_MATERIAL
+    ALERT
+    USER
+  }
+
   enum ComplianceEventType {
     DEVIATION_ALERT_CREATED
     DEVIATION_ALERT_ACKNOWLEDGED

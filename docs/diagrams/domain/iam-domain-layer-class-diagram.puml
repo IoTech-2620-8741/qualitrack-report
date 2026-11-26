@@ -29,6 +29,30 @@ package "iam.domain.model.valueobjects" {
     + {static} validate(newPassword: String): void
   }
 
+  class UserOnboarding <<record>> {
+    + userId: Long
+    + laboratoryId: Long
+    + subscriptionId: Long
+    + subscriptionStatus: String
+    + passwordChangeRequired: boolean
+    + nextStep(): String
+  }
+
+  class AccountSubscription <<record>> {
+    + subscriptionId: Long
+    + active: boolean
+  }
+
+  class EdgeGatewayIdentity <<record>> {
+    + equipmentId: Long
+    + laboratoryId: Long
+    + environmentId: Long
+    + sensorExternalId: String
+    + operational: boolean
+    + isLocated(): boolean
+    + canConnect(): boolean
+  }
+
   enum PasswordRecoveryStatus {
     PENDING
     COMPLETED
@@ -75,6 +99,7 @@ package "iam.domain.model.aggregates" {
     + addRole(role: Role): void
     + addRoles(roles: Collection<Role>): void
     + deactivate(): void
+    + assignLaboratory(laboratoryId: Long): void
     + isActive(): boolean
     + getUsernameValue(): String
     + getEmailValue(): String
@@ -110,6 +135,15 @@ PasswordRecovery --> PasswordRecoveryStatus
 PasswordRecovery ..> User : userId
 User *-- Role
 User --> UserStatus
+note bottom of AccountSubscription
+  Subscription of the account as IAM reads it from
+  Payments & Subscriptions for the onboarding.
+end note
+note bottom of EdgeGatewayIdentity
+  Edge Gateway as IAM reads it from Equipment Management.
+  Its API key is issued only when canConnect():
+  operational and located in an environment.
+end note
 Role --> Roles
 
 package "iam.domain.model.commands" {
@@ -196,6 +230,10 @@ package "iam.domain.model.queries" {
   }
 
   class GetAllRolesQuery <<record>>
+
+  class GetUserOnboardingQuery <<record>> {
+    + userId: Long
+  }
 }
 
 package "iam.domain.repositories" {
@@ -214,6 +252,7 @@ package "iam.domain.repositories" {
   interface PasswordRecoveryRepository {
     + save(recovery: PasswordRecovery): PasswordRecovery
     + findLatestByUserId(userId: Long): Optional<PasswordRecovery>
+    + findLatestByUserIdForUpdate(userId: Long): Optional<PasswordRecovery>
   }
 
   interface RoleRepository {
