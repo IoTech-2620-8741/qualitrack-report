@@ -1517,9 +1517,9 @@ cada Edge Gateway. Los datos personales y la foto pertenecen a Profile Managemen
 **Fachada e integration events**
 
 - `IamContextFacade`: interfaz implementada por `IamContextFacadeImpl` que expone información mínima a otros contextos.
-  Permite comprobar que un usuario existe, obtener su
-  laboratorio, su usuario y su cuenta con correo y roles, verificar si tiene un rol, asociar la cuenta al laboratorio
-  durante la configuración inicial y crear o deshabilitar las cuentas del personal.
+  Permite comprobar que un usuario existe, obtener su laboratorio, su usuario y su cuenta con correo y roles, verificar
+  si tiene un rol, asociar la cuenta al laboratorio durante la configuración inicial y crear o deshabilitar las cuentas
+  del personal.
 - `UserAccountUpdatedIntegrationEvent`: permite que Laboratory Management mantenga alineado el correo del personal.
 
 #### 4.2.8.3. Application Layer.
@@ -1932,9 +1932,8 @@ sobre lotes.
 **Fachada e integration events**
 
 - `ProfileContextFacade`: interfaz implementada por `ProfileContextFacadeImpl` que permite que otros contextos obtengan
-  el nombre con que se muestra a una persona
-  (`displayNameOf`). Si el perfil no tiene nombre, devuelve el usuario de la cuenta. Compliance & Alerting la usa para
-  indicar quién atendió una alerta o decidió sobre un lote.
+  el nombre con que se muestra a una persona (`displayNameOf`). Si el perfil no tiene nombre, devuelve el usuario de la
+  cuenta. Compliance & Alerting la usa para indicar quién atendió una alerta o decidió sobre un lote.
 - `ProfileUpdatedIntegrationEvent`: publica el cambio de nombre para los contextos que lo necesiten. La lista del
   personal no depende de él: Profile Management la actualiza mediante la fachada de Laboratory Management.
 
