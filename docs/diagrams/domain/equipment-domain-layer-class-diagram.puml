@@ -65,9 +65,12 @@ package "equipment.domain.model.aggregates" {
     - sensorExternalId: DeviceId
     - deviceType: IotDeviceType
     - firmwareVersion: String
+    + {static} EDGE_GATEWAY_TYPE: String = "EDGE_GATEWAY"
     + Equipment(command: RegisterEquipmentCommand)
     + Equipment(command: RegisterIotDeviceCommand)
+    + Equipment(command: RegisterEdgeGatewayCommand)
     + isIotDevice(): boolean
+    + isEdgeGateway(): boolean
     + isDeviceOfType(type: IotDeviceType): boolean
     + belongsTo(laboratoryId: Long): boolean
     + isLocatedIn(laboratoryId: Long, environmentId: Long): boolean
@@ -125,6 +128,26 @@ note right of Equipment
   An IoT device is an equipment with a device type and the
   identity (sensorExternalId) that Edge uses to recognise it.
   An environment has at most one environmental device.
+  An Edge Gateway is an equipment of type EDGE_GATEWAY with its
+  own sensorExternalId; it starts OPERATIONAL.
+end note
+
+package "equipment.domain.services" {
+  class EdgeGatewayAllocation <<record>> {
+    + {static} MAX_DEVICES_PER_EDGE_GATEWAY: int = 15
+    + deviceIdsByGatewayId: Map<Long, List<Long>>
+    + uncoveredDeviceIds: List<Long>
+    + {static} of(gatewayIds, deviceIds): EdgeGatewayAllocation
+    + {static} ofEnvironment(environmentEquipment: Collection<Equipment>): EdgeGatewayAllocation
+    + deviceIdsOf(gatewayId: Long): List<Long>
+  }
+}
+EdgeGatewayAllocation ..> Equipment
+note bottom of EdgeGatewayAllocation
+  Only OPERATIONAL Edge Gateways receive devices. Gateways and
+  IoT devices are sorted by identifier: the first gateway serves
+  the first 15 devices, the next one the following 15, and the
+  rest stay uncovered.
 end note
 
 package "equipment.domain.model.commands" {
@@ -161,6 +184,14 @@ package "equipment.domain.model.commands" {
     + reason: String
   }
 
+  class RegisterEdgeGatewayCommand <<record>> {
+    + laboratoryId: Long
+    + name: String
+    + sensorExternalId: String
+    + serialNumber: String
+    + model: String
+  }
+
   class LinkSensorCommand <<record>> {
     + equipmentId: Long
     + sensorExternalId: String
@@ -192,9 +223,18 @@ package "equipment.domain.model.queries" {
     + equipmentId: Long
   }
   class GetEquipmentByLabIdQuery <<record>>
+  class GetEquipmentByEnvironmentIdQuery <<record>> {
+    + laboratoryId: Long
+    + environmentId: Long
+    + iotDevicesOnly: boolean
+  }
   class GetEquipmentByDeviceIdQuery <<record>>
   class GetCalibrationAlertsByLabIdQuery <<record>>
   class GetBpmParameterConfigsByEquipmentIdQuery <<record>>
+  class GetBpmParameterConfigQuery <<record>> {
+    + equipmentId: Long
+    + parameterName: String
+  }
   class GetMaintenanceByEquipmentIdQuery <<record>> {
     + laboratoryId: Long
     + environmentId: Long
@@ -217,6 +257,7 @@ package "equipment.domain.repositories" {
     + existsBySerialNumber(serialNumber): boolean
     + existsBySensorExternalId(sensorExternalId: DeviceId): boolean
     + existsOtherDeviceInEnvironment(environmentId, deviceType, equipmentId): boolean
+    + findAllByLabIdAndEnvironmentId(labId: Long, environmentId: Long): List<Equipment>
   }
   interface EquipmentStatusChangeRepository
   interface BpmParameterConfigRepository

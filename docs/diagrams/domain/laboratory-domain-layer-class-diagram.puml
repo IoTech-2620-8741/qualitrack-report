@@ -32,9 +32,9 @@ package "laboratory.domain.model.valueobjects" {
 
 package "laboratory.domain.model.entities" {
   class LaboratoryAddress {
-    - street: String
-    - city: String
-    - country: String
+    - id: Long
+    - address: String
+    + update(newAddress: String): void
   }
 }
 
@@ -45,9 +45,11 @@ package "laboratory.domain.model.aggregates" {
     - ruc: String
     - address: LaboratoryAddress
     - phone: String
-    - regulations: List<Regulation>
+    - applicableRegulations: List<String>
     - status: LaboratoryStatus
     + updateProfile(command: UpdateLaboratoryCommand): void
+    + suspendOperations(): void
+    + onRegistered(): void
   }
 
   class RawMaterial {
@@ -58,6 +60,7 @@ package "laboratory.domain.model.aggregates" {
     - unit: String
     - currentStock: BigDecimal
     - minimumThreshold: BigDecimal
+    + consumeStock(amount: BigDecimal, requestedUnit: String): void
   }
 
   class Environment {
@@ -98,7 +101,7 @@ package "laboratory.domain.model.aggregates" {
 StaffMember --> StaffAccessRole
 note right of StaffMember
   Registering a staff member creates their IAM account (the e-mail is the
-  username) through IamContextFacade; deactivating it disables the account.
+  username) through IAM; deactivating it disables the account.
 end note
 Laboratory --|> AbstractDomainAggregateRoot
 RawMaterial --|> AbstractDomainAggregateRoot
@@ -107,7 +110,6 @@ Environment --|> AbstractDomainAggregateRoot
 Environment --> EnvironmentUsage
 Laboratory *-- LaboratoryName
 Laboratory *-- LaboratoryAddress
-Laboratory *-- Regulation
 Laboratory *-- LaboratoryStatus
 RawMaterial *-- StockQuantity
 

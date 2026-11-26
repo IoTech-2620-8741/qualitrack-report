@@ -90,6 +90,9 @@ package "batch.domain.model.entities" {
     - stockBefore: BigDecimal
     - stockAfter: BigDecimal
     - operationId: String
+    + assignInventoryReceipt(receiptId: Long): void
+    + assignOperation(operationId: String): void
+    + recordStockChange(before: BigDecimal, after: BigDecimal): void
   }
   class EquipmentUsage {
     - batchId: Long
@@ -148,6 +151,7 @@ package "batch.domain.model.queries" {
   class GetBatchByIdQuery <<record>>
   class GetBatchTraceabilityQuery <<record>>
   class GetRawMaterialUsagesByInventoryMaterialQuery <<record>>
+  class GetRawMaterialUsageByBatchIdQuery <<record>>
   class GetRawMaterialHistoryQuery <<record>>
   class GetBatchContainerQuery <<record>>
 }
