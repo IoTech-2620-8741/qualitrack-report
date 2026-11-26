@@ -165,6 +165,17 @@ package "inventory.domain" as Inventorydomain {
       EXPIRED
     }
     class NearExpiryPeriod <<record>>
+    class LegacyRawMaterial <<record>> {
+      + id: Long
+      + code: String
+      + name: String
+      + unit: String
+      + minimumStock: BigDecimal
+      + supplier: String
+      + batchNumber: String
+      + expiresOn: String
+      + balance: BigDecimal
+    }
     class ContainerAssignment <<record>> {
       +containerMonitorId: Long
       +environmentId: Long

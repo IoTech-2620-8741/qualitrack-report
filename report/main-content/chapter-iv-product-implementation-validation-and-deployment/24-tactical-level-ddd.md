@@ -19,9 +19,9 @@ servicio Edge y el backend Cloud.
 
 El modelo se organiza alrededor del agregado `EnvironmentalProfile`, que contiene los rangos permitidos y las reglas de
 actuación, y de las entidades `Measurement` y `ActuationEvent`. Hay dos tipos de perfil: el de un **ambiente**, que se
-evalúa con las lecturas de su Dispositivo Ambiental (calidad de aire), y el de un **Monitor de Contenedor**
-(temperatura, humedad y luminosidad, más sus reglas de actuación). Cuando una lectura empeora el estado de una métrica,
-el contexto publica un evento para que Compliance & Alerting abra o escale la alerta del incidente.
+evalúa con las lecturas de su Dispositivo Ambiental (calidad de aire y luminosidad), y el de un **Monitor de
+Contenedor** (temperatura, humedad y luminosidad, más sus reglas de actuación). Cuando una lectura empeora el estado de
+una métrica, el contexto publica un evento para que Compliance & Alerting abra o escale la alerta del incidente.
 
 #### 4.2.1.1. Domain Layer.
 
@@ -36,8 +36,8 @@ Esta capa contiene las reglas del monitoreo ambiental. No depende de controlador
 - **Métodos principales:** `forEnvironment`, `forContainerMonitor`, `replaceThresholds`, `replaceActuationRules` y
   `evaluate`.
 - **Reglas:** cada cambio incrementa `version`, de modo que cada lectura queda asociada a la versión del perfil con la
-  que fue evaluada. Un perfil de ambiente solo configura la calidad de aire; uno de contenedor configura temperatura,
-  humedad, luminosidad y reglas de actuación.
+  que fue evaluada. Un perfil de ambiente configura la calidad de aire y la luminosidad; uno de contenedor configura
+  temperatura, humedad, luminosidad y reglas de actuación.
 
 **`Measurement` — Entity**
 
@@ -66,15 +66,19 @@ Esta capa contiene las reglas del monitoreo ambiental. No depende de controlador
   `ExpectedCommunicationPeriod`.
 - `ExpectedCommunicationPeriod`: tiempo máximo entre dos comunicaciones antes de que el dispositivo pase a requerir
   revisión.
+- `MonitoredDevice`: dispositivo IoT tal como lo ve este contexto (identificador y tipo), traducido por su ACL desde
+  Equipment Management. `isContainerMonitor` indica si es un Monitor de Contenedor.
 - Enumeraciones: `MonitoredMetric` (`AIR_QUALITY`, `MOTION`, `TEMPERATURE`, `HUMIDITY`, `LUMINOSITY`, `RFID_TAG`, cada
-  una con su unidad y el tipo de dispositivo que la reporta), `EnvironmentalState` (`NORMAL`, `WARNING`, `CRITICAL`),
+  una con su unidad y los tipos de dispositivo que la reportan; la luminosidad la reportan el Dispositivo Ambiental y el
+  Monitor de Contenedor), `EnvironmentalState` (`NORMAL`, `WARNING`, `CRITICAL`),
   `ActuationAction` (`VENTILATION_ON/OFF`, `COOLING_ON/OFF`, `SERVO_OPEN/CLOSE`), `ActuationResult` (`EXECUTED`,
   `FAILED`), `ProfileScope` (`ENVIRONMENT`, `CONTAINER_MONITOR`) y `DeviceConnectionStatus` (`CONNECTED`,
   `REQUIRES_REVIEW`).
 
 **Comandos principales**
 
-- `UpdateEnvironmentThresholdsCommand`: reemplaza los rangos del perfil de un ambiente (US56, TS42).
+- `UpdateEnvironmentThresholdsCommand`: reemplaza los rangos de calidad de aire y luminosidad del perfil de un ambiente
+  (US56, TS42).
 - `UpdateContainerMonitorThresholdsCommand`: reemplaza los rangos de temperatura, humedad y luminosidad de un Monitor de
   Contenedor (US57, US58, TS43, TS44).
 - `UpdateActuationRulesCommand`: reemplaza las reglas de actuación de un Monitor de Contenedor (US59, TS45).
@@ -106,13 +110,15 @@ Esta capa contiene las reglas del monitoreo ambiental. No depende de controlador
 #### 4.2.1.2. Interface Layer.
 
 La Interface Layer expone Tracking & Telemetry a la Single-Page Application, la Mobile Application y el Edge Service, y
-traduce las solicitudes a Commands y Queries del Application Layer.
+traduce las solicitudes a Commands y Queries del Application Layer. Las aplicaciones usan el token del usuario; el Edge
+Gateway se autentica con su API key y usa sus propias rutas.
 
 **`EnvironmentTelemetryController`** — `/api/v1/laboratories/{laboratoryId}/environments/{environmentId}`
 
-- `GET /environmental-profile` y `PUT /environmental-profile/thresholds`: consulta y configura el perfil del ambiente.
-- `POST /telemetry-measurements` y `GET /telemetry-measurements`: registra (Edge) y consulta las lecturas del
-  Dispositivo Ambiental.
+- `GET /environmental-profile` y `PUT /environmental-profile/thresholds`: consulta y configura el perfil del ambiente
+  (calidad de aire y luminosidad).
+- `POST /telemetry-measurements` y `GET /telemetry-measurements`: registra y consulta las lecturas del Dispositivo
+  Ambiental.
 
 **`ContainerMonitorTelemetryController`** — `.../environments/{environmentId}/container-monitors/{deviceId}`
 
@@ -124,7 +130,18 @@ traduce las solicitudes a Commands y Queries del Application Layer.
 **`DeviceTrackingController`** — `.../environments/{environmentId}/devices/{deviceId}`
 
 - `GET /telemetry-status`: estado de conexión del dispositivo (TS41).
-- `GET /environmental-profile`: perfil vigente que el Edge sincroniza para el dispositivo (TS57).
+- `GET /environmental-profile`: perfil vigente que aplica el dispositivo (TS57).
+
+**`EdgeGatewayTelemetryController`** — `/api/v1/edge-gateways/{gatewayId}/iot-devices/{iotDeviceId}`
+
+- `POST /telemetry-measurements` y `POST /actuation-events`: registran las lecturas y las acciones que sincroniza el
+  Edge Gateway autenticado con su API key. `gatewayId` es el identificador externo del Gateway.
+
+**`EdgeGatewayProfilesController`** — `/api/v1/edge-gateways/{gatewayId}/iot-devices/{iotDeviceId}`
+
+- `GET /environmental-profile`: perfil vigente que el Edge Gateway descarga para aplicarlo en el dispositivo (TS57).
+
+En las tres rutas del Edge Gateway, un dispositivo que el Gateway no atiende se rechaza con `403`.
 
 **Resources y assemblers**
 
@@ -171,7 +188,8 @@ traduce las solicitudes a Commands y Queries del Application Layer.
 **ACL**
 
 - `TrackingExternalEquipmentService`: consulta Equipment Management para validar la identidad, el tipo y la ubicación
-  del dispositivo IoT.
+  del dispositivo IoT, que traduce a `MonitoredDevice`, y para confirmar que un Edge Gateway atiende al dispositivo
+  (`isServedByEdgeGateway`).
 - `TrackingContextFacadeImpl`: implementa la fachada del contexto.
 
 #### 4.2.1.4. Infrastructure Layer.
@@ -192,7 +210,8 @@ traduce las solicitudes a Commands y Queries del Application Layer.
 
 El diagrama de componentes presenta la posición de **Tracking & Telemetry** dentro del **Cloud REST API** de QualiTrack.
 Recibe la telemetría del Edge REST API y las consultas de la Single-Page Application y la Mobile Application, resuelve
-el ambiente de cada dispositivo con Equipment Management y notifica las desviaciones a Compliance & Alerting.
+con Equipment Management el ambiente de cada dispositivo y el Edge Gateway que lo atiende, y notifica las desviaciones a
+Compliance & Alerting. Compliance & Alerting y Reporting & Audit leen sus lecturas y acciones mediante su fachada.
 
 Se utiliza la vista de Structurizr **`Components-Tracking`**, definida sobre el container `Cloud REST API`.
 
@@ -206,8 +225,8 @@ clases del Domain Layer y el esquema relacional que persiste perfiles, lecturas 
 ##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams.
 
 El diagrama de clases muestra `EnvironmentalProfile` como Aggregate Root con sus `EnvironmentalThreshold` y
-`ActuationRule`, las entidades `Measurement` y `ActuationEvent`, los Value Objects y enumeraciones del contexto, y sus
-Commands, Queries, eventos e interfaces de repositorio.
+`ActuationRule`, las entidades `Measurement` y `ActuationEvent`, los Value Objects y enumeraciones del contexto, entre
+ellos `MonitoredDevice`, y sus Commands, Queries, eventos e interfaces de repositorio.
 
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/class-diagrams/tracking-domain-layer-class-diagram-1.png" alt="Tracking & Telemetry Domain Layer Class Diagram (1/2)" width="100%"></p>
 
@@ -219,7 +238,7 @@ El diagrama de base de datos muestra las tablas de perfiles ambientales, con sus
 lecturas y de acciones ejecutadas. Los identificadores de laboratorio, ambiente y dispositivo relacionan la información
 con Laboratory Management y Equipment Management sin duplicar sus modelos.
 
-<p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/tracking/tracking-database-diagram.puml&fmt=svg&v=4" alt="Tracking & Telemetry Database Design Diagram" width="100%"></p>
+<p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/tracking/tracking-database-diagram.puml&fmt=svg&v=5" alt="Tracking & Telemetry Database Design Diagram" width="100%"></p>
 
 ### 4.2.2. Bounded Context: Compliance & Alerting
 
@@ -280,7 +299,8 @@ la escala. La alerta sigue abierta hasta que una persona la resuelve, aunque la 
 **Commands principales**
 
 - `CreateDeviationAlertCommand` (TS73), `AcknowledgeAlertCommand`, `ResolveAlertCommand` y
-  `RecordConditionNormalizedCommand`.
+  `RecordConditionNormalizedCommand`. `CreateDeviationAlertCommand` admite una variable de hasta 100 caracteres y una
+  unidad de hasta 20, y `ResolveAlertCommand`, notas de resolución de hasta 500.
 - `SendAlertEmailNotificationCommand` (US84, TS78).
 - `PublishNotificationCommand`, `MarkNotificationAsReadCommand` y `MarkAllNotificationsAsReadCommand`.
 - `UpdateNotificationPreferenceCommand`.
@@ -325,8 +345,10 @@ la escala. La alerta sigue abierta hasta que una persona la resuelve, aunque la 
 
 **Fachada e integration events**
 
-- `ComplianceContextFacade`: expone a otros contextos operaciones controladas, como registrar el bajo stock o consultar
-  si un lote puede liberarse (`canReleaseBatch`).
+- `ComplianceContextFacade`: interfaz implementada por `ComplianceContextFacadeImpl` en `application/acl`. Expone a
+  otros contextos las alertas de un ambiente, de un lote o de un conjunto de dispositivos (`findEnvironmentAlerts`,
+  `findBatchAlerts`, `findDeviceAlerts`) y si un lote puede liberarse (`canReleaseBatch`). El bajo stock del catálogo
+  heredado llega por su evento de integración.
 - `CaTenantResourceLookup`: resuelve el laboratorio dueño de una alerta.
 - Integration events: `DeviationAlertCreatedIntegrationEvent`, `DeviationAlertEscalatedIntegrationEvent`,
   `DeviationAlertAcknowledgedIntegrationEvent`, `DeviationAlertResolvedIntegrationEvent` y
@@ -349,7 +371,8 @@ la escala. La alerta sigue abierta hasta que una persona la resuelve, aunque la 
 **Event Handlers**
 
 - `EnvironmentalDeviationComplianceEventHandler`: registra la desviación detectada por Tracking & Telemetry con la
-  severidad de su condición (`WARNING` o `CRITICAL`).
+  severidad de su condición (`WARNING` o `CRITICAL`). Una desviación con datos inválidos se registra en el log y se
+  ignora, para no hacer fallar la lectura que Tracking & Telemetry está guardando.
 - `EnvironmentalConditionNormalizedComplianceEventHandler`: anota en la alerta abierta que la métrica volvió a normal.
 - `RawMaterialLowStockComplianceEventHandler`, `CalibrationExpiredEventHandler`, `BatchReleasedComplianceEventHandler` y
   `BatchRejectedComplianceEventHandler`: registran los eventos de cumplimiento de stock, equipos y lotes.
@@ -374,18 +397,22 @@ la escala. La alerta sigue abierta hasta que una persona la resuelve, aunque la 
 
 - **Persistencia:** entidades, Spring Data JPA Repositories, assemblers y adapters para alertas, avisos, eventos de
   cumplimiento y preferencias (`DeviationAlertRepositoryImpl`, `NotificationRepositoryImpl`,
-  `ComplianceEventRepositoryImpl` y `NotificationPreferenceRepositoryImpl`).
+  `ComplianceEventRepositoryImpl` y `NotificationPreferenceRepositoryImpl`). Las alertas tienen índices para el
+  incidente abierto de un dispositivo y para las alertas de un ambiente.
 - **Converters:** `AlertSeverityPersistenceConverter`, `AlertStatusPersistenceConverter`,
   `ComplianceEventTypePersistenceConverter` y `NotificationTypePersistenceConverter`.
 - **Correo:** `EmailAlertNotifier` implementa `AlertEmailNotifier`. Envía el aviso en español e inglés, con el enlace a
   la alerta, mediante el proveedor configurado en la plataforma: Gmail SMTP en producción o Resend API.
-- **Configuración:** `CaConfiguration`.
+- **Configuración:** `CaConfiguration` define el `Clock` con que se fechan los eventos de cumplimiento, las alertas y
+  los avisos.
 
 #### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams.
 
 El diagrama de componentes presenta **Compliance & Alerting** dentro del **Cloud REST API**. Recibe de Tracking &
-Telemetry las desviaciones, consulta a Product Batch Management los lotes expuestos y a Profile Management los nombres
-de las personas, y envía los correos de alertas críticas mediante Gmail SMTP.
+Telemetry las desviaciones y lee las acciones del contenedor durante cada alerta. Resuelve el dispositivo con Equipment
+Management y el ambiente con Laboratory Management, y recibe por eventos la calibración vencida, el bajo stock y las
+decisiones sobre los lotes. Responde a Product Batch Management si un lote puede liberarse, obtiene de Profile
+Management los nombres de las personas y envía los correos de alertas críticas mediante Gmail SMTP.
 
 Se utiliza la vista de Structurizr **`Components-Compliance`**, definida sobre el container `Cloud REST API`.
 
@@ -399,8 +426,8 @@ que persiste alertas, avisos, eventos de cumplimiento y preferencias.
 ##### 4.2.2.6.1. Bounded Context Domain Layer Class Diagrams.
 
 El diagrama muestra los Aggregates `DeviationAlert` y `Notification`, las entidades `ComplianceEvent` y
-`NotificationPreference`, sus Value Objects y enumeraciones, y los Commands, Queries, eventos e interfaces de
-repositorio del contexto.
+`NotificationPreference`, sus Value Objects y enumeraciones, entre ellas `ComplianceEventSubject`, y los Commands,
+Queries, eventos e interfaces de repositorio del contexto.
 
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/class-diagrams/ca-domain-layer-class-diagram-1.png" alt="Compliance & Alerting Domain Layer Class Diagram (1/2)" width="100%"></p>
 
@@ -412,14 +439,15 @@ El diagrama de base de datos muestra las tablas de alertas de desviación, aviso
 de notificación. Los identificadores de laboratorio, ambiente, equipo y lote relacionan la información con los contextos
 que la originan.
 
-<p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/ca/ca-database-diagram.puml&fmt=svg&v=4" alt="Compliance & Alerting Database Design Diagram" width="100%"></p>
+<p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/ca/ca-database-diagram.puml&fmt=svg&v=5" alt="Compliance & Alerting Database Design Diagram" width="100%"></p>
 
 ### 4.2.3. Bounded Context: Equipment Management
 
-Equipment Management administra los equipos físicos e instrumentos del laboratorio y los **dispositivos IoT basados en
-ESP32**: el Dispositivo Ambiental de cada ambiente y los Monitores de Contenedor. Es la fuente de verdad sobre la
-identidad del equipo, su ubicación en un ambiente, su estado operativo, sus parámetros BPM y sus mantenimientos. Las
-lecturas que producen los dispositivos no pertenecen a este contexto, sino a Tracking & Telemetry.
+Equipment Management administra los equipos físicos e instrumentos del laboratorio, los **dispositivos IoT basados en
+ESP32** (el Dispositivo Ambiental de cada ambiente y los Monitores de Contenedor) y los **Edge Gateways** que los
+atienden. Es la fuente de verdad sobre la identidad del equipo, su ubicación en un ambiente, su estado operativo, sus
+parámetros BPM y sus mantenimientos. Las lecturas que producen los dispositivos no pertenecen a este contexto, sino a
+Tracking & Telemetry.
 
 #### 4.2.3.1. Domain Layer.
 
@@ -429,9 +457,10 @@ lecturas que producen los dispositivos no pertenecen a este contexto, sino a Tra
 - **Atributos principales:** `id`, `labId`, `environmentId`, `name`, `type` (`EquipmentType`), `model`, `serialNumber`,
   `status` (`EquipmentStatus`), `sensorExternalId` (`DeviceId`), `deviceType` (`IotDeviceType`) y `firmwareVersion`.
 - **Métodos principales:** `assignToEnvironment`, `changeStatus`, `linkSensor`, `updateStatus`, `isIotDevice`,
-  `isDeviceOfType`, `isLocatedIn` y `belongsTo`.
-- **Reglas:** se construye con `RegisterEquipmentCommand` (equipo) o `RegisterIotDeviceCommand` (dispositivo IoT). Cada
-  cambio de estado genera un `EquipmentStatusChange` trazable.
+  `isEdgeGateway`, `isDeviceOfType`, `isLocatedIn` y `belongsTo`.
+- **Reglas:** se construye con `RegisterEquipmentCommand` (equipo), `RegisterIotDeviceCommand` (dispositivo IoT) o
+  `RegisterEdgeGatewayCommand` (Edge Gateway: equipo de tipo `EDGE_GATEWAY` con su identificador externo, que empieza
+  `OPERATIONAL`). Cada cambio de estado genera un `EquipmentStatusChange` trazable.
 
 **`MaintenanceRecord` — Aggregate Root**
 
@@ -454,15 +483,26 @@ lecturas que producen los dispositivos no pertenecen a este contexto, sino a Tra
 - `MaintenanceType`: `PREVENTIVE`, `CORRECTIVE`, `CALIBRATION`, `INSPECTION` y `OTHER`.
 - `DeviationSeverity`.
 
+**`EdgeGatewayAllocation` — Domain Service**
+
+- **Propósito:** reparte los dispositivos IoT de un ambiente entre sus Edge Gateways, sin que el usuario vincule cada
+  dispositivo a un Gateway.
+- **Reglas:** ordena los Gateways y los dispositivos por identificador y asigna a cada Gateway los 15 dispositivos
+  siguientes, como una cola (`MAX_DEVICES_PER_EDGE_GATEWAY`): con 20 dispositivos y dos Gateways, el primero atiende 15
+  y el segundo 5. Solo reciben dispositivos los Gateways `OPERATIONAL`, y los que no caben quedan sin cobertura
+  (`uncoveredDeviceIds`).
+
 **Commands principales**
 
-- `RegisterEquipmentCommand` (US45, TS31) y `RegisterIotDeviceCommand` (US51, US53, TS37, TS39).
+- `RegisterEquipmentCommand` (US45, TS31), `RegisterIotDeviceCommand` (US51, US53, TS37, TS39) y
+  `RegisterEdgeGatewayCommand`.
 - `AssignEquipmentToEnvironmentCommand` (US47, US52, US54) y `ChangeEquipmentStatusCommand` (US48, TS34).
 - `LinkSensorCommand`, `ConfigureBpmParametersCommand` y `RegisterMaintenanceCommand` (US49, TS35).
 
 **Queries principales**
 
-- `GetEquipmentByLabIdQuery`, `GetEquipmentByIdQuery` y `GetEquipmentByDeviceIdQuery`.
+- `GetEquipmentByLabIdQuery`, `GetEquipmentByEnvironmentIdQuery` (todos los equipos del ambiente o solo sus dispositivos
+  IoT), `GetEquipmentByIdQuery` y `GetEquipmentByDeviceIdQuery`.
 - `GetBpmParameterConfigsByEquipmentIdQuery` y `GetBpmParameterConfigQuery`.
 - `GetMaintenanceByEquipmentIdQuery` (US50, TS36) y `GetCalibrationAlertsByLabIdQuery`.
 
@@ -483,27 +523,38 @@ lecturas que producen los dispositivos no pertenecen a este contexto, sino a Tra
   (US45, US46, TS31, TS32).
 - `LaboratoryDevicesController` — `/devices`: registra Dispositivos Ambientales y Monitores de Contenedor
   (`POST /environmental-devices`, `POST /container-monitors`) (US51, US53, TS37, TS39).
-- `EnvironmentEquipmentController` — `/environments/{environmentId}/equipments`: ubica un equipo en el ambiente y
-  registra sus cambios de estado (`POST /{equipmentId}/status-changes`) (US47, US48, TS33, TS34).
+- `LaboratoryEdgeGatewayController` — `/edge-gateways`: registra un Edge Gateway como equipo del laboratorio.
+- `EnvironmentEquipmentController` — `/environments/{environmentId}/equipments`: lista los equipos ubicados en el
+  ambiente (`?iot=true` devuelve solo los dispositivos IoT), ubica un equipo en el ambiente y registra sus cambios de
+  estado (`POST /{equipmentId}/status-changes`) (US47, US48, TS33, TS34).
+- `EnvironmentEdgeGatewayCoverageController` — `/environments/{environmentId}/edge-gateway-coverage`: indica cuántos
+  dispositivos atiende cada Edge Gateway del ambiente y cuántos quedan sin Gateway.
 - `EnvironmentDevicesController` — `/environments/{environmentId}`: asocia el Dispositivo Ambiental y los Monitores de
   Contenedor con el ambiente que supervisan (US52, US54, TS38, TS40).
 - `EquipmentBpmConfigController` — `/equipments/{equipmentId}/bpm-configs`: consulta y configura los parámetros BPM.
 - `EquipmentMaintenanceController` — `/environments/{environmentId}/equipments/{equipmentId}/maintenance-records`:
   registra y lista los mantenimientos.
 
+`EdgeGatewayDevicesController` — `/api/v1/edge-gateways/{deviceId}/iot-devices` entrega al Edge Gateway autenticado con
+su API key los dispositivos IoT que atiende, 15 como máximo.
+
 **Assemblers principales**
 
 - `RegisterEquipmentCommandFromResourceAssembler`, `RegisterIotDeviceCommandFromResourceAssembler`,
-  `ChangeEquipmentStatusCommandFromResourceAssembler`, `ConfigureBpmCommandFromResourceAssembler` y
-  `RegisterMaintenanceCommandFromResourceAssembler`.
+  `RegisterEdgeGatewayCommandFromResourceAssembler`, `ChangeEquipmentStatusCommandFromResourceAssembler`,
+  `ConfigureBpmCommandFromResourceAssembler` y `RegisterMaintenanceCommandFromResourceAssembler`.
 - `EquipmentResourceFromEntityAssembler`, `EquipmentStatusChangeResourceFromEntityAssembler`,
-  `BpmConfigResourceFromEntityAssembler`, `MaintenanceResourceFromEntityAssembler` y `EquipmentLocationUriAssembler`.
+  `BpmConfigResourceFromEntityAssembler`, `MaintenanceResourceFromEntityAssembler`,
+  `EdgeGatewayCoverageResourceFromEntityAssembler` y `EquipmentLocationUriAssembler`.
 
 **Fachada e integration events**
 
 - `EquipmentContextFacade`: permite que otros contextos resuelvan un equipo (`findEquipment`), un dispositivo de un
   ambiente (`findDevice`, `findEnvironmentalDevice`), un Monitor de Contenedor (`findContainerMonitor`) y los
-  dispositivos del laboratorio (`findDevices`).
+  dispositivos del laboratorio (`findDevices`). También entrega a IAM los Edge Gateways (`findEdgeGateway`,
+  `findEdgeGatewayByExternalId`), a Tracking & Telemetry si un Gateway atiende a un dispositivo
+  (`isServedByEdgeGateway`) y a Reporting & Audit los equipos del laboratorio y el historial de un equipo
+  (`findLaboratoryEquipment`, `findEquipmentLog`).
 - `EquipmentTenantResourceLookup`: resuelve el laboratorio dueño de un equipo.
 - Integration events: `EquipmentRegisteredIntegrationEvent`, `EquipmentAssignedToEnvironmentIntegrationEvent`,
   `EquipmentStatusChangedIntegrationEvent`, `SensorLinkedIntegrationEvent`, `BpmParameterConfiguredIntegrationEvent`,
@@ -513,14 +564,15 @@ lecturas que producen los dispositivos no pertenecen a este contexto, sino a Tra
 
 **Command Services**
 
-- `EquipmentCommandService` / `EquipmentCommandServiceImpl`: registra equipos y dispositivos IoT, los ubica en
-  ambientes, cambia su estado y vincula sensores.
+- `EquipmentCommandService` / `EquipmentCommandServiceImpl`: registra equipos, dispositivos IoT y Edge Gateways, los
+  ubica en ambientes, cambia su estado y vincula sensores.
 - `BpmConfigCommandService` / `BpmConfigCommandServiceImpl`.
 - `MaintenanceCommandService` / `MaintenanceCommandServiceImpl`.
 
 **Query Services**
 
-- `EquipmentQueryService`, `BpmConfigQueryService` y `MaintenanceQueryService`, con sus implementaciones.
+- `EquipmentQueryService`, `BpmConfigQueryService` y `MaintenanceQueryService`, con sus implementaciones. La cobertura
+  de un ambiente y los dispositivos de un Edge Gateway se calculan con `EdgeGatewayAllocation`.
 
 **Event Handlers**
 
@@ -545,8 +597,9 @@ lecturas que producen los dispositivos no pertenecen a este contexto, sino a Tra
 #### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams.
 
 El diagrama de componentes presenta **Equipment Management** dentro del **Cloud REST API**. La Single-Page Application
-registra en él los equipos y vincula los nodos IoT. El contexto verifica el ambiente destino con Laboratory Management,
-y Tracking & Telemetry lo consulta para resolver el ambiente de cada dispositivo.
+registra en él los equipos, los Edge Gateways y los nodos IoT. El contexto verifica el ambiente destino con Laboratory
+Management. Tracking & Telemetry lo consulta para resolver el ambiente de cada dispositivo y el Gateway que lo atiende,
+IAM para emitir y validar la API key de cada Edge Gateway, y el Edge REST API para conocer sus dispositivos.
 
 Se utiliza la vista de Structurizr **`Components-Equipment`**, definida sobre el container `Cloud REST API`.
 
@@ -560,8 +613,8 @@ que persiste equipos, dispositivos, cambios de estado, parámetros y mantenimien
 ##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams.
 
 El diagrama muestra los Aggregates `Equipment` y `MaintenanceRecord`, las entidades `BpmParameterConfig` y
-`EquipmentStatusChange`, sus Value Objects y enumeraciones, y los Commands, Queries, eventos e interfaces de repositorio
-del contexto.
+`EquipmentStatusChange`, el Domain Service `EdgeGatewayAllocation`, sus Value Objects y enumeraciones, y los Commands,
+Queries, eventos e interfaces de repositorio del contexto.
 
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/class-diagrams/equipment-domain-layer-class-diagram.png" alt="Equipment Management Domain Layer Class Diagram" width="100%"></p>
 
@@ -571,7 +624,7 @@ El diagrama de base de datos representa las tablas de equipos, cambios de estado
 mantenimientos. Las referencias al laboratorio y al ambiente se conservan mediante identificadores, sin copiar el modelo
 de Laboratory Management.
 
-<p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/equipment/equipment-database-diagram.puml&fmt=svg&v=4" alt="Equipment Management Database Design Diagram" width="100%"></p>
+<p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/equipment/equipment-database-diagram.puml&fmt=svg&v=5" alt="Equipment Management Database Design Diagram" width="100%"></p>
 
 ### 4.2.4. Bounded Context: Laboratory Management
 
@@ -592,8 +645,8 @@ Management.
 - **Propósito:** representa la organización registrada en QualiTrack por el responsable de calidad durante la
   configuración inicial.
 - **Atributos principales:** `id`, `name` (`LaboratoryName`), `ruc`, `address` (`LaboratoryAddress`), `phone`,
-  `regulations` y `status`.
-- **Método principal:** `updateProfile`.
+  `applicableRegulations` y `status`.
+- **Métodos principales:** `updateProfile` y `suspendOperations`.
 
 **`Environment` — Aggregate Root**
 
@@ -622,7 +675,7 @@ Management.
 
 **Entity y Value Objects**
 
-- `LaboratoryAddress`: `street`, `city` y `country`.
+- `LaboratoryAddress`: dirección del laboratorio (`address`), que se cambia con `update`.
 - `LaboratoryName`, `Regulation` y `StockQuantity`.
 - `EnvironmentUsage`: `LABORATORY`, `PRODUCTION`, `RAW_MATERIAL_STORAGE`, `PRODUCT_STORAGE` y `OTHER`.
 - `LaboratoryStatus`: `ACTIVE` e `INACTIVE`.
@@ -677,7 +730,9 @@ Management.
 **Fachadas e integration events**
 
 - `LaboratoryContextFacade`: permite que otros contextos validen el laboratorio y sus ambientes (`existsEnvironment`,
-  `findEnvironment`, `findEnvironments`) y resuelvan al personal (`findStaffMember`, `findStaffMemberByAccount`).
+  `findEnvironment`, `findEnvironments`), lean su nombre (`findLaboratoryName`) y resuelvan al personal
+  (`findStaffMember`, `findStaffMemberByAccount`). Profile Management la usa para renombrar al personal de una cuenta
+  (`renameStaffMemberByAccount`).
 - `LegacyInventoryFacade`: entrega los saldos heredados (`materials`) y los bloquea al importarlos (`lock`) hacia
   Inventory Management.
 - `LaboratoryTenantResourceLookup`: permite verificar que un recurso pertenezca al laboratorio del usuario autenticado.
@@ -691,7 +746,8 @@ Management.
 
 - `LaboratoryCommandService` / `LaboratoryCommandServiceImpl`.
 - `LaboratoryOnboardingService` / `LaboratoryOnboardingServiceImpl`: crea el laboratorio y lo asocia al responsable de
-  calidad en una sola operación, después de verificar su suscripción vigente.
+  calidad en una sola operación, después de verificar su suscripción vigente. Devuelve un `Result` con el identificador
+  del laboratorio o el error.
 - `EnvironmentCommandService` / `EnvironmentCommandServiceImpl`.
 - `StaffCommandService` / `StaffCommandServiceImpl`: registra al personal y le crea su cuenta mediante IAM.
 - `RawMaterialCommandService` / `RawMaterialCommandServiceImpl` (catálogo heredado).
@@ -707,14 +763,16 @@ Management.
   `EnvironmentUsageAssignedEventHandler`, `StaffRegisteredEventHandler`, `StaffDeactivatedEventHandler`,
   `RawMaterialCreatedEventHandler` y `RawMaterialLowStockEventHandler`: publican los eventos de integración
   correspondientes.
-- `StaffAccountSynchronizationEventHandler`: mantiene alineado al personal con su cuenta y su perfil. Escucha los
-  cambios de correo de IAM y los cambios de nombre de Profile Management (`ProfileUpdatedIntegrationEvent`).
+- `StaffAccountSynchronizationEventHandler`: mantiene alineado el correo del personal con su cuenta. Escucha los cambios
+  de correo de IAM (`UserAccountUpdatedIntegrationEvent`). Los cambios de nombre llegan de Profile Management por
+  `renameStaffMemberByAccount`.
 
 **ACL**
 
-- `ExternalIamService`: crea y deshabilita las cuentas del personal en IAM.
-- `LaboratoryExternalComplianceService`: comunica a Compliance & Alerting los avisos de bajo stock del catálogo
-  heredado.
+- `ExternalIamService`: crea y deshabilita las cuentas del personal en IAM y, en la configuración inicial, bloquea la
+  cuenta del responsable de calidad y la asocia al laboratorio.
+- `LaboratoryExternalSubscriptionService`: verifica en Payments & Subscriptions que el responsable de calidad tenga una
+  suscripción vigente.
 - `LaboratoryContextFacadeImpl` y `LegacyInventoryFacadeImpl`: implementan las fachadas del contexto.
 
 #### 4.2.4.4. Infrastructure Layer.
@@ -729,9 +787,10 @@ Management.
 #### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams.
 
 El diagrama de componentes presenta **Laboratory Management** dentro del **Cloud REST API**. La Single-Page Application
-registra en este contexto la instalación, sus ambientes y su personal. El contexto verifica el plan vigente con
-Payments & Subscriptions, crea las cuentas del personal con IAM y sirve de referencia para Inventory, Equipment, Product
-Batch, Tracking y Profile.
+registra en este contexto la instalación, sus ambientes y su personal. El contexto verifica el plan vigente con Payments
+& Subscriptions, crea las cuentas del personal con IAM, avisa a Compliance & Alerting del bajo stock del catálogo
+heredado con un evento de integración y sirve de referencia para Inventory, Equipment, Product Batch, Tracking,
+Reporting & Audit y Profile.
 
 Se utiliza la vista de Structurizr **`Components-Laboratory`**, definida sobre el container `Cloud REST API`.
 
@@ -757,7 +816,7 @@ contexto.
 El diagrama de base de datos muestra las tablas de laboratorios, ambientes, personal y materias primas heredadas,
 relacionadas mediante el identificador del laboratorio.
 
-<p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/laboratory/laboratory-database-diagram.puml&fmt=svg&v=4" alt="Laboratory Management Database Design Diagram" width="100%"></p>
+<p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/laboratory/laboratory-database-diagram.puml&fmt=svg&v=5" alt="Laboratory Management Database Design Diagram" width="100%"></p>
 
 ### 4.2.5. Bounded Context: Inventory Management
 
@@ -821,6 +880,8 @@ de materia prima que se encuentran habilitados y conservan cantidad disponible.
 - `StockStatus` (`LOW`, `SUFFICIENT`): clasificación del stock frente al mínimo (US41).
 - `ExpirationStatus` (`VALID`, `NEAR_EXPIRY`, `EXPIRED`) y `NearExpiryPeriod`: clasificación del vencimiento de un lote
   y días de anticipación con que se considera por vencer (US42).
+- `LegacyRawMaterial`: material del catálogo heredado de Laboratory Management tal como lo ve este contexto (código,
+  nombre, unidad, mínimo, proveedor, lote, vencimiento y saldo), traducido por su ACL.
 
 **Commands principales**
 
@@ -891,17 +952,20 @@ la API.
 **`InventoryCommandService` / `InventoryCommandServiceImpl`**
 
 Coordina las operaciones que modifican el inventario. Entre sus responsabilidades se encuentran registrar materiales,
-recibir lotes, revisar su estado y realizar consumos. Antes de consumir materia prima valida el lote de producto
-mediante `BatchContextFacade` y registra el movimiento dentro de la misma operación de negocio.
+recibir lotes, revisar su estado y realizar consumos. No depende de Product Batch Management: el consumo llega por
+`InventoryContextFacade` después de que Product Batch Management bloquea y valida su lote, y el movimiento se registra
+dentro de la misma operación de negocio.
 
 **`InventoryQueryService` / `InventoryQueryServiceImpl`**
 
-Resuelve consultas de materiales, recepciones, movimientos y datos heredados pendientes de migración.
+Resuelve consultas de materiales, recepciones, movimientos y datos heredados pendientes de migración. Los resúmenes de
+stock de una misma consulta usan una sola fecha de referencia.
 
 **`InventoryImportService` / `InventoryImportServiceImpl`**
 
-Permite importar de manera explícita un material heredado desde Laboratory Management. La importación se utiliza como
-mecanismo de transición y no convierte la información antigua en una segunda fuente de verdad permanente.
+Permite importar de manera explícita un material heredado desde Laboratory Management y devuelve un `Result` con el
+material importado o el error. La importación se utiliza como mecanismo de transición y no convierte la información
+antigua en una segunda fuente de verdad permanente.
 
 **`InventoryMovementRecorder`**
 
@@ -914,22 +978,24 @@ Implementa la fachada consumida por Product Batch Management y Reporting & Audit
 **ACL**
 
 - `InventoryExternalLaboratoryService`: valida en Laboratory Management los ambientes referenciados y obtiene su uso.
+  También lee y bloquea el catálogo heredado mediante `LegacyInventoryFacade` y lo traduce a `LegacyRawMaterial`.
 - `InventoryExternalEquipmentService`: lee en Equipment Management los Monitores de Contenedor donde se guardan los
   lotes.
 
 **Consistencia transaccional**
 
 La operación de consumo mantiene coordinado el descuento de `availableAmount`, la creación de `InventoryMovement` y el
-registro de uso del material en Product Batch Management. El diseño busca que la operación se confirme completa o se
-revierta completa, evitando stock descontado sin trazabilidad o trazabilidad creada sin descuento real.
+registro de uso del material en Product Batch Management. Product Batch Management bloquea el lote de producto y
+verifica que siga abierto antes de pedir el consumo, de modo que la operación se confirma completa o se revierte
+completa, evitando stock descontado sin trazabilidad o trazabilidad creada sin descuento real.
 
 #### 4.2.5.4. Infrastructure Layer.
 
 **Persistence Entities**
 
-- `InventoryMaterialEntity`.
-- `InventoryReceiptEntity`.
-- `InventoryMovementEntity`.
+- `InventoryMaterialPersistenceEntity`.
+- `InventoryReceiptPersistenceEntity`.
+- `InventoryMovementPersistenceEntity`.
 
 **Persistence Repositories**
 
@@ -955,9 +1021,10 @@ vencimiento y movimientos de manera consistente.
 #### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams.
 
 El diagrama de componentes presenta la posición de **Inventory Management** dentro del **Cloud REST API** y las
-relaciones necesarias para gestionar materias primas, recepciones, cantidades disponibles y movimientos. Su integración
-con Product Batch Management permite relacionar el consumo real de una materia prima con un lote de producto, mientras
-que Laboratory Management proporciona el contexto organizacional necesario.
+relaciones necesarias para gestionar materias primas, recepciones, cantidades disponibles y movimientos. Product Batch
+Management le pide el consumo de una materia prima y recibe el consumo confirmado, lo que relaciona el consumo real con
+un lote de producto. Laboratory Management proporciona los ambientes y el catálogo heredado, Equipment Management los
+contenedores donde se guardan los lotes, y Reporting & Audit lee el inventario mediante su fachada.
 
 Para esta entrega se utiliza la vista de Structurizr **`Components-Inventory`**, definida sobre el container
 `Cloud REST API`. La vista corresponde al estado actual del C4 y podrá ser refinada posteriormente para detallar los
@@ -970,7 +1037,8 @@ componentes internos de Interface, Application, Domain e Infrastructure.
 ##### 4.2.5.6.1. Bounded Context Domain Layer Class Diagrams.
 
 El diagrama presenta `RawMaterial`, `RawMaterialBatch`, `InventoryMovement`, los Value Objects de stock, vencimiento,
-revisión y contenedor, `RawMaterialBatchStatus`, los Commands, Queries y la interfaz `InventoryRepository`.
+revisión, contenedor y catálogo heredado (`LegacyRawMaterial`), `RawMaterialBatchStatus`, los Commands, Queries y la
+interfaz `InventoryRepository`.
 
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/class-diagrams/inventory-domain-layer-class-diagram.png" alt="Inventory Management Domain Layer Class Diagram" width="100%"></p>
 
@@ -980,7 +1048,7 @@ El esquema de persistencia contiene las estructuras de materiales, recepciones y
 conserva a nivel de cada recepción, mientras los movimientos permiten reconstruir el historial de cambios del
 inventario.
 
-<p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/inventory/inventory-database-diagram.puml&fmt=svg&v=4" alt="Inventory Management Database Design Diagram" width="100%"></p>
+<p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/inventory/inventory-database-diagram.puml&fmt=svg&v=5" alt="Inventory Management Database Design Diagram" width="100%"></p>
 
 ### 4.2.6. Bounded Context: Product Batch Management
 
@@ -989,8 +1057,8 @@ Product Batch Management administra los **productos farmacéuticos** registrados
 utilizados, el personal que intervino y el contenedor monitoreado donde se almacena. Con esa información reconstruye la
 trazabilidad que el responsable de calidad revisa antes de liberar o rechazar el lote.
 
-El contexto no administra el stock de la materia prima: Inventory Management valida y consume el lote de materia prima,
-y Product Batch Management registra el consumo cuando Inventory lo confirma.
+El contexto no administra el stock de la materia prima: bloquea el lote de producto, verifica que siga abierto y pide a
+Inventory Management que consuma el lote de materia prima. Registra el consumo cuando Inventory lo confirma.
 
 #### 4.2.6.1. Domain Layer.
 
@@ -1083,8 +1151,9 @@ y Product Batch Management registra el consumo cuando Inventory lo confirma.
 
 **Fachadas e integration events**
 
-- `BatchContextFacade`: permite que Inventory valide un lote consumible (`requireConsumable`) y que otros contextos
-  consulten su estado o su trazabilidad (`isBatchReleased`, `isBatchRejected`, `findTraceability`).
+- `BatchContextFacade`: permite que otros contextos comprueben un lote y su estado (`existsBatchById`,
+  `belongsToLaboratory`, `isBatchReleased`, `isBatchRejected`) y que Reporting & Audit lea los lotes, sus consumos y su
+  trazabilidad (`findBatch`, `findBatches`, `findMaterialUses`, `findTraceability`).
 - `BatchTenantResourceLookup`: resuelve el laboratorio dueño de un producto o lote.
 - Integration events: `ProductCreatedIntegrationEvent`, `BatchCreatedIntegrationEvent`, `BatchStartedIntegrationEvent`,
   `BatchReleasedIntegrationEvent`, `BatchRejectedIntegrationEvent`, `RawMaterialLinkedToBatchIntegrationEvent`,
@@ -1097,8 +1166,8 @@ y Product Batch Management registra el consumo cuando Inventory lo confirma.
 - `ProductCommandService` / `ProductCommandServiceImpl`: registra productos en los ambientes del laboratorio.
 - `BatchCommandService` / `BatchCommandServiceImpl`: registra lotes, los almacena en contenedores y registra su
   liberación o rechazo.
-- `RawMaterialUsageCommandService` / `RawMaterialUsageCommandServiceImpl`: registra el consumo de materia prima
-  solicitándolo a Inventory Management.
+- `RawMaterialUsageCommandService` / `RawMaterialUsageCommandServiceImpl`: bloquea el lote, verifica que no esté
+  liberado ni rechazado y solicita el consumo de materia prima a Inventory Management.
 - `BatchParticipationCommandService` / `BatchParticipationCommandServiceImpl`: asocia los equipos (validados con
   Equipment Management) y el personal (validado con Laboratory Management).
 
@@ -1122,7 +1191,7 @@ y Product Batch Management registra el consumo cuando Inventory lo confirma.
 - `BatchExternalEquipmentService`: lee los equipos de Equipment Management.
 - `ExternalLaboratoryService`: valida ambientes y personal en Laboratory Management.
 - `BatchExternalComplianceService`: encapsula la consulta a Compliance & Alerting sobre si un lote puede liberarse
-  (`canReleaseBatch`).
+  (`canReleaseBatch`), es decir, si no tiene eventos de cumplimiento sin resolver.
 - `BatchContextFacadeImpl`: implementa la fachada del contexto.
 
 #### 4.2.6.4. Infrastructure Layer.
@@ -1136,8 +1205,10 @@ y Product Batch Management registra el consumo cuando Inventory lo confirma.
 #### 4.2.6.5. Bounded Context Software Architecture Component Level Diagrams.
 
 El diagrama de componentes presenta **Product Batch Management** dentro del **Cloud REST API**. La Single-Page
-Application registra en él productos y lotes. Inventory Management valida el lote y le notifica el consumo de materia
-prima, y Compliance & Alerting consulta los lotes expuestos a un ambiente con desviaciones.
+Application registra en él productos y lotes. El contexto pide a Inventory Management el consumo de materia prima, que
+le notifica el consumo confirmado, y valida los equipos con Equipment Management y los ambientes y el personal con
+Laboratory Management. Antes de liberar un lote pregunta a Compliance & Alerting si tiene eventos sin resolver, y le
+notifica la liberación o el rechazo. Reporting & Audit lee los lotes, sus consumos y su trazabilidad.
 
 Se utiliza la vista de Structurizr **`Components-ProductBatch`**, definida sobre el container `Cloud REST API`.
 
@@ -1163,7 +1234,7 @@ repositorio del contexto.
 El diagrama de base de datos muestra las tablas de productos, lotes, consumos de materia prima, equipos y personal
 participantes, firmas de liberación y registros de rechazo, relacionadas mediante el identificador del lote.
 
-<p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/batch/batch-database-diagram.puml&fmt=svg&v=4" alt="Product Batch Management Database Design Diagram" width="100%"></p>
+<p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/batch/batch-database-diagram.puml&fmt=svg&v=5" alt="Product Batch Management Database Design Diagram" width="100%"></p>
 
 ### 4.2.7. Bounded Context: Reporting & Audit
 
@@ -1209,6 +1280,8 @@ modifican.
 - `ReportingPeriod`: periodo del que se calcula un indicador o reporte. Por defecto son los últimos siete días.
 - `MeasurementSummary`: promedio, mínimo y máximo de las lecturas numéricas de un dispositivo y métrica en el periodo.
 - `EnvironmentalReading`: lectura de un dispositivo tal como la ve este contexto, obtenida de Tracking & Telemetry.
+- `ReportEnvironment`: ambiente tal como lo ve este contexto (identificador, código y nombre), traducido por su ACL
+  desde Laboratory Management.
 - Enumeraciones: `ReportType` (`BATCH_TRACEABILITY`, `COMPLIANCE_PERIOD`, `EQUIPMENT_LOG`, `KPI_SUMMARY`, `INVENTORY`),
   `ReportFormat` (`PDF`, `CSV`), `AuditAction`, `KpiMetricStatus` (`ON_TRACK`, `AT_RISK`, `CRITICAL`, `UNKNOWN`) y
   `TrendDirection` (`INCREASING`, `DECREASING`, `STABLE`).
@@ -1269,7 +1342,8 @@ modifican.
 
 **Fachada e integration events**
 
-- `RaContextFacade`: permite que otros contextos registren entradas de auditoría (`recordAuditLog`).
+- `RaContextFacade`: interfaz implementada por `RaContextFacadeImpl` que permite que otros contextos registren entradas
+  de auditoría (`recordAuditLog`, con la acción como texto) y comprueben si existe un reporte (`existsAuditReportById`).
 - `RaTenantResourceLookup`: resuelve el laboratorio dueño de un reporte.
 - Integration events: `AuditLogEntryRecordedIntegrationEvent` y `AuditReportGeneratedIntegrationEvent`.
 
@@ -1292,19 +1366,20 @@ modifican.
 
 - `LaboratoryAuditEventHandler`, `InventoryAuditEventHandler`, `EquipmentAuditEventHandler`,
   `TrackingAuditEventHandler`, `BatchAuditEventHandler` y `CaAuditEventHandler`: escuchan los eventos de integración de
-  cada contexto y registran la operación en el registro de auditoría.
+  cada contexto y registran la operación en el registro de auditoría mediante `AuditLogCommandService`.
 - `AuditLogEntryRecordedEventHandler` y `AuditReportGeneratedEventHandler`: publican los eventos de integración propios.
 
 **ACL y datos de reporte**
 
 - `RaExternalTrackingService`, `RaExternalComplianceService`, `RaExternalBatchService`, `RaExternalEquipmentService`,
-  `RaExternalInventoryService` y `RaExternalLaboratoryService`: leen, mediante las fachadas de cada contexto, las
-  lecturas y acciones, las alertas, la trazabilidad del lote, los dispositivos, el inventario y el laboratorio.
+  `RaExternalInventoryService`, `RaExternalLaboratoryService` y `RaExternalIamService`: leen, mediante las fachadas de
+  cada contexto, las lecturas y acciones, las alertas, los lotes con sus consumos y su trazabilidad, los equipos y su
+  historial, el inventario, el laboratorio con sus ambientes (`ReportEnvironment`) y el usuario que genera cada reporte.
 - `BatchReportData`, `ComplianceReportData`, `EquipmentReportData` e `InventoryReportData`: datos de cada reporte,
   independientes de su presentación.
-- `RaOperationalDataService`: obtiene los conteos operativos de los indicadores. Hoy los lee directamente de los
-  repositorios de Product Batch, Laboratory, Equipment y Compliance & Alerting, en solo lectura. Es una dependencia
-  pendiente de reemplazar por las fachadas de esos contextos, para respetar el ACL descrito en el Context Mapping.
+- `RaOperationalDataService`: obtiene los conteos operativos de los indicadores y los datos de los reportes de lote y de
+  equipo mediante los servicios ACL de Product Batch, Equipment y Compliance & Alerting, sin leer los repositorios de
+  otros contextos.
 
 #### 4.2.7.4. Infrastructure Layer.
 
@@ -1320,8 +1395,10 @@ modifican.
 #### 4.2.7.5. Bounded Context Software Architecture Component Level Diagrams.
 
 El diagrama de componentes presenta **Reporting & Audit** dentro del **Cloud REST API**. La Single-Page Application
-genera y exporta en él los reportes. El contexto obtiene la telemetría y las alertas del periodo de Tracking & Telemetry
-y Compliance & Alerting, y persiste reportes y auditoría en la Cloud Database.
+genera y exporta en él los reportes. El contexto obtiene, mediante las fachadas de cada contexto, la telemetría de
+Tracking & Telemetry, las alertas de Compliance & Alerting, los lotes de Product Batch Management, los equipos de
+Equipment Management, el inventario de Inventory Management, los ambientes de Laboratory Management y los usuarios de
+IAM, y persiste reportes y auditoría en la Cloud Database.
 
 Se utiliza la vista de Structurizr **`Components-Reporting`**, definida sobre el container `Cloud REST API`.
 
@@ -1335,8 +1412,8 @@ persiste reportes y registro de auditoría.
 ##### 4.2.7.6.1. Bounded Context Domain Layer Class Diagrams.
 
 El diagrama muestra los Aggregates `AuditReport` y `KpiDashboard`, las entidades `AuditLogEntry`, `KpiMetric`,
-`DeviationTrend` y `TrendDataPoint`, los Value Objects del periodo, los documentos y los resúmenes, y los Commands,
-Queries, eventos e interfaces de repositorio del contexto.
+`DeviationTrend` y `TrendDataPoint`, los Value Objects del periodo, los documentos, los resúmenes y los ambientes, y los
+Commands, Queries, eventos e interfaces de repositorio del contexto.
 
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/class-diagrams/ra-domain-layer-class-diagram-1.png" alt="Reporting & Audit Domain Layer Class Diagram (1/2)" width="100%"></p>
 
@@ -1347,15 +1424,15 @@ Queries, eventos e interfaces de repositorio del contexto.
 El diagrama de base de datos muestra las tablas `audit_reports` (reportes generados) y `audit_log_entries` (registro de
 auditoría). Los indicadores y tendencias no tienen tablas porque se calculan al consultarlos.
 
-<p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/ra/ra-database-diagram.puml&fmt=svg&v=4" alt="Reporting & Audit Database Design Diagram" width="100%"></p>
+<p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/ra/ra-database-diagram.puml&fmt=svg&v=5" alt="Reporting & Audit Database Design Diagram" width="100%"></p>
 
 ### 4.2.8. Bounded Context: Identity & Access Management
 
 Identity & Access Management es un Bounded Context transversal encargado de la identidad, la autenticación y la
 autorización de los usuarios de QualiTrack. Administra las cuentas y sus roles, emite los tokens JWT, crea las cuentas
 del personal que registra el responsable de calidad, recupera contraseñas con un código enviado por correo e indica qué
-le falta a cada usuario para operar: suscripción y laboratorio. Los datos personales y la foto pertenecen a Profile
-Management.
+le falta a cada usuario para operar: suscripción y laboratorio. También emite y valida las API keys con que se autentica
+cada Edge Gateway. Los datos personales y la foto pertenecen a Profile Management.
 
 #### 4.2.8.1. Domain Layer.
 
@@ -1375,7 +1452,8 @@ Management.
   (`PasswordRecoveryStatus`) y `completedAt`.
 - **Métodos principales:** `start`, `isUsable`, `blocksNewCode`, `registerFailedAttempt`, `complete` y `revoke`.
 - **Reglas:** el código vence a los 15 minutos y se usa una sola vez. Cinco intentos fallidos revocan la recuperación, y
-  un código nuevo exige esperar un minuto y reemplaza al anterior.
+  un código nuevo exige esperar un minuto y reemplaza al anterior. La recuperación se bloquea mientras se cuenta un
+  intento fallido, para que varios códigos enviados al mismo tiempo no superen el límite.
 
 **`Role` — Entity**
 
@@ -1388,6 +1466,10 @@ Management.
 - `PasswordPolicy`: reglas de una contraseña elegida por la persona, al cambiarla o al restablecerla.
 - `UserOnboarding`: requisitos pendientes para el acceso operativo (suscripción activa y laboratorio registrado),
   resueltos a partir del estado persistido.
+- `AccountSubscription`: suscripción de la cuenta tal como la lee IAM desde Payments & Subscriptions (identificador y si
+  está activa), usada en el onboarding.
+- `EdgeGatewayIdentity`: Edge Gateway tal como lo lee IAM desde Equipment Management (equipo, laboratorio, ambiente,
+  identificador externo y si está operativo). `canConnect` exige que esté operativo y ubicado en un ambiente.
 - `Roles`: `ROLE_ADMIN`, `ROLE_QA_MANAGER`, `ROLE_LAB_OPERATOR` y `ROLE_AUDITOR`.
 - `UserStatus`: `ACTIVE`, `INACTIVE` y `SUSPENDED`.
 - `PasswordRecoveryStatus`: `PENDING`, `COMPLETED` y `REVOKED`.
@@ -1428,12 +1510,16 @@ Management.
 - `UsersController` — `/api/v1/users`: consulta las cuentas del laboratorio y asigna roles
   (`PUT /{userId}/roles/{roleName}`).
 - `RolesController` — `/api/v1/roles`: consulta los roles disponibles.
+- `EdgeGatewayApiKeysController` — `/api/v1/laboratories/{laboratoryId}/edge-gateways/{equipmentId}/api-key`: `POST`
+  emite una sola vez la API key del Edge Gateway y `GET` indica si ya tiene una, sin devolverla. La clave se emite solo
+  si el Gateway está operativo y ubicado en un ambiente.
 
 **Fachada e integration events**
 
-- `IamContextFacade`: expone información mínima a otros contextos. Permite comprobar que un usuario existe, obtener su
-  laboratorio, su usuario y su cuenta con correo y roles, verificar si tiene un rol, asociar la cuenta al laboratorio
-  durante la configuración inicial y crear o deshabilitar las cuentas del personal.
+- `IamContextFacade`: interfaz implementada por `IamContextFacadeImpl` que expone información mínima a otros contextos.
+  Permite comprobar que un usuario existe, obtener su laboratorio, su usuario y su cuenta con correo y roles, verificar
+  si tiene un rol, asociar la cuenta al laboratorio durante la configuración inicial y crear o deshabilitar las cuentas
+  del personal.
 - `UserAccountUpdatedIntegrationEvent`: permite que Laboratory Management mantenga alineado el correo del personal.
 
 #### 4.2.8.3. Application Layer.
@@ -1445,12 +1531,15 @@ Management.
 - `PasswordRecoveryCommandService` / `PasswordRecoveryCommandServiceImpl`: solicita, envía y verifica el código y
   restablece la contraseña.
 - `RoleCommandService` / `RoleCommandServiceImpl`: inicializa los roles base.
+- `EdgeGatewayApiKeyService`: genera la API key de un Edge Gateway con 32 bytes aleatorios en Base64 URL y guarda solo
+  su hash BCrypt.
 
 **Query Services**
 
 - `UserQueryService`, `RoleQueryService` y `UserOnboardingQueryService`, con sus implementaciones.
-  `UserOnboardingQueryServiceImpl` consulta Payments & Subscriptions y Laboratory Management para saber si el usuario
-  tiene suscripción activa y laboratorio.
+  `UserOnboardingQueryServiceImpl` consulta en Payments & Subscriptions si el usuario tiene suscripción activa; el
+  laboratorio lo toma de la propia cuenta.
+- `EdgeGatewayAuthenticationService`: valida el identificador del Edge Gateway y su API key contra el hash guardado.
 
 **Event Handlers**
 
@@ -1460,7 +1549,15 @@ Management.
 **Outbound Service Contracts**
 
 - `HashingService` y `TokenService`, definidos fuera de Infrastructure para no acoplar el dominio a BCrypt o JWT.
-- `CredentialsNotifier`, `PasswordRecoveryNotifier`, `TemporaryPasswordGenerator` y `RecoveryCodeGenerator`.
+- `CredentialsNotifier`, `PasswordRecoveryNotifier`, `TemporaryPasswordGenerator`, `RecoveryCodeGenerator` y
+  `EdgeGatewayApiKeyStore`.
+
+**ACL**
+
+- `IamExternalSubscriptionService`: lee en Payments & Subscriptions la suscripción de la cuenta y la traduce a
+  `AccountSubscription`.
+- `IamExternalEquipmentService`: lee en Equipment Management los Edge Gateways y los traduce a `EdgeGatewayIdentity`.
+- `IamContextFacadeImpl`: implementa la fachada del contexto.
 
 #### 4.2.8.4. Infrastructure Layer.
 
@@ -1475,7 +1572,11 @@ Management.
   usuario.
 - `OnboardingInterceptor` y `OnboardingWebConfiguration`: bloquean las funciones operativas hasta completar suscripción
   y laboratorio.
-- `CurrentUserImpl`: entrega el usuario autenticado a los demás contextos.
+- `EdgeGatewayApiKeyAuthenticationFilter`: autentica las rutas `/api/v1/edge-gateways/**` con el encabezado `X-API-Key`,
+  en una cadena de seguridad propia y sin estado. El Gateway recibe la autoridad `ROLE_EDGE_GATEWAY` y cualquier otra
+  ruta de ese prefijo se rechaza. Los interceptores de onboarding y de laboratorio no se aplican a estas rutas.
+- `CurrentUserImpl`: implementa el puerto compartido `CurrentUser`, con el que los controladores y los demás contextos
+  obtienen el usuario autenticado y su laboratorio.
 
 **Credenciales y correo**
 
@@ -1488,13 +1589,17 @@ Management.
 
 - Entidades, Spring Data JPA Repositories, assemblers y adapters para usuarios, roles y recuperaciones
   (`UserRepositoryImpl`, `RoleRepositoryImpl` y `PasswordRecoveryRepositoryImpl`).
+- `EdgeGatewayApiKeyPersistenceEntity`, `EdgeGatewayApiKeyPersistenceRepository` y `EdgeGatewayApiKeyStoreImpl`: guardan
+  el hash de la API key de cada Edge Gateway en la tabla `iam_edge_gateway_api_keys`, con una sola clave por Gateway.
 - `RolesPersistenceConverter` y `UserStatusPersistenceConverter`.
 
 #### 4.2.8.5. Bounded Context Software Architecture Component Level Diagrams.
 
 El diagrama de componentes presenta **Identity & Access Management** dentro del **Cloud REST API**. Los demás contextos
 lo usan para validar el token y resolver usuarios. La Single-Page Application y la Mobile Application se autentican en
-él, y envía por Gmail SMTP las credenciales del personal y los códigos de recuperación.
+él, y el Edge REST API lo hace con la API key de su Gateway, que IAM valida con Equipment Management. El contexto
+consulta la suscripción de cada cuenta en Payments & Subscriptions y envía por Gmail SMTP las credenciales del personal
+y los códigos de recuperación.
 
 Se utiliza la vista de Structurizr **`Components-IAM`**, definida sobre el container `Cloud REST API`.
 
@@ -1508,16 +1613,18 @@ usuarios, roles y recuperaciones de contraseña.
 ##### 4.2.8.6.1. Bounded Context Domain Layer Class Diagrams.
 
 El diagrama muestra los Aggregates `User` y `PasswordRecovery`, la entidad `Role`, los Value Objects de identidad,
-correo, contraseña y onboarding, las enumeraciones de roles y estados, y los Commands, Queries, eventos y repositorios.
+correo, contraseña, onboarding, suscripción de la cuenta y Edge Gateway, las enumeraciones de roles y estados, y los
+Commands, Queries, eventos y repositorios.
 
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/class-diagrams/iam-domain-layer-class-diagram.png" alt="Identity & Access Management Domain Layer Class Diagram" width="100%"></p>
 
 ##### 4.2.8.6.2. Bounded Context Database Design Diagram.
 
 El esquema de base de datos representa usuarios, roles y su relación de muchos a muchos, las recuperaciones de
-contraseña y los campos necesarios para mantener el estado de la cuenta y su relación con el laboratorio.
+contraseña, las API keys de los Edge Gateways (solo su hash) y los campos necesarios para mantener el estado de la
+cuenta y su relación con el laboratorio.
 
-<p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/iam/iam-database-diagram.puml&fmt=svg&v=4" alt="Identity & Access Management Database Design Diagram" width="100%"></p>
+<p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/iam/iam-database-diagram.puml&fmt=svg&v=5" alt="Identity & Access Management Database Design Diagram" width="100%"></p>
 
 ### 4.2.9. Bounded Context: Payments & Subscriptions
 
@@ -1536,7 +1643,10 @@ directamente los datos sensibles del medio de pago.
 - **Propósito:** representa la contratación de un plan por parte de un usuario y su laboratorio.
 - **Atributos principales:** `id`, `userId`, `laboratoryId`, `planCode`, `billingCycle`, `status`, identificadores de
   Stripe, periodo vigente y datos de cancelación.
-- **Métodos principales:** `activate`, `cancel` e `isActive`.
+- **Métodos principales:** `activate`, `cancelRenewal`, `isActive`, `grantsAccess`, `assignLaboratory`, `updatePeriod`,
+  `synchronizeStatus` y `synchronizeRenewal`.
+- **Reglas:** da acceso mientras está activa y su periodo vigente no termina (`grantsAccess`). Cancelar la renovación
+  mantiene el acceso hasta el fin del periodo (`cancelAtPeriodEnd`).
 - **Relaciones:** utiliza `PlanCode`, `BillingCycle` y `SubscriptionStatus`.
 
 **`SubscriptionPlan` — Entity**
@@ -1544,19 +1654,23 @@ directamente los datos sensibles del medio de pago.
 - **Propósito:** representa un plan disponible para contratación.
 - **Atributos principales:** código, nombre, descripción, precio, ciclo de facturación, `stripePriceId`, límites de
   usuarios/equipos y estado activo.
-- **Método principal:** `isSelectable`.
+- **Métodos principales:** `offer` e `isSelectable`.
 
 **`SubscriptionPayment` — Entity**
 
 - **Propósito:** conserva un pago asociado a una suscripción después de recibir información confirmada del proveedor.
-- **Atributos principales:** `subscriptionId`, proveedor, identificador del pago externo, sesión de checkout, importe,
-  estado y fecha de pago.
+- **Atributos principales:** `subscriptionId`, proveedor, identificador del pago externo (`providerPaymentId`: el pago
+  del checkout o la factura de una renovación), sesión de checkout, importe, estado y fecha de pago.
 - **Métodos principales:** `stripePayment` e `isPaid`.
 
 **`Money` — Value Object**
 
 - **Atributos:** `amount` y `currency`.
 - **Propósito:** evita representar importes únicamente con valores numéricos sin moneda.
+
+**`SubscriptionPlanCatalog` — Value Object**
+
+- **Propósito:** catálogo de planes que se crean al arrancar la aplicación cuando todavía no existen.
 
 **Enumerations**
 
@@ -1571,11 +1685,14 @@ directamente los datos sensibles del medio de pago.
 - `CreateCheckoutSessionCommand`.
 - `ActivateSubscriptionCommand`.
 - `CancelSubscriptionCommand`.
-- `RecordStripePaymentCommand`.
+- `RecordStripePaymentCommand`: exige la sesión de checkout o el identificador del pago en el proveedor, porque la
+  factura de una renovación no tiene sesión de checkout.
+- `SeedSubscriptionPlansCommand`.
 
 **Queries principales**
 
 - `GetSubscriptionPlansQuery`.
+- `GetSubscriptionByIdQuery`.
 - `GetActiveSubscriptionByLaboratoryIdQuery`.
 - `GetActiveSubscriptionByUserIdQuery`.
 - `GetBillingSummaryByLaboratoryIdQuery`.
@@ -1609,8 +1726,10 @@ directamente los datos sensibles del medio de pago.
 
 **`StripeWebhookController`** — `POST /api/v1/stripe/webhooks`
 
-Recibe los eventos enviados por Stripe. Su responsabilidad es verificar y traducir dichos eventos a Commands de
-aplicación, evitando que el payload externo modifique directamente el modelo de dominio.
+Recibe los eventos enviados por Stripe: `checkout.session.completed` y `checkout.session.async_payment_succeeded`
+activan la suscripción, `customer.subscription.updated` y `customer.subscription.deleted` mantienen su periodo y su
+estado, e `invoice.paid` registra el pago de cada renovación. Su responsabilidad es verificar y traducir dichos eventos
+a Commands de aplicación, evitando que el payload externo modifique directamente el modelo de dominio.
 
 **Resources principales**
 
@@ -1623,9 +1742,11 @@ aplicación, evitando que el payload externo modifique directamente el modelo de
 
 **`SubscriptionContextFacade`**
 
-Permite a otros contextos consultar de forma controlada el acceso de un usuario (`getAccess`, que devuelve
-`SubscriptionAccess`), saber si un laboratorio tiene una suscripción activa o un plan determinado y conocer el código
-del plan vigente. También asocia la suscripción al laboratorio durante la configuración inicial (`assignLaboratory`).
+Es una interfaz implementada por `SubscriptionContextFacadeImpl` en `application/acl`. Permite a otros contextos
+consultar de forma controlada el acceso de un usuario (`getAccess`, que devuelve `SubscriptionAccess`), saber si un
+laboratorio tiene una suscripción activa o un plan determinado (`hasActivePlan` recibe el código del plan como texto) y
+conocer el código del plan vigente. También asocia la suscripción al laboratorio durante la configuración inicial
+(`assignLaboratory`).
 `SubscriptionTenantResourceLookup` resuelve el laboratorio dueño de una suscripción.
 
 #### 4.2.9.3. Application Layer.
@@ -1637,8 +1758,9 @@ Coordina la creación de sesiones de pago, activación, cancelación y registro 
 
 **`StripeWebhookService`**
 
-Procesa de forma transaccional e idempotente los eventos de Stripe ya verificados por firma, y registra la activación de
-la suscripción y sus pagos.
+Procesa de forma transaccional e idempotente los eventos de Stripe ya verificados por firma. Registra la activación de
+la suscripción y su primer pago, sincroniza su periodo y su estado, y registra el pago de cada renovación
+(`invoice.paid` con motivo `subscription_cycle`) una sola vez por factura, con la fecha en que Stripe lo cobró.
 
 **`SubscriptionPlanCommandService` / `SubscriptionPlanCommandServiceImpl`**
 
@@ -1665,6 +1787,11 @@ Resuelve consultas de planes, suscripciones activas, historial y pagos.
 - Traduce los identificadores y fechas de Stripe a estructuras que entiende el Application Layer.
 
 De esta manera, el dominio no depende directamente de las clases del SDK de Stripe.
+
+**`SubscriptionExternalIamService` — ACL**
+
+Bloquea en IAM la cuenta del responsable de calidad, y obtiene su laboratorio, antes de activar la suscripción o
+registrar un pago, para que los eventos de una misma cuenta no se procesen al mismo tiempo.
 
 #### 4.2.9.4. Infrastructure Layer.
 
@@ -1710,8 +1837,8 @@ del proveedor deben mantenerse en variables de entorno y no almacenarse en el re
 
 El diagrama de componentes presenta la posición de **Payments & Subscriptions** dentro del **Cloud REST API**. Este
 contexto gestiona planes, suscripciones y pagos y mantiene una integración con Identity & Access Management para
-relacionar la contratación con el usuario, además de utilizar Stripe como proveedor externo para el procesamiento del
-pago.
+relacionar la contratación con el usuario, que IAM y Laboratory Management consultan para el onboarding y la
+configuración inicial. Utiliza Stripe como proveedor externo para el procesamiento del pago y recibe sus webhooks.
 
 Para esta entrega se utiliza la vista de Structurizr **`Components-Payments`**, definida sobre el container
 `Cloud REST API`. La vista representa el C4 actual del proyecto y podrá refinarse posteriormente para mostrar con mayor
@@ -1723,8 +1850,9 @@ detalle la separación entre dominio, servicios de aplicación, persistencia e i
 
 ##### 4.2.9.6.1. Bounded Context Domain Layer Class Diagrams.
 
-El diagrama de clases representa `Subscription`, `SubscriptionPlan`, `SubscriptionPayment`, `Money`, las enumeraciones
-comerciales, Commands, Queries, eventos y repositorios del contexto.
+El diagrama de clases representa `Subscription`, `SubscriptionPlan`, `SubscriptionPayment`, `Money`,
+`SubscriptionPlanCatalog`, las enumeraciones comerciales, y los Commands, Queries, eventos, repositorios y excepciones
+del contexto.
 
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/class-diagrams/subscription-domain-layer-class-diagram-1.png" alt="Payments & Subscriptions Domain Layer Class Diagram (1/2)" width="100%"></p>
 
@@ -1736,7 +1864,7 @@ El diagrama de base de datos muestra planes, suscripciones y pagos, incluyendo l
 para relacionar los registros internos con Stripe. Los datos sensibles de tarjetas u otros medios de pago no se
 almacenan dentro de QualiTrack.
 
-<p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/subscription/subscription-database-diagram.puml&fmt=svg&v=4" alt="Payments & Subscriptions Database Design Diagram" width="100%"></p>
+<p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/subscription/subscription-database-diagram.puml&fmt=svg&v=5" alt="Payments & Subscriptions Database Design Diagram" width="100%"></p>
 
 ### 4.2.10. Bounded Context: Profile Management
 
@@ -1755,7 +1883,7 @@ sobre lotes.
   `location` (`Location`), `photo` (`ProfilePhoto`) y `updatedAt`.
 - **Métodos principales:** `update`, `changePhoto`, `removePhoto`, `hasPhoto`, `isStored` y `getFullNameValue`.
 - **Reglas:** el perfil se crea la primera vez que la persona lo guarda. `update` informa si el nombre cambió, para
-  publicar el evento solo en ese caso.
+  renombrar al personal en Laboratory Management y publicar el evento solo en ese caso.
 
 **Value Objects**
 
@@ -1803,18 +1931,18 @@ sobre lotes.
 
 **Fachada e integration events**
 
-- `ProfileContextFacade`: permite que otros contextos obtengan el nombre con que se muestra a una persona
-  (`displayNameOf`). Si el perfil no tiene nombre, devuelve el usuario de la cuenta. Compliance & Alerting la usa para
-  indicar quién atendió una alerta o decidió sobre un lote.
-- `ProfileUpdatedIntegrationEvent`: comunica el cambio de nombre para que Laboratory Management actualice la lista del
-  personal.
+- `ProfileContextFacade`: interfaz implementada por `ProfileContextFacadeImpl` que permite que otros contextos obtengan
+  el nombre con que se muestra a una persona (`displayNameOf`). Si el perfil no tiene nombre, devuelve el usuario de la
+  cuenta. Compliance & Alerting la usa para indicar quién atendió una alerta o decidió sobre un lote.
+- `ProfileUpdatedIntegrationEvent`: publica el cambio de nombre para los contextos que lo necesiten. La lista del
+  personal no depende de él: Profile Management la actualiza mediante la fachada de Laboratory Management.
 
 #### 4.2.10.3. Application Layer.
 
 **Command Service**
 
-- `ProfileCommandService` / `ProfileCommandServiceImpl`: guarda los datos personales y la foto del usuario autenticado,
-  y crea el perfil la primera vez.
+- `ProfileCommandService` / `ProfileCommandServiceImpl`: guarda los datos personales y la foto del usuario autenticado y
+  crea el perfil la primera vez. Si el nombre cambió, renombra al personal vinculado a la cuenta.
 
 **Query Service**
 
@@ -1828,7 +1956,8 @@ sobre lotes.
 **ACL y servicios de salida**
 
 - `ExternalIamService`: lee en IAM la cuenta del perfil (usuario, correo y roles).
-- `ExternalLaboratoryService`: lee en Laboratory Management el registro del personal vinculado a la cuenta.
+- `ExternalLaboratoryService`: lee en Laboratory Management el registro del personal vinculado a la cuenta y lo renombra
+  cuando cambia el nombre del perfil (`renameStaffMemberByAccount`).
 - `ProfilePhotoStorage`: puerto de salida que guarda las imágenes de las fotos.
 
 #### 4.2.10.4. Infrastructure Layer.
@@ -1845,7 +1974,8 @@ sobre lotes.
 
 El diagrama de componentes presenta **Profile Management** dentro del **Cloud REST API**. La Single-Page Application
 consulta y actualiza en él el perfil y la foto. El contexto resuelve la cuenta en IAM y el registro del personal en
-Laboratory Management, y Compliance & Alerting lo consulta para mostrar el nombre de las personas.
+Laboratory Management, al que también renombra, y Compliance & Alerting lo consulta para mostrar el nombre de las
+personas.
 
 Se utiliza la vista de Structurizr **`Components-Profile`**, definida sobre el container `Cloud REST API`.
 
@@ -1868,4 +1998,4 @@ Commands, Queries, el evento y el repositorio del contexto.
 El diagrama de base de datos muestra las tablas `profiles` y `profile_photos`. Cada perfil se relaciona con la cuenta de
 IAM mediante `userId`, y cada foto con su perfil, sin duplicar el modelo de la cuenta.
 
-<p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/profile/profile-database-diagram.puml&fmt=svg&v=4" alt="Profile Management Database Design Diagram" width="100%"></p>
+<p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/profile/profile-database-diagram.puml&fmt=svg&v=5" alt="Profile Management Database Design Diagram" width="100%"></p>
