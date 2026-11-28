@@ -190,6 +190,6 @@
     - [Conclusiones y recomendaciones](../end-of-report/97-conclusions.md#conclusiones-y-recomendaciones)
     - [Video About-the-Team](../end-of-report/97-conclusions.md#video-about-the-team)
 
-- [Bibliografía](../end-of-report/98-bibliography.md#bibliografía)
+- [Referencias](../end-of-report/98-bibliography.md#referencias)
 
 - [Anexos](../end-of-report/99-annexes.md#anexos)

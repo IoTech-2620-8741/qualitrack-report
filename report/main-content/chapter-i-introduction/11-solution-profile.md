@@ -17,19 +17,21 @@ noviembre de 2025 y mayo de 2026 se evaluaron 51 laboratorios farmacéuticos med
 estos, 20 obtuvieron la certificación de Buenas Prácticas de Manufactura, mientras que 21 no alcanzaron la
 certificación, 3 presentaron observaciones parciales y 7 desistieron del proceso. Por lo tanto, el 41,2 % de los
 laboratorios evaluados no alcanzó la certificación y, considerando también las observaciones parciales y desistimientos,
-el 60,8 % no culminó dicha evaluación obteniéndola **(DIGEMID, 2026)**.
+el 60,8 % no culminó dicha evaluación obteniéndola (Dirección General de Medicamentos, Insumos y Drogas [DIGEMID], 2026a).
 
 Asimismo, en julio de 2026 DIGEMID reunió a representantes de 120 laboratorios nacionales, entre ellos 43 fabricantes de
 productos farmacéuticos, para abordar las principales observaciones y oportunidades de mejora encontradas durante las
 actividades de inspección, certificación y vigilancia realizadas desde 2025. Entre los aspectos analizados estuvieron el
 control de calidad, la calificación de equipos y el aseguramiento de la calidad, demostrando que el fortalecimiento de
-los procesos de control continúa siendo una necesidad vigente en el sector **(DIGEMID, 2026)**.
+los procesos de control continúa siendo una necesidad vigente en el sector (DIGEMID, 2026b).
 
 Dentro de este contexto, una parte importante de las operaciones farmacéuticas requiere supervisar variables y
 condiciones que deben mantenerse dentro de determinados parámetros. Estas pueden incluir temperatura, humedad, presión u
 otras variables dependiendo del área, equipo o proceso involucrado. Cuando su supervisión depende de revisiones
 periódicas, registros manuales o sistemas independientes, pueden producirse retrasos entre la aparición de una
 desviación, su detección y la ejecución de una acción correctiva.
+
+<div style="page-break-after: always;"></div>
 
 **2. PROBLEMÁTICA**
 
@@ -59,6 +61,8 @@ diferentes fuentes para determinar qué variable presentó una desviación, cuá
 del rango esperado y qué acciones se realizaron. Esta fragmentación también incrementa el esfuerzo necesario para
 recuperar y relacionar la información solicitada durante revisiones internas, investigaciones de desviaciones,
 auditorías o inspecciones regulatorias.
+
+<div style="page-break-after: always;"></div>
 
 **Análisis 5W + 2H**
 
@@ -95,8 +99,6 @@ El riesgo aumenta entre una revisión manual y la siguiente, cuando una desviaci
 inmediatamente, y también después de una incidencia, cuando es necesario determinar cuándo ocurrió, cuánto tiempo duró y
 qué medidas fueron tomadas.
 
-<div style="page-break-after: always;"></div>
-
 **Where (¿Dónde ocurre?)**
 
 Se presenta principalmente en áreas de producción y fabricación, laboratorios de control de calidad, zonas de
@@ -105,6 +107,8 @@ farmacéuticos.
 
 Estas áreas pueden requerir la supervisión de diferentes variables según las características del proceso, los equipos
 utilizados o las condiciones necesarias para conservar adecuadamente los productos.
+
+<div style="page-break-after: always;"></div>
 
 **How (¿Cómo se manifiesta?)**
 
@@ -119,7 +123,7 @@ disponibilidad del personal para atender incidencias y dificultades para reconst
 
 La magnitud de las dificultades relacionadas con el cumplimiento de las Buenas Prácticas puede observarse en las
 inspecciones realizadas por DIGEMID: de los 51 laboratorios evaluados entre noviembre de 2025 y mayo de 2026, solo 20
-obtuvieron la certificación correspondiente en dicha evaluación **(DIGEMID, 2026)**.
+obtuvieron la certificación correspondiente en dicha evaluación (DIGEMID, 2026a).
 
 Un caso de mayor impacto sobre el mercado peruano se produjo en 2025, cuando el Ministerio de Salud identificó 239
 productos farmacéuticos cuyos laboratorios fabricantes no habían aprobado las inspecciones de Buenas Prácticas de
@@ -129,6 +133,8 @@ sanitario de 57 productos y se anunció el retiro del registro de un segundo gru
 Si bien estos resultados no significan que los incumplimientos hayan sido causados específicamente por fallas en el
 monitoreo de temperatura, humedad u otras variables, permiten evidenciar las consecuencias que pueden alcanzar las
 deficiencias en el cumplimiento de los controles requeridos dentro de la industria farmacéutica.
+
+<div style="page-break-after: always;"></div>
 
 ### 1.2.2. Lean UX Process
 
@@ -141,8 +147,6 @@ actividades.
 
 A partir de este enfoque se definen el Problem Statement, los Assumptions, las Hypothesis Statements y el Lean UX Canvas
 que orientan la propuesta del producto.
-
-<div style="page-break-after: always;"></div>
 
 #### 1.2.2.1. Lean UX Problem Statements
 
@@ -176,6 +180,8 @@ Sabremos que la iniciativa está avanzando satisfactoriamente cuando, durante la
 desviaciones ambientales activan una respuesta automática positiva sin intervención manual, que el personal deja de
 realizar registros manuales en papel u hoja de cálculo y que consulta el historial de mediciones directamente desde
 QualiTrack.
+
+<div style="page-break-after: always;"></div>
 
 #### 1.2.2.2. Lean UX Assumptions
 
@@ -216,6 +222,8 @@ Assumptions, User Outcome and Benefit Assumptions y Feature Assumptions.
   escalable en un plazo de 6 meses.
 * Creemos que podremos validar el modelo de negocio en Perú con al menos 8 piltoso exitosos, lo que nos permitirá
   expandir el negocio hacia otros paises, todo en un plazo de 2 años.
+
+<div style="page-break-after: always;"></div>
 
 **User Assumptions**
 
@@ -263,6 +271,8 @@ Assumptions, User Outcome and Benefit Assumptions y Feature Assumptions.
   sistema, y que el beneficio que obtienen es aplicar su criterio técnico directamente para calibrar los rangos
   aceptables.
 
+<div style="page-break-after: always;"></div>
+
 **Feature Assumptions**
 
 **FA01. Dispositivo IoT de monitoreo ambiental:**  
@@ -296,6 +306,8 @@ responsables se mantengan informados aun cuando no se encuentren físicamente en
 **FA08. Trazabilidad y reportes ambientales:**  
 Creemos que conservar cronológicamente las mediciones, desviaciones, alertas, acciones automáticas y atenciones
 realizadas facilitará la revisión de incidentes y la elaboración de reportes para procesos internos de calidad.
+
+<div style="page-break-after: always;"></div>
 
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
@@ -345,6 +357,8 @@ una aplicación web que reúna mediciones, estados, alertas y acciones ejecutada
 **alcanzan** acceso remoto al estado de las áreas y a los eventos importantes **con** una aplicación móvil que
 proporcione monitoreo y notificaciones.
 
+<div style="page-break-after: always;"></div>
+
 **Hipótesis 8 — Trazabilidad y reportes ambientales**
 
 **Creemos que** lograremos disminuir el esfuerzo necesario para revisar eventos ambientales **si** los responsables de
@@ -358,6 +372,9 @@ beneficios que buscan obtener, las soluciones propuestas, las hipótesis y los p
 
 Para QualiTrack, el contenido del Lean UX Canvas se estructura de la siguiente manera:
 
+<p class="apa-label">Tabla 1</p>
+<p class="apa-title">Lean UX Canvas</p>
+
 | Sección                                                                                      | Contenido                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **1. Business Problem**                                                                      | Laboratorios y almacenes farmacéuticos no logran integrar monitoreo continuo, detección oportuna de desviaciones, respuesta automática y trazabilidad en un solo proceso. Hoy dependen de revisiones manuales y sistemas independientes, generando brechas entre detección y acción.                                                                                                                                                                                                                                      |
@@ -366,9 +383,17 @@ Para QualiTrack, el contenido del Lean UX Canvas se estructura de la siguiente m
 | **4. User Outcomes & Benefits**                                                              | Supervisar varias áreas sin estar presente físicamente; detectar desviaciones más rápido; contar con evidencia trazable/auditable para BPM; mantener respuesta local aunque falle Internet.                                                                                                                                                                                                                                                                                                                               |
 | **5. Solutions**                                                                             | QualiTrack ofrece un dispositivo IoT con sensores y actuadores capaz de medir condiciones ambientales y ejecutar automáticamente una respuesta física ante desviaciones, complementado con procesamiento local de reglas y un Edge Service que le dan resiliencia frente a conexiones inestables, una capa de configuración que permite adaptar rangos y reglas por área, y aplicaciones web y móvil que centralizan la supervisión, las alertas y los reportes de trazabilidad necesarios para sustentar auditorías BPM. |
 | **6. Hypotheses**                                                                            | H1: Creemos que reduciremos la dependencia de registros manuales si el dispositivo IoT captura automáticamente las variables ambientales. H2: Creemos que reduciremos el tiempo de primera respuesta si los actuadores ejecutan una acción automática ante una desviación.                                                                                                                                                                                                                                                |
+
+<div style="page-break-after: always;"></div>
+
+| Sección                                                                                      | Contenido                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **7. What's the most important thing we need to learn first?**                               | ¿Confían los usuarios en que el dispositivo detecte una desviación y ejecute automáticamente una acción física (sin intervención humana)?                                                                                                                                                                                                                                                                                                                                                                                 |
 | **8. What's the least amount of work we need to do to learn the next most important thing?** | Realizar entrevistas a ambos usuarios detectados; recopilar información de los usuarios con un prototipo funcional de QualiTrack, utilizando el dispositivo IoT con las funcionalidades principales simuladas, acompañado de mockups de las apps web y móvil.                                                                                                                                                                                                                                                             |
 
 **Lean UX Canvas de QualiTrack**
+
+<p class="apa-label">Figura 2</p>
+<p class="apa-title">Lean UX Canvas de QualiTrack</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-i/qualitrack-lean-ux-canvas.png" alt="Lean UX Canvas de QualiTrack" width="100%"></p>
