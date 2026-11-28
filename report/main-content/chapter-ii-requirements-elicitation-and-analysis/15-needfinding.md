@@ -17,12 +17,6 @@ dispersión de información y la dificultad para verificar que las mediciones se
 se tomó en cuenta su necesidad de contar con información centralizada, confiable e histórica que facilite la
 supervisión, la toma de decisiones y la preparación ante auditorías.
 
-<div style="page-break-after: always;"></div>
-
-<img src="../../assets/img/main-content/chapter-ii/user-persona/user-persona-segment-1-part-1.png" alt="Diego Ramirez - User Person 1" width="100%"><img src="../../assets/img/main-content/chapter-ii/user-persona/user-persona-segment-1-part-2.png" alt="Diego Ramirez - User Person 1" width="100%">
-
-<div style="page-break-after: always;"></div>
-
 **Segmento 2: Personal operativo de laboratorios y almacenes**
 
 Para este segmento se elaboró el User Persona Alberto García, representante del personal operativo de laboratorios y
@@ -36,7 +30,27 @@ auditorías.
 
 <div style="page-break-after: always;"></div>
 
-<img src="../../assets/img/main-content/chapter-ii/user-persona/user-persona-segment-2-part-1.png" alt="Alberto García - User Person 2" width="100%"><img src="../../assets/img/main-content/chapter-ii/user-persona/user-persona-segment-2-part-2.png" alt="Alberto García - User Person 2" width="100%">
+<div style="page-break-inside: avoid; break-inside: avoid;">
+<p class="apa-label">Figura 7</p>
+<p class="apa-title">User Persona del segmento de responsables de calidad y supervisión</p>
+
+<img src="../../assets/img/main-content/chapter-ii/user-persona/user-persona-segment-1-part-1.png" alt="Diego Ramirez - User Person 1" width="100%">
+
+</div>
+
+<img src="../../assets/img/main-content/chapter-ii/user-persona/user-persona-segment-1-part-2.png" alt="Diego Ramirez - User Person 1" width="100%">
+
+<div style="page-break-after: always;"></div>
+
+<div style="page-break-inside: avoid; break-inside: avoid;">
+<p class="apa-label">Figura 8</p>
+<p class="apa-title">User Persona del segmento de personal operativo</p>
+
+<img src="../../assets/img/main-content/chapter-ii/user-persona/user-persona-segment-2-part-1.png" alt="Alberto García - User Person 2" width="100%">
+
+</div>
+
+<img src="../../assets/img/main-content/chapter-ii/user-persona/user-persona-segment-2-part-2.png" alt="Alberto García - User Person 2" width="100%">
 
 <div style="page-break-after: always;"></div>
 
@@ -46,6 +60,9 @@ En esta sección se presenta el User Task Matrix, que concentra las tareas que l
 representante del Segmento 1: Responsables de calidad y supervisión; y Alberto García, representante del Segmento 2:
 Personal operativo de laboratorios y almacenes) realizan para cumplir sus objetivos dentro del laboratorio o almacén. El
 cuadro presenta, para cada User Persona, la frecuencia y la importancia asociadas a cada tarea identificada.
+
+<p class="apa-label">Tabla 13</p>
+<p class="apa-title">User Task Matrix</p>
 
 <table>
   <thead>
@@ -128,6 +145,8 @@ cuadro presenta, para cada User Persona, la frecuencia y la importancia asociada
   </tbody>
 </table>
 
+<div style="page-break-after: always;"></div>
+
 Del análisis del cuadro se observa que, para Diego Ramírez, la tarea con mayor frecuencia e importancia combinadas es
 monitorear las condiciones ambientales de las áreas a su cargo, dado que constituye la base de su rol de supervisión y
 se repite varias veces al día. Para Alberto García, las tareas con mayor frecuencia e importancia son la recepción y
@@ -157,33 +176,73 @@ En esta sección se presentan los User Journey Maps correspondientes a ambos seg
 que actualmente realiza cada usuario para cumplir su objetivo, sin que exista una solución. Permite identificar las
 etapas, puntos de contacto, dificultades y emociones que atraviesa cada usuario a lo largo de su recorrido.
 
-<div style="page-break-after: always;"></div>
-
 **Segmento 1: Responsables de calidad y supervisión**
 
-<img src="../../assets/img/main-content/chapter-ii/user-journey-mapping/diego-ramirez-user-journey-mapping-1.png" alt="Diego Ramirez - User Journey Mapping (1/3)" width="93%">
-
-<div style="page-break-after: always;"></div>
-
-<img src="../../assets/img/main-content/chapter-ii/user-journey-mapping/diego-ramirez-user-journey-mapping-2.png" alt="Diego Ramirez - User Journey Mapping (2/3)" width="89%">
-
-<div style="page-break-after: always;"></div>
-
-<img src="../../assets/img/main-content/chapter-ii/user-journey-mapping/diego-ramirez-user-journey-mapping-3.png" alt="Diego Ramirez - User Journey Mapping (3/3)" width="94%">
-
-<div style="page-break-after: always;"></div>
+El User Journey Map de Diego Ramírez recorre la supervisión de las condiciones ambientales, la detección de una
+desviación, la evaluación de su impacto, la coordinación de la corrección, el registro del incidente y la consulta
+histórica ante una auditoría. En cada etapa se observa que depende de registros manuales, avisos verbales e información
+dispersa en distintos formatos, lo que retrasa la detección y la respuesta ante una desviación. Su experiencia pasa de la
+vigilancia a la sorpresa, el temor y el enojo cuando la información no llega a tiempo, y de ello surgen oportunidades como
+centralizar las mediciones, recibir alertas automáticas y contar con un historial trazable que agilice las auditorías.
 
 **Segmento 2: Personal operativo de laboratorios y almacenes**
 
-<img src="../../assets/img/main-content/chapter-ii/user-journey-mapping/alberto-garcia-user-journey-mapping-1.png" alt="Alberto García - User Journey Mapping (1/3)" width="87%">
+El User Journey Map de Alberto García recorre la preparación para la recepción de un pedido, la recepción física y el
+conteo, la verificación mediante checklist, la decisión de aceptación o rechazo del lote, el registro de la información y
+la consulta de disponibilidad de materias primas. A lo largo del recorrido se repiten el conteo y el cruce manual de
+documentos, la búsqueda de especificaciones dispersas y la digitación duplicada de información ya verificada. Su
+experiencia oscila entre el interés, el disgusto y el fastidio, y de ello surgen oportunidades como digitalizar el
+checklist, registrar automáticamente la recepción y consultar en un solo lugar la disponibilidad y las especificaciones.
 
 <div style="page-break-after: always;"></div>
 
-<img src="../../assets/img/main-content/chapter-ii/user-journey-mapping/alberto-garcia-user-journey-mapping-2.png" alt="Alberto García - User Journey Mapping (2/3)" width="94%">
+<div style="page-break-inside: avoid; break-inside: avoid;">
+<p class="apa-label">Figura 9</p>
+<p class="apa-title">User Journey Map de Diego Ramírez (1/3)</p>
 
-<div style="page-break-after: always;"></div>
+<img src="../../assets/img/main-content/chapter-ii/user-journey-mapping/diego-ramirez-user-journey-mapping-1.png" alt="Diego Ramirez - User Journey Mapping (1/3)" style="height: 19cm; width: auto; max-width: 100%;">
 
-<img src="../../assets/img/main-content/chapter-ii/user-journey-mapping/alberto-garcia-user-journey-mapping-3.png" alt="Alberto García - User Journey Mapping (3/3)" width="90%">
+</div>
+
+<div style="page-break-inside: avoid; break-inside: avoid;">
+<p class="apa-label">Figura 10</p>
+<p class="apa-title">User Journey Map de Diego Ramírez (2/3)</p>
+
+<img src="../../assets/img/main-content/chapter-ii/user-journey-mapping/diego-ramirez-user-journey-mapping-2.png" alt="Diego Ramirez - User Journey Mapping (2/3)" style="height: 19cm; width: auto; max-width: 100%;">
+
+</div>
+
+<div style="page-break-inside: avoid; break-inside: avoid;">
+<p class="apa-label">Figura 11</p>
+<p class="apa-title">User Journey Map de Diego Ramírez (3/3)</p>
+
+<img src="../../assets/img/main-content/chapter-ii/user-journey-mapping/diego-ramirez-user-journey-mapping-3.png" alt="Diego Ramirez - User Journey Mapping (3/3)" style="height: 19cm; width: auto; max-width: 100%;">
+
+</div>
+
+<div style="page-break-inside: avoid; break-inside: avoid;">
+<p class="apa-label">Figura 12</p>
+<p class="apa-title">User Journey Map de Alberto García (1/3)</p>
+
+<img src="../../assets/img/main-content/chapter-ii/user-journey-mapping/alberto-garcia-user-journey-mapping-1.png" alt="Alberto García - User Journey Mapping (1/3)" style="height: 19cm; width: auto; max-width: 100%;">
+
+</div>
+
+<div style="page-break-inside: avoid; break-inside: avoid;">
+<p class="apa-label">Figura 13</p>
+<p class="apa-title">User Journey Map de Alberto García (2/3)</p>
+
+<img src="../../assets/img/main-content/chapter-ii/user-journey-mapping/alberto-garcia-user-journey-mapping-2.png" alt="Alberto García - User Journey Mapping (2/3)" style="height: 19cm; width: auto; max-width: 100%;">
+
+</div>
+
+<div style="page-break-inside: avoid; break-inside: avoid;">
+<p class="apa-label">Figura 14</p>
+<p class="apa-title">User Journey Map de Alberto García (3/3)</p>
+
+<img src="../../assets/img/main-content/chapter-ii/user-journey-mapping/alberto-garcia-user-journey-mapping-3.png" alt="Alberto García - User Journey Mapping (3/3)" style="height: 19cm; width: auto; max-width: 100%;">
+
+</div>
 
 <div style="page-break-after: always;"></div>
 
@@ -195,14 +254,44 @@ partir de la información obtenida en las entrevistas y los User Persona definid
 comprensión más completa del contexto de cada usuario y sirve como base para orientar las funcionalidades de la solución
 hacia sus necesidades reales.
 
-<div style="page-break-after: always;"></div>
-
 **Segmento 1: Responsables de calidad y supervisión**
 
-<img src="../../assets/img/main-content/chapter-ii/empathy-mapping/empathy-map-segment-1-part-1.png" alt="Diego Ramirez - Empathy Map 1" width="100%"><img src="../../assets/img/main-content/chapter-ii/empathy-mapping/empathy-map-segment-1-part-2.png" alt="Diego Ramirez - Empathy Map 1" width="100%">
-
-<div style="page-break-after: always;"></div>
+El Empathy Map de Diego Ramírez muestra a un supervisor que trabaja en un entorno altamente regulado y que debe asegurar
+que las condiciones ambientales de cada área se mantengan dentro de los parámetros establecidos. Piensa constantemente si
+puede confiar en los registros y si una desviación representa un riesgo para el proceso, mientras revisa formatos
+físicos, hojas de cálculo e información histórica distribuida en varios medios. Sus principales dolores son la
+dependencia de registros manuales y la detección tardía de desviaciones, y valora contar con un monitoreo centralizado,
+registros confiables y una consulta rápida de la información para preparar las auditorías.
 
 **Segmento 2: Personal operativo de laboratorios y almacenes**
 
-<img src="../../assets/img/main-content/chapter-ii/empathy-mapping/empathy-map-segment-2-part-1.png" alt="Alberto Garcia - Empathy Map 2" width="100%"><img src="../../assets/img/main-content/chapter-ii/empathy-mapping/empathy-map-segment-2-part-2.png" alt="Alberto Garcia - Empathy Map 2" width="100%">
+El Empathy Map de Alberto García muestra a un técnico que inspecciona productos, lotes y documentación, y que debe
+mantener la trazabilidad necesaria para que los materiales cumplan con sus especificaciones. Necesita encontrar la
+información correcta sin perder tiempo y saber de dónde proviene cada producto, pero trabaja con información dispersa
+entre sistemas y documentos, y con registros manuales que consumen buena parte de su jornada. Valora contar con la
+información centralizada, una trazabilidad completa de materias primas y productos, y menos trabajo manual para
+identificar rápidamente los lotes afectados ante un problema.
+
+<div style="page-break-after: always;"></div>
+
+<div style="page-break-inside: avoid; break-inside: avoid;">
+<p class="apa-label">Figura 15</p>
+<p class="apa-title">Empathy Map del segmento de responsables de calidad y supervisión</p>
+
+<img src="../../assets/img/main-content/chapter-ii/empathy-mapping/empathy-map-segment-1-part-1.png" alt="Diego Ramirez - Empathy Map 1" width="100%">
+
+</div>
+
+<img src="../../assets/img/main-content/chapter-ii/empathy-mapping/empathy-map-segment-1-part-2.png" alt="Diego Ramirez - Empathy Map 1" width="100%">
+
+<div style="page-break-after: always;"></div>
+
+<div style="page-break-inside: avoid; break-inside: avoid;">
+<p class="apa-label">Figura 16</p>
+<p class="apa-title">Empathy Map del segmento de personal operativo</p>
+
+<img src="../../assets/img/main-content/chapter-ii/empathy-mapping/empathy-map-segment-2-part-1.png" alt="Alberto Garcia - Empathy Map 2" width="100%">
+
+</div>
+
+<img src="../../assets/img/main-content/chapter-ii/empathy-mapping/empathy-map-segment-2-part-2.png" alt="Alberto Garcia - Empathy Map 2" width="100%">

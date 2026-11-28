@@ -27,6 +27,9 @@ trazabilidad digital, especialmente pensada para laboratorios pequeños, mediano
 
 <div style="page-break-after: always;"></div>
 
+<p class="apa-label">Tabla 2</p>
+<p class="apa-title">Análisis competitivo</p>
+
 <table border="1" cellpadding="10" cellspacing="0" style="margin-left: auto; margin-right: auto; font-family: sans-serif;">
 <tr>
 <th colspan="6">Panorama del análisis competitivo</th>
@@ -42,22 +45,18 @@ trazabilidad digital, especialmente pensada para laboratorios pequeños, mediano
 <td colspan="2" style="text-align: center;"><b>Competidores</b></td>
 <td style="text-align: center; vertical-align: middle;">
 <b>QualiTrack</b>
-
 <img src="../../assets/img/main-content/chapter-ii/competitors/qualitrack-logo.png" alt="QualiTrack" width="150" height="80"/>
 </td>
 <td style="text-align: center; vertical-align: middle;">
 <b>Elemental Machines</b>
-
 <img src="../../assets/img/main-content/chapter-ii/competitors/elemental-machines-logo.jpg" alt="Elemental Machines" width="150"/>
 </td>
 <td style="text-align: center; vertical-align: middle;">
 <b>LabWare (LIMS)</b>
-
 <img src="../../assets/img/main-content/chapter-ii/competitors/labware-lims-logo.png" alt="LabWare LIMS" width="150"/>
 </td>
 <td style="text-align: center; vertical-align: middle;">
 <b>Métodos tradicionales</b>
-
 <img src="../../assets/img/main-content/chapter-ii/competitors/traditional-methods-logo.png" alt="Métodos tradicionales" width="150"/>
 </td>
 </tr>
@@ -71,11 +70,16 @@ trazabilidad digital, especialmente pensada para laboratorios pequeños, mediano
 </tr>
 <tr>
 <td>Ventaja competitiva</td>
-<td>Integración de dispositivos IoT con un enfoque en normativas locales, control fuera del area de trabajo y un modelo SaaS accesible.</td>
+<td>Integración de dispositivos IoT con un enfoque en normativas locales, control fuera del área de trabajo y un modelo SaaS accesible.</td>
 <td>Integración propia de hardware y software con analítica predictiva basada en Inteligencia Artificial.</td>
 <td>Especialización en procesos de laboratorio (Cuaderno electrónico, aplicación móvil, analítica y sistema de ejecución de laboratorio).</td>
 <td>Muy bajo costo y facilidad de uso, incluso para el nuevo personal.</td>
 </tr>
+</table>
+
+<div style="page-break-after: always;"></div>
+
+<table border="1" cellpadding="10" cellspacing="0" style="margin-left: auto; margin-right: auto; font-family: sans-serif;">
 <tr>
 <td rowspan="2"><b>Perfil de Marketing</b></td>
 <td>Mercado objetivo</td>
@@ -93,14 +97,14 @@ trazabilidad digital, especialmente pensada para laboratorios pequeños, mediano
 </tr>
 <tr>
 <td rowspan="3"><b>Perfil de Producto</b></td>
-<td>Productos & Servicios</td>
+<td>Productos &amp; Servicios</td>
 <td>Dispositivo IoT multifuncional, plataforma web con dashboards, monitoreo en tiempo real y alertas.</td>
 <td>Dispositivos IoT personalizados, plataforma Cloud con alertas y análisis de datos recolectados.</td>
 <td>Sistema estructurado de gestión de laboratorio con distintas funcionalidades.</td>
 <td>Registros manuales o digitales básicos.</td>
 </tr>
 <tr>
-<td>Precios & Costos</td>
+<td>Precios &amp; Costos</td>
 <td>Suscripción SaaS escalable.</td>
 <td>Costos elevados de implementación y suscripción.</td>
 <td>Licencias costosas dependiendo del tipo de laboratorio e industria.</td>
@@ -110,23 +114,26 @@ trazabilidad digital, especialmente pensada para laboratorios pequeños, mediano
 <td>Canales de distribución</td>
 <td>Web, nube e integración con dispositivos IoT.</td>
 <td>Venta directa, previa consulta en página web.</td>
-<td>Venta directa con oficinas en varios paises.</td>
+<td>Venta directa con oficinas en varios países.</td>
 <td>Uso interno.</td>
 </tr>
+</table>
+
+<div style="page-break-after: always;"></div>
+
+<table border="1" cellpadding="10" cellspacing="0" style="margin-left: auto; margin-right: auto; font-family: sans-serif;">
 <tr>
-<td rowspan="5"><b>Análisis SWOT</b></td>
-</tr>
-<tr>
+<td rowspan="4"><b>Análisis SWOT</b></td>
 <td>Fortalezas</td>
 <td>Integración IoT con respuesta en tiempo real, trazabilidad en tiempo real, accesibilidad SaaS y enfoque en normativas locales.</td>
 <td>Producto IoT validado en el sector, fuerte enfoque en cumplimiento de buenas prácticas.</td>
-<td>Marca global con mas de 30 años en el negocio, producto altamente configurable en varios entornos.</td>
+<td>Marca global con más de 30 años en el negocio, producto altamente configurable en varios entornos.</td>
 <td>Ninguna inversión, sin dependencia de proveedores externos.</td>
 </tr>
 <tr>
 <td>Debilidades</td>
 <td>Producto nuevo, dependencia de hardware, adopción del usuario.</td>
-<td>Orientado a mercados desarrollados, sin presencia comercial ni soporte localizado en Latinoamérica</td>
+<td>Orientado a mercados desarrollados, sin presencia comercial ni soporte localizado en Latinoamérica.</td>
 <td>Costos elevados, larga implementación y baja accesibilidad. Funcionalidad móvil limitada.</td>
 <td>Alto riesgo de error y falta de trazabilidad. No permite monitoreo en tiempo real.</td>
 </tr>
@@ -181,9 +188,8 @@ Las estrategias definidas buscan:
 * Posicionar a QualiTrack como una alternativa especializada y confiable para laboratorios medianos y entidades
   públicas.
 
-<div style="page-break-after: always;"></div>
-
-Matriz CAME para el desarrollo de estrategias basadas en el análisis FODA.
+<p class="apa-label">Tabla 3</p>
+<p class="apa-title">Estrategias y tácticas frente a competidores</p>
 
 | **Análisis FODA cruzado**                                                                                                                                                                                                                                             | **Oportunidades**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | **Amenazas**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

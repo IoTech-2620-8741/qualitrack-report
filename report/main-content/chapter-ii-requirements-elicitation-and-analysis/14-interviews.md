@@ -153,11 +153,14 @@ conclusiones. Este registro sirve como evidencia para orientar las decisiones de
 
 #### **Segmento objetivo 1: Responsables de calidad y supervisión**
 
+<p class="apa-label">Tabla 4</p>
+<p class="apa-title">Registro de la entrevista a Melsy Medina Saravia</p>
+
+
 <table>
-    <colgroup></colgroup>
     <thead>
         <tr>
-            <th colspan="2">Entrevista #1<br></th>
+            <th colspan="2">Entrevista #1</th>
         </tr>
     </thead>
     <tbody>
@@ -180,43 +183,71 @@ conclusiones. Este registro sirve como evidencia para orientar las decisiones de
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div ><img src="../../assets/img/main-content/chapter-ii/interviews/mesly-medina-saravia.png" width="100%"></div>
+                <div>
+                    <img src="../../assets/img/main-content/chapter-ii/interviews/mesly-medina-saravia.png" width="100%">
+                </div>
             </td>
         </tr>
         <tr>
             <td>Link</td>
             <td>
-            <a href="https://shorturl.at/9TYgY" target="_blank">
-                https://shorturl.at/9TYgY
-            </a>
-        </td>
+                <a href="https://shorturl.at/9TYgY" target="_blank">
+                    https://shorturl.at/9TYgY
+                </a>
+            </td>
         </tr>
         <tr>
-            <td>Timing donde inicia la entrevista<br></td>
+            <td>Timing donde inicia la entrevista</td>
             <td>00:00 min</td>
         </tr>
         <tr>
-            <td>Duración de la entrevista<br></td>
+            <td>Duración de la entrevista</td>
             <td>5:00 min</td>
         </tr>
+    </tbody>
+</table>
+
+<div style="page-break-after: always;"></div>
+
+<table>
+    <thead>
         <tr>
-            <td>Resumen</td>
+            <th colspan="2">Entrevista #1</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><b>Resumen</b></td>
             <td>
-          Missli Medina Sarabia es supervisora de calidad de productos farmacéuticos en Hyc Pharma. Su principal responsabilidad es asegurar que los procesos de manufactura cumplan con los estándares de calidad, especialmente respecto a las condiciones ambientales de las diferentes áreas y salas. La empresa controla principalmente temperatura, humedad y presión diferencial, cuyos rangos dependen del medicamento y de los procedimientos establecidos. Actualmente, el monitoreo se realiza mediante registros manuales y formatos específicos para cada área. Durante la manufactura, las mediciones se realizan aproximadamente cada tres horas, mientras que las áreas que no están en uso cuentan con horarios específicos. También utilizan una guía de producción física y una guía virtual para gestionar la información. Uno de los principales problemas identificados es el registro manual, ya que los operarios pueden completar las mediciones posteriormente, generando dudas sobre la exactitud de los datos. Cuando se presenta una condición fuera de rango, se considera una desviación ambiental y se comunica a la supervisora de calidad, quien puede detener el proceso mientras se verifica la causa y, si es necesario, interviene mantenimiento. Una vez corregida la situación, la supervisora determina si el proceso puede continuar. Finalmente, destaca la importancia de conservar registros históricos para auditorías y de que el personal conozca los horarios de registro, los parámetros establecidos y el factor de corrección de los termohigrómetros.
-                Características adicionales:
-                - Utiliza PDAs (tablet de trabajo) y celulares de trabajo
-                - Navegador preferido: Google Chrome
-                - Canales de comunicación: Whatsapp, sms y email 
+                Melsy Medina Sarabia es supervisora de calidad de productos farmacéuticos en Hyc Pharma. Su principal responsabilidad es asegurar que los procesos de manufactura cumplan con los estándares de calidad, especialmente respecto a las condiciones ambientales de las diferentes áreas y salas. La empresa controla principalmente temperatura, humedad y presión diferencial, cuyos rangos dependen del medicamento y de los procedimientos establecidos.
+                Actualmente, el monitoreo se realiza mediante registros manuales y formatos específicos para cada área. Durante la manufactura, las mediciones se realizan aproximadamente cada tres horas, mientras que las áreas que no están en uso cuentan con horarios específicos. También utilizan una guía de producción física y una guía virtual para gestionar la información.
+                Uno de los principales problemas identificados es el registro manual, ya que los operarios pueden completar las mediciones posteriormente, generando dudas sobre la exactitud de los datos. Cuando se presenta una condición fuera de rango, se considera una desviación ambiental y se comunica a la supervisora de calidad, quien puede detener el proceso mientras se verifica la causa y, si es necesario, interviene mantenimiento. Una vez corregida la situación, la supervisora determina si el proceso puede continuar.
+                Finalmente, destaca la importancia de conservar registros históricos para auditorías y de que el personal conozca los horarios de registro, los parámetros establecidos y el factor de corrección de los termohigrómetros.
+            </td>
+        </tr>
+        <tr>
+            <td><b>Características adicionales</b></td>
+            <td>
+                <ul>
+                    <li>Utiliza PDAs (tablet de trabajo) y celulares de trabajo.</li>
+                    <li>Navegador preferido: Google Chrome.</li>
+                    <li>Canales de comunicación: WhatsApp, SMS y email.</li>
+                </ul>
             </td>
         </tr>
     </tbody>
 </table>
 
+<div style="page-break-after: always;"></div>
+
+<p class="apa-label">Tabla 5</p>
+<p class="apa-title">Registro de la entrevista a Mario Baca</p>
+
 <table>
     <colgroup></colgroup>
     <thead>
         <tr>
-            <th colspan="2">Entrevista #2<br></th>
+            <th colspan="2">Entrevista #2</th>
         </tr>
     </thead>
     <tbody>
@@ -232,40 +263,33 @@ conclusiones. Este registro sirve como evidencia para orientar las decisiones de
             <td>Edad</td>
             <td>40 años</td>
         </tr>
-   <tr>
-    <td>Ubicación</td>
-    <td>São Paulo, Brasil</td>
-</tr>
+        <tr>
+            <td>Ubicación</td>
+            <td>São Paulo, Brasil</td>
+        </tr>
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/mario-baca.png" width="100%"></div>
+                <div align="center">
+                    <img src="../../assets/img/main-content/chapter-ii/interviews/mario-baca.png" width="100%">
+                </div>
             </td>
         </tr>
         <tr>
             <td>Link</td>
-            <td><a href="https://shorturl.at/9TYgY" target="_blank">
-                https://shorturl.at/9TYgY
-            </a>
+            <td>
+                <a href="https://shorturl.at/9TYgY" target="_blank">
+                    https://shorturl.at/9TYgY
+                </a>
             </td>
         </tr>
         <tr>
-            <td>Timing donde inicia la entrevista<br></td>
+            <td>Timing donde inicia la entrevista</td>
             <td>5:02 min</td>
         </tr>
         <tr>
-            <td>Duración de la entrevista<br></td>
+            <td>Duración de la entrevista</td>
             <td>9:48 min</td>
-        </tr>
-        <tr>
-            <td>Resumen</td>
-            <td>
-Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagnostics Center Brazil, São Paulo, Brasil. Sus principales responsabilidades están relacionadas con la supervisión de las condiciones ambientales y el cumplimiento de los parámetros establecidos en las diferentes áreas del laboratorio. Las áreas que requieren mayor control son almacenamiento, producción, acondicionamiento y espacios donde se mantienen productos pendientes de evaluación. Se monitorean principalmente temperatura y humedad, y en determinadas áreas también presión diferencial, utilizando termohigrómetros y equipos de medición. Los valores aceptables dependen de las características del producto y de los procedimientos definidos para cada área. Actualmente, las mediciones se registran mediante formatos de control y archivos Excel, lo que genera una importante carga de trabajo manual y dificulta consultar la información al encontrarse distribuida en diferentes registros. Cuando se detecta una condición fuera de rango, primero se confirma la medición y luego se evalúa su impacto; dependiendo de la situación, se puede detener temporalmente la actividad, investigar la causa y aplicar las medidas correspondientes antes de continuar. Estas situaciones se consideran desviaciones y su prioridad depende del impacto y duración. El responsable de calidad verifica que la condición haya sido corregida y que se conserve información sobre el valor encontrado, rango permitido, fecha, hora, área afectada y acciones realizadas. Para auditorías se consultan principalmente los registros históricos de las áreas y las desviaciones ocurridas. El principal problema identificado es la revisión manual de registros y archivos Excel, además del riesgo de que algunas mediciones sean registradas posteriormente, generando dudas sobre la exactitud de los datos.
-                Características adicionales:
-                - Utiliza CPU con windows 10, celular android
-                - Navegador preferido: Google Chrome
-                - Canales de comunicación: Whatsapp, llamadas telefónicas y email  
-            </td>
         </tr>
     </tbody>
 </table>
@@ -273,10 +297,41 @@ Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagno
 <div style="page-break-after: always;"></div>
 
 <table>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><b>Resumen</b></td>
+            <td>
+                Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagnostics Center Brazil, São Paulo, Brasil. Sus principales responsabilidades están relacionadas con la supervisión de las condiciones ambientales y el cumplimiento de los parámetros establecidos en las diferentes áreas del laboratorio. Las áreas que requieren mayor control son almacenamiento, producción, acondicionamiento y espacios donde se mantienen productos pendientes de evaluación. Se monitorean principalmente temperatura y humedad, y en determinadas áreas también presión diferencial, utilizando termohigrómetros y equipos de medición. Los valores aceptables dependen de las características del producto y de los procedimientos definidos para cada área. Actualmente, las mediciones se registran mediante formatos de control y archivos Excel, lo que genera una importante carga de trabajo manual y dificulta consultar la información al encontrarse distribuida en diferentes registros. Cuando se detecta una condición fuera de rango, primero se confirma la medición y luego se evalúa su impacto; dependiendo de la situación, se puede detener temporalmente la actividad, investigar la causa y aplicar las medidas correspondientes antes de continuar. Estas situaciones se consideran desviaciones y su prioridad depende del impacto y duración. El responsable de calidad verifica que la condición haya sido corregida y que se conserve información sobre el valor encontrado, rango permitido, fecha, hora, área afectada y acciones realizadas. Para auditorías se consultan principalmente los registros históricos de las áreas y las desviaciones ocurridas. El principal problema identificado es la revisión manual de registros y archivos Excel, además del riesgo de que algunas mediciones sean registradas posteriormente, generando dudas sobre la exactitud de los datos.
+            </td>
+        </tr>
+        <tr>
+            <td><b>Características adicionales</b></td>
+            <td>
+                <ul>
+                    <li>Utiliza CPU con Windows 10 y celular Android.</li>
+                    <li>Navegador preferido: Google Chrome.</li>
+                    <li>Canales de comunicación: WhatsApp, llamadas telefónicas y email.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div style="page-break-after: always;"></div>
+
+<p class="apa-label">Tabla 6</p>
+<p class="apa-title">Registro de la entrevista a Ricardo Melendrez</p>
+
+<table>
     <colgroup></colgroup>
     <thead>
         <tr>
-            <th colspan="2">Entrevista #3<br></th>
+            <th colspan="2">Entrevista #3</th>
         </tr>
     </thead>
     <tbody>
@@ -293,57 +348,82 @@ Mario Baca trabaja como supervisor de productos farmacéuticos en CDB – Diagno
             <td>33 años</td>
         </tr>
         <tr>
-            <td>Ubicacion</td>
+            <td>Ubicación</td>
             <td>Chilca - Cañete</td>
         </tr>
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/ricardo-melendrez.png" width="100%"></div>
+                <div align="center">
+                    <img src="../../assets/img/main-content/chapter-ii/interviews/ricardo-melendrez.png" width="100%">
+                </div>
             </td>
         </tr>
         <tr>
             <td>Link</td>
             <td>
-            <a href="https://shorturl.at/9TYgY" target="_blank">
-                https://shorturl.at/9TYgY
-            </a>
+                <a href="https://shorturl.at/9TYgY" target="_blank">
+                    https://shorturl.at/9TYgY
+                </a>
             </td>
         </tr>
         <tr>
-            <td>Timing donde inicia la entrevista<br></td>
+            <td>Timing donde inicia la entrevista</td>
             <td>9:50 min</td>
         </tr>
         <tr>
-            <td>Duración de la entrevista<br></td>
+            <td>Duración de la entrevista</td>
             <td>14:50 min</td>
         </tr>
+    </tbody>
+</table>
+
+<div style="page-break-after: always;"></div>
+
+<table>
+    <thead>
         <tr>
-            <td>Resumen</td>
+            <th colspan="2">Entrevista #3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><b>Resumen</b></td>
             <td>
-Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, trabaja en el área de estabilidades de un laboratorio. En su trabajo supervisa principalmente las condiciones de temperatura y humedad en áreas como físico-químico, pesaje e instrumentación, donde los valores deben mantenerse dentro de los parámetros establecidos para evitar alteraciones en los análisis. El monitoreo se realiza mediante termohigrómetros calibrados y las mediciones se registran tres veces al día en formatos físicos, los cuales son supervisados y almacenados durante cinco años. Cuando se detecta una condición fuera de rango, se detienen las actividades, se comunica al jefe inmediato y se solicita la intervención de mantenimiento para corregir el problema. Una vez restablecidas las condiciones, se verifica nuevamente el ambiente y se registra la incidencia en el formato correspondiente. Para auditorías se consultan los registros históricos y las observaciones relacionadas con las desviaciones. Como principales indicadores considera la temperatura y humedad de cada área. Señala que un sistema digital permitiría visualizar todas las áreas en un solo panel y reducir el uso de registros físicos.
-                Características adicionales:
-                - Utiliza CPU con windows 11, celular android
-                - Navegador preferido: Google Chrome
-                - Canales de comunicación: Llamadas telefónicas y email
+                Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, trabaja en el área de estabilidades de un laboratorio. En su trabajo supervisa principalmente las condiciones de temperatura y humedad en áreas como físico-químico, pesaje e instrumentación, donde los valores deben mantenerse dentro de los parámetros establecidos para evitar alteraciones en los análisis. El monitoreo se realiza mediante termohigrómetros calibrados y las mediciones se registran tres veces al día en formatos físicos, los cuales son supervisados y almacenados durante cinco años. Cuando se detecta una condición fuera de rango, se detienen las actividades, se comunica al jefe inmediato y se solicita la intervención de mantenimiento para corregir el problema. Una vez restablecidas las condiciones, se verifica nuevamente el ambiente y se registra la incidencia en el formato correspondiente. Para auditorías se consultan los registros históricos y las observaciones relacionadas con las desviaciones. Como principales indicadores considera la temperatura y humedad de cada área. Señala que un sistema digital permitiría visualizar todas las áreas en un solo panel y reducir el uso de registros físicos.
+            </td>
+        </tr>
+        <tr>
+            <td><b>Características adicionales</b></td>
+            <td>
+                <ul>
+                    <li>Utiliza CPU con Windows 11 y celular Android.</li>
+                    <li>Navegador preferido: Google Chrome.</li>
+                    <li>Canales de comunicación: llamadas telefónicas y email.</li>
+                </ul>
             </td>
         </tr>
     </tbody>
 </table>
 
+<div style="page-break-after: always;"></div>
+
 #### **Segmento objetivo 2: Personal operativo de laboratorios y almacenes**
 
- <table>
+ <p class="apa-label">Tabla 7</p>
+ <p class="apa-title">Registro de la entrevista a César Agüero</p>
+
+<table>
     <colgroup></colgroup>
     <thead>
         <tr>
-            <th colspan="2">Entrevista #1<br></th>
+            <th colspan="2">Entrevista #1</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>Nombre</td>
-            <td> César  </td>
+            <td>César</td>
         </tr>
         <tr>
             <td>Apellidos</td>
@@ -360,7 +440,9 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/cesar-aguero.png" width="100%"></div>
+                <div align="center">
+                    <img src="../../assets/img/main-content/chapter-ii/interviews/cesar-aguero.png" width="100%">
+                </div>
             </td>
         </tr>
         <tr>
@@ -372,26 +454,12 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
             </td>
         </tr>
         <tr>
-            <td>Timing donde inicia la entrevista<br></td>
+            <td>Timing donde inicia la entrevista</td>
             <td>14:52 min</td>
         </tr>
         <tr>
-            <td>Duración de la entrevista<br></td>
+            <td>Duración de la entrevista</td>
             <td>19:58 min</td>
-        </tr>
-        <tr>
-            <td>Resumen</td>
-            <td>
-                César Agüero, de 38 años con 14 años de experiencia en farmacéutica, es Country Manager de Barat Ceronat Vaccines (transnacional de origen indio) con responsabilidad sobre 4 países: Perú, Bolivia, Chile y Honduras. Gestiona aspectos comerciales, operativos, regulatorios, financieros, de marketing, ventas y legales.
-                Utiliza múltiples dispositivos en Microsoft Teams como canal oficial, aunque identifica un problema crítico: falta de seguimiento efectivo de acuerdos de reuniones y pérdida de trazabilidad en responsabilidades.
-                El flujo productivo comienza con recepción de materias primas en almacén especializado bajo condiciones específicas con monitoreo continuo. Opera líneas de sólidos y líquidos estériles, algunas automatizadas y otras semi-automatizadas. Incluye controles de calidad en cada etapa: liberación de tanda, envasado, rotulado y control final. Los sistemas utilizados son: Data Master File que centraliza información de materias primas con certificados y especificaciones en repositorio digital, y Sistema virtual de gestión de producción basado en Buenas Prácticas de Manufactura con integrity, visibilidad 360, trazabilidad total. Completamente digitalizado desde el año anterior, eliminando progresivamente el papel.
-                La compañía no puede cambiar de materia prima ni proveedor: existe un proceso obligatorio previo de selección y calificación que incluye inspección, auditoría y verificación de licencias. Solo trabaja con fabricantes licenciados. Cada materia prima se identifica por lote y código de recepción con unidades de medida estandarizadas. Si hay problema en recepción, se rechaza completamente sin registrar. El sistema rastrea exactamente qué materias primas específicas fueron utilizadas en cada fabricación. Si posteriormente se detecta un problema, es posible identificar todos los productos y fabricaciones afectadas para acciones correctivas precisas.
-                Cada producto se verifica contra especificaciones aprobadas con tests obligatorios según farmacopea o parámetros críticos internos. Se fabrica solo cuando hay pedido y se libera inmediatamente para despacho, sin inventario. La información consultada más frecuentemente es sobre disponibilidad de materias primas, especialmente aquellas de un único fabricante mundial. Para personal nuevo, es absolutamente obligatorio conocer GMP; sin esto, no se ubicará en el contexto. La compañía usa señalización visual explícita porque prefiere comunicación visual clara sobre avisos escritos.
-                Características adicionales:
-                - Utiliza una CPU, una laptop Dell, celular iphone y una iPad
-                - Navegador preferido: Microsoft Edge
-                - Canales de comunicación: microsoft teams, Outlook corporativo  
-            </td>
         </tr>
     </tbody>
 </table>
@@ -399,10 +467,45 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
 <div style="page-break-after: always;"></div>
 
 <table>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #1</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><b>Resumen</b></td>
+            <td>
+                César Agüero, de 38 años con 14 años de experiencia en farmacéutica, es Country Manager de Barat Ceronat Vaccines (transnacional de origen indio) con responsabilidad sobre 4 países: Perú, Bolivia, Chile y Honduras. Gestiona aspectos comerciales, operativos, regulatorios, financieros, de marketing, ventas y legales.
+                Utiliza múltiples dispositivos en Microsoft Teams como canal oficial, aunque identifica un problema crítico: falta de seguimiento efectivo de acuerdos de reuniones y pérdida de trazabilidad en responsabilidades.
+                El flujo productivo comienza con recepción de materias primas en almacén especializado bajo condiciones específicas con monitoreo continuo. Opera líneas de sólidos y líquidos estériles, algunas automatizadas y otras semi-automatizadas. Incluye controles de calidad en cada etapa: liberación de tanda, envasado, rotulado y control final. Los sistemas utilizados son: Data Master File que centraliza información de materias primas con certificados y especificaciones en repositorio digital, y Sistema virtual de gestión de producción basado en Buenas Prácticas de Manufactura con integrity, visibilidad 360, trazabilidad total. Completamente digitalizado desde el año anterior, eliminando progresivamente el papel.
+                La compañía no puede cambiar de materia prima ni proveedor: existe un proceso obligatorio previo de selección y calificación que incluye inspección, auditoría y verificación de licencias. Solo trabaja con fabricantes licenciados. Cada materia prima se identifica por lote y código de recepción con unidades de medida estandarizadas. Si hay problema en recepción, se rechaza completamente sin registrar. El sistema rastrea exactamente qué materias primas específicas fueron utilizadas en cada fabricación. Si posteriormente se detecta un problema, es posible identificar todos los productos y fabricaciones afectadas para acciones correctivas precisas.
+                Cada producto se verifica contra especificaciones aprobadas con tests obligatorios según farmacopea o parámetros críticos internos. Se fabrica solo cuando hay pedido y se libera inmediatamente para despacho, sin inventario. La información consultada más frecuentemente es sobre disponibilidad de materias primas, especialmente aquellas de un único fabricante mundial. Para personal nuevo, es absolutamente obligatorio conocer GMP; sin esto, no se ubicará en el contexto. La compañía usa señalización visual explícita porque prefiere comunicación visual clara sobre avisos escritos.
+            </td>
+        </tr>
+        <tr>
+            <td><b>Características adicionales</b></td>
+            <td>
+                <ul>
+                    <li>Utiliza una CPU, una laptop Dell, celular iPhone y una iPad.</li>
+                    <li>Navegador preferido: Microsoft Edge.</li>
+                    <li>Canales de comunicación: Microsoft Teams y Outlook corporativo.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div style="page-break-after: always;"></div>
+
+<p class="apa-label">Tabla 8</p>
+<p class="apa-title">Registro de la entrevista a Liz Aliaga</p>
+
+<table>
     <colgroup></colgroup>
     <thead>
         <tr>
-            <th colspan="2">Entrevista #2<br></th>
+            <th colspan="2">Entrevista #2</th>
         </tr>
     </thead>
     <tbody>
@@ -420,12 +523,14 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
         </tr>
         <tr>
             <td>Distrito</td>
-            <td>Jesús Maria</td>
+            <td>Jesús María</td>
         </tr>
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/liz-aliaga.png" width="100%"></div>
+                <div align="center">
+                    <img src="../../assets/img/main-content/chapter-ii/interviews/liz-aliaga.png" width="100%">
+                </div>
             </td>
         </tr>
         <tr>
@@ -437,34 +542,57 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
             </td>
         </tr>
         <tr>
-            <td>Timing donde inicia la entrevista<br></td>
+            <td>Timing donde inicia la entrevista</td>
             <td>19:59 min</td>
         </tr>
         <tr>
-            <td>Duración de la entrevista<br></td>
+            <td>Duración de la entrevista</td>
             <td>24:40 min</td>
-        </tr>
-        <tr>
-            <td>Resumen</td>
-            <td>
-                Liz Aliaga, de 45 años y 20 años de experiencia en sector farmacéutico, trabaja en un hospital público de Jesús María, Lima, a cargo de 1,900 medicamentos. Sus tres responsabilidades principales son: velar que el paciente reciba medicamentos efectivos y seguros, mantener medicamentos en condiciones adecuadas según normativa regulatoria, garantizar correcta administración como bienes del Estado. A diferencia de laboratorios de producción, no recibe materias primas sino medicamentos terminados con certificado. Los medicamentos llegan por licitación y compras institucionales a través de 26 farmacias del hospital. Utiliza computadoras, tablas de control, termómetros, hidroxicóticos y cadenas de frío. Comunica por correos electrónicos y teléfono (WhatsApp no oficial). Reporta no tener dificultades ni frustraciones.
-                Cada medicamento ingresa con documentación completa: ficha técnica, buenas prácticas de manufactura, certificados del país de origen, registro de Dijaní, y controles de la empresa productora. Liz verifica cumplimiento de todos requisitos según normativa. Para diferenciar recepciones del mismo medicamento, utiliza sistema "FIFO Peso": si recibe lote hoy, es el primero a distribuir; si llega otro mañana, entra en segundo lugar. Información de proveedor, fechas y estado viene determinada por procesos de compra y licitación donde se especifica cuándo ingresa, qué documentación trae y qué requisitos cumple. Todos los productos tienen mismos requisitos estandarizados.
-                Liz realiza checklist riguroso: si encuentra envase dañado, caja humedecida, blisters con comprimidos partidos o con cambio de color, devuelve todo el lote. Para cantidades grandes, utiliza sistemas de muestreo: toma una cajita de cada lado. Si identifica problema, devuelve toda remesa. Medicamentos rechazados se registran en libro con lote, fecha y código. Si proveedor reenvía, debe ser con otro lote diferente, también registrado. Garantiza trazabilidad completa: problema con lote específico nunca vuelve a ser aceptado.
-                Información de medicamentos consultada frecuentemente: estabilidad, protección de luz, cadena de frío. Valida detalles como "si producto es oxidado, solo reconstituyese en cloruro para mantener estabilidad". Como usuario del hospital, no necesita conocer toda cadena de personal de producción. Lo que valida es información en documentos y caja: farmacéutico que produjo y director técnico que aseguró calidad. En plantas de producción: químicos farmacéuticos certifican insumos, producción, control de calidad, más director técnico.
-                Características adicionales:
-                - Utiliza computadoras, laptops corporativas con windows 11, celular android y tablets
-                - Navegador preferido: Microsoft Edge
-                - Canales de comunicación: microsoft temas y outlook corporativo
-           </td>
         </tr>
     </tbody>
 </table>
+
+<div style="page-break-after: always;"></div>
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><b>Resumen</b></td>
+            <td>
+                Liz Aliaga, de 45 años y 20 años de experiencia en el sector farmacéutico, trabaja en un hospital público de Jesús María, Lima, a cargo de 1,900 medicamentos. Sus tres responsabilidades principales son: velar por que el paciente reciba medicamentos efectivos y seguros, mantener los medicamentos en condiciones adecuadas según la normativa regulatoria y garantizar su correcta administración como bienes del Estado. A diferencia de los laboratorios de producción, no recibe materias primas, sino medicamentos terminados con certificado. Los medicamentos llegan por licitación y compras institucionales a través de 26 farmacias del hospital. Utiliza computadoras, tablas de control, termómetros, hidroxicóticos y cadenas de frío. Se comunica por correos electrónicos y teléfono (WhatsApp no oficial). Reporta no tener dificultades ni frustraciones.
+                Cada medicamento ingresa con documentación completa: ficha técnica, buenas prácticas de manufactura, certificados del país de origen, registro de Dijaní y controles de la empresa productora. Liz verifica el cumplimiento de todos los requisitos según la normativa. Para diferenciar recepciones del mismo medicamento, utiliza el sistema "FIFO Peso": si recibe un lote hoy, es el primero en distribuirse; si llega otro mañana, entra en segundo lugar. La información del proveedor, las fechas y el estado vienen determinados por procesos de compra y licitación donde se especifica cuándo ingresa, qué documentación trae y qué requisitos cumple. Todos los productos tienen los mismos requisitos estandarizados.
+                Liz realiza un checklist riguroso: si encuentra un envase dañado, una caja humedecida, blísteres con comprimidos partidos o con cambio de color, devuelve todo el lote. Para cantidades grandes, utiliza sistemas de muestreo: toma una cajita de cada lado. Si identifica un problema, devuelve toda la remesa. Los medicamentos rechazados se registran en un libro con lote, fecha y código. Si el proveedor reenvía el producto, debe ser con otro lote diferente, también registrado. Garantiza trazabilidad completa: un lote con problemas específicos nunca vuelve a ser aceptado.
+                La información de los medicamentos que consulta frecuentemente incluye estabilidad, protección de la luz y cadena de frío. Valida detalles como "si el producto es oxidado, solo reconstituirse en cloruro para mantener estabilidad". Como usuaria del hospital, no necesita conocer toda la cadena del personal de producción. Lo que valida es la información en los documentos y la caja: farmacéutico que produjo y director técnico que aseguró la calidad. En las plantas de producción, los químicos farmacéuticos certifican insumos, producción y control de calidad, además del director técnico.
+            </td>
+        </tr>
+        <tr>
+            <td><b>Características adicionales</b></td>
+            <td>
+                <ul>
+                    <li>Utiliza computadoras, laptops corporativas con Windows 11, celular Android y tablets.</li>
+                    <li>Navegador preferido: Microsoft Edge.</li>
+                    <li>Canales de comunicación: Microsoft Teams y Outlook corporativo.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div style="page-break-after: always;"></div>
+
+<p class="apa-label">Tabla 9</p>
+<p class="apa-title">Registro de la entrevista a Ohmar Chavez</p>
 
 <table>
     <colgroup></colgroup>
     <thead>
         <tr>
-            <th colspan="2">Entrevista #3<br></th>
+            <th colspan="2">Entrevista #3</th>
         </tr>
     </thead>
     <tbody>
@@ -487,7 +615,9 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../../assets/img/main-content/chapter-ii/interviews/ohmar-chavez.png" width="100%"></div>
+                <div align="center">
+                    <img src="../../assets/img/main-content/chapter-ii/interviews/ohmar-chavez.png" width="100%">
+                </div>
             </td>
         </tr>
         <tr>
@@ -499,25 +629,43 @@ Ricardo Melendrez, analista de control de calidad de productos farmacéuticos, t
             </td>
         </tr>
         <tr>
-            <td>Timing donde inicia la entrevista<br></td>
+            <td>Timing donde inicia la entrevista</td>
             <td>24:43 min</td>
         </tr>
         <tr>
-            <td>Duración de la entrevista<br></td>
-            <td>30:20 min s</td>
+            <td>Duración de la entrevista</td>
+            <td>30:20 min</td>
+        </tr>
+    </tbody>
+</table>
+
+<div style="page-break-after: always;"></div>
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><b>Resumen</b></td>
+            <td>
+                Omar Chávez, de 42 años y 15 años de experiencia, es formulador de Investigación y Desarrollo en un laboratorio. Su principal responsabilidad es desarrollar productos nuevos, desde su conceptualización hasta su viabilidad comercial. Su mayor frustración ocurre cuando un desarrollo no es transferible a un lote comercial. Utiliza computadoras, celulares, tablets, radio y RPC para comunicarse. También utiliza SAP como sistema de gestión. Su trabajo es fundamental en la etapa inicial del ciclo de vida del medicamento, validando que los productos puedan escalar a producción comercial.
+                El proceso sigue una secuencia rigurosa: análisis de formulación estándar, ensayos para verificar estabilidad y características físico-químicas y farmacotécnicas, verificación analítica, pruebas de estrés para garantizar la estabilidad en forma y nivel físico-químico, generación de pilotos y estudios de estabilidad acelerada y a largo plazo. Tras la validación, el producto pasa a fabricación comercial. Este proceso está diseñado para garantizar que solo los productos con estabilidad y viabilidad demostradas lleguen a producción. Todo está respaldado por las Buenas Prácticas de Manufactura.
+                Las materias primas se identifican mediante codificación interna (know-how confidencial). Las unidades de medida varían: kilogramos, gramos, litros, onzas, unidades y frascos, según la empresa y el producto. Antes de utilizar una materia prima, el requisito mínimo es contar con un certificado de análisis. Dependiendo de la empresa y del insumo, también se solicitan ficha técnica, ficha de seguridad, certificado de metales pesados, ruta de síntesis, MOA, ROT y ruta de análisis. Algunas empresas solo necesitan el COA para iniciar el desarrollo. Las materias primas con problemas ingresan a la categoría de "desmedro".
+                Todo equipo debe cumplir con una calificación de instalación, operación y desempeño. La nomenclatura de los equipos es propia de cada empresa. El área de mantenimiento garantiza que se encuentren en condiciones óptimas durante su vida útil. La información de los equipos permite mantener la trazabilidad mediante software con registro en tiempo real, comprobantes de registro temporal y huella digital. Si un equipo falla durante la fabricación, el proceso se detiene por completo; no puede continuarse sin garantizar que se encuentre en condiciones óptimas. Si la falla se detecta después de la fabricación, no hay posibilidad de corregirla.
+                Toda etapa de manufactura se documenta, desde la dispensación hasta el producto final. Se mantiene un registro de todo el personal participante, para el cual el conocimiento de GMP es obligatorio. Los estados de los productos varían según la empresa. El flujo es secuencial, pero simultáneo entre áreas: dispensación, fabricación y control de calidad interactúan en un orden lógico sin que exista predominio de una sobre otra. Para el personal nuevo, GMP es un requisito fundamental. La industria es altamente especializada y cuenta con múltiples subáreas. Los químicos farmacéuticos requieren conocimientos específicos en su área de especialización.
+            </td>
         </tr>
         <tr>
-            <td>Resumen</td>
+            <td><b>Características adicionales</b></td>
             <td>
-                Omar Chávez, de 42 años y 15 años de experiencia, es formulador de Investigación y Desarrollo en un laboratorio. Su principal responsabilidad es desarrollo de productos nuevos, desde conceptualización hasta viabilidad comercial. Su mayor frustración es cuando un desarrollo no es transferible a lote comercial. Utiliza computadoras, celulares, tablets, radio y RPC para comunicaciones. Utiliza SAP como sistema de gestión. Su trabajo es fundamental en etapa inicial del ciclo de vida del medicamento, validando que productos puedan escalar a producción comercial.
-                El proceso sigue secuencia rigurosa: análisis de formulación estándar, ensayos para verificar estabilidad y características físico-químicas y farmacotécnicas, verificación analítica, estresamiento para garantizar estabilidad en forma y nivel físico-químico, generación de pilotos, estudios de estabilidad acelerada y largo plazo, tras validación, entrada a fabricación comercial. Diseñado para garantizar que solo productos con estabilidad y viabilidad demostradas lleguen a producción. Todo es respaldado en Buenas Prácticas de Manufactura.
-                Materias primas se identifican por codificación interna (know-how confidencial). Unidades de medida varían: kilogramos, gramos, litros, onzas, unidades, frascos según empresa y producto. Antes de usar materia prima: requisito mínimo es certificado de análisis. Dependiendo empresa/insumo, también solicitan: ficha técnica, ficha de seguridad, certificado de metales pesados, ruta de síntesis, MOA, ROT, ruta de análisis. Algunas empresas solo necesitan COA para iniciar desarrollo. Materias primas con problemas entran a "desmedro".
-                Todo equipo debe cumplir calificación: instalación, operación y desempeño. Nomenclatura de equipos es propia de cada empresa. Área de mantenimiento garantiza condiciones óptimas durante tiempo. Información de equipos permite trazabilidad: software logueado en tiempo real, voucher de registro temporal, huella digital. Si equipo falla durante fabricación, proceso se detiene por completo; no puede continuarse sin garantizar 100% óptimo. Falla detectada después de fabricación: no hay remedio posible.
-                Toda etapa de manufactura es documentada: desde dispensación hasta producto final. Se mantiene registro de todo personal participante, obligatorio GMP. Estados de productos varían según empresa. Flujo es secuencial pero simultáneo entre áreas: dispensación, fabricación, control de calidad interactúan en orden lógico sin predominio. Para personal nuevo: GMP es requisito fundamental. Industria es altamente especializada con múltiples subáreas. Químicos farmacéuticos requieren expertise específica en su subárea especializada.
-                Características adicionales:
-                - Utiliza computadora con windows 10, celular y tablet
-                - Navegador preferido: Google Chrome
-                - Canales de comunicación: microsoft teams, email, whatsapp y RPC
+                <ul>
+                    <li>Utiliza computadora con Windows 10, celular y tablet.</li>
+                    <li>Navegador preferido: Google Chrome.</li>
+                    <li>Canales de comunicación: Microsoft Teams, email, WhatsApp y RPC.</li>
+                </ul>
             </td>
         </tr>
     </tbody>
@@ -553,9 +701,9 @@ En conjunto, se observa que el responsable de calidad busca mantener las condici
 parámetros establecidos, detectar oportunamente las desviaciones y disponer de información confiable para la supervisión
 y toma de decisiones.
 
-<br>
+<p class="apa-label">Figura 3</p>
+<p class="apa-title">Resultados de las entrevistas al segmento de responsables de calidad y supervisión</p>
 <div align="center"><img src="../../assets/img/main-content/chapter-ii/interview-analysis/quality-managers-charts-image.png" width="100%"></div>
-<br>
 
 <div style="page-break-after: always;"></div>
 
@@ -581,9 +729,10 @@ En conjunto, se observa que el segmento busca mantener la identificación, contr
 materiales durante sus procesos, aunque las necesidades y dificultades varían de acuerdo con el entorno específico en el
 que se desempeña cada entrevistado.
 
-<br>
+<p class="apa-label">Figura 4</p>
+<p class="apa-title">Resultados de las entrevistas al segmento de personal operativo</p>
+
 <div align="center"><img src="../../assets/img/main-content/chapter-ii/interview-analysis/operational-staff-charts-image.png" width="100%"></div>
-<br>
 
 <div style="page-break-after: always;"></div>
 
@@ -593,6 +742,9 @@ Para complementar el análisis de los segmentos, se revisaron específicamente l
 dispositivos, sistemas operativos y navegadores utilizados durante las actividades laborales.
 
 ##### **Uso de dispositivos**
+
+<p class="apa-label">Figura 5</p>
+<p class="apa-title">Uso de dispositivos de los entrevistados</p>
 
 <div align="center">
     <img src="../../assets/img/main-content/chapter-ii/interview-analysis/analis-de-dispositivos.png" width="100%">
@@ -611,51 +763,48 @@ Los dispositivos tienen diferentes funciones según el entrevistado. Las computa
 revisar información, trabajar con Excel, SAP y otros sistemas; los celulares se emplean principalmente para comunicación
 y coordinación; mientras que tablets o PDA se utilizan para actividades de control y consulta en los laboratorios.
 
+<div style="page-break-after: always;"></div>
+
 ##### **Sistemas operativos utilizados**
 
 Para evitar asumir información que no fue proporcionada, los porcentajes se calculan únicamente sobre los entrevistados
 que especificaron el sistema operativo.
 
-<div align="center">
-
 **Computadoras**
+
+<p class="apa-label">Tabla 10</p>
+<p class="apa-title">Computadoras</p>
 
 | Sistema operativo | Entrevistados que lo especificaron | Porcentaje |
 |-------------------|-----------------------------------:|-----------:|
 | Windows           |                             5 de 5 |   **100%** |
 | Apple/macOS       |                             0 de 5 |     **0%** |
 
-</div>
-
 Los entrevistados que especificaron el sistema operativo de su computadora utilizan Windows. En el caso de César se
 especificó Windows 11, mientras que Liz y Omar utilizan Windows 10.
 
-
-<div align="center">
-
 **Celulares / tablets**
+
+<p class="apa-label">Tabla 11</p>
+<p class="apa-title">Celulares / tablets</p>
 
 | Sistema operativo | Entrevistados que lo especificaron | Porcentaje |
 |-------------------|-----------------------------------:|-----------:|
 | Android           |                             2 de 3 |  **66.7%** |
 | Apple/iOS         |                             1 de 3 |  **33.3%** |
 
-</div>
-
-
 En los dispositivos móviles donde se especificó el sistema operativo, se identificaron Android y Apple. Mario y Omar
 utilizan dispositivos Android, mientras que César utiliza dispositivos Apple.
 
 ##### Navegadores utilizados
 
-<div align="center">
+<p class="apa-label">Tabla 12</p>
+<p class="apa-title">Navegadores utilizados</p>
 
 | Navegador      | Entrevistados | Porcentaje |
 |----------------|--------------:|-----------:|
 | Google Chrome  |        3 de 4 |    **75%** |
 | Microsoft Edge |        1 de 4 |    **25%** |
-
-</div>
 
 Entre quienes indicaron explícitamente el navegador utilizado, Google Chrome es el más mencionado, con 75%, mientras que
 Microsoft Edge representa el 25%. Mario, Liz y Omar utilizan Google Chrome, mientras que César utiliza Microsoft Edge.
@@ -664,6 +813,9 @@ Microsoft Edge representa el 25%. Mario, Liz y Omar utilizan Google Chrome, mien
 
 El análisis de las entrevistas muestra que los participantes utilizan principalmente canales de comunicación directos y
 digitales para coordinar actividades dentro de sus organizaciones. Los canales identificados fueron.
+
+<p class="apa-label">Figura 6</p>
+<p class="apa-title">Canales de comunicación de los entrevistados</p>
 
 <div align="center">
     <img src="../../assets/img/main-content/chapter-ii/interview-analysis/analisis-de-canales-de-comunicacion.png" width="100%">
@@ -674,6 +826,8 @@ para coordinar con producción, mantenimiento y calidad. Liz utiliza principalme
 señalando que WhatsApp está disponible pero no constituye un canal oficial. Omar utiliza RPC y Microsoft Teams para las
 comunicaciones internas. César emplea Microsoft Teams como canal oficial y también utiliza WhatsApp y correo
 corporativo.
+
+<div style="page-break-after: always;"></div>
 
 #### Conclusiones y Definición de Arquetipos
 
