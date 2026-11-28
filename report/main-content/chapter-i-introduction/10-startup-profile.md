@@ -39,6 +39,11 @@ donde resulta importante mantener condiciones adecuadas para el desarrollo de la
 productos. A partir de este sector, la startup busca desarrollar experiencia y generar soluciones que puedan adaptarse
 posteriormente a organizaciones de otros sectores con necesidades similares.
 
+<div style="page-break-after: always;"></div>
+
+<p class="apa-label">Figura 1</p>
+<p class="apa-title">IoTech Logo</p>
+
 <p align="center">
   <img src="../../assets/img/main-content/chapter-i/startup-profile/IoTech.jpg" alt="IoTech Logo" width="200">
 </p>
@@ -78,8 +83,6 @@ valor y contribuyan a la mejora de sus operaciones en diferentes sectores.
   </tr>
 
 </table>
-
-<div style="page-break-after: always;"></div>
 
 <table border="1" width="100%">
 

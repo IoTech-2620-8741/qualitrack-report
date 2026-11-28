@@ -6,4 +6,7 @@ resultados que se esperan alcanzar con los cambios de comportamiento de los usua
 contribuyen directamente a dichos objetivos, facilitando la priorización de las capacidades de mayor valor para la
 solución.
 
+<p class="apa-label">Figura 26</p>
+<p class="apa-title">Impact Map de QualiTrack</p>
+
 <img src="../../assets/img/main-content/chapter-iii/impact-mapping-part-1.png" alt="Impact Mapping" width="100%"><img src="../../assets/img/main-content/chapter-iii/impact-mapping-part-2.png" alt="Impact Mapping" width="100%">

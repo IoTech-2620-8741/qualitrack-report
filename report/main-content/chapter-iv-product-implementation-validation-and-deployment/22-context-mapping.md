@@ -50,6 +50,9 @@ Alerting utiliza esta información para iniciar y administrar el ciclo de vida d
 
 La alternativa plantea integrar ambas responsabilidades dentro de un único Bounded Context.
 
+<p class="apa-label">Figura 123</p>
+<p class="apa-title">Candidate Context Map 1 - Tracking & Telemetry and Compliance & Alerting</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/context-mapping/candidate-context-map-1.png" alt="Candidate Context Map 1 - Tracking & Telemetry and Compliance & Alerting" width="100%"></p>
 
 La principal ventaja de esta alternativa sería reducir las comunicaciones necesarias entre ambos contextos, debido a que
@@ -74,6 +77,9 @@ Context?
 
 Esta alternativa se consideró debido a que los procesos de fabricación necesitan conocer las materias primas y
 `RawMaterialBatch` disponibles, además de registrar las cantidades utilizadas durante la producción.
+
+<p class="apa-label">Figura 124</p>
+<p class="apa-title">Candidate Context Map 2 - Inventory Management and Product Batch Management</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/context-mapping/candidate-context-map-2.png" alt="Candidate Context Map 2 - Inventory Management and Product Batch Management" width="100%"></p>
 
@@ -102,6 +108,9 @@ mecanismos de reporting, indicadores, información histórica y auditoría.
 Por ejemplo, Inventory Management podría generar sus propios reportes de inventario, Tracking & Telemetry sus métricas
 históricas y Equipment Management sus propios reportes relacionados con los equipos.
 
+<p class="apa-label">Figura 125</p>
+<p class="apa-title">Candidate Context Map 3: distribución de las capacidades de Reporting & Audit</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/context-mapping/candidate-context-map-3-part-1.png" alt="Candidate Context Map 3 - Distributed Reporting and Audit" width="100%"><img src="../../assets/img/main-content/chapter-iv/context-mapping/candidate-context-map-3-part-2.png" alt="Candidate Context Map 3 - Distributed Reporting and Audit" width="100%"></p>
 
 La principal ventaja de esta alternativa sería reducir la dependencia hacia un Bounded Context especializado en
@@ -121,6 +130,9 @@ independiente.
 
 Las alternativas fueron comparadas considerando principalmente la cohesión interna de cada contexto, el nivel de
 acoplamiento entre los modelos, la autonomía de los dominios y la posible duplicación de responsabilidades.
+
+<p class="apa-label">Tabla 38</p>
+<p class="apa-title">Comparison of Context Mapping Alternatives</p>
 
 | Alternative                                              | Main Advantage                                                                                             | Main Disadvantage                                                                              | Decision     |
 |----------------------------------------------------------|------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|--------------|
@@ -147,6 +159,9 @@ para colaborar con los demás contextos.
 
 Las relaciones se representan mediante las direcciones **Upstream (U)** y **Downstream (D)**, junto con los patrones
 **Customer/Supplier** y **Anti-Corruption Layer (ACL)**.
+
+<p class="apa-label">Figura 126</p>
+<p class="apa-title">Selected Context Map - QualiTrack</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/context-mapping/selected-context-map.png" alt="Selected Context Map - QualiTrack" width="100%"></p>
 
@@ -378,6 +393,9 @@ otros dominios.
 
 A partir de las relaciones establecidas se identificaron dos patrones principales de Context Mapping dentro de
 QualiTrack.
+
+<p class="apa-label">Tabla 39</p>
+<p class="apa-title">Summary of Applied Context Mapping Patterns</p>
 
 | Pattern                         | Relationships                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 |---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

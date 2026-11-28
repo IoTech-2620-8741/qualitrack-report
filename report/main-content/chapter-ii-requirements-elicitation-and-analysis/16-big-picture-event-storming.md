@@ -8,6 +8,9 @@ de pantalla de cada paso realizado para diagramar el Big Picture Event Storming 
 
 **Step 1 - Free Exploracion**
 
+<p class="apa-label">Figura 17</p>
+<p class="apa-title">Exploración libre de eventos del Big Picture EventStorming</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/events-as-is.png" alt="Big Picture" width="100%">
 </div>
@@ -35,6 +38,9 @@ Como resultado de esta organización, se establecieron los siguientes ocho flujo
 
 a) **Environmental Monitoring and Control**
 
+<p class="apa-label">Figura 18</p>
+<p class="apa-title">Flujo de Environmental Monitoring and Control</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/enviromental-monitoring-control.png" alt="Flow 1" width="100%">
 </div>
@@ -61,6 +67,9 @@ menciona la necesidad de verificar la lectura y el instrumento antes de determin
 fuera de rango.
 
 b) **Environmental Deviation Management**
+
+<p class="apa-label">Figura 19</p>
+<p class="apa-title">Flujo de Environmental Deviation Management</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/enviromental-deviation-management.png" alt="Flow 2" width="100%">
@@ -93,6 +102,9 @@ vuelto a los parámetros establecidos.
 
 c) **Product Development and Production**
 
+<p class="apa-label">Figura 20</p>
+<p class="apa-title">Flujo de Product Development and Production</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/product-development-and-production.png" alt="Flow 2" width="100%">
 </div>
@@ -119,6 +131,9 @@ Este punto permite profundizar posteriormente en los criterios y condiciones que
 aceptación del lote, sin asumir todavía una solución tecnológica
 
 d) **Raw Material Management**
+
+<p class="apa-label">Figura 21</p>
+<p class="apa-title">Flujo de Raw Material Management</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/raw-material-management.png" alt="Flow 2" width="100%">
@@ -150,6 +165,9 @@ mientras que Ohmar menciona que el certificado de análisis es necesario para re
 e) **Quality Records and Audits**
 
 
+<p class="apa-label">Figura 22</p>
+<p class="apa-title">Flujo de Quality Records and Audits</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/quality-records-and-audits.png" alt="Flow 2" width="100%">
 </div>
@@ -166,6 +184,9 @@ Cuando se realiza una auditoría, el Auditor solicita la información necesaria 
 registros de calidad requeridos.
 
 f) **Incoming Inspection and Acceptance**
+
+<p class="apa-label">Figura 23</p>
+<p class="apa-title">Flujo de Incoming Inspection and Acceptance</p>
 
 <div align="center">
 <img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/incoming-inspection-and-acceptance.png" alt="Incoming Inspection and Acceptance" width="100%">
@@ -193,6 +214,9 @@ especificaciones asociadas a un producto puede tomar un tiempo considerable debi
 distribuida en distintos medios y formatos.
 
 g) **Product Development and Viability**
+
+<p class="apa-label">Figura 24</p>
+<p class="apa-title">Flujo de Product Development and Viability</p>
 
 <div align="center">
 <img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/product-development-and-viability.png" alt="Product Development and Viability" width="100%">
@@ -223,6 +247,9 @@ productos es que la formulación obtenida no resulte transferible a un lote come
 a los equipos y al costo se conocen en etapas avanzadas del desarrollo.
 
 h) **Distribution and Supply Monitoring**
+
+<p class="apa-label">Figura 25</p>
+<p class="apa-title">Flujo de Distribution and Supply Monitoring</p>
 
 <div align="center">
 <img src="../../assets/img/main-content/chapter-ii/big-picture-event-storming/distribution-and-supply-monitoring.png" alt="Product Development and Viability" width="100%">

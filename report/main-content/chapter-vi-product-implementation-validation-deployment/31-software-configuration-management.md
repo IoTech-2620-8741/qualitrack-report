@@ -318,6 +318,9 @@ https://github.com/IoTech-2620-8741
 </a>.
 </p>
 
+<p class="apa-label">Tabla 67</p>
+<p class="apa-title">Tipos de commit de Conventional Commits</p>
+
 <table>
   <thead>
     <tr>
@@ -428,6 +431,9 @@ El <code>type</code> identifica la naturaleza del cambio realizado, mientras que
 <code>scope</code> permite indicar opcionalmente el módulo, bounded context o componente afectado.
 </p>
 
+<p class="apa-label">Tabla 68</p>
+<p class="apa-title">Ejemplos de mensajes de commit</p>
+
 <table>
   <thead>
     <tr>
@@ -532,6 +538,9 @@ inglés. Asimismo, los términos asociados al dominio deben mantenerse alineados
 para QualiTrack.
 
 **Referencias de guías de estilo adoptadas**
+<p class="apa-label">Tabla 69</p>
+<p class="apa-title">Referencias de guías de estilo adoptadas</p>
+
 <table>
   <thead>
     <tr>
@@ -631,6 +640,9 @@ correspondiente a dicha tecnología.
 
 Aunque cada lenguaje posee convenciones propias, se establece como regla común que todos los nombres sean descriptivos,
 estén redactados en inglés y representen claramente la responsabilidad del elemento correspondiente.
+
+<p class="apa-label">Tabla 70</p>
+<p class="apa-title">Nomenclatura General</p>
 
 <table>
   <thead>
@@ -1008,6 +1020,9 @@ servicios y dispositivos donde serán ejecutados o distribuidos. Asimismo, muest
 comunicación entre la Landing Page, la Frontend Web Application, los servicios cloud, la Mobile Application y los
 componentes IoT de la solución. El diagrama permite visualizar de forma general la infraestructura definida para el
 despliegue actual y previsto de QualiTrack.
+
+<p class="apa-label">Figura 320</p>
+<p class="apa-title">Deployment Diagram</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-diagram.png" width="100%">

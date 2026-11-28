@@ -5,6 +5,9 @@
   Registro de las exposiciones realizadas hasta el hito AV1.
 </p>
 
+<p class="apa-label">Tabla 133</p>
+<p class="apa-title">Registro de exposiciones</p>
+
 <table border="1" cellpadding="4" cellspacing="0">
   <thead>
     <tr>
@@ -77,6 +80,9 @@
 <p>
   A continuación se listan los enlaces correspondientes a los recursos disponibles del proyecto QualiTrack, incluyendo los despliegues de la Landing Page, la aplicación frontend, la API backend y los repositorios del proyecto.
 </p>
+
+<p class="apa-label">Tabla 134</p>
+<p class="apa-title">Enlaces a los recursos del proyecto</p>
 
 <table border="1" cellpadding="4" cellspacing="0">
   <thead>
@@ -182,6 +188,9 @@
 <p>
   Videos de presentación del equipo IoTech y del producto QualiTrack.
 </p>
+
+<p class="apa-label">Tabla 135</p>
+<p class="apa-title">Videos del equipo y del producto</p>
 
 <table border="1" cellpadding="4" cellspacing="0">
   <thead>

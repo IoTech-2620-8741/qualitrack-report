@@ -27,6 +27,9 @@ de lotes de producción. Los Nodos de Circuitos evocan la automatización indust
 mediante telemetría IoT. Y finalmente la tipografía del logo el nombre divide sus conceptos utilizando el azul
 tecnológico para la calidad y el verde de cumplimiento para la trazabilidad.
 
+<p class="apa-label">Figura 167</p>
+<p class="apa-title">QualiTrack Logo</p>
+
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/style-guidelines/qualitrack.png" alt="QualiTrack Logo" width="100%">
 </p>
@@ -45,6 +48,9 @@ La jerarquía tipográfica se establece de la siguiente manera para garantizar c
 * **Títulos de componentes (H3/H4):** 2rem (aprox. 20px) a 2.5rem (aprox. 25px).
 * **Cuerpo del texto (p):** 1.6rem (aprox. 16px) con un interlineado de 1.6.
 * **Botones y etiquetas (span):** 1.4rem (aprox. 14px) a 1.8rem (aprox. 18px).
+
+<p class="apa-label">Figura 168</p>
+<p class="apa-title">Rubik Typography Guide</p>
 
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/style-guidelines/stylefont.png" alt="Rubik Typography Guide" width="100%">
@@ -76,6 +82,9 @@ tecnológico y control. Se ha distribuido en tres categorías principales:
 * **Éxito:** Verde (#4CAF50) para confirmaciones y acciones exitosas.
 * **Error:** Rojo (#F44336) para alertas y mensajes de error.
 * **Advertencia:** Amarillo (#FFC107) para notificaciones y avisos importantes.
+
+<p class="apa-label">Figura 169</p>
+<p class="apa-title">QualiTrack Color Palette</p>
 
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/style-guidelines/color-pallete.png" alt="QualiTrack Color Palette" width="100%">
@@ -194,6 +203,9 @@ digitalizar y automatizar el control de calidad farmacéutico con un diseño lim
 
 **2) Navegación — Bottom Navigation Bar**
 
+<p class="apa-label">Tabla 40</p>
+<p class="apa-title">2) Navegación — Bottom Navigation Bar</p>
+
 | Destino       | Ícono Material    | Descripción de uso por rol                                                                                             |
 |---------------|-------------------|------------------------------------------------------------------------------------------------------------------------|
 | **Home**      | `space_dashboard` | Panel del laboratorio: alertas abiertas, lotes en proceso, materiales con stock bajo y últimas alertas.                |
@@ -206,6 +218,9 @@ digitalizar y automatizar el control de calidad farmacéutico con un diseño lim
   están visibles.
 
 **3) Tipografía Mobile**
+
+<p class="apa-label">Tabla 41</p>
+<p class="apa-title">3) Tipografía Mobile</p>
 
 | Elemento                  | Tamaño | Peso     | Uso                                              |
 |---------------------------|--------|----------|--------------------------------------------------|
@@ -261,6 +276,9 @@ digitalizar y automatizar el control de calidad farmacéutico con un diseño lim
 
 **7) Variaciones por rol**
 
+<p class="apa-label">Tabla 42</p>
+<p class="apa-title">7) Variaciones por rol</p>
+
 | Elemento             | QA Manager                                      | Operario                                                       | Auditor                                |
 |----------------------|-------------------------------------------------|----------------------------------------------------------------|----------------------------------------|
 | Home                 | Panel completo del laboratorio                  | Alertas abiertas y lotes en proceso                            | Panel en solo lectura                  |
@@ -278,6 +296,9 @@ digitalizar y automatizar el control de calidad farmacéutico con un diseño lim
 * **Tamaño de fuente dinámico:** Respeta la configuración del sistema hasta `sp × 1.3`.
 * **Color nunca como único indicador:** Todo estado se acompaña de ícono y texto, igual que en el LED de los
   dispositivos. **9) Consistencia cross-platform con los dispositivos IoT**
+
+<p class="apa-label">Tabla 43</p>
+<p class="apa-title">8) Accesibilidad</p>
 
 | Estado del sistema              | LED del dispositivo       | Interfaz Móvil                                                |
 |---------------------------------|---------------------------|---------------------------------------------------------------|
@@ -328,6 +349,9 @@ Estos lineamientos aplican a los componentes de la capa Embedded:
 
 **Descripción General**
 
+<p class="apa-label">Tabla 44</p>
+<p class="apa-title">Descripción general del Monitor de Ambiente</p>
+
 | Atributo          | Detalle                                                                                        |
 |-------------------|------------------------------------------------------------------------------------------------|
 | Tipo              | Dispositivo ESP32 de montaje en pared o techo                                                  |
@@ -352,6 +376,9 @@ Estos lineamientos aplican a los componentes de la capa Embedded:
 
 **Indicador LED de Estado**
 
+<p class="apa-label">Tabla 45</p>
+<p class="apa-title">Indicador LED de estado del Monitor de Ambiente</p>
+
 | Estado del Sistema   | Color LED | Patrón | Descripción                                                                                      |
 |----------------------|-----------|--------|--------------------------------------------------------------------------------------------------|
 | **Calibración**      | Azul      | Fijo   | Primeros 30 s tras el encendido: el sensor de calidad de aire mide su referencia en aire limpio. |
@@ -365,6 +392,9 @@ Estos lineamientos aplican a los componentes de la capa Embedded:
 > calcula la nube cuando no llegan lecturas en 5 minutos y se muestra en las aplicaciones web y móvil.
 
 **Buzzer**
+
+<p class="apa-label">Tabla 46</p>
+<p class="apa-title">Patrones del buzzer del Monitor de Ambiente</p>
 
 | Evento                         | Patrón de sonido                                   |
 |--------------------------------|----------------------------------------------------|
@@ -388,11 +418,17 @@ el sensor de movimiento, el sensor de aire y el buzzer, junto con los estados de
 especificaciones y el recorrido de una lectura hasta convertirse en alerta. Su diseño físico detallado se presenta en la
 sección 5.6.
 
+<p class="apa-label">Figura 170</p>
+<p class="apa-title">Monitor de Ambiente</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-v/style-guidelines/environment-monitor.png" alt="Monitor de Ambiente" width="100%"></p>
 
 **Dispositivo 2 — Monitor de Contenedor**
 
 **Descripción General**
+
+<p class="apa-label">Tabla 47</p>
+<p class="apa-title">Descripción general del Monitor de Contenedor</p>
 
 | Atributo          | Detalle                                                                                                              |
 |-------------------|----------------------------------------------------------------------------------------------------------------------|
@@ -418,6 +454,9 @@ sección 5.6.
 
 **Indicador LED de Estado**
 
+<p class="apa-label">Tabla 48</p>
+<p class="apa-title">Indicador LED de estado del Monitor de Contenedor</p>
+
 | Estado del Sistema      | Color LED | Patrón                 | Descripción                                                                              |
 |-------------------------|-----------|------------------------|------------------------------------------------------------------------------------------|
 | **Operación normal**    | Verde     | Pulso lento            | Temperatura, humedad y luz dentro del rango normal.                                      |
@@ -433,6 +472,9 @@ sección 5.6.
 > evaluando sus lecturas con el último perfil recibido o con su perfil por defecto.
 
 **Acciones Automáticas**
+
+<p class="apa-label">Tabla 49</p>
+<p class="apa-title">Acciones automáticas del Monitor de Contenedor</p>
 
 | Evento                            | Acción                                 |
 |-----------------------------------|----------------------------------------|
@@ -450,6 +492,9 @@ sección 5.6.
 > perfil, el nodo usa uno por defecto (`NORMAL` de 15 a 25 °C, de 30 a 60 % HR y hasta 200 lux).
 
 **Buzzer**
+
+<p class="apa-label">Tabla 50</p>
+<p class="apa-title">Patrones del buzzer del Monitor de Contenedor</p>
 
 | Evento                      | Patrón de sonido                                                                 |
 |-----------------------------|----------------------------------------------------------------------------------|
@@ -482,9 +527,15 @@ ubicación de cada elemento de interfaz (LED, pantalla OLED, lector RFID, buzzer
 tabla de estados del LED con su color y patrón. Incluye además las especificaciones, las acciones automáticas y la
 jerarquía de la pantalla OLED. Su diseño físico detallado se presenta en la sección 5.6.
 
+<p class="apa-label">Figura 171</p>
+<p class="apa-title">Monitor de Contenedor</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-v/style-guidelines/container-monitor.png" alt="Monitor de Contenedor" width="100%"></p>
 
 **Edge Device**
+
+<p class="apa-label">Tabla 51</p>
+<p class="apa-title">Descripción general del Edge Device</p>
 
 | Atributo          | Detalle                                                                                             |
 |-------------------|-----------------------------------------------------------------------------------------------------|
@@ -495,6 +546,9 @@ jerarquía de la pantalla OLED. Su diseño físico detallado se presenta en la s
 
 Al no tener indicadores propios, el estado del Edge se comunica desde el registro (log) del servicio y desde la
 aplicación:
+
+<p class="apa-label">Tabla 52</p>
+<p class="apa-title">Indicación de estados del Edge Device</p>
 
 | Estado del Sistema                    | Indicación en el registro del Edge        | Indicación en la aplicación                    |
 |---------------------------------------|-------------------------------------------|------------------------------------------------|

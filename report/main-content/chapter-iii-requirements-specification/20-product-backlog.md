@@ -9,6 +9,9 @@ desviaciones y la gestión de alertas. Las funcionalidades complementarias, como
 identidad y acceso, se incorporan posteriormente según su relevancia para el proyecto. Para estimar el esfuerzo de cada
 historia se utilizan Story Points de 1, 2 y 3.
 
+<p class="apa-label">Tabla 17</p>
+<p class="apa-title">Product Backlog</p>
+
 | # Orden | User Story ID | Título                                                                    | Descripción                                                                                                                                                                                                                               | Story Points |
 |:--------|:--------------|:--------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|
 | 1       | US01          | Conocer la propuesta de valor                                             | Como visitante, quiero conocer qué problema resuelve QualiTrack, para decidir si deseo seguir evaluando la solución.                                                                                                                      | 2            |
@@ -251,6 +254,9 @@ historia se utilizan Story Points de 1, 2 y 3.
 <div style="page-break-after: always;"></div>
 
 **Evidencia del Product Backlog:**
+
+<p class="apa-label">Figura 27</p>
+<p class="apa-title">Product Backlog: Evidencia del Product Backlog</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-iii/jira-product-backlog.jpg" alt="Product Backlog QualiTrack" width="100%"></p>
 

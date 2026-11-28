@@ -48,6 +48,9 @@ La solución también se contrastó con usuarios. La entrevista de validación c
 
 <div align="center">
   <a href="https://shorturl.at/vze0n">
+    <p class="apa-label">Figura 553</p>
+    <p class="apa-title">Video About-the-Team de IoTech</p>
+
     <img src="../assets/img/end-of-report/video-about-the-team.jpg" alt="Video About-the-Team de IoTech" width="100%">
   </a>
 </div>

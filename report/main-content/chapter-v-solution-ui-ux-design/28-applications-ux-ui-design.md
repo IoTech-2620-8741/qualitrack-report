@@ -27,6 +27,9 @@ general del estado operativo del laboratorio. La interfaz organiza indicadores, 
 relacionados con el seguimiento de las operaciones, permitiendo consultar rápidamente información relevante sobre
 equipos, alertas, trazabilidad y procesos de calidad.
 
+<p class="apa-label">Figura 186</p>
+<p class="apa-title">Wireframe de la aplicación web: Dashboard</p>
+
 <div align="center">
 
   <img src="../../assets/img/main-content/chapter-v/web-application-wireframes/dashboard.png" width="100%">
@@ -39,6 +42,9 @@ equipos, alertas, trazabilidad y procesos de calidad.
 diseñada para consultar y analizar los registros de parámetros ambientales del laboratorio. La interfaz organiza los
 registros en una tabla y presenta su comportamiento mediante una gráfica temporal, facilitando la identificación de
 variaciones y posibles desviaciones respecto a los parámetros establecidos.
+
+<p class="apa-label">Figura 187</p>
+<p class="apa-title">Wireframe de la aplicación web: Desviaciones Ambientales</p>
 
 <div align="center">
 
@@ -53,6 +59,9 @@ y organizar los equipos registrados en el laboratorio. La interfaz incorpora ind
 además de una tabla con la información principal de cada equipo, facilitando su seguimiento y gestión dentro de los
 procesos de calidad y trazabilidad.
 
+<p class="apa-label">Figura 188</p>
+<p class="apa-title">Wireframe de la aplicación web: Lista de equipos</p>
+
 <div align="center">
 
   <img src="../../assets/img/main-content/chapter-v/web-application-wireframes/equipment-list.png" width="100%">
@@ -66,6 +75,9 @@ consultar y administrar los insumos registrados para los procesos de fabricació
 organizado de las materias primas y sus principales datos, facilitando su identificación, seguimiento y trazabilidad
 dentro de las operaciones del laboratorio.
 
+<p class="apa-label">Figura 189</p>
+<p class="apa-title">Wireframe de la aplicación web: Catálogo de Materias Primas</p>
+
 <div align="center">
 
   <img src="../../assets/img/main-content/chapter-v/web-application-wireframes/raw-material-catalog.png" width="100%">
@@ -78,6 +90,9 @@ dentro de las operaciones del laboratorio.
 fabricación de QualiTrack, diseñada para consultar los lotes de producción y la información asociada a las materias
 primas utilizadas. La interfaz permite visualizar y gestionar los registros relacionados con cada lote, facilitando el
 seguimiento del proceso productivo y manteniendo la trazabilidad de los insumos empleados.
+
+<p class="apa-label">Figura 190</p>
+<p class="apa-title">Wireframe de la aplicación web: Productos Farmacéuticos</p>
 
 <div align="center">
 
@@ -94,6 +109,9 @@ gestionar la información asociada a la cuenta. La interfaz organiza los datos p
 opciones de configuración y preferencias del usuario, permitiendo mantener actualizada su información y controlar
 determinados aspectos de su cuenta.
 
+<p class="apa-label">Figura 191</p>
+<p class="apa-title">Wireframe de la aplicación web: Perfil de Usuario</p>
+
 <div align="center">
 
   <img src="../../assets/img/main-content/chapter-v/web-application-wireframes/profile.png" width="100%">
@@ -106,6 +124,9 @@ determinados aspectos de su cuenta.
 consultar la información general asociada a la organización. La interfaz presenta los principales datos identificativos
 y de configuración del laboratorio, organizados en una sección central, junto con una opción para modificar la
 información registrada.
+
+<p class="apa-label">Figura 192</p>
+<p class="apa-title">Wireframe de la aplicación web: Perfil del Laboratorio</p>
 
 <div align="center">
 
@@ -120,6 +141,9 @@ incorporar y configurar dispositivos destinados al monitoreo de las condiciones 
 farmacéuticos. La interfaz permite registrar la información de los dispositivos, incluyendo aquellos utilizados para el
 monitoreo ambiental y los contenedores inteligentes, que permiten controlar parámetros como temperatura y luminosidad.
 
+<p class="apa-label">Figura 193</p>
+<p class="apa-title">Wireframe de la aplicación web: Registro de Dispositivos IoT</p>
+
 <div align="center">
 
   <img src="../../assets/img/main-content/chapter-v/web-application-wireframes/register-iot-equipment-environmental-devices-or-containers.png" width="100%">
@@ -133,6 +157,9 @@ diseñada para consultar y administrar los espacios registrados dentro de la org
 listado estructurado de los ambientes y sus principales datos, incorporando acciones para editar o gestionar cada
 registro, facilitando su organización y asociación con los procesos de monitoreo y control del laboratorio.
 
+<p class="apa-label">Figura 194</p>
+<p class="apa-title">Wireframe de la aplicación web: Lista de Ambientes del Laboratorio</p>
+
 <div align="center">
 
   <img src="../../assets/img/main-content/chapter-v/web-application-wireframes/laboratory-environment-list.png" width="100%">
@@ -145,6 +172,9 @@ registro, facilitando su organización y asociación con los procesos de monitor
 presentar las diferentes alternativas disponibles para los laboratorios. La interfaz organiza cada plan en tarjetas
 independientes, mostrando sus principales características y condiciones, junto con una acción para seleccionar la
 alternativa que mejor se adapte a las necesidades de la organización.
+
+<p class="apa-label">Figura 195</p>
+<p class="apa-title">Wireframe de la aplicación web: Planes de Suscripción</p>
 
 <div align="center">
 
@@ -165,6 +195,9 @@ inventario eficiente y ágil mediante una navegación simplificada.
 **Descripción:** Esquema estructural de la pantalla principal de inicio de sesión que define la disposición de campos
 para acceso estándar mediante credenciales o inicio de sesión único (SSO) corporativo.
 
+<p class="apa-label">Figura 196</p>
+<p class="apa-title">Wireframe de la aplicación móvil: Inicio de Sesión</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-sign-in.png" width="68%">
 </div>
@@ -173,6 +206,9 @@ para acceso estándar mediante credenciales o inicio de sesión único (SSO) cor
 
 **Descripción:** Esquema estructural de la pantalla de registro de nuevos usuarios, definiendo la disposición de campos
 para la creación de credenciales mediante correo.
+
+<p class="apa-label">Figura 197</p>
+<p class="apa-title">Wireframe de la aplicación móvil: Registro de Usuario</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-sign-up.png" width="68%">
@@ -183,6 +219,9 @@ para la creación de credenciales mediante correo.
 **Descripción:** Esquema de la pantalla principal que define la disposición estructural de indicadores de estado de los
 contenedores, ambientes, alertas y metricas.
 
+<p class="apa-label">Figura 198</p>
+<p class="apa-title">Wireframe de la aplicación móvil: Dashboard de Monitoreo General</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-dashboard-part-1.png" width="48%" align="top"><img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-dashboard-part-2.png" width="48%" align="top">
 </div>
@@ -191,6 +230,9 @@ contenedores, ambientes, alertas y metricas.
 
 **Descripción:** Esquema de la pantalla extendida de la sección Risk Overview, define la disposición de las alertas
 registradas por los equipos.
+
+<p class="apa-label">Figura 199</p>
+<p class="apa-title">Wireframe de la aplicación móvil: Dashboard Risk Overview</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-dashboard-view-all.png" width="65%">
@@ -201,6 +243,9 @@ registradas por los equipos.
 **Descripción:** Esquema de estructural que define la disposición de las métricas registradas por el equipo
 seleccionado: estado de conexión con su latencia, las anomalías detectadas y la gráfica del perfil de temperatura.
 
+<p class="apa-label">Figura 200</p>
+<p class="apa-title">Wireframe de la aplicación móvil: Dashboard de telemetría</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-telemetry-part-1.png" width="48%" align="top"><img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-telemetry-part-2.png" width="48%" align="top">
 </div>
@@ -209,6 +254,9 @@ seleccionado: estado de conexión con su latencia, las anomalías detectadas y l
 
 **Descripción:** Esquema de estructural del registro detallado de lecturas de los sensores, filtrable por equipo y rango
 de fechas, que identifica en cada entrada el parámetro, la fecha y hora.
+
+<p class="apa-label">Figura 201</p>
+<p class="apa-title">Wireframe de la aplicación móvil: Data Log de telemetria</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-telemetry-datalog.png" width="57%">
@@ -219,6 +267,9 @@ de fechas, que identifica en cada entrada el parámetro, la fecha y hora.
 **Descripción:** Esquema de estructural del centro de alertas que presenta los indicadores de alertas sin resolver y
 desviaciones críticas, el filtrado de incidentes por estado.
 
+<p class="apa-label">Figura 202</p>
+<p class="apa-title">Wireframe de la aplicación móvil: Alertas de cumplimiento</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-compliance-alerts.png" width="59%">
 </div>
@@ -227,6 +278,9 @@ desviaciones críticas, el filtrado de incidentes por estado.
 
 **Descripción:** Esquema estructural de la ventana emergente de alertas críticas que detalla el sensor, la unidad de
 almacenamiento y el lote afectados.
+
+<p class="apa-label">Figura 203</p>
+<p class="apa-title">Wireframe de la aplicación móvil: Alertas críticas y desviaciones</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-compliance-alerts-details.png" width="68%">
@@ -237,6 +291,9 @@ almacenamiento y el lote afectados.
 **Descripción:** Esquema de estructural de la lista de lotes de producción que presenta los indicadores de lotes
 liberados, pendientes y rechazados.
 
+<p class="apa-label">Figura 204</p>
+<p class="apa-title">Wireframe de la aplicación móvil: Manejo de lotes</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-batch-management.png" width="56%">
 </div>
@@ -246,6 +303,9 @@ liberados, pendientes y rechazados.
 **Descripción:** Esquema de estructura de la información general de los lotes ya sean pendientes, aceptados o
 rechazados.
 
+<p class="apa-label">Figura 205</p>
+<p class="apa-title">Wireframe de la aplicación móvil: Información general de Lote</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-batch-general-info.png" width="59%">
 </div>
@@ -254,6 +314,9 @@ rechazados.
 
 **Descripción:** Esquema de estructura de los materiales usados para la creación de los lotes.
 
+<p class="apa-label">Figura 206</p>
+<p class="apa-title">Wireframe de la aplicación móvil: Materiales del Lote</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-batch-material-used.png" width="65%">
 </div>
@@ -261,6 +324,9 @@ rechazados.
 **Confirmación de Lote**
 
 **Descripción:** Esquema de estructura de la pantalla de confirmación o rechazo de los lotes.
+
+<p class="apa-label">Figura 207</p>
+<p class="apa-title">Wireframe de la aplicación móvil: Confirmación de Lote</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-batch-status.png" width="59%">
@@ -271,6 +337,9 @@ rechazados.
 **Descripción:** Esquema de estructura del catálogo de productos registrados que organiza en una tabla el código, el
 nombre, las especificaciones BPM.
 
+<p class="apa-label">Figura 208</p>
+<p class="apa-title">Wireframe de la aplicación móvil: Manejo de Productos</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-product-management.png" width="53%">
 </div>
@@ -278,6 +347,9 @@ nombre, las especificaciones BPM.
 **Registro de Productos**
 
 **Descripción:** Esquema de estructura del formulario de registro de productos farmacéuticos.
+
+<p class="apa-label">Figura 209</p>
+<p class="apa-title">Wireframe de la aplicación móvil: Registro de Productos</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-product-register.png" width="53%">
@@ -288,6 +360,9 @@ nombre, las especificaciones BPM.
 **Descripción:** Esquema de estructura del inventario de materias primas que advierte los materiales por debajo del
 umbral mínimo.
 
+<p class="apa-label">Figura 210</p>
+<p class="apa-title">Wireframe de la aplicación móvil: Inventario de Material Primas</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-inventory-management.png" width="61%">
 </div>
@@ -295,6 +370,9 @@ umbral mínimo.
 **Registro de Materia Prima**
 
 **Descripción:** Esquema de estructura del formulario de registro de materias primas.
+
+<p class="apa-label">Figura 211</p>
+<p class="apa-title">Wireframe de la aplicación móvil: Registro de Materia Prima</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-inventory-register.png" width="61%">
@@ -305,6 +383,9 @@ umbral mínimo.
 **Descripción:** Esquema de estructura de la pantalla de facturación que presenta la suscripción activa con su plan,
 estado y periodo, las opciones para cambiar de plan o cancelarla.
 
+<p class="apa-label">Figura 212</p>
+<p class="apa-title">Wireframe de la aplicación móvil: Facturación de suscripción</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-subscription-payment.png" width="59%">
 </div>
@@ -313,6 +394,9 @@ estado y periodo, las opciones para cambiar de plan o cancelarla.
 
 **Descripción:** Esquema de estructura de la pantalla de planes con facturación mensual que compara los planes
 Enterprise y Standard Lab según su precio.
+
+<p class="apa-label">Figura 213</p>
+<p class="apa-title">Wireframe de la aplicación móvil: Planes de suscripción</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-subscription-plans-part-1.png" width="48%" align="top"><img src="../../assets/img/main-content/chapter-v/mobile-application-wireframes/wireframe-subscription-plans-part-2.png" width="48%" align="top">
@@ -324,6 +408,9 @@ Un wireflow o flujo de pantalla es un diagrama donde se reúnen distintos wirefr
 las metas del usuario (User Goal) con la aplicación y cómo las consiguen.
 
 **- Task Flow 1:** Registro de un nuevo usuario y activación de su suscripción
+
+<p class="apa-label">Figura 214</p>
+<p class="apa-title">Task Flow 1: Registro de un nuevo usuario y activación de su suscripción</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/task-flow-diagrams/task-flow-1.png" alt="task flow 1" width="100%">
@@ -343,6 +430,9 @@ las metas del usuario (User Goal) con la aplicación y cómo las consiguen.
 **- User Goal 1:** Como visitante, quiero crear mi cuenta como QA Manager, activar una suscripción y registrar mi
 laboratorio, para comenzar a utilizar QualiTrack.
 
+<p class="apa-label">Figura 215</p>
+<p class="apa-title">Wireflow del Task Flow 1: Registro de un nuevo usuario y activación de su suscripción</p>
+
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/wireflow-diagrams/wireflow-1.png"
     alt="wire-flow-1"/>
@@ -354,6 +444,9 @@ registra el nombre, RUC, dirección, teléfono y normativas aplicables de su lab
 comenzar a configurar la plataforma.
 
 **- Task Flow 2:** Inicio de sesión y actualización del perfil del laboratorio
+
+<p class="apa-label">Figura 216</p>
+<p class="apa-title">Task Flow 2: Inicio de sesión y actualización del perfil del laboratorio</p>
 
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/task-flow-diagrams/task-flow-2.png"
@@ -374,6 +467,9 @@ comenzar a configurar la plataforma.
 **- User Goal 2:** Como responsable de calidad y supervisión, quiero iniciar sesión y mantener actualizados los datos de
 mi laboratorio, para que la información registrada en QualiTrack esté vigente.
 
+<p class="apa-label">Figura 217</p>
+<p class="apa-title">Wireflow del Task Flow 2: Inicio de sesión y actualización del perfil del laboratorio</p>
+
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/wireflow-diagrams/wireflow-2.png" width="100%">
 </p>
@@ -383,6 +479,9 @@ alertas, materias primas y telemetría. Desde el menú lateral accede al perfil 
 dirección, teléfono o normativas aplicables, y guarda los cambios para mantener la información vigente.
 
 **- Task Flow 3:** Registro de un ambiente
+
+<p class="apa-label">Figura 218</p>
+<p class="apa-title">Task Flow 3: Registro de un ambiente</p>
 
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/task-flow-diagrams/task-flow-3.png"
@@ -401,6 +500,9 @@ dirección, teléfono o normativas aplicables, y guarda los cambios para mantene
 **- User Goal 3:** Como responsable de calidad y supervisión, quiero registrar los ambientes de mi laboratorio o almacén
 e indicar su uso, para organizar las zonas que QualiTrack supervisará.
 
+<p class="apa-label">Figura 219</p>
+<p class="apa-title">Wireflow del Task Flow 3: Registro de un ambiente</p>
+
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/wireflow-diagrams/wireflow-3.png"
     alt="wire-flow-3"/>
@@ -412,6 +514,9 @@ principal: producción, laboratorio, almacenamiento de materias primas, almacena
 el nuevo ambiente aparece en la lista con su uso identificado.
 
 **- Task Flow 4:** Actualización de un ambiente y su uso
+
+<p class="apa-label">Figura 220</p>
+<p class="apa-title">Task Flow 4: Actualización de un ambiente y su uso</p>
 
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/task-flow-diagrams/task-flow-4.png"
@@ -431,6 +536,9 @@ el nuevo ambiente aparece en la lista con su uso identificado.
 **- User Goal 4:** Como responsable de calidad y supervisión, quiero actualizar la información y el uso de un ambiente,
 para mantener correctamente identificada cada zona.
 
+<p class="apa-label">Figura 221</p>
+<p class="apa-title">Wireflow del Task Flow 4: Actualización de un ambiente y su uso</p>
+
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/wireflow-diagrams/wireflow-4.png"
     alt="wire-flow-4"/>
@@ -441,6 +549,9 @@ como identificador. Después de guardar, cambia el uso del ambiente directamente
 uso, y el sistema refleja la actualización en la tabla.
 
 **- Task Flow 5:** Registro de personal del laboratorio
+
+<p class="apa-label">Figura 222</p>
+<p class="apa-title">Task Flow 5: Registro de personal del laboratorio</p>
 
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/task-flow-diagrams/task-flow-5.png"
@@ -459,6 +570,9 @@ uso, y el sistema refleja la actualización en la tabla.
 **- User Goal 5:** Como responsable de calidad y supervisión, quiero registrar al personal de mi laboratorio y asignarle
 un tipo de acceso, para que operadores y auditores puedan ingresar a QualiTrack.
 
+<p class="apa-label">Figura 223</p>
+<p class="apa-title">Wireflow del Task Flow 5: Registro de personal del laboratorio</p>
+
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/wireflow-diagrams/wireflow-5.png"
     alt="wire-flow-5"/>
@@ -470,6 +584,9 @@ credenciales por correo; si el envío falla, muestra una contraseña temporal pa
 deberá cambiar en su primer inicio de sesión.
 
 **- Task Flow 6:** Supervisión de la telemetría desde la aplicación móvil
+
+<p class="apa-label">Figura 224</p>
+<p class="apa-title">Task Flow 6: Supervisión de la telemetría desde la aplicación móvil</p>
 
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/task-flow-diagrams/task-flow-6.png"
@@ -489,6 +606,9 @@ deberá cambiar en su primer inicio de sesión.
 **- User Goal 6:** Como personal operativo, quiero revisar desde el móvil las lecturas actuales y el historial de
 mediciones de un área, para verificar si las condiciones son adecuadas.
 
+<p class="apa-label">Figura 225</p>
+<p class="apa-title">Wireflow del Task Flow 6: Supervisión de la telemetría desde la aplicación móvil</p>
+
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/wireflow-diagrams/wireflow-6.png"
     alt="wire-flow-6"/>
@@ -500,6 +620,9 @@ consulta el registro de lecturas, donde puede filtrar por equipo y rango de fech
 los parámetros BPM.
 
 **- Task Flow 7:** Revisión y resolución de una alerta de desviación
+
+<p class="apa-label">Figura 226</p>
+<p class="apa-title">Task Flow 7: Revisión y resolución de una alerta de desviación</p>
 
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/task-flow-diagrams/task-flow-7.png"
@@ -520,6 +643,9 @@ los parámetros BPM.
 **- User Goal 7:** Como responsable de calidad y supervisión, quiero revisar una alerta de desviación y registrar su
 resolución desde el móvil, para conservar evidencia de cómo fue atendida.
 
+<p class="apa-label">Figura 227</p>
+<p class="apa-title">Wireflow del Task Flow 7: Revisión y resolución de una alerta de desviación</p>
+
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/wireflow-diagrams/wireflow-7.png"
     alt="wire-flow-7"/>
@@ -531,6 +657,9 @@ severidad, el valor registrado y el umbral permitido, y registra las notas de re
 resuelta. La alerta pasa al estado resuelta y conserva la evidencia de su atención.
 
 **- Task Flow 8:** Revisión y liberación de un lote de producto
+
+<p class="apa-label">Figura 228</p>
+<p class="apa-title">Task Flow 8: Revisión y liberación de un lote de producto</p>
 
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/task-flow-diagrams/task-flow-8.png"
@@ -551,6 +680,9 @@ resuelta. La alerta pasa al estado resuelta y conserva la evidencia de su atenci
 **- User Goal 8:** Como responsable de calidad y supervisión, quiero revisar la información y las materias primas de un
 lote antes de liberarlo, para que la decisión quede sustentada y registrada.
 
+<p class="apa-label">Figura 229</p>
+<p class="apa-title">Wireflow del Task Flow 8: Revisión y liberación de un lote de producto</p>
+
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/wireflow-diagrams/wireflow-8.png"
     alt="wire-flow-8"/>
@@ -562,6 +694,9 @@ abre el proceso de liberación, registra la fecha y las notas de verificación d
 quede registrada en el lote.
 
 **- Task Flow 9:** Registro de una materia prima en el inventario
+
+<p class="apa-label">Figura 230</p>
+<p class="apa-title">Task Flow 9: Registro de una materia prima en el inventario</p>
 
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/task-flow-diagrams/task-flow-9.png"
@@ -582,6 +717,9 @@ quede registrada en el lote.
 **- User Goal 9:** Como responsable de calidad y supervisión, quiero registrar una materia prima con su lote y su stock
 mínimo, para controlar su disponibilidad y saber cuándo reponerla.
 
+<p class="apa-label">Figura 231</p>
+<p class="apa-title">Wireflow del Task Flow 9: Registro de una materia prima en el inventario</p>
+
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/wireflow-diagrams/wireflow-9.png"
     alt="wire-flow-9"/>
@@ -593,6 +731,9 @@ lote del proveedor, fecha de vencimiento, cantidad inicial, unidad de medida y s
 aparece en el inventario con su estado de stock.
 
 **- Task Flow 10:** Registro de cuenta e inicio de sesión desde la aplicación móvil
+
+<p class="apa-label">Figura 232</p>
+<p class="apa-title">Task Flow 10: Registro de cuenta e inicio de sesión desde la aplicación móvil</p>
 
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/task-flow-diagrams/task-flow-10.png"
@@ -613,6 +754,9 @@ aparece en el inventario con su estado de stock.
 **- User Goal 10:** Como visitante, quiero crear mi cuenta e iniciar sesión desde la aplicación móvil, para supervisar
 la operación del laboratorio desde cualquier lugar de la planta.
 
+<p class="apa-label">Figura 233</p>
+<p class="apa-title">Wireflow del Task Flow 10: Registro de cuenta e inicio de sesión desde la aplicación móvil</p>
+
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/wireflow-diagrams/wireflow-10.png"
     alt="wire-flow-10"/>
@@ -624,6 +768,9 @@ credenciales y accede al Dashboard, donde visualiza el estado operativo del labo
 registrado o las contraseñas no coinciden, el sistema impide crear la cuenta.
 
 **- Task Flow 11:** Reconocimiento de alertas críticas desde el Dashboard
+
+<p class="apa-label">Figura 234</p>
+<p class="apa-title">Task Flow 11: Reconocimiento de alertas críticas desde el Dashboard</p>
 
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/task-flow-diagrams/task-flow-11.png"
@@ -645,6 +792,9 @@ registrado o las contraseñas no coinciden, el sistema impide crear la cuenta.
 **- User Goal 11:** Como personal operativo, quiero revisar y reconocer las alertas críticas desde el Dashboard, para
 dejar constancia de que estoy atendiendo las desviaciones detectadas.
 
+<p class="apa-label">Figura 235</p>
+<p class="apa-title">Wireflow del Task Flow 11: Reconocimiento de alertas críticas desde el Dashboard</p>
+
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/wireflow-diagrams/wireflow-11.png"
     alt="wire-flow-11"/>
@@ -657,6 +807,9 @@ su atención e inspecciona las demás alertas críticas. Desde esta ventana tamb
 consultar el audit log.
 
 **- Task Flow 12:** Rechazo de un lote no conforme
+
+<p class="apa-label">Figura 236</p>
+<p class="apa-title">Task Flow 12: Rechazo de un lote no conforme</p>
 
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/task-flow-diagrams/task-flow-12.png"
@@ -677,6 +830,9 @@ consultar el audit log.
 **- User Goal 12:** Como responsable de calidad y supervisión, quiero rechazar un lote no conforme registrando la fecha
 y el motivo, para que la decisión quede sustentada según las Buenas Prácticas de Manufactura.
 
+<p class="apa-label">Figura 237</p>
+<p class="apa-title">Wireflow del Task Flow 12: Rechazo de un lote no conforme</p>
+
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/wireflow-diagrams/wireflow-12.png"
     alt="wire-flow-12"/>
@@ -688,6 +844,9 @@ rechazo con la fecha y el motivo regulatorio, que es obligatorio según las BPM.
 rechazado y conserva las notas que sustentan la decisión.
 
 **- Task Flow 13:** Registro de un producto farmacéutico
+
+<p class="apa-label">Figura 238</p>
+<p class="apa-title">Task Flow 13: Registro de un producto farmacéutico</p>
 
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/task-flow-diagrams/task-flow-13.png"
@@ -709,6 +868,9 @@ rechazado y conserva las notas que sustentan la decisión.
 **- User Goal 13:** Como responsable de calidad y supervisión, quiero registrar los productos farmacéuticos con sus
 especificaciones BPM, para asociarlos a los lotes que se fabrican y evaluar su calidad.
 
+<p class="apa-label">Figura 239</p>
+<p class="apa-title">Wireflow del Task Flow 13: Registro de un producto farmacéutico</p>
+
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/wireflow-diagrams/wireflow-13.png"
     alt="wire-flow-13"/>
@@ -720,6 +882,9 @@ criterios de aceptación, los límites y los controles requeridos. Al confirmar,
 queda disponible para asociarlo a los lotes de producción.
 
 **- Task Flow 14:** Gestión de la suscripción y cambio de plan
+
+<p class="apa-label">Figura 240</p>
+<p class="apa-title">Task Flow 14: Gestión de la suscripción y cambio de plan</p>
 
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/task-flow-diagrams/task-flow-14.png"
@@ -739,6 +904,9 @@ queda disponible para asociarlo a los lotes de producción.
 
 **- User Goal 14:** Como responsable de calidad y supervisión, quiero revisar mi suscripción y su historial de pagos y
 cambiar de plan cuando lo necesite, para ajustar QualiTrack al tamaño de mi laboratorio.
+
+<p class="apa-label">Figura 241</p>
+<p class="apa-title">Wireflow del Task Flow 14: Gestión de la suscripción y cambio de plan</p>
 
 <p align="center">
   <img src="../../assets/img/main-content/chapter-v/wireflow-diagrams/wireflow-14.png"
@@ -766,6 +934,9 @@ abiertas y materiales con bajo stock. Asimismo, incorpora la visualización de t
 requieren atención, información de suscripción y facturación, y un resumen del estado de los lotes de producción,
 permitiendo al responsable de calidad consultar rápidamente los principales aspectos de la operación del laboratorio.
 
+<p class="apa-label">Figura 242</p>
+<p class="apa-title">Mock-up de la aplicación web: Dashboard</p>
+
 <div align="center">
 
   <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/dashboard.png" width="100%">
@@ -779,6 +950,9 @@ generadas en los ambientes y contenedores monitoreados, incluyendo aquellas que 
 filtrar los registros por estado y nivel de severidad, mostrando información sobre la fecha de detección, origen de la
 alerta, variable monitoreada, nivel de severidad y estado de atención. Además, incorpora el acceso al detalle de cada
 alerta para facilitar su seguimiento y revisión.
+
+<p class="apa-label">Figura 243</p>
+<p class="apa-title">Mock-up de la aplicación web: Historial de Alertas</p>
 
 <div align="center">
 
@@ -794,6 +968,9 @@ su estado, cantidad y fecha de inicio, y permite seleccionar el contenedor donde
 facilita el seguimiento de las condiciones de almacenamiento y la trazabilidad del lote durante su permanencia en el
 laboratorio.
 
+<p class="apa-label">Figura 244</p>
+<p class="apa-title">Mock-up de la aplicación web: Almacenamiento de Lote en Contenedor</p>
+
 <div align="center">
 
   <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/store-product-batch-in-container.png" width="100%">
@@ -806,6 +983,9 @@ laboratorio.
 tolerancia utilizados en el monitoreo de las condiciones de calidad. La pantalla permite registrar el nombre del
 parámetro, definir sus valores mínimo y máximo y especificar la unidad de medida correspondiente, permitiendo establecer
 los rangos de referencia para el control y seguimiento de las mediciones para los equipos de laboratorio.
+
+<p class="apa-label">Figura 245</p>
+<p class="apa-title">Mock-up de la aplicación web: Configuración de Parámetros BPM</p>
 
 <div align="center">
 
@@ -820,6 +1000,9 @@ organización y establecer la información necesaria para su incorporación a la
 datos como el nombre del laboratorio, RUC, dirección física y teléfono de contacto, además de seleccionar las
 regulaciones aplicables a la organización. Finalmente, incorpora la acción para completar el registro del laboratorio.
 
+<p class="apa-label">Figura 246</p>
+<p class="apa-title">Mock-up de la aplicación web: Registro de Laboratorio</p>
+
 <div align="center">
 
   <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/create-laboratory.png" width="100%">
@@ -833,6 +1016,9 @@ fabricación y dar inicio a su trazabilidad digital. La pantalla permite ingresa
 cantidad, unidad y notas relacionadas con las BPM. Al registrarse, el lote inicia con estado pendiente, permitiendo
 posteriormente continuar con su seguimiento y gestión dentro del proceso de fabricación.
 
+<p class="apa-label">Figura 247</p>
+<p class="apa-title">Mock-up de la aplicación web: Creación de Lote de Producción</p>
+
 <div align="center">
 
   <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/create-product-batch.png" width="100%">
@@ -845,6 +1031,9 @@ posteriormente continuar con su seguimiento y gestión dentro del proceso de fab
 documentación relacionada con los procesos de calidad y operación del laboratorio. La pantalla permite seleccionar
 diferentes tipos de reportes, como reportes de lotes, ambientales, inventario y registros de equipos, configurando los
 parámetros correspondientes antes de generar o exportar el documento en formato PDF.
+
+<p class="apa-label">Figura 248</p>
+<p class="apa-title">Mock-up de la aplicación web: Generador de Reportes y Documentos</p>
 
 <div align="center">
 
@@ -861,6 +1050,9 @@ permitido, las desviaciones detectadas, los eventos críticos y la tendencia de 
 representación gráfica de las mediciones para facilitar la identificación de variaciones y condiciones críticas durante
 el periodo seleccionado.
 
+<p class="apa-label">Figura 249</p>
+<p class="apa-title">Mock-up de la aplicación web: Indicadores de Desviación</p>
+
 <div align="center">
 
   <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/deviation-indicators.png" width="100%">
@@ -873,6 +1065,9 @@ el periodo seleccionado.
 organización registrada en la plataforma. La pantalla presenta el nombre e identificación del laboratorio, dirección
 física, teléfono de contacto y las regulaciones aplicables, además de incorporar la opción para editar los datos del
 perfil.
+
+<p class="apa-label">Figura 250</p>
+<p class="apa-title">Mock-up de la aplicación web: Perfil del Laboratorio</p>
 
 <div align="center">
 
@@ -889,6 +1084,9 @@ y registrar nuevos ambientes. Los ambientes pueden estar destinados a producció
 materias primas o almacenamiento de productos terminados, facilitando su organización y asociación con las operaciones
 del laboratorio.
 
+<p class="apa-label">Figura 251</p>
+<p class="apa-title">Mock-up de la aplicación web: Ambientes</p>
+
 <div align="center">
 
   <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/environment-list.png" width="100%">
@@ -903,6 +1101,9 @@ primas registradas, el stock utilizable, el balance físico y el stock mínimo e
 búsqueda, filtrado de materiales con stock bajo, consulta de próximos vencimientos y registro de nuevas materias primas,
 facilitando el control y seguimiento de los insumos utilizados en los procesos de fabricación.
 
+<p class="apa-label">Figura 252</p>
+<p class="apa-title">Mock-up de la aplicación web: Inventario de Materias Primas</p>
+
 <div align="center">
 
   <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/raw-material-list.png" width="100%">
@@ -915,6 +1116,9 @@ facilitando el control y seguimiento de los insumos utilizados en los procesos d
 sus datos principales, como nombre completo, cargo y correo corporativo, además de definir el nivel de acceso según sus
 funciones. Se contemplan los perfiles de operador, encargado de registrar operaciones asignadas, y auditor, con permisos
 de consulta de registros y reportes sin modificarlos.
+
+<p class="apa-label">Figura 253</p>
+<p class="apa-title">Mock-up de la aplicación web: Registro de Personal</p>
 
 <div align="center">
 
@@ -930,6 +1134,9 @@ registrados en el laboratorio. La pantalla presenta información como nombre com
 corporativo y estado laboral de cada persona, además de permitir consultar los registros asociados a un trabajador y
 agregar nuevos miembros del personal.
 
+<p class="apa-label">Figura 254</p>
+<p class="apa-title">Mock-up de la aplicación web: Gestión de Personal</p>
+
 <div align="center">
 
   <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/staff-list.png" width="100%">
@@ -942,6 +1149,9 @@ agregar nuevos miembros del personal.
 catálogo de productos asociados a un ambiente determinado. La pantalla presenta el nombre del producto, su código, las
 especificaciones relacionadas con las directrices BPM/GMP y su estado, además de facilitar la búsqueda de productos, el
 acceso a los lotes de producción y el registro de nuevos productos.
+
+<p class="apa-label">Figura 255</p>
+<p class="apa-title">Mock-up de la aplicación web: Productos Farmacéuticos</p>
 
 <div align="center">
 
@@ -957,6 +1167,9 @@ visualizar el stock utilizable, el saldo físico y el stock mínimo, así como c
 cantidades, fechas de vencimiento, proveedor, contenedor asignado y estado. También permite registrar nuevas
 recepciones, editar la materia prima y gestionar el almacenamiento de los lotes en contenedores monitoreados.
 
+<p class="apa-label">Figura 256</p>
+<p class="apa-title">Mock-up de la aplicación web: Recepciones de Materia Prima</p>
+
 <div align="center">
 
   <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/reception-list.png" width="100%">
@@ -969,6 +1182,9 @@ recepciones, editar la materia prima y gestionar el almacenamiento de los lotes 
 consultar los equipos de proceso y dispositivos IoT, identificando su tipo, ambiente asociado y estado operativo.
 Además, facilita la búsqueda y filtrado de registros, así como el acceso a las funciones para registrar nuevos equipos o
 dispositivos IoT y mantener actualizado su estado.
+
+<p class="apa-label">Figura 257</p>
+<p class="apa-title">Mock-up de la aplicación web: Catálogo de Equipos y Dispositivos IoT</p>
 
 <div align="center">
 
@@ -984,6 +1200,9 @@ movimiento, temperatura, humedad y luminosidad, además del estado de cada dispo
 aquellos ambientes o contenedores que requieren revisión y acceder al historial de lecturas para realizar un seguimiento
 de las condiciones monitoreadas.
 
+<p class="apa-label">Figura 258</p>
+<p class="apa-title">Mock-up de la aplicación web: Monitoreo Ambiental</p>
+
 <div align="center">
 
   <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/environmental-monitoring.png" width="100%">
@@ -996,6 +1215,9 @@ de las condiciones monitoreadas.
 recepciones realizadas, los lotes de proveedor asociados, los cambios en el saldo disponible y la información de
 trazabilidad de cada movimiento. De esta manera, se facilita el seguimiento de las entradas de materia prima y el
 control de las cantidades recibidas dentro del inventario.
+
+<p class="apa-label">Figura 259</p>
+<p class="apa-title">Mock-up de la aplicación web: Movimiento de Materia Prima</p>
 
 <div align="center">
 
@@ -1010,6 +1232,9 @@ el Monitor Space. Permite especificar la fecha, el tipo de intervención, el té
 detallada de la actividad realizada. Además, se considera el control de permisos para que los operadores solo puedan
 registrar los mantenimientos que ellos mismos realizaron, manteniendo la trazabilidad de las intervenciones técnicas.
 
+<p class="apa-label">Figura 260</p>
+<p class="apa-title">Mock-up de la aplicación web: Registro de Actividad Técnica</p>
+
 <div align="center">
 
   <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/register-technical-activity.png" width="100%">
@@ -1023,6 +1248,9 @@ nombre y una descripción del espacio, además de definir su uso principal. De e
 identificados y organizados para facilitar posteriormente la ubicación y el monitoreo de materiales, productos y
 dispositivos IoT dentro del laboratorio.
 
+<p class="apa-label">Figura 261</p>
+<p class="apa-title">Mock-up de la aplicación web: Registro de Ambiente</p>
+
 <div align="center">
 
   <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/register-environments.png" width="100%">
@@ -1034,6 +1262,9 @@ dispositivos IoT dentro del laboratorio.
 **Descripción:** Interfaz para registrar una nueva materia prima en el inventario. Permite ingresar el código y nombre
 del material, seleccionar la unidad de medida y establecer el stock mínimo requerido. Esta información permite mantener
 un control adecuado de las materias primas y facilitar la identificación de aquellas que requieren reposición.
+
+<p class="apa-label">Figura 262</p>
+<p class="apa-title">Mock-up de la aplicación web: Registro de Materia Prima</p>
 
 <div align="center">
 
@@ -1048,6 +1279,9 @@ interno y nombre comercial del producto, además de una descripción terapéutic
 especificaciones de calidad bajo BPM, incluyendo criterios de aceptación, límites y controles requeridos, asegurando que
 el producto quede registrado con la información necesaria para su gestión y control.
 
+<p class="apa-label">Figura 263</p>
+<p class="apa-title">Mock-up de la aplicación web: Registro de Producto Farmacéutico</p>
+
 <div align="center">
 
   <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/register-product.png" width="100%">
@@ -1059,6 +1293,9 @@ el producto quede registrado con la información necesaria para su gestión y co
 **Descripción:** Interfaz para registrar un nuevo dispositivo IoT en QualiTrack. Permite seleccionar el tipo de
 dispositivo, que puede ser Environmental Device para supervisar las condiciones generales de un ambiente, o Container
 Device para monitorear las condiciones dentro de un contenedor.
+
+<p class="apa-label">Figura 264</p>
+<p class="apa-title">Mock-up de la aplicación web: Registro de dispositivo IoT</p>
 
 <div align="center">
 
@@ -1075,6 +1312,9 @@ El resumen organiza las lecturas por dispositivo y variable monitoreada, mostran
 valor mínimo, valor máximo y última lectura registrada. Para los ambientes monitoreados se consideran variables como
 calidad del aire, movimiento, humedad, luminosidad y temperatura.
 
+<p class="apa-label">Figura 265</p>
+<p class="apa-title">Mock-up de la aplicación web: Resumen de los ambientes</p>
+
 <div align="center">
 
   <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/environment-summary.png" width="100%">
@@ -1088,6 +1328,9 @@ necesidades del laboratorio. Presenta cuatro alternativas: Free, Basic, Professi
 cantidad de usuarios, dispositivos IoT conectados y funcionalidades disponibles.
 
 
+<p class="apa-label">Figura 266</p>
+<p class="apa-title">Mock-up de la aplicación web: Planes de suscripción</p>
+
 <div align="center">
 
   <img src="../../assets/img/main-content/chapter-v/web-application-mock-ups/subscription.png" width="100%">
@@ -1099,6 +1342,9 @@ cantidad de usuarios, dispositivos IoT conectados y funcionalidades disponibles.
 **Descripción:** Interfaz que permite consultar el historial de las lecturas y acciones registradas por un dispositivo
 IoT durante un periodo determinado. El usuario puede seleccionar el ambiente, dispositivo, métrica y rango de fechas
 para consultar la información.
+
+<p class="apa-label">Figura 267</p>
+<p class="apa-title">Mock-up de la aplicación web: Historial de telemetría</p>
 
 <div align="center">
 
@@ -1113,6 +1359,9 @@ para consultar la información.
 **Descripción:** Pantalla de acceso a la aplicación móvil mediante usuario y contraseña, con enlaces para registrarse
 como QA Manager / Supervisor o como Lab Operator.
 
+<p class="apa-label">Figura 268</p>
+<p class="apa-title">Pantalla de inicio de sesión de la aplicación móvil</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-login.png" alt="Pantalla de inicio de sesión de la aplicación móvil" width="62%">
 </div>
@@ -1121,6 +1370,9 @@ como QA Manager / Supervisor o como Lab Operator.
 
 **Descripción:** Formulario de creación de cuenta para el responsable de la supervisión y liberación de lotes
 farmacéuticos, con usuario, contraseña y confirmación de contraseña.
+
+<p class="apa-label">Figura 269</p>
+<p class="apa-title">Formulario de registro de cuenta QA Manager</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-register-qa-manager.png" alt="Formulario de registro de cuenta QA Manager" width="65%">
@@ -1131,6 +1383,9 @@ farmacéuticos, con usuario, contraseña y confirmación de contraseña.
 **Descripción:** Formulario de creación de cuenta para el personal de análisis y ensayos de control en planta, con
 acceso directo al inicio de sesión.
 
+<p class="apa-label">Figura 270</p>
+<p class="apa-title">Formulario de registro de cuenta Lab Operator</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-register-operator.png" alt="Formulario de registro de cuenta Lab Operator" width="65%">
 </div>
@@ -1139,6 +1394,9 @@ acceso directo al inicio de sesión.
 
 **Descripción:** Panel de navegación con el perfil del usuario y su planta asignada, los módulos principales de la
 aplicación y el acceso para sincronizar la telemetría.
+
+<p class="apa-label">Figura 271</p>
+<p class="apa-title">Menú lateral con los módulos principales de la aplicación</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-burger-menu.png" alt="Menú lateral con los módulos principales de la aplicación" width="59%">
@@ -1149,6 +1407,9 @@ aplicación y el acceso para sincronizar la telemetría.
 **Descripción:** Centro de mando que resume el índice de salud operativa, las métricas de lotes, alertas y materias
 primas, el estado de la telemetría en vivo, la distribución de recursos y los riesgos pendientes.
 
+<p class="apa-label">Figura 272</p>
+<p class="apa-title">Dashboard general con métricas operativas y riesgos</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-general-dashboard-part-1.png" alt="Dashboard general con métricas operativas y riesgos" width="48%" align="top"><img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-general-dashboard-part-2.png" alt="Dashboard general con métricas operativas y riesgos" width="48%" align="top">
 </div>
@@ -1157,6 +1418,9 @@ primas, el estado de la telemetría en vivo, la distribución de recursos y los 
 
 **Descripción:** Ventana emergente que lista las alertas críticas recientes y detalla la desviación principal con su
 sensor, lote afectado, valor registrado y umbral BPM, con acciones para investigar, reconocer o consultar el audit log.
+
+<p class="apa-label">Figura 273</p>
+<p class="apa-title">Ventana emergente de alertas críticas y desviaciones</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-general-dashboard-view-all.png" alt="Ventana emergente de alertas críticas y desviaciones" width="65%">
@@ -1167,6 +1431,9 @@ sensor, lote afectado, valor registrado y umbral BPM, con acciones para investig
 **Descripción:** Panel de supervisión en tiempo real del área seleccionada, con el estado de conexión, las anomalías
 detectadas, el perfil de temperatura y las lecturas actuales de temperatura, calidad de aire y humedad.
 
+<p class="apa-label">Figura 274</p>
+<p class="apa-title">Dashboard de telemetría en tiempo real</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-telemetry-dashboard-part-1.png" alt="Dashboard de telemetría en tiempo real" width="48%" align="top"><img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-telemetry-dashboard-part-2.png" alt="Dashboard de telemetría en tiempo real" width="48%" align="top">
 </div>
@@ -1175,6 +1442,9 @@ detectadas, el perfil de temperatura y las lecturas actuales de temperatura, cal
 
 **Descripción:** Historial de lecturas de los sensores filtrable por equipo y rango de fechas, que distingue las
 mediciones normales de las desviaciones BPM.
+
+<p class="apa-label">Figura 275</p>
+<p class="apa-title">Historial de lecturas de sensores con desviaciones BPM</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-telemetry-datalog.png" alt="Historial de lecturas de sensores con desviaciones BPM" width="57%">
@@ -1185,6 +1455,9 @@ mediciones normales de las desviaciones BPM.
 **Descripción:** Centro de alertas que presenta los incidentes BPM activos por equipo, con indicadores de alertas sin
 resolver y desviaciones críticas, filtros por estado y la opción de reconocer todas las alertas.
 
+<p class="apa-label">Figura 276</p>
+<p class="apa-title">Centro de alertas de cumplimiento BPM</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-compliance-alerts.png" alt="Centro de alertas de cumplimiento BPM" width="47%">
 </div>
@@ -1193,6 +1466,9 @@ resolver y desviaciones críticas, filtros por estado y la opción de reconocer 
 
 **Descripción:** Ventana de inspección técnica de una alerta pendiente que muestra su severidad, valor registrado,
 umbral y equipo, y solicita notas de resolución para marcarla como resuelta.
+
+<p class="apa-label">Figura 277</p>
+<p class="apa-title">Detalle de una desviación pendiente de resolución</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-compliance-alerts-unresolved.png" alt="Detalle de una desviación pendiente de resolución" width="47%">
@@ -1203,6 +1479,9 @@ umbral y equipo, y solicita notas de resolución para marcarla como resuelta.
 **Descripción:** Ventana de inspección de una alerta ya atendida que conserva las notas de resolución como evidencia de
 la acción correctiva aplicada.
 
+<p class="apa-label">Figura 278</p>
+<p class="apa-title">Detalle de una desviación resuelta con sus notas de resolución</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-compliance-alerts-resolved.png" alt="Detalle de una desviación resuelta con sus notas de resolución" width="53%">
 </div>
@@ -1211,6 +1490,9 @@ la acción correctiva aplicada.
 
 **Descripción:** Listado de lotes con indicadores por estado, búsqueda y filtros, en el que los lotes pendientes pueden
 aprobarse o rechazarse directamente desde su tarjeta.
+
+<p class="apa-label">Figura 279</p>
+<p class="apa-title">Listado de lotes de producción por estado</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-production-batches.png" alt="Listado de lotes de producción por estado" width="59%">
@@ -1221,6 +1503,9 @@ aprobarse o rechazarse directamente desde su tarjeta.
 **Descripción:** Ventana con la información general de un lote en espera de aprobación de QA, incluidas sus notas BPM de
 revisión.
 
+<p class="apa-label">Figura 280</p>
+<p class="apa-title">Detalle de un lote pendiente de aprobación</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-production-batches-pending.png" alt="Detalle de un lote pendiente de aprobación" width="59%">
 </div>
@@ -1230,6 +1515,9 @@ revisión.
 **Descripción:** Ventana con la información general de un lote liberado, que muestra el producto, la cantidad, la fecha
 de inicio y las notas BPM.
 
+<p class="apa-label">Figura 281</p>
+<p class="apa-title">Detalle de un lote liberado</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-production-batches-release.png" alt="Detalle de un lote liberado" width="59%">
 </div>
@@ -1237,6 +1525,9 @@ de inicio y las notas BPM.
 **Detalle de lote rechazado**
 
 **Descripción:** Ventana con la información general de un lote rechazado y las notas BPM que sustentan la decisión.
+
+<p class="apa-label">Figura 282</p>
+<p class="apa-title">Detalle de un lote rechazado</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-production-batches-reject.png" alt="Detalle de un lote rechazado" width="65%">
@@ -1247,6 +1538,9 @@ de inicio y las notas BPM.
 **Descripción:** Pestaña del detalle del lote que muestra el historial de materias primas utilizadas con su cantidad y
 fecha de uso, como soporte de la trazabilidad.
 
+<p class="apa-label">Figura 283</p>
+<p class="apa-title">Historial de materias primas utilizadas en el lote</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-production-batches-materials-used.png" alt="Historial de materias primas utilizadas en el lote" width="65%">
 </div>
@@ -1255,6 +1549,9 @@ fecha de uso, como soporte de la trazabilidad.
 
 **Descripción:** Formulario del proceso de liberación conforme a BPM que registra la fecha de liberación y las notas de
 verificación de calidad antes de confirmar la decisión.
+
+<p class="apa-label">Figura 284</p>
+<p class="apa-title">Formulario de liberación de lote conforme a BPM</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-production-batches-confirm-release.png" alt="Formulario de liberación de lote conforme a BPM" width="65%">
@@ -1265,6 +1562,9 @@ verificación de calidad antes de confirmar la decisión.
 **Descripción:** Formulario de rechazo de un lote no conforme que exige registrar la fecha y el motivo regulatorio del
 rechazo, obligatorio según las Buenas Prácticas de Manufactura.
 
+<p class="apa-label">Figura 285</p>
+<p class="apa-title">Formulario de rechazo de lote no conforme</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-production-batches-confirm-reject.png" alt="Formulario de rechazo de lote no conforme" width="68%">
 </div>
@@ -1273,6 +1573,9 @@ rechazo, obligatorio según las Buenas Prácticas de Manufactura.
 
 **Descripción:** Listado de productos registrados con búsqueda, código, nombre y especificaciones BPM, con acceso para
 registrar un nuevo producto.
+
+<p class="apa-label">Figura 286</p>
+<p class="apa-title">Catálogo de productos farmacéuticos registrados</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-pharmaceutical-product.png" alt="Catálogo de productos farmacéuticos registrados" width="62%">
@@ -1283,6 +1586,9 @@ registrar un nuevo producto.
 **Descripción:** Formulario para definir un producto con su código interno, nombre comercial, descripción terapéutica y
 especificaciones de calidad BPM.
 
+<p class="apa-label">Figura 287</p>
+<p class="apa-title">Formulario de registro de producto farmacéutico</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-pharmaceutical-register.png" alt="Formulario de registro de producto farmacéutico" width="59%">
 </div>
@@ -1291,6 +1597,9 @@ especificaciones de calidad BPM.
 
 **Descripción:** Tabla de materias primas con código interno, proveedor autorizado y stock actual, encabezada por una
 alerta de materiales por debajo del umbral mínimo.
+
+<p class="apa-label">Figura 288</p>
+<p class="apa-title">Inventario de materias primas con alerta de stock bajo</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-inventory-materials.png" alt="Inventario de materias primas con alerta de stock bajo" width="59%">
@@ -1301,6 +1610,9 @@ alerta de materiales por debajo del umbral mínimo.
 **Descripción:** Formulario para ingresar una materia prima con su proveedor, lote del proveedor, vencimiento, cantidad
 inicial, unidad de medida y umbral mínimo de stock.
 
+<p class="apa-label">Figura 289</p>
+<p class="apa-title">Formulario de registro de materia prima</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-inventory-register.png" alt="Formulario de registro de materia prima" width="59%">
 </div>
@@ -1309,6 +1621,9 @@ inicial, unidad de medida y umbral mínimo de stock.
 
 **Descripción:** Vista comparativa de los planes Enterprise y Standard Lab con facturación mensual, detallando el
 precio, los usuarios, los registros de equipos y los beneficios incluidos.
+
+<p class="apa-label">Figura 290</p>
+<p class="apa-title">Planes de suscripción con facturación mensual</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-subscription-plans-month-part-1.png" alt="Planes de suscripción con facturación mensual" width="48%" align="top"><img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-subscription-plans-month-part-2.png" alt="Planes de suscripción con facturación mensual" width="48%" align="top">
@@ -1319,6 +1634,9 @@ precio, los usuarios, los registros de equipos y los beneficios incluidos.
 **Descripción:** Vista de los planes con la facturación anual seleccionada, que aplica el descuento por pago anual y
 actualiza el precio de cada plan.
 
+<p class="apa-label">Figura 291</p>
+<p class="apa-title">Mock-up de la aplicación móvil: Planes de suscripción anual</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-subscription-plans-year-part-1.png" alt="Planes de suscripción con facturación anual" width="48%" align="top"><img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-subscription-plans-year-part-2.png" alt="Planes de suscripción con facturación anual" width="48%" align="top">
 </div>
@@ -1327,6 +1645,9 @@ actualiza el precio de cada plan.
 
 **Descripción:** Pantalla de gestión de la suscripción activa que muestra el plan, su estado y el periodo vigente, junto
 con el historial de pagos procesados por Stripe y la descarga de recibos en PDF.
+
+<p class="apa-label">Figura 292</p>
+<p class="apa-title">Resumen de la suscripción activa e historial de pagos</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/mobile-application-mock-ups/mock-up-subscription-payment.png" alt="Resumen de la suscripción activa e historial de pagos" width="68%">
@@ -1364,6 +1685,9 @@ laboratorio y confirma el registro.
 Finalmente, el laboratorio queda registrado y el usuario es dirigido al Dashboard, desde donde puede comenzar a utilizar
 QualiTrack.
 
+<p class="apa-label">Figura 293</p>
+<p class="apa-title">User Flow 1 (Registro y configuración inicial): Happy Path</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/happy-path/register-user.png" alt="Planes de suscripción con facturación anual" width="100%">
 </div>
@@ -1374,6 +1698,9 @@ El usuario intenta registrarse utilizando un nombre de usuario o correo electró
 El sistema valida los datos y detecta que el usuario o correo electrónico ya existe. Por ello, bloquea el registro y
 muestra el mensaje: “The username or the e-mail is already registered.”
 
+
+<p class="apa-label">Figura 294</p>
+<p class="apa-title">User Flow 1 (Registro y configuración inicial): Unhappy Path</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/unhappy-path/register-user-error.png" alt="Planes de suscripción con facturación anual" width="100%">
@@ -1402,6 +1729,9 @@ El Supervisor completa la información y selecciona Register. QualiTrack valida 
 que la información requerida haya sido ingresada correctamente.
 Si la validación es exitosa, el producto es registrado y aparece en el listado de Pharmaceutical Products.
 
+<p class="apa-label">Figura 295</p>
+<p class="apa-title">User Flow 2 (Gestión de Productos Farmacéuticos): Happy Path</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/happy-path/register-products-requires-environment-first.png" alt="Planes de suscripción con facturación anual" width="100%">
 </div>
@@ -1412,6 +1742,9 @@ Si la validación es exitosa, el producto es registrado y aparece en el listado 
 Durante el registro, el Supervisor ingresa un código de producto inválido o que no cumple con la validación.
 Al seleccionar Register, QualiTrack valida el código ingresado y detecta el error. El registro no se completa y el
 Supervisor debe corregir la información del producto.
+
+<p class="apa-label">Figura 296</p>
+<p class="apa-title">User Flow 2 (Gestión de Productos Farmacéuticos): Unhappy Path</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/unhappy-path/register-user-error.png" alt="Planes de suscripción con facturación anual" width="100%">
@@ -1440,6 +1773,9 @@ prima haya sido released.
 Una vez disponible la materia prima, el técnico de laboratorio la agrega al lote de producción y la información queda
 registrada en el detalle del lote, permitiendo mantener la trazabilidad de los materiales utilizados.
 
+<p class="apa-label">Figura 297</p>
+<p class="apa-title">User Flow 3 (Gestión de Lotes de Producción): Happy Path</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/happy-path/associate-raw-materials-to-batch.png" alt="Planes de suscripción con facturación anual" width="100%">
 </div>
@@ -1450,6 +1786,9 @@ Durante la creación del lote, el técnico de laboratorio ingresa un código de 
 validación.
 Al intentar registrar el lote, QualiTrack valida el código y evita completar el registro mientras la información no sea
 corregida.
+
+<p class="apa-label">Figura 298</p>
+<p class="apa-title">User Flow 3 (Gestión de Lotes de Producción): Unhappy Path</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/unhappy-path/register-product-batch.png" alt="Planes de suscripción con facturación anual" width="100%">
@@ -1480,6 +1819,9 @@ El supervisor completa los datos y selecciona Register.
 QualiTrack valida la información y, si los datos son correctos, registra al nuevo miembro del personal. El usuario
 vuelve al listado de Staff, donde aparece el nuevo trabajador registrado.
 
+<p class="apa-label">Figura 299</p>
+<p class="apa-title">User Flow 4 (Gestión de Personal): Happy Path</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/happy-path/register-staff.png" alt="Planes de suscripción con facturación anual" width="100%">
 </div>
@@ -1491,6 +1833,9 @@ Al seleccionar Register, QualiTrack detecta que el correo ya existe y muestra un
 account with this e-mail.”
 
 El registro no se completa. El supervisor debe ingresar un correo diferente y volver a realizar el registro.
+
+<p class="apa-label">Figura 300</p>
+<p class="apa-title">User Flow 4 (Gestión de Personal): Unhappy Path</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/unhappy-path/register-staff-without-sale-error.png" alt="Planes de suscripción con facturación anual" width="100%">
@@ -1526,6 +1871,9 @@ Al seleccionar Save, QualiTrack detecta que el código ya está registrado y mue
 
 El registro no se completa. El administrador debe modificar el código e intentar guardar nuevamente.
 
+<p class="apa-label">Figura 301</p>
+<p class="apa-title">User Flow 5 (Gestión de Materias Primas): Happy Path</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/happy-path/associate-raw-materials-to-batch.png" alt="Planes de suscripción con facturación anual" width="100%">
 </div>
@@ -1537,6 +1885,9 @@ Al seleccionar Save, QualiTrack detecta que el código ya está registrado y mue
 “A material with this code already exists.”
 
 El registro no se completa. El administrador debe modificar el código e intentar guardar nuevamente.
+
+<p class="apa-label">Figura 302</p>
+<p class="apa-title">User Flow 5 (Gestión de Materias Primas): Unhappy Path</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/unhappy-path/register-raw-material-error.png" alt="Planes de suscripción con facturación anual" width="100%">
@@ -1565,6 +1916,9 @@ Luego selecciona Register.
 QualiTrack valida los datos ingresados. Si la información es válida y el código del ambiente no está registrado
 previamente, el ambiente se registra correctamente y aparece en el listado de Environments.
 
+<p class="apa-label">Figura 303</p>
+<p class="apa-title">User Flow 6 (Gestión de Ambientes): Happy Path</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/happy-path/register-environments.png" alt="Planes de suscripción con facturación anual" width="100%">
 </div>
@@ -1575,6 +1929,9 @@ previamente, el ambiente se registra correctamente y aparece en el listado de En
 En el segundo flujo se observa que el supervisor intenta registrar un ambiente con información que genera un conflicto,
 mostrando un mensaje de error en el formulario.
 El supervisor debe corregir los datos ingresados y volver a seleccionar Register.
+
+<p class="apa-label">Figura 304</p>
+<p class="apa-title">User Flow 6 (Gestión de Ambientes): Unhappy Path</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/user-flow-diagrams/unhappy-path/register-environment-error.png" alt="Planes de suscripción con facturación anual" width="100%">

@@ -215,6 +215,9 @@ Compliance & Alerting. Compliance & Alerting y Reporting & Audit leen sus lectur
 
 Se utiliza la vista de Structurizr **`Components-Tracking`**, definida sobre el container `Cloud REST API`.
 
+<p class="apa-label">Figura 131</p>
+<p class="apa-title">Tracking & Telemetry Component Diagram</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/c4/components-tracking.png" alt="Tracking & Telemetry Component Diagram" width="100%"></p>
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams.
@@ -228,7 +231,13 @@ El diagrama de clases muestra `EnvironmentalProfile` como Aggregate Root con sus
 `ActuationRule`, las entidades `Measurement` y `ActuationEvent`, los Value Objects y enumeraciones del contexto, entre
 ellos `MonitoredDevice`, y sus Commands, Queries, eventos e interfaces de repositorio.
 
+<p class="apa-label">Figura 132</p>
+<p class="apa-title">Tracking & Telemetry Domain Layer Class Diagram (1/2)</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/class-diagrams/tracking-domain-layer-class-diagram-1.png" alt="Tracking & Telemetry Domain Layer Class Diagram (1/2)" width="100%"></p>
+
+<p class="apa-label">Figura 133</p>
+<p class="apa-title">Tracking & Telemetry Domain Layer Class Diagram (2/2)</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/class-diagrams/tracking-domain-layer-class-diagram-2.png" alt="Tracking & Telemetry Domain Layer Class Diagram (2/2)" width="100%"></p>
 
@@ -237,6 +246,9 @@ ellos `MonitoredDevice`, y sus Commands, Queries, eventos e interfaces de reposi
 El diagrama de base de datos muestra las tablas de perfiles ambientales, con sus rangos y reglas de actuación, de
 lecturas y de acciones ejecutadas. Los identificadores de laboratorio, ambiente y dispositivo relacionan la información
 con Laboratory Management y Equipment Management sin duplicar sus modelos.
+
+<p class="apa-label">Figura 134</p>
+<p class="apa-title">Tracking & Telemetry Database Design Diagram</p>
 
 <p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/tracking/tracking-database-diagram.puml&fmt=svg&v=5" alt="Tracking & Telemetry Database Design Diagram" width="100%"></p>
 
@@ -416,6 +428,9 @@ Management los nombres de las personas y envía los correos de alertas críticas
 
 Se utiliza la vista de Structurizr **`Components-Compliance`**, definida sobre el container `Cloud REST API`.
 
+<p class="apa-label">Figura 135</p>
+<p class="apa-title">Compliance & Alerting Component Diagram</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/c4/components-compliance.png" alt="Compliance & Alerting Component Diagram" width="100%"></p>
 
 #### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams.
@@ -429,7 +444,13 @@ El diagrama muestra los Aggregates `DeviationAlert` y `Notification`, las entida
 `NotificationPreference`, sus Value Objects y enumeraciones, entre ellas `ComplianceEventSubject`, y los Commands,
 Queries, eventos e interfaces de repositorio del contexto.
 
+<p class="apa-label">Figura 136</p>
+<p class="apa-title">Compliance & Alerting Domain Layer Class Diagram (1/2)</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/class-diagrams/ca-domain-layer-class-diagram-1.png" alt="Compliance & Alerting Domain Layer Class Diagram (1/2)" width="100%"></p>
+
+<p class="apa-label">Figura 137</p>
+<p class="apa-title">Compliance & Alerting Domain Layer Class Diagram (2/2)</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/class-diagrams/ca-domain-layer-class-diagram-2.png" alt="Compliance & Alerting Domain Layer Class Diagram (2/2)" width="100%"></p>
 
@@ -438,6 +459,9 @@ Queries, eventos e interfaces de repositorio del contexto.
 El diagrama de base de datos muestra las tablas de alertas de desviación, avisos, eventos de cumplimiento y preferencias
 de notificación. Los identificadores de laboratorio, ambiente, equipo y lote relacionan la información con los contextos
 que la originan.
+
+<p class="apa-label">Figura 138</p>
+<p class="apa-title">Compliance & Alerting Database Design Diagram</p>
 
 <p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/ca/ca-database-diagram.puml&fmt=svg&v=5" alt="Compliance & Alerting Database Design Diagram" width="100%"></p>
 
@@ -603,6 +627,9 @@ IAM para emitir y validar la API key de cada Edge Gateway, y el Edge REST API pa
 
 Se utiliza la vista de Structurizr **`Components-Equipment`**, definida sobre el container `Cloud REST API`.
 
+<p class="apa-label">Figura 139</p>
+<p class="apa-title">Equipment Management Component Diagram</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/c4/components-equipment.png" alt="Equipment Management Component Diagram" width="100%"></p>
 
 #### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams.
@@ -616,6 +643,9 @@ El diagrama muestra los Aggregates `Equipment` y `MaintenanceRecord`, las entida
 `EquipmentStatusChange`, el Domain Service `EdgeGatewayAllocation`, sus Value Objects y enumeraciones, y los Commands,
 Queries, eventos e interfaces de repositorio del contexto.
 
+<p class="apa-label">Figura 140</p>
+<p class="apa-title">Equipment Management Domain Layer Class Diagram</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/class-diagrams/equipment-domain-layer-class-diagram.png" alt="Equipment Management Domain Layer Class Diagram" width="100%"></p>
 
 ##### 4.2.3.6.2. Bounded Context Database Design Diagram.
@@ -623,6 +653,9 @@ Queries, eventos e interfaces de repositorio del contexto.
 El diagrama de base de datos representa las tablas de equipos, cambios de estado, configuraciones de parámetros y
 mantenimientos. Las referencias al laboratorio y al ambiente se conservan mediante identificadores, sin copiar el modelo
 de Laboratory Management.
+
+<p class="apa-label">Figura 141</p>
+<p class="apa-title">Equipment Management Database Design Diagram</p>
 
 <p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/equipment/equipment-database-diagram.puml&fmt=svg&v=5" alt="Equipment Management Database Design Diagram" width="100%"></p>
 
@@ -794,6 +827,9 @@ Reporting & Audit y Profile.
 
 Se utiliza la vista de Structurizr **`Components-Laboratory`**, definida sobre el container `Cloud REST API`.
 
+<p class="apa-label">Figura 142</p>
+<p class="apa-title">Laboratory Management Component Diagram</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/c4/components-laboratory.png" alt="Laboratory Management Component Diagram" width="100%"></p>
 
 #### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams.
@@ -807,7 +843,13 @@ El diagrama muestra los Aggregates `Laboratory`, `Environment`, `StaffMember` y 
 `LaboratoryAddress`, sus Value Objects y enumeraciones, y los Commands, Queries, eventos e interfaces de repositorio del
 contexto.
 
+<p class="apa-label">Figura 143</p>
+<p class="apa-title">Laboratory Management Domain Layer Class Diagram (1/2)</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/class-diagrams/laboratory-domain-layer-class-diagram-1-part-1.png" alt="Laboratory Management Domain Layer Class Diagram (1/2)" width="100%"><img src="../../assets/img/main-content/chapter-iv/class-diagrams/laboratory-domain-layer-class-diagram-1-part-2.png" alt="Laboratory Management Domain Layer Class Diagram (1/2)" width="100%"></p>
+
+<p class="apa-label">Figura 144</p>
+<p class="apa-title">Laboratory Management Domain Layer Class Diagram (2/2)</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/class-diagrams/laboratory-domain-layer-class-diagram-2.png" alt="Laboratory Management Domain Layer Class Diagram (2/2)" width="100%"></p>
 
@@ -815,6 +857,9 @@ contexto.
 
 El diagrama de base de datos muestra las tablas de laboratorios, ambientes, personal y materias primas heredadas,
 relacionadas mediante el identificador del laboratorio.
+
+<p class="apa-label">Figura 145</p>
+<p class="apa-title">Laboratory Management Database Design Diagram</p>
 
 <p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/laboratory/laboratory-database-diagram.puml&fmt=svg&v=5" alt="Laboratory Management Database Design Diagram" width="100%"></p>
 
@@ -1030,6 +1075,9 @@ Para esta entrega se utiliza la vista de Structurizr **`Components-Inventory`**,
 `Cloud REST API`. La vista corresponde al estado actual del C4 y podrá ser refinada posteriormente para detallar los
 componentes internos de Interface, Application, Domain e Infrastructure.
 
+<p class="apa-label">Figura 146</p>
+<p class="apa-title">Inventory Management Component Diagram</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/c4/components-inventory.png" alt="Inventory Management Component Diagram" width="100%"></p>
 
 #### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams.
@@ -1040,6 +1088,9 @@ El diagrama presenta `RawMaterial`, `RawMaterialBatch`, `InventoryMovement`, los
 revisión, contenedor y catálogo heredado (`LegacyRawMaterial`), `RawMaterialBatchStatus`, los Commands, Queries y la
 interfaz `InventoryRepository`.
 
+<p class="apa-label">Figura 147</p>
+<p class="apa-title">Inventory Management Domain Layer Class Diagram</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/class-diagrams/inventory-domain-layer-class-diagram.png" alt="Inventory Management Domain Layer Class Diagram" width="100%"></p>
 
 ##### 4.2.5.6.2. Bounded Context Database Design Diagram.
@@ -1047,6 +1098,9 @@ interfaz `InventoryRepository`.
 El esquema de persistencia contiene las estructuras de materiales, recepciones y movimientos. La cantidad disponible se
 conserva a nivel de cada recepción, mientras los movimientos permiten reconstruir el historial de cambios del
 inventario.
+
+<p class="apa-label">Figura 148</p>
+<p class="apa-title">Inventory Management Database Design Diagram</p>
 
 <p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/inventory/inventory-database-diagram.puml&fmt=svg&v=5" alt="Inventory Management Database Design Diagram" width="100%"></p>
 
@@ -1212,6 +1266,9 @@ notifica la liberación o el rechazo. Reporting & Audit lee los lotes, sus consu
 
 Se utiliza la vista de Structurizr **`Components-ProductBatch`**, definida sobre el container `Cloud REST API`.
 
+<p class="apa-label">Figura 149</p>
+<p class="apa-title">Product Batch Management Component Diagram</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/c4/components-product-batch.png" alt="Product Batch Management Component Diagram" width="100%"></p>
 
 #### 4.2.6.6. Bounded Context Software Architecture Code Level Diagrams.
@@ -1225,7 +1282,13 @@ El diagrama muestra los Aggregates `PharmaceuticalProduct` y `Batch`, las entida
 evidencia, los Value Objects de estado, contenedor y trazabilidad, y los Commands, Queries, eventos e interfaces de
 repositorio del contexto.
 
+<p class="apa-label">Figura 150</p>
+<p class="apa-title">Product Batch Management Domain Layer Class Diagram (1/2)</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/class-diagrams/batch-domain-layer-class-diagram-1.png" alt="Product Batch Management Domain Layer Class Diagram (1/2)" width="100%"></p>
+
+<p class="apa-label">Figura 151</p>
+<p class="apa-title">Product Batch Management Domain Layer Class Diagram (2/2)</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/class-diagrams/batch-domain-layer-class-diagram-2.png" alt="Product Batch Management Domain Layer Class Diagram (2/2)" width="100%"></p>
 
@@ -1233,6 +1296,9 @@ repositorio del contexto.
 
 El diagrama de base de datos muestra las tablas de productos, lotes, consumos de materia prima, equipos y personal
 participantes, firmas de liberación y registros de rechazo, relacionadas mediante el identificador del lote.
+
+<p class="apa-label">Figura 152</p>
+<p class="apa-title">Product Batch Management Database Design Diagram</p>
 
 <p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/batch/batch-database-diagram.puml&fmt=svg&v=5" alt="Product Batch Management Database Design Diagram" width="100%"></p>
 
@@ -1402,6 +1468,9 @@ IAM, y persiste reportes y auditoría en la Cloud Database.
 
 Se utiliza la vista de Structurizr **`Components-Reporting`**, definida sobre el container `Cloud REST API`.
 
+<p class="apa-label">Figura 153</p>
+<p class="apa-title">Reporting & Audit Component Diagram</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/c4/components-reporting.png" alt="Reporting & Audit Component Diagram" width="100%"></p>
 
 #### 4.2.7.6. Bounded Context Software Architecture Code Level Diagrams.
@@ -1415,7 +1484,13 @@ El diagrama muestra los Aggregates `AuditReport` y `KpiDashboard`, las entidades
 `DeviationTrend` y `TrendDataPoint`, los Value Objects del periodo, los documentos, los resúmenes y los ambientes, y los
 Commands, Queries, eventos e interfaces de repositorio del contexto.
 
+<p class="apa-label">Figura 154</p>
+<p class="apa-title">Reporting & Audit Domain Layer Class Diagram (1/2)</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/class-diagrams/ra-domain-layer-class-diagram-1.png" alt="Reporting & Audit Domain Layer Class Diagram (1/2)" width="100%"></p>
+
+<p class="apa-label">Figura 155</p>
+<p class="apa-title">Reporting & Audit Domain Layer Class Diagram (2/2)</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/class-diagrams/ra-domain-layer-class-diagram-2.png" alt="Reporting & Audit Domain Layer Class Diagram (2/2)" width="100%"></p>
 
@@ -1423,6 +1498,9 @@ Commands, Queries, eventos e interfaces de repositorio del contexto.
 
 El diagrama de base de datos muestra las tablas `audit_reports` (reportes generados) y `audit_log_entries` (registro de
 auditoría). Los indicadores y tendencias no tienen tablas porque se calculan al consultarlos.
+
+<p class="apa-label">Figura 156</p>
+<p class="apa-title">Reporting & Audit Database Design Diagram</p>
 
 <p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/ra/ra-database-diagram.puml&fmt=svg&v=5" alt="Reporting & Audit Database Design Diagram" width="100%"></p>
 
@@ -1603,6 +1681,9 @@ y los códigos de recuperación.
 
 Se utiliza la vista de Structurizr **`Components-IAM`**, definida sobre el container `Cloud REST API`.
 
+<p class="apa-label">Figura 157</p>
+<p class="apa-title">Identity & Access Management Component Diagram</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/c4/components-iam.png" alt="Identity & Access Management Component Diagram" width="100%"></p>
 
 #### 4.2.8.6. Bounded Context Software Architecture Code Level Diagrams.
@@ -1616,6 +1697,9 @@ El diagrama muestra los Aggregates `User` y `PasswordRecovery`, la entidad `Role
 correo, contraseña, onboarding, suscripción de la cuenta y Edge Gateway, las enumeraciones de roles y estados, y los
 Commands, Queries, eventos y repositorios.
 
+<p class="apa-label">Figura 158</p>
+<p class="apa-title">Identity & Access Management Domain Layer Class Diagram</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/class-diagrams/iam-domain-layer-class-diagram.png" alt="Identity & Access Management Domain Layer Class Diagram" width="100%"></p>
 
 ##### 4.2.8.6.2. Bounded Context Database Design Diagram.
@@ -1623,6 +1707,9 @@ Commands, Queries, eventos y repositorios.
 El esquema de base de datos representa usuarios, roles y su relación de muchos a muchos, las recuperaciones de
 contraseña, las API keys de los Edge Gateways (solo su hash) y los campos necesarios para mantener el estado de la
 cuenta y su relación con el laboratorio.
+
+<p class="apa-label">Figura 159</p>
+<p class="apa-title">Identity & Access Management Database Design Diagram</p>
 
 <p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/iam/iam-database-diagram.puml&fmt=svg&v=5" alt="Identity & Access Management Database Design Diagram" width="100%"></p>
 
@@ -1844,6 +1931,9 @@ Para esta entrega se utiliza la vista de Structurizr **`Components-Payments`**, 
 `Cloud REST API`. La vista representa el C4 actual del proyecto y podrá refinarse posteriormente para mostrar con mayor
 detalle la separación entre dominio, servicios de aplicación, persistencia e integración con Stripe.
 
+<p class="apa-label">Figura 160</p>
+<p class="apa-title">Payments & Subscriptions Component Diagram</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/c4/components-payments.png" alt="Payments & Subscriptions Component Diagram" width="100%"></p>
 
 #### 4.2.9.6. Bounded Context Software Architecture Code Level Diagrams.
@@ -1854,7 +1944,13 @@ El diagrama de clases representa `Subscription`, `SubscriptionPlan`, `Subscripti
 `SubscriptionPlanCatalog`, las enumeraciones comerciales, y los Commands, Queries, eventos, repositorios y excepciones
 del contexto.
 
+<p class="apa-label">Figura 161</p>
+<p class="apa-title">Payments & Subscriptions Domain Layer Class Diagram (1/2)</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/class-diagrams/subscription-domain-layer-class-diagram-1.png" alt="Payments & Subscriptions Domain Layer Class Diagram (1/2)" width="100%"></p>
+
+<p class="apa-label">Figura 162</p>
+<p class="apa-title">Payments & Subscriptions Domain Layer Class Diagram (2/2)</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/class-diagrams/subscription-domain-layer-class-diagram-2.png" alt="Payments & Subscriptions Domain Layer Class Diagram (2/2)" width="100%"></p>
 
@@ -1863,6 +1959,9 @@ del contexto.
 El diagrama de base de datos muestra planes, suscripciones y pagos, incluyendo los identificadores externos necesarios
 para relacionar los registros internos con Stripe. Los datos sensibles de tarjetas u otros medios de pago no se
 almacenan dentro de QualiTrack.
+
+<p class="apa-label">Figura 163</p>
+<p class="apa-title">Payments & Subscriptions Database Design Diagram</p>
 
 <p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/subscription/subscription-database-diagram.puml&fmt=svg&v=5" alt="Payments & Subscriptions Database Design Diagram" width="100%"></p>
 
@@ -1979,6 +2078,9 @@ personas.
 
 Se utiliza la vista de Structurizr **`Components-Profile`**, definida sobre el container `Cloud REST API`.
 
+<p class="apa-label">Figura 164</p>
+<p class="apa-title">Profile Management Component Diagram</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/c4/components-profile.png" alt="Profile Management Component Diagram" width="100%"></p>
 
 #### 4.2.10.6. Bounded Context Software Architecture Code Level Diagrams.
@@ -1991,11 +2093,17 @@ persiste los perfiles y sus fotos.
 El diagrama muestra el Aggregate `Profile`, sus Value Objects de datos personales y foto, `ProfileDetail`, y los
 Commands, Queries, el evento y el repositorio del contexto.
 
+<p class="apa-label">Figura 165</p>
+<p class="apa-title">Profile Management Domain Layer Class Diagram</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/class-diagrams/profile-domain-layer-class-diagram.png" alt="Profile Management Domain Layer Class Diagram" width="100%"></p>
 
 ##### 4.2.10.6.2. Bounded Context Database Design Diagram.
 
 El diagrama de base de datos muestra las tablas `profiles` y `profile_photos`. Cada perfil se relaciona con la cuenta de
 IAM mediante `userId`, y cada foto con su perfil, sin duplicar el modelo de la cuenta.
+
+<p class="apa-label">Figura 166</p>
+<p class="apa-title">Profile Management Database Design Diagram</p>
 
 <p align="center"><img src="https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/IoTech-2620-8741/qualitrack-platform/main/docs/diagrams/profile/profile-database-diagram.puml&fmt=svg&v=5" alt="Profile Management Database Design Diagram" width="100%"></p>

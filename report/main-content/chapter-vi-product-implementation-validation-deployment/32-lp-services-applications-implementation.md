@@ -24,6 +24,9 @@ En la reunión de Sprint Planning el equipo revisó el Product Backlog, acordó 
 User Stories de la Landing Page y de la Web Application que forman parte de su alcance. A continuación se presenta el
 resumen de la reunión.
 
+<p class="apa-label">Tabla 71</p>
+<p class="apa-title">Sprint Planning 1</p>
+
 <table>
 <tr>
 <td>Sprint #</td>
@@ -95,6 +98,9 @@ Cada aspecto tiene uno o más líderes (L) responsables de sus tareas y el resto
 en su implementación e integración con el RESTful API. Esta organización se refleja en la asignación de tareas del
 Sprint Backlog.
 
+<p class="apa-label">Tabla 72</p>
+<p class="apa-title">Aspect Leaders and Collaborators del Sprint 1</p>
+
 | Team Member (Last Name, First Name) / GitHub User­name | Aspect: Land­ing Page | Aspect: Labor­atory Manage­ment | Aspect: Inven­tory Manage­ment | Aspect: Equip­ment Manage­ment | Aspect: Track­ing & Tele­metry | Aspect: Prod­uct Batch Manage­ment | Aspect: Compli­ance & Alert­ing |
 |-------------------------------------------------------|----------------------|-------------------------------|------------------------------|------------------------------|------------------------------|----------------------------------|-------------------------------|
 | Baca Camargo, Vitaly Arturo<br>(Mr-Code-star)         | C                    | C                             | C                            | C                            | C                            | C                                | C                             |
@@ -119,16 +125,23 @@ ello se seleccionaron 101 User Stories (190 Story Points): 11 de la Landing Page
 Application (173 Story Points). Cada User Story se descompuso en tareas de implementación de la vista y de integración
 con el RESTful API, asignadas según la matriz de liderazgo y colaboración. El seguimiento del sprint se realizó en Jira.
 
+<p class="apa-label">Figura 321</p>
+<p class="apa-title">User Stories del Sprint 1 en Jira</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/jira-sprint-1-board.jpg" alt="Sprint 1 en Jira" width="100%">
-  <p><em>Figura: User Stories del Sprint 1 en Jira. Esta vista evidencia las 101 User Stories del sprint, filtradas por Sprint 1, con su prioridad y su estado Finalizado, con las que el equipo siguió el avance hacia el Sprint Goal.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia las 101 User Stories del sprint, filtradas por Sprint 1, con su prioridad y su estado Finalizado, con las que el equipo siguió el avance hacia el Sprint Goal.</p>
 
 **Enlace público al
 tablero:** [Sprint 1 - Jira](https://iotech-2620.atlassian.net/jira/software/projects/SCRUM/boards/1)
 
 En total el sprint comprende 182 tareas y 561 horas estimadas. Al cierre del sprint, las 182 tareas se encuentran en
 estado Done.
+
+<p class="apa-label">Tabla 73</p>
+<p class="apa-title">Sprint Backlog 1</p>
 
 <table>
 <tr>
@@ -365,6 +378,9 @@ rama en la que se realizaron.
 **Landing Page**
 ([IoTech-2620-8741/qualitrack-landing-page](https://github.com/IoTech-2620-8741/qualitrack-landing-page))
 
+<p class="apa-label">Tabla 74</p>
+<p class="apa-title">Commits de la Landing Page en el Sprint 1</p>
+
 | Repository                               | Branch                        | Commit Id | Commit Message                                                                                                                              | Commit Message Body | Committed on (Date) |
 |------------------------------------------|-------------------------------|-----------|---------------------------------------------------------------------------------------------------------------------------------------------|---------------------|---------------------|
 | Io​Tech-2620-8741/​qualitrack-landing-page | develop                       | dccc748   | docs​(readme): Add README.md with project overview, key features, subscription plans, technologies used, project structure, and team details | —                   | 01/10/2026          |
@@ -393,6 +409,9 @@ rama en la que se realizaron.
 | Io​Tech-2620-8741/​qualitrack-landing-page | hotfix/​landing-page           | cb57105   | fix(legal): replace ClosedSource with IoTech in terms and policies                                                                          | —                   | 08/10/2026          |
 
 **Web Application** ([IoTech-2620-8741/qualitrack-web-app](https://github.com/IoTech-2620-8741/qualitrack-web-app))
+
+<p class="apa-label">Tabla 75</p>
+<p class="apa-title">Commits de la Web Application en el Sprint 1</p>
 
 | Repository                          | Branch                                            | Commit Id | Commit Message                                                                                                                      | Commit Message Body                                                                                                                                                                | Committed on (Date) |
 |-------------------------------------|---------------------------------------------------|-----------|-------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
@@ -715,6 +734,9 @@ elaboraron pruebas de aceptación BDD con archivos `.feature`.
 La siguiente tabla relaciona cada clase de prueba con el Bounded Context, los comportamientos que verifica y las User
 Stories que soporta.
 
+<p class="apa-label">Tabla 76</p>
+<p class="apa-title">Clases de prueba del Sprint 1</p>
+
 | Clase de prueba                        | Tipo        | Bounded Context                             | Comportamientos verificados (métodos de prueba)                                                                                                                                                                                                         | User Stories relacionadas                                  |
 |----------------------------------------|-------------|---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
 | Account​Recovery​Domain​Tests             | Unitaria    | IAM                                         | the code expires after fifteen minutes and is used once; five wrong codes revoke the recovery; a new code waits one minute and replaces the previous one; (+3 más)                                                                                      | US14, US15                                                 |
@@ -756,12 +778,19 @@ Stories que soporta.
 
 Ejecución de la suite de pruebas del backend:
 
+<p class="apa-label">Figura 322</p>
+<p class="apa-title">Ejecución de la suite de pruebas del backend en GitHub Actions</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/backend-test-suite.jpg" alt="Ejecución de la suite de pruebas del backend" width="100%">
-  <p><em>Figura: Ejecución de la suite de pruebas del backend en GitHub Actions. Esta evidencia muestra el workflow de integración continua que ejecuta con Maven las 172 pruebas unitarias y de integración del RESTful API, todas aprobadas (BUILD SUCCESS).</em></p>
 </div>
 
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra el workflow de integración continua que ejecuta con Maven las 172 pruebas unitarias y de integración del RESTful API, todas aprobadas (BUILD SUCCESS).</p>
+
 Commits relacionados con las pruebas en este sprint:
+
+<p class="apa-label">Tabla 77</p>
+<p class="apa-title">Commits relacionados con las pruebas del Sprint 1</p>
 
 | Repository                           | Branch                                            | Commit Id | Commit Message                                                                           | Commit Message Body                                                                                                                                                                | Committed on (Date) |
 |--------------------------------------|---------------------------------------------------|-----------|------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
@@ -825,222 +854,378 @@ principales con datos reales del laboratorio de demostración SENKA LAB, en ingl
 
 **Landing Page**
 
+<p class="apa-label">Figura 323</p>
+<p class="apa-title">Encabezado y barra de navegación de la Landing Page</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-header.png" alt="Landing Page - Navigation bar" width="100%">
-  <p><em>Figura: Encabezado y barra de navegación de la Landing Page. Esta vista evidencia el acceso directo a las secciones Home, Features, Benefits, About Us y Plans, el selector de idioma y el botón que lleva a la Web Application.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia el acceso directo a las secciones Home, Features, Benefits, About Us y Plans, el selector de idioma y el botón que lleva a la Web Application.</p>
+
+<p class="apa-label">Figura 324</p>
+<p class="apa-title">Sección Home</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-home.png" alt="Landing Page - Home" width="100%">
-  <p><em>Figura: Sección Home. Esta pantalla valida la comunicación inicial de la propuesta de valor, The Future of Pharmaceutical Quality Management, y presenta en tarjetas lo que ofrece QualiTrack: monitoreo IoT en tiempo real, cumplimiento BPM automatizado y registros de auditoría inmutables.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta pantalla valida la comunicación inicial de la propuesta de valor, The Future of Pharmaceutical Quality Management, y presenta en tarjetas lo que ofrece QualiTrack: monitoreo IoT en tiempo real, cumplimiento BPM automatizado y registros de auditoría inmutables.</p>
+
+<p class="apa-label">Figura 325</p>
+<p class="apa-title">Sección Features</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-features.png" alt="Landing Page - Features" width="100%">
-  <p><em>Figura: Sección Features. Esta evidencia muestra en un acordeón las funcionalidades clave de la plataforma, como la integración de telemetría IoT, el motor de cumplimiento BPM, las alertas instantáneas de desviación y el panel de analítica y KPI.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra en un acordeón las funcionalidades clave de la plataforma, como la integración de telemetría IoT, el motor de cumplimiento BPM, las alertas instantáneas de desviación y el panel de analítica y KPI.</p>
+
+<p class="apa-label">Figura 326</p>
+<p class="apa-title">Sección Benefits</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-benefits.png" alt="Landing Page - Benefits" width="100%">
-  <p><em>Figura: Sección Benefits. Esta vista presenta las ventajas de QualiTrack para la manufactura farmacéutica, como la reducción del tiempo de preparación de auditorías de DIGEMID y la eliminación de errores humanos en los registros críticos.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista presenta las ventajas de QualiTrack para la manufactura farmacéutica, como la reducción del tiempo de preparación de auditorías de DIGEMID y la eliminación de errores humanos en los registros críticos.</p>
+
+<p class="apa-label">Figura 327</p>
+<p class="apa-title">Sección About Us</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-about.png" alt="Landing Page - About Us" width="100%">
-  <p><em>Figura: Sección About Us. Esta evidencia presenta la visión de QualiTrack de digitalizar la supervisión de los procesos de manufactura y el cumplimiento de las Buenas Prácticas de Manufactura exigidas por DIGEMID, sus pilares (integración IoT, trazabilidad inmutable y cumplimiento regulatorio) y los perfiles de los integrantes del equipo de IoTech.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia presenta la visión de QualiTrack de digitalizar la supervisión de los procesos de manufactura y el cumplimiento de las Buenas Prácticas de Manufactura exigidas por DIGEMID, sus pilares (integración IoT, trazabilidad inmutable y cumplimiento regulatorio) y los perfiles de los integrantes del equipo de IoTech.</p>
+
+<p class="apa-label">Figura 328</p>
+<p class="apa-title">Sección Plans</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-plans.png" alt="Landing Page - Plans" width="100%">
-  <p><em>Figura: Sección Plans. Esta vista permite comparar los planes Standard Lab y Enterprise con su precio, periodicidad y características, alternando entre la modalidad mensual y anual.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista permite comparar los planes Standard Lab y Enterprise con su precio, periodicidad y características, alternando entre la modalidad mensual y anual.</p>
+
+<p class="apa-label">Figura 329</p>
+<p class="apa-title">Sección de testimonios y llamada final a la acción</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-testimonials.png" alt="Landing Page - Testimonials" width="100%">
-  <p><em>Figura: Sección de testimonios y llamada final a la acción. Esta evidencia muestra las opiniones de responsables de calidad y producción sobre QualiTrack y el botón Get Started que lleva a la Web Application.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra las opiniones de responsables de calidad y producción sobre QualiTrack y el botón Get Started que lleva a la Web Application.</p>
+
+<p class="apa-label">Figura 330</p>
+<p class="apa-title">Footer de la Landing Page</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-footer.png" alt="Landing Page - Footer" width="100%">
-  <p><em>Figura: Footer de la Landing Page. Esta evidencia muestra el cierre de la navegación con accesos a las secciones, los datos de contacto (correo, teléfono y ubicación) y los enlaces a los Términos de Servicio y la Política de Privacidad.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra el cierre de la navegación con accesos a las secciones, los datos de contacto (correo, teléfono y ubicación) y los enlaces a los Términos de Servicio y la Política de Privacidad.</p>
+
+<p class="apa-label">Figura 331</p>
+<p class="apa-title">Páginas de Términos de Servicio y Política de Privacidad</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-legal.png" alt="Landing Page - Terms of Service and Privacy Policy" width="100%">
-  <p><em>Figura: Páginas de Términos de Servicio y Política de Privacidad. Esta vista evidencia la información legal que el visitante puede consultar antes de contratar el servicio.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia la información legal que el visitante puede consultar antes de contratar el servicio.</p>
+
+<p class="apa-label">Figura 332</p>
+<p class="apa-title">Landing Page en español en un dispositivo móvil</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/landing-es-mobile.png" alt="Landing Page - Spanish and mobile view" width="100%">
-  <p><em>Figura: Landing Page en español en un dispositivo móvil. Esta evidencia valida el cambio de idioma entre inglés y español y la adaptación del diseño a pantallas pequeñas en la portada, la sección de servicios y los planes.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia valida el cambio de idioma entre inglés y español y la adaptación del diseño a pantallas pequeñas en la portada, la sección de servicios y los planes.</p>
 
 **Web Application**
 
 *Acceso y configuración inicial*
 
+<p class="apa-label">Figura 333</p>
+<p class="apa-title">Inicio de sesión</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-sign-in.png" alt="Web Application - Sign In" width="100%">
-  <p><em>Figura: Inicio de sesión. Esta pantalla valida el acceso del responsable de calidad, el personal operativo y los auditores con su usuario o correo, con mensajes claros cuando las credenciales no son válidas.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta pantalla valida el acceso del responsable de calidad, el personal operativo y los auditores con su usuario o correo, con mensajes claros cuando las credenciales no son válidas.</p>
+
+<p class="apa-label">Figura 334</p>
+<p class="apa-title">Registro de cuenta del responsable de calidad</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-sign-up.png" alt="Web Application - Sign Up" width="100%">
-  <p><em>Figura: Registro de cuenta del responsable de calidad. Esta evidencia muestra los datos que se validan antes de crear la cuenta: usuario, correo único para recuperar la contraseña y contraseña con su confirmación.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra los datos que se validan antes de crear la cuenta: usuario, correo único para recuperar la contraseña y contraseña con su confirmación.</p>
+
+<p class="apa-label">Figura 335</p>
+<p class="apa-title">Recuperación de contraseña</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-password-recovery.png" alt="Web Application - Password recovery" width="100%">
-  <p><em>Figura: Recuperación de contraseña. Esta vista evidencia la solicitud con el usuario o el correo de la cuenta, a cuyo correo se envía un código de seis dígitos para restablecer la contraseña.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia la solicitud con el usuario o el correo de la cuenta, a cuyo correo se envía un código de seis dígitos para restablecer la contraseña.</p>
+
+<p class="apa-label">Figura 336</p>
+<p class="apa-title">Selección del plan de suscripción</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-onboarding-plans.jpg" alt="Web Application - Plan selection" width="100%">
-  <p><em>Figura: Selección del plan de suscripción. Esta evidencia muestra los planes Standard Lab y Enterprise en modalidad mensual y anual, con sus cuentas de usuario y dispositivos conectados, que el responsable de calidad elige antes de usar las funciones operativas.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra los planes Standard Lab y Enterprise en modalidad mensual y anual, con sus cuentas de usuario y dispositivos conectados, que el responsable de calidad elige antes de usar las funciones operativas.</p>
 
 *Panel de control*
 
+<p class="apa-label">Figura 337</p>
+<p class="apa-title">Panel de control del laboratorio</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-dashboard.jpg" alt="Web Application - Dashboard" width="100%">
-  <p><em>Figura: Panel de control del laboratorio. Esta evidencia reúne en una sola vista los equipos operativos, los lotes en proceso, las alertas abiertas, las materias primas con stock bajo, la telemetría reciente y el estado de la suscripción.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia reúne en una sola vista los equipos operativos, los lotes en proceso, las alertas abiertas, las materias primas con stock bajo, la telemetría reciente y el estado de la suscripción.</p>
 
 *Laboratorio, ambientes y personal*
 
+<p class="apa-label">Figura 338</p>
+<p class="apa-title">Perfil del laboratorio</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-lab-profile.jpg" alt="Web Application - Laboratory profile" width="100%">
-  <p><em>Figura: Perfil del laboratorio. Esta vista muestra los datos registrados de la instalación y permite actualizarlos.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista muestra los datos registrados de la instalación y permite actualizarlos.</p>
+
+<p class="apa-label">Figura 339</p>
+<p class="apa-title">Ambientes del laboratorio</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-environments.jpg" alt="Web Application - Environments" width="100%">
-  <p><em>Figura: Ambientes del laboratorio. Esta evidencia muestra el registro de ambientes y la definición de su uso (laboratorio, producción, almacén de materias primas o de producto), que determina qué se puede almacenar en cada uno.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra el registro de ambientes y la definición de su uso (laboratorio, producción, almacén de materias primas o de producto), que determina qué se puede almacenar en cada uno.</p>
+
+<p class="apa-label">Figura 340</p>
+<p class="apa-title">Personal del laboratorio</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-staff.jpg" alt="Web Application - Staff" width="100%">
-  <p><em>Figura: Personal del laboratorio. Esta pantalla muestra el registro de operarios y auditores, su cargo, su estado y la consulta de su actividad registrada.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta pantalla muestra el registro de operarios y auditores, su cargo, su estado y la consulta de su actividad registrada.</p>
 
 *Inventario de materias primas*
 
+<p class="apa-label">Figura 341</p>
+<p class="apa-title">Catálogo de materias primas por ambiente</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-inventory-catalogue.jpg" alt="Web Application - Raw materials" width="100%">
-  <p><em>Figura: Catálogo de materias primas por ambiente. Esta vista evidencia el stock utilizable y físico de cada material y resalta los que están por debajo del stock mínimo.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia el stock utilizable y físico de cada material y resalta los que están por debajo del stock mínimo.</p>
+
+<p class="apa-label">Figura 342</p>
+<p class="apa-title">Detalle de una materia prima</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-inventory-detail.jpg" alt="Web Application - Raw material detail" width="100%">
-  <p><em>Figura: Detalle de una materia prima. Esta evidencia muestra sus lotes recibidos con estado y vencimiento, su contenedor, el historial de movimientos y los lotes de producto que la consumieron.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra sus lotes recibidos con estado y vencimiento, su contenedor, el historial de movimientos y los lotes de producto que la consumieron.</p>
 
 *Equipos y dispositivos IoT*
 
+<p class="apa-label">Figura 343</p>
+<p class="apa-title">Equipos y dispositivos IoT</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-equipment-list.jpg" alt="Web Application - Equipment" width="100%">
-  <p><em>Figura: Equipos y dispositivos IoT. Esta pantalla lista los equipos del laboratorio con su ambiente y estado operativo, e identifica los dispositivos ambientales y monitores de contenedor con su estado de conexión.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta pantalla lista los equipos del laboratorio con su ambiente y estado operativo, e identifica los dispositivos ambientales y monitores de contenedor con su estado de conexión.</p>
+
+<p class="apa-label">Figura 344</p>
+<p class="apa-title">Detalle de un equipo</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-equipment-detail.jpg" alt="Web Application - Equipment detail" width="100%">
-  <p><em>Figura: Detalle de un equipo. Esta evidencia reúne sus datos generales, la reubicación entre ambientes, el registro de cambios de su estado operativo y su historial de mantenimiento con el técnico responsable.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia reúne sus datos generales, la reubicación entre ambientes, el registro de cambios de su estado operativo y su historial de mantenimiento con el técnico responsable.</p>
 
 *Monitoreo ambiental*
 
+<p class="apa-label">Figura 345</p>
+<p class="apa-title">Monitoreo ambiental en tiempo real</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-telemetry-monitoring.jpg" alt="Web Application - Telemetry dashboard" width="100%">
-  <p><em>Figura: Monitoreo ambiental en tiempo real. Esta vista muestra las lecturas actuales de calidad de aire, temperatura, humedad y luminosidad con su estado (normal, advertencia o crítico) frente a los rangos del perfil vigente.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista muestra las lecturas actuales de calidad de aire, temperatura, humedad y luminosidad con su estado (normal, advertencia o crítico) frente a los rangos del perfil vigente.</p>
+
+<p class="apa-label">Figura 346</p>
+<p class="apa-title">Historial de telemetría</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-telemetry-history.jpg" alt="Web Application - Telemetry history" width="100%">
-  <p><em>Figura: Historial de telemetría. Esta evidencia grafica las lecturas de un periodo de hasta 31 días junto con los rangos normal y crítico, resaltando las desviaciones.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia grafica las lecturas de un periodo de hasta 31 días junto con los rangos normal y crítico, resaltando las desviaciones.</p>
+
+<p class="apa-label">Figura 347</p>
+<p class="apa-title">Perfiles ambientales</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-environmental-profiles.jpg" alt="Web Application - Environmental profiles" width="100%">
-  <p><em>Figura: Perfiles ambientales. Esta pantalla evidencia la configuración versionada de los límites normal y crítico por ambiente y por contenedor, que clasifican cada lectura como normal, advertencia o crítica.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta pantalla evidencia la configuración versionada de los límites normal y crítico por ambiente y por contenedor, que clasifican cada lectura como normal, advertencia o crítica.</p>
 
 *Productos y lotes*
 
+<p class="apa-label">Figura 348</p>
+<p class="apa-title">Catálogo de productos farmacéuticos por ambiente</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-products.jpg" alt="Web Application - Products" width="100%">
-  <p><em>Figura: Catálogo de productos farmacéuticos por ambiente. Esta vista muestra los productos registrados que pueden fabricarse en el laboratorio.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista muestra los productos registrados que pueden fabricarse en el laboratorio.</p>
+
+<p class="apa-label">Figura 349</p>
+<p class="apa-title">Lotes de producción</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-batches.jpg" alt="Web Application - Production batches" width="100%">
-  <p><em>Figura: Lotes de producción. Esta evidencia lista los lotes con su producto, cantidad y estado (pendiente, en proceso, liberado o rechazado).</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia lista los lotes con su producto, cantidad y estado (pendiente, en proceso, liberado o rechazado).</p>
+
+<p class="apa-label">Figura 350</p>
+<p class="apa-title">Detalle de un lote en proceso</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-batch-detail.jpg" alt="Web Application - Batch detail" width="100%">
-  <p><em>Figura: Detalle de un lote en proceso. Esta pantalla muestra el registro de consumos de materia prima desde un lote liberado de un ambiente, que descuenta el stock del inventario, y el historial de consumos del lote.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta pantalla muestra el registro de consumos de materia prima desde un lote liberado de un ambiente, que descuenta el stock del inventario, y el historial de consumos del lote.</p>
+
+<p class="apa-label">Figura 351</p>
+<p class="apa-title">Trazabilidad de un lote liberado</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-batch-traceability.jpg" alt="Web Application - Batch traceability" width="100%">
-  <p><em>Figura: Trazabilidad de un lote liberado. Esta evidencia reúne las materias primas con sus lotes de origen, los equipos, el personal, el contenedor donde se almacenó el producto y la decisión de calidad firmada con su hash SHA-256.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia reúne las materias primas con sus lotes de origen, los equipos, el personal, el contenedor donde se almacenó el producto y la decisión de calidad firmada con su hash SHA-256.</p>
+
+<p class="apa-label">Figura 352</p>
+<p class="apa-title">Liberación de un lote</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-batch-release.jpg" alt="Web Application - Batch release" width="100%">
-  <p><em>Figura: Liberación de un lote. Esta vista evidencia que el responsable de calidad libera el lote con su fecha y sus notas de calidad, y que la liberación queda firmada con su usuario y ya no permite modificar el lote.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia que el responsable de calidad libera el lote con su fecha y sus notas de calidad, y que la liberación queda firmada con su usuario y ya no permite modificar el lote.</p>
 
 *Alertas y avisos*
 
+<p class="apa-label">Figura 353</p>
+<p class="apa-title">Panel de alertas de desviación</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-alerts.jpg" alt="Web Application - Deviation alerts" width="100%">
-  <p><em>Figura: Panel de alertas de desviación. Esta pantalla muestra las alertas por estado y severidad, con el ambiente, el dispositivo y la cantidad de desviaciones de cada incidente.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta pantalla muestra las alertas por estado y severidad, con el ambiente, el dispositivo y la cantidad de desviaciones de cada incidente.</p>
+
+<p class="apa-label">Figura 354</p>
+<p class="apa-title">Detalle de una alerta</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-alert-detail.jpg" alt="Web Application - Alert detail" width="100%">
-  <p><em>Figura: Detalle de una alerta. Esta evidencia muestra la inspección técnica de la desviación, las acciones automáticas del contenedor y las acciones para atenderla y resolverla con notas.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra la inspección técnica de la desviación, las acciones automáticas del contenedor y las acciones para atenderla y resolverla con notas.</p>
+
+<p class="apa-label">Figura 355</p>
+<p class="apa-title">Campana de avisos y preferencias de notificación</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-notifications.jpg" alt="Web Application - Notifications" width="100%">
-  <p><em>Figura: Campana de avisos y preferencias de notificación. Esta vista evidencia los avisos de alertas y lotes con su contador de no leídos, y la elección de qué avisos llegan a la aplicación y al correo.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia los avisos de alertas y lotes con su contador de no leídos, y la elección de qué avisos llegan a la aplicación y al correo.</p>
 
 *Indicadores, reportes y auditoría*
 
+<p class="apa-label">Figura 356</p>
+<p class="apa-title">Resumen ambiental</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-kpi-dashboard.jpg" alt="Web Application - Environmental summary" width="100%">
-  <p><em>Figura: Resumen ambiental. Esta pantalla muestra, para el periodo elegido (24 horas, 7 o 31 días) y por ambiente, la cantidad de lecturas, el promedio, el mínimo, el máximo y la última lectura de cada variable de los dispositivos.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta pantalla muestra, para el periodo elegido (24 horas, 7 o 31 días) y por ambiente, la cantidad de lecturas, el promedio, el mínimo, el máximo y la última lectura de cada variable de los dispositivos.</p>
+
+<p class="apa-label">Figura 357</p>
+<p class="apa-title">Generación de reportes</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-reports.jpg" alt="Web Application - Reports" width="100%">
-  <p><em>Figura: Generación de reportes. Esta evidencia muestra los reportes de lote, ambiental y de inventario en PDF, y la exportación del historial técnico y de mantenimiento de los equipos.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra los reportes de lote, ambiental y de inventario en PDF, y la exportación del historial técnico y de mantenimiento de los equipos.</p>
+
+<p class="apa-label">Figura 358</p>
+<p class="apa-title">Registro de auditoría</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-audit-log.jpg" alt="Web Application - Audit log" width="100%">
-  <p><em>Figura: Registro de auditoría. Esta vista evidencia quién realizó cada acción y cuándo, con filtros por equipo, lote y periodo.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia quién realizó cada acción y cuándo, con filtros por equipo, lote y periodo.</p>
 
 *Perfil y suscripción*
 
+<p class="apa-label">Figura 359</p>
+<p class="apa-title">Perfil del usuario</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-profile.jpg" alt="Web Application - Profile" width="100%">
-  <p><em>Figura: Perfil del usuario. Esta pantalla muestra los datos personales y la foto de perfil, junto con la información de la cuenta (los datos de identidad y teléfono se ocultaron en la imagen).</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta pantalla muestra los datos personales y la foto de perfil, junto con la información de la cuenta (los datos de identidad y teléfono se ocultaron en la imagen).</p>
+
+<p class="apa-label">Figura 360</p>
+<p class="apa-title">Resumen de la suscripción</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-billing.jpg" alt="Web Application - Billing summary" width="100%">
-  <p><em>Figura: Resumen de la suscripción. Esta evidencia muestra el plan vigente, el periodo de facturación, el historial de pagos y la opción de cancelar la renovación.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra el plan vigente, el periodo de facturación, el historial de pagos y la opción de cancelar la renovación.</p>
+
+<p class="apa-label">Figura 361</p>
+<p class="apa-title">Interfaz en español</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/execution%20evidence/web-language-es.jpg" alt="Web Application - Spanish interface" width="100%">
-  <p><em>Figura: Interfaz en español. Esta vista valida la internacionalización de la Web Application en inglés y español con el selector de idioma.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista valida la internacionalización de la Web Application en inglés y español con el selector de idioma.</p>
 
 En conjunto, estas evidencias muestran que el Sprint 1 entregó una Landing Page navegable y bilingüe que comunica la
 propuesta de valor de QualiTrack, y una Web Application desplegada e integrada con el RESTful API que cubre el ciclo
@@ -1065,6 +1250,9 @@ sintaxis de llamada, sus parámetros y los códigos de respuesta (con el recurso
 
 **IAM**
 
+<p class="apa-label">Tabla 78</p>
+<p class="apa-title">Endpoints de IAM documentados en el Sprint 1</p>
+
 | Endpoint                                            | Acción                                        | Parámetros                     | Respuestas                                     |
 |-----------------------------------------------------|-----------------------------------------------|--------------------------------|------------------------------------------------|
 | **POST** /​authentication/​password-recovery-requests | Request a password recovery                   | body: Password​Recovery​Request  | 202 (Password​Recovery​Accepted), 400            |
@@ -1082,6 +1270,9 @@ sintaxis de llamada, sus parámetros y los códigos de respuesta (con el recurso
 
 **Payments & Subscriptions**
 
+<p class="apa-label">Tabla 79</p>
+<p class="apa-title">Endpoints de Payments & Subscriptions documentados en el Sprint 1</p>
+
 | Endpoint                                                       | Acción                                | Parámetros                                    | Respuestas                                |
 |----------------------------------------------------------------|---------------------------------------|-----------------------------------------------|-------------------------------------------|
 | **GET** /​laboratories/​{laboratory​Id}/​subscriptions             | Get the subscriptions of a laboratory | laboratoryId (path), status (query, opcional) | 200 (Subscription​Resource[])              |
@@ -1092,6 +1283,9 @@ sintaxis de llamada, sus parámetros y los códigos de respuesta (con el recurso
 | **GET** /​subscriptions/​{subscription​Id}/​payments               | Get the payments of a subscription    | subscription​Id (path)                         | 200 (Subscription​Payment​Resource[])       |
 
 **Laboratory Management**
+
+<p class="apa-label">Tabla 80</p>
+<p class="apa-title">Endpoints de Laboratory Management documentados en el Sprint 1</p>
 
 | Endpoint                                                                             | Acción                                | Parámetros                                                                     | Respuestas                                                   |
 |--------------------------------------------------------------------------------------|---------------------------------------|--------------------------------------------------------------------------------|--------------------------------------------------------------|
@@ -1109,6 +1303,9 @@ sintaxis de llamada, sus parámetros y los códigos de respuesta (con el recurso
 | **POST** /​laboratories/​{laboratory​Id}/​staff/​{staff​Id}/​deactivations                  | Deactivate a staff member             | laboratoryId (path), staffId (path)                                            | 201 (Staff​Member​Response), 403, 404, 409                     |
 
 **Inventory Management**
+
+<p class="apa-label">Tabla 81</p>
+<p class="apa-title">Endpoints de Inventory Management documentados en el Sprint 1</p>
 
 | Endpoint                                                                                                                                          | Acción                                                                    | Parámetros                                                                                                                               | Respuestas                                               |
 |---------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------|
@@ -1133,6 +1330,9 @@ sintaxis de llamada, sus parámetros y los códigos de respuesta (con el recurso
 
 **Equipment Management**
 
+<p class="apa-label">Tabla 82</p>
+<p class="apa-title">Endpoints de Equipment Management documentados en el Sprint 1</p>
+
 | Endpoint                                                                                                        | Acción                                                 | Parámetros                                                                                        | Respuestas                                         |
 |-----------------------------------------------------------------------------------------------------------------|--------------------------------------------------------|---------------------------------------------------------------------------------------------------|----------------------------------------------------|
 | **POST** /​laboratories/​{laboratory​Id}/​devices/​container-monitors                                                | Register a container monitor                           | laboratoryId (path), body: Register​Iot​Device​Request                                               | 201 (Equipment​Response), 400, 403, 409             |
@@ -1152,6 +1352,9 @@ sintaxis de llamada, sus parámetros y los códigos de respuesta (con el recurso
 
 **Tracking & Telemetry**
 
+<p class="apa-label">Tabla 83</p>
+<p class="apa-title">Endpoints de Tracking & Telemetry documentados en el Sprint 1</p>
+
 | Endpoint                                                                                                                              | Acción                                                 | Parámetros                                                                                                                         | Respuestas                                           |
 |---------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------|
 | **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​container-monitors/​{device​Id}/​actuation-events                      | Get the actions of the container monitor               | laboratoryId (path), environment​Id (path), deviceId (path), from (query, opcional), to (query, opcional)                           | 200 (Actuation​Event[]), 400, 403, 404                |
@@ -1169,6 +1372,9 @@ sintaxis de llamada, sus parámetros y los códigos de respuesta (con el recurso
 | **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​telemetry-measurements                                             | Record a reading of the environmental device           | laboratoryId (path), environment​Id (path), body: Record​Measurement​Request                                                          | 200 (Measurement), 201 (Measurement), 400, 403       |
 
 **Product Batch Management**
+
+<p class="apa-label">Tabla 84</p>
+<p class="apa-title">Endpoints de Product Batch Management documentados en el Sprint 1</p>
 
 | Endpoint                                                                                                                       | Acción                               | Parámetros                                                                                                           | Respuestas                                              |
 |--------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|----------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------|
@@ -1190,6 +1396,9 @@ sintaxis de llamada, sus parámetros y los códigos de respuesta (con el recurso
 
 **Compliance & Alerting**
 
+<p class="apa-label">Tabla 85</p>
+<p class="apa-title">Endpoints de Compliance & Alerting documentados en el Sprint 1</p>
+
 | Endpoint                                                                            | Acción                                                        | Parámetros                                                                                                                                            | Respuestas                                                                |
 |-------------------------------------------------------------------------------------|---------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
 | **GET** /​batches/​{batch​Id}/​compliance-events                                        | Get the compliance events of a batch                          | batchId (path)                                                                                                                                        | 200 (Compliance​Event​Resource[])                                           |
@@ -1209,6 +1418,9 @@ sintaxis de llamada, sus parámetros y los códigos de respuesta (con el recurso
 
 **Reporting & Audit**
 
+<p class="apa-label">Tabla 86</p>
+<p class="apa-title">Endpoints de Reporting & Audit documentados en el Sprint 1</p>
+
 | Endpoint                                                                                                | Acción                                         | Parámetros                                                                                         | Respuestas                                    |
 |---------------------------------------------------------------------------------------------------------|------------------------------------------------|----------------------------------------------------------------------------------------------------|-----------------------------------------------|
 | **GET** /​batches/​{batch​Id}/​audit-logs                                                                   | Get the audit log of a batch                   | batchId (path), dateFrom (query, opcional), dateTo (query, opcional)                               | 200 (Audit​Log​Entry​Resource[])                 |
@@ -1226,6 +1438,9 @@ sintaxis de llamada, sus parámetros y los códigos de respuesta (con el recurso
 | **GET** /​reports/​{report​Id}/​content                                                                     | Download a stored report                       | reportId (path)                                                                                    | 200                                           |
 
 **Profile**
+
+<p class="apa-label">Tabla 87</p>
+<p class="apa-title">Endpoints de Profile documentados en el Sprint 1</p>
 
 | Endpoint                                                           | Acción                                       | Parámetros                          | Respuestas                   |
 |--------------------------------------------------------------------|----------------------------------------------|-------------------------------------|------------------------------|
@@ -1304,22 +1519,37 @@ respuesta `200 OK` con el estado evaluado por el perfil ambiental vigente:
 
 Interacción con la documentación usando datos de muestra:
 
+<p class="apa-label">Figura 362</p>
+<p class="apa-title">Documentación del RESTful API en Swagger UI</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/services-documentation-evidence/swagger-ui-overview.png" alt="Swagger UI - QualiTrack API" width="100%">
-  <p><em>Figura: Documentación del RESTful API en Swagger UI. Esta vista muestra las operaciones agrupadas por recurso raíz, con su verbo HTTP, ruta y descripción.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista muestra las operaciones agrupadas por recurso raíz, con su verbo HTTP, ruta y descripción.</p>
+
+<p class="apa-label">Figura 363</p>
+<p class="apa-title">Operación de inicio de sesión en Swagger UI</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/services-documentation-evidence/swagger-ui-sign-in.png" alt="Swagger UI - Sign In" width="100%">
-  <p><em>Figura: Operación de inicio de sesión en Swagger UI. Esta evidencia muestra su descripción, el cuerpo de la petición con el usuario y la contraseña, y la respuesta exitosa, que devuelve el usuario autenticado con su token JWT.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra su descripción, el cuerpo de la petición con el usuario y la contraseña, y la respuesta exitosa, que devuelve el usuario autenticado con su token JWT.</p>
+
+<p class="apa-label">Figura 364</p>
+<p class="apa-title">Consulta de mediciones de telemetría de un ambiente en Swagger UI</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/services-documentation-evidence/swagger-ui-telemetry.png" alt="Swagger UI - Telemetry Measurements" width="100%">
-  <p><em>Figura: Consulta de mediciones de telemetría de un ambiente en Swagger UI. Esta evidencia muestra los parámetros del laboratorio, el ambiente, el periodo y la métrica, y las respuestas documentadas con el estado de cada lectura y los errores posibles.</em></p>
 </div>
 
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra los parámetros del laboratorio, el ambiente, el periodo y la métrica, y las respuestas documentadas con el estado de cada lectura y los errores posibles.</p>
+
 Commits relacionados con la documentación de los servicios en este sprint:
+
+<p class="apa-label">Tabla 88</p>
+<p class="apa-title">Commits de Services Documentation Evidence for Sprint Review en el Sprint 1</p>
 
 | Repository                           | Branch                                            | Commit Id | Commit Message                                                                         | Commit Message Body                                                                                                                                                                | Committed on (Date) |
 |--------------------------------------|---------------------------------------------------|-----------|----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
@@ -1365,10 +1595,16 @@ Previo a iniciar los pasos:
 
 2) Ingresas el nombre de la aplicación, en este caso, escribimos **iotech-qualitrack**:
 
+<p class="apa-label">Figura 365</p>
+<p class="apa-title">Previous Step 1 - Ingreso del nombre de la aplicación</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-previous-step-1.png" alt="Previous Step 1 - Ingreso del nombre de la aplicación" width="100%"></p>
 
 3) Finalmente, mostrará la contraseña para la aplicación, que nos permitirá usar la cuenta de correo para las
    aplicaciones externas:
+
+<p class="apa-label">Figura 366</p>
+<p class="apa-title">Previous Step 2 - Contraseña de aplicación generada</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-previous-step-2.png" alt="Previous Step 2 - Contraseña de aplicación generada" width="100%"></p>
 
@@ -1376,18 +1612,30 @@ Previo a iniciar los pasos:
 
 1) En [Portal de Azure](https://portal.azure.com/), buscamos en la barra de navegación **Suscripciones**:
 
+<p class="apa-label">Figura 367</p>
+<p class="apa-title">Step 1-1 - Búsqueda en el portal de Azure</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-1-1.png" alt="Step 1-1 - Búsqueda en el portal de Azure" width="100%"></p>
 
 2) Seleccionamos la suscripción que tenemos:
+
+<p class="apa-label">Figura 368</p>
+<p class="apa-title">Step 1-2 - Selección de la suscripción</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-1-2.png" alt="Step 1-2 - Selección de la suscripción" width="100%"></p>
 
 3) Vamos a Configuración y después Proveedores de Recursos:
 
+<p class="apa-label">Figura 369</p>
+<p class="apa-title">Step 1-3 - Proveedores de recursos</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-1-3.png" alt="Step 1-3 - Proveedores de recursos" width="100%"></p>
 
 4) Seleccionamos los siguientes recursos: Microsoft.App, Microsoft.OperationalInsights, Microsoft.ContainerRegistry,
    Microsoft.DBforMySQL y Microsoft.ManagedIdentity y le damos a registrar.
+
+<p class="apa-label">Figura 370</p>
+<p class="apa-title">Step 1-4 - Registro de los proveedores de recursos</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-1-4.png" alt="Step 1-4 - Registro de los proveedores de recursos" width="100%"></p>
 
@@ -1395,48 +1643,87 @@ Previo a iniciar los pasos:
 
 1) Buscamos **Grupos de recursos**:
 
+<p class="apa-label">Figura 371</p>
+<p class="apa-title">Step 2-1 - Búsqueda de grupos de recursos</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-1.png" alt="Step 2-1 - Búsqueda de grupos de recursos" width="100%"></p>
 
 2) Le damos a Crear grupo de recursos:
+
+<p class="apa-label">Figura 372</p>
+<p class="apa-title">Step 2-2 - Creación del grupo de recursos</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-2.png" alt="Step 2-2 - Creación del grupo de recursos" width="100%"></p>
 
 3) Ingresamos el nombre y la región del grupo de recursos a crear:
 
+<p class="apa-label">Figura 373</p>
+<p class="apa-title">Step 2-3 - Nombre y región del grupo de recursos</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-3.png" alt="Step 2-3 - Nombre y región del grupo de recursos" width="100%"></p>
 
 4) Le damos a crear grupo de recursos:
 
+<p class="apa-label">Figura 374</p>
+<p class="apa-title">Paso 2: Creación de grupo de recursos, identidad en GitHub y permisos</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-4-part-1.png" alt="Step 2-4 - Confirmación de creación del grupo" width="100%"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-4-part-2.png" alt="Step 2-4 - Confirmación de creación del grupo" width="100%"></p>
+
+<p class="apa-label">Figura 375</p>
+<p class="apa-title">Step 2-5 - Grupo de recursos creado</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-5.png" alt="Step 2-5 - Grupo de recursos creado" width="100%"></p>
 
 5) Ahora, vamos a **Identidades administradas**:
 
+<p class="apa-label">Figura 376</p>
+<p class="apa-title">Step 2-6 - Acceso a identidades administradas</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-6.png" alt="Step 2-6 - Acceso a identidades administradas" width="100%"></p>
 
 6) Le damos a crear, seleccionamos nuestro grupo, el nombre y la región para la identidad:
 
+<p class="apa-label">Figura 377</p>
+<p class="apa-title">Step 2-7 - Datos de la identidad administrada</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-7.png" alt="Step 2-7 - Datos de la identidad administrada" width="100%"></p>
+
+<p class="apa-label">Figura 378</p>
+<p class="apa-title">Step 2-8 - Datos de la identidad administrada (región)</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-8.png" alt="Step 2-8 - Datos de la identidad administrada (región)" width="100%"></p>
 
 7) Creamos la identidad administrada:
 
+<p class="apa-label">Figura 379</p>
+<p class="apa-title">Step 2-9 - Creación de la identidad administrada</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-9.png" alt="Step 2-9 - Creación de la identidad administrada" width="90%"></p>
 
 8) Dentro de la identidad, vamos a Configuración y después Credenciales federadas:
 
+<p class="apa-label">Figura 380</p>
+<p class="apa-title">Step 2-10 - Credenciales federadas</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-10.png" alt="Step 2-10 - Credenciales federadas" width="100%"></p>
 
 9) Agregaremos una credencial para Github Actions que nos permitirá realizar CI/CD con todos los valores que nos piden:
+
+<p class="apa-label">Figura 381</p>
+<p class="apa-title">Step 2-11 - Credencial para GitHub Actions</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-11.png" alt="Step 2-11 - Credencial para GitHub Actions" width="100%"></p>
 
 10) Volvemos a grupos de recursos, entramos a Control de Acceso (IAM) y agregamos una asignación de roles con rol de
     **Colaborador**, en miembros, seleccionamos la credencial dentro de la identidad administrada:
 
+<p class="apa-label">Figura 382</p>
+<p class="apa-title">Step 2-12 - Asignación de rol Colaborador en IAM</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-12.png" alt="Step 2-12 - Asignación de rol Colaborador en IAM" width="100%"></p>
+
+<p class="apa-label">Figura 383</p>
+<p class="apa-title">Step 2-13 - Selección de la identidad como miembro</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-2-13.png" alt="Step 2-13 - Selección de la identidad como miembro" width="100%"></p>
 
@@ -1445,11 +1732,23 @@ Previo a iniciar los pasos:
 1) Buscamos y entramos a **Container registries** y creamos un registro, seleccionando nuestro grupo e ingresando un
    nombre con una región y un plan de precios y lo creamos:
 
+<p class="apa-label">Figura 384</p>
+<p class="apa-title">Step 3-1 - Búsqueda de Container registries</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-3-1.png" alt="Step 3-1 - Búsqueda de Container registries" width="100%"></p>
+
+<p class="apa-label">Figura 385</p>
+<p class="apa-title">Step 3-2 - Botón Crear en Container registries</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-3-2.png" alt="Step 3-2 - Botón Crear en Container registries" width="100%"></p>
 
+<p class="apa-label">Figura 386</p>
+<p class="apa-title">Step 3-3 - Datos básicos del registro de contenedor</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-3-3.png" alt="Step 3-3 - Datos básicos del registro de contenedor" width="100%"></p>
+
+<p class="apa-label">Figura 387</p>
+<p class="apa-title">Paso 3: Registro de imagen de contenedor</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-3-4-part-1.png" alt="Step 3-4 - Revisión y validación del registro de contenedor" width="100%"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-3-4-part-2.png" alt="Step 3-4 - Revisión y validación del registro de contenedor" width="100%"></p>
 
@@ -1457,24 +1756,39 @@ Previo a iniciar los pasos:
 
 1) Buscamos y entramos a **Azure Database for MySQL servers**:
 
+<p class="apa-label">Figura 388</p>
+<p class="apa-title">Step 4-1 - Búsqueda de Azure Database for MySQL</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-1.png" alt="Step 4-1 - Búsqueda de Azure Database for MySQL" width="100%"></p>
 
 2) Le damos a Crear y seleccionamos la opción **Servidor flexible**:
+
+<p class="apa-label">Figura 389</p>
+<p class="apa-title">Step 4-2 - Opción Servidor flexible</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-2.png" alt="Step 4-2 - Opción Servidor flexible" width="100%"></p>
 
 3) En Datos básicos, seleccionamos nuestro grupo de recursos **iotech-qualitrack-rg**, ingresamos el nombre
    **iotech-qualitrack-mysql**, la región **Chile Central** y la versión **8.4**:
 
+<p class="apa-label">Figura 390</p>
+<p class="apa-title">iotech-qualitrack-mysql, la región Chile Central y la versión 8.4</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-3.png" alt="Step 4-3 - Datos básicos del servidor flexible" width="100%"></p>
 
 4) En Carga de trabajo, seleccionamos **Desarrollo o aficionado** y verificamos que quede el tamaño **Burstable B1ms**
    con **20 GiB** de almacenamiento. Además, dejamos desactivada la opción de Alta disponibilidad:
 
+<p class="apa-label">Figura 391</p>
+<p class="apa-title">Step 4-4 - Proceso, almacenamiento y alta disponibilidad</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-4.png" alt="Step 4-4 - Proceso, almacenamiento y alta disponibilidad" width="100%"></p>
 
 5) En Autenticación, seleccionamos únicamente **MySQL**, ingresamos el usuario **iotechadmin** y una contraseña segura.
    Es importante guardar esta contraseña, ya que no se puede recuperar después:
+
+<p class="apa-label">Figura 392</p>
+<p class="apa-title">Step 4-5 - Autenticación del servidor</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-5.png" alt="Step 4-5 - Autenticación del servidor" width="100%"></p>
 
@@ -1483,25 +1797,43 @@ Previo a iniciar los pasos:
    Container App se conecte a la base de datos. Opcionalmente, podemos agregar nuestra IP actual si queremos conectarnos
    desde MySQL Workbench:
 
+<p class="apa-label">Figura 393</p>
+<p class="apa-title">Step 4-6 - Configuración de redes</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-6.png" alt="Step 4-6 - Configuración de redes" width="100%"></p>
 
 7) Le damos a Revisar y crear, verificamos que la validación sea superada y creamos el servidor. Este proceso puede
    tardar varios minutos:
 
+<p class="apa-label">Figura 394</p>
+<p class="apa-title">Step 4-7 - Revisión de la configuración del servidor</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-7.png" alt="Step 4-7 - Revisión de la configuración del servidor" width="100%"></p>
+
+<p class="apa-label">Figura 395</p>
+<p class="apa-title">Step 4-8 - Implementación completada</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-8.png" alt="Step 4-8 - Implementación completada" width="100%"></p>
 
 8) Cuando termine el despliegue, entramos al servidor, vamos a **Bases de datos** y le damos a Agregar:
 
+<p class="apa-label">Figura 396</p>
+<p class="apa-title">Step 4-9 - Lista de bases de datos del servidor</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-9.png" alt="Step 4-9 - Lista de bases de datos del servidor" width="100%"></p>
 
 9) Ingresamos el nombre de la base de datos **iotech_qualitrack** y la guardamos:
+
+<p class="apa-label">Figura 397</p>
+<p class="apa-title">Step 4-10 - Creación de la base de datos iotech_qualitrack</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-10.png" alt="Step 4-10 - Creación de la base de datos iotech_qualitrack" width="100%"></p>
 
 10) Finalmente, en **Información general**, copiamos el nombre del servidor, que termina en
     **.mysql.database.azure.com**, ya que lo usaremos más adelante para la configuración del back-end:
+
+<p class="apa-label">Figura 398</p>
+<p class="apa-title">Step 4-11 - Nombre del servidor en Información general</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-4-11.png" alt="Step 4-11 - Nombre del servidor en Información general" width="100%"></p>
 
@@ -1512,15 +1844,27 @@ Previo a iniciar los pasos:
 
 * Registramos las variables del nombre de grupo de recursos y región:
 
+<p class="apa-label">Figura 399</p>
+<p class="apa-title">Step 5-1 - Variables de grupo de recursos y región</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-5-1.png" alt="Step 5-1 - Variables de grupo de recursos y región" width="100%"></p>
 
 * Creamos el entorno para la aplicación de contenedores en el grupo de recursos y región:
 
+<p class="apa-label">Figura 400</p>
+<p class="apa-title">Step 5-2 - Creación del entorno de Container Apps</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-5-2.png" alt="Step 5-2 - Creación del entorno de Container Apps" width="100%"></p>
+
+<p class="apa-label">Figura 401</p>
+<p class="apa-title">Step 5-3 - Entorno de Container Apps creado</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-5-3.png" alt="Step 5-3 - Entorno de Container Apps creado" width="100%"></p>
 
 * Creamos la aplicación de contenedores dentro del entorno creado:
+
+<p class="apa-label">Figura 402</p>
+<p class="apa-title">Step 5-4 - Creación de la aplicación contenedora</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-5-4.png" alt="Step 5-4 - Creación de la aplicación contenedora" width="100%"></p>
 
@@ -1530,27 +1874,45 @@ Previo a iniciar los pasos:
 
 * Obtener el ID de la identidad de la aplicación de contenedor dentro del grupo de recursos:
 
+<p class="apa-label">Figura 403</p>
+<p class="apa-title">Step 6-1 - Obtención del ID de la identidad de la aplicación</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-6-1.png" alt="Step 6-1 - Obtención del ID de la identidad de la aplicación" width="100%"></p>
 
 * Asigna permisos para descargar imágenes de contenedores en el ACR:
 
+<p class="apa-label">Figura 404</p>
+<p class="apa-title">Step 6-2 - Asignación del rol AcrPull en el registro de contenedores</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-6-2.png" alt="Step 6-2 - Asignación del rol AcrPull en el registro de contenedores" width="100%"></p>
 
 * Configura la identidad administrada por el sistema de la aplicación de contenedor:
+
+<p class="apa-label">Figura 405</p>
+<p class="apa-title">Step 6-3 - Configuración de la identidad del sistema en el registro</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-6-3.png" alt="Step 6-3 - Configuración de la identidad del sistema en el registro" width="100%"></p>
 
 2) Para los secretos, ingresamos desde la aplicación de contenedor a seguridad, secretos y agregamos los secretos que
    necesitamos:
 
+<p class="apa-label">Figura 406</p>
+<p class="apa-title">Step 6-4 - Secretos de la aplicación contenedora</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-6-4.png" alt="Step 6-4 - Secretos de la aplicación contenedora" width="100%"></p>
 
 3) Configuramos la entrada en Redes, entradas y cambiamos el puerto de entrada a 8080 (el que escucha Spring Boot):
+
+<p class="apa-label">Figura 407</p>
+<p class="apa-title">Step 6-5 - Configuración de la entrada en el puerto 8080</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-6-5.png" alt="Step 6-5 - Configuración de la entrada en el puerto 8080" width="100%"></p>
 
 4) Ingresaremos las variables de entorno para la aplicación, en este caso, haremos referencia a los secretos para
    algunas variables de entorno:
+
+<p class="apa-label">Figura 408</p>
+<p class="apa-title">Step 6-6 - Variables de entorno de la aplicación</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-6-6.png" alt="Step 6-6 - Variables de entorno de la aplicación" width="100%"></p>
 
@@ -1567,7 +1929,13 @@ az account show --query "{tenant:tenantId, subscription:id}" -o table
 
 * El AZURE_CLIENT_ID es del paso 2
 
+<p class="apa-label">Figura 409</p>
+<p class="apa-title">Step 7-1 - Sección de secretos y variables de GitHub Actions</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-7-1.png" alt="Step 7-1 - Sección de secretos y variables de GitHub Actions" width="100%"></p>
+
+<p class="apa-label">Figura 410</p>
+<p class="apa-title">Step 7-2 - Secretos de repositorio para la conexión a Azure</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-7-2.png" alt="Step 7-2 - Secretos de repositorio para la conexión a Azure" width="100%"></p>
 
@@ -1575,15 +1943,27 @@ az account show --query "{tenant:tenantId, subscription:id}" -o table
 
 1) Creamos una nueva rama feature para la integración de workflows:
 
+<p class="apa-label">Figura 411</p>
+<p class="apa-title">Step 8-1 - Creación de la rama feature/ci-cd-azure</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-8-1.png" alt="Step 8-1 - Creación de la rama feature/ci-cd-azure" width="100%"></p>
 
 2) Creamos los archivos deploy.yml y ci.yml dentro de .github/workflows
 
+<p class="apa-label">Figura 412</p>
+<p class="apa-title">Step 8-2 - Workflow deploy.yml</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-8-2.png" alt="Step 8-2 - Workflow deploy.yml" width="100%"></p>
+
+<p class="apa-label">Figura 413</p>
+<p class="apa-title">Step 8-3 - Workflow ci.yml</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-8-3.png" alt="Step 8-3 - Workflow ci.yml" width="100%"></p>
 
 3) Hacemos push a la rama feature, creamos un PR, esperamos que el test de CI termine y hacemos merge:
+
+<p class="apa-label">Figura 414</p>
+<p class="apa-title">Step 8-4 - Pull request fusionado con el CI aprobado</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-8-4.png" alt="Step 8-4 - Pull request fusionado con el CI aprobado" width="100%"></p>
 
@@ -1593,17 +1973,29 @@ az account show --query "{tenant:tenantId, subscription:id}" -o table
 
 1) Creamos nuestra rama release, en la versión 1.0.0 y la pasamos a remoto:
 
+<p class="apa-label">Figura 415</p>
+<p class="apa-title">Step 9-1 - Creación y push de la rama release/v1.0.0</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-9-1.png" alt="Step 9-1 - Creación y push de la rama release/v1.0.0" width="100%"></p>
 
 2) Creamos nuestro PR hacia main:
 
 * Previo a la creación del PR, verificamos que todo lo creado en Azure funcione correctamente.
 
+<p class="apa-label">Figura 416</p>
+<p class="apa-title">Step 9-2 - Creación del pull request hacia main</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-9-2.png" alt="Step 9-2 - Creación del pull request hacia main" width="100%"></p>
 
 3) Esperamos a que las pruebas y el despliegue integrados en workflows terminen:
 
+<p class="apa-label">Figura 417</p>
+<p class="apa-title">Step 9-3 - Verificaciones del pull request en curso</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-9-3.png" alt="Step 9-3 - Verificaciones del pull request en curso" width="100%"></p>
+
+<p class="apa-label">Figura 418</p>
+<p class="apa-title">Step 9-4 - Verificaciones del pull request aprobadas</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-9-4.png" alt="Step 9-4 - Verificaciones del pull request aprobadas" width="100%"></p>
 
@@ -1613,30 +2005,54 @@ az account show --query "{tenant:tenantId, subscription:id}" -o table
 * Posteriormente, se realizó un hotfix (**hotfix/deploy-image-flag**) hacia main para corregir la construcción de la
   imagen Docker en el workflow de despliegue. Este es el workflow que terminó correctamente:
 
+<p class="apa-label">Figura 419</p>
+<p class="apa-title">Step 9-6 - Workflow de despliegue completado</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-9-5.png" alt="Step 9-6 - Workflow de despliegue completado" width="100%"></p>
 
 **Paso 10: Verificaciones y pasos finales**
 
 1) Entramos a la aplicación del contenedor, dentro, entramos a revisiones y réplicas:
 
+<p class="apa-label">Figura 420</p>
+<p class="apa-title">Step 10-1 - Revisiones y réplicas de la aplicación contenedora</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-10-1.png" alt="Step 10-1 - Revisiones y réplicas de la aplicación contenedora" width="100%"></p>
 
 2) Verificamos que podemos entrar a la documentación Swagger con el
    link: [Qualitrack Swagger Documentation](https://iotech-qualitrack-api.wonderfulocean-c1f38f8b.chilecentral.azurecontainerapps.io/swagger-ui/index.html)
 
+<p class="apa-label">Figura 421</p>
+<p class="apa-title">Step 10-2 - Documentación Swagger de la API desplegada</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-10-2.png" alt="Step 10-2 - Documentación Swagger de la API desplegada" width="100%"></p>
 
 3) Verificamos la base de datos usando MySQL Workbench mediante una conexión remota y si existen las tablas:
 
+<p class="apa-label">Figura 422</p>
+<p class="apa-title">Step 10-3 - Conexión exitosa en MySQL Workbench</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-10-3.png" alt="Step 10-3 - Conexión exitosa en MySQL Workbench" width="100%"></p>
+
+<p class="apa-label">Figura 423</p>
+<p class="apa-title">Paso 10: Verificaciones y pasos finales</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-10-4-part-1.png" alt="Step 10-4 - Tablas de la base de datos iotech_qualitrack" width="48%" align="top"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-10-4-part-2.png" alt="Step 10-4 - Tablas de la base de datos iotech_qualitrack" width="48%" align="top"></p>
 
 4) Etiquetamos la rama main con la nueva versión de lanzamiento:
 
+<p class="apa-label">Figura 424</p>
+<p class="apa-title">Step 10-5 - Lista de releases del repositorio</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-10-5.png" alt="Step 10-5 - Lista de releases del repositorio" width="100%"></p>
 
+<p class="apa-label">Figura 425</p>
+<p class="apa-title">Step 10-6 - Creación de la release v1.0.0</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-10-6.png" alt="Step 10-6 - Creación de la release v1.0.0" width="100%"></p>
+
+<p class="apa-label">Figura 426</p>
+<p class="apa-title">Step 10-7 - Release v1.0.0 publicada</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-10-7.png" alt="Step 10-7 - Release v1.0.0 publicada" width="100%"></p>
 
@@ -1644,6 +2060,9 @@ az account show --query "{tenant:tenantId, subscription:id}" -o table
 
 5) En nuestra aplicación de contenedores, en la sección aplicaciones, contenedores y variables de entorno quitamos
    SPRING_JPA_HIBERNATE_DDL_AUTO para evitar cambios de esquema:
+
+<p class="apa-label">Figura 427</p>
+<p class="apa-title">Step 10-8 - Variable SPRING_JPA_HIBERNATE_DDL_AUTO a eliminar</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-backend-db-deployment-step-10-8.png" alt="Step 10-8 - Variable SPRING_JPA_HIBERNATE_DDL_AUTO a eliminar" width="100%"></p>
 
@@ -1654,13 +2073,22 @@ az account show --query "{tenant:tenantId, subscription:id}" -o table
 1) Para el despliegue en producción, cambiamos la url base de nuestra api a la desplegada para que nuestra aplicación
    web funcione con nuestro backend en Azure:
 
+<p class="apa-label">Figura 428</p>
+<p class="apa-title">Frontend Previous Step 1-1 - URL base de la API en environment.ts</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-previous-step-1-1.png" alt="Frontend Previous Step 1-1 - URL base de la API en environment.ts" width="100%"></p>
 
 2) Creamos un pull request hacia develop con el cambio de la configuración de producción:
 
+<p class="apa-label">Figura 429</p>
+<p class="apa-title">Frontend Previous Step 1-2 - Creación del pull request hacia develop</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-previous-step-1-2.png" alt="Frontend Previous Step 1-2 - Creación del pull request hacia develop" width="100%"></p>
 
 3) Finalmente, el pull request fue fusionado en develop:
+
+<p class="apa-label">Figura 430</p>
+<p class="apa-title">Frontend Previous Step 1-3 - Pull request fusionado</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-previous-step-1-3.png" alt="Frontend Previous Step 1-3 - Pull request fusionado" width="100%"></p>
 
@@ -1668,7 +2096,13 @@ az account show --query "{tenant:tenantId, subscription:id}" -o table
 
 1) Creamos nuestro proyecto llamado **iotech-qualitrack** en Firebase:
 
+<p class="apa-label">Figura 431</p>
+<p class="apa-title">Frontend Step 1-1 - Nombre del proyecto en Firebase</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-1-1.png" alt="Frontend Step 1-1 - Nombre del proyecto en Firebase" width="100%"></p>
+
+<p class="apa-label">Figura 432</p>
+<p class="apa-title">Frontend Step 1-2 - Creación del proyecto con Google Analytics</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-1-2.png" alt="Frontend Step 1-2 - Creación del proyecto con Google Analytics" width="100%"></p>
 
@@ -1684,19 +2118,34 @@ npx firebase-tools login
 npx firebase-tools init hosting
 ```
 
+<p class="apa-label">Figura 433</p>
+<p class="apa-title">Frontend Step 2-1 - Instalación de firebase-tools en el login</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-1.png" alt="Frontend Step 2-1 - Instalación de firebase-tools en el login" width="100%"></p>
 
 2) Se crean 2 archivos: .firebaserc y firebase.json:
+
+<p class="apa-label">Figura 434</p>
+<p class="apa-title">Frontend Step 2-2 - Archivos creados</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-2.png" alt="Frontend Step 2-2 - Archivos creados" width="100%"></p>
 
 3) Conectamos GitHub con Firebase:
 
+<p class="apa-label">Figura 435</p>
+<p class="apa-title">Frontend Step 2-3 - Inicialización de hosting con GitHub</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-3.png" alt="Frontend Step 2-3 - Inicialización de hosting con GitHub" width="100%"></p>
+
+<p class="apa-label">Figura 436</p>
+<p class="apa-title">Frontend Step 2-4 - Inicialización de hosting con GitHub completada</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-4.png" alt="Frontend Step 2-4 - Inicialización de hosting con GitHub completada" width="100%"></p>
 
 4) Hacemos push a la rama feature y realizamos un PR a develop para el release.
+
+<p class="apa-label">Figura 437</p>
+<p class="apa-title">Frontend Step 2-4 - Pull request hacia develop con el workflow de despliegue</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-2-5.png" alt="Frontend Step 2-4 - Pull request hacia develop con el workflow de despliegue" width="100%"></p>
 
@@ -1704,17 +2153,32 @@ npx firebase-tools init hosting
 
 1) Realizamos un release version 1.0.0 y realizamos un PR a main:
 
+<p class="apa-label">Figura 438</p>
+<p class="apa-title">Frontend Step 3-1 - Creación de la rama release/v1.0.0</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-3-1.png" alt="Frontend Step 3-1 - Creación de la rama release/v1.0.0" width="100%"></p>
+
+<p class="apa-label">Figura 439</p>
+<p class="apa-title">Frontend Step 3-2 - Pull request del release hacia main</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-3-2.png" alt="Frontend Step 3-2 - Pull request del release hacia main" width="100%"></p>
 
 2) Esperamos a que el despliegue configurado en workflows termine:
 
+<p class="apa-label">Figura 440</p>
+<p class="apa-title">Frontend Step 3-3 - Despliegue en progreso en GitHub Actions</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-3-3.png" alt="Frontend Step 3-3 - Despliegue en progreso en GitHub Actions" width="100%"></p>
 
 3) Cuando ya termino, accedemos al link de nuestra aplicación web:
 
+<p class="apa-label">Figura 441</p>
+<p class="apa-title">Frontend Step 3-4 - Despliegue completado en GitHub Actions</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-3-4.png" alt="Frontend Step 3-4 - Despliegue completado en GitHub Actions" width="100%"></p>
+
+<p class="apa-label">Figura 442</p>
+<p class="apa-title">Frontend Step 3-5 - Aplicación web desplegada en Firebase Hosting</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-frontend-deployment-step-3-5.png" alt="Frontend Step 3-5 - Aplicación web desplegada en Firebase Hosting" width="100%"></p>
 
@@ -1730,17 +2194,25 @@ repositorio con GitHub Pages.
 1) En el repositorio, vamos a Settings y después Pages. En Build and deployment seleccionamos **Deploy from a branch**,
    la rama **main** y la carpeta **/ (root)**, y guardamos:
 
+<p class="apa-label">Figura 443</p>
+<p class="apa-title">Configuración de GitHub Pages en el repositorio de la Landing Page</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-landing-deployment-step-1-1.jpg" alt="Configuración de GitHub Pages" width="100%">
-  <p><em>Figura: Configuración de GitHub Pages en el repositorio de la Landing Page. Esta vista evidencia el sitio publicado y su publicación desde la rama main y la carpeta raíz del repositorio.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia el sitio publicado y su publicación desde la rama main y la carpeta raíz del repositorio.</p>
 
 2) Con cada push a main, el workflow **pages-build-deployment** de GitHub Actions publica el sitio:
 
+<p class="apa-label">Figura 444</p>
+<p class="apa-title">Ejecuciones del workflow pages-build-deployment en GitHub Actions</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-landing-deployment-step-1-2.jpg" alt="Workflow de publicación de la Landing Page" width="100%">
-  <p><em>Figura: Ejecuciones del workflow pages-build-deployment en GitHub Actions. Esta evidencia muestra las publicaciones de la Landing Page realizadas desde la rama main.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra las publicaciones de la Landing Page realizadas desde la rama main.</p>
 
 **Paso 2: Verificaciones**
 
@@ -1748,17 +2220,25 @@ repositorio con GitHub Pages.
    en [https://iotech-2620-8741.github.io/qualitrack-landing-page/](https://iotech-2620-8741.github.io/qualitrack-landing-page/)
    y recorremos sus secciones en inglés y en español:
 
+<p class="apa-label">Figura 445</p>
+<p class="apa-title">Landing Page publicada en GitHub Pages</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-landing-deployment-step-2-1.png" alt="Landing Page publicada" width="100%">
-  <p><em>Figura: Landing Page publicada en GitHub Pages. Esta evidencia confirma que el sitio es accesible públicamente desde la URL de la organización.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia confirma que el sitio es accesible públicamente desde la URL de la organización.</p>
 
 2) Verificamos que los botones Get started y los de cada plan lleven a la Web Application publicada en Firebase Hosting:
 
+<p class="apa-label">Figura 446</p>
+<p class="apa-title">Llamada a la acción de la Landing Page abierta en la Web Application</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/deployment-evidence/sprint-1-landing-deployment-step-2-2.png" alt="Enlace de la Landing Page a la Web Application" width="100%">
-  <p><em>Figura: Llamada a la acción de la Landing Page abierta en la Web Application. Esta evidencia muestra la conexión entre el sitio público y la aplicación desplegada.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra la conexión entre el sitio público y la aplicación desplegada.</p>
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
 
@@ -1776,10 +2256,14 @@ por Huapaya Galindo, Dyron (MaineMa). El trabajo se desarrolló en las ramas `fe
 `feature/team-members` y `feature/landing-page`, que se integraron en `develop` y luego en `main`, e incluye la
 estructura y estilos del sitio, el cambio de idioma con sus traducciones, las páginas legales y los perfiles del equipo.
 
+<p class="apa-label">Figura 447</p>
+<p class="apa-title">Analíticos de contribución del repositorio de la Landing Page en GitHub Insights</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/team-collaboration-insights/insights-landing-page.png" alt="GitHub Insights - Landing Page" width="100%">
-  <p><em>Figura: Analíticos de contribución del repositorio de la Landing Page en GitHub Insights. Esta evidencia muestra los commits realizados durante el sprint e integrados en la rama main.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra los commits realizados durante el sprint e integrados en la rama main.</p>
 
 **Web Application.** Cada Bounded Context del core business fue desarrollado por su líder con el apoyo del resto del
 equipo: Laboratory Management por Ruiz Madrid, Billy Jake; Inventory Management y Product Batch Management por Cutiri
@@ -1788,15 +2272,23 @@ Apolinario, Giovany Smith; y Compliance & Alerting por Lopez Roman, Franco Mauri
 (Identity & Access Management, Payments & Subscriptions, Reporting & Audit y Profile) se trabajaron de forma
 transversal, y la documentación del código con TSDoc se distribuyó entre los integrantes por módulo.
 
+<p class="apa-label">Figura 448</p>
+<p class="apa-title">Analíticos de contribución del repositorio de la Web Application en GitHub Insights</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/team-collaboration-insights/insights-web-app.png" alt="GitHub Insights - Web Application" width="100%">
-  <p><em>Figura: Analíticos de contribución del repositorio de la Web Application en GitHub Insights. Esta evidencia muestra la participación de los integrantes en la implementación de los módulos del sprint, con los commits integrados en la rama main.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra la participación de los integrantes en la implementación de los módulos del sprint, con los commits integrados en la rama main.</p>
+
+<p class="apa-label">Figura 449</p>
+<p class="apa-title">Gráfico de red del repositorio de la Web Application</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-1/team-collaboration-insights/insights-web-app-network.png" alt="GitHub Network - Web Application" width="100%">
-  <p><em>Figura: Gráfico de red del repositorio de la Web Application. Esta vista evidencia las ramas feature creadas desde develop y su integración mediante merges, siguiendo GitFlow.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia las ramas feature creadas desde develop y su integración mediante merges, siguiendo GitFlow.</p>
 
 **Interpretación.** Los analíticos de contribución de GitHub contabilizan los commits integrados en la rama main de cada
 repositorio, mientras que el gráfico de red muestra las ramas de funcionalidad en las que los integrantes desarrollaron
@@ -1820,6 +2312,9 @@ A diferencia del Sprint 1, el trabajo se organiza por bounded context: cada inte
 La reunión de Sprint Planning 2 se realizó al cierre del Sprint 1, con la participación de los nueve integrantes del equipo. Antes de definir el nuevo alcance, el equipo revisó lo entregado en el Sprint 1 y las observaciones recibidas, y a partir de esa revisión acordó los cambios en la forma de trabajo para esta iteración.
 
 En la siguiente tabla se resumen los datos de la reunión, el resumen del sprint anterior, el objetivo del Sprint 2 y los story points comprometidos.
+
+<p class="apa-label">Tabla 89</p>
+<p class="apa-title">Sprint Planning 2</p>
 
 <table>
 <tr>
@@ -1902,6 +2397,9 @@ This will be confirmed when a reading taken by a physical device reaches the Edg
 
 Durante el Sprint 2 cada integrante lideró un bounded context del core del negocio en todos los productos donde aparece. Tracking & Telemetry y Compliance & Alerting tienen dos líderes cada uno por su carga de trabajo. Los contextos que no son core (IAM, Profile Management y Payments & Subscriptions) quedaron con quien ya los venía trabajando.
 
+<p class="apa-label">Tabla 90</p>
+<p class="apa-title">Aspect Leaders and Collaborators del Sprint 2</p>
+
 | Team Member (Last Name, First Name) / GitHub User­name | Tracking & Tele­metry  | Com­pliance & Alert­ing  | Product Batch Manage­ment  | Equip­ment Manage­ment  | Labor­atory Manage­ment  | Inven­tory Manage­ment  | Report­ing & Audit |
 |-------------------------------------------------------|----------------------|-------------------------------|------------------------------|------------------------------|------------------------------|----------------------------------|-------------------------------|
 | Baca Camargo, Vitaly Arturo<br>(Mr-Code-star)         | C                    | C                             | C                            | C                            | C                            | C                                | L                             |
@@ -1927,14 +2425,21 @@ El objetivo del Sprint 2 es construir la primera versión integrada de QualiTrac
 
 Cada historia se descompuso en tareas según el producto donde se implementa: las Technical Stories del Cloud REST API en dominio y aplicación, infraestructura JPA, endpoint documentado en Swagger, pruebas y conexión con la Web Application; las del Edge API en la ruta Flask, la persistencia en SQLite, la validación del dispositivo y la prueba con dispositivos simulados; las Maker Stories en el montaje, el firmware, la integración con el perfil ambiental y la prueba física; y las Spike Stories en la investigación, la prueba de concepto y el registro de la decisión. Cada tarea quedó asignada al responsable del Bounded Context según la matriz de liderazgo y colaboración.
 
+<p class="apa-label">Figura 450</p>
+<p class="apa-title">Historias del Sprint 2 en Jira</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/jira-sprint-2-board.jpg" alt="Sprint 2 en Jira" width="100%">
-  <p><em>Figura: Historias del Sprint 2 en Jira. Esta vista evidencia el sprint QT Sprint 2 del proyecto QualiTrack con sus 115 historias y 219 Story Points, organizadas por épica, asignadas a los responsables de cada Bounded Context y en estado Listo al cierre del sprint.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia el sprint QT Sprint 2 del proyecto QualiTrack con sus 115 historias y 219 Story Points, organizadas por épica, asignadas a los responsables de cada Bounded Context y en estado Listo al cierre del sprint.</p>
 
 **Enlace público al tablero:** [QT Sprint 2 - Jira](https://iotech-2620.atlassian.net/jira/software/projects/QT/boards/68/backlog)
 
 En total el sprint comprende 521 tareas y 690 horas estimadas. Al cierre del sprint las 115 historias se encuentran en estado Listo en Jira, por lo que sus 521 tareas figuran en Done.
+
+<p class="apa-label">Tabla 91</p>
+<p class="apa-title">Sprint Backlog 2</p>
 
 <table>
 <tr>
@@ -2506,6 +3011,9 @@ Las siguientes tablas presentan los 1541 commits realizados en los repositorios 
 
 **Landing Page** ([IoTech-2620-8741/qualitrack-website](https://github.com/IoTech-2620-8741/qualitrack-website))
 
+<p class="apa-label">Tabla 92</p>
+<p class="apa-title">Commits de la Landing Page en el Sprint 2</p>
+
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 |------------|--------|-----------|----------------|---------------------|---------------------|
 | Io​Tech-2620-8741/​qualitrack-website | develop | 54da0b8 | feat​(language-switcher): add language switcher and its dependencies to privacy policy section. | — | 21/10/2026 |
@@ -2645,6 +3153,9 @@ Las siguientes tablas presentan los 1541 commits realizados en los repositorios 
 | Io​Tech-2620-8741/​qualitrack-website | release/​v2.0.0 | 4b4fa54 | chore: release v2.0.0 | Add the 2.0.0 section to the changelog, fix the version comparison links, update the README version section and list devices.js in the scripts structure of README and CONTRIBUTING. | 15/11/2026 |
 
 **Web Application** ([IoTech-2620-8741/qualitrack-web-app](https://github.com/IoTech-2620-8741/qualitrack-web-app))
+
+<p class="apa-label">Tabla 93</p>
+<p class="apa-title">Commits de la Web Application en el Sprint 2</p>
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 |------------|--------|-----------|----------------|---------------------|---------------------|
@@ -3232,6 +3743,9 @@ Las siguientes tablas presentan los 1541 commits realizados en los repositorios 
 
 **Cloud REST API (Backend)** ([IoTech-2620-8741/qualitrack-platform](https://github.com/IoTech-2620-8741/qualitrack-platform))
 
+<p class="apa-label">Tabla 94</p>
+<p class="apa-title">Commits del Cloud REST API en el Sprint 2</p>
+
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 |------------|--------|-----------|----------------|---------------------|---------------------|
 | Io​Tech-2620-8741/​qualitrack-platform | feature/​ca | 3c8febd | refactor​(ca): use the compliance clock in Ca​Command​Service​Impl | — | 30/10/2026 |
@@ -3495,6 +4009,9 @@ Las siguientes tablas presentan los 1541 commits realizados en los repositorios 
 | Io​Tech-2620-8741/​qualitrack-platform | develop | 440368d | feat​(audit): enhance documentation for Staff​Audit​Log​Controller to clarify REST endpoint behavior and response details | — | 14/11/2026 |
 
 **Mobile Application** ([IoTech-2620-8741/qualitrack-mobile-application](https://github.com/IoTech-2620-8741/qualitrack-mobile-application))
+
+<p class="apa-label">Tabla 95</p>
+<p class="apa-title">Commits de la Mobile Application en el Sprint 2</p>
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 |------------|--------|-----------|----------------|---------------------|---------------------|
@@ -3857,6 +4374,9 @@ Las siguientes tablas presentan los 1541 commits realizados en los repositorios 
 
 **Edge API (Edge Service)** ([IoTech-2620-8741/qualitrack-edge-service](https://github.com/IoTech-2620-8741/qualitrack-edge-service))
 
+<p class="apa-label">Tabla 96</p>
+<p class="apa-title">Commits del Edge API en el Sprint 2</p>
+
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 |------------|--------|-----------|----------------|---------------------|---------------------|
 | Io​Tech-2620-8741/​qualitrack-edge-service | develop | 735035f | chore: scaffold edge service project structure | — | 02/11/2026 |
@@ -4020,6 +4540,9 @@ Las siguientes tablas presentan los 1541 commits realizados en los repositorios 
 
 **Embedded Application (Environment Monitor)** ([IoTech-2620-8741/qualitrack-embedded-environment-monitor](https://github.com/IoTech-2620-8741/qualitrack-embedded-environment-monitor))
 
+<p class="apa-label">Tabla 97</p>
+<p class="apa-title">Commits de la Embedded Application del Monitor de Ambiente en el Sprint 2</p>
+
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 |------------|--------|-----------|----------------|---------------------|---------------------|
 | Io​Tech-2620-8741/​qualitrack-embedded-environment-monitor | develop | 473d4f8 | chore: ignore Platform​IO builds, IDE files and local secrets | — | 14/11/2026 |
@@ -4057,6 +4580,9 @@ Las siguientes tablas presentan los 1541 commits realizados en los repositorios 
 
 **Embedded Application (Container Monitor)** ([IoTech-2620-8741/qualitrack-embedded-container-monitor](https://github.com/IoTech-2620-8741/qualitrack-embedded-container-monitor))
 
+<p class="apa-label">Tabla 98</p>
+<p class="apa-title">Commits de la Embedded Application del Monitor de Contenedor en el Sprint 2</p>
+
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 |------------|--------|-----------|----------------|---------------------|---------------------|
 | Io​Tech-2620-8741/​qualitrack-embedded-container-monitor | develop | 6117e56 | chore: ignore Platform​IO builds, IDE files and local secrets | — | 14/11/2026 |
@@ -4084,6 +4610,9 @@ Las siguientes tablas presentan los 1541 commits realizados en los repositorios 
 
 En el Sprint 2 cada producto de código, salvo la Embedded Application del Monitor de Contenedor, cuenta con una suite de pruebas automatizadas que se ejecuta en GitHub Actions en cada pull request hacia develop y main, de modo que ningún cambio se integra si alguna prueba falla. Al cierre del sprint las cinco suites se encuentran aprobadas:
 
+<p class="apa-label">Tabla 99</p>
+<p class="apa-title">Suites de prueba por producto del Sprint 2</p>
+
 | Producto | Repositorio | Herramientas | Archivos de prueba | Pruebas ejecutadas en CI |
 |----------|-------------|--------------|--------------------|--------------------------|
 | Cloud REST API | [qualitrack-platform](https://github.com/IoTech-2620-8741/qualitrack-platform/tree/develop/src/test/java/com/iotech/qualitrack/platform) | JUnit 5, Spring Boot Test, MockMvc | 44 clases | 229 |
@@ -4097,6 +4626,9 @@ En el Cloud REST API las pruebas unitarias verifican las reglas del dominio de c
 En la Embedded Application del Monitor de Ambiente cada suite compila el sketch real contra versiones simuladas (fakes) del Modest IoT Nano Framework y de Arduino, y verifica sin el ESP32 los estados de la calidad de aire, el LED RGB, el buzzer y las llamadas al Edge; el mismo workflow compila el sketch para el ESP32 DevKit v1 con arduino-cli. La Embedded Application del Monitor de Contenedor todavía no tiene pruebas automatizadas: se verificó compilándola con arduino-cli sin advertencias y ejecutando en Wokwi los cambios de estado de la temperatura con su histéresis, la ventilación y el enfriamiento, el control de acceso con etiquetas autorizadas y denegadas, el reconocimiento de la alarma y el promedio móvil de la luz.
 
 **Cloud REST API.** La siguiente tabla relaciona cada clase de prueba con su tipo, su Bounded Context, los comportamientos que verifica (con el número de métodos de prueba) y las Technical Stories del sprint que soporta. En total la suite tiene 221 métodos de prueba; con los casos de las pruebas parametrizadas Maven ejecuta 229.
+
+<p class="apa-label">Tabla 100</p>
+<p class="apa-title">Clases de prueba del Cloud REST API en el Sprint 2</p>
 
 | Clase de prueba | Tipo | Bounded Context | Comportamientos verificados (métodos de prueba) | Technical Stories relacionadas |
 |-----------------|------|-----------------|-------------------------------------------------|--------------------------------|
@@ -4147,6 +4679,9 @@ En la Embedded Application del Monitor de Ambiente cada suite compila el sketch 
 
 **Edge API.** Cada módulo de prueba simula el Monitor de Ambiente, el Monitor de Contenedor o el Cloud según el caso, con una base SQLite temporal. Las Technical Stories TS60–TS64 de sincronización estaban planificadas para el Sprint 3 y se adelantaron en este sprint.
 
+<p class="apa-label">Tabla 101</p>
+<p class="apa-title">Módulos de prueba del Edge API en el Sprint 2</p>
+
 | Módulo de prueba | Comportamientos verificados (pruebas) | Technical Stories relacionadas |
 |------------------|---------------------------------------|--------------------------------|
 | test_​api | signs in registered device with its type; rejects invalid device credentials; rejects missing api key; (+5 más) (8) | TS53–TS59 |
@@ -4169,6 +4704,9 @@ En la Embedded Application del Monitor de Ambiente cada suite compila el sketch 
 
 **Web Application.** Las pruebas se agrupan por Bounded Context, siguiendo la estructura de carpetas de la aplicación.
 
+<p class="apa-label">Tabla 102</p>
+<p class="apa-title">Pruebas de la Web Application por Bounded Context en el Sprint 2</p>
+
 | Bounded Context | Archivos | Pruebas | Comportamientos verificados (ejemplos) |
 |-----------------|----------|---------|----------------------------------------|
 | Compliance & Alerting | 19 | 180 | joins the open alerts of every environment; reads only the chosen environment; names the environment that failed without hiding the alerts of the others; (+177 más) |
@@ -4185,6 +4723,9 @@ En la Embedded Application del Monitor de Ambiente cada suite compila el sketch 
 | Rutas de la aplicación | 2 | 7 | keeps the plan of the link even when the visitor is already signed in and is sent to the dashboard; keeps the plan of the link for a visitor who stays on the sign-up page; keeps the plan of a link followed from another page of IAM; (+4 más) |
 
 **Mobile Application.** Las pruebas siguen las capas de la aplicación Flutter; la prueba de arquitectura verifica que cada Bounded Context solo se comunique con otro a través de su API.
+
+<p class="apa-label">Tabla 103</p>
+<p class="apa-title">Pruebas de la Mobile Application en el Sprint 2</p>
 
 | Archivo de prueba | Capa | Comportamientos verificados (pruebas) |
 |-------------------|------|---------------------------------------|
@@ -4209,40 +4750,66 @@ En la Embedded Application del Monitor de Ambiente cada suite compila el sketch 
 
 **Embedded Application (Environment Monitor).** Cada suite es un programa que compila el sketch con los fakes del framework y se ejecuta en el host.
 
+<p class="apa-label">Tabla 104</p>
+<p class="apa-title">Suites de prueba de la Embedded Application del Monitor de Ambiente</p>
+
 | Suite | Comportamientos verificados (pruebas) | Historias relacionadas |
 |-------|---------------------------------------|------------------------|
 | AirQualityAlarm | calibration turns the led from blue to green; air quality is not classified during calibration; warning turns the led yellow with a single beep; (+3 más) (6) | MS01, MS03, MS04 |
 | EdgeConfiguration | setup sends the api key as a bearer token; sign in posts the device id; a rejected sign in is retried every thirty seconds; (+6 más) (9) | MS14, MS15 |
 | EdgeReadings | calibration sends the first reading; a change of state is sent at once; the air quality is sent every minute; (+5 más) (8) | MS02, MS05, MS14 |
 
+<p class="apa-label">Figura 451</p>
+<p class="apa-title">Ejecución de la suite del Cloud REST API en GitHub Actions</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/testing-evidence/backend-tests-ci.jpg" alt="Pruebas del Cloud REST API en GitHub Actions" width="100%">
-  <p><em>Figura: Ejecución de la suite del Cloud REST API en GitHub Actions. Esta evidencia muestra el workflow de integración continua del pull request de la versión 1.2.0, que ejecuta con Maven las 229 pruebas unitarias y de integración, todas aprobadas.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra el workflow de integración continua del pull request de la versión 1.2.0, que ejecuta con Maven las 229 pruebas unitarias y de integración, todas aprobadas.</p>
+
+<p class="apa-label">Figura 452</p>
+<p class="apa-title">Ejecución de la suite de la Web Application en GitHub Actions</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/testing-evidence/web-tests-ci.jpg" alt="Pruebas de la Web Application en GitHub Actions" width="100%">
-  <p><em>Figura: Ejecución de la suite de la Web Application en GitHub Actions. Esta evidencia muestra los 128 archivos y las 870 pruebas de Vitest aprobados antes de compilar la versión 2.5.0.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra los 128 archivos y las 870 pruebas de Vitest aprobados antes de compilar la versión 2.5.0.</p>
+
+<p class="apa-label">Figura 453</p>
+<p class="apa-title">Ejecución de la suite de la Mobile Application en GitHub Actions</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/testing-evidence/mobile-tests-ci.jpg" alt="Pruebas de la Mobile Application en GitHub Actions" width="100%">
-  <p><em>Figura: Ejecución de la suite de la Mobile Application en GitHub Actions. Esta evidencia muestra las 174 pruebas de Flutter aprobadas en el pull request de la rama feature/refactor-ui, después del análisis estático con flutter analyze.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra las 174 pruebas de Flutter aprobadas en el pull request de la rama feature/refactor-ui, después del análisis estático con flutter analyze.</p>
+
+<p class="apa-label">Figura 454</p>
+<p class="apa-title">Ejecución de la suite del Edge API en GitHub Actions</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/testing-evidence/edge-tests-ci.jpg" alt="Pruebas del Edge API en GitHub Actions" width="100%">
-  <p><em>Figura: Ejecución de la suite del Edge API en GitHub Actions. Esta evidencia muestra las 127 pruebas de unittest aprobadas y, en la lista de jobs, la prueba del despliegue con Docker Compose (docker) y la imagen para la Raspberry Pi 4 (docker-arm64) también aprobadas.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra las 127 pruebas de unittest aprobadas y, en la lista de jobs, la prueba del despliegue con Docker Compose (docker) y la imagen para la Raspberry Pi 4 (docker-arm64) también aprobadas.</p>
+
+<p class="apa-label">Figura 455</p>
+<p class="apa-title">Ejecución de la suite de la Embedded Application del Monitor de Ambiente en GitHub Actions</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/testing-evidence/embedded-tests-ci.jpg" alt="Pruebas de la Embedded Application del Monitor de Ambiente en GitHub Actions" width="100%">
-  <p><em>Figura: Ejecución de la suite de la Embedded Application del Monitor de Ambiente en GitHub Actions. Esta evidencia muestra el workflow CI de la versión 0.4.0 en develop, con el job de pruebas en el host (3 suites y 23 pruebas aprobadas) y la compilación del sketch para el ESP32 DevKit v1, ambos aprobados.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra el workflow CI de la versión 0.4.0 en develop, con el job de pruebas en el host (3 suites y 23 pruebas aprobadas) y la compilación del sketch para el ESP32 DevKit v1, ambos aprobados.</p>
 
 Commits relacionados con las pruebas en este sprint (93):
 
 **qualitrack-web-app**
+
+<p class="apa-label">Tabla 105</p>
+<p class="apa-title">Commits de pruebas de qualitrack-web-app en el Sprint 2</p>
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 |------------|--------|-----------|----------------|---------------------|---------------------|
@@ -4264,6 +4831,9 @@ Commits relacionados con las pruebas en este sprint (93):
 
 **qualitrack-platform**
 
+<p class="apa-label">Tabla 106</p>
+<p class="apa-title">Commits de pruebas de qualitrack-platform en el Sprint 2</p>
+
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 |------------|--------|-----------|----------------|---------------------|---------------------|
 | Io​Tech-2620-8741/​qualitrack-platform | feature/​ca | c348649 | test​(ca): cover deviation alert command handling | — | 30/10/2026 |
@@ -4280,6 +4850,9 @@ Commits relacionados con las pruebas en este sprint (93):
 | Io​Tech-2620-8741/​qualitrack-platform | feature/​equipment-edge-gateway-capacity | 700138c | test​(equipment): cover edge gateway allocation, device registry and coverage | — | 10/11/2026 |
 
 **qualitrack-mobile-application**
+
+<p class="apa-label">Tabla 107</p>
+<p class="apa-title">Commits de pruebas de qualitrack-mobile-application en el Sprint 2</p>
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 |------------|--------|-----------|----------------|---------------------|---------------------|
@@ -4312,6 +4885,9 @@ Commits relacionados con las pruebas en este sprint (93):
 | IoTech-2620-8741/qualitrack-mobile-application | feature/home-priorities | 600d9c3 | test(i18n): keep the separators the Home wraps its texts at | The Home breaks the critical banner only after ': ' and a row detail only at ' · '. A translation without them would let those texts wrap anywhere, so a test now checks that every language keeps them. | 14/11/2026 |
 
 **qualitrack-edge-service**
+
+<p class="apa-label">Tabla 108</p>
+<p class="apa-title">Commits de pruebas de qualitrack-edge-service en el Sprint 2</p>
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 |------------|--------|-----------|----------------|---------------------|---------------------|
@@ -4351,6 +4927,9 @@ Commits relacionados con las pruebas en este sprint (93):
 
 **qualitrack-embedded-environment-monitor**
 
+<p class="apa-label">Tabla 109</p>
+<p class="apa-title">Commits de pruebas de qualitrack-embedded-environment-monitor en el Sprint 2</p>
+
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 |------------|--------|-----------|----------------|---------------------|---------------------|
 | IoTech-2620-8741/qualitrack-embedded-environment-monitor | feature/tests | 2839bc5 | test: add the host test harness of the Environment Monitor | — | 15/11/2026 |
@@ -4377,114 +4956,190 @@ La revisión del sprint verificó estos flujos con los datos del laboratorio de 
 
 **Landing Page**
 
+<p class="apa-label">Figura 456</p>
+<p class="apa-title">Sección principal de la nueva versión de la Landing Page</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/landing-home.jpg" alt="Landing Page - Home" width="100%">
-  <p><em>Figura: Sección principal de la nueva versión de la Landing Page. Esta vista evidencia la guía de estilos de QualiTrack aplicada al sitio, con el encabezado compartido, el selector de idioma y la llamada a la acción hacia la Web Application.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia la guía de estilos de QualiTrack aplicada al sitio, con el encabezado compartido, el selector de idioma y la llamada a la acción hacia la Web Application.</p>
+
+<p class="apa-label">Figura 457</p>
+<p class="apa-title">Planes de suscripción en la Landing Page</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/landing-plans.jpg" alt="Landing Page - Plans" width="100%">
-  <p><em>Figura: Planes de suscripción en la Landing Page. Esta vista evidencia la comparación de los planes Standard Lab y Enterprise con el cambio entre facturación mensual y anual.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia la comparación de los planes Standard Lab y Enterprise con el cambio entre facturación mensual y anual.</p>
 
 **Web Application**
 
+<p class="apa-label">Figura 458</p>
+<p class="apa-title">Panel de control de SENKA LAB</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/web-dashboard.jpg" alt="Web Application - Dashboard" width="100%">
-  <p><em>Figura: Panel de control de SENKA LAB. Esta vista evidencia los indicadores del laboratorio (equipos, lotes en curso, alertas abiertas y materiales con stock bajo), la telemetría por equipo y el resumen de la suscripción, todos obtenidos del Cloud REST API.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia los indicadores del laboratorio (equipos, lotes en curso, alertas abiertas y materiales con stock bajo), la telemetría por equipo y el resumen de la suscripción, todos obtenidos del Cloud REST API.</p>
+
+<p class="apa-label">Figura 459</p>
+<p class="apa-title">Bandeja de alertas de cumplimiento</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/web-alerts.jpg" alt="Web Application - Compliance alerts" width="100%">
-  <p><em>Figura: Bandeja de alertas de cumplimiento. Esta vista evidencia las alertas críticas de todos los ambientes priorizadas por severidad, con la lectura que superó el límite, su atención por el personal y las acciones para registrar la atención o resolverla.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia las alertas críticas de todos los ambientes priorizadas por severidad, con la lectura que superó el límite, su atención por el personal y las acciones para registrar la atención o resolverla.</p>
+
+<p class="apa-label">Figura 460</p>
+<p class="apa-title">Perfil ambiental de un contenedor de la cámara de cadena de frío</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/web-environmental-profiles.jpg" alt="Web Application - Environmental profiles" width="100%">
-  <p><em>Figura: Perfil ambiental de un contenedor de la cámara de cadena de frío. Esta vista evidencia los umbrales normal y crítico de temperatura y humedad, con su versión, que el Edge entrega a los dispositivos.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia los umbrales normal y crítico de temperatura y humedad, con su versión, que el Edge entrega a los dispositivos.</p>
+
+<p class="apa-label">Figura 461</p>
+<p class="apa-title">Lotes de producción del laboratorio</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/web-batches.jpg" alt="Web Application - Production batches" width="100%">
-  <p><em>Figura: Lotes de producción del laboratorio. Esta vista evidencia los indicadores por estado que también filtran la lista, la búsqueda y la tabla paginada con el producto, la cantidad, la fecha de inicio y el estado de cada lote.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia los indicadores por estado que también filtran la lista, la búsqueda y la tabla paginada con el producto, la cantidad, la fecha de inicio y el estado de cada lote.</p>
+
+<p class="apa-label">Figura 462</p>
+<p class="apa-title">Trazabilidad de un lote liberado</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/web-batch-traceability.jpg" alt="Web Application - Batch traceability" width="100%">
-  <p><em>Figura: Trazabilidad de un lote liberado. Esta vista evidencia el resumen de materias primas, equipos, personal y contenedor del lote, la decisión de calidad firmada con SHA-256 y la línea de tiempo de su fabricación.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia el resumen de materias primas, equipos, personal y contenedor del lote, la decisión de calidad firmada con SHA-256 y la línea de tiempo de su fabricación.</p>
+
+<p class="apa-label">Figura 463</p>
+<p class="apa-title">Catálogo de materias primas del almacén</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/web-inventory.jpg" alt="Web Application - Inventory" width="100%">
-  <p><em>Figura: Catálogo de materias primas del almacén. Esta vista evidencia el stock utilizable, el balance físico y el stock mínimo de cada material, con el filtro de materiales con stock bajo.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia el stock utilizable, el balance físico y el stock mínimo de cada material, con el filtro de materiales con stock bajo.</p>
+
+<p class="apa-label">Figura 464</p>
+<p class="apa-title">Catálogo de equipos del laboratorio</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/web-equipment.jpg" alt="Web Application - Equipment" width="100%">
-  <p><em>Figura: Catálogo de equipos del laboratorio. Esta vista evidencia los equipos de proceso, los dispositivos IoT y los Edge Gateways con sus filtros, y las acciones para registrar cada uno.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia los equipos de proceso, los dispositivos IoT y los Edge Gateways con sus filtros, y las acciones para registrar cada uno.</p>
+
+<p class="apa-label">Figura 465</p>
+<p class="apa-title">Cobertura de Edge Gateways de un ambiente</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/web-environment-edge-gateways.jpg" alt="Web Application - Edge Gateways of an environment" width="100%">
-  <p><em>Figura: Cobertura de Edge Gateways de un ambiente. Esta vista evidencia los Edge Gateways, los dispositivos IoT y los equipos del ambiente, y advierte cuántos dispositivos aún no tienen un Edge Gateway que envíe sus lecturas a QualiTrack.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia los Edge Gateways, los dispositivos IoT y los equipos del ambiente, y advierte cuántos dispositivos aún no tienen un Edge Gateway que envíe sus lecturas a QualiTrack.</p>
+
+<p class="apa-label">Figura 466</p>
+<p class="apa-title">Registro de un Edge Gateway</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/web-register-edge-gateway.jpg" alt="Web Application - Register Edge Gateway" width="100%">
-  <p><em>Figura: Registro de un Edge Gateway. Esta vista evidencia el formulario con el identificador que el Edge usa junto con su API key para conectarse al Cloud, el modelo Raspberry Pi 4 y el ambiente donde se instala.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia el formulario con el identificador que el Edge usa junto con su API key para conectarse al Cloud, el modelo Raspberry Pi 4 y el ambiente donde se instala.</p>
+
+<p class="apa-label">Figura 467</p>
+<p class="apa-title">Generador de reportes y documentos</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/web-report-generator.jpg" alt="Web Application - Report generator" width="100%">
-  <p><em>Figura: Generador de reportes y documentos. Esta vista evidencia los reportes de lote, ambiental e inventario, con sus parámetros, el periodo y el formato PDF o CSV para auditoría.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia los reportes de lote, ambiental e inventario, con sus parámetros, el periodo y el formato PDF o CSV para auditoría.</p>
 
 **Cloud REST API**
 
 El Cloud REST API se ejecuta en Azure Container Apps con la versión 1.2.0, y su documentación interactiva en Swagger UI se sirve desde el mismo despliegue. Sus 133 operaciones se agrupan por el recurso raíz de la ruta; la mayoría exige el token JWT de la sesión, que se ingresa con el botón Authorize, y los endpoints del Edge Gateway usan su API key.
 
+<p class="apa-label">Figura 468</p>
+<p class="apa-title">Swagger UI del Cloud REST API desplegado en Azure</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/backend-swagger-overview.jpg" alt="Cloud REST API - Swagger UI" width="100%">
-  <p><em>Figura: Swagger UI del Cloud REST API desplegado en Azure. Esta vista evidencia la versión 1.0.0 de la especificación OpenAPI 3.1 de Qualitrack Platform, el servidor de Azure Container Apps donde se ejecutan las llamadas, el botón Authorize para el token de la sesión y los grupos de operaciones por recurso raíz.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia la versión 1.0.0 de la especificación OpenAPI 3.1 de Qualitrack Platform, el servidor de Azure Container Apps donde se ejecutan las llamadas, el botón Authorize para el token de la sesión y los grupos de operaciones por recurso raíz.</p>
+
+<p class="apa-label">Figura 469</p>
+<p class="apa-title">Operaciones del grupo Laboratories en Swagger UI</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/backend-swagger-laboratories.jpg" alt="Cloud REST API - Laboratories operations" width="100%">
-  <p><em>Figura: Operaciones del grupo Laboratories en Swagger UI. Esta vista evidencia las rutas anidadas bajo el laboratorio (equipos, rangos BPM, ambientes, materias primas, lotes y su asignación a contenedores), que reúnen 91 de las 133 operaciones y mantienen cada recurso dentro del laboratorio de la sesión.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia las rutas anidadas bajo el laboratorio (equipos, rangos BPM, ambientes, materias primas, lotes y su asignación a contenedores), que reúnen 91 de las 133 operaciones y mantienen cada recurso dentro del laboratorio de la sesión.</p>
+
+<p class="apa-label">Figura 470</p>
+<p class="apa-title">Operaciones del grupo Deviation Alerts en Swagger UI</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/backend-swagger-deviation-alerts.jpg" alt="Cloud REST API - Deviation Alerts operations" width="100%">
-  <p><em>Figura: Operaciones del grupo Deviation Alerts en Swagger UI. Esta vista evidencia la consulta de una alerta y sus acciones como sub-recursos: la atención (acknowledgements), la resolución (resolutions) y el envío por correo de una alerta crítica al laboratorio (email-notifications).</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia la consulta de una alerta y sus acciones como sub-recursos: la atención (acknowledgements), la resolución (resolutions) y el envío por correo de una alerta crítica al laboratorio (email-notifications).</p>
 
 **Mobile Application**
 
 La primera versión de la Mobile Application se ejecutó en Android conectada al Cloud REST API desplegado, con la cuenta del responsable de calidad de SENKA LAB.
 
+<p class="apa-label">Figura 471</p>
+<p class="apa-title">Inicio, alertas y telemetría en la Mobile Application</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/mobile-home-alerts-telemetry.jpg" alt="Mobile Application - Home, alerts and telemetry" width="100%">
-  <p><em>Figura: Inicio, alertas y telemetría en la Mobile Application. Esta vista evidencia el resumen del laboratorio con las alertas abiertas, los dispositivos que requieren revisión, los lotes por liberar y los materiales bajo el mínimo; la lista de alertas de cumplimiento con su estado de atención; y el estado de conexión y las lecturas de un dispositivo.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia el resumen del laboratorio con las alertas abiertas, los dispositivos que requieren revisión, los lotes por liberar y los materiales bajo el mínimo; la lista de alertas de cumplimiento con su estado de atención; y el estado de conexión y las lecturas de un dispositivo.</p>
+
+<p class="apa-label">Figura 472</p>
+<p class="apa-title">Lotes de producción e inventario en la Mobile Application</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/mobile-batches-inventory.jpg" alt="Mobile Application - Batches and inventory" width="100%">
-  <p><em>Figura: Lotes de producción e inventario en la Mobile Application. Esta vista evidencia la lista de lotes con su estado, el detalle de un lote con su ciclo y las acciones de liberación o rechazo del responsable de calidad, y el inventario de materias primas con su stock utilizable, físico y mínimo.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia la lista de lotes con su estado, el detalle de un lote con su ciclo y las acciones de liberación o rechazo del responsable de calidad, y el inventario de materias primas con su stock utilizable, físico y mínimo.</p>
 
 **Embedded Applications**
 
 El firmware de cada nodo se ejecutó en su proyecto publicado de Wokwi, con el mismo sketch del repositorio y el circuito de la sección 5.6. Los sensores se movieron desde los controles del simulador, y el monitor serial muestra lo que el nodo decide y lo que envía al Edge.
 
+<p class="apa-label">Figura 473</p>
+<p class="apa-title">Monitor de Ambiente en ejecución en Wokwi</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/embedded-environment-monitor-wokwi.jpg" alt="Embedded Application - Environment Monitor in Wokwi" width="100%">
-  <p><em>Figura: Monitor de Ambiente en ejecución en Wokwi. Esta vista evidencia el sketch EnvironmentMonitor.ino sobre el Modest IoT Nano Framework: tras calibrar el MQ-135 en 408.4 ppm, una concentración de 1104.7 ppm lleva la calidad de aire de NORMAL a CRITICAL, el LED RGB cambia a rojo y el nodo intenta enviar la lectura al Edge.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia el sketch EnvironmentMonitor.ino sobre el Modest IoT Nano Framework: tras calibrar el MQ-135 en 408.4 ppm, una concentración de 1104.7 ppm lleva la calidad de aire de NORMAL a CRITICAL, el LED RGB cambia a rojo y el nodo intenta enviar la lectura al Edge.</p>
+
+<p class="apa-label">Figura 474</p>
+<p class="apa-title">Monitor de Contenedor en ejecución en Wokwi</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/execution-evidence/embedded-container-monitor-wokwi.jpg" alt="Embedded Application - Container Monitor in Wokwi" width="100%">
-  <p><em>Figura: Monitor de Contenedor en ejecución en Wokwi. Esta vista evidencia el sketch ContainerMonitor.ino: a 27 °C la temperatura pasa de NORMAL a WARNING, el LED RGB cambia a amarillo, se enciende la ventilación (el LED azul representa el ventilador) y el nodo registra la acción VENTILATION_ON con su causa. En el recuadro, la pantalla OLED ampliada muestra el contenedor, sus tres métricas con su estado, la acción, el cierre y el enlace con el Edge.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta vista evidencia el sketch ContainerMonitor.ino: a 27 °C la temperatura pasa de NORMAL a WARNING, el LED RGB cambia a amarillo, se enciende la ventilación (el LED azul representa el ventilador) y el nodo registra la acción VENTILATION_ON con su causa. En el recuadro, la pantalla OLED ampliada muestra el contenedor, sus tres métricas con su estado, la acción, el cierre y el enlace con el Edge.</p>
 
 #### 6.2.2.7. Services Documentation Evidence for Sprint Review
 
@@ -4502,6 +5157,9 @@ Las siguientes tablas presentan las operaciones del Cloud REST API por Bounded C
 
 **Edge Gateways**
 
+<p class="apa-label">Tabla 110</p>
+<p class="apa-title">Endpoints de Edge Gateways documentados en el Sprint 2</p>
+
 | Endpoint | Acción | Parámetros | Respuestas |
 |----------|--------|------------|------------|
 | **GET** /​edge-gateways/​{device​Id}/​iot-devices | Get Edge Gateway IoT devices *(nuevo)* | X-API-Key (header), device​Id (path) | 200 (Edge​Gateway​Iot​Device[]), 401, 403 |
@@ -4510,6 +5168,9 @@ Las siguientes tablas presentan las operaciones del Cloud REST API por Bounded C
 | **POST** /​edge-gateways/​{gateway​Id}/​iot-devices/​{iot​Device​Id}/​telemetry-measurements | Record IoT telemetry from an Edge Gateway *(nuevo)* | X-API-Key (header), gateway​Id (path), iot​Device​Id (path), body: Record​Measurement​Request | 200 (Measurement), 201 (Measurement), 400, 401, 403 |
 
 **Compliance & Alerting**
+
+<p class="apa-label">Tabla 111</p>
+<p class="apa-title">Endpoints de Compliance & Alerting documentados en el Sprint 2</p>
 
 | Endpoint | Acción | Parámetros | Respuestas |
 |----------|--------|------------|------------|
@@ -4530,6 +5191,9 @@ Las siguientes tablas presentan las operaciones del Cloud REST API por Bounded C
 
 **Profile Management**
 
+<p class="apa-label">Tabla 112</p>
+<p class="apa-title">Endpoints de Profile Management documentados en el Sprint 2</p>
+
 | Endpoint | Acción | Parámetros | Respuestas |
 |----------|--------|------------|------------|
 | **GET** /​laboratories/​{laboratory​Id}/​staff/​{staff​Id}/​profile | Get the profile of a staff member | laboratory​Id (path), staff​Id (path) | 200 (Profile), 403, 404 |
@@ -4541,6 +5205,9 @@ Las siguientes tablas presentan las operaciones del Cloud REST API por Bounded C
 | **DELETE** /​users/​me/​profile/​photo | Remove the photo of the authenticated user | — | 204, 401 |
 
 **Identity & Access Management**
+
+<p class="apa-label">Tabla 113</p>
+<p class="apa-title">Endpoints de Identity & Access Management documentados en el Sprint 2</p>
 
 | Endpoint | Acción | Parámetros | Respuestas |
 |----------|--------|------------|------------|
@@ -4559,6 +5226,9 @@ Las siguientes tablas presentan las operaciones del Cloud REST API por Bounded C
 
 **Payments & Subscriptions**
 
+<p class="apa-label">Tabla 114</p>
+<p class="apa-title">Endpoints de Payments & Subscriptions documentados en el Sprint 2</p>
+
 | Endpoint | Acción | Parámetros | Respuestas |
 |----------|--------|------------|------------|
 | **GET** /​laboratories/​{laboratory​Id}/​subscriptions | Get the subscriptions of a laboratory | laboratory​Id (path), status (query, opcional) | 200 (Subscription​Resource[]) |
@@ -4569,6 +5239,9 @@ Las siguientes tablas presentan las operaciones del Cloud REST API por Bounded C
 | **GET** /​subscriptions/​{subscription​Id}/​payments | Get the payments of a subscription | subscription​Id (path) | 200 (Subscription​Payment​Resource[]) |
 
 **Reporting & Audit**
+
+<p class="apa-label">Tabla 115</p>
+<p class="apa-title">Endpoints de Reporting & Audit documentados en el Sprint 2</p>
 
 | Endpoint | Acción | Parámetros | Respuestas |
 |----------|--------|------------|------------|
@@ -4588,6 +5261,9 @@ Las siguientes tablas presentan las operaciones del Cloud REST API por Bounded C
 
 **Tracking & Telemetry**
 
+<p class="apa-label">Tabla 116</p>
+<p class="apa-title">Endpoints de Tracking & Telemetry documentados en el Sprint 2</p>
+
 | Endpoint | Acción | Parámetros | Respuestas |
 |----------|--------|------------|------------|
 | **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​container-monitors/​{device​Id}/​actuation-events | Get the actions of the container monitor | laboratory​Id (path), environment​Id (path), device​Id (path), from (query, opcional), to (query, opcional) | 200 (Actuation​Event[]), 400, 403, 404 |
@@ -4605,6 +5281,9 @@ Las siguientes tablas presentan las operaciones del Cloud REST API por Bounded C
 | **POST** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​telemetry-measurements | Record a reading of the environmental device | laboratory​Id (path), environment​Id (path), body: Record​Measurement​Request | 200 (Measurement), 201 (Measurement), 400, 403 |
 
 **Product Batch Management**
+
+<p class="apa-label">Tabla 117</p>
+<p class="apa-title">Endpoints de Product Batch Management documentados en el Sprint 2</p>
 
 | Endpoint | Acción | Parámetros | Respuestas |
 |----------|--------|------------|------------|
@@ -4625,6 +5304,9 @@ Las siguientes tablas presentan las operaciones del Cloud REST API por Bounded C
 | **GET** /​laboratories/​{laboratory​Id}/​environments/​{environment​Id}/​products/​{product​Id}/​batches/​{batch​Id}/​traceability | Get the traceability of a batch | laboratory​Id (path), environment​Id (path), product​Id (path), batch​Id (path) | 200 (Batch​Traceability​Response), 403, 404 |
 
 **Inventory Management**
+
+<p class="apa-label">Tabla 118</p>
+<p class="apa-title">Endpoints de Inventory Management documentados en el Sprint 2</p>
 
 | Endpoint | Acción | Parámetros | Respuestas |
 |----------|--------|------------|------------|
@@ -4648,6 +5330,9 @@ Las siguientes tablas presentan las operaciones del Cloud REST API por Bounded C
 | **GET** /​laboratories/​{laboratory​Id}/​raw-materials/​{legacy​Raw​Material​Id}/​usages | Get material consumption history | laboratory​Id (path), legacy​Raw​Material​Id (path) | 200 (Raw​Material​Usage​Response[]) |
 
 **Equipment Management**
+
+<p class="apa-label">Tabla 119</p>
+<p class="apa-title">Endpoints de Equipment Management documentados en el Sprint 2</p>
 
 | Endpoint | Acción | Parámetros | Respuestas |
 |----------|--------|------------|------------|
@@ -4673,6 +5358,9 @@ Las siguientes tablas presentan las operaciones del Cloud REST API por Bounded C
 
 **Laboratory Management**
 
+<p class="apa-label">Tabla 120</p>
+<p class="apa-title">Endpoints de Laboratory Management documentados en el Sprint 2</p>
+
 | Endpoint | Acción | Parámetros | Respuestas |
 |----------|--------|------------|------------|
 | **POST** /​laboratories | Create a new laboratory | body: Create​Laboratory​Request | 201 (Laboratory​Response), 400, 409 |
@@ -4691,6 +5379,9 @@ Las siguientes tablas presentan las operaciones del Cloud REST API por Bounded C
 **Edge API** (`http://<estación local>:5000`)
 
 Desde la versión 0.4.0 cada nodo puede enviar su API key en el encabezado `X-API-Key` o como `Authorization: Bearer <API key>` (ADR-0018). Las Embedded Applications usan esta segunda forma, porque el `HttpGatewayClient` del Modest IoT Nano Framework solo envía el encabezado Authorization.
+
+<p class="apa-label">Tabla 121</p>
+<p class="apa-title">Endpoints del Edge API</p>
 
 | Endpoint | Acción | Parámetros | Respuestas |
 |----------|--------|------------|------------|
@@ -4803,29 +5494,48 @@ Content-Type: application/json
 
 Las siguientes capturas muestran la documentación desplegada con los datos de ejemplo de las operaciones agregadas en este sprint.
 
+<p class="apa-label">Figura 475</p>
+<p class="apa-title">Operaciones del Edge Gateway en Swagger UI</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/services-documentation-evidence/swagger-edge-gateways.jpg" alt="Swagger UI - Edge Gateways" width="100%">
-  <p><em>Figura: Operaciones del Edge Gateway en Swagger UI. Esta evidencia muestra el grupo Edge Gateways con los endpoints con los que el Edge lee sus dispositivos IoT y envía telemetría, eventos de actuación y perfiles ambientales, autenticados con el encabezado X-API-Key.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra el grupo Edge Gateways con los endpoints con los que el Edge lee sus dispositivos IoT y envía telemetría, eventos de actuación y perfiles ambientales, autenticados con el encabezado X-API-Key.</p>
+
+<p class="apa-label">Figura 476</p>
+<p class="apa-title">Detalle del registro de telemetría de un Edge Gateway en Swagger UI</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/services-documentation-evidence/swagger-edge-telemetry.jpg" alt="Swagger UI - Telemetría del Edge Gateway" width="100%">
-  <p><em>Figura: Detalle del registro de telemetría de un Edge Gateway en Swagger UI. Esta evidencia muestra la descripción de la operación, los parámetros con el encabezado X-API-Key y el cuerpo de ejemplo de una lectura de temperatura.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra la descripción de la operación, los parámetros con el encabezado X-API-Key y el cuerpo de ejemplo de una lectura de temperatura.</p>
+
+<p class="apa-label">Figura 477</p>
+<p class="apa-title">Respuestas documentadas del registro de telemetría en Swagger UI</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/services-documentation-evidence/swagger-edge-telemetry-responses.jpg" alt="Swagger UI - Respuestas de la telemetría del Edge Gateway" width="100%">
-  <p><em>Figura: Respuestas documentadas del registro de telemetría en Swagger UI. Esta evidencia muestra el ejemplo de la medición devuelta con su estado y valor de umbral, tanto para una lectura ya recibida (200) como para una nueva (201).</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra el ejemplo de la medición devuelta con su estado y valor de umbral, tanto para una lectura ya recibida (200) como para una nueva (201).</p>
+
+<p class="apa-label">Figura 478</p>
+<p class="apa-title">Registro de un Edge Gateway y emisión de su API key en Swagger UI</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/services-documentation-evidence/swagger-edge-gateway-api-key.jpg" alt="Swagger UI - API key del Edge Gateway" width="100%">
-  <p><em>Figura: Registro de un Edge Gateway y emisión de su API key en Swagger UI. Esta evidencia muestra las operaciones del laboratorio con las que el responsable de calidad registra el Gateway y genera la API key que se entrega una sola vez.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra las operaciones del laboratorio con las que el responsable de calidad registra el Gateway y genera la API key que se entrega una sola vez.</p>
 
 Commits relacionados con la documentación de los servicios en este sprint (48):
 
 **qualitrack-platform**
+
+<p class="apa-label">Tabla 122</p>
+<p class="apa-title">Commits de documentación de qualitrack-platform en el Sprint 2</p>
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 |------------|--------|-----------|----------------|---------------------|---------------------|
@@ -4861,6 +5571,9 @@ Commits relacionados con la documentación de los servicios en este sprint (48):
 
 **qualitrack-edge-service**
 
+<p class="apa-label">Tabla 123</p>
+<p class="apa-title">Commits de documentación de qualitrack-edge-service en el Sprint 2</p>
+
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 |------------|--------|-----------|----------------|---------------------|---------------------|
 | Io​Tech-2620-8741/​qualitrack-edge-service | feature/​repository-base | a49dbc1 | docs: add the README and the Quali​Track proprietary license | — | 03/11/2026 |
@@ -4887,6 +5600,9 @@ Commits relacionados con la documentación de los servicios en este sprint (48):
 
 En el Sprint 2 cada producto se publica de forma automática al integrar una versión en la rama `main`: la Landing Page en GitHub Pages, la Web Application en Firebase Hosting y el Cloud REST API en Azure Container Apps, cada uno con su workflow de GitHub Actions. La Mobile Application se distribuye a los testers mediante Firebase App Distribution al publicar la etiqueta de cada versión estable. Las Embedded Applications se publican como GitHub Releases y se cargan en cada ESP32 con Arduino IDE. Las ramas `develop` y `main` de los repositorios de código, salvo los de las Embedded Applications, están protegidas por reglas que exigen un pull request con las pruebas de integración continua aprobadas, y cada versión se publica con su etiqueta y su GitHub Release. El Edge Service se despliega con Docker Compose en la estación local de cada instalación, y su workflow verifica ese despliegue en cada pull request.
 
+<p class="apa-label">Tabla 124</p>
+<p class="apa-title">Software Deployment Evidence for Sprint Review</p>
+
 | Producto | Versión desplegada | Destino | Mecanismo |
 |----------|--------------------|---------|-----------|
 | Landing Page | v2.0.0 | GitHub Pages | Workflow `Deploy to GitHub Pages` al integrar en `main` |
@@ -4899,24 +5615,36 @@ En el Sprint 2 cada producto se publica de forma automática al integrar una ver
 
 **Despliegue del Cloud REST API.** El pipeline creado en el Sprint 1 ejecuta las pruebas con Maven, construye la imagen Docker en Azure Container Registry y actualiza la revisión de Azure Container Apps. En este sprint se publicaron con él las versiones 1.1.0 y 1.2.0. Como la base de datos de producción usa `ddl-auto=none`, antes de publicar la versión 1.2.0 se creó en ella la tabla de las API keys de los Edge Gateways y dos índices de las alertas de desviación, con un script que se ejecuta una sola vez y termina con una consulta de verificación.
 
+<p class="apa-label">Figura 479</p>
+<p class="apa-title">Workflow de despliegue del Cloud REST API en GitHub Actions</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/backend-azure-deploy.jpg" alt="Despliegue del Cloud REST API en Azure" width="100%">
-  <p><em>Figura: Workflow de despliegue del Cloud REST API en GitHub Actions. Esta evidencia muestra la ejecución que publicó la versión 1.2.0 al integrar su pull request en main: las pruebas con Maven, el inicio de sesión en Azure, la publicación de la imagen en Azure Container Registry y la actualización de Azure Container Apps.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra la ejecución que publicó la versión 1.2.0 al integrar su pull request en main: las pruebas con Maven, el inicio de sesión en Azure, la publicación de la imagen en Azure Container Registry y la actualización de Azure Container Apps.</p>
 
 **Despliegue de la Web Application.** Cada versión integrada en `main` se compila con `npm ci && npm run build` y se publica en el sitio `qualitrack-iotech` de Firebase Hosting. En este sprint se publicaron las versiones 1.1.1 a 2.5.0.
 
+<p class="apa-label">Figura 480</p>
+<p class="apa-title">Workflow de despliegue de la Web Application en GitHub Actions</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/web-firebase-deploy.jpg" alt="Despliegue de la Web Application en Firebase Hosting" width="100%">
-  <p><em>Figura: Workflow de despliegue de la Web Application en GitHub Actions. Esta evidencia muestra la publicación de la versión 2.5.0 en el sitio de producción de Firebase Hosting, con el resultado success y la URL https://qualitrack-iotech.web.app.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra la publicación de la versión 2.5.0 en el sitio de producción de Firebase Hosting, con el resultado success y la URL https://qualitrack-iotech.web.app.</p>
 
 **Despliegue de la Landing Page.** En este sprint la Landing Page pasó de la publicación desde una rama a un workflow de GitHub Actions que sube la carpeta `public/` como artefacto y la despliega en GitHub Pages, de modo que el sitio se sirve desde la URL raíz del repositorio. Al cierre del sprint el mismo workflow publicó la versión 2.0.0, con la sección de dispositivos IoT y los videos del producto y del equipo.
 
+<p class="apa-label">Figura 481</p>
+<p class="apa-title">Workflow de despliegue de la Landing Page en GitHub Actions</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/website-pages-deploy.jpg" alt="Despliegue de la Landing Page en GitHub Pages" width="100%">
-  <p><em>Figura: Workflow de despliegue de la Landing Page en GitHub Actions. Esta evidencia muestra la configuración de Pages, la carga de public/ como sitio y el despliegue de la versión 1.1.0 reportado como exitoso.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra la configuración de Pages, la carga de public/ como sitio y el despliegue de la versión 1.1.0 reportado como exitoso.</p>
 
 **Despliegue del Edge Service.** El Edge Service se ejecuta en la estación local de cada instalación, una Raspberry Pi 4 con Docker Engine, mediante `docker-compose.yml`, que levanta el servicio `qualitrack-edge` con Gunicorn y conserva la base SQLite en el volumen `qualitrack-data`. Los pasos de despliegue son:
 
@@ -4927,17 +5655,25 @@ En el Sprint 2 cada producto se publica de forma automática al integrar una ver
 
 El workflow de integración continua reproduce este despliegue en cada pull request: levanta el servicio con Docker Compose, registra un nodo, verifica su autenticación y la recepción de una lectura, reinicia el contenedor y comprueba que la lectura pendiente se conserva en el volumen. Además construye la imagen para la arquitectura arm64 de la Raspberry Pi 4.
 
+<p class="apa-label">Figura 482</p>
+<p class="apa-title">Prueba del despliegue del Edge Service en GitHub Actions</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/edge-docker-smoke-test.jpg" alt="Despliegue del Edge Service con Docker Compose" width="100%">
-  <p><em>Figura: Prueba del despliegue del Edge Service en GitHub Actions. Esta evidencia muestra el registro de un Monitor de Contenedor, su autenticación con respuesta 200, la recepción de una lectura con respuesta 201 y el reinicio del servicio con Docker Compose conservando la lectura pendiente de sincronización.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra el registro de un Monitor de Contenedor, su autenticación con respuesta 200, la recepción de una lectura con respuesta 201 y el reinicio del servicio con Docker Compose conservando la lectura pendiente de sincronización.</p>
 
 Al cierre del sprint se publicó la versión 0.4.0 del Edge Service. Su imagen Docker consulta cada 30 segundos el nuevo endpoint `GET /api/v1/health`, de modo que `docker compose ps` muestra el contenedor como `healthy` o `unhealthy` (ADR-0017), y los nodos pueden enviar su API key como token Bearer, como lo hacen las Embedded Applications (ADR-0018).
 
+<p class="apa-label">Figura 483</p>
+<p class="apa-title">GitHub Release de la versión 0.4.0 del Edge Service</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/edge-release-v0.4.0.jpg" alt="GitHub Release v0.4.0 del Edge Service" width="100%">
-  <p><em>Figura: GitHub Release de la versión 0.4.0 del Edge Service. Esta evidencia muestra la versión integrada en main con su etiqueta, que agrega el endpoint de salud y la API key de los nodos como token Bearer.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra la versión integrada en main con su etiqueta, que agrega el endpoint de salud y la API key de los nodos como token Bearer.</p>
 
 **Despliegue de las Embedded Applications.** El firmware de cada nodo es un único sketch de Arduino sobre el Modest IoT Nano Framework v1.0.0, que se carga en el ESP32 DevKit v1 de cada ambiente o contenedor. Los pasos de despliegue son:
 
@@ -4947,15 +5683,23 @@ Al cierre del sprint se publicó la versión 0.4.0 del Edge Service. Su imagen D
 
 Cada versión se cierra con GitFlow: la rama `release/vX.Y.Z` fecha el CHANGELOG, se integra en `main` con una etiqueta anotada y en `develop`, y se publica su GitHub Release. En este sprint se publicaron las versiones 0.1.0 a 0.4.0 del Monitor de Ambiente y la 0.1.0 del Monitor de Contenedor. Además, cada nodo tiene un proyecto publicado en Wokwi con los mismos archivos del repositorio, que permite ejecutar el firmware con su circuito sin el hardware, y el workflow del Monitor de Ambiente compila el sketch para el ESP32 en cada pull request.
 
+<p class="apa-label">Figura 484</p>
+<p class="apa-title">Versiones publicadas de la Embedded Application del Monitor de Ambiente</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/embedded-environment-monitor-releases.jpg" alt="GitHub Releases de la Embedded Application del Monitor de Ambiente" width="100%">
-  <p><em>Figura: Versiones publicadas de la Embedded Application del Monitor de Ambiente. Esta evidencia muestra las GitHub Releases 0.1.0 a 0.4.0, cada una con su etiqueta sobre el merge de su versión en main.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra las GitHub Releases 0.1.0 a 0.4.0, cada una con su etiqueta sobre el merge de su versión en main.</p>
+
+<p class="apa-label">Figura 485</p>
+<p class="apa-title">Primera versión publicada de la Embedded Application del Monitor de Contenedor</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/embedded-container-monitor-release.jpg" alt="GitHub Release v0.1.0 de la Embedded Application del Monitor de Contenedor" width="100%">
-  <p><em>Figura: Primera versión publicada de la Embedded Application del Monitor de Contenedor. Esta evidencia muestra la GitHub Release 0.1.0 con su etiqueta sobre el merge de la versión en main.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra la GitHub Release 0.1.0 con su etiqueta sobre el merge de la versión en main.</p>
 
 **Enlaces:** [Releases del Monitor de Ambiente](https://github.com/IoTech-2620-8741/qualitrack-embedded-environment-monitor/releases) · [Release v0.1.0 del Monitor de Contenedor](https://github.com/IoTech-2620-8741/qualitrack-embedded-container-monitor/releases/tag/v0.1.0) · [Wokwi del Monitor de Ambiente](https://wokwi.com/projects/480697842499374081) · [Wokwi del Monitor de Contenedor](https://wokwi.com/projects/480802699328400385)
 
@@ -4969,9 +5713,15 @@ En este sprint se publicó la primera versión estable de la Mobile Application,
 
 1) En la [consola de Firebase](https://console.firebase.google.com/), entramos al proyecto `qualitrack-iotech`, vamos a Configuración del proyecto, le damos a **Agregar app** y elegimos la plataforma **Android**:
 
+<p class="apa-label">Figura 486</p>
+<p class="apa-title">Step 1-1 - Selección de la plataforma Android en Firebase</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-1-1.jpg" alt="Step 1-1 - Selección de la plataforma Android en Firebase" width="100%"></p>
 
 2) Ingresamos el nombre del paquete `com.iotech.qualitrack_mobile`, que es el `applicationId` de la aplicación Flutter, y el alias **QualiTrack**, y le damos a **Registrar app**. La aplicación queda registrada en **Tus apps**. Copiamos su **ID de la app** (`1:107206539121:android:...`), que el workflow usa para indicar a qué aplicación se sube cada versión:
+
+<p class="apa-label">Figura 487</p>
+<p class="apa-title">Step 1-2 - App Android registrada y su ID</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-1-2.jpg" alt="Step 1-2 - App Android registrada y su ID" width="100%"></p>
 
@@ -4979,23 +5729,38 @@ En este sprint se publicó la primera versión estable de la Mobile Application,
 
 1) En el menú lateral entramos a **App Distribution**, le damos a **Comenzar** para activarlo y vamos a la pestaña **Verificadores y grupos**:
 
+<p class="apa-label">Figura 488</p>
+<p class="apa-title">Step 2-1 - Verificadores y grupos de App Distribution</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-2-1.jpg" alt="Step 2-1 - Verificadores y grupos de App Distribution" width="100%"></p>
 
 2) Le damos a **Agregar grupo** y escribimos el nombre **qa-testers**, que es el grupo al que el workflow envía cada versión:
+
+<p class="apa-label">Figura 489</p>
+<p class="apa-title">Step 2-2 - Creación del grupo qa-testers</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-2-2.jpg" alt="Step 2-2 - Creación del grupo qa-testers" width="100%"></p>
 
 3) El grupo queda creado con el alias `qa-testers`:
 
+<p class="apa-label">Figura 490</p>
+<p class="apa-title">Step 2-3 - Grupo qa-testers creado</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-2-3.jpg" alt="Step 2-3 - Grupo qa-testers creado" width="100%"></p>
 
 4) Con el grupo seleccionado, le damos a **Agregar verificador** e ingresamos uno por uno los correos de los integrantes del equipo, hasta tener los 10 testers del grupo:
+
+<p class="apa-label">Figura 491</p>
+<p class="apa-title">Step 2-4 - Grupo qa-testers con 10 testers</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-2-4.jpg" alt="Step 2-4 - Grupo qa-testers con 10 testers" width="100%"></p>
 
 **Paso 3: Cuenta de servicio en Google Cloud:**
 
 1) En la [consola de Google Cloud](https://console.cloud.google.com/) del proyecto `qualitrack-iotech`, vamos a **IAM y administración** → **Cuentas de servicio** y creamos la cuenta `github-app-distribution`. Luego, en **IAM** → **Otorgar acceso**, le asignamos el rol **Administrador de Firebase App Distribution**, el único permiso que necesita para subir versiones:
+
+<p class="apa-label">Figura 492</p>
+<p class="apa-title">Step 3-1 - Cuenta de servicio con el rol de App Distribution</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-3-1.jpg" alt="Step 3-1 - Cuenta de servicio con el rol de App Distribution" width="100%"></p>
 
@@ -5010,6 +5775,9 @@ gh secret set FIREBASE_APP_ID
 gh secret set FIREBASE_SERVICE_ACCOUNT < clave.json
 ```
 
+<p class="apa-label">Figura 493</p>
+<p class="apa-title">Step 4-1 - Secrets del repositorio</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-4-1.jpg" alt="Step 4-1 - Secrets del repositorio" width="100%"></p>
 
 2) En la pestaña **Variables** creamos `API_BASE_URL` con la URL del Cloud REST API desplegado en Azure Container Apps, que se inyecta en el APK al compilarlo:
@@ -5018,27 +5786,45 @@ gh secret set FIREBASE_SERVICE_ACCOUNT < clave.json
 gh variable set API_BASE_URL --body "<URL del Cloud REST API>"
 ```
 
+<p class="apa-label">Figura 494</p>
+<p class="apa-title">Step 4-2 - Variable API_BASE_URL del repositorio</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-4-2.jpg" alt="Step 4-2 - Variable API_BASE_URL del repositorio" width="100%"></p>
 
 **Paso 5: Workflow de compilación y distribución:**
 
 1) Agregamos el workflow `.github/workflows/build-and-distribute-apk.yml`, llamado **Build APK and distribute**. Se ejecuta al publicar una etiqueta estable `vX.Y.Z` (las etiquetas de pre-release como `v1.0.0-rc.1` se ignoran) o de forma manual, y realiza los siguientes pasos: verifica que la etiqueta coincida con la versión de `pubspec.yaml`, instala Java 17 y Flutter 3.44.3, ejecuta `flutter analyze` y `flutter test`, compila el APK con `flutter build apk --release --dart-define=API_BASE_URL=...`, lo guarda como artefacto y lo envía al grupo `qa-testers` de Firebase App Distribution con la acción `wzieba/Firebase-Distribution-Github-Action`:
 
+<p class="apa-label">Figura 495</p>
+<p class="apa-title">Step 5-1 - Archivo del workflow Build APK and distribute</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-5-1.jpg" alt="Step 5-1 - Archivo del workflow Build APK and distribute" width="100%"></p>
 
 2) El workflow se integró a `develop` mediante el pull request #34 (`feature/apk-distribution`):
+
+<p class="apa-label">Figura 496</p>
+<p class="apa-title">Step 5-2 - Pull request 34 integrado en develop</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-5-2.jpg" alt="Step 5-2 - Pull request 34 integrado en develop" width="100%"></p>
 
 3) La integración continua del pull request #34 pasó correctamente:
 
+<p class="apa-label">Figura 497</p>
+<p class="apa-title">Step 5-3 - Integración continua del pull request 34</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-5-3.jpg" alt="Step 5-3 - Integración continua del pull request 34" width="100%"></p>
 
 4) Con el pull request #35 (`feature/stable-release-tags`) se limitó el disparador a las etiquetas de versiones estables:
 
+<p class="apa-label">Figura 498</p>
+<p class="apa-title">Step 5-4 - Pull request 35 integrado en develop</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-5-4.jpg" alt="Step 5-4 - Pull request 35 integrado en develop" width="100%"></p>
 
 5) La integración continua del pull request #35 también pasó correctamente:
+
+<p class="apa-label">Figura 499</p>
+<p class="apa-title">Step 5-5 - Integración continua del pull request 35</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-5-5.jpg" alt="Step 5-5 - Integración continua del pull request 35" width="100%"></p>
 
@@ -5051,13 +5837,22 @@ git switch -c release/1.0.0 develop
 git push -u origin release/1.0.0
 ```
 
+<p class="apa-label">Figura 500</p>
+<p class="apa-title">Step 6-1 - Rama release/1.0.0 creada</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-6-1.jpg" alt="Step 6-1 - Rama release/1.0.0 creada" width="100%"></p>
 
 2) Abrimos el pull request #36 de `release/1.0.0` hacia `main`, con el título `chore(release): 1.0.0`:
 
+<p class="apa-label">Figura 501</p>
+<p class="apa-title">Step 6-2 - Pull request 36 de release hacia main</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-6-2.jpg" alt="Step 6-2 - Pull request 36 de release hacia main" width="100%"></p>
 
 3) Integramos el pull request #36 en `main`:
+
+<p class="apa-label">Figura 502</p>
+<p class="apa-title">Step 6-3 - Pull request 36 integrado en main</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-6-3.jpg" alt="Step 6-3 - Pull request 36 integrado en main" width="100%"></p>
 
@@ -5069,13 +5864,22 @@ git tag -a v1.0.0 -m "Version 1.0.0"
 git push origin v1.0.0
 ```
 
+<p class="apa-label">Figura 503</p>
+<p class="apa-title">Step 6-4 - Etiqueta v1.0.0</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-6-4.jpg" alt="Step 6-4 - Etiqueta v1.0.0" width="100%"></p>
 
 5) Publicamos el GitHub Release **Version 1.0.0** a partir de la etiqueta:
 
+<p class="apa-label">Figura 504</p>
+<p class="apa-title">Step 6-5 - GitHub Release v1.0.0</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-6-5.jpg" alt="Step 6-5 - GitHub Release v1.0.0" width="100%"></p>
 
 6) Finalmente, integramos `main` de vuelta en `develop` con el pull request #37 (`chore(release): merge main back into develop after v1.0.0`) y eliminamos la rama `release/1.0.0`:
+
+<p class="apa-label">Figura 505</p>
+<p class="apa-title">Step 6-6 - Pull request 37 de main hacia develop</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-6-6.jpg" alt="Step 6-6 - Pull request 37 de main hacia develop" width="100%"></p>
 
@@ -5083,9 +5887,15 @@ git push origin v1.0.0
 
 1) En Firebase App Distribution, en la pestaña **Versiones**, aparece la versión **1.0.0 (1)** con las notas `v1.0.0` y los 10 testers del grupo `qa-testers` invitados, que reciben el enlace de descarga del APK por correo:
 
+<p class="apa-label">Figura 506</p>
+<p class="apa-title">Step 7-1 - Versión 1.0.0 en Firebase App Distribution</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-7-1.jpg" alt="Step 7-1 - Versión 1.0.0 en Firebase App Distribution" width="100%"></p>
 
 2) El run #55 del workflow **Build APK and distribute**, disparado por la etiqueta `v1.0.0`, terminó correctamente en 5 minutos y 57 segundos, con todos sus pasos aprobados, incluidos **Build release APK** y **Distribute to testers**:
+
+<p class="apa-label">Figura 507</p>
+<p class="apa-title">Step 7-2 - Pipeline Build APK and distribute en GitHub Actions</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-vi/sprint-2/deployment-evidence/mobile/sprint-2-mobile-deployment-step-7-2.jpg" alt="Step 7-2 - Pipeline Build APK and distribute en GitHub Actions" width="100%"></p>
 
@@ -5097,109 +5907,185 @@ Durante el Sprint 2 el equipo mantuvo GitFlow y Conventional Commits, y reforzó
 
 **Landing Page** ([IoTech-2620-8741/qualitrack-website](https://github.com/IoTech-2620-8741/qualitrack-website))
 
+<p class="apa-label">Figura 508</p>
+<p class="apa-title">Contribuidores del repositorio de la Landing Page en GitHub Insights</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-contributors-website-1.jpg" alt="GitHub Contributors - Landing Page" width="100%">
-  <p><em>Figura: Contribuidores del repositorio de la Landing Page en GitHub Insights. Esta evidencia muestra los commits por semana integrados en main y los integrantes con más commits.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra los commits por semana integrados en main y los integrantes con más commits.</p>
+
+<p class="apa-label">Figura 509</p>
+<p class="apa-title">Contribuidores del repositorio de la Landing Page en GitHub Insights (continuación)</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-contributors-website-2.jpg" alt="GitHub Contributors - Landing Page (continuación)" width="100%">
-  <p><em>Figura: Contribuidores del repositorio de la Landing Page en GitHub Insights (continuación). Esta evidencia muestra los demás integrantes con sus commits integrados en main.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra los demás integrantes con sus commits integrados en main.</p>
+
+<p class="apa-label">Figura 510</p>
+<p class="apa-title">Network graph del repositorio de la Landing Page</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-network-website.jpg" alt="GitHub Network graph - Landing Page" width="100%">
-  <p><em>Figura: Network graph del repositorio de la Landing Page. Esta evidencia muestra el flujo de GitFlow en los commits más recientes: las ramas de trabajo que se integran en develop y las versiones que pasan de develop a main.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra el flujo de GitFlow en los commits más recientes: las ramas de trabajo que se integran en develop y las versiones que pasan de develop a main.</p>
 
 **Web Application** ([IoTech-2620-8741/qualitrack-web-app](https://github.com/IoTech-2620-8741/qualitrack-web-app))
 
+<p class="apa-label">Figura 511</p>
+<p class="apa-title">Contribuidores del repositorio de la Web Application en GitHub Insights</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-contributors-web-app-1.jpg" alt="GitHub Contributors - Web Application" width="100%">
-  <p><em>Figura: Contribuidores del repositorio de la Web Application en GitHub Insights. Esta evidencia muestra los commits por semana integrados en main y los integrantes con más commits.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra los commits por semana integrados en main y los integrantes con más commits.</p>
+
+<p class="apa-label">Figura 512</p>
+<p class="apa-title">Contribuidores del repositorio de la Web Application en GitHub Insights (continuación)</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-contributors-web-app-2.jpg" alt="GitHub Contributors - Web Application (continuación)" width="100%">
-  <p><em>Figura: Contribuidores del repositorio de la Web Application en GitHub Insights (continuación). Esta evidencia muestra los demás integrantes con sus commits integrados en main.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra los demás integrantes con sus commits integrados en main.</p>
+
+<p class="apa-label">Figura 513</p>
+<p class="apa-title">Network graph del repositorio de la Web Application</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-network-web-app.jpg" alt="GitHub Network graph - Web Application" width="100%">
-  <p><em>Figura: Network graph del repositorio de la Web Application. Esta evidencia muestra el flujo de GitFlow en los commits más recientes: las ramas de trabajo que se integran en develop y las versiones que pasan de develop a main.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra el flujo de GitFlow en los commits más recientes: las ramas de trabajo que se integran en develop y las versiones que pasan de develop a main.</p>
 
 **Cloud REST API** ([IoTech-2620-8741/qualitrack-platform](https://github.com/IoTech-2620-8741/qualitrack-platform))
 
+<p class="apa-label">Figura 514</p>
+<p class="apa-title">Contribuidores del repositorio de el Cloud REST API en GitHub Insights</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-contributors-platform-1.jpg" alt="GitHub Contributors - Cloud REST API" width="100%">
-  <p><em>Figura: Contribuidores del repositorio de el Cloud REST API en GitHub Insights. Esta evidencia muestra los commits por semana integrados en main y los integrantes con más commits.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra los commits por semana integrados en main y los integrantes con más commits.</p>
+
+<p class="apa-label">Figura 515</p>
+<p class="apa-title">Contribuidores del repositorio de el Cloud REST API en GitHub Insights (continuación)</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-contributors-platform-2.jpg" alt="GitHub Contributors - Cloud REST API (continuación)" width="100%">
-  <p><em>Figura: Contribuidores del repositorio de el Cloud REST API en GitHub Insights (continuación). Esta evidencia muestra los demás integrantes con sus commits integrados en main.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra los demás integrantes con sus commits integrados en main.</p>
+
+<p class="apa-label">Figura 516</p>
+<p class="apa-title">Network graph del repositorio de el Cloud REST API</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-network-platform.jpg" alt="GitHub Network graph - Cloud REST API" width="100%">
-  <p><em>Figura: Network graph del repositorio de el Cloud REST API. Esta evidencia muestra el flujo de GitFlow en los commits más recientes: las ramas de trabajo que se integran en develop y las versiones que pasan de develop a main.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra el flujo de GitFlow en los commits más recientes: las ramas de trabajo que se integran en develop y las versiones que pasan de develop a main.</p>
 
 **Mobile Application** ([IoTech-2620-8741/qualitrack-mobile-application](https://github.com/IoTech-2620-8741/qualitrack-mobile-application))
 
+<p class="apa-label">Figura 517</p>
+<p class="apa-title">Contribuidores del repositorio de la Mobile Application en GitHub Insights</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-contributors-mobile-application-1.jpg" alt="GitHub Contributors - Mobile Application" width="100%">
-  <p><em>Figura: Contribuidores del repositorio de la Mobile Application en GitHub Insights. Esta evidencia muestra los commits por semana integrados en main y los integrantes con más commits.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra los commits por semana integrados en main y los integrantes con más commits.</p>
+
+<p class="apa-label">Figura 518</p>
+<p class="apa-title">Contribuidores del repositorio de la Mobile Application en GitHub Insights (continuación)</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-contributors-mobile-application-2.jpg" alt="GitHub Contributors - Mobile Application (continuación)" width="100%">
-  <p><em>Figura: Contribuidores del repositorio de la Mobile Application en GitHub Insights (continuación). Esta evidencia muestra los demás integrantes con sus commits integrados en main.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra los demás integrantes con sus commits integrados en main.</p>
+
+<p class="apa-label">Figura 519</p>
+<p class="apa-title">Network graph del repositorio de la Mobile Application</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-network-mobile-application.jpg" alt="GitHub Network graph - Mobile Application" width="100%">
-  <p><em>Figura: Network graph del repositorio de la Mobile Application. Esta evidencia muestra el flujo de GitFlow en los commits más recientes: las ramas de trabajo que se integran en develop y las versiones que pasan de develop a main.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra el flujo de GitFlow en los commits más recientes: las ramas de trabajo que se integran en develop y las versiones que pasan de develop a main.</p>
 
 **Edge Service** ([IoTech-2620-8741/qualitrack-edge-service](https://github.com/IoTech-2620-8741/qualitrack-edge-service))
 
+<p class="apa-label">Figura 520</p>
+<p class="apa-title">Contribuidores del repositorio de el Edge Service en GitHub Insights</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-contributors-edge-service-1.jpg" alt="GitHub Contributors - Edge Service" width="100%">
-  <p><em>Figura: Contribuidores del repositorio de el Edge Service en GitHub Insights. Esta evidencia muestra los commits por semana integrados en main y los integrantes con más commits.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra los commits por semana integrados en main y los integrantes con más commits.</p>
+
+<p class="apa-label">Figura 521</p>
+<p class="apa-title">Contribuidores del repositorio de el Edge Service en GitHub Insights (continuación)</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-contributors-edge-service-2.jpg" alt="GitHub Contributors - Edge Service (continuación)" width="100%">
-  <p><em>Figura: Contribuidores del repositorio de el Edge Service en GitHub Insights (continuación). Esta evidencia muestra los demás integrantes con sus commits integrados en main.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra los demás integrantes con sus commits integrados en main.</p>
+
+<p class="apa-label">Figura 522</p>
+<p class="apa-title">Network graph del repositorio de el Edge Service</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-network-edge-service.jpg" alt="GitHub Network graph - Edge Service" width="100%">
-  <p><em>Figura: Network graph del repositorio de el Edge Service. Esta evidencia muestra el flujo de GitFlow en los commits más recientes: las ramas de trabajo que se integran en develop y las versiones que pasan de develop a main.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra el flujo de GitFlow en los commits más recientes: las ramas de trabajo que se integran en develop y las versiones que pasan de develop a main.</p>
 
 **Embedded Application (Environment Monitor)** ([IoTech-2620-8741/qualitrack-embedded-environment-monitor](https://github.com/IoTech-2620-8741/qualitrack-embedded-environment-monitor))
 
+<p class="apa-label">Figura 523</p>
+<p class="apa-title">Contribuidores del repositorio de la Embedded Application del Monitor de Ambiente en GitHub Insights</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-contributors-embedded-environment-monitor.jpg" alt="GitHub Contributors - Embedded Application (Environment Monitor)" width="100%">
-  <p><em>Figura: Contribuidores del repositorio de la Embedded Application del Monitor de Ambiente en GitHub Insights. Esta evidencia muestra los commits por semana integrados en main y los integrantes que los realizaron.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra los commits por semana integrados en main y los integrantes que los realizaron.</p>
+
+<p class="apa-label">Figura 524</p>
+<p class="apa-title">Network graph del repositorio de la Embedded Application del Monitor de Ambiente</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-network-embedded-environment-monitor.jpg" alt="GitHub Network graph - Embedded Application (Environment Monitor)" width="100%">
-  <p><em>Figura: Network graph del repositorio de la Embedded Application del Monitor de Ambiente. Esta evidencia muestra el flujo de GitFlow en los commits más recientes: las ramas de trabajo que se integran en develop y las versiones que pasan de develop a main.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra el flujo de GitFlow en los commits más recientes: las ramas de trabajo que se integran en develop y las versiones que pasan de develop a main.</p>
 
 **Embedded Application (Container Monitor)** ([IoTech-2620-8741/qualitrack-embedded-container-monitor](https://github.com/IoTech-2620-8741/qualitrack-embedded-container-monitor))
 
+<p class="apa-label">Figura 525</p>
+<p class="apa-title">Contribuidores del repositorio de la Embedded Application del Monitor de Contenedor en GitHub Insights</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-contributors-embedded-container-monitor.jpg" alt="GitHub Contributors - Embedded Application (Container Monitor)" width="100%">
-  <p><em>Figura: Contribuidores del repositorio de la Embedded Application del Monitor de Contenedor en GitHub Insights. Esta evidencia muestra los commits por semana integrados en main y los integrantes que los realizaron.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra los commits por semana integrados en main y los integrantes que los realizaron.</p>
+
+<p class="apa-label">Figura 526</p>
+<p class="apa-title">Network graph del repositorio de la Embedded Application del Monitor de Contenedor</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-vi/sprint-2/team-collaboration-insights/insights-network-embedded-container-monitor.jpg" alt="GitHub Network graph - Embedded Application (Container Monitor)" width="100%">
-  <p><em>Figura: Network graph del repositorio de la Embedded Application del Monitor de Contenedor. Esta evidencia muestra el flujo de GitFlow en los commits más recientes: las ramas de trabajo que se integran en develop y las versiones que pasan de develop a main.</em></p>
 </div>
+
+<p class="apa-note"><em>Nota.</em> Esta evidencia muestra el flujo de GitFlow en los commits más recientes: las ramas de trabajo que se integran en develop y las versiones que pasan de develop a main.</p>

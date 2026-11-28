@@ -13,6 +13,9 @@ Diagram, esta vista no se restringe a los elementos conectados directamente con 
 y relaciones del entorno del laboratorio farmacéutico que explican cómo se realiza hoy el control de condiciones
 ambientales y qué dependencias forman parte del panorama operativo, aun cuando no pasen por la plataforma.
 
+<p class="apa-label">Figura 127</p>
+<p class="apa-title">C4 - System Landscape</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/c4/c4-system-landscape.png" alt="C4 - System Landscape" width="100%"></p>
 
 ##### Personas del ecosistema:
@@ -52,6 +55,9 @@ La vista **System Context** centra la representación en QualiTrack Platform com
 personas y los sistemas externos que mantienen una relación directa con él. Su propósito es delimitar la frontera del
 sistema y las responsabilidades que quedan fuera de ella, sin exponer decisiones de tecnología interna.
 
+<p class="apa-label">Figura 128</p>
+<p class="apa-title">C4 - System Context</p>
+
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/c4/c4-system-context.png" alt="C4 - System Context" width="100%"></p>
 
 **Relaciones con las personas:**
@@ -83,6 +89,9 @@ La vista Container descompone QualiTrack Platform en sus unidades desplegables d
 distribución de responsabilidades entre ellas, las decisiones principales de tecnología y los protocolos de
 comunicación. Siguiendo la definición de C4, un contenedor es una unidad ejecutable o almacén de datos desplegable por
 separado, no un contenedor de Docker.
+
+<p class="apa-label">Figura 129</p>
+<p class="apa-title">C4 - Container</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/c4/c4-containers.png" alt="C4 - Container" width="100%"></p>
 
@@ -148,6 +157,9 @@ directamente hacia la SPA.
 La vista **Deployment** muestra cómo las instancias de los contenedores descritos se distribuyen sobre la
 infraestructura de ejecución del entorno **Production**, cubriendo tres planos: la sede farmacéutica del cliente, la
 infraestructura cloud (backend, base de datos y hosting de los productos web) y los dispositivos del usuario.
+
+<p class="apa-label">Figura 130</p>
+<p class="apa-title">C4 - Deployment</p>
 
 <p align="center"><img src="../../assets/img/main-content/chapter-iv/c4/c4-deployment-production.png" alt="C4 - Deployment" width="100%"></p>
 

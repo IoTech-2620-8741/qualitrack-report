@@ -14,12 +14,18 @@ de estilos para las interfaces físicas de los dispositivos IoT (colores, patron
 
 #### Paso 1: Definición de los requisitos del sistema
 
+<p class="apa-label">Tabla 53</p>
+<p class="apa-title">Paso 1: Definición de los requisitos del sistema</p>
+
 | Criterios                                  | Especificación Técnica                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 |--------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Capacidades de Suministro de Energía**   | **Entorno de operación:** Los nodos operan de forma estática en interiores (laboratorio, almacén de materias primas y cámaras de frío), con acceso permanente a la red eléctrica.<br>**Entrada de alimentación:** USB de 5 V. El Monitor de Ambiente requiere ≥ 1 A y el Monitor de Contenedor ≥ 2 A, por el pico del servo y del ventilador.<br>**Restricciones:** Al contar con red eléctrica no se usan baterías ni energy harvesting. El Edge es una Raspberry Pi 4 alimentada con una fuente USB-C de 5 V / 3 A, conectada a la misma red local. |
 | **Restricciones de Latencia (Time-Delay)** | **Muestreo periódico:** El Monitor de Ambiente envía una lectura cada 60 s y el Monitor de Contenedor cada 30 s. Cada lectura funciona además como señal de vida: si no hay lectura ni acción en 5 minutos, el dispositivo pasa a *Requiere revisión*.<br>**Reacción local:** La señal local (LED, pantalla, buzzer) y la acción automática deben ejecutarse en ≤ 1 s desde que la lectura supera un umbral.<br>**Transmisión de eventos críticos:** La latencia desde el nodo hasta el estado persistido en la nube debe ser menor a 2.0 s.          |
 
 #### Paso 2: Elección de la tipología de sistema IoT
+
+<p class="apa-label">Tabla 54</p>
+<p class="apa-title">Paso 2: Elección de la tipología de sistema IoT</p>
 
 | Parámetro de Clasificación              | Estructura Definida                                                               | Justificación Técnica                                                                                                                                                                       |
 |-----------------------------------------|-----------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -28,6 +34,9 @@ de estilos para las interfaces físicas de los dispositivos IoT (colores, patron
 | **Tipología Final**                     | **Network-powered Soft Real-Time IoT System con actuación local en lazo cerrado** | Cada nodo mide, evalúa las reglas del perfil y actúa (ventilador, servo, buzzer, LED) sin depender de la nube; el Edge y la nube centralizan el registro, las alertas y las notificaciones. |
 
 #### Paso 3: Definición de requisitos para la capa física
+
+<p class="apa-label">Tabla 55</p>
+<p class="apa-title">Paso 3: Definición de requisitos para la capa física</p>
 
 | Parámetro                                       | Definición y Requisitos Técnicos                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |-------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -38,6 +47,9 @@ de estilos para las interfaces físicas de los dispositivos IoT (colores, patron
 | **Capacidad de Procesamiento Local**            | ESP32 de doble núcleo a 240 MHz con 520 KB de SRAM. Funciones requeridas en el firmware: 1) calibración del MQ-135 en aire limpio y promedio móvil (ventana deslizante) de la luz para atenuar ruido; 2) evaluación de las reglas del perfil con histéresis; 3) validación de la etiqueta RFID; 4) patrones de LED y buzzer no bloqueantes; 5) envío de lecturas con la hora de medición. Tiempo de procesamiento local requerido: < 100 ms.                                                                      |
 
 #### Paso 4: Definición de requisitos para la capa de intercambio de datos
+
+<p class="apa-label">Tabla 56</p>
+<p class="apa-title">Paso 4: Definición de requisitos para la capa de intercambio de datos</p>
 
 | Parámetro                               | Definición Técnica                                                                                                                                                                                                                                           |
 |-----------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -50,6 +62,9 @@ de estilos para las interfaces físicas de los dispositivos IoT (colores, patron
 
 #### Paso 5: Definición de requisitos para la capa de información
 
+<p class="apa-label">Tabla 57</p>
+<p class="apa-title">Paso 5: Definición de requisitos para la capa de información</p>
+
 | Criterios                                   | Especificación de Capa                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 |---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Perfiles de Usuario**                     | **QA Manager:** define los perfiles ambientales, atiende y resuelve alertas, revisa lotes.<br>**Operario:** opera el laboratorio, atiende y resuelve alertas, registra recepción y consumo de materiales.<br>**Auditor:** consulta telemetría, alertas e historial en solo lectura.                                                                                                                                                                                                       |
@@ -57,6 +72,9 @@ de estilos para las interfaces físicas de los dispositivos IoT (colores, patron
 | **Arquitectura de Procesamiento y Cómputo** | **En el nodo (ESP32):** adquisición, filtrado, evaluación de las reglas del perfil, control de actuadores y señales locales.<br>**En el Edge (Raspberry Pi):** recepción de lecturas, validación del dispositivo, buffer, reenvío a la nube, descarga del perfil vigente y reporte de acciones.<br>**En la nube (Spring Boot, MySQL):** evaluación de cada lectura contra el perfil, gestión de alertas, estado de conexión, notificaciones (campanita y correo) y reportes de auditoría. |
 
 #### Paso 6: Definición de requisitos para la capa de servicios de aplicación
+
+<p class="apa-label">Tabla 58</p>
+<p class="apa-title">Paso 6: Definición de requisitos para la capa de servicios de aplicación</p>
 
 | Servicio                          | Especificación de la Interfaz                                                                                                                                                                                                    | Complejidad del Cliente                                 |
 |-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------|
@@ -78,6 +96,9 @@ de estilos para las interfaces físicas de los dispositivos IoT (colores, patron
 
 **Análisis Detallado de Retardo en el Flujo de Datos:**
 
+<p class="apa-label">Tabla 59</p>
+<p class="apa-title">Análisis Detallado de Retardo en el Flujo de Datos</p>
+
 | Origen                                        | Destino               | Protocolo / Canal                | Latencia Estimada (ms) | Acción Operativa                                                                  |
 |-----------------------------------------------|-----------------------|----------------------------------|------------------------|-----------------------------------------------------------------------------------|
 | Nodo (ESP32)                                  | Edge (Raspberry Pi)   | HTTP sobre Wi-Fi local           | 100                    | Envío de la lectura con su hora de medición.                                      |
@@ -88,6 +109,9 @@ de estilos para las interfaces físicas de los dispositivos IoT (colores, patron
 | Backend                                       | App web y móvil       | HTTPS (consulta de la campanita) | hasta 30 000           | La campanita se actualiza cada 30 s; no forma parte del límite de 2.0 s.          |
 
 #### Paso 8: Elección de sensores y actuadores
+
+<p class="apa-label">Tabla 60</p>
+<p class="apa-title">Paso 8: Elección de sensores y actuadores</p>
 
 | Parámetro Físico          | Modelo de Componente                                              | Justificación e Integración Técnica                                                                                                                                                                                                     |
 |---------------------------|-------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -101,12 +125,18 @@ de estilos para las interfaces físicas de los dispositivos IoT (colores, patron
 
 #### Paso 9: Elección del microcontrolador y transceptores de radio del dispositivo
 
+<p class="apa-label">Tabla 61</p>
+<p class="apa-title">Paso 9: Elección del microcontrolador y transceptores de radio del dispositivo</p>
+
 | Rol en la Red                           | Modelo de Hardware     | Transceptor Integrado           | Justificación Metodológica                                                                                                                                                                                    |
 |-----------------------------------------|------------------------|---------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Nodo Sensor (Ambiente y Contenedor)** | ESP32 DevKit           | Wi-Fi 2.4 GHz (802.11 b/g/n)    | SoC de 32 bits de doble núcleo con radio integrado, ADC de 12 bits y buses I2C, SPI, PWM y de un solo hilo. Sus 520 KB de SRAM permiten ejecutar a la vez el stack Wi-Fi, las lecturas y la lógica de reglas. |
 | **Concentrador (Edge)**                 | Raspberry Pi 4 Model B | Wi-Fi de doble banda + Ethernet | Computadora de placa única de 1.5 GHz (ARM Cortex-A72) con capacidad para ejecutar el servicio Edge, recibir varios nodos en paralelo, guardar lecturas pendientes y reenviarlas por HTTPS a la nube.         |
 
 #### Paso 10: Definición de los algoritmos de procesamiento de datos
+
+<p class="apa-label">Tabla 62</p>
+<p class="apa-title">Paso 10: Definición de los algoritmos de procesamiento de datos</p>
 
 | Nombre del Algoritmo                     | Responsabilidad y Lógica                                                                                                                                                                                       | Nivel de Ubicación  |
 |------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
@@ -121,6 +151,9 @@ de estilos para las interfaces físicas de los dispositivos IoT (colores, patron
 | **Verificación de Conexión**             | Marca el dispositivo como *Conectado* si hubo una lectura o acción en los últimos 5 minutos; si no, *Requiere revisión*.                                                                                       | Nube (Backend)      |
 
 #### Paso 11: Análisis del esfuerzo computacional de los algoritmos
+
+<p class="apa-label">Tabla 63</p>
+<p class="apa-title">Paso 11: Análisis del esfuerzo computacional de los algoritmos</p>
 
 | Algoritmo                           | Complejidad Temporal (Big O)      | Complejidad Espacial            | Tiempo Estimado de Ejecución | Ubicación           |
 |-------------------------------------|-----------------------------------|---------------------------------|------------------------------|---------------------|
@@ -148,6 +181,9 @@ de estilos para las interfaces físicas de los dispositivos IoT (colores, patron
 
 #### Paso 12: Definición de la interfaz de usuario gráfica
 
+<p class="apa-label">Tabla 64</p>
+<p class="apa-title">Paso 12: Definición de la interfaz de usuario gráfica</p>
+
 | Módulo de Interfaz                     | Plataformas de Visualización                | Elementos Clave de la UI                                                                                       | Justificación Funcional                                                                              |
 |----------------------------------------|---------------------------------------------|----------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
 | **Señalización Física**                | LED RGB, buzzer y pantalla OLED             | Colores por estado (verde `NORMAL`, amarillo `WARNING` y rojo `CRITICAL`; en el Monitor de Ambiente, azul mientras calibra y morado si falla su sensor; en el Monitor de Contenedor, rojo fijo si requiere revisión y azul mientras se vincula al Edge), sonido de alerta y, en la OLED, el contenedor, sus tres métricas con su estado, la acción activa, el cierre y el enlace con el Edge. | Permite al Operario conocer el estado de un vistazo, incluso con poca luz y sin abrir la aplicación. |
@@ -167,11 +203,17 @@ En la siguiente imagen, elaborada en Cirkit Designer, se muestran los dos nodos 
 **Monitor de Ambiente** (PIR, MQ-135, buzzer y LED RGB). A la derecha, el **Monitor de Contenedor** (OLED, BH1750,
 RC522, DHT, servo, ventilador con transistor, LED RGB y buzzer).
 
+<p class="apa-label">Figura 307</p>
+<p class="apa-title">Circuito de los dispositivos IoT en Cirkit Designer</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/iot-designs/qualitrack-circuit.png" alt="Circuito de los dispositivos IoT en Cirkit Designer" width="100%">
 </div>
 
 **Conexiones del Monitor de Ambiente:**
+
+<p class="apa-label">Tabla 65</p>
+<p class="apa-title">Conexiones del Monitor de Ambiente</p>
 
 | Componente             | Pin del componente | Conexión en el ESP32                        | Observación                                                                          |
 |------------------------|--------------------|---------------------------------------------|--------------------------------------------------------------------------------------|
@@ -181,6 +223,9 @@ RC522, DHT, servo, ventilador con transistor, LED RGB y buzzer).
 | LED RGB (cátodo común) | R / G / B / GND    | GPIO 4 / 16 / 17 (con 220 Ω cada uno) / GND | Señal de estado del ambiente.                                                        |
 
 **Conexiones del Monitor de Contenedor:**
+
+<p class="apa-label">Tabla 66</p>
+<p class="apa-title">Conexiones del Monitor de Contenedor</p>
 
 | Componente             | Pin del componente                         | Conexión en el ESP32                        | Observación                            |
 |------------------------|--------------------------------------------|---------------------------------------------|----------------------------------------|
@@ -217,9 +262,15 @@ Ambiente, el PIR y el MQ-135 son las entradas y el LED RGB y el buzzer las salid
 se distinguen los tres buses: I2C, compartido por la pantalla OLED y el BH1750; SPI, del lector RC522; y un solo hilo,
 del DHT22. Los actuadores van conectados a pines de salida: los servos por PWM y el ventilador, también por PWM, a través del 2N2222.
 
+<p class="apa-label">Figura 308</p>
+<p class="apa-title">Circuito del Monitor de Ambiente en Cirkit Designer</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/iot-designs/environment-monitor-circuit.png" alt="Circuito del Monitor de Ambiente en Cirkit Designer" width="100%">
 </div>
+
+<p class="apa-label">Figura 309</p>
+<p class="apa-title">Circuito del Monitor de Contenedor en Cirkit Designer</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/iot-designs/container-monitor-circuit.png" alt="Circuito del Monitor de Contenedor en Cirkit Designer" width="100%">
@@ -249,6 +300,9 @@ La cara frontal reúne todo lo que el personal necesita ver u oír:
 
 La entrada de 5 V por USB-C está en la cara inferior de la carcasa.
 
+<p class="apa-label">Figura 310</p>
+<p class="apa-title">Boceto del Monitor de Ambiente: vistas, medidas e instalación</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/iot-designs/environment-monitor-sketch.jpg" alt="Boceto del Monitor de Ambiente: vistas, medidas e instalación" width="100%">
 </div>
@@ -264,6 +318,9 @@ La vista explosionada muestra el orden de montaje de arriba hacia abajo:
 
 Separar la placa de montaje permite retirar el dispositivo para mantenimiento o recalibración del MQ-135 sin volver a
 perforar la pared.
+
+<p class="apa-label">Figura 311</p>
+<p class="apa-title">Vista explosionada del Monitor de Ambiente</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/iot-designs/environment-monitor-exploded-view.jpg" alt="Vista explosionada del Monitor de Ambiente" width="100%">
@@ -290,6 +347,9 @@ Sus partes principales son:
   de la cámara, y la tapa de plástico evita que el acero bloquee la señal Wi-Fi.
 * **Entrada USB-C de 5 V** en la parte superior trasera.
 
+<p class="apa-label">Figura 312</p>
+<p class="apa-title">Boceto del Monitor de Contenedor: vistas, bandeja e instalación</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/iot-designs/container-monitor-sketch.jpg" alt="Boceto del Monitor de Contenedor: vistas, bandeja e instalación" width="100%">
 </div>
@@ -299,6 +359,9 @@ entrada USB-C) queda arriba, en el compartimento sellado. Desde ahí, el cablead
 sensores: el **BH1750** y el sensor de temperatura y humedad, ubicados entre las bandejas para medir donde están los
 lotes. También llega a los elementos del panel del marco (**OLED**, **RC522** y **buzzer**), al **servo** del pestillo y
 al **ventilador** con su rejilla.
+
+<p class="apa-label">Figura 313</p>
+<p class="apa-title">Vista explosionada del Monitor de Contenedor</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/iot-designs/container-monitor-exploded-view.jpg" alt="Vista explosionada del Monitor de Contenedor" width="100%">
@@ -317,6 +380,9 @@ El diseño pasó por dos iteraciones:
   ventilación movida por el servo, alimentados con una fuente de 12 V / 5 V y un módulo de relés. Esto exigía una fuente
   de 220 VAC dentro del gabinete y una etapa de potencia aparte.
 
+<p class="apa-label">Figura 314</p>
+<p class="apa-title">Plano general del Monitor de Contenedor, prototipo v1</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/iot-designs/container-monitor-blueprint-v1.jpg" alt="Plano general del Monitor de Contenedor, prototipo v1" width="100%">
 </div>
@@ -326,6 +392,9 @@ El diseño pasó por dos iteraciones:
   puerta en lugar de mover una compuerta; y el panel del marco incorpora la pantalla OLED, el lector RFID y el buzzer.
   El enfriamiento se representa con la ventilación del gabinete, lo que simplifica la alimentación y deja un prototipo
   que se puede armar y simular en Wokwi.
+
+<p class="apa-label">Figura 315</p>
+<p class="apa-title">Plano general del Monitor de Contenedor, prototipo v2</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/iot-designs/container-monitor-blueprint-v2.jpg" alt="Plano general del Monitor de Contenedor, prototipo v2" width="100%">
@@ -347,6 +416,9 @@ control de acceso y atención de alertas.
 Describe la puesta en marcha: el operador instala el dispositivo, lo conecta a la alimentación, el ESP32 verifica sus
 componentes y se vincula con el Edge, que registra el nodo y lo reenvía a la nube.
 
+<p class="apa-label">Figura 316</p>
+<p class="apa-title">Flujo 1: Instalación y encendido</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/iot-designs/installation-flow.png" alt="Flujo 1: Instalación y encendido" width="100%">
 </div>
@@ -355,6 +427,9 @@ componentes y se vincula con el Edge, que registra el nodo y lo reenvía a la nu
 
 Representa el funcionamiento habitual: los sensores miden, el ESP32 filtra y envía la lectura al Edge, la nube la evalúa
 con el perfil vigente y la aplicación muestra el estado. Si el estado no es normal, se abre o escala una alerta.
+
+<p class="apa-label">Figura 317</p>
+<p class="apa-title">Flujo 2: Monitoreo normal</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/iot-designs/normal-monitoring-flow.png" alt="Flujo 2: Monitoreo normal" width="100%">
@@ -366,6 +441,9 @@ Muestra cómo el Monitor de Contenedor reacciona cuando una métrica sale del ra
 (por defecto, la temperatura): activa la ventilación, suma el enfriamiento y el buzzer si la métrica es crítica, informa
 la acción al Edge con su causa y su resultado, y la nube abre la alerta para que el personal la atienda.
 
+<p class="apa-label">Figura 318</p>
+<p class="apa-title">Flujo 3: Acción automática</p>
+
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/iot-designs/automatic-action-flow.png" alt="Flujo 3: Acción automática" width="100%">
 </div>
@@ -375,6 +453,9 @@ la acción al Edge con su causa y su resultado, y la nube abre la alerta para qu
 Describe la apertura controlada del contenedor: el lector RFID lee la etiqueta, el ESP32 la valida contra las etiquetas
 autorizadas del nodo y, según el resultado, abre el servo por 10 segundos con señal verde o mantiene el contenedor
 cerrado con señal roja y buzzer. La lectura de la etiqueta se envía al Edge, que la registra en la nube.
+
+<p class="apa-label">Figura 319</p>
+<p class="apa-title">Flujo 4: Acceso por RFID</p>
 
 <div align="center">
   <img src="../../assets/img/main-content/chapter-v/iot-designs/rfid-access-flow.png" alt="Flujo 4: Acceso por RFID" width="100%">
